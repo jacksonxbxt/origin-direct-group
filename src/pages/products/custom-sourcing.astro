@@ -1,0 +1,227 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import QuoteForm from '../../components/QuoteForm.astro';
+
+const categories = [
+  {
+    title: "Agricultural Products",
+    items: [
+      "Tiger Nuts", "Kola Nuts", "Bitter Kola", "Baobab Powder", "Plantain (fresh & chips)",
+      "Cassava Starch / Garri", "Yam Flour", "Ogbono Seeds", "Dawadawa / Locust Beans",
+      "Dried Chili Peppers", "Scotch Bonnet Peppers", "Turmeric", "Cumin", "Groundnuts",
+      "Palm Kernel Nuts", "Sorghum", "Millet", "Maize", "Rice (various)",
+      "Bamboo Products",
+    ],
+  },
+  {
+    title: "Oils & Butters",
+    items: [
+      "Palm Kernel Oil", "Coconut Oil", "Castor Oil", "Neem Oil", "Baobab Oil",
+      "Moringa Oil", "Shea Olein (liquid fraction)", "Shea Stearin (solid fraction)",
+      "Groundnut Oil", "Sesame Oil",
+    ],
+  },
+  {
+    title: "Natural & Cosmetic Ingredients",
+    items: [
+      "African Black Soap", "Kaolin Clay", "Shea Nuts (raw)", "Natural Honey",
+      "Beeswax", "Gum Arabic", "Snail Slime Extract", "Moringa Extract",
+      "Hibiscus Extract", "Neem Powder", "Aloe Vera",
+    ],
+  },
+  {
+    title: "Industrial & Raw Materials",
+    items: [
+      "Hardwood Timber (Iroko, Sapele, Mahogany)", "Natural Rubber", "Charcoal (lump & briquette)",
+      "Animal Hides & Leather", "Scrap Metal", "Kaolin (industrial grade)", "Laterite",
+      "Guar Gum", "Psyllium Husk", "Shellac", "Cotton",
+    ],
+  },
+  {
+    title: "Minerals & Metals",
+    items: [
+      "Gold (artisanal)", "Tin / Coltan", "Manganese", "Bauxite",
+      "Lithium", "Zinc", "Lead",
+    ],
+  },
+];
+
+const howItWorks = [
+  {
+    step: "01",
+    title: "You Tell Us What You Need",
+    description: "Product name, specifications, quantity, quality requirements, certifications needed, destination country. The more detail, the faster we move.",
+  },
+  {
+    step: "02",
+    title: "Our Team Goes to Work",
+    description: "Within 48 hours, our on-ground teams in Ghana, Nigeria, and India start contacting producers, visiting farms, and sourcing samples. We know who grows what, where.",
+  },
+  {
+    step: "03",
+    title: "We Report Back With Options",
+    description: "You receive a detailed sourcing report: available grades, pricing (FOB/CIF/DDP), minimum order quantities, lead times, and sample availability. No commitment required.",
+  },
+  {
+    step: "04",
+    title: "Sample, Approve, Ship",
+    description: "We send samples for your approval. Once confirmed, we handle quality control, lab testing, export documentation, freight booking, and delivery to your door.",
+  },
+];
+---
+
+<Layout
+  title="Custom Sourcing — We Find Any Product | Origin Direct Group"
+  description="Can't find what you're looking for? Our on-ground teams in Ghana, Nigeria, and India can source virtually any commodity. Tell us what you need."
+>
+  <!-- Hero -->
+  <section class="relative py-28 bg-gradient-to-br from-green-950 via-earth-900 to-green-950">
+    <div class="absolute inset-0 bg-black/30"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <span class="inline-block px-4 py-1.5 bg-amber-500/20 text-amber-300 text-sm font-medium rounded-full mb-6 border border-amber-500/30">
+        Beyond Our Standard Range
+      </span>
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight">
+        We'll Find It For You
+      </h1>
+      <div class="w-16 h-1 bg-amber-500 mx-auto mt-6 mb-6"></div>
+      <p class="text-lg md:text-xl text-gray-200/90 max-w-3xl mx-auto">
+        Our teams on the ground across West Africa and India can source virtually any commodity.
+        You name it — we find it, test it, document it, and ship it to your door.
+      </p>
+      <div class="mt-8">
+        <a href="#sourcing-form" class="inline-flex items-center gap-2 px-8 py-4 bg-amber-500 text-white font-semibold rounded-lg hover:bg-amber-600 transition-colors shadow-lg text-lg">
+          Tell Us What You Need
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Custom Sourcing -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto text-center mb-16">
+        <h2 class="text-3xl font-bold text-brand-900">Why Use Our Sourcing Team?</h2>
+        <p class="mt-4 text-gray-600">
+          Finding reliable commodity suppliers in Africa and India is hard. Language barriers, trust issues,
+          quality inconsistencies, logistics complexity. We solve all of that because we're already there.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="text-center p-6">
+          <div class="w-14 h-14 bg-brand-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <svg class="w-7 h-7 text-brand-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-brand-900 mb-2">Local Presence</h3>
+          <p class="text-gray-600 text-sm">
+            Our teams in Accra, Lagos, and across India visit producers in person. We don't source from a spreadsheet — we're at the farms, factories, and warehouses.
+          </p>
+        </div>
+
+        <div class="text-center p-6">
+          <div class="w-14 h-14 bg-brand-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <svg class="w-7 h-7 text-brand-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-brand-900 mb-2">Quality Verified</h3>
+          <p class="text-gray-600 text-sm">
+            Every product is inspected, sampled, and lab-tested before it ships. We provide Certificates of Analysis, phytosanitary certs, and any other documentation your market requires.
+          </p>
+        </div>
+
+        <div class="text-center p-6">
+          <div class="w-14 h-14 bg-brand-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <svg class="w-7 h-7 text-brand-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H18.75m-7.5-2.25h.008v.008H11.25v-.008zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zM17.25 10.5h1.375c.621 0 1.125.504 1.125 1.125v1.5M2.25 10.5H1.125A1.125 1.125 0 000 11.625v1.5" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-brand-900 mb-2">Soil to Door</h3>
+          <p class="text-gray-600 text-sm">
+            We don't just find the product — we handle the entire logistics chain. Export docs, freight, customs support, and delivery to your warehouse. You just receive.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How Custom Sourcing Works -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-bold text-brand-900">How Custom Sourcing Works</h2>
+        <p class="mt-3 text-gray-500">From your inquiry to delivery — typically 2-6 weeks depending on product and volume.</p>
+      </div>
+
+      <div class="grid md:grid-cols-4 gap-8">
+        {howItWorks.map((item) => (
+          <div class="relative">
+            <div class="text-5xl font-bold text-brand-100 mb-3">{item.step}</div>
+            <h3 class="text-lg font-semibold text-brand-900 mb-2">{item.title}</h3>
+            <p class="text-sm text-gray-600">{item.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Categories We Can Source -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-bold text-brand-900">What Can We Source?</h2>
+        <p class="mt-3 text-gray-500 max-w-2xl mx-auto">
+          Here's a sample of products we've sourced or can source. This is not an exhaustive list —
+          if it grows, is mined, or is produced in West Africa or India, we can likely get it.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {categories.map((category) => (
+          <div class="bg-gray-50 rounded-xl p-6 border border-gray-100">
+            <h3 class="text-lg font-semibold text-brand-900 mb-4">{category.title}</h3>
+            <div class="flex flex-wrap gap-2">
+              {category.items.map((item) => (
+                <span class="px-2.5 py-1 bg-white border border-gray-200 rounded-md text-xs text-gray-600">
+                  {item}
+                </span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-12 text-center">
+        <div class="inline-flex items-center gap-3 bg-amber-50 border border-amber-200 rounded-xl px-6 py-4">
+          <svg class="w-6 h-6 text-amber-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" />
+          </svg>
+          <p class="text-sm text-amber-800">
+            <strong>Don't see your product?</strong> This list is just a starting point. Contact us with any commodity and we'll let you know if we can source it — usually within 24 hours.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sourcing Request Form -->
+  <section id="sourcing-form" class="py-20 bg-green-950">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10">
+        <h2 class="text-3xl font-bold text-white">Submit a Sourcing Request</h2>
+        <p class="mt-3 text-gray-300">
+          Tell us what you're looking for. Select "Other" in the product dropdown and describe your requirements.
+          We'll get back to you within 48 hours with availability and pricing.
+        </p>
+      </div>
+      <QuoteForm />
+    </div>
+  </section>
+</Layout>

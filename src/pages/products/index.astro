@@ -1,0 +1,166 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import QuoteForm from '../../components/QuoteForm.astro';
+
+const products = [
+  {
+    name: "Shea Butter",
+    slug: "shea-butter",
+    origin: "Ghana \u{1F1EC}\u{1F1ED}",
+    description: "Unrefined, refined, and organic grades for cosmetics and food industries",
+    grades: "Grade A Unrefined | Refined | Organic Certified",
+  },
+  {
+    name: "Cocoa Products",
+    slug: "cocoa",
+    origin: "Ghana \u{1F1EC}\u{1F1ED} / Nigeria \u{1F1F3}\u{1F1EC}",
+    description: "Cocoa beans, butter, powder, and nibs — direct from the world's top producing region",
+    grades: "Fermented Beans | Natural Butter | Alkalized Powder",
+  },
+  {
+    name: "Cashew Nuts",
+    slug: "cashew-nuts",
+    origin: "Ghana \u{1F1EC}\u{1F1ED} / Nigeria \u{1F1F3}\u{1F1EC}",
+    description: "Raw cashew nuts and processed kernels in all standard grades",
+    grades: "RCN | W180 | W240 | W320 | W450",
+  },
+  {
+    name: "Hookah Charcoal",
+    slug: "hookah-charcoal",
+    origin: "Nigeria \u{1F1F3}\u{1F1EC}",
+    description: "Premium hardwood and coconut shell charcoal briquettes for the shisha market",
+    grades: "Cube 25mm | Flat | Finger | Custom Shapes",
+  },
+  {
+    name: "Dried Hibiscus",
+    slug: "hibiscus",
+    origin: "Nigeria \u{1F1F3}\u{1F1EC}",
+    description: "Sun-dried hibiscus flowers (Roselle) for beverages, tea blends, and food coloring",
+    grades: "Whole Flowers | Cut & Sifted | Powder",
+  },
+  {
+    name: "Sesame Seeds",
+    slug: "sesame-seeds",
+    origin: "Nigeria \u{1F1F3}\u{1F1EC}",
+    description: "Premium white and brown sesame seeds for tahini production and food processing",
+    grades: "Hulled White | Natural | Black | Organic",
+  },
+  {
+    name: "Moringa Powder",
+    slug: "moringa",
+    origin: "Ghana \u{1F1EC}\u{1F1ED} / Nigeria \u{1F1F3}\u{1F1EC}",
+    description: "Certified organic moringa leaf powder for the health food and supplement markets",
+    grades: "Conventional | Organic | Pharmaceutical Grade",
+  },
+  {
+    name: "Dried Ginger",
+    slug: "ginger",
+    origin: "Nigeria \u{1F1F3}\u{1F1EC}",
+    description: "Split and whole dried ginger with high oleoresin and gingerol content",
+    grades: "Split Dried | Whole Dried | Powder | Organic",
+  },
+];
+
+const otherProducts = [
+  "Tiger Nuts", "Kola Nuts", "Bitter Kola", "African Black Soap",
+  "Cassava Starch / Garri", "Palm Kernel Oil", "Baobab Powder",
+  "Gum Arabic", "Kaolin Clay", "Shea Nuts (raw)", "Plantain Chips",
+  "Dried Chili Peppers", "Natural Honey", "Hardwood Timber",
+  "Animal Hides & Leather", "Coconut Products", "Natural Rubber",
+  "Dawadawa / Locust Beans", "Ogbono Seeds", "Snail Meat",
+];
+---
+
+<Layout
+  title="Our Products | Origin Direct Group"
+  description="Browse our range of commodities sourced directly from West Africa and India. Shea butter, cocoa, cashews, charcoal, hibiscus, sesame, moringa, ginger, and more."
+>
+  <!-- Hero -->
+  <section class="relative py-24 bg-gradient-to-br from-green-950 via-green-900 to-earth-900">
+    <div class="absolute inset-0 bg-black/30"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight">
+        Our Products
+      </h1>
+      <div class="w-16 h-1 bg-amber-500 mx-auto mt-6 mb-6"></div>
+      <p class="text-lg md:text-xl text-gray-200/90 max-w-3xl mx-auto">
+        Sourced directly from verified producers across West Africa and India.
+        Full quality control, documentation, and soil-to-door delivery.
+      </p>
+    </div>
+  </section>
+
+  <!-- Core Products Grid -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-bold text-brand-900">Core Commodities</h2>
+        <p class="mt-3 text-gray-500 max-w-2xl mx-auto">
+          Our most requested products with established supply chains and full compliance documentation.
+        </p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+        {products.map((product) => (
+          <ProductCard {...product} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Can't Find What You're Looking For -->
+  <section class="py-20 bg-brand-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-4xl mx-auto text-center mb-12">
+        <h2 class="text-3xl font-bold text-brand-900">
+          Don't See What You Need?
+        </h2>
+        <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+          Our product range goes far beyond what's listed here. With teams on the ground across Ghana, Nigeria, and India,
+          we can source virtually any commodity from the region. Just tell us what you're looking for.
+        </p>
+        <a
+          href="/products/custom-sourcing"
+          class="inline-flex items-center gap-2 mt-6 px-6 py-3 bg-amber-500 text-white font-semibold rounded-lg hover:bg-amber-600 transition-colors shadow-sm"
+        >
+          Explore Custom Sourcing
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+      </div>
+
+      <div class="max-w-4xl mx-auto">
+        <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wider text-center mb-6">
+          Other products we can source
+        </h3>
+        <div class="flex flex-wrap justify-center gap-2">
+          {otherProducts.map((product) => (
+            <span class="px-3 py-1.5 bg-white border border-gray-200 rounded-full text-sm text-gray-600 hover:border-brand-400 hover:text-brand-700 transition-colors cursor-default">
+              {product}
+            </span>
+          ))}
+          <a
+            href="/products/custom-sourcing"
+            class="px-3 py-1.5 bg-brand-700 text-white rounded-full text-sm font-medium hover:bg-brand-600 transition-colors"
+          >
+            + Anything else →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quote CTA -->
+  <section class="py-20 bg-green-950">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10">
+        <h2 class="text-3xl font-bold text-white">Request a Quote</h2>
+        <p class="mt-3 text-gray-300">
+          Tell us what you need — we'll get back to you within 2 hours.
+        </p>
+      </div>
+      <QuoteForm />
+    </div>
+  </section>
+</Layout>
