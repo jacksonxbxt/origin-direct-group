@@ -1,0 +1,161 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import QuoteForm from '../../components/QuoteForm.astro';
+
+const defined_title = "How to Import Cocoa to the USA - Complete Guide";
+const defined_description = "Step-by-step guide to importing cocoa beans and cocoa products to the United States. FDA requirements, HS codes, duty rates, documentation, and shipping logistics from West Africa.";
+
+const breadcrumbItems = [
+  { label: "Guides", href: "/guides" },
+  { label: "Import Cocoa to USA" },
+];
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://origindirectgroup.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://origindirectgroup.com/guides" },
+    { "@type": "ListItem", "position": 3, "name": "Import Cocoa to USA" },
+  ],
+};
+
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to Import Cocoa to the USA",
+  "description": "Complete guide to importing cocoa beans and cocoa products into the United States from West Africa.",
+  "step": [
+    { "@type": "HowToStep", "position": 1, "name": "Find a reliable cocoa supplier", "text": "Source cocoa from verified producers in Ghana or Ivory Coast through a commodity broker like Origin Direct." },
+    { "@type": "HowToStep", "position": 2, "name": "Request samples and verify quality", "text": "Request pre-shipment samples and test for bean count, moisture content, free fatty acid levels, and mold count." },
+    { "@type": "HowToStep", "position": 3, "name": "Agree on commercial terms", "text": "Negotiate pricing, Incoterms (typically FOB or CIF), payment terms (usually letter of credit), and delivery schedule." },
+    { "@type": "HowToStep", "position": 4, "name": "Supplier prepares export documentation", "text": "Obtain phytosanitary certificate, certificate of origin, bill of lading, commercial invoice, packing list, and quality certificate." },
+    { "@type": "HowToStep", "position": 5, "name": "Arrange ocean freight shipping", "text": "Book 20ft or 40ft container shipping from Tema (Ghana) or Abidjan (Ivory Coast) to US ports. Transit time is 18-25 days." },
+    { "@type": "HowToStep", "position": 6, "name": "Clear US customs and FDA inspection", "text": "File ISF 10+2, submit FDA prior notice, present CBP entry documents, and pass potential FDA examination." },
+    { "@type": "HowToStep", "position": 7, "name": "Receive and inspect goods", "text": "Arrange drayage from port, inspect goods against contract specifications, and file any claims within the agreed window." },
+  ],
+};
+---
+
+<Layout title={defined_title} description={defined_description} structuredData={[breadcrumbSchema, howToSchema]}>
+  <section class="py-12 md:py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-6">
+      <Breadcrumbs items={breadcrumbItems} />
+
+      <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+        How to Import Cocoa to the USA
+      </h1>
+
+      <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+        The United States is the world's largest cocoa importing nation, bringing in over 500,000 metric tons of cocoa beans annually. West Africa supplies roughly 70% of the world's cocoa, with Ghana and Ivory Coast as the dominant origins. Importing directly from these origins gives US buyers access to premium-grade cocoa at significantly lower prices than buying through European intermediaries, who typically add 20-40% in markups. Whether you are a chocolate manufacturer, ingredient distributor, or food company, this guide walks you through every step of bringing cocoa from West Africa to the United States.
+      </p>
+
+      <div class="prose prose-lg max-w-none text-gray-700">
+
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Step-by-Step Import Process</h2>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Step 1: Find a Reliable Cocoa Supplier</h3>
+        <p>
+          Ghana produces some of the world's highest-quality cocoa, consistently graded as "Ghana Main Crop" or "Ghana Light Crop" by the Ghana Cocoa Board (COCOBOD). Ivory Coast is the largest producer by volume. When sourcing, look for suppliers who can provide COCOBOD-certified beans (for Ghana) or CCC-certified beans (Conseil du Cafe-Cacao, for Ivory Coast). Origin Direct maintains direct relationships with licensed buying companies and cooperatives in both countries, cutting out intermediary traders and giving you access to traceable, farm-level cocoa.
+        </p>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Step 2: Request Samples and Verify Quality</h3>
+        <p>
+          Before committing to a container order, always request pre-shipment samples (typically 1-2 kg). Key quality parameters for cocoa beans include: bean count (90-110 beans per 100g for Grade I Ghana cocoa), moisture content (max 7.5%), mold count (max 3% by count), free fatty acid (FFA) content (max 1.75%), and fermentation index (minimum 60% well-fermented). Have samples tested by an accredited lab such as SGS, Bureau Veritas, or Intertek. For cocoa butter or powder, check specifications against your end-product requirements.
+        </p>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Step 3: Agree on Commercial Terms</h3>
+        <p>
+          Cocoa is typically traded in metric tons, with pricing referenced against the ICE NY Cocoa futures contract (CC). Common Incoterms for cocoa shipments are FOB Tema (Ghana) or FOB Abidjan (Ivory Coast), though CIF US port is also available. Payment is almost always via irrevocable letter of credit (L/C) at sight, opened through your bank. For established relationships, some sellers accept 30% advance payment with 70% against documents. Contracts should specify the crop year, grade, packaging (typically 65 kg jute bags), and any certifications required (Fairtrade, Rainforest Alliance, UTZ/Rainforest Alliance merged, Organic).
+        </p>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Step 4: Supplier Prepares Export Documentation</h3>
+        <p>
+          Your supplier needs to prepare the following documents before the shipment leaves West Africa:
+        </p>
+        <ul>
+          <li><strong>Phytosanitary Certificate</strong> - Issued by the Plant Protection and Regulatory Services (Ghana) or ANADER (Ivory Coast). Required by USDA APHIS for all raw agricultural imports.</li>
+          <li><strong>Certificate of Origin</strong> - Confirms the country of origin for customs duty purposes.</li>
+          <li><strong>Commercial Invoice</strong> - Detailing product description, quantity, unit price, total value, Incoterms, and payment terms.</li>
+          <li><strong>Packing List</strong> - Number of bags, net and gross weights per container.</li>
+          <li><strong>Bill of Lading (B/L)</strong> - Ocean bill of lading, usually issued "clean on board."</li>
+          <li><strong>Quality/Grade Certificate</strong> - From COCOBOD Quality Control Company (Ghana) or a recognized inspection agency.</li>
+          <li><strong>Fumigation Certificate</strong> - Proof of treatment against storage pests, if required.</li>
+          <li><strong>Weight Certificate</strong> - Issued at port of loading by an independent surveyor.</li>
+        </ul>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Step 5: Arrange Shipping</h3>
+        <p>
+          Cocoa is shipped in standard 20ft dry containers (approximately 18-20 MT per container) or 40ft containers (approximately 25 MT, though 20ft is more common for cocoa due to weight limits). Major loading ports are Tema Port (Ghana) and Port of Abidjan (Ivory Coast). Common US destination ports include Port of Newark/Elizabeth (New Jersey), Port of Philadelphia, Port of Baltimore, and Port of Hampton Roads (Norfolk, Virginia). Transit time from West Africa to the US East Coast is typically 18-22 days. For the US Gulf Coast (Houston, New Orleans), transit is 20-25 days. Containers must be clean, dry, and free of odors. Cocoa is highly absorbent and will pick up any container contamination.
+        </p>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Step 6: Clear US Customs</h3>
+        <p>
+          Importing cocoa into the USA involves multiple federal agencies. Here is what you need:
+        </p>
+        <ul>
+          <li><strong>Importer Security Filing (ISF 10+2)</strong> - Must be filed at least 24 hours before the vessel departs the foreign port. Failure to file results in a $5,000 penalty per violation.</li>
+          <li><strong>FDA Prior Notice</strong> - Required for all food imports under the Bioterrorism Act. Must be submitted via the FDA Prior Notice System Interface (PNSI) no fewer than 15 days and no more than 15 days before the shipment arrives.</li>
+          <li><strong>CBP Entry Documents</strong> - Entry Summary (CBP Form 7501), commercial invoice, packing list, and bill of lading. Your customs broker files these.</li>
+          <li><strong>FDA Examination</strong> - FDA may detain cocoa shipments for sampling and testing. They check for pesticide residues, heavy metals (particularly cadmium and lead), mycotoxins (aflatoxins, ochratoxin A), and filth/foreign matter. The Codex Alimentarius maximum level for cadmium in cocoa powder is 0.3 mg/kg.</li>
+          <li><strong>USDA APHIS Clearance</strong> - For raw cocoa beans, APHIS may require inspection for pests. The phytosanitary certificate from the origin country is essential here.</li>
+        </ul>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Step 7: Receive and Inspect Goods</h3>
+        <p>
+          Once customs clearance is granted, arrange drayage (trucking from port to your warehouse). Inspect the shipment against the contract specifications: verify bag count, check for water damage or pest infestation, pull samples for lab analysis, and weigh the shipment. Any claims for quality discrepancies or short weight should be filed within the timeframe specified in your contract (typically 14-21 days after arrival).
+        </p>
+
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Key Documents Required</h2>
+        <ul>
+          <li>FDA Prior Notice confirmation</li>
+          <li>ISF 10+2 filing confirmation</li>
+          <li>CBP Entry Summary (Form 7501)</li>
+          <li>Commercial Invoice and Packing List</li>
+          <li>Bill of Lading (original or telex release)</li>
+          <li>Phytosanitary Certificate</li>
+          <li>Certificate of Origin</li>
+          <li>Quality/Grade Certificate</li>
+          <li>Fumigation Certificate (if applicable)</li>
+          <li>Customs Bond (continuous or single entry)</li>
+        </ul>
+
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">HS Codes and Duty Rates</h2>
+        <p>
+          The primary HS codes for cocoa imports into the US are:
+        </p>
+        <ul>
+          <li><strong>1801.00.00</strong> - Cocoa beans, whole or broken, raw or roasted. Duty: Free.</li>
+          <li><strong>1802.00.00</strong> - Cocoa shells, husks, skins, and waste. Duty: Free.</li>
+          <li><strong>1803.10.00</strong> - Cocoa paste, not defatted. Duty: Free.</li>
+          <li><strong>1803.20.00</strong> - Cocoa paste, wholly or partly defatted. Duty: Free.</li>
+          <li><strong>1804.00.00</strong> - Cocoa butter, fat, and oil. Duty: Free.</li>
+          <li><strong>1805.00.00</strong> - Cocoa powder, not containing added sugar. Duty: 0.52 cents/kg.</li>
+        </ul>
+        <p>
+          Raw cocoa beans enter the US duty-free, making direct sourcing even more cost-effective. For the full HS code reference, see our <a href="/resources/hs-codes" class="text-brand-700 underline hover:text-brand-600">HS Code Directory</a>.
+        </p>
+
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Common Pitfalls to Watch Out For</h2>
+        <ul>
+          <li><strong>Cadmium contamination</strong> - Cocoa from certain soil types (particularly volcanic soils in Latin America, less common in West Africa) can accumulate cadmium. The EU has strict limits (0.1-0.8 mg/kg depending on product). While the US has no formal limit yet, FDA monitors cadmium levels and may detain shipments with elevated readings.</li>
+          <li><strong>Moisture damage</strong> - Cocoa beans must be shipped at 7.5% moisture or below. Condensation inside containers ("container sweat") during ocean transit can cause mold. Insist on properly dried beans and consider desiccant strips inside containers.</li>
+          <li><strong>Mixed lots</strong> - Some unscrupulous suppliers mix Grade I and Grade II beans. Always insist on pre-shipment inspection by an independent surveyor.</li>
+          <li><strong>Delayed ISF filing</strong> - Missing the 24-hour ISF deadline triggers automatic penalties. Work with an experienced customs broker.</li>
+          <li><strong>FDA detention</strong> - If FDA detains your shipment for examination, it can add 1-3 weeks and significant storage costs. Having complete documentation and a clean import history reduces this risk.</li>
+          <li><strong>Forced labor concerns</strong> - US Customs enforces the Tariff Act Section 307, which prohibits imports made with forced labor. Ensure your cocoa supply chain has proper labor certifications and traceability.</li>
+        </ul>
+
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">How Origin Direct Makes This Easy</h2>
+        <p>
+          Origin Direct handles the entire supply chain from cocoa-growing regions in Ghana and Ivory Coast to your US warehouse. We work directly with COCOBOD-licensed buying companies and cooperatives, so every bag is fully traceable. Our team manages quality inspection at origin, prepares all export documentation, coordinates ocean freight with reliable carriers, and can connect you with experienced US customs brokers. You get factory-gate pricing without the markups from European intermediaries, and a single point of contact for the entire shipment.
+        </p>
+      </div>
+
+      <div class="mt-12">
+        <QuoteForm productName="Cocoa" />
+      </div>
+    </div>
+  </section>
+</Layout>

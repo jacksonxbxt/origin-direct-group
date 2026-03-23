@@ -1,25 +1,42 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 
-const upcomingArticles = [
+const publishedArticles = [
   {
     title: "EUDR Compliance Guide for Cocoa Importers (2026)",
     category: "Compliance",
     description: "Everything you need to know about the EU Deforestation Regulation and how it impacts cocoa sourcing from West Africa.",
     readTime: "12 min read",
+    href: "/blog/eudr-compliance-guide",
+    date: "March 23, 2026",
   },
   {
-    title: "Shea Butter Grades Explained: Unrefined vs Refined",
+    title: "Shea Butter Grades Explained: Unrefined vs Refined vs Organic",
     category: "Product Guide",
-    description: "A comprehensive breakdown of shea butter classifications, processing methods, and which grade suits your application.",
-    readTime: "8 min read",
+    description: "A comprehensive breakdown of shea butter classifications, quality parameters, certifications, and which grade suits your application.",
+    readTime: "10 min read",
+    href: "/blog/shea-butter-grades-explained",
+    date: "March 23, 2026",
   },
   {
-    title: "Complete Guide to Importing Cashew Nuts into Europe",
+    title: "Complete Guide to Importing Cashew Nuts from West Africa",
     category: "Import Guide",
-    description: "Documentation requirements, phytosanitary standards, and logistics considerations for European cashew importers.",
+    description: "Grades, KOR explained, quality specifications, payment terms, shipping logistics, and HS codes for cashew nut importers.",
     readTime: "15 min read",
+    href: "/blog/importing-cashew-nuts-guide",
+    date: "March 23, 2026",
   },
+  {
+    title: "Nigerian Hardwood vs Indonesian Coconut: Hookah Charcoal Sourcing Guide",
+    category: "Sourcing Guide",
+    description: "Data-driven comparison of hookah charcoal sources with pricing, quality specs, OEM options, and shipping requirements.",
+    readTime: "11 min read",
+    href: "/blog/hookah-charcoal-sourcing-guide",
+    date: "March 23, 2026",
+  },
+];
+
+const upcomingArticles = [
   {
     title: "West African Commodity Price Trends Q1 2026",
     category: "Market Analysis",
@@ -30,8 +47,8 @@ const upcomingArticles = [
 ---
 
 <Layout
-  title="Blog - Origin Direct Group | Commodity Market Insights"
-  description="Commodity market insights, sourcing guides, and industry analysis from Origin Direct Group. Coming soon."
+  title="Blog - Origin Direct Group | Commodity Market Insights & Sourcing Guides"
+  description="Commodity market insights, sourcing guides, and industry analysis from Origin Direct Group. Expert content on cocoa, shea butter, cashew nuts, hookah charcoal, and more."
 >
 
   <!-- Hero -->
@@ -39,51 +56,89 @@ const upcomingArticles = [
     <div class="absolute inset-0 bg-gradient-to-br from-green-950 via-green-900 to-amber-950"></div>
     <div class="absolute inset-0 bg-black/20"></div>
     <div class="relative z-10 max-w-3xl mx-auto px-6 text-center">
-      <p class="inline-block px-4 py-1.5 bg-amber-500/20 text-amber-300 text-sm font-semibold rounded-full mb-6 border border-amber-500/30">
-        Coming Soon
-      </p>
       <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight mb-6">
         Blog
       </h1>
       <p class="text-lg md:text-xl text-green-100/90 max-w-2xl mx-auto leading-relaxed">
-        Our blog is launching soon. We'll be sharing commodity market insights, sourcing guides, and industry analysis.
+        Commodity market insights, sourcing guides, and industry analysis to help you navigate global trade with confidence.
       </p>
     </div>
     <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white to-transparent"></div>
   </section>
 
-  <!-- Upcoming Articles -->
+  <!-- Published Articles -->
   <section class="py-20 md:py-28 bg-white">
     <div class="max-w-6xl mx-auto px-6">
       <div class="text-center mb-14">
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Upcoming Articles</h2>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Latest Articles</h2>
         <div class="w-16 h-1 bg-amber-500 mx-auto rounded-full mb-4"></div>
-        <p class="text-gray-500 max-w-xl mx-auto">We're preparing in-depth content to help you navigate commodity sourcing with confidence.</p>
+        <p class="text-gray-500 max-w-xl mx-auto">In-depth guides and analysis to help you source commodities smarter.</p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {upcomingArticles.map((article) => (
-          <div class="relative rounded-2xl border border-gray-200 bg-gray-50/50 p-8 opacity-60 cursor-default select-none">
-            <div class="absolute top-4 right-4 px-3 py-1 bg-gray-200 text-gray-500 text-xs font-medium rounded-full">
-              Coming Soon
-            </div>
+        {publishedArticles.map((article) => (
+          <a href={article.href} class="group relative rounded-2xl border border-gray-200 bg-white p-8 hover:border-brand-300 hover:shadow-lg transition-all duration-200">
             <span class="inline-block text-xs font-semibold text-brand-600 uppercase tracking-wider mb-3">
               {article.category}
             </span>
-            <h3 class="text-xl font-bold text-gray-800 mb-3 leading-snug">
+            <h3 class="text-xl font-bold text-gray-800 mb-3 leading-snug group-hover:text-brand-700 transition-colors">
               {article.title}
             </h3>
             <p class="text-sm text-gray-500 leading-relaxed mb-4">
               {article.description}
             </p>
-            <span class="text-xs text-gray-400 font-medium">
-              {article.readTime}
-            </span>
-          </div>
+            <div class="flex items-center justify-between">
+              <span class="text-xs text-gray-400 font-medium">
+                {article.readTime}
+              </span>
+              <span class="text-xs text-gray-400 font-medium">
+                {article.date}
+              </span>
+            </div>
+            <div class="absolute bottom-8 right-8 text-brand-600 opacity-0 group-hover:opacity-100 transition-opacity">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </div>
+          </a>
         ))}
       </div>
     </div>
   </section>
+
+  <!-- Upcoming Articles -->
+  {upcomingArticles.length > 0 && (
+    <section class="py-16 md:py-20 bg-gray-50">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center mb-10">
+          <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Coming Soon</h2>
+          <div class="w-12 h-1 bg-gray-300 mx-auto rounded-full"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+          {upcomingArticles.map((article) => (
+            <div class="relative rounded-2xl border border-gray-200 bg-gray-50/50 p-8 opacity-60 cursor-default select-none">
+              <div class="absolute top-4 right-4 px-3 py-1 bg-gray-200 text-gray-500 text-xs font-medium rounded-full">
+                Coming Soon
+              </div>
+              <span class="inline-block text-xs font-semibold text-brand-600 uppercase tracking-wider mb-3">
+                {article.category}
+              </span>
+              <h3 class="text-xl font-bold text-gray-800 mb-3 leading-snug">
+                {article.title}
+              </h3>
+              <p class="text-sm text-gray-500 leading-relaxed mb-4">
+                {article.description}
+              </p>
+              <span class="text-xs text-gray-400 font-medium">
+                {article.readTime}
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
 
   <!-- CTA -->
   <section class="py-20 md:py-24 bg-brand-50">
@@ -92,7 +147,7 @@ const upcomingArticles = [
         Need commodities now?
       </h2>
       <p class="text-gray-600 mb-8 max-w-xl mx-auto">
-        While we prepare our blog, our team is ready to help with your sourcing needs. Get a competitive quote today.
+        Our team is ready to help with your sourcing needs. Get a competitive quote today.
       </p>
       <a
         href="/quote"

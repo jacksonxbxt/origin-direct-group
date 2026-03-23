@@ -1,0 +1,306 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: "Shea Butter Grades Explained: Unrefined vs Refined vs Organic",
+  description: "Complete guide to shea butter grades, quality parameters, certifications, and applications. Compare Grade A unrefined, refined, ultra-refined, and organic shea butter.",
+  author: { "@type": "Organization", name: "Origin Direct Group" },
+  publisher: { "@type": "Organization", name: "Origin Direct Group", logo: { "@type": "ImageObject", url: "https://origindirectgroup.com/logo.png" } },
+  datePublished: "2026-03-23",
+  dateModified: "2026-03-23",
+  mainEntityOfPage: "https://origindirectgroup.com/blog/shea-butter-grades-explained",
+  image: "https://origindirectgroup.com/images/blog/shea-butter-grades.jpg",
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://origindirectgroup.com/" },
+    { "@type": "ListItem", position: 2, name: "Blog", item: "https://origindirectgroup.com/blog" },
+    { "@type": "ListItem", position: 3, name: "Shea Butter Grades Explained", item: "https://origindirectgroup.com/blog/shea-butter-grades-explained" },
+  ],
+};
+---
+
+<Layout
+  title="Shea Butter Grades Explained: Unrefined vs Refined vs Organic | Origin Direct Group"
+  description="Complete guide to shea butter grades, quality parameters, certifications, and applications. Compare Grade A unrefined, refined, ultra-refined, and organic shea butter for cosmetics, food, and pharmaceuticals."
+  structuredData={[articleSchema, breadcrumbSchema]}
+>
+  <!-- Breadcrumbs -->
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <nav class="flex text-sm text-gray-500">
+      <a href="/" class="hover:text-brand-700">Home</a>
+      <span class="mx-2">/</span>
+      <a href="/blog" class="hover:text-brand-700">Blog</a>
+      <span class="mx-2">/</span>
+      <span class="text-gray-900">Shea Butter Grades Explained</span>
+    </nav>
+  </div>
+
+  <!-- Hero -->
+  <section class="relative py-20 sm:py-28 bg-gradient-to-br from-brand-900 via-brand-800 to-earth-800 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(196,154,42,0.3),transparent_70%)]"></div>
+    </div>
+    <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <span class="inline-block px-4 py-1.5 bg-amber-500/20 text-amber-300 text-sm font-semibold rounded-full mb-6 border border-amber-500/30">Product Guide</span>
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">Shea Butter Grades Explained: Unrefined vs Refined vs Organic</h1>
+      <p class="text-lg text-brand-200 max-w-2xl mx-auto">
+        A comprehensive breakdown of shea butter classifications, quality parameters, and which grade suits your application.
+      </p>
+      <div class="mt-6 flex items-center justify-center gap-4 text-sm text-brand-300">
+        <span>March 23, 2026</span>
+        <span class="w-1 h-1 rounded-full bg-brand-500"></span>
+        <span>10 min read</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Article Content -->
+  <article class="py-16 md:py-20 bg-white">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="prose prose-lg text-gray-700 max-w-none">
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">Understanding the Shea Butter Grading System</h2>
+        <p>
+          Shea butter is classified into six grades (A through F) based on its level of processing and the resulting quality characteristics. This system, developed by the American Shea Butter Institute, is widely used across the cosmetics, food, and pharmaceutical industries. However, in B2B trade, the practical distinction comes down to four commercial categories: unrefined, refined, ultra-refined, and organic certified.
+        </p>
+        <p>
+          The grade determines everything from the butter's color and scent to its bioactive content and price point. Choosing the wrong grade for your application is one of the most common mistakes new buyers make, and it can result in formulation failures, regulatory issues, or unnecessary cost.
+        </p>
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">Grade-by-Grade Breakdown</h2>
+
+        <h3 class="text-xl font-semibold text-brand-800 mt-8 mb-4">Grade A - Unrefined (Raw)</h3>
+        <p>
+          Grade A shea butter is extracted using traditional methods (hand-kneaded or mechanical cold press) without chemical solvents. It retains its natural yellow to ivory color, nutty aroma, and full complement of bioactive compounds including vitamins A, E, and F, allantoin, and cinnamic acid.
+        </p>
+        <p>
+          This is the premium grade for artisanal cosmetics, natural skincare lines, and products marketed as "raw" or "traditional." Its Free Fatty Acid (FFA) content typically ranges from 1% to 3%, and it has the highest concentration of unsaponifiable matter (6-17%), which is the fraction responsible for shea butter's moisturizing and anti-inflammatory properties.
+        </p>
+
+        <h3 class="text-xl font-semibold text-brand-800 mt-8 mb-4">Grade B - Refined</h3>
+        <p>
+          Refined shea butter has been processed to remove color, odor, and impurities. The refining process typically involves degumming, neutralization, bleaching, and deodorization. The result is a white, odorless butter that integrates easily into industrial cosmetic formulations without affecting the product's fragrance profile.
+        </p>
+        <p>
+          Refining reduces the unsaponifiable matter to around 3-8%, meaning some bioactive compounds are lost. However, the fatty acid profile remains largely intact, so the moisturizing properties are preserved. FFA drops below 1%, often to 0.5% or less. This is the workhorse grade for large-scale cosmetic manufacturers.
+        </p>
+
+        <h3 class="text-xl font-semibold text-brand-800 mt-8 mb-4">Grade C - Ultra-Refined (High Extraction)</h3>
+        <p>
+          Grade C butter is extracted using hexane or other chemical solvents, then extensively refined. It has minimal bioactive content and is primarily valued for its fatty acid composition. This grade is used in food manufacturing - particularly as a cocoa butter equivalent (CBE) in chocolate production - and in some pharmaceutical applications where a neutral carrier fat is needed.
+        </p>
+
+        <h3 class="text-xl font-semibold text-brand-800 mt-8 mb-4">Grades D, E, and F</h3>
+        <p>
+          These lower grades have high FFA content (above 8%) and significant impurities. They are used for soap manufacturing, industrial lubricants, and non-cosmetic applications. Most reputable B2B suppliers do not trade in these grades for cosmetic or food use.
+        </p>
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">Detailed Comparison Table</h2>
+        <div class="overflow-x-auto rounded-xl border border-gray-200 shadow-sm my-8">
+          <table class="w-full text-left text-sm">
+            <thead>
+              <tr class="bg-brand-800 text-white">
+                <th class="px-4 py-4 font-semibold">Parameter</th>
+                <th class="px-4 py-4 font-semibold">Grade A (Unrefined)</th>
+                <th class="px-4 py-4 font-semibold">Grade B (Refined)</th>
+                <th class="px-4 py-4 font-semibold">Grade C (Ultra-Refined)</th>
+                <th class="px-4 py-4 font-semibold">Organic Certified</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100">
+              <tr class="bg-white">
+                <td class="px-4 py-3 font-medium text-gray-900">FFA (%)</td>
+                <td class="px-4 py-3 text-gray-700">1 - 3%</td>
+                <td class="px-4 py-3 text-gray-700">&lt; 1%</td>
+                <td class="px-4 py-3 text-gray-700">&lt; 0.5%</td>
+                <td class="px-4 py-3 text-gray-700">&lt; 1%</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="px-4 py-3 font-medium text-gray-900">Moisture (%)</td>
+                <td class="px-4 py-3 text-gray-700">&lt; 0.2%</td>
+                <td class="px-4 py-3 text-gray-700">&lt; 0.05%</td>
+                <td class="px-4 py-3 text-gray-700">&lt; 0.02%</td>
+                <td class="px-4 py-3 text-gray-700">&lt; 0.05%</td>
+              </tr>
+              <tr class="bg-white">
+                <td class="px-4 py-3 font-medium text-gray-900">Color</td>
+                <td class="px-4 py-3 text-gray-700">Yellow to ivory</td>
+                <td class="px-4 py-3 text-gray-700">White</td>
+                <td class="px-4 py-3 text-gray-700">White</td>
+                <td class="px-4 py-3 text-gray-700">Yellow to cream</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="px-4 py-3 font-medium text-gray-900">Odor</td>
+                <td class="px-4 py-3 text-gray-700">Nutty, smoky</td>
+                <td class="px-4 py-3 text-gray-700">Odorless</td>
+                <td class="px-4 py-3 text-gray-700">Odorless</td>
+                <td class="px-4 py-3 text-gray-700">Mild, natural</td>
+              </tr>
+              <tr class="bg-white">
+                <td class="px-4 py-3 font-medium text-gray-900">Melting Point</td>
+                <td class="px-4 py-3 text-gray-700">33 - 42&deg;C</td>
+                <td class="px-4 py-3 text-gray-700">33 - 42&deg;C</td>
+                <td class="px-4 py-3 text-gray-700">33 - 40&deg;C</td>
+                <td class="px-4 py-3 text-gray-700">33 - 42&deg;C</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="px-4 py-3 font-medium text-gray-900">Unsaponifiables</td>
+                <td class="px-4 py-3 text-gray-700">6 - 17%</td>
+                <td class="px-4 py-3 text-gray-700">3 - 8%</td>
+                <td class="px-4 py-3 text-gray-700">2 - 5%</td>
+                <td class="px-4 py-3 text-gray-700">6 - 17%</td>
+              </tr>
+              <tr class="bg-white">
+                <td class="px-4 py-3 font-medium text-gray-900">Peroxide Value</td>
+                <td class="px-4 py-3 text-gray-700">&lt; 15 meq/kg</td>
+                <td class="px-4 py-3 text-gray-700">&lt; 10 meq/kg</td>
+                <td class="px-4 py-3 text-gray-700">&lt; 5 meq/kg</td>
+                <td class="px-4 py-3 text-gray-700">&lt; 10 meq/kg</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="px-4 py-3 font-medium text-gray-900">Price Range (FOB)</td>
+                <td class="px-4 py-3 text-gray-700">$2,500 - 3,600/MT</td>
+                <td class="px-4 py-3 text-gray-700">$3,000 - 4,200/MT</td>
+                <td class="px-4 py-3 text-gray-700">$2,800 - 3,800/MT</td>
+                <td class="px-4 py-3 text-gray-700">$3,500 - 5,000/MT</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">Which Grade for Which Application?</h2>
+        <div class="overflow-x-auto rounded-xl border border-gray-200 shadow-sm my-8">
+          <table class="w-full text-left text-sm">
+            <thead>
+              <tr class="bg-brand-800 text-white">
+                <th class="px-6 py-4 font-semibold">Application</th>
+                <th class="px-6 py-4 font-semibold">Recommended Grade</th>
+                <th class="px-6 py-4 font-semibold">Why</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100">
+              <tr class="bg-white">
+                <td class="px-6 py-3 font-medium text-gray-900">Premium skincare / natural cosmetics</td>
+                <td class="px-6 py-3 text-gray-700">Grade A Unrefined or Organic</td>
+                <td class="px-6 py-3 text-gray-700">Maximum bioactive content, "raw" marketing appeal</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="px-6 py-3 font-medium text-gray-900">Industrial cosmetic formulations</td>
+                <td class="px-6 py-3 text-gray-700">Grade B Refined</td>
+                <td class="px-6 py-3 text-gray-700">Neutral color and odor, consistent batch-to-batch</td>
+              </tr>
+              <tr class="bg-white">
+                <td class="px-6 py-3 font-medium text-gray-900">Chocolate / food manufacturing</td>
+                <td class="px-6 py-3 text-gray-700">Grade C Ultra-Refined (Stearin fraction)</td>
+                <td class="px-6 py-3 text-gray-700">Food-grade, neutral flavor, CBE applications</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="px-6 py-3 font-medium text-gray-900">Pharmaceutical (ointments, suppositories)</td>
+                <td class="px-6 py-3 text-gray-700">Grade B Refined</td>
+                <td class="px-6 py-3 text-gray-700">Low FFA, predictable melting behavior, Pharmacopoeia compliant</td>
+              </tr>
+              <tr class="bg-white">
+                <td class="px-6 py-3 font-medium text-gray-900">Hair care products</td>
+                <td class="px-6 py-3 text-gray-700">Grade A or Shea Olein</td>
+                <td class="px-6 py-3 text-gray-700">High unsaponifiables for conditioning, olein for liquid formats</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="px-6 py-3 font-medium text-gray-900">Soap manufacturing</td>
+                <td class="px-6 py-3 text-gray-700">Grade A or B</td>
+                <td class="px-6 py-3 text-gray-700">Good saponification value, cost-effective at scale</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">Certifications Explained</h2>
+        <p>
+          Certifications add cost but open up premium market segments. Here is what each major certification means for shea butter:
+        </p>
+
+        <h3 class="text-xl font-semibold text-brand-800 mt-8 mb-4">COSMOS / ECOCERT</h3>
+        <p>
+          The COSMOS standard (Cosmetics Organic and Natural Standard) is the dominant certification for natural and organic cosmetics in Europe. ECOCERT is one of the certifying bodies that audits against the COSMOS standard. For shea butter, COSMOS certification requires that the entire supply chain - from nut collection through processing and packaging - meets organic standards. No synthetic solvents, no chemical refining agents, and full traceability. The certification process typically takes 6-12 months and costs $5,000-15,000 annually for the processor.
+        </p>
+
+        <h3 class="text-xl font-semibold text-brand-800 mt-8 mb-4">USDA Organic / EU Organic</h3>
+        <p>
+          These certifications confirm that the shea nuts were collected from wild trees in areas that have not been treated with prohibited substances for at least three years, and that processing meets organic standards. Since shea trees are wild-harvested (not cultivated), achieving organic certification is more straightforward than for farmed crops, but traceability requirements are still rigorous.
+        </p>
+
+        <h3 class="text-xl font-semibold text-brand-800 mt-8 mb-4">Fair Trade</h3>
+        <p>
+          Fair Trade certification guarantees a minimum price paid to the women's cooperatives that collect and process shea nuts. The Fair Trade premium is typically $30-50 per metric ton above market price. This certification is increasingly requested by European and American cosmetic brands focused on ethical sourcing.
+        </p>
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">How to Evaluate Shea Butter Quality</h2>
+        <p>
+          When you receive a Certificate of Analysis (CoA) from a potential supplier, here are the key parameters to check:
+        </p>
+        <ul class="list-disc pl-6 space-y-3">
+          <li><strong>Free Fatty Acid (FFA)</strong> - The single most important quality indicator. For cosmetic grade, demand FFA below 1%. Higher FFA indicates poor nut handling, delayed processing, or improper storage. FFA above 3% is unsuitable for cosmetics.</li>
+          <li><strong>Peroxide Value (PV)</strong> - Measures oxidation. Should be below 10 meq/kg for cosmetic use. High PV means the butter has been exposed to heat, light, or air during storage.</li>
+          <li><strong>Moisture</strong> - Must be below 0.05% for refined, below 0.2% for unrefined. Excess moisture accelerates rancidity and promotes microbial growth.</li>
+          <li><strong>Iodine Value</strong> - Indicates degree of unsaturation. Typical range is 52-66 g I2/100g. Values outside this range may indicate adulteration with other oils.</li>
+          <li><strong>Unsaponifiable Matter</strong> - The "magic" fraction. Higher is better for cosmetic applications (6-17% for quality shea butter). If a supplier's CoA shows below 5%, the butter has been over-refined.</li>
+          <li><strong>Heavy Metals</strong> - Lead, arsenic, cadmium, and mercury should all be undetectable or below EU cosmetic regulation limits.</li>
+          <li><strong>Microbiology</strong> - Total plate count, yeast and mold, E. coli, and Salmonella. All must comply with ISO 22716 (GMP for cosmetics).</li>
+        </ul>
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">Pricing Factors</h2>
+        <p>
+          Shea butter pricing is influenced by several factors beyond grade:
+        </p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li><strong>Seasonality</strong> - Shea nut harvest runs June through September. Prices are typically lowest from October through December (post-harvest) and peak in April through June (pre-harvest).</li>
+          <li><strong>Volume</strong> - Significant discounts apply at 5+ FCL volumes. A single FCL (18-20 MT) buyer pays 10-15% more per MT than a buyer committing to 100 MT/year.</li>
+          <li><strong>Certification premiums</strong> - Organic certification adds $400-800/MT. Fair Trade adds $200-400/MT. Combined organic + Fair Trade can add $800-1,200/MT.</li>
+          <li><strong>Packaging</strong> - Bulk flexi-tanks are cheapest. 25kg cartons add approximately $80-120/MT for packaging costs.</li>
+          <li><strong>Incoterms</strong> - FOB Tema (Ghana) is standard. CIF to Rotterdam adds approximately $120-180/MT for freight and insurance.</li>
+        </ul>
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">Why Source Through Origin Direct?</h2>
+        <p>
+          We work directly with cooperatives and processing facilities across Ghana's Northern, Upper East, and Upper West regions - the heart of the shea belt. Our <a href="/products/shea-butter" class="text-brand-700 underline hover:text-brand-900">shea butter supply chain</a> offers:
+        </p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>All five commercial grades available year-round</li>
+          <li>COSMOS, ECOCERT, USDA Organic, and EU Organic certifications</li>
+          <li>Full CoA with every shipment, tested by independent third-party laboratories</li>
+          <li>Flexible packaging from 25kg cartons to flexi-tanks</li>
+          <li>Direct pricing - no intermediaries between you and the source</li>
+          <li>Related products: <a href="/products/shea-nuts" class="text-brand-700 underline hover:text-brand-900">shea nuts</a>, <a href="/products/african-black-soap" class="text-brand-700 underline hover:text-brand-900">African black soap</a></li>
+        </ul>
+
+      </div>
+    </div>
+  </article>
+
+  <!-- CTA -->
+  <section class="py-20 md:py-24 bg-gradient-to-br from-brand-900 to-earth-800">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">
+        Ready to Source Premium Shea Butter?
+      </h2>
+      <p class="text-brand-200 mb-8 max-w-xl mx-auto">
+        Tell us your grade, volume, and certification requirements. We will send you a competitive quote with a sample CoA within 24 hours.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/quote" class="inline-flex items-center justify-center px-8 py-4 bg-gold hover:bg-gold-dark text-white font-bold rounded-lg transition-colors shadow-lg text-lg">
+          Request a Quote
+          <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+        <a href="/products/shea-butter" class="inline-flex items-center justify-center px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-lg transition-colors border border-white/20">
+          View Shea Butter Products
+        </a>
+      </div>
+    </div>
+  </section>
+
+</Layout>

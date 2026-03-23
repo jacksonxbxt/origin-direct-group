@@ -1,0 +1,157 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import QuoteForm from '../../components/QuoteForm.astro';
+
+const defined_title = "How to Import Cocoa to the EU - EUDR Compliance Guide";
+const defined_description = "Complete guide to importing cocoa into the European Union under the new EU Deforestation Regulation (EUDR). Documentation, compliance requirements, HS codes, and logistics from West Africa.";
+
+const breadcrumbItems = [
+  { label: "Guides", href: "/guides" },
+  { label: "Import Cocoa to EU" },
+];
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://origindirectgroup.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://origindirectgroup.com/guides" },
+    { "@type": "ListItem", "position": 3, "name": "Import Cocoa to EU" },
+  ],
+};
+
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to Import Cocoa to the EU with EUDR Compliance",
+  "description": "Step-by-step guide for importing cocoa beans and products into the European Union, including EUDR deforestation-free compliance.",
+  "step": [
+    { "@type": "HowToStep", "position": 1, "name": "Find a verified cocoa supplier", "text": "Source from EUDR-compliant producers in Ghana or Ivory Coast with GPS-level traceability." },
+    { "@type": "HowToStep", "position": 2, "name": "Request samples and test quality", "text": "Verify bean grade, moisture, FFA, mold count, and cadmium levels against EU limits." },
+    { "@type": "HowToStep", "position": 3, "name": "Agree on terms and EUDR due diligence", "text": "Negotiate pricing, Incoterms, and ensure the supplier can provide EUDR-required geolocation data." },
+    { "@type": "HowToStep", "position": 4, "name": "Supplier prepares documentation", "text": "Obtain phytosanitary certificate, EUR.1, bill of lading, and EUDR due diligence statement." },
+    { "@type": "HowToStep", "position": 5, "name": "Arrange shipping to EU port", "text": "Ship from Tema or Abidjan to Rotterdam, Hamburg, or Antwerp. Transit 12-18 days." },
+    { "@type": "HowToStep", "position": 6, "name": "Clear EU customs", "text": "Submit EUDR due diligence statement, customs declaration, and pass potential food safety checks." },
+    { "@type": "HowToStep", "position": 7, "name": "Receive and inspect goods", "text": "Inspect at warehouse, verify against contract, and complete EUDR traceability records." },
+  ],
+};
+---
+
+<Layout title={defined_title} description={defined_description} structuredData={[breadcrumbSchema, howToSchema]}>
+  <section class="py-12 md:py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-6">
+      <Breadcrumbs items={breadcrumbItems} />
+
+      <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+        How to Import Cocoa to the EU - EUDR Compliance Guide
+      </h1>
+
+      <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+        Europe is the world's largest cocoa-processing region, grinding over 1.5 million metric tons annually. The Netherlands, Germany, and Belgium are the top destinations. However, the regulatory landscape changed significantly with the EU Deforestation Regulation (EUDR), which came into force on June 29, 2023, with compliance required from December 30, 2024 for large operators. This guide covers the full import process with a focus on EUDR compliance, which is now the single biggest challenge for EU cocoa importers.
+      </p>
+
+      <div class="prose prose-lg max-w-none text-gray-700">
+
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Step-by-Step Import Process</h2>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Step 1: Find a Verified, EUDR-Compliant Supplier</h3>
+        <p>
+          Under EUDR, you must prove that cocoa was not produced on land deforested after December 31, 2020, and that production complied with the laws of the producing country. This means you need a supplier who can provide GPS coordinates of the farms or plots where the cocoa was grown. In Ghana, look for suppliers working through the Cocoa Management System (CMS) with COCOBOD traceability. In Ivory Coast, the CCC (Conseil du Cafe-Cacao) is rolling out similar traceability systems. Origin Direct works exclusively with cooperatives and licensed buying companies that maintain farm-level GPS polygon data, making EUDR compliance straightforward.
+        </p>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Step 2: Request Samples and Test Quality</h3>
+        <p>
+          EU quality requirements for cocoa are strict, particularly on cadmium. Since 2019, Regulation (EU) 488/2014 sets maximum cadmium levels: 0.10 mg/kg for milk chocolate (&gt;30% cocoa), 0.30 mg/kg for cocoa powder, 0.80 mg/kg for chocolate with &ge;50% cocoa solids. West African cocoa generally has lower cadmium than South American origins, which is an advantage. Test samples for: bean count (80-100 beans/100g for Grade I), moisture (max 7.5%), FFA (max 1.75%), mold (max 3%), cadmium and lead levels, ochratoxin A (max 15 mcg/kg for raw beans under EU Reg. 2023/915), and pesticide residues.
+        </p>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Step 3: Agree on Terms and EUDR Due Diligence</h3>
+        <p>
+          Standard Incoterms for EU cocoa imports are FOB Tema/Abidjan or CIF Rotterdam/Hamburg/Antwerp. Pricing is referenced against the ICE London Cocoa futures (LCC). Payment is typically via irrevocable L/C at sight. Critically, your contract must include EUDR compliance clauses requiring the supplier to provide: GPS coordinates (polygons for plots &gt;4 hectares, single points for smaller plots), date of production, proof of legal compliance in the country of production, and a commitment that no deforestation occurred after the December 31, 2020 cutoff. Include contractual remedies for EUDR non-compliance.
+        </p>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Step 4: Supplier Prepares Documentation</h3>
+        <p>
+          Required documents include:
+        </p>
+        <ul>
+          <li><strong>Phytosanitary Certificate</strong> - Required by EU plant health regulations for raw cocoa beans.</li>
+          <li><strong>EUR.1 Movement Certificate</strong> - If claiming preferential duty rate under the EU-Ghana Economic Partnership Agreement (EPA) or EU-ECOWAS EPA.</li>
+          <li><strong>Certificate of Origin</strong> - Standard Form A for GSP preferences.</li>
+          <li><strong>Commercial Invoice and Packing List</strong> - Standard trade documents.</li>
+          <li><strong>Bill of Lading</strong> - Clean, on-board ocean B/L.</li>
+          <li><strong>Quality Certificate</strong> - From COCOBOD QCC or independent surveyor (SGS, Bureau Veritas).</li>
+          <li><strong>EUDR Geolocation Data Package</strong> - GPS coordinates of production plots, production dates, and supplier declarations on deforestation-free status.</li>
+          <li><strong>Organic/Fairtrade Certificate</strong> - If applicable. Must be issued by an EU-recognized certification body.</li>
+        </ul>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Step 5: Arrange Shipping</h3>
+        <p>
+          The main EU cocoa ports are Port of Amsterdam (the world's largest cocoa port), Port of Hamburg, and Port of Antwerp-Bruges. Shipping from Tema (Ghana) to Amsterdam/Rotterdam takes 12-15 days. From Abidjan to Amsterdam, it is 10-13 days. Cocoa ships in 20ft dry containers (18-20 MT) in jute or sisal bags on pallets, or in bulk mega-bags for large volumes. Container condition is critical: containers must be clean, dry, odor-free, and ideally lined to prevent condensation damage. For bulk cocoa, the Port of Amsterdam has specialized cocoa storage and handling facilities.
+        </p>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Step 6: Clear EU Customs</h3>
+        <p>
+          EU customs clearance for cocoa involves:
+        </p>
+        <ul>
+          <li><strong>EUDR Due Diligence Statement</strong> - Filed through the EU Information System (the EUDR IT platform). You must submit your due diligence statement with a unique reference number before or at the time of placing the cocoa on the EU market. This includes geolocation data, risk assessment, and risk mitigation measures.</li>
+          <li><strong>Customs Declaration (SAD/Import Declaration)</strong> - Filed electronically through the national customs system (e.g., AGS in the Netherlands, ATLAS in Germany).</li>
+          <li><strong>RASFF/Food Safety Checks</strong> - The EU Rapid Alert System for Food and Feed may trigger checks. Cocoa from certain origins may face increased border controls for pesticides, mycotoxins, or cadmium.</li>
+          <li><strong>Import Duty</strong> - Raw cocoa beans enter at 0% under the EPA/GSP+ for Ghana and Ivory Coast. Without preference, the MFN rate is 0% for raw beans anyway (HS 1801).</li>
+          <li><strong>VAT</strong> - Import VAT applies at the rate of the destination country (21% NL, 19% DE, 21% BE), reclaimable for VAT-registered businesses.</li>
+        </ul>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Step 7: Receive and Inspect</h3>
+        <p>
+          Upon customs release, arrange transport to your warehouse or processing facility. Inspect against contract specifications, pull samples for independent lab verification, and document everything. Under EUDR, you must maintain your due diligence records for at least 5 years. Keep all traceability documentation, geolocation data, and risk assessments on file and available for inspection by competent authorities.
+        </p>
+
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Key Documents Required</h2>
+        <ul>
+          <li>EUDR Due Diligence Statement (with reference number)</li>
+          <li>Geolocation data (GPS coordinates of production plots)</li>
+          <li>Customs Import Declaration</li>
+          <li>Commercial Invoice and Packing List</li>
+          <li>Bill of Lading</li>
+          <li>EUR.1 or Certificate of Origin</li>
+          <li>Phytosanitary Certificate</li>
+          <li>Quality Certificate</li>
+          <li>EORI Number (Economic Operators Registration and Identification)</li>
+        </ul>
+
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">HS Codes and Duty Rates</h2>
+        <ul>
+          <li><strong>1801 00 00</strong> - Cocoa beans, whole or broken, raw or roasted. Duty: 0% (MFN and EPA).</li>
+          <li><strong>1802 00 00</strong> - Cocoa shells, husks, skins, and waste. Duty: 0%.</li>
+          <li><strong>1803 10 00</strong> - Cocoa paste, not defatted. Duty: 9.6% (MFN), 0% under EPA.</li>
+          <li><strong>1803 20 00</strong> - Cocoa paste, wholly or partly defatted. Duty: 9.6% (MFN), 0% under EPA.</li>
+          <li><strong>1804 00 00</strong> - Cocoa butter. Duty: 7.7% (MFN), 0% under EPA.</li>
+          <li><strong>1805 00 00</strong> - Cocoa powder, no sugar. Duty: 8% (MFN), 0% under EPA.</li>
+        </ul>
+        <p>
+          For the full HS code reference, see our <a href="/resources/hs-codes" class="text-brand-700 underline hover:text-brand-600">HS Code Directory</a>.
+        </p>
+
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Common Pitfalls to Watch Out For</h2>
+        <ul>
+          <li><strong>EUDR non-compliance</strong> - Penalties are severe: fines up to 4% of annual EU-wide turnover, confiscation of goods, and potential market exclusion. Do not underestimate this.</li>
+          <li><strong>Incomplete geolocation data</strong> - If your supplier cannot provide GPS coordinates of production plots, the cocoa cannot legally enter the EU market. Verify this before signing contracts.</li>
+          <li><strong>Cadmium levels</strong> - West African cocoa is generally low in cadmium, but always test. Batches that fail EU cadmium limits cannot be sold for human consumption.</li>
+          <li><strong>Ochratoxin A</strong> - Improper drying or storage can lead to mycotoxin contamination. EU limits are 15 mcg/kg for raw beans and 5 mcg/kg for retail cocoa powder.</li>
+          <li><strong>Missing EUR.1</strong> - Without the EUR.1 certificate, you lose the 0% preferential duty on processed cocoa products (paste, butter, powder). This can cost 7-10% of the shipment value.</li>
+          <li><strong>Country risk classification</strong> - The EU classifies countries as low, standard, or high risk under EUDR. Ghana and Ivory Coast are expected to be standard or high risk, meaning enhanced due diligence requirements.</li>
+        </ul>
+
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">How Origin Direct Makes This Easy</h2>
+        <p>
+          EUDR compliance is the biggest challenge facing EU cocoa importers today. Origin Direct has invested heavily in traceability infrastructure across our West African supply chain. Every cocoa lot we supply comes with complete GPS polygon data, farm-level production records, and verified deforestation-free status. We prepare your EUDR data package as part of our standard service, so you can file your due diligence statement with confidence. Combined with our quality control at origin, documentation management, and freight coordination, we handle the complexity so you can focus on your business.
+        </p>
+      </div>
+
+      <div class="mt-12">
+        <QuoteForm productName="Cocoa" />
+      </div>
+    </div>
+  </section>
+</Layout>

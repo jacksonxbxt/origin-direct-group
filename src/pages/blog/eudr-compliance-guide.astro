@@ -1,0 +1,327 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: "EUDR Compliance Guide for Cocoa Importers (2026)",
+  description: "Complete guide to EU Deforestation Regulation compliance for cocoa importers. Deadlines, documentation requirements, geolocation data, and step-by-step checklist.",
+  author: { "@type": "Organization", name: "Origin Direct Group" },
+  publisher: { "@type": "Organization", name: "Origin Direct Group", logo: { "@type": "ImageObject", url: "https://origindirectgroup.com/logo.png" } },
+  datePublished: "2026-03-23",
+  dateModified: "2026-03-23",
+  mainEntityOfPage: "https://origindirectgroup.com/blog/eudr-compliance-guide",
+  image: "https://origindirectgroup.com/images/blog/eudr-compliance.jpg",
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://origindirectgroup.com/" },
+    { "@type": "ListItem", position: 2, name: "Blog", item: "https://origindirectgroup.com/blog" },
+    { "@type": "ListItem", position: 3, name: "EUDR Compliance Guide", item: "https://origindirectgroup.com/blog/eudr-compliance-guide" },
+  ],
+};
+---
+
+<Layout
+  title="EUDR Compliance Guide for Cocoa Importers (2026) | Origin Direct Group"
+  description="Complete guide to EU Deforestation Regulation compliance for cocoa importers. Deadlines, documentation requirements, geolocation data, and step-by-step checklist."
+  structuredData={[articleSchema, breadcrumbSchema]}
+>
+  <!-- Breadcrumbs -->
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <nav class="flex text-sm text-gray-500">
+      <a href="/" class="hover:text-brand-700">Home</a>
+      <span class="mx-2">/</span>
+      <a href="/blog" class="hover:text-brand-700">Blog</a>
+      <span class="mx-2">/</span>
+      <span class="text-gray-900">EUDR Compliance Guide</span>
+    </nav>
+  </div>
+
+  <!-- Hero -->
+  <section class="relative py-20 sm:py-28 bg-gradient-to-br from-brand-900 via-brand-800 to-earth-800 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(196,154,42,0.3),transparent_70%)]"></div>
+    </div>
+    <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <span class="inline-block px-4 py-1.5 bg-amber-500/20 text-amber-300 text-sm font-semibold rounded-full mb-6 border border-amber-500/30">Compliance</span>
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">EUDR Compliance Guide for Cocoa Importers (2026)</h1>
+      <p class="text-lg text-brand-200 max-w-2xl mx-auto">
+        Everything you need to know about the EU Deforestation Regulation and what it means for your cocoa supply chain.
+      </p>
+      <div class="mt-6 flex items-center justify-center gap-4 text-sm text-brand-300">
+        <span>March 23, 2026</span>
+        <span class="w-1 h-1 rounded-full bg-brand-500"></span>
+        <span>12 min read</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Article Content -->
+  <article class="py-16 md:py-20 bg-white">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="prose prose-lg text-gray-700 max-w-none">
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">What Is the EUDR?</h2>
+        <p>
+          The EU Deforestation Regulation (EUDR), formally Regulation (EU) 2023/1115, is the European Union's landmark legislation aimed at eliminating deforestation from supply chains entering the EU market. It replaces the older EU Timber Regulation and significantly expands scope to cover seven commodity groups that account for the majority of global deforestation.
+        </p>
+        <p>
+          The regulation was adopted on June 29, 2023, and enters into force in two phases:
+        </p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li><strong>December 30, 2025</strong> - Large enterprises and traders must comply</li>
+          <li><strong>June 30, 2026</strong> - Small and medium enterprises (SMEs) must comply</li>
+        </ul>
+        <p>
+          For cocoa importers, this regulation is not optional. Any operator placing cocoa or cocoa-derived products on the EU market - or exporting them from the EU - must demonstrate that their products are deforestation-free and legal.
+        </p>
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">Which Commodities Are Covered?</h2>
+        <p>
+          The EUDR covers seven commodity categories and their derived products. If your business touches any of these, compliance is mandatory for EU market access.
+        </p>
+
+        <div class="overflow-x-auto rounded-xl border border-gray-200 shadow-sm my-8">
+          <table class="w-full text-left text-sm">
+            <thead>
+              <tr class="bg-brand-800 text-white">
+                <th class="px-6 py-4 font-semibold">Commodity</th>
+                <th class="px-6 py-4 font-semibold">Examples of Derived Products</th>
+                <th class="px-6 py-4 font-semibold">Key Exporting Regions</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100">
+              <tr class="bg-white">
+                <td class="px-6 py-3 font-medium text-gray-900">Cocoa</td>
+                <td class="px-6 py-3 text-gray-700">Cocoa beans, butter, powder, chocolate</td>
+                <td class="px-6 py-3 text-gray-700">Ghana, Ivory Coast, Nigeria</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="px-6 py-3 font-medium text-gray-900">Coffee</td>
+                <td class="px-6 py-3 text-gray-700">Green beans, roasted, extracts</td>
+                <td class="px-6 py-3 text-gray-700">Brazil, Vietnam, Colombia</td>
+              </tr>
+              <tr class="bg-white">
+                <td class="px-6 py-3 font-medium text-gray-900">Soy</td>
+                <td class="px-6 py-3 text-gray-700">Soybeans, soy oil, soy meal</td>
+                <td class="px-6 py-3 text-gray-700">Brazil, Argentina, Paraguay</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="px-6 py-3 font-medium text-gray-900">Palm oil</td>
+                <td class="px-6 py-3 text-gray-700">Crude palm oil, palm kernel oil, derivatives</td>
+                <td class="px-6 py-3 text-gray-700">Indonesia, Malaysia</td>
+              </tr>
+              <tr class="bg-white">
+                <td class="px-6 py-3 font-medium text-gray-900">Rubber</td>
+                <td class="px-6 py-3 text-gray-700">Natural rubber, tires, latex</td>
+                <td class="px-6 py-3 text-gray-700">Thailand, Indonesia, Ivory Coast</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="px-6 py-3 font-medium text-gray-900">Cattle</td>
+                <td class="px-6 py-3 text-gray-700">Beef, leather, hides</td>
+                <td class="px-6 py-3 text-gray-700">Brazil, Argentina</td>
+              </tr>
+              <tr class="bg-white">
+                <td class="px-6 py-3 font-medium text-gray-900">Wood</td>
+                <td class="px-6 py-3 text-gray-700">Timber, pulp, paper, furniture</td>
+                <td class="px-6 py-3 text-gray-700">Brazil, Indonesia, Central Africa</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>
+          For cocoa specifically, the regulation covers everything from raw cocoa beans (HS 1801) to cocoa paste (HS 1803), cocoa butter (HS 1804), cocoa powder (HS 1805), and finished chocolate products (HS 1806). If it contains cocoa, EUDR applies.
+        </p>
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">What Documentation Is Required?</h2>
+        <p>
+          The EUDR's documentation requirements are substantially more demanding than any previous regulation. Here is what operators must collect and submit:
+        </p>
+
+        <h3 class="text-xl font-semibold text-brand-800 mt-8 mb-4">1. Geolocation Data</h3>
+        <p>
+          This is the most significant requirement. For every shipment of cocoa, you must provide GPS coordinates of the farm plots where the cocoa was grown. For plots larger than 4 hectares, you need polygon maps (the full boundary of the plot), not just a single coordinate point. For plots under 4 hectares, a single latitude/longitude point is accepted.
+        </p>
+        <p>
+          In practice, for Ghanaian cocoa, this means traceability down to approximately 800,000 individual smallholder farms. The average Ghanaian cocoa farm is 2-3 hectares, so most will require single-point coordinates, but many larger farms will need full polygon mapping.
+        </p>
+
+        <h3 class="text-xl font-semibold text-brand-800 mt-8 mb-4">2. Due Diligence Statement</h3>
+        <p>
+          Before placing cocoa on the EU market, operators must submit a Due Diligence Statement (DDS) through the EU's Information System. This statement must include:
+        </p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>Product description and HS code</li>
+          <li>Country of production</li>
+          <li>Geolocation coordinates of all production plots</li>
+          <li>Quantity and supplier details</li>
+          <li>Confirmation that due diligence was conducted</li>
+          <li>Verification that the product is deforestation-free (benchmark date: December 31, 2020)</li>
+        </ul>
+
+        <h3 class="text-xl font-semibold text-brand-800 mt-8 mb-4">3. Risk Assessment</h3>
+        <p>
+          Operators must conduct a formal risk assessment considering:
+        </p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>The country risk rating assigned by the EU (standard, low, or high risk)</li>
+          <li>Prevalence of deforestation in the production area</li>
+          <li>Whether the country has adequate legal frameworks for forest protection</li>
+          <li>Track record of the supplier</li>
+          <li>Complexity of the supply chain</li>
+        </ul>
+        <p>
+          Ghana is currently classified as a "standard risk" country. This means enhanced due diligence is not mandatory, but operators still need the full documentation package. Countries classified as "high risk" require additional scrutiny, while "low risk" countries benefit from simplified procedures.
+        </p>
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">How It Affects Cocoa Buyers Specifically</h2>
+        <p>
+          Cocoa presents unique challenges under the EUDR because of West Africa's smallholder-dominated supply chain. Unlike soy or palm oil, where large plantations can be mapped relatively easily, cocoa in Ghana and Ivory Coast comes from millions of small farms, many of which have never been formally mapped.
+        </p>
+        <p>
+          Key challenges for cocoa importers include:
+        </p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li><strong>Volume of data</strong> - A single 20-foot container of cocoa (roughly 14.5 MT) can originate from 50-200 individual farms. A mid-size importer processing 1,000 MT/year might need coordinates for 5,000-15,000 farm plots.</li>
+          <li><strong>Data quality</strong> - Many farms in Ghana's cocoa belt have GPS coordinates collected by COCOBOD or certification programs, but accuracy varies. The EUDR requires coordinates accurate to at least four decimal places (roughly 11 meters).</li>
+          <li><strong>Traceability systems</strong> - Physical traceability from farm to port requires a robust chain of custody. Cocoa passes through purchasing clerks, licensed buying companies (LBCs), and sometimes aggregators before reaching the port.</li>
+          <li><strong>Cost implications</strong> - Industry estimates suggest EUDR compliance adds $50-150 per metric ton to cocoa sourcing costs, depending on the existing traceability infrastructure of the exporter.</li>
+        </ul>
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">How Origin Direct Group Ensures Compliance</h2>
+        <p>
+          We have invested heavily in traceability infrastructure across our <a href="/products/cocoa" class="text-brand-700 underline hover:text-brand-900">cocoa supply chain</a> in Ghana. Here is what we provide:
+        </p>
+
+        <div class="bg-brand-50 rounded-xl p-8 my-8 border border-brand-100">
+          <h3 class="text-lg font-semibold text-brand-800 mb-4">Our EUDR Compliance Package</h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {[
+              "GPS coordinates for every farm plot",
+              "Polygon maps for plots > 4 hectares",
+              "Digital chain of custody records",
+              "Pre-filled Due Diligence Statements",
+              "Satellite imagery verification",
+              "Farmer registration database access",
+              "Risk assessment documentation",
+              "Certificate of Origin with traceability",
+            ].map((item) => (
+              <div class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-brand-600 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                <span class="text-sm text-gray-800">{item}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <p>
+          Our team on the ground in Ghana works directly with cocoa-growing communities across the Ashanti, Western, and Brong Ahafo regions. We use mobile-based GPS collection tools deployed to purchasing clerks, ensuring coordinate data is captured at the point of first purchase. All farm coordinates are cross-referenced against the European Space Agency's forest cover data to verify the deforestation-free status before the cocoa enters our supply chain.
+        </p>
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">Step-by-Step Compliance Checklist for Importers</h2>
+        <p>
+          Whether you source cocoa through Origin Direct or another channel, here is a practical checklist to ensure you meet EUDR requirements:
+        </p>
+
+        <div class="space-y-4 my-8">
+          {[
+            { step: "1", title: "Classify your products", desc: "Identify all products in your portfolio that contain EUDR-covered commodities. Check HS codes 1801 through 1806 for cocoa products." },
+            { step: "2", title: "Map your supply chain", desc: "Document every tier of your supply chain from farm to your warehouse. Identify all intermediaries, processors, and traders." },
+            { step: "3", title: "Collect geolocation data", desc: "Obtain GPS coordinates or polygon maps for every farm plot that produces cocoa entering your supply chain. Request this from your supplier." },
+            { step: "4", title: "Verify deforestation-free status", desc: "Cross-check farm coordinates against satellite imagery to confirm no deforestation occurred after December 31, 2020. Tools like Global Forest Watch can assist." },
+            { step: "5", title: "Conduct risk assessment", desc: "Perform a documented risk assessment considering country risk classification, supplier history, and supply chain complexity." },
+            { step: "6", title: "Register in the EU Information System", desc: "Create your operator account in the EU's EUDR Information System. This is where you will submit Due Diligence Statements." },
+            { step: "7", title: "Submit Due Diligence Statement", desc: "Before each shipment enters the EU, submit your DDS with all required data. Keep the reference number - customs may request it." },
+            { step: "8", title: "Maintain records for 5 years", desc: "All documentation, geolocation data, risk assessments, and DDS records must be retained for a minimum of 5 years." },
+          ].map((item) => (
+            <div class="flex gap-4 bg-gray-50 rounded-lg p-5 border border-gray-200">
+              <div class="flex-shrink-0 w-8 h-8 bg-brand-700 text-white rounded-full flex items-center justify-center text-sm font-bold">{item.step}</div>
+              <div>
+                <h4 class="font-semibold text-gray-900 mb-1">{item.title}</h4>
+                <p class="text-sm text-gray-600">{item.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">Penalties for Non-Compliance</h2>
+        <p>
+          The EUDR includes significant penalties for operators who fail to comply:
+        </p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li><strong>Fines</strong> - Up to 4% of annual EU turnover, or a minimum proportionate fine set by each Member State</li>
+          <li><strong>Product confiscation</strong> - Non-compliant goods can be seized at the border</li>
+          <li><strong>Market exclusion</strong> - Repeat offenders can be temporarily or permanently barred from placing products on the EU market</li>
+          <li><strong>Revenue recovery</strong> - Authorities can recover revenue earned from non-compliant products</li>
+        </ul>
+        <p>
+          EU Member States are expected to inspect at least 9% of operators and 9% of the volume of each commodity for standard-risk countries, and higher percentages for high-risk countries.
+        </p>
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">Timeline Summary</h2>
+        <div class="overflow-x-auto rounded-xl border border-gray-200 shadow-sm my-8">
+          <table class="w-full text-left text-sm">
+            <thead>
+              <tr class="bg-brand-800 text-white">
+                <th class="px-6 py-4 font-semibold">Date</th>
+                <th class="px-6 py-4 font-semibold">Milestone</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100">
+              <tr class="bg-white">
+                <td class="px-6 py-3 font-medium text-gray-900">June 29, 2023</td>
+                <td class="px-6 py-3 text-gray-700">EUDR adopted and published</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="px-6 py-3 font-medium text-gray-900">December 30, 2024</td>
+                <td class="px-6 py-3 text-gray-700">Country benchmarking system published</td>
+              </tr>
+              <tr class="bg-white">
+                <td class="px-6 py-3 font-medium text-gray-900">December 30, 2025</td>
+                <td class="px-6 py-3 text-gray-700">Large enterprises must comply</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="px-6 py-3 font-medium text-gray-900">June 30, 2026</td>
+                <td class="px-6 py-3 text-gray-700">SMEs must comply</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>
+          If your business imports cocoa into the EU, compliance is not a future concern - it is a present requirement for large operators and an imminent one for SMEs. Starting your compliance journey now gives you time to collect data, resolve gaps, and test your systems before enforcement intensifies.
+        </p>
+
+      </div>
+    </div>
+  </article>
+
+  <!-- CTA -->
+  <section class="py-20 md:py-24 bg-gradient-to-br from-brand-900 to-earth-800">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">
+        Need EUDR-Compliant Cocoa?
+      </h2>
+      <p class="text-brand-200 mb-8 max-w-xl mx-auto">
+        Origin Direct provides full EUDR documentation with every cocoa shipment - geolocation data, chain of custody records, and pre-filled Due Diligence Statements.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/quote" class="inline-flex items-center justify-center px-8 py-4 bg-gold hover:bg-gold-dark text-white font-bold rounded-lg transition-colors shadow-lg text-lg">
+          Request a Quote
+          <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+        <a href="/products/cocoa" class="inline-flex items-center justify-center px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-lg transition-colors border border-white/20">
+          View Cocoa Products
+        </a>
+      </div>
+    </div>
+  </section>
+
+</Layout>
