@@ -90,25 +90,29 @@ const markets = [
   {
     region: "Europe",
     slug: "europe",
-    countries: ["Netherlands", "Germany", "UK", "France"],
+    featured: ["Netherlands", "Germany", "UK", "France", "Belgium", "Italy", "Spain", "Portugal", "Poland", "Czech Republic"],
+    moreCount: 17,
     icon: `<svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5a17.92 17.92 0 01-8.716-2.247m0 0A8.966 8.966 0 013 12c0-1.528.38-2.968 1.05-4.228" /></svg>`,
   },
   {
     region: "Americas",
     slug: "americas",
-    countries: ["USA", "Mexico", "Caribbean", "Brazil"],
+    featured: ["USA", "Canada", "Mexico", "Brazil", "Argentina", "Colombia", "Chile", "Jamaica", "Trinidad & Tobago", "Costa Rica"],
+    moreCount: 12,
     icon: `<svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5a17.92 17.92 0 01-8.716-2.247m0 0A8.966 8.966 0 013 12c0-1.528.38-2.968 1.05-4.228" /></svg>`,
   },
   {
-    region: "Middle East",
+    region: "Middle East & Africa",
     slug: "middle-east",
-    countries: ["UAE", "Kuwait", "Qatar", "Turkey"],
+    featured: ["UAE", "Saudi Arabia", "Qatar", "Kuwait", "Turkey", "South Africa", "Kenya", "Egypt", "Morocco", "Bahrain"],
+    moreCount: 8,
     icon: `<svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" /></svg>`,
   },
   {
-    region: "Asia",
+    region: "Asia & Pacific",
     slug: "asia",
-    countries: ["India", "Vietnam", "China", "Japan"],
+    featured: ["China", "Japan", "South Korea", "India", "Vietnam", "Indonesia", "Thailand", "Singapore", "Australia", "Malaysia"],
+    moreCount: 9,
     icon: `<svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6.115 5.19l.319 1.913A6 6 0 008.11 10.36L9.75 12l-.387.775c-.217.433-.132.956.21 1.298l1.348 1.348c.21.21.329.497.329.795v1.089c0 .426.24.815.622 1.006l.153.076c.433.217.956.132 1.298-.21l.723-.723a8.7 8.7 0 002.288-4.042 1.087 1.087 0 00-.358-1.099l-1.33-1.108c-.251-.21-.582-.299-.905-.245l-1.17.195a1.125 1.125 0 01-.98-.314l-.295-.295a1.125 1.125 0 010-1.591l.13-.132a1.125 1.125 0 011.3-.21l.603.302a.809.809 0 001.086-1.086L14.25 7.5l1.256-.837a4.5 4.5 0 001.528-1.732l.146-.292M6.115 5.19A9 9 0 1017.18 4.64M6.115 5.19A8.965 8.965 0 0112 3c1.929 0 3.716.607 5.18 1.64" /></svg>`,
   },
 ];
@@ -278,29 +282,36 @@ const markets = [
   <!-- Markets We Serve -->
   <section class="py-24 md:py-28 bg-gray-50">
     <div class="max-w-6xl mx-auto px-6">
-      <div class="text-center mb-16">
+      <div class="text-center mb-6">
         <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Markets We Serve</h2>
         <div class="w-16 h-1 bg-amber-500 mx-auto rounded-full"></div>
       </div>
+      <p class="text-center text-lg text-gray-600 mb-12 max-w-2xl mx-auto">
+        We ship to <span class="font-semibold text-green-700">150+ countries</span> worldwide. Wherever your business is, we deliver.
+      </p>
 
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="grid sm:grid-cols-2 gap-6">
         {markets.map((market) => (
           <a
             href={`/markets/${market.slug}`}
             class="group bg-white rounded-2xl p-8 border border-gray-100 hover:border-green-200 hover:shadow-lg transition-all duration-300"
           >
-            <div class="text-green-700 mb-4" set:html={market.icon} />
-            <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-green-700 transition-colors">
-              {market.region}
-            </h3>
-            <ul class="space-y-1">
-              {market.countries.map((country) => (
-                <li class="text-gray-600 text-sm flex items-center gap-2">
-                  <span class="w-1 h-1 bg-amber-500 rounded-full flex-shrink-0"></span>
+            <div class="flex items-center gap-3 mb-4">
+              <div class="text-green-700" set:html={market.icon} />
+              <h3 class="text-xl font-bold text-gray-900 group-hover:text-green-700 transition-colors">
+                {market.region}
+              </h3>
+            </div>
+            <div class="flex flex-wrap gap-2 mb-3">
+              {market.featured.map((country: string) => (
+                <span class="inline-flex items-center px-2.5 py-1 bg-gray-50 text-gray-700 text-xs font-medium rounded-full border border-gray-200">
                   {country}
-                </li>
+                </span>
               ))}
-            </ul>
+            </div>
+            <p class="text-sm text-green-700 font-medium">
+              + {market.moreCount} more countries &rarr;
+            </p>
           </a>
         ))}
       </div>
