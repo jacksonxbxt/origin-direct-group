@@ -1,0 +1,207 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import QuoteForm from '../../components/QuoteForm.astro';
+import { commodityPrices } from '../../data/prices';
+
+const coreCommodities = commodityPrices.filter((c) => c.category === 'core');
+const extendedWA = commodityPrices.filter((c) => c.category === 'extended-wa');
+const extendedIndia = commodityPrices.filter((c) => c.category === 'extended-india');
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://origindirectgroup.com/" },
+    { "@type": "ListItem", position: 2, name: "Prices", item: "https://origindirectgroup.com/prices" },
+  ],
+};
+---
+
+<Layout
+  title="Commodity Prices 2026 | Origin Direct Group"
+  description="Indicative FOB prices for 20+ commodities from West Africa and India. Shea butter, cocoa, cashew nuts, sesame, moringa, ginger, turmeric, cumin, and more. Updated March 2026."
+  structuredData={[breadcrumbSchema]}
+>
+  <!-- Hero -->
+  <section class="relative py-20 sm:py-24 bg-gradient-to-br from-green-950 via-green-900 to-earth-900">
+    <div class="absolute inset-0 bg-black/30"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-amber-400 text-sm font-semibold uppercase tracking-wider mb-3">Updated March 2026</p>
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight">
+        Commodity Prices
+      </h1>
+      <div class="w-16 h-1 bg-amber-500 mx-auto mt-6 mb-6"></div>
+      <p class="text-lg md:text-xl text-gray-200/90 max-w-3xl mx-auto">
+        Indicative FOB pricing for 20+ commodities sourced directly from West Africa and India.
+        All prices in USD. Contact us for firm quotes.
+      </p>
+    </div>
+  </section>
+
+  <!-- Disclaimer Banner -->
+  <div class="bg-amber-50 border-b border-amber-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+      <p class="text-sm text-amber-800 text-center">
+        Prices are indicative and vary by volume, grade, season, and Incoterms.
+        <a href="/quote" class="font-semibold underline hover:text-amber-900">Contact us</a> for a firm quote.
+      </p>
+    </div>
+  </div>
+
+  <!-- Core Commodities Table -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-10">
+        <h2 class="text-3xl font-bold text-brand-900">Core Commodities</h2>
+        <p class="mt-2 text-gray-500">Our most traded products with established supply chains.</p>
+      </div>
+      <div class="overflow-x-auto rounded-xl border border-gray-200">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="bg-gray-50 border-b border-gray-200">
+              <th class="text-left px-5 py-3.5 font-semibold text-gray-700">Commodity</th>
+              <th class="text-left px-5 py-3.5 font-semibold text-gray-700">Indicative Price (FOB)</th>
+              <th class="text-left px-5 py-3.5 font-semibold text-gray-700 hidden sm:table-cell">Origin Port</th>
+              <th class="text-left px-5 py-3.5 font-semibold text-gray-700 hidden md:table-cell">Top Grade</th>
+              <th class="text-right px-5 py-3.5 font-semibold text-gray-700"></th>
+            </tr>
+          </thead>
+          <tbody>
+            {coreCommodities.map((commodity, i) => (
+              <tr class={`border-b border-gray-100 hover:bg-brand-50/50 transition-colors ${i % 2 === 0 ? 'bg-white' : 'bg-gray-50/30'}`}>
+                <td class="px-5 py-4">
+                  <a href={`/prices/${commodity.slug}`} class="font-medium text-brand-800 hover:text-brand-600 transition-colors">
+                    {commodity.name}
+                  </a>
+                </td>
+                <td class="px-5 py-4 text-brand-700 font-semibold whitespace-nowrap">
+                  {commodity.grades[0].priceRange}
+                  <span class="text-gray-400 font-normal text-xs ml-1">{commodity.grades[0].unit}</span>
+                </td>
+                <td class="px-5 py-4 text-gray-600 hidden sm:table-cell">{commodity.originPort}</td>
+                <td class="px-5 py-4 text-gray-500 text-xs hidden md:table-cell">{commodity.grades[0].grade}</td>
+                <td class="px-5 py-4 text-right">
+                  <a
+                    href={`/prices/${commodity.slug}`}
+                    class="text-xs font-medium text-brand-600 hover:text-brand-700 transition-colors"
+                  >
+                    All grades &rarr;
+                  </a>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Extended West Africa Table -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-10">
+        <h2 class="text-3xl font-bold text-brand-900">Extended Range &mdash; West Africa</h2>
+        <p class="mt-2 text-gray-500">Specialty commodities from Ghana and Nigeria.</p>
+      </div>
+      <div class="overflow-x-auto rounded-xl border border-gray-200">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="bg-gray-50 border-b border-gray-200">
+              <th class="text-left px-5 py-3.5 font-semibold text-gray-700">Commodity</th>
+              <th class="text-left px-5 py-3.5 font-semibold text-gray-700">Indicative Price (FOB)</th>
+              <th class="text-left px-5 py-3.5 font-semibold text-gray-700 hidden sm:table-cell">Origin Port</th>
+              <th class="text-left px-5 py-3.5 font-semibold text-gray-700 hidden md:table-cell">Top Grade</th>
+              <th class="text-right px-5 py-3.5 font-semibold text-gray-700"></th>
+            </tr>
+          </thead>
+          <tbody>
+            {extendedWA.map((commodity, i) => (
+              <tr class={`border-b border-gray-100 hover:bg-brand-50/50 transition-colors ${i % 2 === 0 ? 'bg-white' : 'bg-gray-50/30'}`}>
+                <td class="px-5 py-4">
+                  <a href={`/prices/${commodity.slug}`} class="font-medium text-brand-800 hover:text-brand-600 transition-colors">
+                    {commodity.name}
+                  </a>
+                </td>
+                <td class="px-5 py-4 text-brand-700 font-semibold whitespace-nowrap">
+                  {commodity.grades[0].priceRange}
+                  <span class="text-gray-400 font-normal text-xs ml-1">{commodity.grades[0].unit}</span>
+                </td>
+                <td class="px-5 py-4 text-gray-600 hidden sm:table-cell">{commodity.originPort}</td>
+                <td class="px-5 py-4 text-gray-500 text-xs hidden md:table-cell">{commodity.grades[0].grade}</td>
+                <td class="px-5 py-4 text-right">
+                  <a
+                    href={`/prices/${commodity.slug}`}
+                    class="text-xs font-medium text-brand-600 hover:text-brand-700 transition-colors"
+                  >
+                    All grades &rarr;
+                  </a>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Extended India Table -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-10">
+        <h2 class="text-3xl font-bold text-brand-900">Extended Range &mdash; India</h2>
+        <p class="mt-2 text-gray-500">High-volume Indian commodities with near-monopoly supply positions.</p>
+      </div>
+      <div class="overflow-x-auto rounded-xl border border-gray-200">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="bg-gray-50 border-b border-gray-200">
+              <th class="text-left px-5 py-3.5 font-semibold text-gray-700">Commodity</th>
+              <th class="text-left px-5 py-3.5 font-semibold text-gray-700">Indicative Price (FOB)</th>
+              <th class="text-left px-5 py-3.5 font-semibold text-gray-700 hidden sm:table-cell">Origin Port</th>
+              <th class="text-left px-5 py-3.5 font-semibold text-gray-700 hidden md:table-cell">Top Grade</th>
+              <th class="text-right px-5 py-3.5 font-semibold text-gray-700"></th>
+            </tr>
+          </thead>
+          <tbody>
+            {extendedIndia.map((commodity, i) => (
+              <tr class={`border-b border-gray-100 hover:bg-brand-50/50 transition-colors ${i % 2 === 0 ? 'bg-white' : 'bg-gray-50/30'}`}>
+                <td class="px-5 py-4">
+                  <a href={`/prices/${commodity.slug}`} class="font-medium text-brand-800 hover:text-brand-600 transition-colors">
+                    {commodity.name}
+                  </a>
+                </td>
+                <td class="px-5 py-4 text-brand-700 font-semibold whitespace-nowrap">
+                  {commodity.grades[0].priceRange}
+                  <span class="text-gray-400 font-normal text-xs ml-1">{commodity.grades[0].unit}</span>
+                </td>
+                <td class="px-5 py-4 text-gray-600 hidden sm:table-cell">{commodity.originPort}</td>
+                <td class="px-5 py-4 text-gray-500 text-xs hidden md:table-cell">{commodity.grades[0].grade}</td>
+                <td class="px-5 py-4 text-right">
+                  <a
+                    href={`/prices/${commodity.slug}`}
+                    class="text-xs font-medium text-brand-600 hover:text-brand-700 transition-colors"
+                  >
+                    All grades &rarr;
+                  </a>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quote CTA -->
+  <section class="py-20 bg-green-950">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10">
+        <h2 class="text-3xl font-bold text-white">Get a Firm Quote</h2>
+        <p class="mt-3 text-gray-300">
+          These are indicative prices. Tell us your exact requirements and we'll provide competitive firm pricing within 2 hours.
+        </p>
+      </div>
+      <QuoteForm />
+    </div>
+  </section>
+</Layout>

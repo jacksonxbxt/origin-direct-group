@@ -1,0 +1,164 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import QuoteForm from '../../components/QuoteForm.astro';
+
+const defined_title = "How to Import Shea Butter to the USA";
+const defined_description = "Complete guide to importing raw and refined shea butter to the United States from West Africa. FDA requirements, cosmetic vs food grade classifications, HS codes, and shipping logistics.";
+
+const breadcrumbItems = [
+  { label: "Guides", href: "/guides" },
+  { label: "Import Shea Butter to USA" },
+];
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://origindirectgroup.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://origindirectgroup.com/guides" },
+    { "@type": "ListItem", "position": 3, "name": "Import Shea Butter to USA" },
+  ],
+};
+
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to Import Shea Butter to the USA",
+  "description": "Step-by-step guide for importing raw and refined shea butter from West Africa to the United States.",
+  "step": [
+    { "@type": "HowToStep", "position": 1, "name": "Find a shea butter supplier", "text": "Source from women's cooperatives in Ghana or Nigeria through Origin Direct." },
+    { "@type": "HowToStep", "position": 2, "name": "Request samples and verify quality", "text": "Test for FFA, moisture, peroxide value, color, and impurities." },
+    { "@type": "HowToStep", "position": 3, "name": "Agree on terms", "text": "Negotiate pricing, grade (raw/refined/ultra-refined), Incoterms, and payment." },
+    { "@type": "HowToStep", "position": 4, "name": "Prepare documentation", "text": "Obtain phytosanitary certificate, FDA prior notice, and commercial documents." },
+    { "@type": "HowToStep", "position": 5, "name": "Arrange shipping", "text": "Ship in 20ft containers from Tema port. Transit to US East Coast 18-22 days." },
+    { "@type": "HowToStep", "position": 6, "name": "Clear US customs", "text": "File ISF, FDA prior notice, and pass CBP and FDA inspections." },
+    { "@type": "HowToStep", "position": 7, "name": "Receive and inspect", "text": "Verify quality against contract, check packaging integrity." },
+  ],
+};
+---
+
+<Layout title={defined_title} description={defined_description} structuredData={[breadcrumbSchema, howToSchema]}>
+  <section class="py-12 md:py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-6">
+      <Breadcrumbs items={breadcrumbItems} />
+
+      <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+        How to Import Shea Butter to the USA
+      </h1>
+
+      <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+        The US market for shea butter has grown rapidly, driven by demand from cosmetics, personal care, and food industries. Ghana and Nigeria are the world's top shea-producing countries, accounting for over 60% of global supply. Importing directly from West African cooperatives and processors gives US buyers access to high-quality shea butter at 40-60% below the prices charged by European refiners who dominate the current supply chain. Whether you need raw (unrefined) shea for artisanal cosmetics or refined/fractionated shea for food manufacturing, this guide covers the complete process.
+      </p>
+
+      <div class="prose prose-lg max-w-none text-gray-700">
+
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Step-by-Step Import Process</h2>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Step 1: Find a Reliable Shea Butter Supplier</h3>
+        <p>
+          Shea butter production in West Africa is largely managed by women's cooperatives that harvest shea nuts from wild Vitellaria paradoxa trees across the savanna belt. Ghana's Northern, Upper East, and Upper West regions are the primary production zones, while Nigeria's shea belt spans Kwara, Niger, Kogi, and Benue states. Look for suppliers who can provide: consistent volumes (minimum 1 FCL or 18 MT), lab-tested quality reports, organic certification (USDA NOP or equivalent) if needed, and fair trade credentials. Origin Direct works with established cooperatives and processing facilities in both Ghana and Nigeria, ensuring quality control from kernel collection through final processing.
+        </p>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Step 2: Request Samples and Verify Quality</h3>
+        <p>
+          Shea butter quality varies significantly. Key parameters to test:
+        </p>
+        <ul>
+          <li><strong>Free Fatty Acid (FFA)</strong> - Grade A: max 1%, Grade B: 1-3%, Grade C: 3-8%. For cosmetics, insist on Grade A.</li>
+          <li><strong>Moisture content</strong> - Max 0.05% for refined, max 0.2% for raw/unrefined.</li>
+          <li><strong>Peroxide value</strong> - Max 10 meq/kg for fresh product. Higher values indicate oxidation.</li>
+          <li><strong>Iodine value</strong> - 52-66 (indicates unsaturation level).</li>
+          <li><strong>Color</strong> - Ivory to yellow for unrefined, white for refined. Grey or dark color indicates poor processing.</li>
+          <li><strong>Impurities</strong> - Max 0.1% insoluble impurities for refined grade.</li>
+          <li><strong>Microbiological</strong> - Total plate count, yeast, mold, E. coli, Salmonella (especially important for food-grade).</li>
+        </ul>
+        <p>
+          Request a 1-2 kg sample and have it tested by an accredited US lab before placing your order.
+        </p>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Step 3: Agree on Commercial Terms</h3>
+        <p>
+          Shea butter is sold by the metric ton. Pricing depends on grade (raw/refined/ultra-refined/fractionated), certification (organic commands a 30-50% premium), and volume. Standard Incoterms are FOB Tema (Ghana) or FOB Lagos/Apapa (Nigeria). CIF to US ports is also available. Payment is typically 30% advance with 70% against copy of B/L, or L/C for larger orders. Critical: clarify whether you need cosmetic-grade or food-grade shea butter, as this affects both the product specifications and the US regulatory pathway.
+        </p>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Step 4: Supplier Prepares Documentation</h3>
+        <ul>
+          <li><strong>Certificate of Analysis (COA)</strong> - Full lab report covering all quality parameters.</li>
+          <li><strong>Phytosanitary Certificate</strong> - From the Plant Protection and Regulatory Services (Ghana) or NAQS (Nigeria).</li>
+          <li><strong>Certificate of Origin</strong> - For AGOA (African Growth and Opportunity Act) duty preference eligibility.</li>
+          <li><strong>Commercial Invoice and Packing List</strong> - Standard trade documents.</li>
+          <li><strong>Bill of Lading</strong> - Clean, on-board ocean B/L.</li>
+          <li><strong>Material Safety Data Sheet (MSDS/SDS)</strong> - Required for cosmetic-grade shea butter.</li>
+          <li><strong>USDA NOP Organic Certificate</strong> - If selling as organic in the US. Must be issued by a USDA-accredited certifier.</li>
+          <li><strong>Fair Trade Certificate</strong> - If applicable (Fair for Life, Fairtrade International).</li>
+        </ul>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Step 5: Arrange Shipping</h3>
+        <p>
+          Shea butter ships in 20ft dry containers (approximately 18-20 MT). Raw/unrefined shea is packed in 25 kg or 50 kg cartons, 25 kg poly-woven bags, or 180-200 kg drums. Refined shea butter ships in 190 kg steel drums, 25 kg cartons, or flexitanks (for liquid/melted product in bulk). Loading ports: Tema (Ghana) or Apapa/Tin Can Island (Lagos, Nigeria). US destination ports: Port Newark (NJ), Port of Savannah, Port of Houston. Transit times: Tema to Newark 18-22 days, Tema to Houston 22-26 days, Lagos to Newark 20-24 days. Important: shea butter has a melting point of approximately 35-42 degrees Celsius. For summer shipments, ensure the container is not placed in direct sun on deck.
+        </p>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Step 6: Clear US Customs</h3>
+        <p>
+          The FDA regulatory pathway depends on the intended use:
+        </p>
+        <ul>
+          <li><strong>Food-grade shea butter</strong> - Regulated by FDA as a food ingredient. Requires FDA Prior Notice (filed via PNSI), ISF 10+2, and may be subject to FDA examination. Shea butter is GRAS (Generally Recognized As Safe) for food use.</li>
+          <li><strong>Cosmetic-grade shea butter</strong> - FDA classifies cosmetic ingredients differently. No pre-market approval is needed, but the product must comply with the Federal Food, Drug, and Cosmetic Act. If the product makes therapeutic claims (e.g., "treats eczema"), it becomes a drug and requires FDA approval.</li>
+          <li><strong>ISF 10+2</strong> - Filed 24 hours before vessel departure from origin port.</li>
+          <li><strong>CBP Entry</strong> - Your customs broker files the entry summary with all supporting documents.</li>
+          <li><strong>AGOA Preference</strong> - Ghana and Nigeria qualify under AGOA. With a valid certificate of origin, shea butter enters duty-free.</li>
+        </ul>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Step 7: Receive and Inspect</h3>
+        <p>
+          Inspect the shipment for: packaging integrity (no leaking drums, no damaged cartons), color and odor consistency, correct weight, and pull samples for lab analysis to verify against the pre-shipment COA. For food-grade applications, your receiving facility should have FSMA (Food Safety Modernization Act) compliant procedures.
+        </p>
+
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Key Documents Required</h2>
+        <ul>
+          <li>FDA Prior Notice (for food-grade)</li>
+          <li>ISF 10+2 filing</li>
+          <li>CBP Entry Summary</li>
+          <li>Commercial Invoice and Packing List</li>
+          <li>Bill of Lading</li>
+          <li>Certificate of Analysis</li>
+          <li>Phytosanitary Certificate</li>
+          <li>Certificate of Origin (AGOA)</li>
+          <li>MSDS/SDS (for cosmetic-grade)</li>
+          <li>Organic Certificate (if applicable)</li>
+        </ul>
+
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">HS Codes and Duty Rates</h2>
+        <ul>
+          <li><strong>1515.90.80</strong> - Shea butter (vegetable fat, not elsewhere specified). MFN Duty: 3.2%. Under AGOA: 0% (for Ghana and Nigeria).</li>
+          <li><strong>1516.20.90</strong> - Hydrogenated/fractionated shea butter. MFN Duty: 8%. Under AGOA: 0%.</li>
+          <li><strong>3304.99.50</strong> - Shea butter preparations for cosmetic use. MFN Duty: Free.</li>
+        </ul>
+        <p>
+          For the full HS code reference, see our <a href="/resources/hs-codes" class="text-brand-700 underline hover:text-brand-600">HS Code Directory</a>.
+        </p>
+
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Common Pitfalls to Watch Out For</h2>
+        <ul>
+          <li><strong>Rancidity</strong> - Shea butter with high FFA or peroxide values is rancid. Once rancid, it cannot be recovered. Always test before shipping and ensure proper storage (cool, dry, away from sunlight).</li>
+          <li><strong>Inconsistent quality</strong> - Shea nut quality varies by season, region, and processing method. Work with suppliers who have their own quality control lab and can provide consistent batches.</li>
+          <li><strong>Melting in transit</strong> - In summer months, container temperatures can exceed 60 degrees Celsius. While melting does not damage refined shea butter, it can cause separation in unrefined product. Use thermal container liners for summer shipments.</li>
+          <li><strong>AGOA expiration</strong> - AGOA preferences are periodically renewed by the US Congress. Verify that AGOA is active and that your product qualifies before relying on the duty-free rate.</li>
+          <li><strong>Mislabeling</strong> - Selling cosmetic shea butter with therapeutic claims (moisturizes, heals, treats) can trigger FDA enforcement action. Keep marketing claims cosmetic, not therapeutic.</li>
+          <li><strong>Adulteration</strong> - Some suppliers mix shea butter with palm oil or other fats to increase volume. Test the fatty acid profile (shea butter has a characteristic stearic/oleic acid ratio) to detect adulteration.</li>
+        </ul>
+
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">How Origin Direct Makes This Easy</h2>
+        <p>
+          Origin Direct sources shea butter directly from established cooperatives and processing facilities in Ghana and Nigeria. We manage quality control from raw shea nut collection through final processing, ensuring consistent Grade A product. Every shipment comes with a full Certificate of Analysis, properly prepared export documentation, and coordinated logistics. Whether you need 1 container of raw unrefined shea for a cosmetics line or 20 containers of refined shea for food manufacturing, we handle the sourcing, quality assurance, and export logistics so you can focus on your products and customers.
+        </p>
+      </div>
+
+      <div class="mt-12">
+        <QuoteForm productName="Shea Butter" />
+      </div>
+    </div>
+  </section>
+</Layout>
