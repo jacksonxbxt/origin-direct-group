@@ -1,0 +1,140 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import QuoteForm from '../../components/QuoteForm.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const productSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name: "Natural Honey",
+  description: "Wild-harvested natural honey from Nigeria and Ghana. Unique tropical floral profiles. Premium artisanal and organic grades for export.",
+  image: "https://origindirectgroup.com/images/products/natural-honey.jpg",
+  brand: { "@type": "Brand", name: "Origin Direct Group" },
+  category: "Natural Food Products",
+  countryOfOrigin: { "@type": "Country", name: "Nigeria" },
+  offers: { "@type": "AggregateOffer", priceCurrency: "USD", availability: "https://schema.org/InStock" },
+  additionalProperty: [
+    { "@type": "PropertyValue", name: "HS Code", value: "0409.00" },
+    { "@type": "PropertyValue", name: "MOQ", value: "5 MT" },
+    { "@type": "PropertyValue", name: "Origin", value: "Nigeria / Ghana" },
+  ],
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://origindirectgroup.com/" },
+    { "@type": "ListItem", position: 2, name: "Products", item: "https://origindirectgroup.com/products" },
+    { "@type": "ListItem", position: 3, name: "Natural Honey", item: "https://origindirectgroup.com/products/natural-honey" },
+  ],
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What makes West African honey different?",
+      acceptedAnswer: { "@type": "Answer", text: "West African honey is predominantly wild-harvested from tropical forest and savanna ecosystems, giving it unique floral profiles unavailable from conventional beekeeping. Nigerian honey features notes from neem, shea, and locust bean blossoms, while Ghanaian forest honey offers dark, robust flavors from tropical hardwood flowers. These distinctive profiles command premium pricing in artisanal and specialty food markets, typically $10-15/kg for organic grades." },
+    },
+    {
+      "@type": "Question",
+      name: "Is your honey tested for adulteration?",
+      acceptedAnswer: { "@type": "Answer", text: "Yes. Every batch undergoes C4 sugar ratio testing (below 7%), diastase activity testing (above 8 Schade units), HMF testing (below 40 mg/kg for EU compliance), and moisture testing (below 20%). We also test for antibiotics and pesticide residues. West African honey benefits from minimal agricultural chemical exposure compared to honey from intensive farming regions, making it naturally cleaner." },
+    },
+    {
+      "@type": "Question",
+      name: "What are the export challenges for African honey?",
+      acceptedAnswer: { "@type": "Answer", text: "The main challenges are meeting EU Third Country listing requirements (Nigeria is currently not on the EU approved list for honey imports, but Ghana is), ensuring consistent quality across wild-harvested batches, and maintaining proper temperature control during shipping. We address these by working with certified processing facilities, implementing rigorous batch testing, and using temperature-monitored containers. For EU-bound honey, we source from Ghana." },
+    },
+  ],
+};
+---
+
+<Layout
+  title="Natural Honey Supplier - Wild-Harvested from West Africa | Origin Direct"
+  description="Wild-harvested natural honey from Nigeria and Ghana. Unique tropical floral profiles. Organic $10+/kg. Premium artisanal positioning for specialty markets."
+  structuredData={[productSchema, breadcrumbSchema, faqSchema]}
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumbs items={[{ label: "Products", href: "/products" }, { label: "Natural Honey" }]} />
+  </div>
+
+  <section class="relative py-24 sm:py-32 bg-gradient-to-br from-brand-900 via-brand-800 to-earth-800 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(196,154,42,0.3),transparent_70%)]"></div>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-gold-light font-medium tracking-wide uppercase text-sm mb-4">Direct from Nigeria &amp; Ghana</p>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">Natural Honey</h1>
+      <p class="text-xl text-brand-200 max-w-2xl mx-auto mb-10">
+        Wild-harvested tropical honey with unique floral profiles. Premium artisanal grades for specialty food and cosmetic markets.
+      </p>
+      <a href="#quote-form" class="inline-flex items-center px-8 py-4 bg-gold hover:bg-gold-dark text-white font-bold rounded-lg transition-colors shadow-lg text-lg">
+        Request Quote
+        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Overview</h2>
+      <div class="prose prose-lg text-gray-700 space-y-5">
+        <p>
+          West African honey is a premium, wild-harvested product with distinctive tropical floral profiles that set it apart from conventional European or Asian honey. Nigerian honey features unique flavor notes from neem, shea tree, and locust bean blossoms, while Ghanaian forest honey offers dark, complex flavors from tropical hardwood flowers. These profiles are impossible to replicate through conventional beekeeping.
+        </p>
+        <p>
+          The global organic honey market exceeds $1 billion, and demand for artisanal, single-origin honey is growing at 8-10% annually as consumers seek authentic, traceable food products. West African honey commands prices of $10-15/kg for organic grades, reflecting both its scarcity and its unique flavor characteristics.
+        </p>
+        <p>
+          Origin Direct works with beekeeping cooperatives and wild honey harvesters across Nigeria and Ghana, supplying filtered, lab-tested honey in food-grade drums. Every batch is tested for C4 sugar ratio, HMF, diastase activity, moisture, and contaminants, ensuring compliance with international food safety standards.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Key Specifications</h2>
+      <div class="overflow-x-auto rounded-xl border border-gray-200 shadow-sm">
+        <table class="w-full text-left text-sm">
+          <thead>
+            <tr class="bg-brand-800 text-white">
+              <th class="px-6 py-4 font-semibold">Parameter</th>
+              <th class="px-6 py-4 font-semibold">Specification</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-100">
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">Type</td><td class="px-6 py-4 text-gray-700">Wild-harvested, multifloral</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">Moisture</td><td class="px-6 py-4 text-gray-700">&lt; 20%</td></tr>
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">HMF</td><td class="px-6 py-4 text-gray-700">&lt; 40 mg/kg (EU compliant)</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">Diastase Activity</td><td class="px-6 py-4 text-gray-700">&gt; 8 Schade units</td></tr>
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">C4 Sugar Ratio</td><td class="px-6 py-4 text-gray-700">&lt; 7% (adulteration-free)</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">Price Range</td><td class="px-6 py-4 text-gray-700">$5-8/kg (conventional), $10-15/kg (organic)</td></tr>
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">MOQ</td><td class="px-6 py-4 text-gray-700">5 MT</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">HS Code</td><td class="px-6 py-4 text-gray-700">0409.00</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Frequently Asked Questions</h2>
+      <div class="space-y-4">
+        {faqSchema.mainEntity.map((faq) => (
+          <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+            <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">{faq.name}</summary>
+            <div class="px-6 pb-4 text-gray-700">{faq.acceptedAnswer.text}</div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <QuoteForm productName="Other (please specify below)" />
+</Layout>

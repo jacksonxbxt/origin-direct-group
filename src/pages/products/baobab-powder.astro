@@ -1,0 +1,144 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import QuoteForm from '../../components/QuoteForm.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const productSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name: "Baobab Powder",
+  description: "Organic baobab fruit powder from Ghana and Nigeria. Superfood with 6x the vitamin C of oranges. For health food, beverages, and cosmetics.",
+  image: "https://origindirectgroup.com/images/products/baobab-powder.jpg",
+  brand: { "@type": "Brand", name: "Origin Direct Group" },
+  category: "Superfood Ingredients",
+  countryOfOrigin: { "@type": "Country", name: "Ghana" },
+  offers: {
+    "@type": "AggregateOffer",
+    priceCurrency: "USD",
+    availability: "https://schema.org/InStock",
+  },
+  additionalProperty: [
+    { "@type": "PropertyValue", name: "HS Code", value: "0813.40" },
+    { "@type": "PropertyValue", name: "MOQ", value: "1 MT" },
+    { "@type": "PropertyValue", name: "Origin", value: "Ghana / Nigeria" },
+  ],
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://origindirectgroup.com/" },
+    { "@type": "ListItem", position: 2, name: "Products", item: "https://origindirectgroup.com/products" },
+    { "@type": "ListItem", position: 3, name: "Baobab Powder", item: "https://origindirectgroup.com/products/baobab-powder" },
+  ],
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What makes baobab powder a superfood?",
+      acceptedAnswer: { "@type": "Answer", text: "Baobab fruit powder contains 6 times more vitamin C than oranges (280 mg per 100g vs 45 mg), 6 times more potassium than bananas, twice the calcium of milk, and 50% dietary fiber. It is also rich in antioxidants with an ORAC value of 140,000 per 100g — higher than acai, goji berries, and blueberries. The EU approved baobab as a Novel Food in 2008, and the FDA granted GRAS status in 2009." },
+    },
+    {
+      "@type": "Question",
+      name: "What are the commercial applications of baobab powder?",
+      acceptedAnswer: { "@type": "Answer", text: "Baobab powder is used across three main sectors: health food and supplements (smoothie mixes, energy bars, capsules), beverages (juice blends, functional drinks, flavored water), and cosmetics (face masks, moisturizers, anti-aging serums using baobab oil). The global baobab market is growing at approximately 8% CAGR, driven by demand for plant-based, high-fiber, vitamin-rich ingredients." },
+    },
+    {
+      "@type": "Question",
+      name: "Is your baobab powder organic certified?",
+      acceptedAnswer: { "@type": "Answer", text: "We supply both conventional and organic-certified baobab powder. Organic product is certified to EU Organic (EC 834/2007) and USDA NOP standards. All baobab is harvested from wild trees (not plantation-grown), making it inherently pesticide-free. We provide Certificate of Analysis, organic certificates, and microbiological test results with every shipment." },
+    },
+  ],
+};
+---
+
+<Layout
+  title="Baobab Powder Supplier - Direct from West Africa | Origin Direct"
+  description="Organic baobab fruit powder from Ghana & Nigeria. 6x vitamin C of oranges, 50% fiber. Superfood ingredient for health food, beverages, and cosmetics."
+  structuredData={[productSchema, breadcrumbSchema, faqSchema]}
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumbs items={[{ label: "Products", href: "/products" }, { label: "Baobab Powder" }]} />
+  </div>
+
+  <section class="relative py-24 sm:py-32 bg-gradient-to-br from-brand-900 via-brand-800 to-earth-800 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(196,154,42,0.3),transparent_70%)]"></div>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-gold-light font-medium tracking-wide uppercase text-sm mb-4">Direct from Ghana &amp; Nigeria</p>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">Baobab Powder</h1>
+      <p class="text-xl text-brand-200 max-w-2xl mx-auto mb-10">
+        Africa's superfood powerhouse. 6x the vitamin C of oranges, 50% dietary fiber. For health food, functional beverages, and premium cosmetics.
+      </p>
+      <a href="#quote-form" class="inline-flex items-center px-8 py-4 bg-gold hover:bg-gold-dark text-white font-bold rounded-lg transition-colors shadow-lg text-lg">
+        Request Quote
+        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Overview</h2>
+      <div class="prose prose-lg text-gray-700 space-y-5">
+        <p>
+          Baobab (Adansonia digitata) fruit powder is one of the most nutrient-dense superfoods on the planet, containing 6 times more vitamin C than oranges, 6 times more potassium than bananas, and an extraordinary 50% dietary fiber. The fruit naturally dehydrates on the tree, producing a dry powder that requires minimal processing — making it one of the most sustainable superfood ingredients available.
+        </p>
+        <p>
+          The global baobab market is growing at approximately 8% annually, driven by the health food, functional beverage, and clean beauty industries. Baobab received EU Novel Food approval in 2008 and FDA GRAS status in 2009, opening Western markets to this African superfood. Major food and beverage brands are now incorporating baobab into smoothie mixes, energy bars, juice blends, and functional drinks.
+        </p>
+        <p>
+          Origin Direct sources baobab from wild-harvested trees across Ghana and Nigeria's savanna regions, where communities have sustainably harvested the fruit for generations. We supply conventional and organic-certified powder in food-grade packaging, with full traceability and documentation for EU and US market access.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Key Specifications</h2>
+      <div class="overflow-x-auto rounded-xl border border-gray-200 shadow-sm">
+        <table class="w-full text-left text-sm">
+          <thead>
+            <tr class="bg-brand-800 text-white">
+              <th class="px-6 py-4 font-semibold">Parameter</th>
+              <th class="px-6 py-4 font-semibold">Specification</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-100">
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">Botanical Name</td><td class="px-6 py-4 text-gray-700">Adansonia digitata</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">Vitamin C</td><td class="px-6 py-4 text-gray-700">~280 mg per 100g (6x oranges)</td></tr>
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">Dietary Fiber</td><td class="px-6 py-4 text-gray-700">~50%</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">ORAC Value</td><td class="px-6 py-4 text-gray-700">140,000 per 100g</td></tr>
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">Moisture</td><td class="px-6 py-4 text-gray-700">&lt; 8%</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">Certifications</td><td class="px-6 py-4 text-gray-700">Organic (EU &amp; USDA), EU Novel Food, FDA GRAS</td></tr>
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">MOQ</td><td class="px-6 py-4 text-gray-700">1 MT</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">Packaging</td><td class="px-6 py-4 text-gray-700">10 kg or 25 kg food-grade kraft bags</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Frequently Asked Questions</h2>
+      <div class="space-y-4">
+        {faqSchema.mainEntity.map((faq) => (
+          <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+            <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">{faq.name}</summary>
+            <div class="px-6 pb-4 text-gray-700">{faq.acceptedAnswer.text}</div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <QuoteForm productName="Other (please specify below)" />
+</Layout>

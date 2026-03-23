@@ -1,0 +1,140 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import QuoteForm from '../../components/QuoteForm.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const productSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name: "Animal Hides & Leather",
+  description: "Semi-processed animal hides from Nigeria. $921M industry. Wet blue, crust, and finished leather. Italy is main buyer.",
+  image: "https://origindirectgroup.com/images/products/animal-hides.jpg",
+  brand: { "@type": "Brand", name: "Origin Direct Group" },
+  category: "Leather & Hides",
+  countryOfOrigin: { "@type": "Country", name: "Nigeria" },
+  offers: { "@type": "AggregateOffer", priceCurrency: "USD", availability: "https://schema.org/InStock" },
+  additionalProperty: [
+    { "@type": "PropertyValue", name: "HS Code", value: "4104.11" },
+    { "@type": "PropertyValue", name: "MOQ", value: "1 FCL" },
+    { "@type": "PropertyValue", name: "Origin", value: "Nigeria" },
+  ],
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://origindirectgroup.com/" },
+    { "@type": "ListItem", position: 2, name: "Products", item: "https://origindirectgroup.com/products" },
+    { "@type": "ListItem", position: 3, name: "Animal Hides", item: "https://origindirectgroup.com/products/animal-hides" },
+  ],
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What types of animal hides does Nigeria export?",
+      acceptedAnswer: { "@type": "Answer", text: "Nigeria exports primarily goat skins (the famous 'Sokoto Red' goatskin is considered among the finest in the world for leather goods), sheep skins, and cow hides. The Nigerian leather industry is valued at approximately $921 million. Nigeria banned the export of raw hides in 2015 to promote domestic value addition, so exports are semi-processed (wet blue, crust) or finished leather. Kano and Sokoto are the main tanning centers." },
+    },
+    {
+      "@type": "Question",
+      name: "Who are the main buyers of Nigerian leather?",
+      acceptedAnswer: { "@type": "Answer", text: "Italy is the largest buyer of Nigerian semi-processed leather, particularly Sokoto Red goatskin which is prized by Italian luxury goods manufacturers for shoes, bags, and gloves. Other significant markets include China, India, Spain, and Turkey. Italian tanneries in Tuscany have been importing Nigerian goatskin for decades, valuing its tight grain structure and natural durability that is superior to many other African and Asian goatskins." },
+    },
+    {
+      "@type": "Question",
+      name: "What processing stages are available?",
+      acceptedAnswer: { "@type": "Answer", text: "We supply three processing stages: Wet Blue (chrome-tanned, preserved, ready for further processing — the most common export form), Crust Leather (tanned and dried but not finished — intermediate stage), and Finished Leather (fully processed, dyed, and ready for manufacturing). Nigeria's export regulations require minimum wet blue processing before export. Pricing increases significantly with each processing stage, from $1-3/sq ft for wet blue to $5-12/sq ft for finished leather." },
+    },
+  ],
+};
+---
+
+<Layout
+  title="Animal Hides & Leather Supplier - Direct from Nigeria | Origin Direct"
+  description="Semi-processed animal hides from Nigeria. $921M industry. Sokoto Red goatskin, cow hides. Wet blue, crust, finished leather. Italy is main buyer."
+  structuredData={[productSchema, breadcrumbSchema, faqSchema]}
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumbs items={[{ label: "Products", href: "/products" }, { label: "Animal Hides & Leather" }]} />
+  </div>
+
+  <section class="relative py-24 sm:py-32 bg-gradient-to-br from-brand-900 via-brand-800 to-earth-800 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(196,154,42,0.3),transparent_70%)]"></div>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-gold-light font-medium tracking-wide uppercase text-sm mb-4">Direct from Nigeria</p>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">Animal Hides &amp; Leather</h1>
+      <p class="text-xl text-brand-200 max-w-2xl mx-auto mb-10">
+        Semi-processed leather from Nigeria's $921M hide industry. Including the world-renowned Sokoto Red goatskin prized by Italian luxury brands.
+      </p>
+      <a href="#quote-form" class="inline-flex items-center px-8 py-4 bg-gold hover:bg-gold-dark text-white font-bold rounded-lg transition-colors shadow-lg text-lg">
+        Request Quote
+        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Overview</h2>
+      <div class="prose prose-lg text-gray-700 space-y-5">
+        <p>
+          Nigeria's leather and hides industry is valued at approximately $921 million, built on the country's large livestock population and a long tradition of leather craftsmanship dating back centuries. The "Sokoto Red" goatskin, named after Nigeria's northern Sokoto state, is considered among the world's finest for leather goods — prized by Italian luxury manufacturers for its tight grain, natural durability, and distinctive quality.
+        </p>
+        <p>
+          Since Nigeria's 2015 ban on raw hide exports, all leather must be at minimum wet-blue processed before export, driving significant investment in tanning capacity across Kano, Sokoto, and Lagos. This policy has created a value-added export industry, with semi-processed and finished leather commanding substantially higher prices than raw hides.
+        </p>
+        <p>
+          Origin Direct works with established tanneries in Kano and Sokoto to supply wet blue, crust, and finished leather in goatskin, sheepskin, and cowhide. Our relationships with these tanneries give buyers access to Nigeria's premium leather at competitive prices, with quality inspection and documentation for European and international markets.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Key Specifications</h2>
+      <div class="overflow-x-auto rounded-xl border border-gray-200 shadow-sm">
+        <table class="w-full text-left text-sm">
+          <thead>
+            <tr class="bg-brand-800 text-white">
+              <th class="px-6 py-4 font-semibold">Parameter</th>
+              <th class="px-6 py-4 font-semibold">Specification</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-100">
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">Types</td><td class="px-6 py-4 text-gray-700">Goatskin (Sokoto Red), sheepskin, cowhide</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">Processing Stages</td><td class="px-6 py-4 text-gray-700">Wet blue, crust, finished leather</td></tr>
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">Tanning</td><td class="px-6 py-4 text-gray-700">Chrome-tanned (standard), vegetable-tanned (available)</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">Grading</td><td class="px-6 py-4 text-gray-700">A, B, C grades (by defect count)</td></tr>
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">Price Range</td><td class="px-6 py-4 text-gray-700">$1-3/sq ft (wet blue) to $5-12/sq ft (finished)</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">Key Markets</td><td class="px-6 py-4 text-gray-700">Italy, China, India, Spain, Turkey</td></tr>
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">MOQ</td><td class="px-6 py-4 text-gray-700">1 FCL</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">HS Code</td><td class="px-6 py-4 text-gray-700">4104.11 (wet blue bovine), 4106.21 (goat/sheep)</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Frequently Asked Questions</h2>
+      <div class="space-y-4">
+        {faqSchema.mainEntity.map((faq) => (
+          <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+            <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">{faq.name}</summary>
+            <div class="px-6 pb-4 text-gray-700">{faq.acceptedAnswer.text}</div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <QuoteForm productName="Other (please specify below)" />
+</Layout>

@@ -62,19 +62,171 @@ const products = [
   },
 ];
 
+const extendedWestAfrica = [
+  {
+    name: "Tiger Nuts",
+    slug: "tiger-nuts",
+    origin: "Nigeria \u{1F1F3}\u{1F1EC}",
+    description: "Gluten-free superfood tubers for horchata, health food, and snacking. $536M market by 2033.",
+  },
+  {
+    name: "Kola Nuts",
+    slug: "kola-nuts",
+    origin: "Nigeria \u{1F1F3}\u{1F1EC}",
+    description: "Natural caffeine source. 52% of world production. Functional beverages and supplements.",
+  },
+  {
+    name: "Bitter Kola",
+    slug: "bitter-kola",
+    origin: "Ghana \u{1F1EC}\u{1F1ED} / Nigeria \u{1F1F3}\u{1F1EC}",
+    description: "High-value medicinal nut. $6,000-10,000/MT. Energy drink and pharmaceutical ingredient.",
+  },
+  {
+    name: "African Black Soap",
+    slug: "african-black-soap",
+    origin: "Ghana \u{1F1EC}\u{1F1ED} / Nigeria \u{1F1F3}\u{1F1EC}",
+    description: "$1B market growing to $2B by 2035. Natural skincare from plantain ash and shea butter.",
+  },
+  {
+    name: "Baobab Powder",
+    slug: "baobab-powder",
+    origin: "Ghana \u{1F1EC}\u{1F1ED} / Nigeria \u{1F1F3}\u{1F1EC}",
+    description: "Superfood with 6x vitamin C of oranges. Health food, beverages, cosmetics.",
+  },
+  {
+    name: "Gum Arabic",
+    slug: "gum-arabic",
+    origin: "Nigeria \u{1F1F3}\u{1F1EC}",
+    description: "Food stabilizer E414. Beverage emulsifier used by Coca-Cola. Pharmaceutical binder.",
+  },
+  {
+    name: "Kaolin Clay",
+    slug: "kaolin-clay",
+    origin: "Nigeria \u{1F1F3}\u{1F1EC}",
+    description: "2+ billion MT reserves. Ceramics, paper coating, cosmetics. $5.8B global market.",
+  },
+  {
+    name: "Cassava Starch",
+    slug: "cassava-starch",
+    origin: "Nigeria \u{1F1F3}\u{1F1EC}",
+    description: "World's largest producer (59M MT/year). Food processing, pharma, textiles, bioplastics.",
+  },
+  {
+    name: "Palm Kernel Oil",
+    slug: "palm-kernel-oil",
+    origin: "Nigeria \u{1F1F3}\u{1F1EC} / Ghana \u{1F1EC}\u{1F1ED}",
+    description: "High lauric acid oil for soap manufacturing, cosmetics, and oleochemicals.",
+  },
+  {
+    name: "Moringa Oil",
+    slug: "moringa-oil",
+    origin: "Ghana \u{1F1EC}\u{1F1ED} / Nigeria \u{1F1F3}\u{1F1EC}",
+    description: "Premium cold-pressed 'Ben oil.' Non-comedogenic, anti-aging cosmetic ingredient.",
+  },
+  {
+    name: "Shea Nuts (Raw)",
+    slug: "shea-nuts",
+    origin: "Ghana \u{1F1EC}\u{1F1ED} / Nigeria \u{1F1F3}\u{1F1EC}",
+    description: "Raw material for shea butter. 40-60% cheaper for buyers with own processing.",
+  },
+  {
+    name: "Dried Chili Peppers",
+    slug: "dried-chili-peppers",
+    origin: "Nigeria \u{1F1F3}\u{1F1EC} / Ghana \u{1F1EC}\u{1F1ED}",
+    description: "Scotch bonnet, bird's eye. 757K MT production. Diaspora and hot sauce markets.",
+  },
+  {
+    name: "Natural Honey",
+    slug: "natural-honey",
+    origin: "Nigeria \u{1F1F3}\u{1F1EC} / Ghana \u{1F1EC}\u{1F1ED}",
+    description: "Wild-harvested with unique tropical floral profiles. Organic $10+/kg.",
+  },
+  {
+    name: "Plantain Chips",
+    slug: "plantain-chips",
+    origin: "Nigeria \u{1F1F3}\u{1F1EC} / Ghana \u{1F1EC}\u{1F1ED}",
+    description: "$510M global market growing to $770M. Bulk and private label snack export.",
+  },
+  {
+    name: "Animal Hides & Leather",
+    slug: "animal-hides",
+    origin: "Nigeria \u{1F1F3}\u{1F1EC}",
+    description: "$921M industry. Sokoto Red goatskin. Semi-processed leather. Italy is main buyer.",
+  },
+  {
+    name: "Hardwood Timber",
+    slug: "hardwood-timber",
+    origin: "Nigeria \u{1F1F3}\u{1F1EC} / Ghana \u{1F1EC}\u{1F1ED}",
+    description: "Iroko, Sapele, Mahogany. Construction, furniture. FSC certification available.",
+  },
+  {
+    name: "Natural Rubber",
+    slug: "natural-rubber",
+    origin: "Nigeria \u{1F1F3}\u{1F1EC}",
+    description: "$2,100/MT. France buys 60%. Africa's largest producer. Automotive and industrial.",
+  },
+  {
+    name: "Snail Meat",
+    slug: "snail-meat",
+    origin: "Nigeria \u{1F1F3}\u{1F1EC} / Ghana \u{1F1EC}\u{1F1ED}",
+    description: "Giant African Land Snail. $420M global market. France and UAE buyers.",
+  },
+  {
+    name: "Coconut Products",
+    slug: "coconut-products",
+    origin: "Ghana \u{1F1EC}\u{1F1ED}",
+    description: "Coconut oil, desiccated coconut, coconut water. Growing West African source.",
+  },
+];
+
+const extendedIndia = [
+  {
+    name: "Turmeric",
+    slug: "turmeric",
+    origin: "India \u{1F1EE}\u{1F1F3}",
+    description: "80% of world production. Fingers, powder, curcumin extract. 70-80% price swings.",
+  },
+  {
+    name: "Cumin Seeds",
+    slug: "cumin",
+    origin: "India \u{1F1EE}\u{1F1F3}",
+    description: "Near-monopoly supply from Rajasthan. 50-80% price swings from weather.",
+  },
+  {
+    name: "Castor Oil",
+    slug: "castor-oil",
+    origin: "India \u{1F1EE}\u{1F1F3}",
+    description: "85-90% of global exports. $1,200-1,500/MT. Industrial, cosmetic, pharmaceutical.",
+  },
+  {
+    name: "Guar Gum",
+    slug: "guar-gum",
+    origin: "India \u{1F1EE}\u{1F1F3}",
+    description: "80%+ of global supply. Fracking industry + food (E412). Rain-fed Rajasthan crop.",
+  },
+  {
+    name: "Psyllium Husk",
+    slug: "psyllium-husk",
+    origin: "India \u{1F1EE}\u{1F1F3}",
+    description: "80%+ global supply. $6,600/MT. Prices up 52%. Health food and pharma fiber.",
+  },
+  {
+    name: "Raw Cotton",
+    slug: "raw-cotton",
+    origin: "India \u{1F1EE}\u{1F1F3}",
+    description: "5.4M MT production. Shankar-6, long staple. Textile industry feedstock.",
+  },
+];
+
 const otherProducts = [
-  "Tiger Nuts", "Kola Nuts", "Bitter Kola", "African Black Soap",
-  "Cassava Starch / Garri", "Palm Kernel Oil", "Baobab Powder",
-  "Gum Arabic", "Kaolin Clay", "Shea Nuts (raw)", "Plantain Chips",
-  "Dried Chili Peppers", "Natural Honey", "Hardwood Timber",
-  "Animal Hides & Leather", "Coconut Products", "Natural Rubber",
-  "Dawadawa / Locust Beans", "Ogbono Seeds", "Snail Meat",
+  "Dawadawa / Locust Beans", "Ogbono Seeds", "Groundnuts / Peanuts",
+  "Sorghum", "Millet", "Dried Fish", "Palm Oil",
 ];
 ---
 
 <Layout
   title="Our Products | Origin Direct Group"
-  description="Browse our range of commodities sourced directly from West Africa and India. Shea butter, cocoa, cashews, charcoal, hibiscus, sesame, moringa, ginger, and more."
+  description="Browse our full range of 33+ commodities sourced directly from West Africa and India. Shea butter, cocoa, cashews, spices, industrial minerals, and more."
 >
   <!-- Hero -->
   <section class="relative py-24 bg-gradient-to-br from-green-950 via-green-900 to-earth-900">
@@ -85,7 +237,7 @@ const otherProducts = [
       </h1>
       <div class="w-16 h-1 bg-amber-500 mx-auto mt-6 mb-6"></div>
       <p class="text-lg md:text-xl text-gray-200/90 max-w-3xl mx-auto">
-        Sourced directly from verified producers across West Africa and India.
+        33+ commodities sourced directly from verified producers across West Africa and India.
         Full quality control, documentation, and soil-to-door delivery.
       </p>
     </div>
@@ -102,6 +254,40 @@ const otherProducts = [
       </div>
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
         {products.map((product) => (
+          <ProductCard {...product} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Extended Range: West Africa -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-bold text-brand-900">Extended Range &mdash; West Africa</h2>
+        <p class="mt-3 text-gray-500 max-w-2xl mx-auto">
+          Specialty commodities from Ghana and Nigeria. Health food ingredients, industrial minerals, natural skincare, and more.
+        </p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+        {extendedWestAfrica.map((product) => (
+          <ProductCard {...product} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Extended Range: India -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-bold text-brand-900">Extended Range &mdash; India</h2>
+        <p class="mt-3 text-gray-500 max-w-2xl mx-auto">
+          High-volume Indian commodities where India holds near-monopoly supply positions. Spices, industrial oils, and agricultural ingredients.
+        </p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        {extendedIndia.map((product) => (
           <ProductCard {...product} />
         ))}
       </div>
@@ -144,7 +330,7 @@ const otherProducts = [
             href="/products/custom-sourcing"
             class="px-3 py-1.5 bg-brand-700 text-white rounded-full text-sm font-medium hover:bg-brand-600 transition-colors"
           >
-            + Anything else →
+            + Anything else &rarr;
           </a>
         </div>
       </div>

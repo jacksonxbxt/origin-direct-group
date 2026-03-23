@@ -1,0 +1,140 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import QuoteForm from '../../components/QuoteForm.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const productSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name: "Raw Cotton",
+  description: "Indian raw cotton. 5.4M MT production. Textile industry feedstock. Multiple staple lengths for spinning mills worldwide.",
+  image: "https://origindirectgroup.com/images/products/raw-cotton.jpg",
+  brand: { "@type": "Brand", name: "Origin Direct Group" },
+  category: "Textile Raw Materials",
+  countryOfOrigin: { "@type": "Country", name: "India" },
+  offers: { "@type": "AggregateOffer", priceCurrency: "USD", availability: "https://schema.org/InStock" },
+  additionalProperty: [
+    { "@type": "PropertyValue", name: "HS Code", value: "5201.00" },
+    { "@type": "PropertyValue", name: "MOQ", value: "1 FCL (20 MT)" },
+    { "@type": "PropertyValue", name: "Origin", value: "India" },
+  ],
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://origindirectgroup.com/" },
+    { "@type": "ListItem", position: 2, name: "Products", item: "https://origindirectgroup.com/products" },
+    { "@type": "ListItem", position: 3, name: "Raw Cotton", item: "https://origindirectgroup.com/products/raw-cotton" },
+  ],
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What is India's position in global cotton production?",
+      acceptedAnswer: { "@type": "Answer", text: "India is the world's largest cotton producer by area (12.5 million hectares) and second-largest by output (approximately 5.4 million metric tons of lint annually, after China). India is also the second-largest cotton exporter. Key growing states are Gujarat (30% of production), Maharashtra (25%), Telangana, Andhra Pradesh, and Madhya Pradesh. India produces both short-staple (Desi) and medium/long-staple (Bt hybrid) cotton varieties." },
+    },
+    {
+      "@type": "Question",
+      name: "What cotton staple lengths are available from India?",
+      acceptedAnswer: { "@type": "Answer", text: "Indian cotton is classified by staple length: Short staple (below 22mm, limited industrial use), Medium staple (22-25.5mm, for coarse count yarns), Medium-long staple (25.5-27mm, Shankar-6 variety, India's most traded grade), Long staple (27-32mm, Suvin, MCU-5, for fine count yarns), and Extra-long staple (32mm+, Suvin, ELS, for premium fabrics). Shankar-6 from Gujarat is the benchmark Indian export variety." },
+    },
+    {
+      "@type": "Question",
+      name: "How is Indian cotton priced and traded?",
+      acceptedAnswer: { "@type": "Answer", text: "Indian cotton is priced against the Cotlook A Index (global benchmark). Shankar-6 typically trades at a discount of 5-15 cents/lb to the A Index. Domestic prices are set at Cotton Corporation of India (CCI) auctions and mandis. India's MSP (Minimum Support Price) sets a floor. Prices are volatile, influenced by monsoon quality, government export restrictions (India has occasionally imposed export bans), and global demand. ICE cotton futures in New York are the hedging benchmark." },
+    },
+  ],
+};
+---
+
+<Layout
+  title="Raw Cotton Supplier - Direct from India | Origin Direct"
+  description="Indian raw cotton. 5.4M MT production, world's #1 by area. Shankar-6, long staple, ELS grades. Direct from Gujarat and Maharashtra for spinning mills."
+  structuredData={[productSchema, breadcrumbSchema, faqSchema]}
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumbs items={[{ label: "Products", href: "/products" }, { label: "Raw Cotton" }]} />
+  </div>
+
+  <section class="relative py-24 sm:py-32 bg-gradient-to-br from-brand-900 via-brand-800 to-earth-800 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(196,154,42,0.3),transparent_70%)]"></div>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-gold-light font-medium tracking-wide uppercase text-sm mb-4">Direct from India</p>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">Raw Cotton</h1>
+      <p class="text-xl text-brand-200 max-w-2xl mx-auto mb-10">
+        From the world's largest cotton-growing nation. Multiple staple lengths and varieties for spinning mills and textile manufacturers.
+      </p>
+      <a href="#quote-form" class="inline-flex items-center px-8 py-4 bg-gold hover:bg-gold-dark text-white font-bold rounded-lg transition-colors shadow-lg text-lg">
+        Request Quote
+        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Overview</h2>
+      <div class="prose prose-lg text-gray-700 space-y-5">
+        <p>
+          India is the world's largest cotton producer by cultivated area (12.5 million hectares) and produces approximately 5.4 million metric tons of cotton lint annually. The country's diverse agro-climatic zones yield cotton varieties ranging from short-staple Desi cotton to premium extra-long-staple Suvin, serving every segment of the global textile industry.
+        </p>
+        <p>
+          Shankar-6 from Gujarat is India's most traded export variety, offering medium-long staple length (25.5-27mm) at competitive pricing versus the Cotlook A Index. For buyers requiring finer count yarns, we source long-staple MCU-5 and extra-long-staple Suvin varieties from Tamil Nadu and Maharashtra.
+        </p>
+        <p>
+          Origin Direct's India operations provide spinning mills and textile manufacturers with direct access to ginning facilities across Gujarat and Maharashtra, offering HVI-tested cotton bales with full fiber parameter documentation. We help buyers navigate India's complex cotton market, including CCI auctions, MSP dynamics, and periodic government export policy changes.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Key Specifications</h2>
+      <div class="overflow-x-auto rounded-xl border border-gray-200 shadow-sm">
+        <table class="w-full text-left text-sm">
+          <thead>
+            <tr class="bg-brand-800 text-white">
+              <th class="px-6 py-4 font-semibold">Parameter</th>
+              <th class="px-6 py-4 font-semibold">Specification</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-100">
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">Key Variety</td><td class="px-6 py-4 text-gray-700">Shankar-6 (benchmark export grade)</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">Staple Length</td><td class="px-6 py-4 text-gray-700">25.5 &ndash; 27 mm (medium-long), up to 32+ mm (ELS)</td></tr>
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">Micronaire</td><td class="px-6 py-4 text-gray-700">3.5 &ndash; 4.9</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">Strength (g/tex)</td><td class="px-6 py-4 text-gray-700">27 &ndash; 32 (standard), 34+ (long staple)</td></tr>
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">Trash</td><td class="px-6 py-4 text-gray-700">&lt; 3%</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">Bale Weight</td><td class="px-6 py-4 text-gray-700">170 kg (standard Indian bale)</td></tr>
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">MOQ</td><td class="px-6 py-4 text-gray-700">1 FCL (~20 MT / ~117 bales)</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">HS Code</td><td class="px-6 py-4 text-gray-700">5201.00</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Frequently Asked Questions</h2>
+      <div class="space-y-4">
+        {faqSchema.mainEntity.map((faq) => (
+          <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+            <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">{faq.name}</summary>
+            <div class="px-6 pb-4 text-gray-700">{faq.acceptedAnswer.text}</div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <QuoteForm productName="Other (please specify below)" />
+</Layout>

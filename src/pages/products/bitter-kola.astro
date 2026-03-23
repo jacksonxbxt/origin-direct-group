@@ -1,0 +1,144 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import QuoteForm from '../../components/QuoteForm.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const productSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name: "Bitter Kola",
+  description: "Premium bitter kola (Garcinia kola) sourced from Ghana and Nigeria. Medicinal and pharmaceutical applications, energy drink ingredient.",
+  image: "https://origindirectgroup.com/images/products/bitter-kola.jpg",
+  brand: { "@type": "Brand", name: "Origin Direct Group" },
+  category: "Medicinal & Pharmaceutical Ingredients",
+  countryOfOrigin: { "@type": "Country", name: "Nigeria" },
+  offers: {
+    "@type": "AggregateOffer",
+    priceCurrency: "USD",
+    availability: "https://schema.org/InStock",
+  },
+  additionalProperty: [
+    { "@type": "PropertyValue", name: "HS Code", value: "0813.40" },
+    { "@type": "PropertyValue", name: "MOQ", value: "5 MT" },
+    { "@type": "PropertyValue", name: "Origin", value: "Ghana / Nigeria" },
+  ],
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://origindirectgroup.com/" },
+    { "@type": "ListItem", position: 2, name: "Products", item: "https://origindirectgroup.com/products" },
+    { "@type": "ListItem", position: 3, name: "Bitter Kola", item: "https://origindirectgroup.com/products/bitter-kola" },
+  ],
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What is bitter kola used for commercially?",
+      acceptedAnswer: { "@type": "Answer", text: "Bitter kola (Garcinia kola) is used in pharmaceutical research for its kolaviron compound, which has demonstrated anti-inflammatory and antioxidant properties in clinical studies. Commercial applications include energy drink formulations, dietary supplements, traditional medicine exports, and pharmaceutical ingredient extraction. The European and North American nutraceutical industries are increasingly sourcing bitter kola for functional food products." },
+    },
+    {
+      "@type": "Question",
+      name: "What is the wholesale price of bitter kola?",
+      acceptedAnswer: { "@type": "Answer", text: "Wholesale bitter kola prices range from $6,000 to $10,000 per metric ton FOB Lagos/Tema, making it one of the higher-value West African export commodities. Pricing depends on freshness, moisture content, size grading, and seasonal availability. Peak harvest season (June-September) typically offers the most competitive pricing, while off-season prices can spike 30-40% due to limited shelf life." },
+    },
+    {
+      "@type": "Question",
+      name: "How should bitter kola be stored and shipped?",
+      acceptedAnswer: { "@type": "Answer", text: "Bitter kola is highly perishable and requires careful handling. Fresh bitter kola has a shelf life of 2-3 weeks at ambient temperature but can be extended to 3-4 months when properly dried to below 10% moisture. For export, we supply sun-dried bitter kola in ventilated 25 kg bags, shipped in ventilated containers. Cold chain shipping is available for fresh product to premium markets." },
+    },
+  ],
+};
+---
+
+<Layout
+  title="Bitter Kola Supplier - Direct from Ghana & Nigeria | Origin Direct"
+  description="Premium bitter kola (Garcinia kola) from West Africa. Pharmaceutical, nutraceutical, and energy drink ingredient. $6,000-10,000/MT. Direct sourcing."
+  structuredData={[productSchema, breadcrumbSchema, faqSchema]}
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumbs items={[{ label: "Products", href: "/products" }, { label: "Bitter Kola" }]} />
+  </div>
+
+  <section class="relative py-24 sm:py-32 bg-gradient-to-br from-brand-900 via-brand-800 to-earth-800 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(196,154,42,0.3),transparent_70%)]"></div>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-gold-light font-medium tracking-wide uppercase text-sm mb-4">Direct from Ghana &amp; Nigeria</p>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">Bitter Kola</h1>
+      <p class="text-xl text-brand-200 max-w-2xl mx-auto mb-10">
+        High-value medicinal and pharmaceutical ingredient. Kolaviron-rich Garcinia kola for nutraceuticals and energy beverages.
+      </p>
+      <a href="#quote-form" class="inline-flex items-center px-8 py-4 bg-gold hover:bg-gold-dark text-white font-bold rounded-lg transition-colors shadow-lg text-lg">
+        Request Quote
+        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Overview</h2>
+      <div class="prose prose-lg text-gray-700 space-y-5">
+        <p>
+          Bitter kola (Garcinia kola) is a tropical tree nut native to West Africa, valued for centuries in traditional medicine and now gaining serious attention from the global pharmaceutical and nutraceutical industries. The nut contains kolaviron, a biflavonoid compound that has shown anti-inflammatory, antioxidant, and antimicrobial properties in over 200 published scientific studies.
+        </p>
+        <p>
+          Commercial demand is driven by the energy drink and functional beverage sector, which uses bitter kola extract as a natural stimulant, and the dietary supplement industry targeting immune support and anti-inflammatory products. Prices of $6,000-$10,000/MT reflect the limited supply and high extraction value of the active compounds.
+        </p>
+        <p>
+          Origin Direct sources bitter kola from farming communities across southern Ghana and Nigeria, where the Garcinia kola tree thrives in tropical forest zones. We supply both fresh and dried product, with strict moisture control and quality grading to meet pharmaceutical-grade buyer requirements.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Key Specifications</h2>
+      <div class="overflow-x-auto rounded-xl border border-gray-200 shadow-sm">
+        <table class="w-full text-left text-sm">
+          <thead>
+            <tr class="bg-brand-800 text-white">
+              <th class="px-6 py-4 font-semibold">Parameter</th>
+              <th class="px-6 py-4 font-semibold">Specification</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-100">
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">Botanical Name</td><td class="px-6 py-4 text-gray-700">Garcinia kola</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">Active Compound</td><td class="px-6 py-4 text-gray-700">Kolaviron (biflavonoid complex)</td></tr>
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">Forms Available</td><td class="px-6 py-4 text-gray-700">Fresh, sun-dried, powder</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">Moisture (dried)</td><td class="px-6 py-4 text-gray-700">&lt; 10%</td></tr>
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">Price Range</td><td class="px-6 py-4 text-gray-700">$6,000 &ndash; $10,000/MT FOB</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">MOQ</td><td class="px-6 py-4 text-gray-700">5 MT (limited supply commodity)</td></tr>
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">Packaging</td><td class="px-6 py-4 text-gray-700">25 kg ventilated bags</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">HS Code</td><td class="px-6 py-4 text-gray-700">0813.40</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Frequently Asked Questions</h2>
+      <div class="space-y-4">
+        {faqSchema.mainEntity.map((faq) => (
+          <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+            <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">{faq.name}</summary>
+            <div class="px-6 pb-4 text-gray-700">{faq.acceptedAnswer.text}</div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <QuoteForm productName="Other (please specify below)" />
+</Layout>

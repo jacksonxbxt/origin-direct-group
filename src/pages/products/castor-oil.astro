@@ -1,0 +1,140 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import QuoteForm from '../../components/QuoteForm.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const productSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name: "Castor Oil",
+  description: "Indian castor oil (85-90% of global exports). Industrial and cosmetic grades. $1,200-1,500/MT FOB. For lubricants, cosmetics, pharmaceuticals, bioplastics.",
+  image: "https://origindirectgroup.com/images/products/castor-oil.jpg",
+  brand: { "@type": "Brand", name: "Origin Direct Group" },
+  category: "Industrial & Cosmetic Oils",
+  countryOfOrigin: { "@type": "Country", name: "India" },
+  offers: { "@type": "AggregateOffer", priceCurrency: "USD", availability: "https://schema.org/InStock" },
+  additionalProperty: [
+    { "@type": "PropertyValue", name: "HS Code", value: "1515.30" },
+    { "@type": "PropertyValue", name: "MOQ", value: "1 FCL (20 MT)" },
+    { "@type": "PropertyValue", name: "Origin", value: "India" },
+  ],
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://origindirectgroup.com/" },
+    { "@type": "ListItem", position: 2, name: "Products", item: "https://origindirectgroup.com/products" },
+    { "@type": "ListItem", position: 3, name: "Castor Oil", item: "https://origindirectgroup.com/products/castor-oil" },
+  ],
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Why does India dominate castor oil exports?",
+      acceptedAnswer: { "@type": "Answer", text: "India controls 85-90% of global castor oil exports, producing approximately 1.8 million metric tons of castor seed annually. Gujarat state alone accounts for 80% of Indian production. India's dominance stems from ideal growing conditions in semi-arid Gujarat and Rajasthan, established crushing infrastructure (over 200 crushing units), and decades of supply chain development. This near-monopoly means castor oil buyers worldwide are effectively dependent on Indian supply." },
+    },
+    {
+      "@type": "Question",
+      name: "What are the main industrial applications of castor oil?",
+      acceptedAnswer: { "@type": "Answer", text: "Castor oil's unique ricinoleic acid content (85-90%) gives it properties no other vegetable oil can match. Key applications: industrial lubricants (high viscosity index, works at extreme temperatures), cosmetics and personal care (hair oil, skin moisturizer — the 'Jamaican black castor oil' trend), pharmaceuticals (laxatives, drug delivery systems), coatings and paints, nylon-11 production (bioplastic), and biodiesel. The global castor oil market exceeds $1.5 billion annually." },
+    },
+    {
+      "@type": "Question",
+      name: "What castor oil grades and pricing are available?",
+      acceptedAnswer: { "@type": "Answer", text: "We supply: Commercial/BSS Grade (Bright Bleached Surface, standard industrial grade, $1,200-1,500/MT FOB), FSG Grade (First Special Grade, cosmetic/pharmaceutical use), Pale Pressed Grade (highest purity, pharmaceutical), Hydrogenated Castor Oil (solid flakes, for cosmetics), and 12-HSA (12-Hydroxystearic acid, specialty derivative). Margins of 30-45% are typical between farmgate castor seed and processed oil pricing." },
+    },
+  ],
+};
+---
+
+<Layout
+  title="Castor Oil Supplier - Direct from India | Origin Direct"
+  description="Indian castor oil (85-90% of global exports). BSS, FSG, and pharmaceutical grades. $1,200-1,500/MT FOB. Lubricants, cosmetics, bioplastics."
+  structuredData={[productSchema, breadcrumbSchema, faqSchema]}
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumbs items={[{ label: "Products", href: "/products" }, { label: "Castor Oil" }]} />
+  </div>
+
+  <section class="relative py-24 sm:py-32 bg-gradient-to-br from-brand-900 via-brand-800 to-earth-800 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(196,154,42,0.3),transparent_70%)]"></div>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-gold-light font-medium tracking-wide uppercase text-sm mb-4">Direct from India</p>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">Castor Oil</h1>
+      <p class="text-xl text-brand-200 max-w-2xl mx-auto mb-10">
+        From India, which controls 85-90% of global castor oil exports. Industrial, cosmetic, and pharmaceutical grades with 30-45% procurement margins.
+      </p>
+      <a href="#quote-form" class="inline-flex items-center px-8 py-4 bg-gold hover:bg-gold-dark text-white font-bold rounded-lg transition-colors shadow-lg text-lg">
+        Request Quote
+        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Overview</h2>
+      <div class="prose prose-lg text-gray-700 space-y-5">
+        <p>
+          Castor oil is one of the most strategically important industrial commodities, with India controlling 85-90% of global exports. The oil's unique ricinoleic acid content (85-90%) gives it properties that cannot be replicated by any other vegetable oil — high viscosity stability across extreme temperatures, excellent lubricity, and unique chemical reactivity that makes it the feedstock for nylon-11 bioplastic.
+        </p>
+        <p>
+          Gujarat state dominates Indian production, with over 200 crushing units processing approximately 1.8 million metric tons of castor seed annually. The global castor oil market exceeds $1.5 billion, serving lubricant manufacturers, cosmetic and personal care brands, pharmaceutical companies, paint and coating producers, and the growing bioplastics sector.
+        </p>
+        <p>
+          Origin Direct's India team works directly with crushers and refiners across Gujarat's castor belt, offering BSS (commercial), FSG (cosmetic), and pharmaceutical-grade castor oil at $1,200-1,500/MT FOB Kandla/Mundra. Our direct sourcing eliminates trading intermediaries, delivering margins of 30-45% for established buyers.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Key Specifications</h2>
+      <div class="overflow-x-auto rounded-xl border border-gray-200 shadow-sm">
+        <table class="w-full text-left text-sm">
+          <thead>
+            <tr class="bg-brand-800 text-white">
+              <th class="px-6 py-4 font-semibold">Parameter</th>
+              <th class="px-6 py-4 font-semibold">Specification</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-100">
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">Ricinoleic Acid</td><td class="px-6 py-4 text-gray-700">85 &ndash; 90%</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">Acid Value</td><td class="px-6 py-4 text-gray-700">&lt; 2.0 (BSS), &lt; 1.0 (FSG)</td></tr>
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">Hydroxyl Value</td><td class="px-6 py-4 text-gray-700">160 &ndash; 168</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">Iodine Value</td><td class="px-6 py-4 text-gray-700">82 &ndash; 90</td></tr>
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">Moisture</td><td class="px-6 py-4 text-gray-700">&lt; 0.5%</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">Grades</td><td class="px-6 py-4 text-gray-700">BSS, FSG, Pale Pressed, Hydrogenated, 12-HSA</td></tr>
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">Price Range</td><td class="px-6 py-4 text-gray-700">$1,200 &ndash; $1,500/MT FOB</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">HS Code</td><td class="px-6 py-4 text-gray-700">1515.30</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Frequently Asked Questions</h2>
+      <div class="space-y-4">
+        {faqSchema.mainEntity.map((faq) => (
+          <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+            <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">{faq.name}</summary>
+            <div class="px-6 pb-4 text-gray-700">{faq.acceptedAnswer.text}</div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <QuoteForm productName="Other (please specify below)" />
+</Layout>

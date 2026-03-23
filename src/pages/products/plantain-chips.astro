@@ -1,0 +1,140 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import QuoteForm from '../../components/QuoteForm.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const productSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name: "Plantain Chips",
+  description: "Plantain chips from Nigeria and Ghana. $510M global market growing to $770M. Ready-to-eat snack food for export and private label.",
+  image: "https://origindirectgroup.com/images/products/plantain-chips.jpg",
+  brand: { "@type": "Brand", name: "Origin Direct Group" },
+  category: "Snack Foods",
+  countryOfOrigin: { "@type": "Country", name: "Nigeria" },
+  offers: { "@type": "AggregateOffer", priceCurrency: "USD", availability: "https://schema.org/InStock" },
+  additionalProperty: [
+    { "@type": "PropertyValue", name: "HS Code", value: "2008.99" },
+    { "@type": "PropertyValue", name: "MOQ", value: "5 MT" },
+    { "@type": "PropertyValue", name: "Origin", value: "Nigeria / Ghana" },
+  ],
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://origindirectgroup.com/" },
+    { "@type": "ListItem", position: 2, name: "Products", item: "https://origindirectgroup.com/products" },
+    { "@type": "ListItem", position: 3, name: "Plantain Chips", item: "https://origindirectgroup.com/products/plantain-chips" },
+  ],
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "How big is the global plantain chips market?",
+      acceptedAnswer: { "@type": "Answer", text: "The global plantain chips market was valued at approximately $510 million in 2024 and is projected to reach $770 million by 2030, growing at roughly 7% CAGR. Growth is driven by increasing demand for healthier snack alternatives, the African and Latin diaspora in Western markets, and the broader trend toward plant-based, gluten-free snacking options." },
+    },
+    {
+      "@type": "Question",
+      name: "What flavors and formats are available?",
+      acceptedAnswer: { "@type": "Answer", text: "We supply plantain chips in multiple formats: lightly salted (classic), sweet (ripe plantain), spicy (pepper-seasoned), unsalted (health food market), and custom seasonings for private label buyers. Chips are available in bulk (5-10 kg cases for repackaging), or we can arrange contract manufacturing for branded retail packs (30g-150g bags). Shelf life is 6-9 months in nitrogen-flushed packaging." },
+    },
+    {
+      "@type": "Question",
+      name: "Can you do private label or contract manufacturing?",
+      acceptedAnswer: { "@type": "Answer", text: "Yes. We work with NAFDAC-registered and HACCP-certified processing facilities in Nigeria and Ghana that offer private label and contract manufacturing services. Options include custom seasoning, branded packaging design, retail-ready pack sizes, and mixed cases. MOQ for private label runs is typically 5 MT (approximately 50,000-100,000 retail packs depending on size). Lead time is 4-6 weeks from order confirmation." },
+    },
+  ],
+};
+---
+
+<Layout
+  title="Plantain Chips Supplier - Direct from Nigeria & Ghana | Origin Direct"
+  description="Plantain chips from Nigeria and Ghana. $510M global market. Bulk and private label. Lightly salted, sweet, spicy varieties. HACCP-certified production."
+  structuredData={[productSchema, breadcrumbSchema, faqSchema]}
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumbs items={[{ label: "Products", href: "/products" }, { label: "Plantain Chips" }]} />
+  </div>
+
+  <section class="relative py-24 sm:py-32 bg-gradient-to-br from-brand-900 via-brand-800 to-earth-800 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(196,154,42,0.3),transparent_70%)]"></div>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-gold-light font-medium tracking-wide uppercase text-sm mb-4">Direct from Nigeria &amp; Ghana</p>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">Plantain Chips</h1>
+      <p class="text-xl text-brand-200 max-w-2xl mx-auto mb-10">
+        West Africa's snack food export. $510M global market growing to $770M. Bulk supply and private label manufacturing.
+      </p>
+      <a href="#quote-form" class="inline-flex items-center px-8 py-4 bg-gold hover:bg-gold-dark text-white font-bold rounded-lg transition-colors shadow-lg text-lg">
+        Request Quote
+        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Overview</h2>
+      <div class="prose prose-lg text-gray-700 space-y-5">
+        <p>
+          Plantain chips are one of the fastest-growing snack food categories globally, with the market valued at $510 million and projected to reach $770 million by 2030. Nigeria and Ghana are among the world's largest plantain producers, providing abundant raw material for chip manufacturing at competitive costs.
+        </p>
+        <p>
+          Demand is driven by the African and Caribbean diaspora in Western markets, the broader consumer shift toward healthier snack alternatives (plantain chips are gluten-free and lower in fat than potato chips when baked), and increasing mainstream retail adoption. Major supermarket chains in the UK, US, and Europe now stock plantain chip brands alongside traditional snack foods.
+        </p>
+        <p>
+          Origin Direct works with HACCP-certified processing facilities across Nigeria and Ghana, offering both bulk supply (for repackaging) and private label contract manufacturing. We supply multiple flavor profiles and pack sizes, with the flexibility to develop custom seasonings for your brand.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Key Specifications</h2>
+      <div class="overflow-x-auto rounded-xl border border-gray-200 shadow-sm">
+        <table class="w-full text-left text-sm">
+          <thead>
+            <tr class="bg-brand-800 text-white">
+              <th class="px-6 py-4 font-semibold">Parameter</th>
+              <th class="px-6 py-4 font-semibold">Specification</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-100">
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">Varieties</td><td class="px-6 py-4 text-gray-700">Salted, sweet, spicy, unsalted, custom</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">Oil Content</td><td class="px-6 py-4 text-gray-700">25 &ndash; 35% (fried), &lt; 8% (baked)</td></tr>
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">Moisture</td><td class="px-6 py-4 text-gray-700">&lt; 3%</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">Shelf Life</td><td class="px-6 py-4 text-gray-700">6 &ndash; 9 months (nitrogen-flushed)</td></tr>
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">Certifications</td><td class="px-6 py-4 text-gray-700">HACCP, NAFDAC, Halal available</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">Formats</td><td class="px-6 py-4 text-gray-700">Bulk cases (5-10 kg) or retail packs (30-150g)</td></tr>
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">MOQ</td><td class="px-6 py-4 text-gray-700">5 MT</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">HS Code</td><td class="px-6 py-4 text-gray-700">2008.99</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Frequently Asked Questions</h2>
+      <div class="space-y-4">
+        {faqSchema.mainEntity.map((faq) => (
+          <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+            <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">{faq.name}</summary>
+            <div class="px-6 pb-4 text-gray-700">{faq.acceptedAnswer.text}</div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <QuoteForm productName="Other (please specify below)" />
+</Layout>

@@ -1,0 +1,140 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import QuoteForm from '../../components/QuoteForm.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const productSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name: "Dried Chili Peppers",
+  description: "Dried chili peppers from Nigeria and Ghana. Scotch bonnet, bird's eye varieties. 757K MT Nigerian production. Diaspora and food processing markets.",
+  image: "https://origindirectgroup.com/images/products/dried-chili-peppers.jpg",
+  brand: { "@type": "Brand", name: "Origin Direct Group" },
+  category: "Spices & Seasonings",
+  countryOfOrigin: { "@type": "Country", name: "Nigeria" },
+  offers: { "@type": "AggregateOffer", priceCurrency: "USD", availability: "https://schema.org/InStock" },
+  additionalProperty: [
+    { "@type": "PropertyValue", name: "HS Code", value: "0904.22" },
+    { "@type": "PropertyValue", name: "MOQ", value: "1 FCL (12-15 MT)" },
+    { "@type": "PropertyValue", name: "Origin", value: "Nigeria / Ghana" },
+  ],
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://origindirectgroup.com/" },
+    { "@type": "ListItem", position: 2, name: "Products", item: "https://origindirectgroup.com/products" },
+    { "@type": "ListItem", position: 3, name: "Dried Chili Peppers", item: "https://origindirectgroup.com/products/dried-chili-peppers" },
+  ],
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What varieties of dried chili peppers do you supply?",
+      acceptedAnswer: { "@type": "Answer", text: "We supply three primary varieties: Scotch Bonnet (100,000-350,000 SHU, the signature West African pepper for hot sauces and diaspora markets), Bird's Eye / Piri Piri (50,000-100,000 SHU, popular in European and Asian markets), and Tatase/Rodo (milder varieties for spice blends and food processing). All are available as whole dried, crushed, or ground powder." },
+    },
+    {
+      "@type": "Question",
+      name: "How large is Nigeria's chili pepper production?",
+      acceptedAnswer: { "@type": "Answer", text: "Nigeria produces approximately 757,000 metric tons of chili peppers annually, making it one of the top 10 global producers. Ghana adds significant production capacity. The West African diaspora in the UK, US, and Europe creates strong year-round demand for authentic scotch bonnet and bird's eye varieties that cannot be easily substituted with Asian or South American peppers due to their distinctive flavor profile." },
+    },
+    {
+      "@type": "Question",
+      name: "What quality standards do your dried chilies meet?",
+      acceptedAnswer: { "@type": "Answer", text: "Our dried chili peppers meet export standards: moisture below 11%, aflatoxin below EU limits (10 ppb total), no artificial coloring, pesticide residue within EU MRL limits, and Scoville Heat Units verified by lab testing. We supply with phytosanitary certificate, Certificate of Analysis, and fumigation certificate. ASTA color value is tested for each batch." },
+    },
+  ],
+};
+---
+
+<Layout
+  title="Dried Chili Peppers Supplier - Scotch Bonnet from Nigeria | Origin Direct"
+  description="Dried chili peppers from Nigeria (757K MT production) and Ghana. Scotch bonnet, bird's eye. Whole, crushed, powder. Diaspora and food processing markets."
+  structuredData={[productSchema, breadcrumbSchema, faqSchema]}
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumbs items={[{ label: "Products", href: "/products" }, { label: "Dried Chili Peppers" }]} />
+  </div>
+
+  <section class="relative py-24 sm:py-32 bg-gradient-to-br from-brand-900 via-brand-800 to-earth-800 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(196,154,42,0.3),transparent_70%)]"></div>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-gold-light font-medium tracking-wide uppercase text-sm mb-4">Direct from Nigeria &amp; Ghana</p>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">Dried Chili Peppers</h1>
+      <p class="text-xl text-brand-200 max-w-2xl mx-auto mb-10">
+        Scotch bonnet and bird's eye varieties from West Africa's 757K MT pepper belt. For hot sauce producers, spice companies, and diaspora markets.
+      </p>
+      <a href="#quote-form" class="inline-flex items-center px-8 py-4 bg-gold hover:bg-gold-dark text-white font-bold rounded-lg transition-colors shadow-lg text-lg">
+        Request Quote
+        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Overview</h2>
+      <div class="prose prose-lg text-gray-700 space-y-5">
+        <p>
+          Nigeria is one of the world's top chili pepper producers at 757,000 metric tons annually, cultivating varieties that are deeply embedded in West African cuisine and increasingly demanded by global hot sauce producers and spice companies. The scotch bonnet pepper, with its distinctive fruity heat (100,000-350,000 SHU), is irreplaceable in West African, Caribbean, and diaspora cooking.
+        </p>
+        <p>
+          The global hot sauce market alone is worth over $4 billion and growing at 6% annually, while the African diaspora in the UK (1.5M+), US (2M+), and Europe creates steady demand for authentic West African pepper varieties. Bird's eye peppers from the region also serve the growing piri piri and Asian-fusion markets across Europe.
+        </p>
+        <p>
+          Origin Direct supplies sun-dried and mechanically dried chili peppers from farming communities across Nigeria and Ghana, available as whole dried peppers, crushed flakes, or fine powder. Every shipment meets EU pesticide residue limits and aflatoxin standards, with full phytosanitary documentation.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Key Specifications</h2>
+      <div class="overflow-x-auto rounded-xl border border-gray-200 shadow-sm">
+        <table class="w-full text-left text-sm">
+          <thead>
+            <tr class="bg-brand-800 text-white">
+              <th class="px-6 py-4 font-semibold">Parameter</th>
+              <th class="px-6 py-4 font-semibold">Specification</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-100">
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">Varieties</td><td class="px-6 py-4 text-gray-700">Scotch Bonnet, Bird's Eye, Tatase/Rodo</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">Scoville (SHU)</td><td class="px-6 py-4 text-gray-700">50,000 &ndash; 350,000 (variety dependent)</td></tr>
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">Moisture</td><td class="px-6 py-4 text-gray-700">&lt; 11%</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">Forms</td><td class="px-6 py-4 text-gray-700">Whole dried, crushed, powder</td></tr>
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">Aflatoxin</td><td class="px-6 py-4 text-gray-700">&lt; 10 ppb total (EU compliant)</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">MOQ</td><td class="px-6 py-4 text-gray-700">1 FCL (~12-15 MT)</td></tr>
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">Packaging</td><td class="px-6 py-4 text-gray-700">25 kg PP bags or vacuum-sealed</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">HS Code</td><td class="px-6 py-4 text-gray-700">0904.22</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Frequently Asked Questions</h2>
+      <div class="space-y-4">
+        {faqSchema.mainEntity.map((faq) => (
+          <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+            <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">{faq.name}</summary>
+            <div class="px-6 pb-4 text-gray-700">{faq.acceptedAnswer.text}</div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <QuoteForm productName="Other (please specify below)" />
+</Layout>

@@ -1,0 +1,140 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import QuoteForm from '../../components/QuoteForm.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const productSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name: "Natural Rubber",
+  description: "Nigerian natural rubber. $2,100/MT. France buys 60%. Automotive, industrial, and medical applications.",
+  image: "https://origindirectgroup.com/images/products/natural-rubber.jpg",
+  brand: { "@type": "Brand", name: "Origin Direct Group" },
+  category: "Industrial Raw Materials",
+  countryOfOrigin: { "@type": "Country", name: "Nigeria" },
+  offers: { "@type": "AggregateOffer", priceCurrency: "USD", availability: "https://schema.org/InStock" },
+  additionalProperty: [
+    { "@type": "PropertyValue", name: "HS Code", value: "4001.22" },
+    { "@type": "PropertyValue", name: "MOQ", value: "1 FCL (20 MT)" },
+    { "@type": "PropertyValue", name: "Origin", value: "Nigeria" },
+  ],
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://origindirectgroup.com/" },
+    { "@type": "ListItem", position: 2, name: "Products", item: "https://origindirectgroup.com/products" },
+    { "@type": "ListItem", position: 3, name: "Natural Rubber", item: "https://origindirectgroup.com/products/natural-rubber" },
+  ],
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What is Nigeria's position in global natural rubber production?",
+      acceptedAnswer: { "@type": "Answer", text: "Nigeria is Africa's largest natural rubber producer, with output of approximately 80,000 metric tons annually from plantations concentrated in Edo, Delta, Ondo, and Cross River states. While modest compared to Southeast Asian producers (Thailand produces 4.5M MT), Nigerian rubber is valued for its quality and proximity to European markets. France is the dominant buyer, purchasing approximately 60% of Nigeria's rubber exports for its tire manufacturing industry (Michelin)." },
+    },
+    {
+      "@type": "Question",
+      name: "What grades of natural rubber do you supply?",
+      acceptedAnswer: { "@type": "Answer", text: "We supply Standard Nigerian Rubber (SNR) grades: SNR 10 (standard processing, most common), SNR 20 (slightly lower specification), RSS (Ribbed Smoked Sheet) grades 1-3, and Crepe rubber. SNR 10 is technically equivalent to TSR 10 (Technically Specified Rubber) and meets the same specifications: dirt content below 0.10%, ash below 0.75%, volatile matter below 0.80%, and nitrogen below 0.60%. Pricing is approximately $2,100/MT FOB Lagos, tracking the SICOM benchmark." },
+    },
+    {
+      "@type": "Question",
+      name: "How does EUDR affect Nigerian rubber exports?",
+      acceptedAnswer: { "@type": "Answer", text: "The EU Deforestation Regulation (EUDR) applies to natural rubber, requiring importers to prove that rubber was not produced on land deforested after December 2020. Nigerian rubber plantations are predominantly established on long-standing plantation land, making EUDR compliance relatively straightforward. We provide GPS coordinates of plantation plots, land use documentation, and traceability records to support buyers' due diligence obligations under EUDR." },
+    },
+  ],
+};
+---
+
+<Layout
+  title="Natural Rubber Supplier - Direct from Nigeria | Origin Direct"
+  description="Nigerian natural rubber. $2,100/MT. France buys 60%. SNR 10, RSS grades. Africa's largest producer. EUDR-compliant supply for tire and industrial buyers."
+  structuredData={[productSchema, breadcrumbSchema, faqSchema]}
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumbs items={[{ label: "Products", href: "/products" }, { label: "Natural Rubber" }]} />
+  </div>
+
+  <section class="relative py-24 sm:py-32 bg-gradient-to-br from-brand-900 via-brand-800 to-earth-800 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(196,154,42,0.3),transparent_70%)]"></div>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-gold-light font-medium tracking-wide uppercase text-sm mb-4">Direct from Nigeria</p>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">Natural Rubber</h1>
+      <p class="text-xl text-brand-200 max-w-2xl mx-auto mb-10">
+        From Africa's largest rubber producer. SNR 10 and RSS grades for automotive, industrial, and manufacturing buyers. France buys 60% of exports.
+      </p>
+      <a href="#quote-form" class="inline-flex items-center px-8 py-4 bg-gold hover:bg-gold-dark text-white font-bold rounded-lg transition-colors shadow-lg text-lg">
+        Request Quote
+        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Overview</h2>
+      <div class="prose prose-lg text-gray-700 space-y-5">
+        <p>
+          Nigeria is Africa's largest natural rubber producer, harvesting approximately 80,000 metric tons annually from plantations across its southern states. Nigerian rubber has a long-established export market, with France purchasing roughly 60% of exports — driven primarily by Michelin's tire manufacturing operations.
+        </p>
+        <p>
+          Natural rubber remains irreplaceable for high-performance applications. Despite synthetic alternatives, approximately 45% of global rubber consumption is natural, valued for superior elasticity, resilience, and heat resistance. The automotive tire industry consumes 70% of natural rubber production, with aircraft tires, medical gloves, and industrial components accounting for the remainder.
+        </p>
+        <p>
+          Origin Direct sources natural rubber from established plantations and processing facilities across Edo, Delta, and Ondo states. We supply SNR 10 (equivalent to TSR 10), RSS grades, and crepe rubber in standard 33.33 kg bales. All product meets international quality specifications and EUDR compliance requirements for the European market.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Key Specifications</h2>
+      <div class="overflow-x-auto rounded-xl border border-gray-200 shadow-sm">
+        <table class="w-full text-left text-sm">
+          <thead>
+            <tr class="bg-brand-800 text-white">
+              <th class="px-6 py-4 font-semibold">Parameter</th>
+              <th class="px-6 py-4 font-semibold">Specification</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-100">
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">Primary Grade</td><td class="px-6 py-4 text-gray-700">SNR 10 (equivalent to TSR 10)</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">Dirt Content</td><td class="px-6 py-4 text-gray-700">&lt; 0.10%</td></tr>
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">Ash Content</td><td class="px-6 py-4 text-gray-700">&lt; 0.75%</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">Volatile Matter</td><td class="px-6 py-4 text-gray-700">&lt; 0.80%</td></tr>
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">Nitrogen</td><td class="px-6 py-4 text-gray-700">&lt; 0.60%</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">Price</td><td class="px-6 py-4 text-gray-700">~$2,100/MT FOB Lagos</td></tr>
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">MOQ</td><td class="px-6 py-4 text-gray-700">1 FCL (~20 MT)</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">HS Code</td><td class="px-6 py-4 text-gray-700">4001.22</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Frequently Asked Questions</h2>
+      <div class="space-y-4">
+        {faqSchema.mainEntity.map((faq) => (
+          <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+            <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">{faq.name}</summary>
+            <div class="px-6 pb-4 text-gray-700">{faq.acceptedAnswer.text}</div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <QuoteForm productName="Other (please specify below)" />
+</Layout>

@@ -1,0 +1,140 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import QuoteForm from '../../components/QuoteForm.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const productSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name: "Shea Nuts",
+  description: "Raw shea nuts from Ghana and Nigeria. Cost-effective raw material for buyers with own shea butter processing capacity.",
+  image: "https://origindirectgroup.com/images/products/shea-nuts.jpg",
+  brand: { "@type": "Brand", name: "Origin Direct Group" },
+  category: "Oilseed Raw Materials",
+  countryOfOrigin: { "@type": "Country", name: "Ghana" },
+  offers: { "@type": "AggregateOffer", priceCurrency: "USD", availability: "https://schema.org/InStock" },
+  additionalProperty: [
+    { "@type": "PropertyValue", name: "HS Code", value: "1207.99" },
+    { "@type": "PropertyValue", name: "MOQ", value: "1 FCL (20 MT)" },
+    { "@type": "PropertyValue", name: "Origin", value: "Ghana / Nigeria" },
+  ],
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://origindirectgroup.com/" },
+    { "@type": "ListItem", position: 2, name: "Products", item: "https://origindirectgroup.com/products" },
+    { "@type": "ListItem", position: 3, name: "Shea Nuts", item: "https://origindirectgroup.com/products/shea-nuts" },
+  ],
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Why buy raw shea nuts instead of processed shea butter?",
+      acceptedAnswer: { "@type": "Answer", text: "Buying raw shea nuts is 40-60% cheaper per kg of butter equivalent than purchasing processed shea butter. For buyers with their own crushing and refining capacity (common among large cosmetic manufacturers, CBE producers, and oleochemical companies), raw nuts offer significant cost savings. Shea nuts yield approximately 42-48% fat content, and buyers can control processing parameters to their exact specifications." },
+    },
+    {
+      "@type": "Question",
+      name: "What are the quality parameters for export-grade shea nuts?",
+      acceptedAnswer: { "@type": "Answer", text: "Export-grade shea nuts must meet: moisture content below 7% (critical for preventing mold during transit), FFA below 6% (indicates proper handling and freshness), oil content above 42%, and minimal foreign matter (below 2%). We grade and test every lot pre-shipment, providing Certificate of Analysis with moisture, FFA, oil content, and aflatoxin levels. Properly dried nuts have a shelf life of 12+ months." },
+    },
+    {
+      "@type": "Question",
+      name: "What is the annual production and pricing of shea nuts?",
+      acceptedAnswer: { "@type": "Answer", text: "West Africa produces approximately 1.5 million metric tons of shea nuts annually, with Nigeria and Ghana being the two largest producers. Harvest season runs from May to August. Pricing typically ranges from $400-800/MT FOB, depending on quality grade, moisture content, and market timing. Prices are lowest during peak harvest (June-July) and highest in the off-season (January-March) when stocks are depleted." },
+    },
+  ],
+};
+---
+
+<Layout
+  title="Shea Nuts Supplier - Raw Shea Nuts from Ghana & Nigeria | Origin Direct"
+  description="Raw shea nuts from Ghana & Nigeria. 40-60% cheaper than processed butter for buyers with own processing. 42-48% oil content. Bulk FOB supply."
+  structuredData={[productSchema, breadcrumbSchema, faqSchema]}
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumbs items={[{ label: "Products", href: "/products" }, { label: "Shea Nuts" }]} />
+  </div>
+
+  <section class="relative py-24 sm:py-32 bg-gradient-to-br from-brand-900 via-brand-800 to-earth-800 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(196,154,42,0.3),transparent_70%)]"></div>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-gold-light font-medium tracking-wide uppercase text-sm mb-4">Direct from Ghana &amp; Nigeria</p>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">Shea Nuts</h1>
+      <p class="text-xl text-brand-200 max-w-2xl mx-auto mb-10">
+        Raw shea nuts for buyers with own processing capacity. 40-60% cost savings versus processed shea butter.
+      </p>
+      <a href="#quote-form" class="inline-flex items-center px-8 py-4 bg-gold hover:bg-gold-dark text-white font-bold rounded-lg transition-colors shadow-lg text-lg">
+        Request Quote
+        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Overview</h2>
+      <div class="prose prose-lg text-gray-700 space-y-5">
+        <p>
+          Shea nuts (Vitellaria paradoxa) are the raw material behind the global shea butter industry. For large-scale buyers with their own crushing and refining capacity — particularly CBE (cocoa butter equivalent) manufacturers, major cosmetic companies, and oleochemical processors — purchasing raw shea nuts offers 40-60% cost savings compared to buying processed shea butter.
+        </p>
+        <p>
+          West Africa produces approximately 1.5 million metric tons of shea nuts annually, with the harvest concentrated between May and August. Ghana and Nigeria together account for over 60% of global production. The nuts contain 42-48% fat content and, when properly dried to below 7% moisture, can be stored and shipped with a shelf life exceeding 12 months.
+        </p>
+        <p>
+          Origin Direct sources shea nuts from collection networks across Ghana's Northern Region and Nigeria's shea belt, working directly with women's cooperatives and aggregators. We provide full pre-shipment quality testing including moisture, FFA, oil content, and aflatoxin analysis, ensuring every container meets buyer specifications.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Key Specifications</h2>
+      <div class="overflow-x-auto rounded-xl border border-gray-200 shadow-sm">
+        <table class="w-full text-left text-sm">
+          <thead>
+            <tr class="bg-brand-800 text-white">
+              <th class="px-6 py-4 font-semibold">Parameter</th>
+              <th class="px-6 py-4 font-semibold">Specification</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-100">
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">Oil Content</td><td class="px-6 py-4 text-gray-700">42 &ndash; 48%</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">Moisture</td><td class="px-6 py-4 text-gray-700">&lt; 7%</td></tr>
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">FFA</td><td class="px-6 py-4 text-gray-700">&lt; 6%</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">Foreign Matter</td><td class="px-6 py-4 text-gray-700">&lt; 2%</td></tr>
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">Price Range</td><td class="px-6 py-4 text-gray-700">$400 &ndash; $800/MT FOB</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">Harvest Season</td><td class="px-6 py-4 text-gray-700">May &ndash; August</td></tr>
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">MOQ</td><td class="px-6 py-4 text-gray-700">1 FCL (~20 MT)</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">HS Code</td><td class="px-6 py-4 text-gray-700">1207.99</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Frequently Asked Questions</h2>
+      <div class="space-y-4">
+        {faqSchema.mainEntity.map((faq) => (
+          <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+            <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">{faq.name}</summary>
+            <div class="px-6 pb-4 text-gray-700">{faq.acceptedAnswer.text}</div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <QuoteForm productName="Other (please specify below)" />
+</Layout>

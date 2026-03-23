@@ -1,0 +1,144 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import QuoteForm from '../../components/QuoteForm.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const productSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name: "Kaolin Clay",
+  description: "Industrial and cosmetic grade kaolin clay from Nigeria. 2+ billion MT reserves. For ceramics, paper coating, cosmetics, and pharmaceuticals.",
+  image: "https://origindirectgroup.com/images/products/kaolin-clay.jpg",
+  brand: { "@type": "Brand", name: "Origin Direct Group" },
+  category: "Industrial Minerals",
+  countryOfOrigin: { "@type": "Country", name: "Nigeria" },
+  offers: {
+    "@type": "AggregateOffer",
+    priceCurrency: "USD",
+    availability: "https://schema.org/InStock",
+  },
+  additionalProperty: [
+    { "@type": "PropertyValue", name: "HS Code", value: "2507.00" },
+    { "@type": "PropertyValue", name: "MOQ", value: "1 FCL (20 MT)" },
+    { "@type": "PropertyValue", name: "Origin", value: "Nigeria" },
+  ],
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://origindirectgroup.com/" },
+    { "@type": "ListItem", position: 2, name: "Products", item: "https://origindirectgroup.com/products" },
+    { "@type": "ListItem", position: 3, name: "Kaolin Clay", item: "https://origindirectgroup.com/products/kaolin-clay" },
+  ],
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What are the industrial applications of kaolin clay?",
+      acceptedAnswer: { "@type": "Answer", text: "Kaolin clay is used in paper coating and filling (35% of global demand), ceramics and porcelain manufacturing (25%), paint and coatings (15%), rubber and plastics (10%), and cosmetics/pharmaceuticals (15%). The global kaolin market is valued at approximately $5.8 billion and growing at 4.5% CAGR. In paper manufacturing, kaolin provides brightness, smoothness, and printability. In ceramics, it is the essential ingredient for whiteware and porcelain." },
+    },
+    {
+      "@type": "Question",
+      name: "How large are Nigeria's kaolin reserves?",
+      acceptedAnswer: { "@type": "Answer", text: "Nigeria has estimated kaolin reserves exceeding 2 billion metric tons, with major deposits in Plateau, Ekiti, Ondo, Ogun, Kogi, and Anambra states. Nigerian kaolin has high kaolinite content (typically 85-95% after processing) and low iron content, making it suitable for paper, ceramics, and cosmetic applications. Despite these vast reserves, Nigeria currently exports only a fraction of its potential, creating opportunities for competitive pricing." },
+    },
+    {
+      "@type": "Question",
+      name: "What grades of kaolin do you supply?",
+      acceptedAnswer: { "@type": "Answer", text: "We supply four grades: Industrial Grade (for ceramics, paper coating, paint filler), Cosmetic Grade (USP/EP compliant, for skincare formulations), Pharmaceutical Grade (BP/USP compliant, for tablet excipients), and Calcined Kaolin (heat-treated at 1050 degrees C, for specialty coatings and fillers). All grades undergo beneficiation including washing, magnetic separation, and particle size classification." },
+    },
+  ],
+};
+---
+
+<Layout
+  title="Kaolin Clay Supplier - Direct from Nigeria | Origin Direct"
+  description="Industrial and cosmetic grade kaolin clay from Nigeria. 2+ billion MT reserves. Ceramics, paper coating, cosmetics, pharma. $5.8B global market. Bulk supply."
+  structuredData={[productSchema, breadcrumbSchema, faqSchema]}
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumbs items={[{ label: "Products", href: "/products" }, { label: "Kaolin Clay" }]} />
+  </div>
+
+  <section class="relative py-24 sm:py-32 bg-gradient-to-br from-brand-900 via-brand-800 to-earth-800 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(196,154,42,0.3),transparent_70%)]"></div>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-gold-light font-medium tracking-wide uppercase text-sm mb-4">Direct from Nigeria</p>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">Kaolin Clay</h1>
+      <p class="text-xl text-brand-200 max-w-2xl mx-auto mb-10">
+        High-purity kaolin from Nigeria's 2+ billion MT reserves. Industrial, cosmetic, and pharmaceutical grades for global buyers.
+      </p>
+      <a href="#quote-form" class="inline-flex items-center px-8 py-4 bg-gold hover:bg-gold-dark text-white font-bold rounded-lg transition-colors shadow-lg text-lg">
+        Request Quote
+        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Overview</h2>
+      <div class="prose prose-lg text-gray-700 space-y-5">
+        <p>
+          Kaolin is a fine white clay mineral (hydrated aluminum silicate) that is one of the most versatile industrial minerals in the world. The global kaolin market is valued at approximately $5.8 billion and serves industries from paper manufacturing and ceramics to cosmetics and pharmaceuticals. Nigeria holds estimated reserves exceeding 2 billion metric tons, yet exports only a fraction of its capacity.
+        </p>
+        <p>
+          Nigerian kaolin deposits, concentrated in Plateau, Ekiti, Ondo, and Anambra states, feature high kaolinite content (85-95% after beneficiation) and naturally low iron oxide levels, producing the white brightness required for premium applications. This makes Nigerian kaolin competitive with traditional sources from the US, UK, and Brazil for paper coating, fine ceramics, and cosmetic formulations.
+        </p>
+        <p>
+          Origin Direct works with established mining and processing operations across Nigeria to supply washed, classified, and graded kaolin in bulk. We offer industrial, cosmetic, pharmaceutical, and calcined grades, with full mineralogical analysis and quality documentation for every shipment.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Key Specifications</h2>
+      <div class="overflow-x-auto rounded-xl border border-gray-200 shadow-sm">
+        <table class="w-full text-left text-sm">
+          <thead>
+            <tr class="bg-brand-800 text-white">
+              <th class="px-6 py-4 font-semibold">Parameter</th>
+              <th class="px-6 py-4 font-semibold">Specification</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-100">
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">Chemical Formula</td><td class="px-6 py-4 text-gray-700">Al&#8322;Si&#8322;O&#8325;(OH)&#8324;</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">Kaolinite Content</td><td class="px-6 py-4 text-gray-700">85 &ndash; 95% (beneficiated)</td></tr>
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">Fe&#8322;O&#8323;</td><td class="px-6 py-4 text-gray-700">&lt; 1.0% (cosmetic grade &lt; 0.5%)</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">Brightness (ISO)</td><td class="px-6 py-4 text-gray-700">82 &ndash; 90%</td></tr>
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">Particle Size</td><td class="px-6 py-4 text-gray-700">&lt; 2 &mu;m fraction: 60-80%</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">Grades</td><td class="px-6 py-4 text-gray-700">Industrial, cosmetic, pharmaceutical, calcined</td></tr>
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">MOQ</td><td class="px-6 py-4 text-gray-700">1 FCL (~20 MT)</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">HS Code</td><td class="px-6 py-4 text-gray-700">2507.00</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Frequently Asked Questions</h2>
+      <div class="space-y-4">
+        {faqSchema.mainEntity.map((faq) => (
+          <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+            <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">{faq.name}</summary>
+            <div class="px-6 pb-4 text-gray-700">{faq.acceptedAnswer.text}</div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <QuoteForm productName="Other (please specify below)" />
+</Layout>

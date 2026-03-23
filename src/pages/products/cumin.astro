@@ -1,0 +1,140 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import QuoteForm from '../../components/QuoteForm.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const productSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name: "Cumin Seeds",
+  description: "Indian cumin seeds from Rajasthan and Gujarat. Near-monopoly supply. Whole seeds and ground cumin for spice trade and food processing.",
+  image: "https://origindirectgroup.com/images/products/cumin.jpg",
+  brand: { "@type": "Brand", name: "Origin Direct Group" },
+  category: "Spices & Seasonings",
+  countryOfOrigin: { "@type": "Country", name: "India" },
+  offers: { "@type": "AggregateOffer", priceCurrency: "USD", availability: "https://schema.org/InStock" },
+  additionalProperty: [
+    { "@type": "PropertyValue", name: "HS Code", value: "0909.31" },
+    { "@type": "PropertyValue", name: "MOQ", value: "1 FCL (18 MT)" },
+    { "@type": "PropertyValue", name: "Origin", value: "India" },
+  ],
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://origindirectgroup.com/" },
+    { "@type": "ListItem", position: 2, name: "Products", item: "https://origindirectgroup.com/products" },
+    { "@type": "ListItem", position: 3, name: "Cumin Seeds", item: "https://origindirectgroup.com/products/cumin" },
+  ],
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Why does India dominate global cumin supply?",
+      acceptedAnswer: { "@type": "Answer", text: "India holds a near-monopoly on cumin production, supplying approximately 70% of global demand. Rajasthan and Gujarat together account for over 80% of India's cumin output. Cumin is a Rabi (winter) crop planted in November-December and harvested March-April. The concentration in semi-arid Rajasthan makes it highly sensitive to winter rainfall and frost, causing price swings of 50-80% year-on-year. India exported 2.3 lakh MT of cumin in 2023-24." },
+    },
+    {
+      "@type": "Question",
+      name: "What quality parameters matter for export cumin?",
+      acceptedAnswer: { "@type": "Answer", text: "Key parameters include: volatile oil content (minimum 2.5% for premium grade, tested by steam distillation), cuminaldehyde content (primary flavor compound), moisture (below 10%), extraneous matter (below 1%), and compliance with pesticide MRLs. For EU markets, cumin must meet stringent pesticide residue limits — our pre-shipment testing covers 400+ pesticide compounds at NABL-accredited labs. Singapore 99% purity grade is the benchmark for export quality." },
+    },
+    {
+      "@type": "Question",
+      name: "What cumin grades and forms are available?",
+      acceptedAnswer: { "@type": "Answer", text: "We supply: Singapore quality (99% purity, premium export grade), Europe quality (99.5% purity, machine-cleaned), FAQ quality (98% purity, standard grade), and ground cumin powder (food processing grade). Organic certified cumin is available at a 30-40% premium. All grades are available in 25 kg or 50 kg PP/jute bags. We also supply cumin seed oil for flavor and fragrance applications." },
+    },
+  ],
+};
+---
+
+<Layout
+  title="Cumin Seeds Supplier - Direct from India | Origin Direct"
+  description="Indian cumin seeds from Rajasthan. Near-monopoly supply (70% of world). Whole seeds, powder, organic. Navigate 50-80% price swings with direct sourcing."
+  structuredData={[productSchema, breadcrumbSchema, faqSchema]}
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumbs items={[{ label: "Products", href: "/products" }, { label: "Cumin Seeds" }]} />
+  </div>
+
+  <section class="relative py-24 sm:py-32 bg-gradient-to-br from-brand-900 via-brand-800 to-earth-800 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(196,154,42,0.3),transparent_70%)]"></div>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-gold-light font-medium tracking-wide uppercase text-sm mb-4">Direct from India</p>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">Cumin Seeds</h1>
+      <p class="text-xl text-brand-200 max-w-2xl mx-auto mb-10">
+        From India's Rajasthan heartland, where 70% of the world's cumin is grown. Navigate volatile pricing with direct farm-gate access.
+      </p>
+      <a href="#quote-form" class="inline-flex items-center px-8 py-4 bg-gold hover:bg-gold-dark text-white font-bold rounded-lg transition-colors shadow-lg text-lg">
+        Request Quote
+        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Overview</h2>
+      <div class="prose prose-lg text-gray-700 space-y-5">
+        <p>
+          India holds a near-monopoly on global cumin production, supplying approximately 70% of world demand from the semi-arid regions of Rajasthan and Gujarat. Cumin (Cuminum cyminum) is one of the world's most traded spices, essential to cuisines across the Middle East, South Asia, Latin America, and increasingly mainstream Western cooking.
+        </p>
+        <p>
+          As a rain-fed Rabi (winter) crop in Rajasthan's Jodhpur and Barmer districts, cumin is highly weather-sensitive. Unseasonal winter rain or frost during the January-February flowering period can devastate yields, causing price spikes of 50-80% within months. This volatility makes procurement timing and India-based market intelligence critical for spice importers.
+        </p>
+        <p>
+          Origin Direct's India team monitors mandi (market) prices across Rajasthan and Gujarat daily, providing buyers with real-time pricing intelligence and the ability to lock in procurement at optimal moments. We supply Singapore-quality whole seeds, ground cumin powder, and organic certified grades with full EU pesticide residue compliance.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Key Specifications</h2>
+      <div class="overflow-x-auto rounded-xl border border-gray-200 shadow-sm">
+        <table class="w-full text-left text-sm">
+          <thead>
+            <tr class="bg-brand-800 text-white">
+              <th class="px-6 py-4 font-semibold">Parameter</th>
+              <th class="px-6 py-4 font-semibold">Specification</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-100">
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">Volatile Oil</td><td class="px-6 py-4 text-gray-700">&gt; 2.5% (premium), &gt; 2.0% (standard)</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">Purity</td><td class="px-6 py-4 text-gray-700">98 &ndash; 99.5% (grade dependent)</td></tr>
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">Moisture</td><td class="px-6 py-4 text-gray-700">&lt; 10%</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">Extraneous Matter</td><td class="px-6 py-4 text-gray-700">&lt; 1%</td></tr>
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">Grades</td><td class="px-6 py-4 text-gray-700">Singapore, Europe, FAQ, Organic</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">Forms</td><td class="px-6 py-4 text-gray-700">Whole seeds, ground powder, seed oil</td></tr>
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">MOQ</td><td class="px-6 py-4 text-gray-700">1 FCL (~18 MT)</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">HS Code</td><td class="px-6 py-4 text-gray-700">0909.31</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Frequently Asked Questions</h2>
+      <div class="space-y-4">
+        {faqSchema.mainEntity.map((faq) => (
+          <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+            <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">{faq.name}</summary>
+            <div class="px-6 pb-4 text-gray-700">{faq.acceptedAnswer.text}</div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <QuoteForm productName="Other (please specify below)" />
+</Layout>

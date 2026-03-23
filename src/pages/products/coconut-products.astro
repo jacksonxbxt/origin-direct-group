@@ -1,0 +1,137 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import QuoteForm from '../../components/QuoteForm.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const productSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name: "Coconut Products",
+  description: "Ghanaian coconut products. Coconut oil, desiccated coconut, coconut water. Small but growing West African coconut industry.",
+  image: "https://origindirectgroup.com/images/products/coconut-products.jpg",
+  brand: { "@type": "Brand", name: "Origin Direct Group" },
+  category: "Coconut & Tropical Products",
+  countryOfOrigin: { "@type": "Country", name: "Ghana" },
+  offers: { "@type": "AggregateOffer", priceCurrency: "USD", availability: "https://schema.org/InStock" },
+  additionalProperty: [
+    { "@type": "PropertyValue", name: "HS Code", value: "1513.11" },
+    { "@type": "PropertyValue", name: "MOQ", value: "1 FCL (18 MT)" },
+    { "@type": "PropertyValue", name: "Origin", value: "Ghana" },
+  ],
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://origindirectgroup.com/" },
+    { "@type": "ListItem", position: 2, name: "Products", item: "https://origindirectgroup.com/products" },
+    { "@type": "ListItem", position: 3, name: "Coconut Products", item: "https://origindirectgroup.com/products/coconut-products" },
+  ],
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What coconut products are available from Ghana?",
+      acceptedAnswer: { "@type": "Answer", text: "Ghana's coconut industry, centered in the Western and Central regions along the coast, produces: virgin coconut oil (cold-pressed, for cosmetics and health food), copra-derived coconut oil (for food processing and industrial use), desiccated coconut (for bakery and confectionery), coconut water (fresh or processed), coconut cream and milk, and coconut shell charcoal (for activated carbon and hookah). While Ghana is a smaller producer than Philippines or Indonesia, its products are gaining recognition for quality." },
+    },
+    {
+      "@type": "Question",
+      name: "How does Ghanaian coconut oil compare to Asian sources?",
+      acceptedAnswer: { "@type": "Answer", text: "Ghanaian coconut oil offers several advantages for certain buyers: proximity to European markets (shorter shipping vs. Philippines/Indonesia), lower carbon footprint for EU buyers, organic certification availability (many Ghanaian coconut farms are de facto organic), and a unique origin story for premium cosmetic brands seeking African-sourced ingredients. Pricing is generally competitive with Asian sources at $1,200-1,800/MT for crude coconut oil and $2,500-3,500/MT for virgin cold-pressed." },
+    },
+    {
+      "@type": "Question",
+      name: "What is the growth potential of Ghana's coconut industry?",
+      acceptedAnswer: { "@type": "Answer", text: "Ghana's coconut industry is in a growth phase, with the government and private sector investing in replanting programs (many palms are aging) and processing infrastructure. The Ghana Coconut Producers Association estimates 30-50 million coconut palms in the country. The global coconut market exceeds $12 billion and growing at 10% CAGR, driven by health food trends, plant-based diet adoption, and demand for natural cosmetic ingredients. Early movers sourcing from Ghana can establish supply relationships before the industry scales." },
+    },
+  ],
+};
+---
+
+<Layout
+  title="Coconut Products Supplier - Direct from Ghana | Origin Direct"
+  description="Ghanaian coconut oil, desiccated coconut, coconut water. Organic available. Shorter shipping to EU than Asian sources. Growing West African coconut industry."
+  structuredData={[productSchema, breadcrumbSchema, faqSchema]}
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumbs items={[{ label: "Products", href: "/products" }, { label: "Coconut Products" }]} />
+  </div>
+
+  <section class="relative py-24 sm:py-32 bg-gradient-to-br from-brand-900 via-brand-800 to-earth-800 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(196,154,42,0.3),transparent_70%)]"></div>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-gold-light font-medium tracking-wide uppercase text-sm mb-4">Direct from Ghana</p>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">Coconut Products</h1>
+      <p class="text-xl text-brand-200 max-w-2xl mx-auto mb-10">
+        Coconut oil, desiccated coconut, and coconut water from Ghana's coastal growing regions. A growing alternative to Asian supply chains.
+      </p>
+      <a href="#quote-form" class="inline-flex items-center px-8 py-4 bg-gold hover:bg-gold-dark text-white font-bold rounded-lg transition-colors shadow-lg text-lg">
+        Request Quote
+        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Overview</h2>
+      <div class="prose prose-lg text-gray-700 space-y-5">
+        <p>
+          Ghana's Western and Central coastal regions are home to an estimated 30-50 million coconut palms, forming the basis of a small but rapidly growing coconut product industry. While Ghana cannot yet compete with the Philippines or Indonesia on volume, its coconut products offer distinct advantages: shorter shipping routes to European markets, organic certification potential (many farms use minimal inputs), and a compelling origin story for premium brands.
+        </p>
+        <p>
+          The global coconut market exceeds $12 billion and is growing at approximately 10% CAGR, driven by health food trends, plant-based diets, and demand for natural cosmetic ingredients. Virgin coconut oil, coconut water, and desiccated coconut are the fastest-growing segments, all of which Ghana can supply at competitive quality levels.
+        </p>
+        <p>
+          Origin Direct works with coconut processing facilities along Ghana's coast, supplying virgin coconut oil (cold-pressed), crude coconut oil, desiccated coconut, and coconut shell charcoal. We help buyers establish early-mover supply relationships in this growing origin before the industry scales and competition for supply increases.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Key Specifications</h2>
+      <div class="overflow-x-auto rounded-xl border border-gray-200 shadow-sm">
+        <table class="w-full text-left text-sm">
+          <thead>
+            <tr class="bg-brand-800 text-white">
+              <th class="px-6 py-4 font-semibold">Product</th>
+              <th class="px-6 py-4 font-semibold">Specification</th>
+              <th class="px-6 py-4 font-semibold">Price Range (FOB)</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-100">
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">Virgin Coconut Oil</td><td class="px-6 py-4 text-gray-700">Cold-pressed, FFA &lt; 0.2%</td><td class="px-6 py-4 text-gray-700">$2,500 &ndash; $3,500/MT</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">Crude Coconut Oil</td><td class="px-6 py-4 text-gray-700">Copra-derived, FFA &lt; 3%</td><td class="px-6 py-4 text-gray-700">$1,200 &ndash; $1,800/MT</td></tr>
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">Desiccated Coconut</td><td class="px-6 py-4 text-gray-700">Fine or medium grade, moisture &lt; 3%</td><td class="px-6 py-4 text-gray-700">$1,500 &ndash; $2,200/MT</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">Coconut Shell Charcoal</td><td class="px-6 py-4 text-gray-700">Fixed carbon &gt; 75%</td><td class="px-6 py-4 text-gray-700">$300 &ndash; $500/MT</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Frequently Asked Questions</h2>
+      <div class="space-y-4">
+        {faqSchema.mainEntity.map((faq) => (
+          <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+            <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">{faq.name}</summary>
+            <div class="px-6 pb-4 text-gray-700">{faq.acceptedAnswer.text}</div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <QuoteForm productName="Other (please specify below)" />
+</Layout>

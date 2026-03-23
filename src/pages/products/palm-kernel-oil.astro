@@ -1,0 +1,140 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import QuoteForm from '../../components/QuoteForm.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const productSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name: "Palm Kernel Oil",
+  description: "Palm kernel oil from Nigeria and Ghana. For soap manufacturing, cosmetics, food processing, and oleochemicals. Different from palm oil.",
+  image: "https://origindirectgroup.com/images/products/palm-kernel-oil.jpg",
+  brand: { "@type": "Brand", name: "Origin Direct Group" },
+  category: "Vegetable Oils",
+  countryOfOrigin: { "@type": "Country", name: "Nigeria" },
+  offers: { "@type": "AggregateOffer", priceCurrency: "USD", availability: "https://schema.org/InStock" },
+  additionalProperty: [
+    { "@type": "PropertyValue", name: "HS Code", value: "1513.29" },
+    { "@type": "PropertyValue", name: "MOQ", value: "1 FCL (20 MT)" },
+    { "@type": "PropertyValue", name: "Origin", value: "Nigeria / Ghana" },
+  ],
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://origindirectgroup.com/" },
+    { "@type": "ListItem", position: 2, name: "Products", item: "https://origindirectgroup.com/products" },
+    { "@type": "ListItem", position: 3, name: "Palm Kernel Oil", item: "https://origindirectgroup.com/products/palm-kernel-oil" },
+  ],
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What is the difference between palm oil and palm kernel oil?",
+      acceptedAnswer: { "@type": "Answer", text: "Palm oil comes from the fruit's flesh (mesocarp) and is reddish-orange due to high beta-carotene. Palm kernel oil is extracted from the seed (kernel) inside the fruit and is pale yellow with a different fatty acid profile. Palm kernel oil is high in lauric acid (48-52%), making it chemically similar to coconut oil and ideal for soap, detergent, and cosmetic manufacturing. They are distinct products with different applications and pricing." },
+    },
+    {
+      "@type": "Question",
+      name: "What are the main commercial uses of palm kernel oil?",
+      acceptedAnswer: { "@type": "Answer", text: "Palm kernel oil's high lauric acid content (48-52%) makes it valuable for: soap and detergent manufacturing (the largest use, where lauric acid provides excellent lathering), cosmetic formulations (skin creams, hair conditioners), food processing (cocoa butter substitute, non-dairy creamers, margarine), and oleochemical production (fatty acids, fatty alcohols for industrial use). The EU and US import significant volumes for their soap and oleochemical industries." },
+    },
+    {
+      "@type": "Question",
+      name: "Can you supply RSPO-certified palm kernel oil?",
+      acceptedAnswer: { "@type": "Answer", text: "We are working toward RSPO certification for our palm kernel oil supply chain. Currently, we supply conventional palm kernel oil with full traceability to the crushing facility. For buyers requiring certified sustainable palm, we can source RSPO-certified product from specific mills at a premium. All shipments include Certificate of Analysis with FFA, moisture, impurities, and iodine value parameters." },
+    },
+  ],
+};
+---
+
+<Layout
+  title="Palm Kernel Oil Supplier - Direct from Nigeria & Ghana | Origin Direct"
+  description="Palm kernel oil from Nigeria and Ghana. High lauric acid (48-52%). Soap manufacturing, cosmetics, food processing. Different from palm oil. Bulk FOB supply."
+  structuredData={[productSchema, breadcrumbSchema, faqSchema]}
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumbs items={[{ label: "Products", href: "/products" }, { label: "Palm Kernel Oil" }]} />
+  </div>
+
+  <section class="relative py-24 sm:py-32 bg-gradient-to-br from-brand-900 via-brand-800 to-earth-800 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(196,154,42,0.3),transparent_70%)]"></div>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-gold-light font-medium tracking-wide uppercase text-sm mb-4">Direct from Nigeria &amp; Ghana</p>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">Palm Kernel Oil</h1>
+      <p class="text-xl text-brand-200 max-w-2xl mx-auto mb-10">
+        High-lauric acid oil for soap manufacturing, cosmetics, and oleochemicals. The other palm oil — different product, different applications.
+      </p>
+      <a href="#quote-form" class="inline-flex items-center px-8 py-4 bg-gold hover:bg-gold-dark text-white font-bold rounded-lg transition-colors shadow-lg text-lg">
+        Request Quote
+        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Overview</h2>
+      <div class="prose prose-lg text-gray-700 space-y-5">
+        <p>
+          Palm kernel oil (PKO) is extracted from the seed inside the oil palm fruit, producing an oil with a fundamentally different composition from palm oil. Its high lauric acid content (48-52%) makes it chemically similar to coconut oil and uniquely valuable for soap manufacturing, where lauric acid provides the lathering properties consumers expect.
+        </p>
+        <p>
+          Nigeria and Ghana are significant producers of palm kernel oil, with Nigeria alone producing over 500,000 metric tons of palm kernel annually. The oil serves as a critical raw material for the soap and detergent industry, cosmetic formulations, food processing (as a cocoa butter substitute), and oleochemical production for industrial fatty acids and alcohols.
+        </p>
+        <p>
+          Origin Direct sources palm kernel oil from established crushing facilities across Nigeria and Ghana, offering crude and RBD (refined, bleached, deodorized) grades. Our direct procurement from crushing mills eliminates layers of trading intermediaries, providing competitive pricing for soap manufacturers, oleochemical producers, and food processors.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Key Specifications</h2>
+      <div class="overflow-x-auto rounded-xl border border-gray-200 shadow-sm">
+        <table class="w-full text-left text-sm">
+          <thead>
+            <tr class="bg-brand-800 text-white">
+              <th class="px-6 py-4 font-semibold">Parameter</th>
+              <th class="px-6 py-4 font-semibold">Specification</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-100">
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">Lauric Acid</td><td class="px-6 py-4 text-gray-700">48 &ndash; 52%</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">Myristic Acid</td><td class="px-6 py-4 text-gray-700">14 &ndash; 18%</td></tr>
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">FFA (as lauric)</td><td class="px-6 py-4 text-gray-700">&lt; 5% (crude), &lt; 0.1% (RBD)</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">Iodine Value</td><td class="px-6 py-4 text-gray-700">14 &ndash; 23</td></tr>
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">Melting Point</td><td class="px-6 py-4 text-gray-700">25 &ndash; 30&deg;C</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">Grades</td><td class="px-6 py-4 text-gray-700">Crude PKO, RBD PKO</td></tr>
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">MOQ</td><td class="px-6 py-4 text-gray-700">1 FCL (20 MT in flexi-tank)</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">HS Code</td><td class="px-6 py-4 text-gray-700">1513.29</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Frequently Asked Questions</h2>
+      <div class="space-y-4">
+        {faqSchema.mainEntity.map((faq) => (
+          <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+            <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">{faq.name}</summary>
+            <div class="px-6 pb-4 text-gray-700">{faq.acceptedAnswer.text}</div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <QuoteForm productName="Other (please specify below)" />
+</Layout>

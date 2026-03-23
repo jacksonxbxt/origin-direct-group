@@ -1,0 +1,148 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import QuoteForm from '../../components/QuoteForm.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const productSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name: "Tiger Nuts",
+  description: "Premium tiger nuts sourced directly from Nigeria. Used for horchata, health food, and snacking. Gluten-free, high in prebiotic fiber.",
+  image: "https://origindirectgroup.com/images/products/tiger-nuts.jpg",
+  brand: { "@type": "Brand", name: "Origin Direct Group" },
+  category: "Health Food & Ingredients",
+  countryOfOrigin: { "@type": "Country", name: "Nigeria" },
+  offers: {
+    "@type": "AggregateOffer",
+    priceCurrency: "USD",
+    availability: "https://schema.org/InStock",
+  },
+  additionalProperty: [
+    { "@type": "PropertyValue", name: "HS Code", value: "0802.99" },
+    { "@type": "PropertyValue", name: "MOQ", value: "1 FCL (18-20 MT)" },
+    { "@type": "PropertyValue", name: "Origin", value: "Nigeria" },
+  ],
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://origindirectgroup.com/" },
+    { "@type": "ListItem", position: 2, name: "Products", item: "https://origindirectgroup.com/products" },
+    { "@type": "ListItem", position: 3, name: "Tiger Nuts", item: "https://origindirectgroup.com/products/tiger-nuts" },
+  ],
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What are tiger nuts used for?",
+      acceptedAnswer: { "@type": "Answer", text: "Tiger nuts are primarily used to produce horchata de chufa in Spain (consuming over 10,000 MT annually), as a gluten-free snack food, as flour for baking, and as a source of tiger nut oil for cosmetics and cooking. They are also gaining popularity as a prebiotic fiber supplement in health food markets across Europe and North America." },
+    },
+    {
+      "@type": "Question",
+      name: "How large is the global tiger nut market?",
+      acceptedAnswer: { "@type": "Answer", text: "The global tiger nut market is valued at approximately $250 million in 2024 and is projected to reach $536 million by 2033, growing at a CAGR of around 9%. Nigeria is the world's second-largest producer at roughly 30,000 MT per year, after Spain. Demand is driven by gluten-free, paleo, and plant-based diet trends." },
+    },
+    {
+      "@type": "Question",
+      name: "What is the nutritional profile of tiger nuts?",
+      acceptedAnswer: { "@type": "Answer", text: "Tiger nuts contain approximately 33% fiber (including resistant starch and prebiotic fiber), 25% healthy fats (mostly oleic acid), 7% protein, and are rich in potassium, magnesium, and vitamins C and E. They are naturally gluten-free, nut-free (they are tubers, not true nuts), and suitable for most allergy-restricted diets." },
+    },
+  ],
+};
+---
+
+<Layout
+  title="Tiger Nuts Supplier - Direct from Nigeria | Origin Direct"
+  description="Premium tiger nuts sourced directly from Nigeria. Gluten-free superfood for horchata, health food, and snacking. Competitive B2B pricing, 30K MT/year supply."
+  structuredData={[productSchema, breadcrumbSchema, faqSchema]}
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumbs items={[{ label: "Products", href: "/products" }, { label: "Tiger Nuts" }]} />
+  </div>
+
+  <!-- Hero -->
+  <section class="relative py-24 sm:py-32 bg-gradient-to-br from-brand-900 via-brand-800 to-earth-800 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(196,154,42,0.3),transparent_70%)]"></div>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-gold-light font-medium tracking-wide uppercase text-sm mb-4">Direct from Nigeria</p>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">Tiger Nuts</h1>
+      <p class="text-xl text-brand-200 max-w-2xl mx-auto mb-10">
+        Gluten-free superfood tubers for horchata production, health food markets, and plant-based snacking. Nigeria's 30,000 MT annual supply.
+      </p>
+      <a href="#quote-form" class="inline-flex items-center px-8 py-4 bg-gold hover:bg-gold-dark text-white font-bold rounded-lg transition-colors shadow-lg text-lg">
+        Request Quote
+        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- Overview -->
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Overview</h2>
+      <div class="prose prose-lg text-gray-700 space-y-5">
+        <p>
+          Tiger nuts (Cyperus esculentus) are small tubers that have been cultivated for thousands of years across West Africa. Nigeria is the world's second-largest producer, harvesting approximately 30,000 metric tons annually. Despite the name, they are not true nuts but edible tubers, making them safe for consumers with nut allergies and ideal for the booming allergen-free food market.
+        </p>
+        <p>
+          The largest single market for tiger nuts is Spain, where they are the key ingredient in horchata de chufa, a traditional plant-based milk drink. Beyond horchata, tiger nuts are increasingly used as gluten-free flour, pressed into premium cooking and cosmetic oil, and sold as a high-fiber snack. The global market is projected to reach $536 million by 2033, driven by paleo, keto, and plant-based diet trends.
+        </p>
+        <p>
+          Origin Direct sources tiger nuts from established farming communities across Nigeria's Middle Belt, where the sandy soils produce tubers with high oil content and natural sweetness. Our direct relationships eliminate intermediaries, giving buyers access to competitive FOB Lagos pricing with full phytosanitary documentation and quality control.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Specifications -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Key Specifications</h2>
+      <div class="overflow-x-auto rounded-xl border border-gray-200 shadow-sm">
+        <table class="w-full text-left text-sm">
+          <thead>
+            <tr class="bg-brand-800 text-white">
+              <th class="px-6 py-4 font-semibold">Parameter</th>
+              <th class="px-6 py-4 font-semibold">Specification</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-100">
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">Botanical Name</td><td class="px-6 py-4 text-gray-700">Cyperus esculentus</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">Origin</td><td class="px-6 py-4 text-gray-700">Nigeria (Middle Belt)</td></tr>
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">Fiber Content</td><td class="px-6 py-4 text-gray-700">~33% (including prebiotic resistant starch)</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">Fat Content</td><td class="px-6 py-4 text-gray-700">~25% (primarily oleic acid)</td></tr>
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">Moisture</td><td class="px-6 py-4 text-gray-700">&lt; 8%</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">MOQ</td><td class="px-6 py-4 text-gray-700">1 FCL (~18-20 MT)</td></tr>
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">Packaging</td><td class="px-6 py-4 text-gray-700">25 kg or 50 kg polypropylene bags</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">HS Code</td><td class="px-6 py-4 text-gray-700">0802.99</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Frequently Asked Questions</h2>
+      <div class="space-y-4">
+        {faqSchema.mainEntity.map((faq) => (
+          <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+            <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">{faq.name}</summary>
+            <div class="px-6 pb-4 text-gray-700">{faq.acceptedAnswer.text}</div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <QuoteForm productName="Other (please specify below)" />
+</Layout>

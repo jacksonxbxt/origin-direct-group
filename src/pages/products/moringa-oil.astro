@@ -1,0 +1,140 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import QuoteForm from '../../components/QuoteForm.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const productSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name: "Moringa Oil",
+  description: "Premium cold-pressed moringa oil (Ben oil) from Ghana and Nigeria. Non-comedogenic, anti-aging cosmetic oil for skincare and haircare.",
+  image: "https://origindirectgroup.com/images/products/moringa-oil.jpg",
+  brand: { "@type": "Brand", name: "Origin Direct Group" },
+  category: "Premium Cosmetic Oils",
+  countryOfOrigin: { "@type": "Country", name: "Ghana" },
+  offers: { "@type": "AggregateOffer", priceCurrency: "USD", availability: "https://schema.org/InStock" },
+  additionalProperty: [
+    { "@type": "PropertyValue", name: "HS Code", value: "1515.90" },
+    { "@type": "PropertyValue", name: "MOQ", value: "500 kg" },
+    { "@type": "PropertyValue", name: "Origin", value: "Ghana / Nigeria" },
+  ],
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://origindirectgroup.com/" },
+    { "@type": "ListItem", position: 2, name: "Products", item: "https://origindirectgroup.com/products" },
+    { "@type": "ListItem", position: 3, name: "Moringa Oil", item: "https://origindirectgroup.com/products/moringa-oil" },
+  ],
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What makes moringa oil valuable for cosmetics?",
+      acceptedAnswer: { "@type": "Answer", text: "Moringa oil (also called Ben oil or Behen oil) contains 72% oleic acid, making it exceptionally stable and resistant to rancidity — it was historically used by watchmakers to lubricate delicate mechanisms. For cosmetics, it is non-comedogenic (won't clog pores), deeply moisturizing, and rich in antioxidants including vitamins A, C, and E. Its lightweight texture absorbs quickly without greasiness, making it ideal for premium facial oils, serums, and anti-aging formulations." },
+    },
+    {
+      "@type": "Question",
+      name: "What is the difference between moringa oil and moringa powder?",
+      acceptedAnswer: { "@type": "Answer", text: "Moringa oil is cold-pressed from the seeds of the Moringa oleifera tree, yielding approximately 35-40% oil by weight. It is used exclusively in cosmetics and premium skincare. Moringa powder is made from dried and ground moringa leaves, used as a nutritional supplement and food ingredient. They are completely different products from different parts of the same tree. We supply both — see our moringa powder page for the leaf product." },
+    },
+    {
+      "@type": "Question",
+      name: "How much does wholesale moringa oil cost?",
+      acceptedAnswer: { "@type": "Answer", text: "Cold-pressed moringa oil is a premium cosmetic ingredient, typically priced between $25 and $50 per liter at wholesale (depending on volume, cold-pressed vs. solvent-extracted, and organic certification). This translates to roughly $20,000-40,000/MT, making it one of the highest-value oils from West Africa. MOQ is 500 kg for cold-pressed virgin oil. Contact us for a firm quote based on your volume requirements." },
+    },
+  ],
+};
+---
+
+<Layout
+  title="Moringa Oil (Ben Oil) Supplier - Direct from West Africa | Origin Direct"
+  description="Premium cold-pressed moringa oil from Ghana & Nigeria. Non-comedogenic, 72% oleic acid, anti-aging. For cosmetics, skincare, haircare. Wholesale supply."
+  structuredData={[productSchema, breadcrumbSchema, faqSchema]}
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumbs items={[{ label: "Products", href: "/products" }, { label: "Moringa Oil" }]} />
+  </div>
+
+  <section class="relative py-24 sm:py-32 bg-gradient-to-br from-brand-900 via-brand-800 to-earth-800 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(196,154,42,0.3),transparent_70%)]"></div>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-gold-light font-medium tracking-wide uppercase text-sm mb-4">Direct from Ghana &amp; Nigeria</p>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">Moringa Oil</h1>
+      <p class="text-xl text-brand-200 max-w-2xl mx-auto mb-10">
+        Premium cold-pressed "Ben oil" for luxury cosmetics and skincare. Non-comedogenic, antioxidant-rich, and exceptionally stable.
+      </p>
+      <a href="#quote-form" class="inline-flex items-center px-8 py-4 bg-gold hover:bg-gold-dark text-white font-bold rounded-lg transition-colors shadow-lg text-lg">
+        Request Quote
+        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Overview</h2>
+      <div class="prose prose-lg text-gray-700 space-y-5">
+        <p>
+          Moringa oil, also known as Ben oil or Behen oil, is a premium cosmetic ingredient cold-pressed from the seeds of the Moringa oleifera tree. With 72% oleic acid content, it is one of the most stable vegetable oils available, resisting oxidation far better than argan, jojoba, or rosehip oils. This exceptional stability made it the oil of choice for Swiss watchmakers lubricating precision mechanisms.
+        </p>
+        <p>
+          In the cosmetics industry, moringa oil commands premium pricing ($25-50/liter wholesale) thanks to its non-comedogenic properties, rapid absorption, and rich antioxidant profile including vitamins A, C, and E. It is increasingly featured in luxury facial serums, anti-aging treatments, premium hair oils, and high-end skincare lines targeting the clean beauty market.
+        </p>
+        <p>
+          Origin Direct sources moringa seeds from established plantations across Ghana and Nigeria, where the tropical climate produces seeds with optimal oil yield (35-40%). We supply cold-pressed virgin moringa oil in food-grade containers, with full cosmetic-grade documentation including fatty acid profile, peroxide value, and heavy metals analysis.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Key Specifications</h2>
+      <div class="overflow-x-auto rounded-xl border border-gray-200 shadow-sm">
+        <table class="w-full text-left text-sm">
+          <thead>
+            <tr class="bg-brand-800 text-white">
+              <th class="px-6 py-4 font-semibold">Parameter</th>
+              <th class="px-6 py-4 font-semibold">Specification</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-100">
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">Oleic Acid</td><td class="px-6 py-4 text-gray-700">~72%</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">Behenic Acid</td><td class="px-6 py-4 text-gray-700">~7%</td></tr>
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">Peroxide Value</td><td class="px-6 py-4 text-gray-700">&lt; 5 meq/kg</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">FFA</td><td class="px-6 py-4 text-gray-700">&lt; 2%</td></tr>
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">Extraction</td><td class="px-6 py-4 text-gray-700">Cold-pressed, virgin</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">Comedogenic Rating</td><td class="px-6 py-4 text-gray-700">0 (non-comedogenic)</td></tr>
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">MOQ</td><td class="px-6 py-4 text-gray-700">500 kg</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">HS Code</td><td class="px-6 py-4 text-gray-700">1515.90</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Frequently Asked Questions</h2>
+      <div class="space-y-4">
+        {faqSchema.mainEntity.map((faq) => (
+          <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+            <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">{faq.name}</summary>
+            <div class="px-6 pb-4 text-gray-700">{faq.acceptedAnswer.text}</div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <QuoteForm productName="Other (please specify below)" />
+</Layout>

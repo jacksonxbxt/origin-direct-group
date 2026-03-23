@@ -1,0 +1,140 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import QuoteForm from '../../components/QuoteForm.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const productSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name: "Guar Gum",
+  description: "Indian guar gum powder (80%+ of global supply). Food-grade and industrial-grade for fracking, food processing, textiles, and paper.",
+  image: "https://origindirectgroup.com/images/products/guar-gum.jpg",
+  brand: { "@type": "Brand", name: "Origin Direct Group" },
+  category: "Industrial & Food Ingredients",
+  countryOfOrigin: { "@type": "Country", name: "India" },
+  offers: { "@type": "AggregateOffer", priceCurrency: "USD", availability: "https://schema.org/InStock" },
+  additionalProperty: [
+    { "@type": "PropertyValue", name: "HS Code", value: "1302.32" },
+    { "@type": "PropertyValue", name: "MOQ", value: "1 FCL (18 MT)" },
+    { "@type": "PropertyValue", name: "Origin", value: "India" },
+  ],
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://origindirectgroup.com/" },
+    { "@type": "ListItem", position: 2, name: "Products", item: "https://origindirectgroup.com/products" },
+    { "@type": "ListItem", position: 3, name: "Guar Gum", item: "https://origindirectgroup.com/products/guar-gum" },
+  ],
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Why is guar gum linked to the oil and gas industry?",
+      acceptedAnswer: { "@type": "Answer", text: "Guar gum is the primary thickening agent used in hydraulic fracturing (fracking) fluids, where its high viscosity carries sand (proppant) into fractures to keep them open. The oil and gas industry consumes approximately 60-70% of global guar gum production. When US shale drilling activity increases, guar gum prices can spike dramatically — in 2012, prices rose 900% in 18 months. This makes guar gum one of the most volatile agricultural commodities, directly correlated with US oil and gas drilling activity." },
+    },
+    {
+      "@type": "Question",
+      name: "What are the food-grade applications of guar gum?",
+      acceptedAnswer: { "@type": "Answer", text: "In food processing, guar gum (E412) serves as a thickener, stabilizer, and emulsifier. Key applications include: ice cream (prevents ice crystal formation), baked goods (improves dough yield and shelf life), sauces and dressings (viscosity and mouthfeel), dairy products (stabilization), and gluten-free products (replaces gluten's binding function). Food-grade guar commands a premium over industrial grade and represents about 25% of total guar gum consumption." },
+    },
+    {
+      "@type": "Question",
+      name: "What makes Indian guar gum supply so concentrated?",
+      acceptedAnswer: { "@type": "Answer", text: "India supplies over 80% of global guar gum, with Rajasthan alone producing 70% of India's guar seed. Guar (Cyamopsis tetragonoloba) is a rain-fed Kharif crop that thrives in Rajasthan's arid conditions. This extreme geographic concentration means a single poor monsoon in Rajasthan can disrupt global supply. There are over 900 guar gum processing plants in India, ranging from small splits manufacturers to large integrated powder producers." },
+    },
+  ],
+};
+---
+
+<Layout
+  title="Guar Gum Supplier - Direct from India | Origin Direct"
+  description="Indian guar gum powder (80%+ of global supply). Food-grade E412 and industrial-grade for fracking. From Rajasthan. Volatile pricing, direct sourcing advantage."
+  structuredData={[productSchema, breadcrumbSchema, faqSchema]}
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumbs items={[{ label: "Products", href: "/products" }, { label: "Guar Gum" }]} />
+  </div>
+
+  <section class="relative py-24 sm:py-32 bg-gradient-to-br from-brand-900 via-brand-800 to-earth-800 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(196,154,42,0.3),transparent_70%)]"></div>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-gold-light font-medium tracking-wide uppercase text-sm mb-4">Direct from India</p>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">Guar Gum</h1>
+      <p class="text-xl text-brand-200 max-w-2xl mx-auto mb-10">
+        From Rajasthan, where 80%+ of the world's guar gum originates. Food-grade E412 and industrial-grade for oil &amp; gas fracking.
+      </p>
+      <a href="#quote-form" class="inline-flex items-center px-8 py-4 bg-gold hover:bg-gold-dark text-white font-bold rounded-lg transition-colors shadow-lg text-lg">
+        Request Quote
+        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Overview</h2>
+      <div class="prose prose-lg text-gray-700 space-y-5">
+        <p>
+          Guar gum is one of the most strategically important agricultural commodities, with India supplying over 80% of global production from the arid regions of Rajasthan. The gum, extracted from the endosperm of guar beans, has unique thickening and binding properties that make it essential to two very different industries: oil and gas hydraulic fracturing (60-70% of demand) and food processing (25% of demand).
+        </p>
+        <p>
+          This dual-industry demand creates extreme price volatility. When US shale drilling surges, guar gum prices can spike hundreds of percent within months. Conversely, drilling downturns and good monsoon harvests can crater prices. Smart procurement requires real-time market intelligence from India's processing belt and understanding of both oil prices and Rajasthan weather patterns.
+        </p>
+        <p>
+          Origin Direct works with established guar gum processors across Rajasthan and Haryana, supplying food-grade (E412), fast-hydrating industrial grade, and specialty derivatives. Our India team tracks NCDEX guar futures, monsoon forecasts, and US Baker Hughes rig count data to advise buyers on procurement timing.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Key Specifications</h2>
+      <div class="overflow-x-auto rounded-xl border border-gray-200 shadow-sm">
+        <table class="w-full text-left text-sm">
+          <thead>
+            <tr class="bg-brand-800 text-white">
+              <th class="px-6 py-4 font-semibold">Parameter</th>
+              <th class="px-6 py-4 font-semibold">Specification</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-100">
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">Viscosity (1% solution)</td><td class="px-6 py-4 text-gray-700">3,500 &ndash; 5,500 cps (food), 5,000+ cps (industrial)</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">Mesh Size</td><td class="px-6 py-4 text-gray-700">100, 200, or 300 mesh</td></tr>
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">Moisture</td><td class="px-6 py-4 text-gray-700">&lt; 12%</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">Protein</td><td class="px-6 py-4 text-gray-700">&lt; 5%</td></tr>
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">E Number</td><td class="px-6 py-4 text-gray-700">E412</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">Grades</td><td class="px-6 py-4 text-gray-700">Food-grade, fast-hydrating industrial, splits</td></tr>
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">MOQ</td><td class="px-6 py-4 text-gray-700">1 FCL (~18 MT)</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">HS Code</td><td class="px-6 py-4 text-gray-700">1302.32</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Frequently Asked Questions</h2>
+      <div class="space-y-4">
+        {faqSchema.mainEntity.map((faq) => (
+          <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+            <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">{faq.name}</summary>
+            <div class="px-6 pb-4 text-gray-700">{faq.acceptedAnswer.text}</div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <QuoteForm productName="Other (please specify below)" />
+</Layout>

@@ -1,0 +1,144 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import QuoteForm from '../../components/QuoteForm.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const productSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name: "African Black Soap",
+  description: "Authentic African black soap from Ghana and Nigeria. Made from plantain ash, cocoa pod ash, palm oil, and shea butter. Natural skincare for B2B buyers.",
+  image: "https://origindirectgroup.com/images/products/african-black-soap.jpg",
+  brand: { "@type": "Brand", name: "Origin Direct Group" },
+  category: "Natural Skincare Ingredients",
+  countryOfOrigin: { "@type": "Country", name: "Ghana" },
+  offers: {
+    "@type": "AggregateOffer",
+    priceCurrency: "USD",
+    availability: "https://schema.org/InStock",
+  },
+  additionalProperty: [
+    { "@type": "PropertyValue", name: "HS Code", value: "3401.11" },
+    { "@type": "PropertyValue", name: "MOQ", value: "1 MT" },
+    { "@type": "PropertyValue", name: "Origin", value: "Ghana / Nigeria" },
+  ],
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://origindirectgroup.com/" },
+    { "@type": "ListItem", position: 2, name: "Products", item: "https://origindirectgroup.com/products" },
+    { "@type": "ListItem", position: 3, name: "African Black Soap", item: "https://origindirectgroup.com/products/african-black-soap" },
+  ],
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What is African black soap made from?",
+      acceptedAnswer: { "@type": "Answer", text: "Authentic African black soap is made from four core ingredients: plantain skin ash (rich in potassium hydroxide), cocoa pod ash, unrefined shea butter, and palm oil or palm kernel oil. The plantain skins and cocoa pods are sun-dried and roasted to ash, then combined with the oils and cooked for 24+ hours. Regional variations exist — Ghanaian 'alata samina' typically uses more cocoa pod ash while Nigerian versions may incorporate camwood bark." },
+    },
+    {
+      "@type": "Question",
+      name: "How big is the African black soap market?",
+      acceptedAnswer: { "@type": "Answer", text: "The global African black soap market was valued at approximately $1 billion in 2024 and is projected to reach $2 billion by 2035, growing at a CAGR of around 6.5%. Growth is driven by the clean beauty movement, demand for natural and chemical-free skincare, and strong uptake in the African diaspora communities across the US, UK, and Europe. The US market alone accounts for roughly 35% of global demand." },
+    },
+    {
+      "@type": "Question",
+      name: "Can you supply African black soap in bulk for private label?",
+      acceptedAnswer: { "@type": "Answer", text: "Yes. We supply raw African black soap paste in bulk (25 kg or 50 kg containers) for brands that want to mold, cut, and package under their own label. We also supply pre-cut bars in custom sizes. MOQ starts at 1 MT for raw paste. All batches come with a Certificate of Analysis, ingredient declaration, and MSDS suitable for EU and US cosmetic regulations." },
+    },
+  ],
+};
+---
+
+<Layout
+  title="African Black Soap Supplier - Direct from Ghana & Nigeria | Origin Direct"
+  description="Authentic African black soap in bulk. $1B market growing to $2B by 2035. Made from plantain ash, cocoa pod ash, shea butter. Private label and raw paste available."
+  structuredData={[productSchema, breadcrumbSchema, faqSchema]}
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumbs items={[{ label: "Products", href: "/products" }, { label: "African Black Soap" }]} />
+  </div>
+
+  <section class="relative py-24 sm:py-32 bg-gradient-to-br from-brand-900 via-brand-800 to-earth-800 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(196,154,42,0.3),transparent_70%)]"></div>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-gold-light font-medium tracking-wide uppercase text-sm mb-4">Direct from Ghana &amp; Nigeria</p>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">African Black Soap</h1>
+      <p class="text-xl text-brand-200 max-w-2xl mx-auto mb-10">
+        Authentic handcrafted black soap for the booming natural skincare market. Raw paste and pre-cut bars for private label brands.
+      </p>
+      <a href="#quote-form" class="inline-flex items-center px-8 py-4 bg-gold hover:bg-gold-dark text-white font-bold rounded-lg transition-colors shadow-lg text-lg">
+        Request Quote
+        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Overview</h2>
+      <div class="prose prose-lg text-gray-700 space-y-5">
+        <p>
+          African black soap, known as "alata samina" in Ghana and "ose dudu" in Nigeria, is one of the fastest-growing segments in the global natural skincare market. Valued at approximately $1 billion today and projected to double to $2 billion by 2035, demand is driven by the clean beauty movement and consumers seeking chemical-free alternatives to conventional soap.
+        </p>
+        <p>
+          The soap is traditionally made from plantain skin ash and cocoa pod ash (natural sources of potassium hydroxide), combined with unrefined shea butter and palm oil. This centuries-old process produces a soap rich in vitamins A and E, with natural exfoliating and moisturizing properties that appeal to consumers with sensitive skin, eczema, and acne-prone skin.
+        </p>
+        <p>
+          Origin Direct partners with traditional soap-making cooperatives in Ghana and Nigeria, supplying raw black soap paste in bulk for brands that want to mold and package under their own label. We also offer pre-cut bars in custom sizes. Every batch comes with full documentation for EU Cosmetic Regulation and US FDA compliance.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Key Specifications</h2>
+      <div class="overflow-x-auto rounded-xl border border-gray-200 shadow-sm">
+        <table class="w-full text-left text-sm">
+          <thead>
+            <tr class="bg-brand-800 text-white">
+              <th class="px-6 py-4 font-semibold">Parameter</th>
+              <th class="px-6 py-4 font-semibold">Specification</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-100">
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">Key Ingredients</td><td class="px-6 py-4 text-gray-700">Plantain ash, cocoa pod ash, shea butter, palm oil</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">Forms Available</td><td class="px-6 py-4 text-gray-700">Raw paste (bulk), pre-cut bars, liquid soap base</td></tr>
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">pH Range</td><td class="px-6 py-4 text-gray-700">9.0 &ndash; 10.5 (naturally alkaline)</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">Shelf Life</td><td class="px-6 py-4 text-gray-700">24+ months (properly stored)</td></tr>
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">MOQ</td><td class="px-6 py-4 text-gray-700">1 MT (raw paste) / 500 kg (bars)</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">Packaging</td><td class="px-6 py-4 text-gray-700">25 kg or 50 kg food-grade containers</td></tr>
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">Documentation</td><td class="px-6 py-4 text-gray-700">CoA, MSDS, CPNP-ready ingredient list</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">HS Code</td><td class="px-6 py-4 text-gray-700">3401.11</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Frequently Asked Questions</h2>
+      <div class="space-y-4">
+        {faqSchema.mainEntity.map((faq) => (
+          <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+            <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">{faq.name}</summary>
+            <div class="px-6 pb-4 text-gray-700">{faq.acceptedAnswer.text}</div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <QuoteForm productName="Other (please specify below)" />
+</Layout>

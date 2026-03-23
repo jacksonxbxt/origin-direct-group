@@ -1,0 +1,140 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import QuoteForm from '../../components/QuoteForm.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const productSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name: "Snail Meat",
+  description: "Giant African Land Snail meat from Nigeria and Ghana. $420M global market. Frozen and dried formats. France, UAE, and diaspora buyers.",
+  image: "https://origindirectgroup.com/images/products/snail-meat.jpg",
+  brand: { "@type": "Brand", name: "Origin Direct Group" },
+  category: "Specialty Protein",
+  countryOfOrigin: { "@type": "Country", name: "Nigeria" },
+  offers: { "@type": "AggregateOffer", priceCurrency: "USD", availability: "https://schema.org/InStock" },
+  additionalProperty: [
+    { "@type": "PropertyValue", name: "HS Code", value: "0307.60" },
+    { "@type": "PropertyValue", name: "MOQ", value: "5 MT" },
+    { "@type": "PropertyValue", name: "Origin", value: "Nigeria / Ghana" },
+  ],
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://origindirectgroup.com/" },
+    { "@type": "ListItem", position: 2, name: "Products", item: "https://origindirectgroup.com/products" },
+    { "@type": "ListItem", position: 3, name: "Snail Meat", item: "https://origindirectgroup.com/products/snail-meat" },
+  ],
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What species of snail is exported from West Africa?",
+      acceptedAnswer: { "@type": "Answer", text: "The primary export species is the Giant African Land Snail (Achatina achatina and Achatina marginata), the world's largest land snail species with adults weighing 250-500g each. These are significantly larger than the European Helix aspersa or Helix pomatia species used in French escargot. The African species has a richer, more robust flavor profile and is in demand across France, the UAE, Asian markets, and the West African diaspora." },
+    },
+    {
+      "@type": "Question",
+      name: "What is the global market size for snail meat?",
+      acceptedAnswer: { "@type": "Answer", text: "The global snail meat market is valued at approximately $420 million and growing at 4-5% annually. France is the world's largest consumer, importing over 30,000 metric tons of snail meat annually (worth approximately $300 million). Other major markets include Spain, Italy, the UAE, and diaspora communities worldwide. Supply is constrained — European snail farms cannot meet demand, creating opportunities for African wild-harvested and farmed snail exports." },
+    },
+    {
+      "@type": "Question",
+      name: "How is the snail meat processed and shipped?",
+      acceptedAnswer: { "@type": "Answer", text: "We supply snail meat in two formats: frozen (IQF or block frozen, -18 degrees C, shelf life 18-24 months) and sun-dried/smoked (traditional preservation, shelf life 12+ months, lighter shipping weight). Frozen product requires reefer container shipping. All product comes from HACCP-certified processing facilities with veterinary health certificates, microbiological test reports, and EU-compliant labeling. For the French market, product must meet EU Regulation 853/2004 for live bivalve molluscs." },
+    },
+  ],
+};
+---
+
+<Layout
+  title="Snail Meat Supplier - Giant African Land Snail | Origin Direct"
+  description="Giant African Land Snail meat from Nigeria & Ghana. $420M global market. Frozen and dried. France, UAE buyers. Specialty protein export."
+  structuredData={[productSchema, breadcrumbSchema, faqSchema]}
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumbs items={[{ label: "Products", href: "/products" }, { label: "Snail Meat" }]} />
+  </div>
+
+  <section class="relative py-24 sm:py-32 bg-gradient-to-br from-brand-900 via-brand-800 to-earth-800 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(196,154,42,0.3),transparent_70%)]"></div>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-gold-light font-medium tracking-wide uppercase text-sm mb-4">Direct from Nigeria &amp; Ghana</p>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">Snail Meat</h1>
+      <p class="text-xl text-brand-200 max-w-2xl mx-auto mb-10">
+        Giant African Land Snail. Premium specialty protein for French, Middle Eastern, and diaspora markets. Frozen and dried formats.
+      </p>
+      <a href="#quote-form" class="inline-flex items-center px-8 py-4 bg-gold hover:bg-gold-dark text-white font-bold rounded-lg transition-colors shadow-lg text-lg">
+        Request Quote
+        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Overview</h2>
+      <div class="prose prose-lg text-gray-700 space-y-5">
+        <p>
+          The Giant African Land Snail (Achatina achatina and Achatina marginata) is the world's largest terrestrial snail species, and increasingly a significant export commodity from West Africa. The global snail meat market is valued at approximately $420 million, with France alone importing over 30,000 metric tons annually — far exceeding European snail farm capacity.
+        </p>
+        <p>
+          West African snails are prized for their size (250-500g per adult), rich flavor, and high protein content (approximately 16% protein, low in fat). Key export markets include France (escargot industry), UAE (luxury food), and growing diaspora communities in the UK, US, and Europe who consider snail meat a delicacy in traditional West African cuisine.
+        </p>
+        <p>
+          Origin Direct works with snail farming operations and HACCP-certified processing facilities across Nigeria and Ghana to supply frozen (IQF and block frozen) and dried snail meat. We handle veterinary certification, cold chain logistics, and export documentation to meet EU and international food safety requirements.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Key Specifications</h2>
+      <div class="overflow-x-auto rounded-xl border border-gray-200 shadow-sm">
+        <table class="w-full text-left text-sm">
+          <thead>
+            <tr class="bg-brand-800 text-white">
+              <th class="px-6 py-4 font-semibold">Parameter</th>
+              <th class="px-6 py-4 font-semibold">Specification</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-100">
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">Species</td><td class="px-6 py-4 text-gray-700">Achatina achatina, Achatina marginata</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">Protein Content</td><td class="px-6 py-4 text-gray-700">~16%</td></tr>
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">Formats</td><td class="px-6 py-4 text-gray-700">Frozen (IQF / block), dried, smoked</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">Storage</td><td class="px-6 py-4 text-gray-700">-18&deg;C (frozen), ambient (dried)</td></tr>
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">Shelf Life</td><td class="px-6 py-4 text-gray-700">18-24 months (frozen), 12+ months (dried)</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">Key Markets</td><td class="px-6 py-4 text-gray-700">France, UAE, UK, US (diaspora)</td></tr>
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">MOQ</td><td class="px-6 py-4 text-gray-700">5 MT</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">HS Code</td><td class="px-6 py-4 text-gray-700">0307.60</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Frequently Asked Questions</h2>
+      <div class="space-y-4">
+        {faqSchema.mainEntity.map((faq) => (
+          <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+            <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">{faq.name}</summary>
+            <div class="px-6 pb-4 text-gray-700">{faq.acceptedAnswer.text}</div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <QuoteForm productName="Other (please specify below)" />
+</Layout>

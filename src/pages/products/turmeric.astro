@@ -1,0 +1,140 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import QuoteForm from '../../components/QuoteForm.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const productSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name: "Turmeric",
+  description: "Indian turmeric (80% of world production). Fingers, powder, and curcumin extract. Kharif crop with 70-80% price swings.",
+  image: "https://origindirectgroup.com/images/products/turmeric.jpg",
+  brand: { "@type": "Brand", name: "Origin Direct Group" },
+  category: "Spices & Seasonings",
+  countryOfOrigin: { "@type": "Country", name: "India" },
+  offers: { "@type": "AggregateOffer", priceCurrency: "USD", availability: "https://schema.org/InStock" },
+  additionalProperty: [
+    { "@type": "PropertyValue", name: "HS Code", value: "0910.30" },
+    { "@type": "PropertyValue", name: "MOQ", value: "1 FCL (18 MT)" },
+    { "@type": "PropertyValue", name: "Origin", value: "India" },
+  ],
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://origindirectgroup.com/" },
+    { "@type": "ListItem", position: 2, name: "Products", item: "https://origindirectgroup.com/products" },
+    { "@type": "ListItem", position: 3, name: "Turmeric", item: "https://origindirectgroup.com/products/turmeric" },
+  ],
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Why does turmeric pricing fluctuate so much?",
+      acceptedAnswer: { "@type": "Answer", text: "Turmeric is a Kharif (monsoon season) crop, planted June-July and harvested January-March. India produces 80% of global supply, concentrated in Telangana, Maharashtra, and Tamil Nadu. Prices routinely swing 70-80% between harvest lows and off-season highs, driven by monsoon rainfall patterns, farmer planting decisions, and speculative trading on Indian commodity exchanges (NCDEX). In 2023-24, prices hit record highs of $0.40/kg due to poor monsoon in key growing areas." },
+    },
+    {
+      "@type": "Question",
+      name: "What turmeric grades and curcumin content do you offer?",
+      acceptedAnswer: { "@type": "Answer", text: "We supply: Alleppey Finger (5% curcumin, premium grade), Erode/Salem varieties (3-4% curcumin, standard grade), Rajapore (2-3% curcumin, bulk food processing), and high-curcumin extract (95% standardized curcumin for supplements). Pricing ranges from $0.20-0.40/kg for whole fingers depending on variety and curcumin content, up to $40-60/kg for 95% curcumin extract." },
+    },
+    {
+      "@type": "Question",
+      name: "How do you ensure turmeric quality for EU export?",
+      acceptedAnswer: { "@type": "Answer", text: "Indian turmeric exports face strict EU checks for pesticide residues and lead contamination (EU increased checks to 50% of consignments). We source from tested farms and conduct pre-shipment testing for: curcumin content (HPLC), lead (below 0.3 ppm), pesticide residues (below EU MRLs for all 500+ compounds), aflatoxins (below 10 ppb), and Sudan dye adulterants (zero tolerance). Every shipment includes lab reports from NABL-accredited Indian labs." },
+    },
+  ],
+};
+---
+
+<Layout
+  title="Turmeric Supplier - Direct from India | Origin Direct"
+  description="Indian turmeric from the world's largest producer (80% of global supply). Fingers, powder, curcumin extract. $0.20-0.40/kg. Navigate 70-80% price swings."
+  structuredData={[productSchema, breadcrumbSchema, faqSchema]}
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumbs items={[{ label: "Products", href: "/products" }, { label: "Turmeric" }]} />
+  </div>
+
+  <section class="relative py-24 sm:py-32 bg-gradient-to-br from-brand-900 via-brand-800 to-earth-800 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(196,154,42,0.3),transparent_70%)]"></div>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-gold-light font-medium tracking-wide uppercase text-sm mb-4">Direct from India</p>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">Turmeric</h1>
+      <p class="text-xl text-brand-200 max-w-2xl mx-auto mb-10">
+        From the source of 80% of world production. Whole fingers, powder, and high-curcumin extract for food, supplement, and pharmaceutical buyers.
+      </p>
+      <a href="#quote-form" class="inline-flex items-center px-8 py-4 bg-gold hover:bg-gold-dark text-white font-bold rounded-lg transition-colors shadow-lg text-lg">
+        Request Quote
+        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Overview</h2>
+      <div class="prose prose-lg text-gray-700 space-y-5">
+        <p>
+          India dominates global turmeric production, supplying approximately 80% of the world's turmeric from key growing regions in Telangana, Maharashtra, Tamil Nadu, and Andhra Pradesh. Turmeric is both a ubiquitous cooking spice and an increasingly important nutraceutical ingredient, with curcumin (the active compound) driving a $150+ million supplement market.
+        </p>
+        <p>
+          As a Kharif (monsoon) crop, turmeric pricing is inherently volatile, with 70-80% swings between harvest lows (February-April) and off-season highs (September-November). Smart procurement timing and India-based sourcing relationships are critical for managing cost. Origin Direct's on-ground team monitors crop conditions, auction prices at Erode and Sangli mandis, and NCDEX futures to advise buyers on optimal procurement windows.
+        </p>
+        <p>
+          We supply whole fingers (polished and unpolished), turmeric powder (food-grade and spice-grade), and standardized curcumin extracts (up to 95% purity). All product undergoes rigorous testing for EU compliance, including lead content, pesticide residues, and Sudan dye adulterants.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Key Specifications</h2>
+      <div class="overflow-x-auto rounded-xl border border-gray-200 shadow-sm">
+        <table class="w-full text-left text-sm">
+          <thead>
+            <tr class="bg-brand-800 text-white">
+              <th class="px-6 py-4 font-semibold">Parameter</th>
+              <th class="px-6 py-4 font-semibold">Specification</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-100">
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">Curcumin Content</td><td class="px-6 py-4 text-gray-700">2 &ndash; 5% (fingers), up to 95% (extract)</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">Moisture</td><td class="px-6 py-4 text-gray-700">&lt; 10%</td></tr>
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">Lead</td><td class="px-6 py-4 text-gray-700">&lt; 0.3 ppm (EU compliant)</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">Key Varieties</td><td class="px-6 py-4 text-gray-700">Alleppey, Erode, Salem, Rajapore</td></tr>
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">Forms</td><td class="px-6 py-4 text-gray-700">Whole fingers, powder, curcumin extract</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">Price Range</td><td class="px-6 py-4 text-gray-700">$0.20 &ndash; $0.40/kg (fingers), volatile</td></tr>
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">MOQ</td><td class="px-6 py-4 text-gray-700">1 FCL (~18 MT)</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">HS Code</td><td class="px-6 py-4 text-gray-700">0910.30</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Frequently Asked Questions</h2>
+      <div class="space-y-4">
+        {faqSchema.mainEntity.map((faq) => (
+          <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+            <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">{faq.name}</summary>
+            <div class="px-6 pb-4 text-gray-700">{faq.acceptedAnswer.text}</div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <QuoteForm productName="Other (please specify below)" />
+</Layout>
