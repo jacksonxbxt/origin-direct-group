@@ -1,0 +1,249 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const defined_title = "Import Guides | Origin Direct Group";
+const defined_description = "Comprehensive import guides for agricultural commodities from West Africa. Step-by-step guides for cocoa, shea butter, cashew nuts, hibiscus, sesame, charcoal, and more. Covering importing to the USA, EU, UK, and beyond.";
+
+const commodityGuides = [
+  {
+    title: "How to Import Cocoa to the USA",
+    description: "FDA requirements, HS codes, duty rates, COCOBOD certification, and shipping logistics for importing cocoa from West Africa to the United States.",
+    href: "/guides/import-cocoa-to-usa",
+    tags: ["Cocoa", "USA"],
+  },
+  {
+    title: "How to Import Cocoa to the EU",
+    description: "EU food safety regulations, EUDR deforestation due diligence, import requirements, and sourcing logistics for cocoa from West Africa.",
+    href: "/guides/import-cocoa-to-eu",
+    tags: ["Cocoa", "EU"],
+  },
+  {
+    title: "How to Import Cocoa to the UK",
+    description: "UK Border Force requirements, HMRC duty rates, post-Brexit import procedures, and logistics for importing cocoa from West Africa.",
+    href: "/guides/import-cocoa-to-uk",
+    tags: ["Cocoa", "UK"],
+  },
+  {
+    title: "How to Import Shea Butter to the USA",
+    description: "FDA classifications, AGOA duty preferences, cosmetic vs food grade requirements, and shipping from Ghana and Nigeria.",
+    href: "/guides/import-shea-butter-to-usa",
+    tags: ["Shea Butter", "USA"],
+  },
+  {
+    title: "How to Import Shea Butter to the EU",
+    description: "EU cosmetics regulation, REACH compliance, food additive approvals, and sourcing shea butter directly from West African cooperatives.",
+    href: "/guides/import-shea-butter-to-eu",
+    tags: ["Shea Butter", "EU"],
+  },
+  {
+    title: "How to Import Cashew Nuts to the USA",
+    description: "FDA food safety requirements, CBP entry procedures, quality grades, and shipping logistics for cashew nuts from West Africa.",
+    href: "/guides/import-cashew-nuts-to-usa",
+    tags: ["Cashew", "USA"],
+  },
+  {
+    title: "How to Import Cashew Nuts to the EU",
+    description: "EU food safety regulations, aflatoxin limits, RASFF compliance, and sourcing raw and processed cashew nuts from West Africa.",
+    href: "/guides/import-cashew-nuts-to-eu",
+    tags: ["Cashew", "EU"],
+  },
+  {
+    title: "How to Import Cashew Nuts to India",
+    description: "FSSAI requirements, Indian customs procedures, APEDA certification, and logistics for importing raw cashew for processing.",
+    href: "/guides/import-cashew-nuts-to-india",
+    tags: ["Cashew", "India"],
+  },
+  {
+    title: "How to Import Hookah Charcoal to the USA",
+    description: "CBP entry requirements, HS codes, product standards, and shipping logistics for coconut shell and hardwood hookah charcoal.",
+    href: "/guides/import-hookah-charcoal-to-usa",
+    tags: ["Charcoal", "USA"],
+  },
+  {
+    title: "How to Import Hookah Charcoal to Germany",
+    description: "German customs procedures, EU product safety requirements, documentation, and sourcing hookah charcoal from Nigeria and Indonesia.",
+    href: "/guides/import-hookah-charcoal-to-germany",
+    tags: ["Charcoal", "Germany"],
+  },
+  {
+    title: "How to Import Hookah Charcoal to the UAE",
+    description: "UAE customs procedures, ESMA product standards, Dubai and Abu Dhabi port logistics, and sourcing hookah charcoal.",
+    href: "/guides/import-hookah-charcoal-to-uae",
+    tags: ["Charcoal", "UAE"],
+  },
+  {
+    title: "How to Import Hibiscus to the USA",
+    description: "FDA requirements, USDA APHIS phytosanitary rules, HS codes, and shipping logistics for dried hibiscus from Nigeria.",
+    href: "/guides/import-hibiscus-to-usa",
+    tags: ["Hibiscus", "USA"],
+  },
+  {
+    title: "How to Import Hibiscus to Mexico",
+    description: "SENASICA import requirements, SAT customs procedures, and logistics for sourcing dried hibiscus (flor de jamaica) from Nigeria.",
+    href: "/guides/import-hibiscus-to-mexico",
+    tags: ["Hibiscus", "Mexico"],
+  },
+  {
+    title: "How to Import Sesame Seeds to the EU",
+    description: "EU food safety regulations, allergen labeling requirements, aflatoxin and pesticide limits, and logistics for sesame from Nigeria and Sudan.",
+    href: "/guides/import-sesame-to-eu",
+    tags: ["Sesame", "EU"],
+  },
+  {
+    title: "How to Import Sesame Seeds to Turkey",
+    description: "Turkish Food Safety Authority requirements, customs procedures, and sourcing high-oleic sesame from Nigeria for the Turkish food industry.",
+    href: "/guides/import-sesame-to-turkey",
+    tags: ["Sesame", "Turkey"],
+  },
+  {
+    title: "How to Import Castor Oil to China",
+    description: "GACC registration requirements, Chinese customs procedures, quality standards, and logistics for importing castor oil from India and Africa.",
+    href: "/guides/import-castor-oil-to-china",
+    tags: ["Castor Oil", "China"],
+  },
+  {
+    title: "How to Import Turmeric to the USA",
+    description: "FDA requirements, lead contamination testing, USDA organic certification, and shipping logistics for turmeric from India and Africa.",
+    href: "/guides/import-turmeric-to-usa",
+    tags: ["Turmeric", "USA"],
+  },
+  {
+    title: "How to Import Guar Gum to the USA",
+    description: "FDA GRAS status, food and industrial grade classifications, CBP entry procedures, and sourcing logistics for guar gum from India.",
+    href: "/guides/import-guar-gum-to-usa",
+    tags: ["Guar Gum", "USA"],
+  },
+];
+
+const countryGuides = [
+  {
+    title: "Complete Guide to Importing from Ghana",
+    description: "Ghana's export strengths, GEPA and COCOBOD regulatory framework, Tema and Takoradi port logistics, required documents, and tips for first-time buyers.",
+    href: "/guides/import-from-ghana",
+    tags: ["Ghana"],
+  },
+  {
+    title: "Complete Guide to Importing from Nigeria",
+    description: "Nigeria's commodity exports, NEPC, NAQS, SON and NAFDAC regulatory framework, Apapa and Port Harcourt logistics, and what every first-time buyer needs to know.",
+    href: "/guides/import-from-nigeria",
+    tags: ["Nigeria"],
+  },
+];
+---
+
+<Layout title={defined_title} description={defined_description}>
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-br from-brand-900 to-brand-700 py-16 md:py-24">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <p class="text-brand-300 text-sm font-semibold uppercase tracking-widest mb-4">Resources</p>
+      <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">
+        Import Guides
+      </h1>
+      <p class="text-xl text-brand-100 max-w-3xl mx-auto leading-relaxed">
+        Practical, step-by-step guides for importing agricultural commodities from West Africa and beyond. Covering regulations, documentation, logistics, and best practices for buyers in the USA, EU, UK, and worldwide.
+      </p>
+    </div>
+  </section>
+
+  <!-- By Commodity Section -->
+  <section class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="mb-10">
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-3">Guides by Commodity</h2>
+        <p class="text-gray-600 text-lg">Detailed import guides covering regulations, documentation, and logistics for each commodity we source.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {commodityGuides.map((guide) => (
+          <a
+            href={guide.href}
+            class="group block bg-white border border-gray-200 rounded-xl p-6 hover:border-brand-300 hover:shadow-md transition-all duration-200"
+          >
+            <div class="flex flex-wrap gap-2 mb-3">
+              {guide.tags.map((tag) => (
+                <span class="inline-block text-xs font-medium bg-brand-50 text-brand-700 px-2 py-1 rounded-md">
+                  {tag}
+                </span>
+              ))}
+            </div>
+            <h3 class="text-base font-semibold text-gray-900 mb-2 group-hover:text-brand-700 transition-colors leading-snug">
+              {guide.title}
+            </h3>
+            <p class="text-sm text-gray-600 leading-relaxed">
+              {guide.description}
+            </p>
+            <div class="mt-4 flex items-center text-sm font-medium text-brand-700 group-hover:text-brand-600">
+              Read guide
+              <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- By Country Section -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="mb-10">
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-3">Guides by Origin Country</h2>
+        <p class="text-gray-600 text-lg">Country-level guides covering regulatory frameworks, export procedures, ports, and practical advice for sourcing from specific origins.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {countryGuides.map((guide) => (
+          <a
+            href={guide.href}
+            class="group block bg-white border border-gray-200 rounded-xl p-6 hover:border-brand-300 hover:shadow-md transition-all duration-200"
+          >
+            <div class="flex flex-wrap gap-2 mb-3">
+              {guide.tags.map((tag) => (
+                <span class="inline-block text-xs font-medium bg-green-50 text-green-700 px-2 py-1 rounded-md">
+                  {tag}
+                </span>
+              ))}
+            </div>
+            <h3 class="text-base font-semibold text-gray-900 mb-2 group-hover:text-brand-700 transition-colors leading-snug">
+              {guide.title}
+            </h3>
+            <p class="text-sm text-gray-600 leading-relaxed">
+              {guide.description}
+            </p>
+            <div class="mt-4 flex items-center text-sm font-medium text-brand-700 group-hover:text-brand-600">
+              Read guide
+              <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 bg-brand-900">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold text-white mb-4">Ready to Source Direct?</h2>
+      <p class="text-brand-200 text-lg mb-8 leading-relaxed">
+        Origin Direct manages the entire supply chain from origin farms and cooperatives to your destination port. Request a quote for any commodity and we will send you pricing, availability, and a shipping estimate within 24 hours.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="/quote"
+          class="inline-flex items-center justify-center px-8 py-3.5 bg-white text-brand-900 text-sm font-semibold rounded-lg hover:bg-brand-50 transition-colors"
+        >
+          Request a Quote
+        </a>
+        <a
+          href="/products"
+          class="inline-flex items-center justify-center px-8 py-3.5 border border-brand-400 text-white text-sm font-semibold rounded-lg hover:bg-brand-800 transition-colors"
+        >
+          Browse All Products
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

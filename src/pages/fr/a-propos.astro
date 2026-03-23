@@ -1,0 +1,121 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import QuoteForm from '../../components/QuoteForm.astro';
+
+const siteUrl = "https://origindirectgroup.com";
+---
+
+<Layout
+  title="A Propos d'Origin Direct Group - Approvisionnement Direct en Matieres Premieres"
+  description="Origin Direct Group connecte les acheteurs mondiaux de matieres premieres avec des producteurs verifies en Afrique de l'Ouest et en Inde. Nous eliminons les intermediaires pour des prix competitifs et une qualite garantie."
+  lang="fr"
+  hreflangs={[
+    { lang: "en", href: `${siteUrl}/about` },
+    { lang: "fr", href: `${siteUrl}/fr/a-propos` },
+  ]}
+>
+  <section class="relative py-20 md:py-28 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-green-950 via-green-900 to-amber-950"></div>
+    <div class="absolute inset-0 bg-black/20"></div>
+    <div class="relative z-10 max-w-3xl mx-auto px-6 text-center">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight mb-6">Eliminer les Intermediaires</h1>
+      <p class="text-lg md:text-xl text-green-100/90 max-w-2xl mx-auto leading-relaxed">
+        Des relations directes avec les producteurs signifient de meilleurs prix, une tracabilite complete et une qualite constante pour votre entreprise.
+      </p>
+    </div>
+    <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white to-transparent"></div>
+  </section>
+
+  <section class="py-20 md:py-28 bg-white">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Notre Histoire</h2>
+        <div class="w-16 h-1 bg-amber-500 mx-auto rounded-full"></div>
+      </div>
+      <div class="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-6">
+        <p>
+          Origin Direct Group connecte les acheteurs mondiaux de matieres premieres avec des producteurs verifies en Afrique de l'Ouest et en Inde. Nous eliminons les intermediaires (les transformateurs europeens, les intermediaires asiatiques et les traders qui gonflent les couts de 30 a 300%) en maintenant des relations directes avec les agriculteurs, les cooperatives et les producteurs sur le terrain.
+        </p>
+        <p>
+          Nos equipes au Ghana, au Nigeria et en Inde gerent tout, depuis l'approvisionnement et le controle qualite jusqu'a la documentation d'exportation et la logistique. Quand vous travaillez avec nous, vous obtenez le produit directement des personnes qui le cultivent et le transforment, avec une tracabilite et une documentation completes a chaque etape.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 md:py-28 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Notre Presence</h2>
+        <div class="w-16 h-1 bg-amber-500 mx-auto rounded-full"></div>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8 lg:gap-12">
+        <div class="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm">
+          <div class="text-3xl mb-4">&#127468;&#127469;</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-4">Ghana</h3>
+          <ul class="space-y-3 text-gray-600">
+            <li class="flex items-start gap-2"><span class="w-1.5 h-1.5 bg-green-600 rounded-full mt-2 flex-shrink-0"></span><span>Bureau a Accra - coordination centrale</span></li>
+            <li class="flex items-start gap-2"><span class="w-1.5 h-1.5 bg-green-600 rounded-full mt-2 flex-shrink-0"></span><span>Ceinture du cacao - regions Ashanti et Western</span></li>
+            <li class="flex items-start gap-2"><span class="w-1.5 h-1.5 bg-green-600 rounded-full mt-2 flex-shrink-0"></span><span>Regions de cajou - Brong-Ahafo et Northern</span></li>
+            <li class="flex items-start gap-2"><span class="w-1.5 h-1.5 bg-green-600 rounded-full mt-2 flex-shrink-0"></span><span>Ceinture du karite - Upper East et Upper West</span></li>
+          </ul>
+        </div>
+        <div class="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm">
+          <div class="text-3xl mb-4">&#127475;&#127468;</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-4">Nigeria</h3>
+          <ul class="space-y-3 text-gray-600">
+            <li class="flex items-start gap-2"><span class="w-1.5 h-1.5 bg-green-600 rounded-full mt-2 flex-shrink-0"></span><span>Operations a Lagos - hub d'exportation</span></li>
+            <li class="flex items-start gap-2"><span class="w-1.5 h-1.5 bg-green-600 rounded-full mt-2 flex-shrink-0"></span><span>Ceinture agricole du Nord - sesame, hibiscus, gingembre</span></li>
+            <li class="flex items-start gap-2"><span class="w-1.5 h-1.5 bg-green-600 rounded-full mt-2 flex-shrink-0"></span><span>Ports d'exportation - Apapa et Tin Can Island</span></li>
+          </ul>
+        </div>
+        <div class="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm">
+          <div class="text-3xl mb-4">&#127470;&#127475;</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-4">Inde</h3>
+          <ul class="space-y-3 text-gray-600">
+            <li class="flex items-start gap-2"><span class="w-1.5 h-1.5 bg-green-600 rounded-full mt-2 flex-shrink-0"></span><span>Reseau d'approvisionnement en epices</span></li>
+            <li class="flex items-start gap-2"><span class="w-1.5 h-1.5 bg-green-600 rounded-full mt-2 flex-shrink-0"></span><span>Huile de ricin et derives</span></li>
+            <li class="flex items-start gap-2"><span class="w-1.5 h-1.5 bg-green-600 rounded-full mt-2 flex-shrink-0"></span><span>Approvisionnement en gomme de guar</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 md:py-28 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Ce Qui Nous Differencie</h2>
+        <div class="w-16 h-1 bg-amber-500 mx-auto rounded-full"></div>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8 lg:gap-12">
+        <div class="bg-green-50/50 rounded-2xl p-8 lg:p-10 border border-green-100">
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Des Equipes sur le Terrain</h3>
+          <p class="text-gray-600 leading-relaxed">Nous ne negocions pas depuis un bureau. Nos equipes locales visitent les fermes, inspectent les entrepots et supervisent le chargement. Chaque expedition est suivie de l'origine au port.</p>
+        </div>
+        <div class="bg-green-50/50 rounded-2xl p-8 lg:p-10 border border-green-100">
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Documentation Complete</h3>
+          <p class="text-gray-600 leading-relaxed">Certificat d'analyse, certificats phytosanitaires, certificats d'origine, rapports de laboratoire, documents d'expedition : tout ce dont votre transitaire a besoin, inclus avec chaque expedition.</p>
+        </div>
+        <div class="bg-green-50/50 rounded-2xl p-8 lg:p-10 border border-green-100">
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Conditions Flexibles</h3>
+          <p class="text-gray-600 leading-relaxed">FOB, CIF ou DDP. Lettre de credit, virement ou paiement contre documents. Nous travaillons avec vos conditions preferees et nous adaptons a vos besoins.</p>
+        </div>
+        <div class="bg-green-50/50 rounded-2xl p-8 lg:p-10 border border-green-100">
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Garantie Qualite</h3>
+          <p class="text-gray-600 leading-relaxed">Chaque expedition est testee de maniere independante. Si elle ne respecte pas les specifications, nous rectifions. Sans excuses, sans detours.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 md:py-28 bg-green-950">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Pret a Sourcer Directement ?</h2>
+        <p class="text-lg text-green-200/80 max-w-xl mx-auto">Recevez un devis competitif en moins de 2 heures. Notre equipe est prete a vous aider.</p>
+      </div>
+      <QuoteForm />
+    </div>
+  </section>
+</Layout>

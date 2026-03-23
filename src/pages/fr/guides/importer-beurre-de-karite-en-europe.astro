@@ -1,0 +1,119 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+import QuoteForm from '../../../components/QuoteForm.astro';
+
+const siteUrl = "https://origindirectgroup.com";
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Accueil", item: `${siteUrl}/fr/` },
+    { "@type": "ListItem", position: 2, name: "Guides", item: `${siteUrl}/fr/guides` },
+    { "@type": "ListItem", position: 3, name: "Importer du Beurre de Karite en Europe" },
+  ],
+};
+
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  name: "Comment Importer du Beurre de Karite en Europe",
+  description: "Guide complet pour importer du beurre de karite dans l'Union europeenne. Reglementations cosmetiques, REACH, certifications bio et logistique.",
+  step: [
+    { "@type": "HowToStep", position: 1, name: "Identifier le grade et la certification requis", text: "Determiner si vous avez besoin de beurre raffine, non raffine ou bio certifie." },
+    { "@type": "HowToStep", position: 2, name: "Trouver un fournisseur certifie", text: "S'assurer que le fournisseur detient les certifications COSMOS/ECOCERT si necessaire." },
+    { "@type": "HowToStep", position: 3, name: "Verifier la conformite REACH", text: "Le beurre de karite cosmetique doit etre conforme au reglement REACH (CE 1907/2006)." },
+    { "@type": "HowToStep", position: 4, name: "Commander des echantillons et tester", text: "Tester AGL, indice de peroxyde, humidite et metaux lourds." },
+    { "@type": "HowToStep", position: 5, name: "Organiser l'expedition", text: "Expedier depuis le port de Tema (Ghana) vers Rotterdam, Anvers ou Hambourg." },
+  ],
+};
+---
+
+<Layout
+  title="Comment Importer du Beurre de Karite en Europe - Guide Complet"
+  description="Guide complet pour importer du beurre de karite dans l'Union europeenne. Conformite REACH, certifications COSMOS/ECOCERT, specifications techniques et logistique depuis le Ghana."
+  structuredData={[breadcrumbSchema, howToSchema]}
+  lang="fr"
+  hreflangs={[
+    { lang: "en", href: `${siteUrl}/guides/import-shea-butter-to-eu` },
+    { lang: "fr", href: `${siteUrl}/fr/guides/importer-beurre-de-karite-en-europe` },
+  ]}
+>
+  <section class="py-12 md:py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-6">
+      <Breadcrumbs items={[{ label: "Guides", href: "/fr/guides" }, { label: "Importer du Beurre de Karite en Europe" }]} />
+
+      <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Comment Importer du Beurre de Karite en Europe</h1>
+
+      <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+        Le beurre de karite est un ingredient essentiel pour l'industrie cosmetique europeenne, avec une demande en forte croissance pour les formulations naturelles et biologiques. Le Ghana est le premier exportateur mondial. Ce guide detaille le processus complet pour importer du beurre de karite dans l'Union europeenne, de la selection du fournisseur au dedouanement.
+      </p>
+
+      <div class="prose prose-lg max-w-none text-gray-700">
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Processus d'Importation Etape par Etape</h2>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Etape 1 : Identifier le Grade et l'Usage Final</h3>
+        <p>
+          Le beurre de karite entre dans l'UE sous deux regimes reglementaires differents selon l'usage final. Pour les cosmetiques (57% de la demande), il releve du Reglement Cosmetiques (CE 1223/2009) et doit etre conforme REACH. Pour l'alimentation (35%), il releve de la reglementation alimentaire generale et des normes de securite alimentaire. Pour le pharmaceutique (8%), des exigences supplementaires de pharmacopee s'appliquent. Determinez votre usage final avant toute demarche, car cela conditionne les certifications et les tests requis.
+        </p>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Etape 2 : Choisir un Fournisseur Certifie</h3>
+        <p>
+          Pour le marche cosmetique europeen, les certifications les plus demandees sont COSMOS et ECOCERT pour le beurre biologique, ainsi que le Fair Trade (Commerce Equitable) en option. Assurez-vous que votre fournisseur peut fournir : un Certificat d'Analyse (CoA) avec les parametres complets (AGL, indice de peroxyde, humidite, metaux lourds), une Fiche de Donnees de Securite (FDS/MSDS), et les certificats de conformite biologique si necessaire. Origin Direct travaille avec des cooperatives certifiees COSMOS/ECOCERT dans le nord du Ghana.
+        </p>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Etape 3 : Verifier la Conformite REACH</h3>
+        <p>
+          Le Reglement REACH (CE 1907/2006) s'applique au beurre de karite utilise dans les cosmetiques. Le beurre de karite est enregistre sous REACH avec le numero CAS 977012-37-5 (non raffine) et 68650-44-2 (raffine). Assurez-vous que votre importation est couverte par un enregistrement REACH existant. Les tests doivent confirmer l'absence de metaux lourds au-dessus des seuils (plomb &lt; 2 mg/kg, arsenic &lt; 1 mg/kg, cadmium &lt; 0,5 mg/kg, mercure &lt; 0,1 mg/kg).
+        </p>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Etape 4 : Commander des Echantillons et Tester</h3>
+        <p>
+          Avant de passer commande, demandez des echantillons (1-5 kg) et faites-les tester dans un laboratoire accredite en Europe. Les parametres cles sont : AGL &lt; 1% (grade cosmetique premium), indice de peroxyde &lt; 10 meq/kg, humidite &lt; 0,05%, matiere insaponifiable 6-17%, point de fusion 33-42 degres C, et metaux lourds indetectables. Pour le beurre alimentaire, ajoutez les tests microbiologiques et les controles d'allergenes.
+        </p>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Etape 5 : Negocier et Commander</h3>
+        <p>
+          Les Incoterms courants sont FOB Tema (Ghana) ou CIF Rotterdam/Anvers/Hambourg. Le paiement se fait typiquement par Lettre de Credit irrevocable pour les premieres commandes, puis TT (virement) pour les clients reguliers. Le QMC standard est de 1 FCL (18-20 TM), avec des conditionnements en cartons de 25 kg, futs de 50 kg ou 180 kg, ou flexitanks pour le vrac (20-24 TM par conteneur).
+        </p>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Etape 6 : Documentation et Expedition</h3>
+        <p>
+          Les documents requis pour l'importation dans l'UE comprennent : certificat phytosanitaire, certificat d'origine, certificat de circulation EUR.1 (pour un taux de droit preferentiel de 0% depuis le Ghana sous l'APE), connaissement, facture commerciale, liste de colisage, certificat d'analyse, et FDS si usage cosmetique. Le transit depuis Tema est de 12-14 jours vers Rotterdam et Anvers, 14-16 jours vers Hambourg.
+        </p>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Etape 7 : Dedouanement et Reception</h3>
+        <p>
+          Le code SH pour le beurre de karite est 1515.90. Avec un certificat EUR.1, le droit de douane est de 0% pour les importations depuis le Ghana dans le cadre de l'APE UE-Ghana. A l'arrivee, le beurre de karite peut etre soumis a des controles documentaires, d'identite ou physiques. Inspectez la marchandise a la reception : verifiez la couleur, l'odeur, la texture et le poids par rapport aux specifications contractuelles.
+        </p>
+
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Documents Essentiels</h2>
+        <ul>
+          <li>Certificat d'Analyse (CoA) avec AGL, indice de peroxyde, humidite, metaux lourds</li>
+          <li>Fiche de Donnees de Securite (FDS/MSDS) pour usage cosmetique</li>
+          <li>Certificat de circulation EUR.1 pour droits preferentiels</li>
+          <li>Certificat d'origine</li>
+          <li>Certificats COSMOS/ECOCERT (si beurre bio)</li>
+          <li>Connaissement maritime</li>
+          <li>Facture commerciale et liste de colisage</li>
+        </ul>
+
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Code SH</h2>
+        <ul>
+          <li><strong>1515.90</strong> - Graisses et huiles vegetales fixes (beurre de karite)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-green-950">
+    <div class="max-w-3xl mx-auto px-6">
+      <div class="text-center mb-10">
+        <h2 class="text-2xl font-bold text-white">Besoin d'Aide pour Importer du Beurre de Karite ?</h2>
+        <p class="mt-3 text-gray-300">Nous fournissons toute la documentation et la certification requise.</p>
+      </div>
+      <QuoteForm productName="Shea Butter" />
+    </div>
+  </section>
+</Layout>

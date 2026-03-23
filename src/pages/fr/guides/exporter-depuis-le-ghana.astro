@@ -1,0 +1,126 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+import QuoteForm from '../../../components/QuoteForm.astro';
+
+const siteUrl = "https://origindirectgroup.com";
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Accueil", item: `${siteUrl}/fr/` },
+    { "@type": "ListItem", position: 2, name: "Guides", item: `${siteUrl}/fr/guides` },
+    { "@type": "ListItem", position: 3, name: "Exporter depuis le Ghana" },
+  ],
+};
+
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  name: "Guide Complet pour Exporter depuis le Ghana",
+  description: "Tout ce qu'il faut savoir pour exporter des matieres premieres depuis le Ghana : procedures, documents, reglementations et logistique.",
+  step: [
+    { "@type": "HowToStep", position: 1, name: "S'enregistrer comme exportateur", text: "Obtenir l'enregistrement aupres du Ghana Export Promotion Authority (GEPA) et du Registrar General's Department." },
+    { "@type": "HowToStep", position: 2, name: "Obtenir les licences requises", text: "Certains produits necessitent des licences specifiques (COCOBOD pour le cacao, FDA Ghana pour les aliments)." },
+    { "@type": "HowToStep", position: 3, name: "Preparer la documentation", text: "Certificat phytosanitaire, certificat d'origine, EUR.1, bill of lading, facture commerciale." },
+    { "@type": "HowToStep", position: 4, name: "Organiser le controle qualite", text: "Faire tester les produits en laboratoire et obtenir les certificats d'analyse." },
+    { "@type": "HowToStep", position: 5, name: "Superviser le chargement et l'expedition", text: "Superviser le chargement au port de Tema et expedier vers la destination." },
+  ],
+};
+---
+
+<Layout
+  title="Guide Complet pour Exporter depuis le Ghana - Matieres Premieres"
+  description="Guide complet pour exporter des matieres premieres depuis le Ghana. Procedures d'enregistrement, licences, documentation, controle qualite et logistique portuaire depuis Tema."
+  structuredData={[breadcrumbSchema, howToSchema]}
+  lang="fr"
+  hreflangs={[
+    { lang: "fr", href: `${siteUrl}/fr/guides/exporter-depuis-le-ghana` },
+  ]}
+>
+  <section class="py-12 md:py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-6">
+      <Breadcrumbs items={[{ label: "Guides", href: "/fr/guides" }, { label: "Exporter depuis le Ghana" }]} />
+
+      <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Guide Complet pour Exporter depuis le Ghana</h1>
+
+      <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+        Le Ghana est l'un des principaux exportateurs de matieres premieres agricoles d'Afrique de l'Ouest. Premier exportateur mondial de noix de cajou en coque, deuxieme producteur mondial de cacao et premier fournisseur de beurre de karite, le pays dispose d'une infrastructure portuaire moderne centree sur le port de Tema. Ce guide couvre toutes les etapes necessaires pour exporter des matieres premieres depuis le Ghana vers les marches internationaux.
+      </p>
+
+      <div class="prose prose-lg max-w-none text-gray-700">
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Enregistrement et Licences</h2>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Enregistrement Comme Exportateur</h3>
+        <p>
+          Toute entreprise souhaitant exporter depuis le Ghana doit s'enregistrer aupres de plusieurs organismes. Le Registrar General's Department delivre le certificat d'incorporation de l'entreprise. Le Ghana Revenue Authority (GRA) attribue le numero d'identification fiscale (TIN). Le Ghana Export Promotion Authority (GEPA) delivre le certificat d'enregistrement a l'export, obligatoire pour toute operation d'exportation. Enfin, la Bank of Ghana doit approuver les transactions en devises etrangeres liees aux exportations.
+        </p>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Licences Specifiques par Produit</h3>
+        <p>
+          Certaines matieres premieres necessitent des licences specifiques. Le cacao est strictement controle par le Ghana Cocoa Board (COCOBOD), et seules les societes d'achat licensees (LBC) peuvent acheter et exporter du cacao. Pour les produits alimentaires, la Food and Drugs Authority (FDA Ghana) delivre les certificats de conformite. Pour les produits forestiers, la Forestry Commission doit delivrer un permis d'exportation. Le beurre de karite et les noix de cajou ne necessitent pas de licence specifique au-dela de l'enregistrement GEPA.
+        </p>
+
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Documentation d'Exportation</h2>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Documents Obligatoires</h3>
+        <p>Pour chaque expedition depuis le Ghana, les documents suivants sont requis :</p>
+        <ul>
+          <li><strong>Certificat phytosanitaire</strong> - Delivre par le Plant Protection and Regulatory Services Directorate (PPRSD) du ministere de l'Agriculture. Obligatoire pour toutes les matieres premieres agricoles. Inspection a effectuer avant le chargement.</li>
+          <li><strong>Certificat d'origine</strong> - Delivre par la Ghana National Chamber of Commerce and Industry (GNCCI). Atteste l'origine ghaneenne des produits.</li>
+          <li><strong>Certificat de circulation EUR.1</strong> - Pour les exportations vers l'UE beneficiant des tarifs preferentiels sous l'Accord de Partenariat Economique (APE) UE-Ghana. Droit de douane 0% pour la plupart des matieres premieres agricoles.</li>
+          <li><strong>Connaissement (Bill of Lading)</strong> - Document de transport maritime delivre par la compagnie maritime.</li>
+          <li><strong>Facture commerciale</strong> - Detaillant le produit, la quantite, le prix unitaire et les Incoterms convenus.</li>
+          <li><strong>Liste de colisage (Packing List)</strong> - Detaillant le nombre de colis, poids brut et net.</li>
+          <li><strong>Certificat d'analyse (CoA)</strong> - De preference d'un laboratoire accredite, detaillant les parametres de qualite pertinents.</li>
+        </ul>
+
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Controle Qualite et Tests</h2>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Laboratoires au Ghana</h3>
+        <p>
+          Plusieurs laboratoires accredites au Ghana effectuent les tests de qualite pour l'exportation. Le Ghana Standards Authority (GSA) est l'organisme national de normalisation et teste les matieres premieres pour la conformite aux normes ghanennes et internationales. SGS Ghana et Bureau Veritas disposent de laboratoires a Accra et Tema pour les inspections pre-expedition. Le Food Research Institute du CSIR effectue les analyses alimentaires specialisees. Pour le cacao, le Quality Control Company (QCC) sous COCOBOD controle chaque lot avant l'exportation.
+        </p>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Parametres a Tester par Produit</h3>
+        <p>
+          Chaque matiere premiere a ses propres parametres critiques. Pour le cacao : humidite, denombrement des feves, moisissures, cadmium, ochratoxine A. Pour le beurre de karite : AGL, indice de peroxyde, humidite, metaux lourds. Pour les noix de cajou : KOR, humidite, denombrement, aflatoxines. Pour le sesame : oxyde d'ethylene, aflatoxines, purete, teneur en huile. Pour le gingembre : oleoresine, humidite, teneur en sol, aflatoxines. Demandez a votre fournisseur de tester chaque lot avant l'expedition.
+        </p>
+
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Logistique et Port de Tema</h2>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Le Port de Tema</h3>
+        <p>
+          Le port de Tema est le principal port d'exportation du Ghana, situe a environ 25 km a l'est d'Accra. Le Tema Port Expansion Project (Terminal 3) a considerablement augmente la capacite du port. Les lignes maritimes majeures (Maersk, MSC, CMA CGM, Hapag-Lloyd) font escale regulierement a Tema, offrant des connexions directes vers Rotterdam, Hambourg, Anvers, Le Havre et les ports asiatiques.
+        </p>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Temps de Transit</h3>
+        <p>Les temps de transit typiques depuis Tema sont :</p>
+        <ul>
+          <li>Rotterdam (Pays-Bas) : 12-14 jours</li>
+          <li>Hambourg (Allemagne) : 14-16 jours</li>
+          <li>Anvers (Belgique) : 12-14 jours</li>
+          <li>Le Havre (France) : 13-15 jours</li>
+          <li>New York (USA) : 16-20 jours</li>
+          <li>Jebel Ali (EAU) : 18-22 jours</li>
+        </ul>
+
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Accords Commerciaux et Tarifs</h2>
+        <p>
+          Le Ghana beneficie de plusieurs accords commerciaux favorables. L'APE UE-Ghana (Accord de Partenariat Economique) offre un acces en franchise de droits pour la quasi-totalite des exportations agricoles vers l'UE. Le systeme SPG (Systeme de Preferences Generalisees) offre des tarifs preferentiels vers d'autres marches developpes. L'AGOA (African Growth and Opportunity Act) offre un acces preferentiel au marche americain. La ZLECAf (Zone de Libre-Echange Continentale Africaine) facilite le commerce intra-africain.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-green-950">
+    <div class="max-w-3xl mx-auto px-6">
+      <div class="text-center mb-10">
+        <h2 class="text-2xl font-bold text-white">Besoin d'un Partenaire pour Exporter depuis le Ghana ?</h2>
+        <p class="mt-3 text-gray-300">Notre equipe a Accra gere tout le processus, de la ferme au port.</p>
+      </div>
+      <QuoteForm />
+    </div>
+  </section>
+</Layout>

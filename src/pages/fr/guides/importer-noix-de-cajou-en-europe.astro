@@ -1,0 +1,115 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+import QuoteForm from '../../../components/QuoteForm.astro';
+
+const siteUrl = "https://origindirectgroup.com";
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Accueil", item: `${siteUrl}/fr/` },
+    { "@type": "ListItem", position: 2, name: "Guides", item: `${siteUrl}/fr/guides` },
+    { "@type": "ListItem", position: 3, name: "Importer des Noix de Cajou en Europe" },
+  ],
+};
+
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  name: "Comment Importer des Noix de Cajou en Europe",
+  description: "Guide complet pour importer des noix de cajou brutes et transformees dans l'Union europeenne. Normes de qualite, reglementations et logistique.",
+  step: [
+    { "@type": "HowToStep", position: 1, name: "Choisir entre RCN et amandes", text: "Determiner si vous importez des noix brutes pour transformation ou des amandes pretes a l'emploi." },
+    { "@type": "HowToStep", position: 2, name: "Verifier les specifications", text: "Tester le KOR, l'humidite, les aflatoxines et les residus de pesticides." },
+    { "@type": "HowToStep", position: 3, name: "Preparer la documentation", text: "Certificat phytosanitaire, EUR.1, certificat d'analyse, et connaissement." },
+    { "@type": "HowToStep", position: 4, name: "Organiser l'expedition", text: "Expedier depuis Tema ou Lagos vers les ports europeens." },
+    { "@type": "HowToStep", position: 5, name: "Dedouaner et recevoir", text: "Soumettre la documentation et passer les controles phytosanitaires UE." },
+  ],
+};
+---
+
+<Layout
+  title="Comment Importer des Noix de Cajou en Europe - Guide Complet"
+  description="Guide complet pour importer des noix de cajou dans l'Union europeenne. Grades AFI, limites d'aflatoxines, documentation phytosanitaire et logistique depuis le Ghana et le Nigeria."
+  structuredData={[breadcrumbSchema, howToSchema]}
+  lang="fr"
+  hreflangs={[
+    { lang: "en", href: `${siteUrl}/guides/import-cashew-nuts-to-eu` },
+    { lang: "fr", href: `${siteUrl}/fr/guides/importer-noix-de-cajou-en-europe` },
+  ]}
+>
+  <section class="py-12 md:py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-6">
+      <Breadcrumbs items={[{ label: "Guides", href: "/fr/guides" }, { label: "Importer des Noix de Cajou en Europe" }]} />
+
+      <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Comment Importer des Noix de Cajou en Europe</h1>
+
+      <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+        L'Europe est l'un des principaux marches de consommation de noix de cajou au monde, avec une demande croissante portee par le snacking sante et les regimes a base de plantes. Le Ghana est le premier exportateur mondial de noix de cajou en coque (RCN), controlant pres de 44% des exportations mondiales. Ce guide couvre le processus complet d'importation, que vous achetiez des noix brutes pour la transformation ou des amandes decortiquees pour la distribution.
+      </p>
+
+      <div class="prose prose-lg max-w-none text-gray-700">
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Processus d'Importation Etape par Etape</h2>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Etape 1 : Choisir entre RCN et Amandes Transformees</h3>
+        <p>
+          Deux marches distincts coexistent. Les noix de cajou brutes (RCN - Raw Cashew Nuts) sont destinees aux usines de transformation, principalement en Inde et au Vietnam, mais aussi de plus en plus en Afrique meme. Les amandes transformees (kernels) sont pretes pour l'emballage de detail ou la fabrication alimentaire. Les grades standards de l'AFI (Association of Food Industries) vont du W180 (le plus grand, le plus cher) au W450 (plus petit), avec aussi les Splits et les Morceaux. Le grade W320 est le plus negocie mondialement.
+        </p>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Etape 2 : Verifier les Specifications de Qualite</h3>
+        <p>
+          Pour les RCN, le parametre cle est le KOR (Kernel Outturn Ratio) qui mesure le rendement en amande par sac de 80 kg. Recherchez un KOR de 48-54 lbs, une humidite inferieure a 10%, un denombrement de 170-210 noix/kg et un defectueux inferieur a 10%. Pour les amandes, les criteres sont : humidite inferieure a 5%, aflatoxine B1 inferieure a 5 ug/kg (limite UE stricte), aflatoxines totales inferieures a 10 ug/kg, et residus de pesticides conformes aux LMR.
+        </p>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Etape 3 : Conformite Reglementaire UE</h3>
+        <p>
+          L'importation de noix de cajou dans l'UE est soumise a plusieurs reglementations : les limites d'aflatoxines (Reg. UE 2023/915), les LMR de pesticides (Reg. CE 396/2005), les exigences phytosanitaires (Reg. UE 2016/2031), et les normes d'hygiene alimentaire (Reg. CE 852/2004). Les noix de cajou en provenance de certains pays tiers font l'objet de controles renforces aux frontieres. Assurez-vous que votre fournisseur peut fournir un certificat phytosanitaire delivre par le NPPO et un certificat d'analyse d'un laboratoire accredite.
+        </p>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Etape 4 : Documentation et Expedition</h3>
+        <p>
+          Les documents requis comprennent : certificat phytosanitaire, certificat d'origine, certificat de circulation EUR.1 (pour les droits preferentiels depuis le Ghana sous l'APE), certificat d'analyse avec resultats d'aflatoxines, connaissement, facture commerciale et liste de colisage. Les RCN sont generalement expediees en sacs de jute de 80 kg dans des conteneurs de 20 pieds (environ 18 TM). Les amandes sont conditionnees sous vide en cartons de 10 ou 25 kg, flexitanks possibles pour les gros volumes.
+        </p>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Etape 5 : Logistique et Transit</h3>
+        <p>
+          Les principaux ports de destination europeens pour les noix de cajou sont Rotterdam (Pays-Bas), Hambourg (Allemagne) et Anvers (Belgique). Le transit depuis Tema (Ghana) est de 12-14 jours, depuis Lagos (Nigeria) de 14-16 jours. Les Incoterms courants sont FOB Tema/Lagos ou CIF Rotterdam/Anvers. Le paiement pour les RCN se fait par Lettre de Credit irrevocable a vue (norme du secteur).
+        </p>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Etape 6 : Dedouanement et Controles</h3>
+        <p>
+          Le code SH est 0801.31 pour les noix en coque et 0801.32 pour les amandes decortiquees. Avec un certificat EUR.1, le droit preferentiel est de 0% depuis le Ghana. A l'arrivee, les autorites douanieres peuvent effectuer des controles documentaires, d'identite et physiques, incluant des tests d'aflatoxines. En cas de depassement des limites, la marchandise sera refusee. Assurez-vous que votre fournisseur a teste chaque lot avant l'expedition.
+        </p>
+
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Documents Essentiels</h2>
+        <ul>
+          <li>Certificat phytosanitaire (delivre par le NPPO)</li>
+          <li>Certificat d'analyse avec resultats d'aflatoxines et pesticides</li>
+          <li>Certificat de circulation EUR.1</li>
+          <li>Certificat d'origine</li>
+          <li>Connaissement maritime</li>
+          <li>Facture commerciale et liste de colisage</li>
+          <li>Rapport d'inspection SGS (optionnel mais recommande)</li>
+        </ul>
+
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Codes SH</h2>
+        <ul>
+          <li><strong>0801.31</strong> - Noix de cajou en coque (RCN)</li>
+          <li><strong>0801.32</strong> - Noix de cajou decortiquees (amandes)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-green-950">
+    <div class="max-w-3xl mx-auto px-6">
+      <div class="text-center mb-10">
+        <h2 class="text-2xl font-bold text-white">Besoin d'Aide pour Importer des Noix de Cajou ?</h2>
+        <p class="mt-3 text-gray-300">Nous gerons la qualite, la documentation et la logistique pour vous.</p>
+      </div>
+      <QuoteForm productName="Cashew Nuts" />
+    </div>
+  </section>
+</Layout>

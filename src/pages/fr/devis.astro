@@ -1,0 +1,60 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import QuoteForm from '../../components/QuoteForm.astro';
+
+const siteUrl = "https://origindirectgroup.com";
+---
+
+<Layout
+  title="Demander un Devis | Origin Direct Group"
+  description="Obtenez un devis competitif pour vos matieres premieres en moins de 2 heures. Beurre de karite, cacao, noix de cajou, charbon chicha, hibiscus, sesame, moringa, gingembre."
+  lang="fr"
+  hreflangs={[
+    { lang: "en", href: `${siteUrl}/quote` },
+    { lang: "fr", href: `${siteUrl}/fr/devis` },
+  ]}
+>
+  <section class="relative py-20 md:py-28 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-green-950 via-green-900 to-amber-950"></div>
+    <div class="absolute inset-0 bg-black/20"></div>
+    <div class="relative z-10 max-w-3xl mx-auto px-6 text-center">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight mb-6">Demander un Devis</h1>
+      <p class="text-lg md:text-xl text-green-100/90 max-w-2xl mx-auto leading-relaxed">
+        Dites-nous ce dont vous avez besoin et nous vous repondrons en moins de 2 heures avec une offre competitive.
+      </p>
+    </div>
+    <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-gray-50 to-transparent"></div>
+  </section>
+
+  <section class="py-16 md:py-24 bg-gray-50">
+    <div class="max-w-2xl mx-auto px-6">
+      <QuoteForm />
+    </div>
+
+    <div class="max-w-4xl mx-auto px-6 mt-16">
+      <div class="grid sm:grid-cols-3 gap-6">
+        <div class="bg-white rounded-xl border border-gray-100 p-6 text-center">
+          <div class="inline-flex items-center justify-center w-12 h-12 bg-green-100 text-green-700 rounded-xl mb-4">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+          </div>
+          <h3 class="font-bold text-gray-900 mb-1">Temps de Reponse</h3>
+          <p class="text-sm text-gray-600">Moins de 2 heures</p>
+        </div>
+        <div class="bg-white rounded-xl border border-gray-100 p-6 text-center">
+          <div class="inline-flex items-center justify-center w-12 h-12 bg-amber-100 text-amber-700 rounded-xl mb-4">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" /></svg>
+          </div>
+          <h3 class="font-bold text-gray-900 mb-1">Echantillons</h3>
+          <p class="text-sm text-gray-600">Disponibles pour tous les produits</p>
+        </div>
+        <div class="bg-white rounded-xl border border-gray-100 p-6 text-center">
+          <div class="inline-flex items-center justify-center w-12 h-12 bg-green-100 text-green-700 rounded-xl mb-4">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z" /></svg>
+          </div>
+          <h3 class="font-bold text-gray-900 mb-1">Paiement</h3>
+          <p class="text-sm text-gray-600">LC, TT, CAD disponibles</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,299 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: "Ghana Cocoa Season Guide: When to Buy for Best Prices",
+  description: "Complete guide to Ghana's cocoa seasons: main crop vs light crop timing, COCOBOD pricing, farmgate prices, seasonal patterns, quality differences, and best buying windows.",
+  author: { "@type": "Organization", name: "Origin Direct Group" },
+  publisher: { "@type": "Organization", name: "Origin Direct Group", logo: { "@type": "ImageObject", url: "https://origindirectgroup.com/logo.png" } },
+  datePublished: "2026-03-23",
+  dateModified: "2026-03-23",
+  mainEntityOfPage: "https://origindirectgroup.com/blog/ghana-cocoa-season-guide",
+  image: "https://origindirectgroup.com/images/blog/ghana-cocoa-season.jpg",
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://origindirectgroup.com/" },
+    { "@type": "ListItem", position: 2, name: "Blog", item: "https://origindirectgroup.com/blog" },
+    { "@type": "ListItem", position: 3, name: "Ghana Cocoa Season Guide", item: "https://origindirectgroup.com/blog/ghana-cocoa-season-guide" },
+  ],
+};
+---
+
+<Layout
+  title="Ghana Cocoa Season Guide: When to Buy for Best Prices | Origin Direct Group"
+  description="Complete guide to Ghana's cocoa seasons: main crop vs light crop timing, COCOBOD pricing, farmgate prices, seasonal patterns, quality differences, and best buying windows."
+  structuredData={[articleSchema, breadcrumbSchema]}
+>
+  <!-- Breadcrumbs -->
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <nav class="flex text-sm text-gray-500">
+      <a href="/" class="hover:text-brand-700">Home</a>
+      <span class="mx-2">/</span>
+      <a href="/blog" class="hover:text-brand-700">Blog</a>
+      <span class="mx-2">/</span>
+      <span class="text-gray-900">Ghana Cocoa Season Guide</span>
+    </nav>
+  </div>
+
+  <!-- Hero -->
+  <section class="relative py-20 sm:py-28 bg-gradient-to-br from-brand-900 via-brand-800 to-earth-800 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(196,154,42,0.3),transparent_70%)]"></div>
+    </div>
+    <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <span class="inline-block px-4 py-1.5 bg-amber-500/20 text-amber-300 text-sm font-semibold rounded-full mb-6 border border-amber-500/30">Market Intelligence</span>
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">Ghana Cocoa Season Guide: When to Buy for Best Prices</h1>
+      <p class="text-lg text-brand-200 max-w-2xl mx-auto">
+        Understanding Ghana's cocoa calendar helps you time purchases, plan inventory, and negotiate better prices. Here is the complete season guide.
+      </p>
+      <div class="mt-6 flex items-center justify-center gap-4 text-sm text-brand-300">
+        <span>March 23, 2026</span>
+        <span class="w-1 h-1 rounded-full bg-brand-500"></span>
+        <span>11 min read</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Article Content -->
+  <article class="py-16 md:py-20 bg-white">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="prose prose-lg text-gray-700 max-w-none">
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">Ghana's Two Cocoa Seasons</h2>
+        <p>
+          Ghana is the world's second-largest cocoa producer (after Ivory Coast), and its cocoa industry operates on a well-defined seasonal calendar managed by the Ghana Cocoa Board (COCOBOD). Understanding this calendar is essential for buyers looking to optimize their purchasing strategy for <a href="/products/cocoa" class="text-brand-700 underline hover:text-brand-900">Ghanaian cocoa beans</a>.
+        </p>
+        <p>
+          Ghana's cocoa production is divided into two distinct harvest periods:
+        </p>
+
+        <div class="overflow-x-auto rounded-xl border border-gray-200 shadow-sm my-8">
+          <table class="w-full text-left text-sm">
+            <thead>
+              <tr class="bg-brand-800 text-white">
+                <th class="px-6 py-4 font-semibold">Season</th>
+                <th class="px-6 py-4 font-semibold">Period</th>
+                <th class="px-6 py-4 font-semibold">Share of Annual Production</th>
+                <th class="px-6 py-4 font-semibold">Quality</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100">
+              <tr class="bg-white">
+                <td class="px-6 py-3 font-medium text-gray-900">Main Crop</td>
+                <td class="px-6 py-3 text-gray-700">October - March</td>
+                <td class="px-6 py-3 text-gray-700">75-85%</td>
+                <td class="px-6 py-3"><span class="px-2 py-1 bg-green-100 text-green-800 rounded text-xs font-medium">Premium</span></td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="px-6 py-3 font-medium text-gray-900">Light Crop (Mid-Crop)</td>
+                <td class="px-6 py-3 text-gray-700">May - August</td>
+                <td class="px-6 py-3 text-gray-700">15-25%</td>
+                <td class="px-6 py-3"><span class="px-2 py-1 bg-amber-100 text-amber-800 rounded text-xs font-medium">Standard</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">The Main Crop (October to March)</h2>
+        <p>
+          The main crop accounts for the majority of Ghana's cocoa production. Harvesting begins in October when the mature pods from the April-June flowering period are ready. The peak of the main crop falls in November through January, when the bulk of purchasing activity occurs.
+        </p>
+        <p>
+          Main crop cocoa is generally considered superior in quality for several reasons:
+        </p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li><strong>Better bean size</strong> - Main crop beans tend to be larger and more uniform, with a higher bean count meeting the standard of 100 beans per 100 grams (the COCOBOD specification).</li>
+          <li><strong>Lower moisture</strong> - The main crop harvest coincides with the dry Harmattan season (December-February), which aids natural drying and results in lower moisture content in the beans.</li>
+          <li><strong>More consistent fermentation</strong> - Larger volumes during the main crop allow for better-organized fermentation processes at buying stations and cooperatives.</li>
+          <li><strong>Lower defect rates</strong> - Main crop beans typically show fewer defects (moldy, slaty, insect-damaged) compared to light crop beans.</li>
+        </ul>
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">The Light Crop (May to August)</h2>
+        <p>
+          The light crop, also called the mid-crop, comes from a secondary flowering period. It produces significantly less volume and the quality is generally a step below the main crop. Light crop cocoa faces several challenges:
+        </p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li><strong>Rainy season drying</strong> - The light crop is harvested during the rainy season, making sun-drying more difficult and increasing the risk of mold.</li>
+          <li><strong>Smaller bean size</strong> - Light crop beans are often smaller, with bean counts sometimes exceeding the 100-per-100g standard.</li>
+          <li><strong>Higher moisture risk</strong> - Persistent humidity makes it harder to achieve the target moisture content of 7.5% or below.</li>
+          <li><strong>Price discount</strong> - Light crop cocoa may trade at a slight discount to main crop due to quality differences, though the COCOBOD farmgate price remains the same.</li>
+        </ul>
+        <p>
+          That said, light crop cocoa from Ghana still meets international quality standards and is widely traded. For buyers who need supply outside the main crop shipping window, light crop is a viable option. Some chocolate makers even prefer light crop beans for certain flavor profiles, as they can have a slightly different taste characteristic compared to main crop.
+        </p>
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">How COCOBOD Pricing Works</h2>
+        <p>
+          Ghana's cocoa pricing system is unique in the world. Unlike Ivory Coast's auction-based system or the free-market approach of most other origins, Ghana uses a fixed farmgate pricing system administered by COCOBOD. Here is how it works:
+        </p>
+
+        <div class="space-y-4 my-8">
+          {[
+            { step: "1", title: "COCOBOD sets the farmgate price", desc: "Before each season (typically announced in September/October), COCOBOD sets a fixed price per bag (64 kg) that all Licensed Buying Companies (LBCs) must pay to farmers. For the 2025/26 season, this was set at GHS 3,120 per bag (approximately $200-220 USD depending on the exchange rate)." },
+            { step: "2", title: "LBCs purchase from farmers", desc: "Approximately 40 Licensed Buying Companies operate across Ghana's cocoa regions. They purchase cocoa beans from farmers at the fixed price and transport them to collection points." },
+            { step: "3", title: "COCOBOD Quality Control Division grades the beans", desc: "All cocoa is inspected and graded by COCOBOD's Quality Control Division (QCD). Only beans meeting the required standards are sealed for export. Substandard beans are rejected and must be re-processed." },
+            { step: "4", title: "COCOBOD sells to international buyers", desc: "COCOBOD markets the cocoa internationally through its subsidiary, Cocoa Marketing Company (CMC). Sales are conducted through a forward selling program where buyers commit to volumes and prices for future delivery." },
+            { step: "5", title: "FOB price is set based on world market", desc: "The FOB price that international buyers pay is based on the ICE cocoa futures price plus a country differential (premium or discount). Ghana typically commands a premium over the ICE price due to its reputation for quality." },
+          ].map((item) => (
+            <div class="flex gap-4 bg-gray-50 rounded-lg p-5 border border-gray-200">
+              <div class="flex-shrink-0 w-8 h-8 bg-brand-700 text-white rounded-full flex items-center justify-center text-sm font-bold">{item.step}</div>
+              <div>
+                <h4 class="font-semibold text-gray-900 mb-1">{item.title}</h4>
+                <p class="text-sm text-gray-600">{item.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <p>
+          The COCOBOD system provides price stability for farmers (they know what they will receive before planting decisions) and quality assurance for buyers (every bag is independently graded). However, it also means that Ghana's cocoa is typically more expensive than Ivorian cocoa due to the higher farmgate price and the administrative costs of the COCOBOD system.
+        </p>
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">Seasonal Price Patterns</h2>
+        <p>
+          Understanding the seasonal price patterns helps you time your purchases for optimal pricing:
+        </p>
+
+        <div class="overflow-x-auto rounded-xl border border-gray-200 shadow-sm my-8">
+          <table class="w-full text-left text-sm">
+            <thead>
+              <tr class="bg-brand-800 text-white">
+                <th class="px-6 py-4 font-semibold">Period</th>
+                <th class="px-6 py-4 font-semibold">Price Tendency</th>
+                <th class="px-6 py-4 font-semibold">Why</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100">
+              <tr class="bg-white">
+                <td class="px-6 py-3 font-medium text-gray-900">October - November</td>
+                <td class="px-6 py-3 text-gray-700">Moderate to firm</td>
+                <td class="px-6 py-3 text-gray-700">New season begins, initial supply still limited</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="px-6 py-3 font-medium text-gray-900">December - February</td>
+                <td class="px-6 py-3 text-gray-700">Softer (best buying window)</td>
+                <td class="px-6 py-3 text-gray-700">Peak harvest, maximum supply availability</td>
+              </tr>
+              <tr class="bg-white">
+                <td class="px-6 py-3 font-medium text-gray-900">March - April</td>
+                <td class="px-6 py-3 text-gray-700">Rising</td>
+                <td class="px-6 py-3 text-gray-700">Main crop winding down, supply tightens</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="px-6 py-3 font-medium text-gray-900">May - June</td>
+                <td class="px-6 py-3 text-gray-700">Firm to high</td>
+                <td class="px-6 py-3 text-gray-700">Gap between seasons, limited stock</td>
+              </tr>
+              <tr class="bg-white">
+                <td class="px-6 py-3 font-medium text-gray-900">July - September</td>
+                <td class="px-6 py-3 text-gray-700">Variable</td>
+                <td class="px-6 py-3 text-gray-700">Light crop supply, market anticipates new season</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>
+          The December through February window typically offers the most competitive pricing because supply is at its peak and exporters are actively looking to fill containers. This is when you have the most negotiating leverage and the widest selection of quality lots. If you can plan your inventory around this window, you will generally achieve better prices than buying throughout the year.
+        </p>
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">Forward Contracting</h2>
+        <p>
+          For buyers with predictable demand, forward contracting is one of the most effective tools for managing cocoa costs. A forward contract locks in a price and quantity for delivery at a future date, protecting you from price increases while giving the seller certainty of demand.
+        </p>
+        <p>
+          Here is how forward contracting typically works for Ghanaian cocoa:
+        </p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li><strong>Timing</strong> - The best time to lock in forward contracts is during peak main crop (December-February) when supply is ample and prices are typically softer.</li>
+          <li><strong>Pricing basis</strong> - Forward contracts are usually priced as a differential (premium or discount) to the ICE cocoa futures price. The differential is fixed, while the futures component can be fixed immediately or left open for the buyer to "fix" later.</li>
+          <li><strong>Volume</strong> - Minimum forward contract sizes are typically one container (14-15 MT), though some exporters accept multi-container commitments.</li>
+          <li><strong>Payment terms</strong> - Standard payment for forward contracts is a 10-20% advance upon contract signing, with the balance against shipping documents or upon arrival at destination.</li>
+          <li><strong>Delivery period</strong> - Forward contracts typically specify a delivery month or a 2-3 month delivery window to account for shipping logistics.</li>
+        </ul>
+        <p>
+          Forward contracting is particularly valuable during volatile markets. In 2024-2025, cocoa prices more than doubled in a matter of months. Buyers who had forward contracts in place were protected from the worst of the price spikes, while spot buyers faced dramatically higher costs.
+        </p>
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">Quality Differences by Region</h2>
+        <p>
+          Ghana's cocoa-growing regions each produce beans with slightly different characteristics:
+        </p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li><strong>Ashanti Region</strong> - The heartland of Ghanaian cocoa. Produces the highest volume and is known for consistent, well-fermented beans with the classic Ghanaian flavor profile.</li>
+          <li><strong>Western Region</strong> - The largest producing region by area, particularly the Western North and Western South districts. Quality is generally on par with Ashanti.</li>
+          <li><strong>Brong Ahafo Region</strong> - Growing production area with younger trees. Beans tend to be slightly smaller but well-fermented.</li>
+          <li><strong>Eastern Region</strong> - One of the original cocoa-growing areas. Production has declined due to aging trees, but quality remains high with distinctive flavor notes.</li>
+        </ul>
+        <p>
+          For most commercial purposes, Ghanaian cocoa is traded without regional distinction, as COCOBOD's quality control system ensures a minimum standard regardless of origin. However, specialty buyers looking for specific flavor profiles or <a href="/blog/cadmium-cocoa-eu-limits" class="text-brand-700 underline hover:text-brand-900">lower cadmium levels</a> may benefit from sourcing region-specific lots.
+        </p>
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">Practical Buying Calendar</h2>
+
+        <div class="bg-brand-50 rounded-xl p-8 my-8 border border-brand-100">
+          <h3 class="text-lg font-semibold text-brand-800 mb-6">Recommended Annual Buying Strategy</h3>
+          <div class="space-y-4">
+            <div>
+              <h4 class="font-semibold text-gray-900">September - October: Plan and Contract</h4>
+              <p class="text-sm text-gray-600">Review your annual cocoa requirements. COCOBOD announces the new season farmgate price. Begin negotiating forward contracts for main crop delivery.</p>
+            </div>
+            <div>
+              <h4 class="font-semibold text-gray-900">November - January: Primary Buying Window</h4>
+              <p class="text-sm text-gray-600">Execute the bulk of your purchases during peak supply. Best prices, widest quality selection, and most flexible shipping schedules. Aim to secure 60-70% of your annual volume here.</p>
+            </div>
+            <div>
+              <h4 class="font-semibold text-gray-900">February - March: Top-Up Orders</h4>
+              <p class="text-sm text-gray-600">Fill any remaining gaps in your inventory. Main crop supply is still available but starting to tighten. Prices may begin to firm.</p>
+            </div>
+            <div>
+              <h4 class="font-semibold text-gray-900">April - June: Manage Inventory</h4>
+              <p class="text-sm text-gray-600">Avoid buying during the inter-crop gap unless necessary. Prices tend to be at their seasonal highs. Focus on managing existing stock and planning for the next season.</p>
+            </div>
+            <div>
+              <h4 class="font-semibold text-gray-900">July - August: Light Crop Opportunity</h4>
+              <p class="text-sm text-gray-600">If you need supply before the next main crop, the light crop offers an option. Quality is acceptable for most commercial uses. Negotiate based on the smaller available volumes.</p>
+            </div>
+          </div>
+        </div>
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">How Origin Direct Group Can Help</h2>
+        <p>
+          Our team is based in Ghana and has direct relationships with licensed buying companies and cooperatives across the major producing regions. We offer both spot purchasing and forward contracts for <a href="/products/cocoa" class="text-brand-700 underline hover:text-brand-900">Ghanaian cocoa beans</a>, and we provide all required documentation including <a href="/blog/eudr-compliance-guide" class="text-brand-700 underline hover:text-brand-900">EUDR compliance paperwork</a>, <a href="/blog/cadmium-cocoa-eu-limits" class="text-brand-700 underline hover:text-brand-900">cadmium test certificates</a>, and certificates of origin.
+        </p>
+        <p>
+          Whether you are buying your first container or contracting for the season, we provide transparent <a href="/blog/fob-cif-ddp-explained" class="text-brand-700 underline hover:text-brand-900">FOB, CIF, and DDP pricing</a> with a full breakdown of every cost element. Reach out today for current season pricing and availability.
+        </p>
+
+      </div>
+    </div>
+  </article>
+
+  <!-- CTA -->
+  <section class="py-20 md:py-24 bg-gradient-to-br from-brand-900 to-earth-800">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">
+        Ready to Source Ghanaian Cocoa?
+      </h2>
+      <p class="text-brand-200 mb-8 max-w-xl mx-auto">
+        Get current season pricing for main crop and light crop cocoa beans. Forward contracts available for bulk buyers.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/quote" class="inline-flex items-center justify-center px-8 py-4 bg-gold hover:bg-gold-dark text-white font-bold rounded-lg transition-colors shadow-lg text-lg">
+          Request a Quote
+          <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+        <a href="/products/cocoa" class="inline-flex items-center justify-center px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-lg transition-colors border border-white/20">
+          View Cocoa Products
+        </a>
+      </div>
+    </div>
+  </section>
+
+</Layout>

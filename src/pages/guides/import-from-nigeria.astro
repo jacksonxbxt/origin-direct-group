@@ -1,0 +1,185 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import QuoteForm from '../../components/QuoteForm.astro';
+
+const defined_title = "Complete Guide to Importing Commodities from Nigeria | Origin Direct";
+const defined_description = "Everything you need to know about importing hibiscus, sesame, charcoal, ginger, cocoa, cashew, and rubber from Nigeria. NEPC requirements, export procedures, key ports, and shipping logistics.";
+
+const breadcrumbItems = [
+  { label: "Guides", href: "/guides" },
+  { label: "Importing from Nigeria" },
+];
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://origindirectgroup.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://origindirectgroup.com/guides" },
+    { "@type": "ListItem", "position": 3, "name": "Importing from Nigeria" },
+  ],
+};
+
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to Import Commodities from Nigeria",
+  "description": "Complete guide to importing agricultural commodities and raw materials from Nigeria, covering supplier sourcing, NEPC and regulatory compliance, documentation, and shipping.",
+  "step": [
+    { "@type": "HowToStep", "position": 1, "name": "Identify your commodity and source a verified exporter", "text": "Determine which Nigerian commodity you need and find an exporter registered with NEPC (Nigerian Export Promotion Council)." },
+    { "@type": "HowToStep", "position": 2, "name": "Request samples and verify quality", "text": "Request pre-shipment samples and test against your specifications with an accredited independent laboratory." },
+    { "@type": "HowToStep", "position": 3, "name": "Agree on commercial terms", "text": "Negotiate price, Incoterms (typically FOB Apapa or CIF destination), payment method, and packaging requirements." },
+    { "@type": "HowToStep", "position": 4, "name": "Obtain Nigerian export permits and inspections", "text": "Supplier registers export with NEPC, obtains NAQS phytosanitary certificate, and SON or NAFDAC certificates where applicable." },
+    { "@type": "HowToStep", "position": 5, "name": "Book shipping from Apapa or Port Harcourt", "text": "Arrange containerized ocean freight from Apapa/Tin Can Island Port (Lagos) or Port Harcourt Port. Book 2-3 weeks before loading." },
+    { "@type": "HowToStep", "position": 6, "name": "Prepare and verify all documents", "text": "Ensure all documents are complete before the vessel departs: commercial invoice, packing list, bill of lading, certificate of origin, phytosanitary certificate, and commodity-specific certificates." },
+    { "@type": "HowToStep", "position": 7, "name": "Clear destination customs", "text": "Work with your customs broker at the destination port to file entry documents, pay applicable duties, and pass import inspections." },
+  ],
+};
+---
+
+<Layout title={defined_title} description={defined_description} structuredData={[breadcrumbSchema, howToSchema]}>
+  <section class="py-12 md:py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-6">
+      <Breadcrumbs items={breadcrumbItems} />
+
+      <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+        Complete Guide to Importing Commodities from Nigeria
+      </h1>
+
+      <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+        Nigeria is Africa's largest economy and one of the continent's most significant commodity exporters. Beyond its well-known oil sector, Nigeria produces an enormous volume of agricultural commodities including hibiscus flowers, sesame seeds, ginger, cocoa, cashew nuts, natural rubber, and hardwood charcoal. Nigeria's vast agricultural land, diverse climate zones, and large rural workforce make it a primary source for buyers in Europe, Asia, and the Americas. Navigating Nigeria's export regulatory environment requires understanding several agencies and procedures. This guide covers everything you need to source and import Nigerian commodities successfully.
+      </p>
+
+      <div class="prose prose-lg max-w-none text-gray-700">
+
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Nigeria's Key Export Commodities</h2>
+        <p>
+          Nigeria's agricultural export portfolio is diverse. The following commodities represent the most commercially significant for international buyers:
+        </p>
+        <ul>
+          <li><strong><a href="/products/hibiscus" class="text-brand-700 underline hover:text-brand-600">Hibiscus flowers (Roselle/Zobo)</a></strong> - Nigeria is the world's largest producer of dried hibiscus calyces, supplying the majority of global demand. Primary growing regions are Kano, Kaduna, Jigawa, and Zamfara states in the north. Nigerian hibiscus is prized by beverage producers in Mexico, the US, and Europe.</li>
+          <li><strong><a href="/products/sesame-seeds" class="text-brand-700 underline hover:text-brand-600">Sesame seeds</a></strong> - Nigeria is a top-three global sesame exporter. Nigerian white sesame is in demand from Chinese oil mills and Japanese food processors. Primary growing regions span Jigawa, Borno, Nassarawa, and Benue states.</li>
+          <li><strong><a href="/products/hookah-charcoal" class="text-brand-700 underline hover:text-brand-600">Hardwood charcoal</a></strong> - Nigeria produces coconut shell charcoal and hardwood charcoal, including charcoal destined for the hookah/shisha market. The sector has grown significantly as global hookah charcoal demand has increased.</li>
+          <li><strong><a href="/products/ginger" class="text-brand-700 underline hover:text-brand-600">Ginger</a></strong> - Nigeria is the world's third-largest ginger producer. Kaduna State accounts for the majority of production. Nigerian ginger has high gingerol content and is exported fresh, dried, and as powder to Europe and Asia.</li>
+          <li><strong><a href="/products/cocoa" class="text-brand-700 underline hover:text-brand-600">Cocoa</a></strong> - Nigeria is the world's fourth-largest cocoa producer. The primary cocoa belt spans Ondo, Osun, Ogun, Cross River, Edo, and Kogi states. Nigerian cocoa is exported as beans, paste, butter, and powder.</li>
+          <li><strong><a href="/products/cashew-nuts" class="text-brand-700 underline hover:text-brand-600">Cashew nuts</a></strong> - Nigeria produces significant volumes of raw cashew nuts, with Oyo, Kogi, Osun, and Anambra states as primary growing areas. Most raw cashews are exported to Vietnam and India for processing.</li>
+          <li><strong><a href="/products/natural-rubber" class="text-brand-700 underline hover:text-brand-600">Natural rubber</a></strong> - Nigeria has an established rubber plantation sector concentrated in Edo, Delta, Ondo, Rivers, and Cross River states. Nigeria exports both ribbed smoked sheets (RSS) and technically specified rubber (TSR).</li>
+        </ul>
+
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Nigeria's Export Regulatory Framework</h2>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Nigerian Export Promotion Council (NEPC)</h3>
+        <p>
+          The NEPC is the primary government agency responsible for promoting and facilitating non-oil exports from Nigeria. Exporters must register with NEPC to obtain an Export Certificate, which is required for most agricultural commodity exports. NEPC also maintains a directory of registered exporters that buyers can use to verify supplier legitimacy. When evaluating a Nigerian supplier, always request their NEPC registration number. NEPC registration is a baseline requirement but does not by itself guarantee product quality or supplier reliability.
+        </p>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Standards Organisation of Nigeria (SON)</h3>
+        <p>
+          SON sets and enforces product quality and safety standards in Nigeria. For exported commodities, SON certification confirms that goods meet applicable Nigerian or international standards. SON is particularly relevant for processed agricultural products. SON's mandate overlaps with NAFDAC for food and drug products, which can create confusion; your supplier should be able to clarify which agency's certification applies to your specific commodity.
+        </p>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">National Agricultural Quarantine Service (NAQS)</h3>
+        <p>
+          NAQS, under the Federal Ministry of Agriculture and Rural Development, is responsible for issuing phytosanitary certificates for plant and plant-based exports. A NAQS phytosanitary certificate is mandatory for all agricultural commodity exports from Nigeria and is required at the port of entry by virtually all importing countries. NAQS inspectors carry out field and port inspections to verify that commodities are free from regulated pests and diseases. The phytosanitary certificate is valid for 14-21 days from issue, so timing the NAQS inspection close to the vessel loading date is important.
+        </p>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">National Agency for Food and Drug Administration and Control (NAFDAC)</h3>
+        <p>
+          NAFDAC regulates the manufacture, import, export, sale, and distribution of food, drugs, cosmetics, and related products in Nigeria. For exported food commodities intended for human consumption (including hibiscus, sesame, ginger, and cocoa products), NAFDAC certification may be required by destination market regulators. NAFDAC export certification helps demonstrate compliance with food safety standards, and some importing countries specifically request NAFDAC certificates for Nigerian food exports.
+        </p>
+
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Standard Export Procedure</h2>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Step 1: Supplier Registration and NEPC Export Certificate</h3>
+        <p>
+          Your Nigerian supplier must register with NEPC and obtain a current Export Certificate. The registration is processed online through the NEPC portal. Additionally, the supplier must register the specific export transaction through the Nigeria Single Window Trade Portal, which coordinates documentation across customs (Nigeria Customs Service), NAQS, SON, NAFDAC, and other relevant agencies.
+        </p>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Step 2: Pre-Shipment Inspection</h3>
+        <p>
+          Nigeria has a mandatory pre-shipment inspection regime for many export commodities. The Nigeria Customs Service and commodity-specific agencies may require inspection before export. Buyers are also strongly advised to commission independent pre-shipment inspection by SGS, Bureau Veritas, or Intertek, which verifies quality, quantity, and packing independently of the seller. For first-time transactions, independent PSI is essential risk management.
+        </p>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Step 3: Customs Export Declaration (Form NXP)</h3>
+        <p>
+          The exporter completes an export declaration (Form NXP - Nigerian Export Proceeds) through their commercial bank and the Nigeria Customs Service. The NXP form captures export details and is part of the foreign exchange repatriation system. Nigeria's Central Bank requires that export proceeds are repatriated within specified timeframes. Your supplier's bank manages this process, but buyers should be aware of it as it affects payment timing.
+        </p>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Step 4: Port Loading and Bill of Lading</h3>
+        <p>
+          Once all pre-export inspections and documentation are complete, goods are transported to the terminal for stuffing and loading. Lagos ports (Apapa and Tin Can Island) have been known for congestion; plan for 5-10 working days of port dwell time in your logistics schedule. The shipping line issues the bill of lading after the vessel departs. Original bills are couriered to the buyer or buyer's bank.
+        </p>
+
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Key Ports of Export</h2>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Apapa Port and Tin Can Island Port (Lagos)</h3>
+        <p>
+          Apapa Port and the adjacent Tin Can Island Port together form Nigeria's largest port complex, handling the vast majority of Nigeria's container exports. They are operated through a combination of Nigerian Ports Authority (NPA) management and private terminal concessions including Apapa Container Terminal (APM Terminals), Tin Can Island Container Terminal (TICT), and others. Lagos ports are connected to major global shipping lines with services to Europe, Asia, and the Americas. Port congestion has historically been a challenge; work with an experienced freight forwarder who can navigate timing and documentation requirements at Lagos.
+        </p>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Port Harcourt Port</h3>
+        <p>
+          Port Harcourt Port, in Rivers State in the Niger Delta, handles both petroleum products and dry cargo. It is the primary export point for commodities sourced from southeastern Nigeria including cocoa, rubber, and palm products from Ondo, Edo, Delta, and Rivers states. Port Harcourt is less congested than Lagos and can be a better option for southern Nigerian commodity shipments.
+        </p>
+
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Required Export Documents</h2>
+        <ul>
+          <li><strong>Commercial Invoice</strong> - Supplier and buyer details, commodity description, HS code, quantity, unit price, total value, Incoterms, and payment terms.</li>
+          <li><strong>Packing List</strong> - Container contents: number of bags/sacks/drums, net and gross weights.</li>
+          <li><strong>Bill of Lading</strong> - Issued by the shipping line. Original B/L is the document of title.</li>
+          <li><strong>Certificate of Origin</strong> - Issued by the Nigeria-British Chamber of Commerce, the Nigerian-American Chamber, or the Manufacturers Association of Nigeria (MAN). Required for AGOA (US imports) or EPA (EU imports) duty preferences.</li>
+          <li><strong>NAQS Phytosanitary Certificate</strong> - Mandatory for all plant-based agricultural commodities.</li>
+          <li><strong>NAFDAC Export Certificate</strong> - For food commodities intended for human consumption.</li>
+          <li><strong>NEPC Export Certificate</strong> - Confirms the exporter is registered and the export is authorized.</li>
+          <li><strong>Quality/Grade Certificate</strong> - From independent surveyor (SGS, Bureau Veritas) or relevant commodity board.</li>
+          <li><strong>Fumigation Certificate</strong> - For grain, nut, and seed commodities.</li>
+          <li><strong>Weight Certificate</strong> - From independent weighbridge at port.</li>
+          <li><strong>Form NXP</strong> - Nigerian export proceeds form, processed through the exporter's bank.</li>
+        </ul>
+
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Shipping and Logistics</h2>
+        <p>
+          Transit times from Lagos (Apapa) to major destination ports:
+        </p>
+        <ul>
+          <li><strong>To Rotterdam, Netherlands:</strong> 14-18 days</li>
+          <li><strong>To Hamburg, Germany:</strong> 16-20 days</li>
+          <li><strong>To Antwerp, Belgium:</strong> 14-18 days</li>
+          <li><strong>To New York/Newark:</strong> 20-24 days</li>
+          <li><strong>To Houston, Texas:</strong> 22-26 days</li>
+          <li><strong>To Dubai, UAE:</strong> 22-28 days</li>
+          <li><strong>To Shanghai, China:</strong> 28-35 days</li>
+        </ul>
+        <p>
+          Standard 20ft dry containers carry 18-22 MT of bagged agricultural goods. For bulk liquids (palm oil, rubber latex), ISO tanks or flexitanks are used. Port congestion at Lagos can add 3-7 days to vessel departure; always build buffer time into your shipping schedule.
+        </p>
+
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Payment Terms and Trade Finance</h2>
+        <p>
+          For first-time transactions, an irrevocable letter of credit (L/C) at sight opened through your bank is the safest method. L/C provides security to both parties: the seller is guaranteed payment on compliant documents, and the buyer is guaranteed that documents (and therefore goods) match the contracted specifications before funds are released. For established relationships, terms of 30% advance (T/T) with 70% against copy shipping documents are common. Nigeria has foreign exchange regulations that affect how exporters receive payment; your supplier's bank handles compliance, but L/C is particularly well-suited to Nigeria's banking environment because it provides a structured, bank-supervised process.
+        </p>
+
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Tips for First-Time Buyers</h2>
+        <ul>
+          <li><strong>Verify NEPC registration</strong> - Check your supplier's NEPC Export Certificate before sending any payment. Fraud and misrepresentation are risks in any market; due diligence is non-negotiable.</li>
+          <li><strong>Commission independent PSI</strong> - Pre-shipment inspection by a recognized third party is your primary quality assurance tool. The cost is minimal relative to the container value.</li>
+          <li><strong>Budget for port delays</strong> - Lagos port congestion is a well-documented challenge. Build 5-10 additional working days into your delivery timeline for port-related delays.</li>
+          <li><strong>Understand commodity-specific agencies</strong> - Hibiscus may require NAFDAC involvement; rubber falls under the Rubber Research Institute of Nigeria; cocoa involves additional quality standards. Know which agencies apply to your commodity before contracting.</li>
+          <li><strong>Use confirmed L/C for large orders</strong> - For orders above $50,000, consider a confirmed L/C where both your bank and a Nigerian correspondent bank guarantee the transaction.</li>
+          <li><strong>Understand seasonal cycles</strong> - Hibiscus harvest runs November to January. Sesame is harvested October to December. Ginger is harvested October to March. Cashew season is February to May. Plan purchase timing accordingly to access fresh-crop product.</li>
+          <li><strong>Inspect for aflatoxin</strong> - Nigerian agricultural commodities, particularly groundnuts and grains, can be affected by aflatoxin contamination. For food-grade commodities, always request an aflatoxin test as part of the pre-shipment analysis.</li>
+        </ul>
+
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">How Origin Direct Makes This Easy</h2>
+        <p>
+          Origin Direct has established direct sourcing relationships with NEPC-registered exporters, cooperatives, and processing facilities across Nigeria's commodity belts. We manage quality control at origin, coordinate NAQS and NAFDAC certification, prepare all export documentation, and handle freight booking from Lagos and Port Harcourt. You deal with a single point of contact in English throughout the entire process. Whether you need <a href="/products/hibiscus" class="text-brand-700 underline hover:text-brand-600">hibiscus</a>, <a href="/products/sesame-seeds" class="text-brand-700 underline hover:text-brand-600">sesame seeds</a>, <a href="/products/hookah-charcoal" class="text-brand-700 underline hover:text-brand-600">hookah charcoal</a>, or <a href="/products/ginger" class="text-brand-700 underline hover:text-brand-600">ginger</a> from Nigeria, we provide the local expertise and operational infrastructure to get your shipment from farm to port to your facility without the usual complications of sourcing from West Africa independently.
+        </p>
+      </div>
+
+      <div class="mt-12">
+        <QuoteForm productName="Nigeria Commodities" />
+      </div>
+    </div>
+  </section>
+</Layout>

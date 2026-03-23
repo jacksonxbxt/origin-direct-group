@@ -1,0 +1,329 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: "Hookah Charcoal Quality Specifications: What to Look For",
+  description: "Complete guide to hookah charcoal quality specs: fixed carbon, ash content, moisture, burn time, sulfur content. How to read a lab report and avoid common quality issues.",
+  author: { "@type": "Organization", name: "Origin Direct Group" },
+  publisher: { "@type": "Organization", name: "Origin Direct Group", logo: { "@type": "ImageObject", url: "https://origindirectgroup.com/logo.png" } },
+  datePublished: "2026-03-23",
+  dateModified: "2026-03-23",
+  mainEntityOfPage: "https://origindirectgroup.com/blog/hookah-charcoal-specifications",
+  image: "https://origindirectgroup.com/images/blog/hookah-charcoal-specs.jpg",
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://origindirectgroup.com/" },
+    { "@type": "ListItem", position: 2, name: "Blog", item: "https://origindirectgroup.com/blog" },
+    { "@type": "ListItem", position: 3, name: "Hookah Charcoal Specifications", item: "https://origindirectgroup.com/blog/hookah-charcoal-specifications" },
+  ],
+};
+---
+
+<Layout
+  title="Hookah Charcoal Quality Specifications: What to Look For | Origin Direct Group"
+  description="Complete guide to hookah charcoal quality specs: fixed carbon, ash content, moisture, burn time, sulfur content. How to read a lab report and avoid common quality issues."
+  structuredData={[articleSchema, breadcrumbSchema]}
+>
+  <!-- Breadcrumbs -->
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <nav class="flex text-sm text-gray-500">
+      <a href="/" class="hover:text-brand-700">Home</a>
+      <span class="mx-2">/</span>
+      <a href="/blog" class="hover:text-brand-700">Blog</a>
+      <span class="mx-2">/</span>
+      <span class="text-gray-900">Hookah Charcoal Specifications</span>
+    </nav>
+  </div>
+
+  <!-- Hero -->
+  <section class="relative py-20 sm:py-28 bg-gradient-to-br from-brand-900 via-brand-800 to-earth-800 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(196,154,42,0.3),transparent_70%)]"></div>
+    </div>
+    <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <span class="inline-block px-4 py-1.5 bg-amber-500/20 text-amber-300 text-sm font-semibold rounded-full mb-6 border border-amber-500/30">Product Guide</span>
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">Hookah Charcoal Quality Specifications: What to Look For</h1>
+      <p class="text-lg text-brand-200 max-w-2xl mx-auto">
+        Understanding charcoal specs is the difference between a premium product and customer complaints. Here is what every spec means and why it matters.
+      </p>
+      <div class="mt-6 flex items-center justify-center gap-4 text-sm text-brand-300">
+        <span>March 23, 2026</span>
+        <span class="w-1 h-1 rounded-full bg-brand-500"></span>
+        <span>10 min read</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Article Content -->
+  <article class="py-16 md:py-20 bg-white">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="prose prose-lg text-gray-700 max-w-none">
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">Why Specifications Matter for Hookah Charcoal</h2>
+        <p>
+          Hookah charcoal is not a generic commodity. The specifications of the charcoal directly affect the smoking experience: how long it burns, how much heat it produces, whether it imparts taste or odor, how much ash it leaves behind, and whether it produces harmful fumes. Premium hookah lounges and discerning consumers will immediately notice the difference between high-spec and low-spec charcoal.
+        </p>
+        <p>
+          As a buyer or brand owner, understanding these specifications allows you to evaluate supplier claims, compare products objectively, and ensure your customers receive a consistent, quality product. For a comparison of raw material sources, see our <a href="/blog/hookah-charcoal-sourcing-guide" class="text-brand-700 underline hover:text-brand-900">hookah charcoal sourcing guide comparing Nigerian hardwood and Indonesian coconut</a>.
+        </p>
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">The Six Key Specifications</h2>
+
+        <h3 class="text-xl font-semibold text-brand-800 mt-8 mb-4">1. Fixed Carbon Content</h3>
+        <p>
+          Fixed carbon is the most important specification for hookah charcoal. It represents the percentage of pure carbon remaining after removing moisture, volatile matter, and ash. Higher fixed carbon means cleaner, hotter, and longer burns.
+        </p>
+
+        <div class="overflow-x-auto rounded-xl border border-gray-200 shadow-sm my-8">
+          <table class="w-full text-left text-sm">
+            <thead>
+              <tr class="bg-brand-800 text-white">
+                <th class="px-6 py-4 font-semibold">Quality Level</th>
+                <th class="px-6 py-4 font-semibold">Fixed Carbon</th>
+                <th class="px-6 py-4 font-semibold">Typical Use</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100">
+              <tr class="bg-white">
+                <td class="px-6 py-3 font-medium text-gray-900">Premium</td>
+                <td class="px-6 py-3 text-gray-700">75-85%+</td>
+                <td class="px-6 py-3 text-gray-700">Premium hookah lounges, branded retail</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="px-6 py-3 font-medium text-gray-900">Standard</td>
+                <td class="px-6 py-3 text-gray-700">65-75%</td>
+                <td class="px-6 py-3 text-gray-700">Mid-range hookah charcoal</td>
+              </tr>
+              <tr class="bg-white">
+                <td class="px-6 py-3 font-medium text-gray-900">Economy</td>
+                <td class="px-6 py-3 text-gray-700">55-65%</td>
+                <td class="px-6 py-3 text-gray-700">Budget market, BBQ crossover</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>
+          Fixed carbon directly determines burn temperature and duration. Charcoal with 80%+ fixed carbon burns hotter and longer than 65% carbon charcoal, meaning the user needs fewer coals per session and gets more consistent heat. For hookah use, we recommend a minimum of 70% fixed carbon for a satisfactory experience and 75%+ for premium products.
+        </p>
+
+        <h3 class="text-xl font-semibold text-brand-800 mt-8 mb-4">2. Ash Content</h3>
+        <p>
+          Ash is the non-combustible mineral residue left after the charcoal has completely burned. Lower ash content is better because ash accumulates on the charcoal surface during use, insulating the core and reducing heat transfer. Excessive ash also falls into the hookah bowl, creating a mess and potentially affecting flavor.
+        </p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li><strong>Premium</strong>: &lt;8% ash content. Minimal residue, clean burn.</li>
+          <li><strong>Standard</strong>: 8-15% ash content. Acceptable for most users.</li>
+          <li><strong>Poor</strong>: &gt;15% ash content. Excessive residue, frequent cleaning needed, heat inconsistency.</li>
+        </ul>
+        <p>
+          Coconut shell charcoal typically has ash content of 2-5%, which is one reason it is so popular for hookah use. Nigerian hardwood charcoal ranges from 3-8% depending on the wood species and carbonization process. See our <a href="/products/hookah-charcoal" class="text-brand-700 underline hover:text-brand-900">hookah charcoal product page</a> for the specifications of our products.
+        </p>
+
+        <h3 class="text-xl font-semibold text-brand-800 mt-8 mb-4">3. Moisture Content</h3>
+        <p>
+          Moisture in charcoal is the enemy of performance. Wet charcoal is harder to light, produces more smoke during ignition, burns unevenly, and has a lower effective heat output because energy is wasted evaporating the water.
+        </p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li><strong>Target</strong>: &lt;5% moisture for finished hookah charcoal products.</li>
+          <li><strong>Acceptable</strong>: 5-8% if the product will be used in a dry environment.</li>
+          <li><strong>Reject</strong>: &gt;8% moisture. Will cause lighting problems and inconsistent burns.</li>
+        </ul>
+        <p>
+          Moisture can increase during shipping, especially in ocean containers where humidity fluctuations are common. Proper packaging (sealed inner bags inside cartons) and desiccant packets help maintain moisture levels during transit. When importing, always check moisture at destination, not just at origin.
+        </p>
+
+        <h3 class="text-xl font-semibold text-brand-800 mt-8 mb-4">4. Volatile Matter</h3>
+        <p>
+          Volatile matter refers to gases and vapors released when the charcoal is heated. In hookah charcoal, high volatile matter is undesirable because these volatiles produce smoke, odor, and potentially harmful fumes during the initial lighting phase and throughout the burn.
+        </p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li><strong>Premium</strong>: &lt;15% volatile matter. Quick, clean ignition with minimal smoke.</li>
+          <li><strong>Standard</strong>: 15-25% volatile matter. Some smoke during ignition but acceptable performance.</li>
+          <li><strong>Poor</strong>: &gt;25% volatile matter. Heavy smoke, off-flavors, potential health concerns.</li>
+        </ul>
+        <p>
+          Volatile matter is a direct result of the carbonization process. Charcoal that was carbonized at higher temperatures (600-800 degrees Celsius) for longer periods will have lower volatile matter than charcoal processed at lower temperatures or for shorter durations. This is a key quality differentiator between artisanal and industrial charcoal production.
+        </p>
+
+        <h3 class="text-xl font-semibold text-brand-800 mt-8 mb-4">5. Burn Time</h3>
+        <p>
+          Burn time measures how long a piece of charcoal maintains usable heat. For hookah charcoal, this is typically measured for a standard cube (25mm or 26mm) from ignition to the point where the coal no longer produces sufficient heat for shisha smoking.
+        </p>
+
+        <div class="overflow-x-auto rounded-xl border border-gray-200 shadow-sm my-8">
+          <table class="w-full text-left text-sm">
+            <thead>
+              <tr class="bg-brand-800 text-white">
+                <th class="px-6 py-4 font-semibold">Charcoal Type</th>
+                <th class="px-6 py-4 font-semibold">Typical Burn Time (25mm cube)</th>
+                <th class="px-6 py-4 font-semibold">Burn Characteristic</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100">
+              <tr class="bg-white">
+                <td class="px-6 py-3 font-medium text-gray-900">Premium coconut shell</td>
+                <td class="px-6 py-3 text-gray-700">60-90 minutes</td>
+                <td class="px-6 py-3 text-gray-700">Consistent, steady heat</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="px-6 py-3 font-medium text-gray-900">Nigerian hardwood</td>
+                <td class="px-6 py-3 text-gray-700">45-75 minutes</td>
+                <td class="px-6 py-3 text-gray-700">Higher initial heat, moderate duration</td>
+              </tr>
+              <tr class="bg-white">
+                <td class="px-6 py-3 font-medium text-gray-900">Quick-light charcoal</td>
+                <td class="px-6 py-3 text-gray-700">20-40 minutes</td>
+                <td class="px-6 py-3 text-gray-700">Fast ignition, shorter burn</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>
+          A longer burn time means better value for the consumer (fewer coals per session) and a more enjoyable experience (no interruption to change coals). Premium hookah lounges specifically seek charcoal with 60+ minute burn times to reduce service interruptions.
+        </p>
+
+        <h3 class="text-xl font-semibold text-brand-800 mt-8 mb-4">6. Sulfur Content</h3>
+        <p>
+          Sulfur is the specification most directly linked to taste and health. When charcoal with high sulfur content burns, it produces sulfur dioxide (SO2), which has a sharp, unpleasant smell and taste. For hookah use, where the heated air passes directly through the tobacco and into the smoker's lungs, low sulfur is essential.
+        </p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li><strong>Premium hookah charcoal</strong>: &lt;0.1% sulfur</li>
+          <li><strong>Acceptable</strong>: 0.1-0.2% sulfur</li>
+          <li><strong>Reject for hookah use</strong>: &gt;0.2% sulfur</li>
+        </ul>
+        <p>
+          Natural wood and coconut shell charcoal inherently has very low sulfur (&lt;0.05%), so high sulfur readings usually indicate contamination from binders, accelerants, or the use of non-standard raw materials. Always request a sulfur analysis, especially for pressed/briquette charcoal where binders are used.
+        </p>
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">How to Read a Charcoal Lab Report</h2>
+        <p>
+          When evaluating a supplier, request a proximate analysis from an accredited laboratory. A standard proximate analysis for charcoal will include:
+        </p>
+
+        <div class="bg-brand-50 rounded-xl p-8 my-8 border border-brand-100">
+          <h3 class="text-lg font-semibold text-brand-800 mb-4">Sample Lab Report: Premium Coconut Shell Hookah Charcoal</h3>
+          <div class="space-y-2 font-mono text-sm">
+            <div class="flex justify-between"><span class="text-gray-600">Fixed Carbon:</span><span class="font-bold text-gray-900">78.5%</span></div>
+            <div class="flex justify-between"><span class="text-gray-600">Volatile Matter:</span><span class="font-bold text-gray-900">14.2%</span></div>
+            <div class="flex justify-between"><span class="text-gray-600">Ash Content:</span><span class="font-bold text-gray-900">3.8%</span></div>
+            <div class="flex justify-between"><span class="text-gray-600">Moisture Content:</span><span class="font-bold text-gray-900">3.5%</span></div>
+            <div class="flex justify-between"><span class="text-gray-600">Sulfur:</span><span class="font-bold text-gray-900">0.03%</span></div>
+            <div class="flex justify-between"><span class="text-gray-600">Calorific Value:</span><span class="font-bold text-gray-900">7,200 kcal/kg</span></div>
+            <div class="flex justify-between"><span class="text-gray-600">Burn Time (25mm cube):</span><span class="font-bold text-gray-900">72 minutes</span></div>
+          </div>
+        </div>
+
+        <p>
+          The four primary components (fixed carbon + volatile matter + ash + moisture) should add up to approximately 100%. If they do not, or if the total is significantly off, question the accuracy of the lab report.
+        </p>
+        <p>
+          The calorific value (measured in kcal/kg or BTU/lb) is a useful overall indicator. Premium hookah charcoal should have a calorific value of 6,500-7,500 kcal/kg. Higher values indicate cleaner, more energy-dense charcoal.
+        </p>
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">Premium vs. Standard: Side-by-Side Comparison</h2>
+
+        <div class="overflow-x-auto rounded-xl border border-gray-200 shadow-sm my-8">
+          <table class="w-full text-left text-sm">
+            <thead>
+              <tr class="bg-brand-800 text-white">
+                <th class="px-6 py-4 font-semibold">Specification</th>
+                <th class="px-6 py-4 font-semibold">Premium Grade</th>
+                <th class="px-6 py-4 font-semibold">Standard Grade</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100">
+              <tr class="bg-white">
+                <td class="px-6 py-3 font-medium text-gray-900">Fixed Carbon</td>
+                <td class="px-6 py-3 text-gray-700">75-85%</td>
+                <td class="px-6 py-3 text-gray-700">65-75%</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="px-6 py-3 font-medium text-gray-900">Ash Content</td>
+                <td class="px-6 py-3 text-gray-700">&lt;5%</td>
+                <td class="px-6 py-3 text-gray-700">5-12%</td>
+              </tr>
+              <tr class="bg-white">
+                <td class="px-6 py-3 font-medium text-gray-900">Moisture</td>
+                <td class="px-6 py-3 text-gray-700">&lt;4%</td>
+                <td class="px-6 py-3 text-gray-700">4-7%</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="px-6 py-3 font-medium text-gray-900">Volatile Matter</td>
+                <td class="px-6 py-3 text-gray-700">&lt;15%</td>
+                <td class="px-6 py-3 text-gray-700">15-25%</td>
+              </tr>
+              <tr class="bg-white">
+                <td class="px-6 py-3 font-medium text-gray-900">Sulfur</td>
+                <td class="px-6 py-3 text-gray-700">&lt;0.05%</td>
+                <td class="px-6 py-3 text-gray-700">&lt;0.2%</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="px-6 py-3 font-medium text-gray-900">Burn Time</td>
+                <td class="px-6 py-3 text-gray-700">60-90 min</td>
+                <td class="px-6 py-3 text-gray-700">40-60 min</td>
+              </tr>
+              <tr class="bg-white">
+                <td class="px-6 py-3 font-medium text-gray-900">Calorific Value</td>
+                <td class="px-6 py-3 text-gray-700">7,000+ kcal/kg</td>
+                <td class="px-6 py-3 text-gray-700">5,500-7,000 kcal/kg</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="px-6 py-3 font-medium text-gray-900">Price (FOB)</td>
+                <td class="px-6 py-3 text-gray-700">$800-$1,200/MT</td>
+                <td class="px-6 py-3 text-gray-700">$500-$800/MT</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">Common Quality Issues and How to Avoid Them</h2>
+        <ul class="list-disc pl-6 space-y-2">
+          <li><strong>Cracking and crumbling</strong> - Charcoal that breaks apart during lighting is typically under-carbonized (too much volatile matter) or has been improperly compressed. Request a density specification and hardness test for briquettes.</li>
+          <li><strong>Chemical smell or taste</strong> - Usually caused by chemical accelerants, inappropriate binders, or high sulfur. Always request sulfur analysis and ask what binders are used. Food-grade tapioca starch is the preferred binder for hookah charcoal.</li>
+          <li><strong>Inconsistent burn</strong> - Hot spots and cold spots indicate uneven density in pressed charcoal. This is a manufacturing quality control issue. Request consistency data from the supplier showing burn time variation across a sample batch.</li>
+          <li><strong>Excessive sparking</strong> - Sparks occur when pockets of moisture or volatile matter rapidly expand during burning. Low moisture and low volatile matter specifications prevent sparking.</li>
+          <li><strong>Size inconsistency</strong> - For cube charcoal, dimensions should be consistent within 1mm tolerance. Oversized or undersized cubes affect how many fit in a hookah bowl and how evenly heat distributes.</li>
+        </ul>
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">Sourcing Quality Hookah Charcoal from Origin Direct</h2>
+        <p>
+          We supply both Nigerian hardwood and coconut shell <a href="/products/hookah-charcoal" class="text-brand-700 underline hover:text-brand-900">hookah charcoal</a> with full lab analysis certificates. Our premium coconut shell charcoal consistently tests at 75%+ fixed carbon with ash content below 5%. We offer OEM/private-label services including custom shapes (cubes, flats, hexagonal) and branded packaging.
+        </p>
+        <p>
+          For a detailed comparison of raw material sources and pricing, read our <a href="/blog/hookah-charcoal-sourcing-guide" class="text-brand-700 underline hover:text-brand-900">hookah charcoal sourcing guide</a>. For information on shipping terms, see our <a href="/blog/fob-cif-ddp-explained" class="text-brand-700 underline hover:text-brand-900">Incoterms guide</a>.
+        </p>
+
+      </div>
+    </div>
+  </article>
+
+  <!-- CTA -->
+  <section class="py-20 md:py-24 bg-gradient-to-br from-brand-900 to-earth-800">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">
+        Need Premium Hookah Charcoal?
+      </h2>
+      <p class="text-brand-200 mb-8 max-w-xl mx-auto">
+        High fixed carbon, low ash, full lab certification. Get a quote for Nigerian hardwood or coconut shell hookah charcoal.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/quote" class="inline-flex items-center justify-center px-8 py-4 bg-gold hover:bg-gold-dark text-white font-bold rounded-lg transition-colors shadow-lg text-lg">
+          Request a Quote
+          <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+        <a href="/products/hookah-charcoal" class="inline-flex items-center justify-center px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-lg transition-colors border border-white/20">
+          View Hookah Charcoal Products
+        </a>
+      </div>
+    </div>
+  </section>
+
+</Layout>

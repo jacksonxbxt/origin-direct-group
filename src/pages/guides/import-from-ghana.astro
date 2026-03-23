@@ -1,0 +1,183 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import QuoteForm from '../../components/QuoteForm.astro';
+
+const defined_title = "Complete Guide to Importing Commodities from Ghana | Origin Direct";
+const defined_description = "Everything you need to know about importing cocoa, cashew nuts, shea butter, and other commodities from Ghana. GEPA requirements, export procedures, key ports, documentation, and shipping logistics.";
+
+const breadcrumbItems = [
+  { label: "Guides", href: "/guides" },
+  { label: "Importing from Ghana" },
+];
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://origindirectgroup.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://origindirectgroup.com/guides" },
+    { "@type": "ListItem", "position": 3, "name": "Importing from Ghana" },
+  ],
+};
+
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to Import Commodities from Ghana",
+  "description": "Complete guide to importing agricultural commodities and raw materials from Ghana, covering supplier sourcing, export regulations, documentation, and shipping.",
+  "step": [
+    { "@type": "HowToStep", "position": 1, "name": "Identify your commodity and supplier", "text": "Determine which Ghanaian commodity you need and find a verified exporter registered with GEPA (Ghana Export Promotion Authority)." },
+    { "@type": "HowToStep", "position": 2, "name": "Verify quality and request samples", "text": "Request pre-shipment samples and test against your target specifications using an accredited lab such as SGS, Bureau Veritas, or Intertek." },
+    { "@type": "HowToStep", "position": 3, "name": "Agree on commercial terms", "text": "Negotiate price, Incoterms (FOB Tema or CIF destination), payment terms, and packaging requirements." },
+    { "@type": "HowToStep", "position": 4, "name": "Obtain Ghanaian export permits", "text": "Supplier registers the export with GEPA, obtains a phytosanitary certificate from PPRSD, and arranges pre-shipment inspection where required." },
+    { "@type": "HowToStep", "position": 5, "name": "Book shipping from Tema or Takoradi", "text": "Arrange containerized ocean freight from Tema Port (main container terminal) or Takoradi Port. Book with your freight forwarder 2-3 weeks before loading." },
+    { "@type": "HowToStep", "position": 6, "name": "Prepare all required documents", "text": "Ensure all documents are complete: commercial invoice, packing list, bill of lading, certificate of origin, phytosanitary certificate, and any commodity-specific certificates." },
+    { "@type": "HowToStep", "position": 7, "name": "Clear destination customs", "text": "Work with your customs broker at the destination port to file entry documents, pay applicable duties, and pass any import inspections." },
+  ],
+};
+---
+
+<Layout title={defined_title} description={defined_description} structuredData={[breadcrumbSchema, howToSchema]}>
+  <section class="py-12 md:py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-6">
+      <Breadcrumbs items={breadcrumbItems} />
+
+      <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+        Complete Guide to Importing Commodities from Ghana
+      </h1>
+
+      <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+        Ghana is one of West Africa's most reliable commodity export markets. The country is the world's second-largest cocoa producer, a leading exporter of shea butter and cashew nuts, and a significant source of agricultural commodities including ginger, palm kernel oil, and raw rubber. Ghana's relatively stable political environment, established export infrastructure, and strong regulatory bodies make it a preferred sourcing origin for international buyers. This guide walks through the entire process of importing commodities from Ghana, from identifying a supplier to receiving goods at your destination port.
+      </p>
+
+      <div class="prose prose-lg max-w-none text-gray-700">
+
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Ghana's Key Export Commodities</h2>
+        <p>
+          Ghana exports a wide range of agricultural and natural resource commodities. The most significant for international trade are:
+        </p>
+        <ul>
+          <li><strong><a href="/products/cocoa" class="text-brand-700 underline hover:text-brand-600">Cocoa beans</a></strong> - Ghana produces premium cocoa consistently graded by the Ghana Cocoa Board (COCOBOD). Ghanaian cocoa commands a price premium on global markets for its quality and fermentation standards.</li>
+          <li><strong><a href="/products/cashew-nuts" class="text-brand-700 underline hover:text-brand-600">Cashew nuts</a></strong> - Ghana is a growing cashew producer, with raw cashew nuts exported primarily to processing facilities in Asia and Europe, and processed kernels exported worldwide.</li>
+          <li><strong><a href="/products/shea-butter" class="text-brand-700 underline hover:text-brand-600">Shea butter and shea nuts</a></strong> - Ghana's Northern, Upper East, and Upper West regions are among the world's most productive shea belts. Both raw shea nuts and processed shea butter are exported in large volumes.</li>
+          <li><strong>Gold and minerals</strong> - Ghana is Africa's largest gold producer. Mineral exports are governed by the Minerals Commission and involve separate regulatory procedures not covered in this agricultural guide.</li>
+          <li><strong><a href="/products/ginger" class="text-brand-700 underline hover:text-brand-600">Ginger</a></strong> - Fresh and dried Ghanaian ginger is exported to Europe and Asia. The Brong-Ahafo and Ashanti regions are primary growing areas.</li>
+          <li><strong><a href="/products/palm-kernel-oil" class="text-brand-700 underline hover:text-brand-600">Palm kernel oil</a></strong> - Ghana exports both palm kernel oil and crude palm oil, primarily to European soap manufacturers and oleochemical processors.</li>
+          <li><strong><a href="/products/natural-rubber" class="text-brand-700 underline hover:text-brand-600">Natural rubber</a></strong> - Ghana has an established rubber plantation sector, with production concentrated in the Western and Brong-Ahafo regions.</li>
+        </ul>
+
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Ghana's Export Regulatory Framework</h2>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Ghana Export Promotion Authority (GEPA)</h3>
+        <p>
+          GEPA is the primary government body responsible for promoting and facilitating Ghanaian exports. Exporters are required to register with GEPA and obtain an Export Permit before shipping most commodities. GEPA maintains a database of registered exporters, which buyers can use to verify that a supplier is legitimate. When engaging a new supplier, always ask for their GEPA registration number and verify it. GEPA also provides market intelligence, matchmaking services, and export documentation support to registered exporters.
+        </p>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Ghana Standards Authority (GSA)</h3>
+        <p>
+          The Ghana Standards Authority sets and enforces quality standards for exported goods. For agricultural commodities, GSA works alongside sector-specific bodies to ensure that exports meet both Ghanaian standards and the requirements of destination markets. Pre-export inspection by GSA-accredited bodies is required for many commodities. For cocoa specifically, quality control falls under COCOBOD's Quality Control Company rather than GSA.
+        </p>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Plant Protection and Regulatory Services Division (PPRSD)</h3>
+        <p>
+          The PPRSD, operating under the Ministry of Food and Agriculture, is responsible for issuing phytosanitary certificates for all plant-based export commodities. A phytosanitary certificate is mandatory for exporting raw agricultural products including cocoa beans, cashew nuts, shea nuts, and ginger. The certificate confirms that the product has been inspected and is free from pests and diseases. Most importing countries require this certificate at the port of entry, and without it, your shipment will be held or rejected by destination customs authorities.
+        </p>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Ghana Cocoa Board (COCOBOD)</h3>
+        <p>
+          For cocoa specifically, COCOBOD regulates the entire cocoa supply chain including licensing of buying companies, grading, and quality certification. Only COCOBOD-licensed buying companies can legally purchase cocoa from farmers. When sourcing Ghanaian cocoa, verify that your supplier is a COCOBOD-licensed buying company or is working with one. This is the single most important compliance check for cocoa buyers.
+        </p>
+
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Standard Export Procedure</h2>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Step 1: Supplier Registration and Export License</h3>
+        <p>
+          Your Ghanaian supplier must be registered with GEPA and hold a valid Export License. The export license application is filed through Ghana's single window trade facilitation platform (GCNet/ICUMS), which processes all trade-related documentation electronically. Licenses are typically commodity-specific, and some commodities (like cocoa and timber) require additional sectoral permits.
+        </p>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Step 2: Pre-Shipment Inspection</h3>
+        <p>
+          Many buyers require pre-shipment inspection (PSI) by an independent third-party surveyor such as SGS, Bureau Veritas, or Cotecna. PSI verifies quality, quantity, and packing before loading. Some destination countries and banks also require PSI as a condition of the letter of credit. Even if your buyer's market does not require PSI, it is strongly recommended for first-time shipments from a new supplier.
+        </p>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Step 3: Customs Export Declaration</h3>
+        <p>
+          The exporter files a customs export declaration through Ghana's ICUMS (Integrated Customs Management System). The declaration includes product description, HS code, quantity, FOB value, destination country, and details of the consignee. Ghana customs may conduct a documentary check or physical inspection before releasing the goods to the port for loading.
+        </p>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Step 4: Port Loading and Bill of Lading</h3>
+        <p>
+          Once goods pass customs, they are transported to the container freight station (CFS) or directly to the terminal for stuffing and loading. The shipping line issues the bill of lading after the vessel departs. Original bills of lading are sent to the buyer (or the buyer's bank, if under L/C) via courier.
+        </p>
+
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Key Ports of Export</h2>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Tema Port</h3>
+        <p>
+          Tema Port, located 25 km east of Accra, is Ghana's main container port and handles the majority of Ghana's exports by volume. It is operated by Meridian Port Services (MPS) and Ghana Ports and Harbours Authority (GPHA). Tema is connected to major global shipping lines with direct services to Europe, Asia, and the Americas. Container dwell times are typically 3-5 days for export cargo. Most cocoa, cashew, and manufactured goods export through Tema.
+        </p>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Takoradi Port</h3>
+        <p>
+          Takoradi Port, in the Western Region, handles bulk and break-bulk cargo as well as containers. It is the primary port for timber, manganese, and bauxite exports, and also handles agricultural commodities from the Western Region. For shea butter and cashew from the north, cargo is typically transported to Tema by road, though some exporters ship via Takoradi for cost or timing reasons.
+        </p>
+
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Required Export Documents</h2>
+        <ul>
+          <li><strong>Commercial Invoice</strong> - Must include supplier and buyer details, commodity description, quantity, unit price, total value, Incoterms, and payment terms.</li>
+          <li><strong>Packing List</strong> - Details of container contents: number of bags/drums/cartons, net and gross weights, dimensions.</li>
+          <li><strong>Bill of Lading</strong> - Issued by the shipping line after vessel departure. Original B/L is the document of title.</li>
+          <li><strong>Certificate of Origin</strong> - Issued by GEPA or Ghana National Chamber of Commerce. Required for duty preference claims (e.g., AGOA for US imports, EBA for EU imports).</li>
+          <li><strong>Phytosanitary Certificate</strong> - Issued by PPRSD for all plant-based commodities. Valid for 14 days from issue.</li>
+          <li><strong>Quality/Grade Certificate</strong> - From the relevant authority (COCOBOD Quality Control Company for cocoa, or independent surveyor for other commodities).</li>
+          <li><strong>Fumigation Certificate</strong> - Required for many grain and nut commodities to confirm pest treatment.</li>
+          <li><strong>Weight Certificate</strong> - Issued by an independent weighing station or surveyor at the port.</li>
+          <li><strong>GEPA Export Permit</strong> - Issued by GEPA confirming the export is registered and authorized.</li>
+        </ul>
+
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Shipping and Logistics</h2>
+        <p>
+          Ghana is well connected to international shipping lanes. Transit times from Tema Port to major destination ports are approximately:
+        </p>
+        <ul>
+          <li><strong>To Rotterdam, Netherlands:</strong> 14-18 days (direct) or 18-22 days (via Tanger Med transhipment)</li>
+          <li><strong>To Antwerp, Belgium:</strong> 14-18 days</li>
+          <li><strong>To New York/Newark:</strong> 18-22 days</li>
+          <li><strong>To Houston, Texas:</strong> 22-26 days</li>
+          <li><strong>To Dubai, UAE:</strong> 20-25 days (via Suez)</li>
+          <li><strong>To Shanghai, China:</strong> 28-35 days</li>
+          <li><strong>To Hamburg, Germany:</strong> 16-20 days</li>
+        </ul>
+        <p>
+          Standard container sizes for agricultural commodities are 20ft dry (approximately 18-22 MT for most bagged goods) and 40ft dry (for lighter goods or larger volumes). Liquid commodities like palm kernel oil and shea butter in bulk use flexitanks or ISO tanks. Freight rates fluctuate significantly; request current rates from your freight forwarder.
+        </p>
+
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Payment Terms and Trade Finance</h2>
+        <p>
+          For first-time transactions with a new Ghanaian supplier, the safest payment method is an irrevocable letter of credit (L/C) at sight, opened through your bank and confirmed by a Ghanaian correspondent bank. This protects both buyer and seller. For established relationships, common terms are 30% advance payment (T/T) with 70% against a copy of shipping documents, or documents against payment (D/P) through the banking system. Avoid 100% advance payment to unknown suppliers. Ghana's banking system is relatively developed, and most major commercial banks can handle international L/C transactions.
+        </p>
+
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Tips for First-Time Buyers</h2>
+        <ul>
+          <li><strong>Verify GEPA registration</strong> - Check that your supplier is a legitimate registered exporter before sending any payment or signing a contract.</li>
+          <li><strong>Use a third-party inspector</strong> - For your first shipment from any supplier, always commission a pre-shipment inspection by SGS, Bureau Veritas, or Intertek. The cost (typically $300-600) is negligible compared to the value of a container.</li>
+          <li><strong>Understand commodity-specific regulations</strong> - Cocoa, timber, and minerals each have their own regulatory bodies and additional requirements beyond general GEPA rules.</li>
+          <li><strong>Build in lead time</strong> - Factor in 2-4 weeks from contract signing to vessel loading for a typical agricultural commodity shipment. Add another 14-35 days for ocean transit depending on your destination.</li>
+          <li><strong>Work with an experienced freight forwarder</strong> - A forwarder with West Africa experience can significantly reduce delays and documentation errors.</li>
+          <li><strong>Watch for seasonal availability</strong> - Ghana's cocoa main crop runs October to March, light crop April to September. Cashew is harvested February to May. Shea nuts are collected June to September. Plan your purchasing schedule around seasonal supply peaks.</li>
+          <li><strong>Currency considerations</strong> - Most commodity transactions are denominated in US dollars. Ghana's cedi (GHS) has historically depreciated against the USD; confirm that pricing in your contract is in USD to avoid currency risk.</li>
+        </ul>
+
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">How Origin Direct Makes This Easy</h2>
+        <p>
+          Origin Direct has established direct sourcing relationships with GEPA-registered exporters, COCOBOD-licensed buying companies, and processing facilities across Ghana. We manage the entire process from commodity sourcing and quality inspection at origin through export documentation preparation and ocean freight coordination. You deal with a single English-speaking point of contact throughout the shipment, and we ensure compliance with both Ghanaian export regulations and your destination country's import requirements. Whether you are importing <a href="/products/cocoa" class="text-brand-700 underline hover:text-brand-600">cocoa</a>, <a href="/products/shea-butter" class="text-brand-700 underline hover:text-brand-600">shea butter</a>, or <a href="/products/cashew-nuts" class="text-brand-700 underline hover:text-brand-600">cashew nuts</a> from Ghana for the first time or scaling up an existing supply chain, we provide the local knowledge and operational infrastructure to make it work.
+        </p>
+      </div>
+
+      <div class="mt-12">
+        <QuoteForm productName="Ghana Commodities" />
+      </div>
+    </div>
+  </section>
+</Layout>
