@@ -14,6 +14,7 @@ const products = [
   "Sesame Seeds",
   "Moringa",
   "Ginger",
+  "Other (please specify below)",
 ];
 
 const whatsappNumber = "31612345678";
@@ -49,6 +50,21 @@ const whatsappMessage = encodeURIComponent(
           </option>
         ))}
       </select>
+    </div>
+
+    <!-- Custom Product (shown when "Other" is selected) -->
+    <div id="custom-product-field" class="hidden">
+      <label for="custom_product" class="block text-sm font-medium text-gray-700 mb-1.5">
+        What product are you looking for? <span class="text-red-500">*</span>
+      </label>
+      <input
+        type="text"
+        id="custom_product"
+        name="custom_product"
+        placeholder="e.g., Tiger Nuts, Kola Nuts, Baobab Powder, Cassava Starch..."
+        class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-shadow"
+      />
+      <p class="mt-1 text-xs text-gray-400">We source a wide range of African and Indian commodities — just tell us what you need.</p>
     </div>
 
     <!-- Quantity -->
@@ -172,3 +188,25 @@ const whatsappMessage = encodeURIComponent(
     </p>
   </div>
 </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('select[name="product"]').forEach((select) => {
+      const form = select.closest('form');
+      if (!form) return;
+      const customField = form.parentElement?.querySelector('#custom-product-field');
+      const customInput = form.parentElement?.querySelector('#custom_product');
+      if (!customField || !customInput) return;
+
+      select.addEventListener('change', () => {
+        if (select.value === 'Other (please specify below)') {
+          customField.classList.remove('hidden');
+          customInput.setAttribute('required', '');
+        } else {
+          customField.classList.add('hidden');
+          customInput.removeAttribute('required');
+        }
+      });
+    });
+  });
+</script>
