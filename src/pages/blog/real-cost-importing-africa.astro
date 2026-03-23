@@ -1,0 +1,259 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: "The Real Cost of Importing Commodities from Africa (Full Breakdown)",
+  description: "Complete line-by-line cost breakdown for importing commodities from Africa. Real example: 20MT cashew nuts from Ghana to Rotterdam with every cost element explained.",
+  author: { "@type": "Organization", name: "Origin Direct Group" },
+  publisher: { "@type": "Organization", name: "Origin Direct Group", logo: { "@type": "ImageObject", url: "https://origindirectgroup.com/logo.png" } },
+  datePublished: "2026-03-23",
+  dateModified: "2026-03-23",
+  mainEntityOfPage: "https://origindirectgroup.com/blog/real-cost-importing-africa",
+  image: "https://origindirectgroup.com/images/blog/import-cost-africa.jpg",
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://origindirectgroup.com/" },
+    { "@type": "ListItem", position: 2, name: "Blog", item: "https://origindirectgroup.com/blog" },
+    { "@type": "ListItem", position: 3, name: "Real Cost of Importing from Africa", item: "https://origindirectgroup.com/blog/real-cost-importing-africa" },
+  ],
+};
+---
+
+<Layout
+  title="The Real Cost of Importing Commodities from Africa (Full Breakdown) | Origin Direct Group"
+  description="Complete line-by-line cost breakdown for importing commodities from Africa. Real example: 20MT cashew nuts from Ghana to Rotterdam with every cost element explained."
+  structuredData={[articleSchema, breadcrumbSchema]}
+>
+  <!-- Breadcrumbs -->
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <nav class="flex text-sm text-gray-500">
+      <a href="/" class="hover:text-brand-700">Home</a>
+      <span class="mx-2">/</span>
+      <a href="/blog" class="hover:text-brand-700">Blog</a>
+      <span class="mx-2">/</span>
+      <span class="text-gray-900">Real Cost of Importing from Africa</span>
+    </nav>
+  </div>
+
+  <!-- Hero -->
+  <section class="relative py-20 sm:py-28 bg-gradient-to-br from-brand-900 via-brand-800 to-earth-800 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(196,154,42,0.3),transparent_70%)]"></div>
+    </div>
+    <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <span class="inline-block px-4 py-1.5 bg-amber-500/20 text-amber-300 text-sm font-semibold rounded-full mb-6 border border-amber-500/30">Import Guide</span>
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">The Real Cost of Importing Commodities from Africa</h1>
+      <p class="text-lg text-brand-200 max-w-2xl mx-auto">
+        A full line-by-line breakdown of every cost between the FOB price and your warehouse door. No surprises, no hidden fees.
+      </p>
+      <div class="mt-6 flex items-center justify-center gap-4 text-sm text-brand-300">
+        <span>March 23, 2026</span>
+        <span class="w-1 h-1 rounded-full bg-brand-500"></span>
+        <span>12 min read</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Article Content -->
+  <article class="py-16 md:py-20 bg-white">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="prose prose-lg text-gray-700 max-w-none">
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">Why the FOB Price Is Only Half the Story</h2>
+        <p>
+          When you receive a quote for African commodities, you typically see an FOB price per metric ton. That number is important, but it represents only 65-75% of what you will actually pay to get the product into your warehouse. The remaining costs, including freight, insurance, port charges, customs, testing, and handling, add up quickly and can catch first-time importers off guard.
+        </p>
+        <p>
+          This guide walks through a realistic example using actual market rates, so you can budget accurately before placing your first order. Understanding these costs also helps you evaluate whether <a href="/blog/fob-cif-ddp-explained" class="text-brand-700 underline hover:text-brand-900">FOB, CIF, or DDP</a> is the right Incoterm for your situation.
+        </p>
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">The Example: 20 MT of W320 Cashew Nuts, Ghana to Rotterdam</h2>
+        <p>
+          For this breakdown, we will use a real-world scenario: importing one 20-foot container of <a href="/products/cashew-nuts" class="text-brand-700 underline hover:text-brand-900">W320 grade cashew kernels</a> from Tema, Ghana to Rotterdam, Netherlands. The shipment weighs approximately 15.3 MT net (one 20ft container of cashew kernels). We are buying FOB Tema, which means we handle everything from the ship's rail onward.
+        </p>
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">Complete Cost Breakdown</h2>
+
+        <div class="overflow-x-auto rounded-xl border border-gray-200 shadow-sm my-8">
+          <table class="w-full text-left text-sm">
+            <thead>
+              <tr class="bg-brand-800 text-white">
+                <th class="px-6 py-4 font-semibold">Cost Element</th>
+                <th class="px-6 py-4 font-semibold">Details</th>
+                <th class="px-6 py-4 font-semibold text-right">Amount (USD)</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100">
+              <tr class="bg-white">
+                <td class="px-6 py-3 font-medium text-gray-900">1. Product Cost (FOB Tema)</td>
+                <td class="px-6 py-3 text-gray-700">15.3 MT x $7,200/MT (W320 FOB price)</td>
+                <td class="px-6 py-3 text-right text-gray-700">$110,160</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="px-6 py-3 font-medium text-gray-900">2. Ocean Freight</td>
+                <td class="px-6 py-3 text-gray-700">20ft container Tema to Rotterdam</td>
+                <td class="px-6 py-3 text-right text-gray-700">$2,350</td>
+              </tr>
+              <tr class="bg-white">
+                <td class="px-6 py-3 font-medium text-gray-900">3. Marine Insurance</td>
+                <td class="px-6 py-3 text-gray-700">110% of CIF value, ICC (A) clause</td>
+                <td class="px-6 py-3 text-right text-gray-700">$450</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="px-6 py-3 font-medium text-gray-900">4. Destination Port Charges</td>
+                <td class="px-6 py-3 text-gray-700">Terminal handling, container release</td>
+                <td class="px-6 py-3 text-right text-gray-700">$385</td>
+              </tr>
+              <tr class="bg-white">
+                <td class="px-6 py-3 font-medium text-gray-900">5. Customs Broker Fee</td>
+                <td class="px-6 py-3 text-gray-700">Import declaration, document processing</td>
+                <td class="px-6 py-3 text-right text-gray-700">$175</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="px-6 py-3 font-medium text-gray-900">6. Import Duty</td>
+                <td class="px-6 py-3 text-gray-700">0% (cashew kernels from Ghana, EPA preference)</td>
+                <td class="px-6 py-3 text-right text-gray-700">$0</td>
+              </tr>
+              <tr class="bg-white">
+                <td class="px-6 py-3 font-medium text-gray-900">7. Phytosanitary Inspection</td>
+                <td class="px-6 py-3 text-gray-700">NVWA inspection at Rotterdam</td>
+                <td class="px-6 py-3 text-right text-gray-700">$250</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="px-6 py-3 font-medium text-gray-900">8. Lab Testing (Destination)</td>
+                <td class="px-6 py-3 text-gray-700">Aflatoxin, microbiological, pesticide residues</td>
+                <td class="px-6 py-3 text-right text-gray-700">$380</td>
+              </tr>
+              <tr class="bg-white">
+                <td class="px-6 py-3 font-medium text-gray-900">9. Container Demurrage/Detention</td>
+                <td class="px-6 py-3 text-gray-700">2 free days, assume 1 extra day at $120/day</td>
+                <td class="px-6 py-3 text-right text-gray-700">$120</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="px-6 py-3 font-medium text-gray-900">10. Inland Transport (Destination)</td>
+                <td class="px-6 py-3 text-gray-700">Container trucking Rotterdam port to warehouse</td>
+                <td class="px-6 py-3 text-right text-gray-700">$350</td>
+              </tr>
+              <tr class="bg-white">
+                <td class="px-6 py-3 font-medium text-gray-900">11. Warehouse Handling</td>
+                <td class="px-6 py-3 text-gray-700">Destuffing, palletizing, put-away</td>
+                <td class="px-6 py-3 text-right text-gray-700">$280</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="px-6 py-3 font-medium text-gray-900">12. Bank Charges</td>
+                <td class="px-6 py-3 text-gray-700">Wire transfer fees, LC fees if applicable</td>
+                <td class="px-6 py-3 text-right text-gray-700">$150</td>
+              </tr>
+              <tr class="bg-brand-50 font-bold border-t-2 border-brand-300">
+                <td class="px-6 py-4 text-brand-900" colspan="2">Total Landed Cost</td>
+                <td class="px-6 py-4 text-right text-brand-900">$115,050</td>
+              </tr>
+              <tr class="bg-brand-100 font-bold">
+                <td class="px-6 py-4 text-brand-900" colspan="2">Landed Cost per MT</td>
+                <td class="px-6 py-4 text-right text-brand-900">$7,519/MT</td>
+              </tr>
+              <tr class="bg-amber-50 font-bold">
+                <td class="px-6 py-4 text-amber-900" colspan="2">Additional costs beyond FOB price</td>
+                <td class="px-6 py-4 text-right text-amber-900">$4,890 (4.4%)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>
+          The FOB price of $110,160 becomes a landed cost of $115,050. That is an additional $4,890, or roughly 4.4% on top of the FOB price. For lower-value commodities like raw cashew nuts in shell or <a href="/products/shea-butter" class="text-brand-700 underline hover:text-brand-900">shea butter</a>, the percentage is much higher because freight and handling costs are relatively fixed regardless of cargo value.
+        </p>
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">Breaking Down Each Cost Element</h2>
+
+        <h3 class="text-xl font-semibold text-brand-800 mt-8 mb-4">Ocean Freight ($2,350)</h3>
+        <p>
+          Ocean freight from West Africa to Northern Europe fluctuates significantly. In early 2024, a 20ft container from Tema to Rotterdam cost around $1,500. By mid-2024, rates spiked above $4,000 due to the Red Sea crisis. As of early 2026, rates have stabilized around $2,200-$2,500 for a standard 20ft container. Transit time is typically 14-18 days.
+        </p>
+        <p>
+          Key factors affecting your freight rate: the shipping line you use (Maersk, MSC, CMA CGM, and PIL are the main carriers on this route), whether you book spot or contract rates, the time of year (rates often increase in Q4 due to high season), and whether you are shipping a full container load (FCL) or less than container load (LCL).
+        </p>
+
+        <h3 class="text-xl font-semibold text-brand-800 mt-8 mb-4">Marine Insurance ($450)</h3>
+        <p>
+          Insurance typically runs 0.3-0.5% of the CIF value for foodstuffs from West Africa. We recommend ICC (A) "All Risks" coverage rather than the minimum ICC (C) that comes with CIF shipments. The premium difference is small, but the coverage difference is substantial. ICC (A) covers damage from any cause except specific exclusions, while ICC (C) only covers major casualties like sinking, fire, or collision.
+        </p>
+
+        <h3 class="text-xl font-semibold text-brand-800 mt-8 mb-4">Import Duty ($0 for Ghana)</h3>
+        <p>
+          This is a significant advantage of sourcing from West Africa. Under the EU-West Africa Economic Partnership Agreement (EPA), most agricultural products from Ghana enter the EU duty-free. Without the EPA, cashew kernels (HS 0801.32) would face a 0% duty anyway (they are zero-rated), but other commodities like cocoa products, shea butter, and processed foods can save significant duty amounts. Always verify the applicable duty rate for your specific HS code and origin using the EU's TARIC database.
+        </p>
+
+        <h3 class="text-xl font-semibold text-brand-800 mt-8 mb-4">Lab Testing ($380)</h3>
+        <p>
+          For food commodities entering the EU, you should budget for testing at destination even if you have origin test results. A standard food safety panel for cashew nuts includes aflatoxins (B1, B2, G1, G2 and total), microbiological counts (total plate count, coliforms, E. coli, Salmonella, yeast and molds), and pesticide residue screening. Some buyers also test for allergens and heavy metals. A comprehensive panel costs $300-500 depending on the lab and scope.
+        </p>
+
+        <h3 class="text-xl font-semibold text-brand-800 mt-8 mb-4">Container Demurrage ($120)</h3>
+        <p>
+          Demurrage and detention are often overlooked in cost calculations. Shipping lines give you a set number of "free days" to unload and return the container (typically 3-7 days at Rotterdam). If customs holds your container for inspection or your documents are delayed, costs escalate rapidly. Daily demurrage rates range from $80-$200 for a 20ft container. To minimize this risk, ensure all documentation is prepared before the vessel arrives.
+        </p>
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">Costs That Can Surprise You</h2>
+        <p>
+          Beyond the standard line items, there are several costs that catch first-time importers by surprise:
+        </p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li><strong>Container scanning fees</strong> - Customs may randomly select your container for X-ray scanning, costing $150-300. This is not within your control.</li>
+          <li><strong>Fumigation at destination</strong> - If phytosanitary inspection detects live insects, fumigation is required at your expense ($400-800 per container).</li>
+          <li><strong>Weighbridge fees</strong> - Port authorities charge for container weighing, typically $30-50.</li>
+          <li><strong>Documentation fees</strong> - Bill of lading amendments, telex releases, and other document corrections cost $50-150 each.</li>
+          <li><strong>Currency conversion costs</strong> - If paying in USD but your local currency is EUR, bank conversion spreads can add 0.5-1.5% to the total cost.</li>
+          <li><strong>VAT</strong> - In the EU, import VAT (typically 21% in the Netherlands) is charged on the customs value plus duty. While recoverable for VAT-registered businesses, it ties up cash flow.</li>
+        </ul>
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">How to Reduce Your Landed Cost</h2>
+        <p>
+          Experienced importers use several strategies to minimize their total costs:
+        </p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li><strong>Negotiate contract freight rates</strong> - If you ship 3+ containers per month, contract rates can save 15-25% versus spot rates.</li>
+          <li><strong>Use a specialist customs broker</strong> - Brokers experienced with food commodities can clear shipments faster, reducing demurrage risk.</li>
+          <li><strong>Buy FOB and arrange your own freight</strong> - You often save $100-300 per container versus CIF pricing. See our <a href="/blog/fob-cif-ddp-explained" class="text-brand-700 underline hover:text-brand-900">Incoterms guide</a> for details.</li>
+          <li><strong>Source with proper certifications</strong> - Pre-certified products (organic, Fair Trade) command higher resale prices while adding minimal cost at origin. See our guide on <a href="/blog/certifications-food-export-africa" class="text-brand-700 underline hover:text-brand-900">food export certifications</a>.</li>
+          <li><strong>Plan shipments around seasons</strong> - Buying at the right time during harvest season can save 5-15% on product cost alone.</li>
+          <li><strong>Source direct</strong> - Cutting out middlemen can save 15-40% on product cost depending on the commodity. Read more about <a href="/blog/why-source-direct-africa" class="text-brand-700 underline hover:text-brand-900">why sourcing direct from Africa</a> makes financial sense.</li>
+        </ul>
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">How Origin Direct Group Helps</h2>
+        <p>
+          We provide transparent pricing with no hidden fees. When you request a quote, we break down every cost element so you know exactly what you are paying for. Our pricing includes origin-side lab testing, <a href="/blog/eudr-compliance-guide" class="text-brand-700 underline hover:text-brand-900">EUDR compliance documentation</a>, and all export certifications. We quote FOB, CIF, and DDP so you can choose the Incoterm that best fits your logistics setup.
+        </p>
+
+      </div>
+    </div>
+  </article>
+
+  <!-- CTA -->
+  <section class="py-20 md:py-24 bg-gradient-to-br from-brand-900 to-earth-800">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">
+        Get a Transparent Quote with Full Cost Breakdown
+      </h2>
+      <p class="text-brand-200 mb-8 max-w-xl mx-auto">
+        No hidden fees, no surprises. We break down every cost element so you can budget with confidence.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/quote" class="inline-flex items-center justify-center px-8 py-4 bg-gold hover:bg-gold-dark text-white font-bold rounded-lg transition-colors shadow-lg text-lg">
+          Request a Quote
+          <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+        <a href="/products" class="inline-flex items-center justify-center px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-lg transition-colors border border-white/20">
+          View All Products
+        </a>
+      </div>
+    </div>
+  </section>
+
+</Layout>

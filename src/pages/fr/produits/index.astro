@@ -1,0 +1,66 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import ProductCard from '../../../components/ProductCard.astro';
+import QuoteForm from '../../../components/QuoteForm.astro';
+
+const siteUrl = "https://origindirectgroup.com";
+
+const products = [
+  { name: "Beurre de Karite", slug: "fr/produits/beurre-de-karite", origin: "Ghana \u{1F1EC}\u{1F1ED}", description: "Grades non raffine, raffine et biologique pour les industries cosmetiques et alimentaires", grades: "Grade A Non Raffine | Raffine | Bio" },
+  { name: "Cacao", slug: "fr/produits/cacao", origin: "Ghana \u{1F1EC}\u{1F1ED} / Nigeria \u{1F1F3}\u{1F1EC}", description: "Feves, beurre, poudre et grues de cacao, directement de la premiere region productrice", grades: "Feves Fermentees | Beurre | Poudre" },
+  { name: "Noix de Cajou", slug: "fr/produits/noix-de-cajou", origin: "Ghana \u{1F1EC}\u{1F1ED} / Nigeria \u{1F1F3}\u{1F1EC}", description: "Noix de cajou brutes et amandes transformees dans tous les grades standards", grades: "RCN | W180 | W240 | W320 | W450" },
+  { name: "Charbon Chicha", slug: "fr/produits/charbon-chicha", origin: "Nigeria \u{1F1F3}\u{1F1EC}", description: "Briquettes de charbon de bois dur pour le marche du narguilé", grades: "Cube 25mm | Plat | Doigt | Sur Mesure" },
+  { name: "Hibiscus Seche", slug: "fr/produits/hibiscus", origin: "Nigeria \u{1F1F3}\u{1F1EC}", description: "Fleurs d'hibiscus sechees pour boissons, melanges de the et colorants alimentaires", grades: "Fleurs Entieres | Coupe et Tamisee | Poudre" },
+  { name: "Graines de Sesame", slug: "fr/produits/graines-de-sesame", origin: "Nigeria \u{1F1F3}\u{1F1EC}", description: "Graines premium pour tahini et transformation alimentaire", grades: "Blanc Decortique | Naturel | Noir | Bio" },
+  { name: "Poudre de Moringa", slug: "fr/produits/moringa", origin: "Ghana \u{1F1EC}\u{1F1ED} / Nigeria \u{1F1F3}\u{1F1EC}", description: "Poudre de moringa certifiee biologique pour aliments sante et supplements", grades: "Conventionnel | Bio | Pharmaceutique" },
+  { name: "Gingembre Seche", slug: "fr/produits/gingembre", origin: "Nigeria \u{1F1F3}\u{1F1EC}", description: "Gingembre seche avec la teneur en oleoresine la plus elevee au monde", grades: "Seche Fendu | Entier | Poudre | Bio" },
+];
+---
+
+<Layout
+  title="Nos Produits | Origin Direct Group"
+  description="Decouvrez notre gamme complete de matieres premieres d'Afrique de l'Ouest et d'Inde. Beurre de karite, cacao, noix de cajou, charbon chicha, hibiscus, sesame, moringa et gingembre."
+  lang="fr"
+  hreflangs={[
+    { lang: "en", href: `${siteUrl}/products` },
+    { lang: "fr", href: `${siteUrl}/fr/produits` },
+  ]}
+>
+  <section class="relative py-24 bg-gradient-to-br from-green-950 via-green-900 to-earth-900">
+    <div class="absolute inset-0 bg-black/30"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight">Nos Produits</h1>
+      <div class="w-16 h-1 bg-amber-500 mx-auto mt-6 mb-6"></div>
+      <p class="text-lg md:text-xl text-gray-200/90 max-w-3xl mx-auto">
+        Plus de 33 matieres premieres approvisionnees directement aupres de producteurs verifies en Afrique de l'Ouest et en Inde.
+        Controle qualite complet, documentation et livraison de la terre a votre porte.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-bold text-brand-900">Matieres Premieres Principales</h2>
+        <p class="mt-3 text-gray-500 max-w-2xl mx-auto">
+          Nos produits les plus demandes avec des chaines d'approvisionnement etablies et une documentation de conformite complete.
+        </p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+        {products.map((product) => (
+          <ProductCard {...product} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-green-950">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10">
+        <h2 class="text-3xl font-bold text-white">Demander un Devis</h2>
+        <p class="mt-3 text-gray-300">Dites-nous ce dont vous avez besoin. Nous repondons en moins de 2 heures.</p>
+      </div>
+      <QuoteForm />
+    </div>
+  </section>
+</Layout>

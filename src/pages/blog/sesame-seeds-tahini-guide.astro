@@ -1,0 +1,288 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: "Sesame Seeds for Tahini Production: A Buyer's Quality Guide",
+  description: "Complete quality guide for tahini-grade sesame seeds. Oil content, FFA, color, purity specs, hulled vs unhulled, origin comparison, and ethylene oxide testing requirements.",
+  author: { "@type": "Organization", name: "Origin Direct Group" },
+  publisher: { "@type": "Organization", name: "Origin Direct Group", logo: { "@type": "ImageObject", url: "https://origindirectgroup.com/logo.png" } },
+  datePublished: "2026-03-23",
+  dateModified: "2026-03-23",
+  mainEntityOfPage: "https://origindirectgroup.com/blog/sesame-seeds-tahini-guide",
+  image: "https://origindirectgroup.com/images/blog/sesame-tahini.jpg",
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://origindirectgroup.com/" },
+    { "@type": "ListItem", position: 2, name: "Blog", item: "https://origindirectgroup.com/blog" },
+    { "@type": "ListItem", position: 3, name: "Sesame Seeds for Tahini", item: "https://origindirectgroup.com/blog/sesame-seeds-tahini-guide" },
+  ],
+};
+---
+
+<Layout
+  title="Sesame Seeds for Tahini Production: A Buyer's Quality Guide | Origin Direct Group"
+  description="Complete quality guide for tahini-grade sesame seeds. Oil content, FFA, color, purity specs, hulled vs unhulled, origin comparison, and ethylene oxide testing requirements."
+  structuredData={[articleSchema, breadcrumbSchema]}
+>
+  <!-- Breadcrumbs -->
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <nav class="flex text-sm text-gray-500">
+      <a href="/" class="hover:text-brand-700">Home</a>
+      <span class="mx-2">/</span>
+      <a href="/blog" class="hover:text-brand-700">Blog</a>
+      <span class="mx-2">/</span>
+      <span class="text-gray-900">Sesame Seeds for Tahini</span>
+    </nav>
+  </div>
+
+  <!-- Hero -->
+  <section class="relative py-20 sm:py-28 bg-gradient-to-br from-brand-900 via-brand-800 to-earth-800 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(196,154,42,0.3),transparent_70%)]"></div>
+    </div>
+    <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <span class="inline-block px-4 py-1.5 bg-amber-500/20 text-amber-300 text-sm font-semibold rounded-full mb-6 border border-amber-500/30">Product Guide</span>
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">Sesame Seeds for Tahini Production: A Buyer's Quality Guide</h1>
+      <p class="text-lg text-brand-200 max-w-2xl mx-auto">
+        What separates good tahini from great tahini starts with the sesame seed. Here is everything you need to know about sourcing the right quality.
+      </p>
+      <div class="mt-6 flex items-center justify-center gap-4 text-sm text-brand-300">
+        <span>March 23, 2026</span>
+        <span class="w-1 h-1 rounded-full bg-brand-500"></span>
+        <span>11 min read</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Article Content -->
+  <article class="py-16 md:py-20 bg-white">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="prose prose-lg text-gray-700 max-w-none">
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">What Makes a Good Tahini Sesame Seed?</h2>
+        <p>
+          Tahini is one of the simplest food products in the world: roasted sesame seeds ground into a paste. That simplicity means the quality of the final product depends almost entirely on the quality of the raw sesame seeds. There is no way to hide poor-quality seeds behind other ingredients. The oil content, free fatty acid levels, color, and purity of your sesame seeds will directly determine the taste, texture, shelf life, and appearance of your tahini.
+        </p>
+        <p>
+          The global tahini market has grown significantly in recent years, driven by the popularity of Middle Eastern cuisine and the broader health food trend. Annual consumption is estimated at over 300,000 MT of sesame seeds for tahini production alone, and premium tahini brands are willing to pay significant premiums for the right quality seeds.
+        </p>
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">Key Quality Parameters</h2>
+
+        <div class="overflow-x-auto rounded-xl border border-gray-200 shadow-sm my-8">
+          <table class="w-full text-left text-sm">
+            <thead>
+              <tr class="bg-brand-800 text-white">
+                <th class="px-6 py-4 font-semibold">Parameter</th>
+                <th class="px-6 py-4 font-semibold">Standard Grade</th>
+                <th class="px-6 py-4 font-semibold">Premium Tahini Grade</th>
+                <th class="px-6 py-4 font-semibold">Why It Matters</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100">
+              <tr class="bg-white">
+                <td class="px-6 py-3 font-medium text-gray-900">Oil content</td>
+                <td class="px-6 py-3 text-gray-700">48-52%</td>
+                <td class="px-6 py-3 text-gray-700">52-57%</td>
+                <td class="px-6 py-3 text-gray-700">Higher oil = smoother, creamier tahini</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="px-6 py-3 font-medium text-gray-900">Free fatty acid (FFA)</td>
+                <td class="px-6 py-3 text-gray-700">&lt;2.0%</td>
+                <td class="px-6 py-3 text-gray-700">&lt;1.0%</td>
+                <td class="px-6 py-3 text-gray-700">Lower FFA = longer shelf life, better taste</td>
+              </tr>
+              <tr class="bg-white">
+                <td class="px-6 py-3 font-medium text-gray-900">Moisture</td>
+                <td class="px-6 py-3 text-gray-700">&lt;7%</td>
+                <td class="px-6 py-3 text-gray-700">&lt;5%</td>
+                <td class="px-6 py-3 text-gray-700">Lower moisture prevents mold, improves storage</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="px-6 py-3 font-medium text-gray-900">Purity</td>
+                <td class="px-6 py-3 text-gray-700">98%</td>
+                <td class="px-6 py-3 text-gray-700">99.5%+</td>
+                <td class="px-6 py-3 text-gray-700">Less foreign matter, cleaner processing</td>
+              </tr>
+              <tr class="bg-white">
+                <td class="px-6 py-3 font-medium text-gray-900">Color (Lovibond)</td>
+                <td class="px-6 py-3 text-gray-700">Light amber</td>
+                <td class="px-6 py-3 text-gray-700">Creamy white</td>
+                <td class="px-6 py-3 text-gray-700">Lighter seeds produce lighter, more appealing tahini</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="px-6 py-3 font-medium text-gray-900">Acid value</td>
+                <td class="px-6 py-3 text-gray-700">&lt;4.0 mg KOH/g</td>
+                <td class="px-6 py-3 text-gray-700">&lt;2.0 mg KOH/g</td>
+                <td class="px-6 py-3 text-gray-700">Indicates seed freshness and storage quality</td>
+              </tr>
+              <tr class="bg-white">
+                <td class="px-6 py-3 font-medium text-gray-900">Peroxide value</td>
+                <td class="px-6 py-3 text-gray-700">&lt;10 meq/kg</td>
+                <td class="px-6 py-3 text-gray-700">&lt;5 meq/kg</td>
+                <td class="px-6 py-3 text-gray-700">Measures oxidation; lower is fresher</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 class="text-xl font-semibold text-brand-800 mt-8 mb-4">Oil Content: The Most Important Metric</h3>
+        <p>
+          For tahini production, oil content is king. Seeds with 52-57% oil content produce tahini that is naturally smooth and creamy without needing added oils. Seeds below 48% oil content will produce a drier, grittier paste that separates more quickly in the jar. The difference between 50% and 55% oil content is noticeable in the final product, and premium tahini makers specifically source high-oil seeds.
+        </p>
+
+        <h3 class="text-xl font-semibold text-brand-800 mt-8 mb-4">Free Fatty Acid: The Shelf Life Indicator</h3>
+        <p>
+          FFA indicates how much the oil in the seed has degraded. High FFA means the seed is old, was stored poorly, or was damaged during harvesting. For tahini, high FFA translates to a bitter taste and shorter shelf life. Seeds with FFA below 1.0% will produce tahini with a clean, nutty flavor that stays fresh for 12-18 months. Seeds above 2.0% FFA should be avoided for premium tahini production.
+        </p>
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">Hulled vs. Unhulled Sesame Seeds</h2>
+        <p>
+          Sesame seeds come in two forms: hulled (the outer husk removed) and unhulled (natural, with the husk intact). Both can be used for tahini, but they produce distinctly different products.
+        </p>
+
+        <div class="bg-brand-50 rounded-xl p-8 my-8 border border-brand-100">
+          <h3 class="text-lg font-semibold text-brand-800 mb-4">Hulled Sesame (for white tahini)</h3>
+          <ul class="list-disc pl-6 space-y-2 text-gray-700">
+            <li>Produces the classic smooth, light-colored tahini</li>
+            <li>Milder, sweeter flavor preferred in Middle Eastern markets</li>
+            <li>Higher oil yield per kilogram of seeds</li>
+            <li>More expensive due to the hulling process</li>
+            <li>Lower calcium and fiber content than unhulled</li>
+          </ul>
+        </div>
+
+        <div class="bg-brand-50 rounded-xl p-8 my-8 border border-brand-100">
+          <h3 class="text-lg font-semibold text-brand-800 mb-4">Unhulled Sesame (for whole/dark tahini)</h3>
+          <ul class="list-disc pl-6 space-y-2 text-gray-700">
+            <li>Produces a darker, more robust-flavored tahini</li>
+            <li>Higher in calcium, fiber, and minerals</li>
+            <li>Preferred by health-conscious consumers and natural food brands</li>
+            <li>Slightly bitter compared to hulled, which some consumers prefer</li>
+            <li>Lower price point at origin</li>
+          </ul>
+        </div>
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">Origin Comparison: Nigerian vs. Ethiopian vs. Indian Sesame</h2>
+        <p>
+          The three largest sesame-producing countries each offer distinct characteristics. Understanding these differences helps you source the right sesame for your specific tahini product.
+        </p>
+
+        <div class="overflow-x-auto rounded-xl border border-gray-200 shadow-sm my-8">
+          <table class="w-full text-left text-sm">
+            <thead>
+              <tr class="bg-brand-800 text-white">
+                <th class="px-6 py-4 font-semibold">Characteristic</th>
+                <th class="px-6 py-4 font-semibold">Nigeria</th>
+                <th class="px-6 py-4 font-semibold">Ethiopia (Humera)</th>
+                <th class="px-6 py-4 font-semibold">India</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100">
+              <tr class="bg-white">
+                <td class="px-6 py-3 font-medium text-gray-900">Typical oil content</td>
+                <td class="px-6 py-3 text-gray-700">50-54%</td>
+                <td class="px-6 py-3 text-gray-700">50-55%</td>
+                <td class="px-6 py-3 text-gray-700">48-52%</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="px-6 py-3 font-medium text-gray-900">Seed color</td>
+                <td class="px-6 py-3 text-gray-700">White to cream</td>
+                <td class="px-6 py-3 text-gray-700">White (Humera type)</td>
+                <td class="px-6 py-3 text-gray-700">White to light brown</td>
+              </tr>
+              <tr class="bg-white">
+                <td class="px-6 py-3 font-medium text-gray-900">Tahini quality</td>
+                <td class="px-6 py-3 text-gray-700">Good, consistent</td>
+                <td class="px-6 py-3 text-gray-700">Excellent, premium</td>
+                <td class="px-6 py-3 text-gray-700">Variable</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="px-6 py-3 font-medium text-gray-900">Flavor profile</td>
+                <td class="px-6 py-3 text-gray-700">Mild, nutty</td>
+                <td class="px-6 py-3 text-gray-700">Sweet, rich, aromatic</td>
+                <td class="px-6 py-3 text-gray-700">Mild to slightly bitter</td>
+              </tr>
+              <tr class="bg-white">
+                <td class="px-6 py-3 font-medium text-gray-900">Price level</td>
+                <td class="px-6 py-3 text-gray-700">Competitive</td>
+                <td class="px-6 py-3 text-gray-700">Premium</td>
+                <td class="px-6 py-3 text-gray-700">Mid-range</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="px-6 py-3 font-medium text-gray-900">Availability</td>
+                <td class="px-6 py-3 text-gray-700">Year-round</td>
+                <td class="px-6 py-3 text-gray-700">Seasonal (Nov-Apr)</td>
+                <td class="px-6 py-3 text-gray-700">Year-round</td>
+              </tr>
+              <tr class="bg-white">
+                <td class="px-6 py-3 font-medium text-gray-900">EtO risk</td>
+                <td class="px-6 py-3 text-gray-700">Low</td>
+                <td class="px-6 py-3 text-gray-700">Low</td>
+                <td class="px-6 py-3 text-gray-700">Higher (fumigation practices)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>
+          Ethiopian Humera-type sesame is considered the gold standard for premium tahini production, particularly in Israel, which is the world's largest per-capita tahini consumer. Nigerian sesame offers an excellent quality-to-price ratio and is increasingly preferred by European tahini producers looking for consistent supply at competitive prices. Indian sesame is the most widely available but has faced repeated issues with ethylene oxide contamination (discussed below).
+        </p>
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">Ethylene Oxide Testing: A Critical EU Requirement</h2>
+        <p>
+          Since 2020, the EU has intensified testing of sesame seeds for ethylene oxide (EtO), a fumigant that is banned in EU food production. The trigger was the discovery of high EtO levels in Indian sesame seeds, which led to hundreds of RASFF (Rapid Alert System for Food and Feed) notifications and major product recalls across Europe.
+        </p>
+        <p>
+          The EU maximum residue limit for ethylene oxide (including its metabolite 2-chloroethanol) is 0.05 mg/kg. This limit applies to both hulled and unhulled sesame seeds. Shipments testing above this limit are rejected and destroyed.
+        </p>
+        <p>
+          For buyers sourcing sesame for the EU market, EtO testing is non-negotiable. Here is what you need to know:
+        </p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li><strong>Test at origin before shipment</strong> - Do not wait until the container arrives in Europe. A pre-shipment EtO test costs $100-200 and can save you the cost of an entire rejected shipment.</li>
+          <li><strong>Use GC-MS testing</strong> - Gas chromatography-mass spectrometry is the standard method. Ensure your lab is accredited for this specific analysis.</li>
+          <li><strong>African origins are lower risk</strong> - Nigerian and Ethiopian sesame has a much better track record for EtO compliance than Indian sesame, because the fumigation practices that introduce EtO are less common in African production.</li>
+          <li><strong>Request supplier declarations</strong> - Ask your supplier to confirm in writing that no EtO fumigation was used at any stage of production, storage, or transport.</li>
+        </ul>
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">Sourcing Tahini-Grade Sesame from Origin Direct</h2>
+        <p>
+          We supply premium <a href="/products/sesame-seeds" class="text-brand-700 underline hover:text-brand-900">Nigerian sesame seeds</a> specifically selected for tahini production. Our sesame consistently tests above 50% oil content, with FFA below 1.5% and purity above 99%. Every shipment includes full lab analysis covering oil content, FFA, moisture, EtO, aflatoxins, Salmonella, and pesticide residues.
+        </p>
+        <p>
+          We also provide the full <a href="/blog/certifications-food-export-africa" class="text-brand-700 underline hover:text-brand-900">certification package</a> needed for EU market access, including phytosanitary certificates and <a href="/blog/eudr-compliance-guide" class="text-brand-700 underline hover:text-brand-900">EUDR documentation</a> where applicable. For a detailed breakdown of all costs involved in importing sesame seeds from Africa, see our <a href="/blog/real-cost-importing-africa" class="text-brand-700 underline hover:text-brand-900">import cost guide</a>.
+        </p>
+
+      </div>
+    </div>
+  </article>
+
+  <!-- CTA -->
+  <section class="py-20 md:py-24 bg-gradient-to-br from-brand-900 to-earth-800">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">
+        Need Tahini-Grade Sesame Seeds?
+      </h2>
+      <p class="text-brand-200 mb-8 max-w-xl mx-auto">
+        High oil content, EtO-free, full lab analysis with every shipment. Get a quote for premium Nigerian sesame seeds.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/quote" class="inline-flex items-center justify-center px-8 py-4 bg-gold hover:bg-gold-dark text-white font-bold rounded-lg transition-colors shadow-lg text-lg">
+          Request a Quote
+          <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+        <a href="/products/sesame-seeds" class="inline-flex items-center justify-center px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-lg transition-colors border border-white/20">
+          View Sesame Products
+        </a>
+      </div>
+    </div>
+  </section>
+
+</Layout>

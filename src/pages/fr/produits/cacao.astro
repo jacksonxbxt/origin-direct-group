@@ -1,0 +1,151 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import QuoteForm from '../../../components/QuoteForm.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+
+const siteUrl = "https://origindirectgroup.com";
+
+const productSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name: "Feves, Beurre et Poudre de Cacao",
+  description: "Feves de cacao premium, beurre et poudre du Ghana et du Nigeria. Conforme au cadmium UE, tracabilite EUDR. Certifie Rainforest Alliance et Fairtrade.",
+  image: `${siteUrl}/images/products/cocoa.jpg`,
+  brand: { "@type": "Brand", name: "Origin Direct Group" },
+  category: "Cacao et Ingredients Chocolatiers",
+  countryOfOrigin: { "@type": "Country", name: "Ghana" },
+  offers: { "@type": "AggregateOffer", priceCurrency: "USD", availability: "https://schema.org/InStock" },
+  additionalProperty: [
+    { "@type": "PropertyValue", name: "Code SH", value: "1801.00 / 1804.00 / 1805.00" },
+    { "@type": "PropertyValue", name: "QMC", value: "1 FCL (15-18 TM)" },
+    { "@type": "PropertyValue", name: "Cadmium", value: "< 0,60 mg/kg (conforme UE)" },
+  ],
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Accueil", item: `${siteUrl}/fr/` },
+    { "@type": "ListItem", position: 2, name: "Produits", item: `${siteUrl}/fr/produits` },
+    { "@type": "ListItem", position: 3, name: "Cacao", item: `${siteUrl}/fr/produits/cacao` },
+  ],
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Votre cacao est-il conforme au EUDR ?",
+      acceptedAnswer: { "@type": "Answer", text: "Oui. Tout notre cacao est accompagne de donnees de geolocalisation completes pour chaque parcelle agricole, assurant une pleine conformite au Reglement de l'UE sur la Deforestation (EUDR). Nous fournissons les coordonnees GPS, les cartes polygonales et la documentation de la chaine de traçabilite." },
+    },
+    {
+      "@type": "Question",
+      name: "Quels sont les niveaux de cadmium dans votre cacao ?",
+      acceptedAnswer: { "@type": "Answer", text: "Tout notre cacao est teste en dessous du seuil UE de 0,60 mg/kg de cadmium, conforme au Reglement UE 2023/915. Les rapports de laboratoire avec analyse du cadmium sont fournis avec chaque expedition." },
+    },
+    {
+      "@type": "Question",
+      name: "Quels grades et produits de cacao fournissez-vous ?",
+      acceptedAnswer: { "@type": "Answer", text: "Nous fournissons des feves de cacao fermentees de Grade 1 et Grade 2, du beurre de cacao naturel et desodorise, de la poudre de cacao naturelle et alcalinisee (10-12% et 20-22% de matiere grasse), et des grues de cacao. Le tout provenant du Ghana et du Nigeria." },
+    },
+  ],
+};
+---
+
+<Layout
+  title="Feves, Beurre et Poudre de Cacao - Ghana et Nigeria | Origin Direct"
+  description="Feves de cacao premium, beurre et poudre du Ghana et du Nigeria. Conforme au cadmium UE, tracabilite EUDR. Certifie Rainforest Alliance et Fairtrade. Approvisionnement B2B."
+  structuredData={[productSchema, breadcrumbSchema, faqSchema]}
+  lang="fr"
+  hreflangs={[
+    { lang: "en", href: `${siteUrl}/products/cocoa` },
+    { lang: "fr", href: `${siteUrl}/fr/produits/cacao` },
+  ]}
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumbs items={[{ label: "Produits", href: "/fr/produits" }, { label: "Cacao" }]} />
+  </div>
+
+  <section class="relative py-24 sm:py-32 bg-gradient-to-br from-earth-900 via-earth-800 to-brand-900 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(196,154,42,0.3),transparent_70%)]"></div>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-gold-light font-medium tracking-wide uppercase text-sm mb-4">Ghana et Nigeria</p>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">Cacao</h1>
+      <p class="text-xl text-brand-200 max-w-2xl mx-auto mb-10">
+        Feves fermentees, beurre naturel et desodorise, poudre de cacao et grues. Conforme au cadmium UE avec tracabilite EUDR complete.
+      </p>
+      <a href="#quote-form" class="inline-flex items-center px-8 py-4 bg-gold hover:bg-gold-dark text-white font-bold rounded-lg transition-colors shadow-lg text-lg">
+        Demander un Devis
+        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <section class="py-12 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="rounded-2xl overflow-hidden shadow-lg border border-gray-100">
+        <img src="/images/products/cocoa.jpg" alt="Feves de cacao premium du Ghana et du Nigeria" class="w-full h-64 sm:h-80 object-cover" loading="eager" />
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Apercu</h2>
+      <div class="prose prose-lg text-gray-700 space-y-5">
+        <p>
+          Le Ghana et le Nigeria representent ensemble une part significative de la production mondiale de cacao, et leurs feves sont prisees par les chocolatiers du monde entier pour leurs profils aromatiques distinctifs. Le cacao ghanaen est renomme pour sa qualite constante et sa saveur chocolatee profonde, tandis que le cacao nigerien offre un excellent rapport qualite-prix avec des caracteristiques gustatives comparables.
+        </p>
+        <p>
+          Origin Direct fournit la gamme complete de derives du cacao : feves fermentees pour la production de chocolat, beurre de cacao naturel et desodorise pour la confiserie et les cosmetiques, et poudre de cacao sous forme naturelle et alcalinisee pour la boulangerie et les boissons. Chaque lot est teste pour le cadmium (en dessous du seuil UE de 0,60 mg/kg), les mycotoxines et les residus de pesticides.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Specifications Techniques</h2>
+      <div class="overflow-x-auto rounded-xl border border-gray-200 shadow-sm">
+        <table class="w-full text-left text-sm">
+          <thead><tr class="bg-earth-800 text-white"><th class="px-6 py-4 font-semibold">Parametre</th><th class="px-6 py-4 font-semibold">Specification</th></tr></thead>
+          <tbody class="divide-y divide-gray-100">
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">Cadmium</td><td class="px-6 py-4 text-gray-700">&lt; 0,60 mg/kg (conforme UE)</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">Humidite (feves)</td><td class="px-6 py-4 text-gray-700">&lt; 7,5%</td></tr>
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">AGL (beurre)</td><td class="px-6 py-4 text-gray-700">&lt; 1,75%</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">Teneur en Coque</td><td class="px-6 py-4 text-gray-700">&lt; 5%</td></tr>
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">Mycotoxines</td><td class="px-6 py-4 text-gray-700">Conformes aux limites UE</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">Residus de Pesticides</td><td class="px-6 py-4 text-gray-700">Conformes aux LMR</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Questions Frequentes</h2>
+      <div class="space-y-4">
+        <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+          <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">Votre cacao est-il conforme au EUDR ?</summary>
+          <div class="px-6 pb-4 text-gray-700">Oui. Tout notre cacao est accompagne de donnees de geolocalisation completes pour chaque parcelle agricole, assurant une pleine conformite au Reglement de l'UE sur la Deforestation (EUDR).</div>
+        </details>
+        <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+          <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">Quels sont les niveaux de cadmium dans votre cacao ?</summary>
+          <div class="px-6 pb-4 text-gray-700">Tout notre cacao est teste en dessous du seuil UE de 0,60 mg/kg de cadmium, conforme au Reglement UE 2023/915. Les rapports de laboratoire sont fournis avec chaque expedition.</div>
+        </details>
+        <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+          <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">Quels grades de cacao fournissez-vous ?</summary>
+          <div class="px-6 pb-4 text-gray-700">Nous fournissons des feves fermentees de Grade 1 et Grade 2, du beurre de cacao naturel et desodorise, de la poudre de cacao naturelle et alcalinisee (10-12% et 20-22% de matiere grasse), et des grues de cacao.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <QuoteForm productName="Cocoa" />
+</Layout>

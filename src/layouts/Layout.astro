@@ -9,6 +9,8 @@ interface Props {
   ogImage?: string;
   ogType?: string;
   structuredData?: Record<string, any>[];
+  lang?: string;
+  hreflangs?: { lang: string; href: string }[];
 }
 
 const {
@@ -17,6 +19,8 @@ const {
   ogImage = "/og-image.jpg",
   ogType = "website",
   structuredData = [],
+  lang = "en",
+  hreflangs = [],
 } = Astro.props;
 
 const siteUrl = "https://origindirectgroup.com";
@@ -82,7 +86,7 @@ const allSchemas = [organizationSchema, webSiteSchema, ...structuredData];
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -95,6 +99,9 @@ const allSchemas = [organizationSchema, webSiteSchema, ...structuredData];
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalUrl} />
+    {hreflangs.map((hl) => (
+      <link rel="alternate" hreflang={hl.lang} href={hl.href} />
+    ))}
 
     <!-- Open Graph -->
     <meta property="og:title" content={title} />

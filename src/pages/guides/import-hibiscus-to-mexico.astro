@@ -1,0 +1,159 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import QuoteForm from '../../components/QuoteForm.astro';
+
+const defined_title = "How to Export Hibiscus to Mexico - SENASICA Guide";
+const defined_description = "Complete guide to exporting dried hibiscus flowers (flor de jamaica) to Mexico from Nigeria. SENASICA phytosanitary requirements, import permits, HS codes, and logistics.";
+
+const breadcrumbItems = [
+  { label: "Guides", href: "/guides" },
+  { label: "Export Hibiscus to Mexico" },
+];
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://origindirectgroup.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://origindirectgroup.com/guides" },
+    { "@type": "ListItem", "position": 3, "name": "Export Hibiscus to Mexico" },
+  ],
+};
+
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to Export Hibiscus to Mexico",
+  "description": "Step-by-step guide for exporting dried hibiscus flowers from West Africa to Mexico.",
+  "step": [
+    { "@type": "HowToStep", "position": 1, "name": "Find a supplier", "text": "Source dried hibiscus calyces from Nigeria or Sudan." },
+    { "@type": "HowToStep", "position": 2, "name": "Verify quality", "text": "Test for color, moisture, acidity, pesticide residues, and foreign matter." },
+    { "@type": "HowToStep", "position": 3, "name": "Agree on terms", "text": "Negotiate FOB pricing and confirm SENASICA requirements." },
+    { "@type": "HowToStep", "position": 4, "name": "Prepare documentation", "text": "Obtain phytosanitary certificate and meet SENASICA import protocol." },
+    { "@type": "HowToStep", "position": 5, "name": "Arrange shipping", "text": "Ship from Lagos to Manzanillo or Veracruz. Transit 25-35 days." },
+    { "@type": "HowToStep", "position": 6, "name": "Clear Mexican customs", "text": "Present phytosanitary certificate, pass SENASICA inspection, file pedimento." },
+    { "@type": "HowToStep", "position": 7, "name": "Receive and distribute", "text": "Inspect quality, distribute to beverage and food processing companies." },
+  ],
+};
+---
+
+<Layout title={defined_title} description={defined_description} structuredData={[breadcrumbSchema, howToSchema]}>
+  <section class="py-12 md:py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-6">
+      <Breadcrumbs items={breadcrumbItems} />
+
+      <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+        How to Export Hibiscus to Mexico - SENASICA Guide
+      </h1>
+
+      <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+        Mexico is the world's largest consumer of dried hibiscus flowers (known locally as "flor de jamaica" or simply "jamaica"), used primarily to make agua de jamaica, a popular cold beverage consumed daily across the country. While Mexico grows its own hibiscus (primarily in Guerrero, Oaxaca, and Puebla states), domestic production falls far short of demand. Mexico imports an estimated 15,000-20,000 metric tons of dried hibiscus annually, with Nigeria, Sudan, and China as the primary origins. Nigerian hibiscus is prized for its deep red color and strong tartness, making it the preferred import origin for Mexican buyers.
+      </p>
+
+      <div class="prose prose-lg max-w-none text-gray-700">
+
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Step-by-Step Export Process</h2>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Step 1: Find a Reliable Supplier</h3>
+        <p>
+          Nigeria is the world's largest producer of dried hibiscus (Hibiscus sabdariffa), with major growing regions in Jigawa, Kano, Bauchi, Gombe, and Borno states in the northern part of the country. The harvest season runs from November through February. Look for suppliers who can provide: consistent deep-red color (the "dark red" or "wine red" variety preferred by Mexican buyers), low stem-and-seed content (max 2%), and proper drying (sun-dried to below 12% moisture). Origin Direct sources hibiscus directly from farming communities in northern Nigeria, managing quality control from farm gate through containerization.
+        </p>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Step 2: Verify Quality</h3>
+        <p>
+          Mexican buyers are particular about hibiscus quality. Key parameters:
+        </p>
+        <ul>
+          <li><strong>Color</strong> - Deep wine-red. Pale or brownish hibiscus is rejected. Color fades with age, so fresh crop is preferred.</li>
+          <li><strong>Moisture</strong> - Max 12%. Ideally 10-11% for safe storage and shipping.</li>
+          <li><strong>Acidity</strong> - pH 2.5-3.0 when brewed. Higher acidity = stronger flavor = preferred.</li>
+          <li><strong>Foreign matter</strong> - Max 2% (stems, seeds, leaves, other plant material).</li>
+          <li><strong>Pesticide residues</strong> - Must comply with Mexican MRLs (based on Codex Alimentarius). Nigerian hibiscus is typically pesticide-free as it is grown without chemical inputs.</li>
+          <li><strong>Aflatoxin</strong> - Mexican authorities test for aflatoxin. Max 20 ppb total aflatoxins.</li>
+          <li><strong>Salmonella</strong> - Absent in 25g sample.</li>
+          <li><strong>Heavy metals</strong> - Lead, cadmium, arsenic within Codex limits.</li>
+        </ul>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Step 3: Agree on Commercial Terms</h3>
+        <p>
+          Pricing is per metric ton, FOB Lagos (Apapa or Tin Can Island port) or CIF Mexican port. The hibiscus market is seasonal and prices fluctuate significantly between harvest (November-February, lower prices) and off-season (June-September, higher prices). Contracts should specify: variety (dark red), crop year, moisture, foreign matter tolerance, packaging (typically pressed bales of 50-100 kg in poly-woven bags), and shipping window. Payment: L/C at sight for large orders, T/T for established relationships.
+        </p>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Step 4: Prepare Documentation</h3>
+        <p>
+          Mexico's agricultural import regulations are managed by SENASICA (Servicio Nacional de Sanidad, Inocuidad y Calidad Agroalimentaria), the national food safety and agricultural health authority. Key requirements:
+        </p>
+        <ul>
+          <li><strong>Phytosanitary Certificate</strong> - Issued by NAQS (Nigeria Agricultural Quarantine Service). Must confirm the product is free from quarantine pests.</li>
+          <li><strong>SENASICA Import Permit</strong> - The Mexican importer must obtain a phytosanitary import permit (permiso fitosanitario de importacion) from SENASICA before the shipment arrives. This specifies the conditions under which the product can enter Mexico.</li>
+          <li><strong>Certificate of Origin</strong> - Standard certificate confirming Nigerian origin.</li>
+          <li><strong>Certificate of Analysis</strong> - Lab report covering moisture, aflatoxin, pesticide residues, and microbiological safety.</li>
+          <li><strong>Commercial Invoice and Packing List</strong></li>
+          <li><strong>Bill of Lading</strong></li>
+          <li><strong>Fumigation Certificate</strong> - May be required depending on the SENASICA permit conditions.</li>
+        </ul>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Step 5: Arrange Shipping</h3>
+        <p>
+          Dried hibiscus ships in 20ft or 40ft dry containers. A 40ft container holds approximately 20-22 MT of pressed hibiscus bales. Loading port: Apapa or Tin Can Island (Lagos, Nigeria). Mexican destination ports: Port of Manzanillo (Pacific coast, the largest container port in Mexico), Port of Lazaro Cardenas (Pacific), Port of Veracruz (Gulf coast). Transit from Lagos to Manzanillo: 28-35 days (typically transshipment via a Caribbean or European hub). Lagos to Veracruz: 25-30 days. Direct services are rare; most shipments transship in ports like Algeciras (Spain), Las Palmas, or Kingston (Jamaica).
+        </p>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Step 6: Clear Mexican Customs</h3>
+        <ul>
+          <li><strong>Pedimento de Importacion</strong> - The Mexican customs entry document, filed by a licensed customs broker (agente aduanal).</li>
+          <li><strong>SENASICA Inspection</strong> - Upon arrival, SENASICA inspectors at the port examine the phytosanitary certificate and may physically inspect the shipment for pests, mold, and contamination.</li>
+          <li><strong>COFEPRIS Requirements</strong> - If the hibiscus is for human consumption (food/beverage), the Mexican importer may need a COFEPRIS (Federal Commission for the Protection against Sanitary Risk) notice or registration.</li>
+          <li><strong>Import Duty</strong> - Dried hibiscus (HS 0902.30 for certain preparations, or more commonly HS 1211.90 for dried plants for herbal infusion). Mexico's MFN duty rate varies; check with your customs broker for the current rate. Under certain trade agreements, preferential rates may apply.</li>
+          <li><strong>IVA (VAT)</strong> - 16% on the customs value. Reclaimable for registered businesses.</li>
+          <li><strong>DTA (Customs Processing Fee)</strong> - 0.8% of the customs value.</li>
+        </ul>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Step 7: Receive and Distribute</h3>
+        <p>
+          After SENASICA clearance, transport to your warehouse. Inspect for color consistency, moisture, and foreign matter. The Mexican hibiscus market is large and diverse: industrial buyers (beverage companies, food processors), wholesale markets (Central de Abasto in Mexico City is the largest), retail packaging for supermarkets, and export to the US Hispanic market. Store in cool, dry conditions; hibiscus color degrades with exposure to heat, light, and moisture.
+        </p>
+
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Key Documents Required</h2>
+        <ul>
+          <li>SENASICA Phytosanitary Import Permit (obtained by Mexican buyer)</li>
+          <li>Phytosanitary Certificate (from origin country)</li>
+          <li>Pedimento de Importacion</li>
+          <li>Certificate of Analysis</li>
+          <li>Certificate of Origin</li>
+          <li>Commercial Invoice and Packing List</li>
+          <li>Bill of Lading</li>
+          <li>Fumigation Certificate (if required by SENASICA permit)</li>
+        </ul>
+
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">HS Codes and Duty Rates</h2>
+        <ul>
+          <li><strong>0902.30.99</strong> - Hibiscus flowers for infusion (some customs brokers classify here). Check with Mexican customs.</li>
+          <li><strong>1211.90.99</strong> - Dried plants and parts of plants for herbal use. This is the more common classification for dried hibiscus calyces.</li>
+        </ul>
+        <p>
+          Classification can vary. Work closely with your Mexican customs broker (agente aduanal) to confirm the correct HS code. For the full HS code reference, see our <a href="/resources/hs-codes" class="text-brand-700 underline hover:text-brand-600">HS Code Directory</a>.
+        </p>
+
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Common Pitfalls to Watch Out For</h2>
+        <ul>
+          <li><strong>SENASICA permit not obtained in time</strong> - The Mexican importer must have the SENASICA phytosanitary import permit before the shipment arrives. Processing can take 5-15 business days. Start early.</li>
+          <li><strong>Color degradation</strong> - Hibiscus color fades during prolonged storage or transit. Ship fresh-crop product and avoid long transshipment delays. Store away from light and heat.</li>
+          <li><strong>High foreign matter</strong> - Nigerian hibiscus can contain stems, seeds, sand, and other debris if not properly cleaned. Mexican buyers reject lots with more than 2% foreign matter. Insist on proper cleaning and sorting at origin.</li>
+          <li><strong>Aflatoxin contamination</strong> - Improper drying or storage causes aflatoxin. Test before shipment, and ensure the product is stored in dry, ventilated conditions.</li>
+          <li><strong>Price competition from China</strong> - Chinese hibiscus is cheaper but generally lower quality (lighter color, less tart). Nigerian hibiscus competes on quality, not price. Emphasize the deep red color and strong flavor.</li>
+          <li><strong>Long transit times</strong> - Nigeria to Mexico is a long shipping route with transshipment. Factor in 4-5 weeks transit when planning delivery schedules.</li>
+        </ul>
+
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">How Origin Direct Makes This Easy</h2>
+        <p>
+          Origin Direct sources premium dark-red hibiscus directly from farming communities in northern Nigeria. We manage quality control from farm gate through containerization, ensuring low foreign matter, proper moisture levels, and deep color. Our team handles NAQS phytosanitary certificates, coordinates with Mexican customs brokers on SENASICA requirements, and arranges shipping to Manzanillo, Veracruz, or Lazaro Cardenas. We understand the Mexican market's quality expectations and price dynamics, helping you secure the best product at competitive prices.
+        </p>
+      </div>
+
+      <div class="mt-12">
+        <QuoteForm productName="Hibiscus" />
+      </div>
+    </div>
+  </section>
+</Layout>

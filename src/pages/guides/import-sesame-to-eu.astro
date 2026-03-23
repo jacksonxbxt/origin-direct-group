@@ -1,0 +1,160 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import QuoteForm from '../../components/QuoteForm.astro';
+
+const defined_title = "How to Import Sesame Seeds to the EU";
+const defined_description = "Complete guide to importing sesame seeds to the European Union. EU food safety requirements, Salmonella and ethylene oxide controls, HS codes, and logistics from Nigeria and India.";
+
+const breadcrumbItems = [
+  { label: "Guides", href: "/guides" },
+  { label: "Import Sesame to EU" },
+];
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://origindirectgroup.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://origindirectgroup.com/guides" },
+    { "@type": "ListItem", "position": 3, "name": "Import Sesame to EU" },
+  ],
+};
+
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to Import Sesame Seeds to the EU",
+  "description": "Step-by-step guide for importing sesame seeds into the European Union.",
+  "step": [
+    { "@type": "HowToStep", "position": 1, "name": "Find a supplier", "text": "Source sesame from Nigeria, India, Ethiopia, or Sudan." },
+    { "@type": "HowToStep", "position": 2, "name": "Request samples", "text": "Test for Salmonella, ethylene oxide, pesticides, aflatoxin, and quality parameters." },
+    { "@type": "HowToStep", "position": 3, "name": "Agree on terms", "text": "Negotiate pricing, grade, and EU compliance requirements." },
+    { "@type": "HowToStep", "position": 4, "name": "Prepare documentation", "text": "Obtain phytosanitary certificate, EUR.1, analytical certificates." },
+    { "@type": "HowToStep", "position": 5, "name": "Arrange shipping", "text": "Ship to Rotterdam, Hamburg, or Antwerp. Transit varies by origin." },
+    { "@type": "HowToStep", "position": 6, "name": "Clear EU customs", "text": "File CHED-PP, pass increased border controls for sesame, present compliance documents." },
+    { "@type": "HowToStep", "position": 7, "name": "Receive and distribute", "text": "Inspect quality, distribute to bakeries, tahini producers, and food manufacturers." },
+  ],
+};
+---
+
+<Layout title={defined_title} description={defined_description} structuredData={[breadcrumbSchema, howToSchema]}>
+  <section class="py-12 md:py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-6">
+      <Breadcrumbs items={breadcrumbItems} />
+
+      <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+        How to Import Sesame Seeds to the EU
+      </h1>
+
+      <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+        The European Union imports approximately 200,000 metric tons of sesame seeds annually for use in bakery products, tahini, halva, confectionery, and as a cooking ingredient. The Netherlands, Germany, and Greece are the largest EU importers. However, sesame imports to the EU face some of the strictest food safety controls of any commodity, driven by multiple recalls for Salmonella and ethylene oxide contamination since 2020. This guide covers the complete process, with a focus on meeting these stringent requirements.
+      </p>
+
+      <div class="prose prose-lg max-w-none text-gray-700">
+
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Step-by-Step Import Process</h2>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Step 1: Find a Reliable Supplier</h3>
+        <p>
+          Major sesame origins for the EU market include India (the largest global exporter), Nigeria, Ethiopia, Sudan, and Tanzania. Indian hulled sesame (from Gujarat and Rajasthan) dominates the EU bakery segment. Nigerian natural (unhulled) white sesame is used for tahini and oil production. For the EU market, supplier selection is critical because of the enhanced border controls. Work with suppliers who have: established EU export track records, BRC/IFS/FSSC 22000 certified facilities, in-house lab testing for Salmonella and ethylene oxide, and full traceability systems. Origin Direct sources from both Nigerian and Indian exporters with proven EU compliance track records.
+        </p>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Step 2: Request Samples and Test Rigorously</h3>
+        <p>
+          EU sesame requirements are exceptionally strict:
+        </p>
+        <ul>
+          <li><strong>Salmonella</strong> - Absent in 25g, tested on 5 samples (n=5, c=0). This is the primary concern for EU sesame imports. Sesame has been the source of major EU recalls.</li>
+          <li><strong>Ethylene oxide</strong> - Not detectable at 0.02 mg/kg. Since 2020, India-origin sesame has been subject to intensive EU border controls for ethylene oxide residues. EU Implementing Regulation 2019/1793 (Annex II) requires 50% of Indian sesame shipments to be tested at the EU border.</li>
+          <li><strong>Aflatoxin B1</strong> - Max 2 mcg/kg. Total aflatoxins: max 4 mcg/kg.</li>
+          <li><strong>Pesticide MRLs</strong> - Must comply with EU Reg. 396/2005. Pay attention to chlorpyrifos (EU limit: 0.01 mg/kg).</li>
+          <li><strong>Oil content</strong> - Min 48% for tahini-grade, 50%+ preferred.</li>
+          <li><strong>Purity</strong> - Min 99.5% for hulled, 99% for natural.</li>
+          <li><strong>Moisture</strong> - Max 6%.</li>
+          <li><strong>Heavy metals</strong> - Lead, cadmium within EU limits.</li>
+        </ul>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Step 3: Agree on Commercial Terms</h3>
+        <p>
+          Pricing per MT, FOB origin or CIF EU port. Indian hulled sesame and Nigerian natural sesame have different price points. Payment: L/C at sight for first orders. Contracts must include food safety compliance clauses with clear remedies for non-compliant shipments (particularly Salmonella and ethylene oxide). Specify: hulled vs natural, color, oil content, purity, packaging (25 kg or 50 kg PP bags, or 1 MT bulk bags), and any certifications (organic, BRC/IFS). The EU market increasingly requires sustainability documentation.
+        </p>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Step 4: Supplier Prepares Documentation</h3>
+        <ul>
+          <li><strong>Phytosanitary Certificate</strong></li>
+          <li><strong>EUR.1 Movement Certificate</strong> - For 0% duty under EU-ECOWAS EPA (Nigeria) or EU-GSP (India).</li>
+          <li><strong>Certificate of Analysis</strong> - From ISO 17025 accredited lab covering Salmonella, ethylene oxide, aflatoxin, pesticide residues, oil content, and moisture.</li>
+          <li><strong>Ethylene Oxide Test Certificate</strong> - Separate, dedicated test report specifically for ethylene oxide and 2-chloroethanol (2-CE). This is critical for Indian-origin sesame.</li>
+          <li><strong>Commercial Invoice and Packing List</strong></li>
+          <li><strong>Bill of Lading</strong></li>
+          <li><strong>Fumigation Certificate</strong></li>
+          <li><strong>Food Safety Certification</strong> - BRC, IFS, or FSSC 22000 of the processing/packing facility.</li>
+        </ul>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Step 5: Arrange Shipping</h3>
+        <p>
+          Sesame ships in 20ft containers (20-22 MT). Loading ports: Kandla/Mundra (India), Apapa (Nigeria), Port Sudan (Sudan). EU ports: Rotterdam, Hamburg, Antwerp, Piraeus (Greece). Transit: India to Rotterdam 18-22 days, Nigeria to Rotterdam 12-14 days, Sudan to Rotterdam 14-18 days. Containers must be clean, dry, and free of previous cargo residues. Use food-grade container liners for bulk shipments.
+        </p>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Step 6: Clear EU Customs</h3>
+        <ul>
+          <li><strong>CHED-PP (Common Health Entry Document)</strong> - Filed via TRACES before arrival. Required for all sesame seed imports.</li>
+          <li><strong>Increased Border Controls</strong> - Under EU Reg. 2019/1793 (Annex II), sesame from India is subject to 50% documentary and physical/identity checks at the EU border for ethylene oxide. Sesame from other origins may face 10-20% sampling rates for Salmonella and aflatoxin.</li>
+          <li><strong>Border Control Post (BCP)</strong> - Sesame must enter through a designated BCP where sampling and testing occur.</li>
+          <li><strong>Laboratory Analysis at Border</strong> - If your shipment is selected for testing, samples are sent to an accredited lab. Results take 3-7 working days. The shipment is held at the BCP until results are confirmed. If ethylene oxide or Salmonella is detected, the entire shipment is rejected and must be destroyed or re-exported.</li>
+          <li><strong>Customs Declaration</strong> - Filed electronically with supporting documents.</li>
+          <li><strong>Import Duty</strong> - Sesame seeds (HS 1207 40 90): 0% MFN. No duty regardless of origin.</li>
+          <li><strong>Import VAT</strong> - At destination country rate, reclaimable.</li>
+        </ul>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Step 7: Receive and Distribute</h3>
+        <p>
+          After BCP release, transport to your warehouse. Re-test at your own lab as a precaution. EU distribution channels: industrial bakeries (largest volume), tahini and halva producers, health food companies, bulk ingredient distributors, and retail packaging. Sesame is one of the 14 EU allergens and must be declared on all food labels where present.
+        </p>
+
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Key Documents Required</h2>
+        <ul>
+          <li>EORI Number</li>
+          <li>CHED-PP (via TRACES)</li>
+          <li>Customs Declaration</li>
+          <li>EUR.1 or Certificate of Origin</li>
+          <li>Phytosanitary Certificate</li>
+          <li>Certificate of Analysis (comprehensive)</li>
+          <li>Ethylene Oxide Test Report</li>
+          <li>Commercial Invoice and Packing List</li>
+          <li>Bill of Lading</li>
+          <li>Food Safety Certification (BRC/IFS)</li>
+        </ul>
+
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">HS Codes and Duty Rates</h2>
+        <ul>
+          <li><strong>1207 40 90</strong> - Sesame seeds, whether or not broken. EU MFN Duty: 0%.</li>
+          <li><strong>1208 90 00</strong> - Sesame seed flour/meal. EU MFN Duty: 0%.</li>
+        </ul>
+        <p>
+          For the full HS code reference, see our <a href="/resources/hs-codes" class="text-brand-700 underline hover:text-brand-600">HS Code Directory</a>.
+        </p>
+
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Common Pitfalls to Watch Out For</h2>
+        <ul>
+          <li><strong>Ethylene oxide rejection</strong> - The single biggest risk for Indian-origin sesame. One detection = entire shipment rejected + RASFF notification that triggers enhanced scrutiny on future shipments. Only source from suppliers who can guarantee ethylene-oxide-free product with accredited test reports.</li>
+          <li><strong>Salmonella contamination</strong> - Sesame is a high-risk product for Salmonella. Ensure proper roasting, processing, and handling. Some EU buyers require a validated kill step.</li>
+          <li><strong>RASFF notifications</strong> - Every border rejection is published on RASFF with the importer's name and the supplier's details. This damages reputation and increases scrutiny on future shipments from the same origin.</li>
+          <li><strong>BCP delays</strong> - If your shipment is selected for lab testing at the BCP, expect 3-7 days delay plus storage costs. Budget for this in your logistics planning.</li>
+          <li><strong>Allergen cross-contamination</strong> - Sesame processed in facilities that also handle tree nuts, peanuts, or gluten can cause issues for EU food manufacturers who need allergen-controlled ingredients.</li>
+          <li><strong>Organic certification gaps</strong> - EU organic regulation requires an unbroken chain of organic certification from farm to importer. Any gap invalidates the organic claim.</li>
+        </ul>
+
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">How Origin Direct Makes This Easy</h2>
+        <p>
+          Origin Direct sources sesame seeds from Nigeria and India with a focus on EU food safety compliance. We work with suppliers who maintain in-house Salmonella and ethylene oxide testing programs, ensuring every shipment meets EU limits before it leaves the origin. Our quality control includes pre-shipment sampling and accredited lab analysis covering all EU-regulated parameters. We prepare complete documentation packages including CHED-PP-ready data, and coordinate with EU customs brokers experienced in sesame imports. Our Nigerian sesame offers an advantage for EU importers: unlike Indian sesame, Nigerian origin does not face the enhanced 50% ethylene oxide testing regime.
+        </p>
+      </div>
+
+      <div class="mt-12">
+        <QuoteForm productName="Sesame Seeds" />
+      </div>
+    </div>
+  </section>
+</Layout>

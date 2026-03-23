@@ -1,0 +1,151 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import QuoteForm from '../../../components/QuoteForm.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+
+const siteUrl = "https://origindirectgroup.com";
+
+const productSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name: "Fleurs d'Hibiscus Sechees",
+  description: "Fleurs d'hibiscus sechees premium du Nigeria, premier producteur mondial. Grade A rouge fonce, fleurs entieres et coupees. Conforme NAQS-SENASICA.",
+  image: `${siteUrl}/images/products/hibiscus.jpg`,
+  brand: { "@type": "Brand", name: "Origin Direct Group" },
+  category: "Fleurs Sechees et Ingredients a Base de Plantes",
+  countryOfOrigin: { "@type": "Country", name: "Nigeria" },
+  offers: { "@type": "AggregateOffer", priceCurrency: "USD", availability: "https://schema.org/InStock" },
+  additionalProperty: [
+    { "@type": "PropertyValue", name: "Code SH", value: "0902.10 / 1211.90" },
+    { "@type": "PropertyValue", name: "QMC", value: "1 FCL (jusqu'a 22 TM)" },
+    { "@type": "PropertyValue", name: "Humidite", value: "< 11%" },
+  ],
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Accueil", item: `${siteUrl}/fr/` },
+    { "@type": "ListItem", position: 2, name: "Produits", item: `${siteUrl}/fr/produits` },
+    { "@type": "ListItem", position: 3, name: "Hibiscus", item: `${siteUrl}/fr/produits/hibiscus` },
+  ],
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Le Nigeria est-il le premier producteur mondial d'hibiscus ?",
+      acceptedAnswer: { "@type": "Answer", text: "Oui. Le Nigeria est le premier producteur et exportateur mondial de fleurs d'hibiscus sechees (Roselle/Hibiscus sabdariffa). L'hibiscus nigerien fournit 85% des importations du Mexique pour l'agua de jamaica, ainsi que des volumes importants vers l'Allemagne, l'Egypte et les Etats-Unis." },
+    },
+    {
+      "@type": "Question",
+      name: "Quelles sont les specifications de qualite de votre hibiscus ?",
+      acceptedAnswer: { "@type": "Answer", text: "Nos fleurs d'hibiscus sechees respectent : humidite inferieure a 11%, corps etrangers inferieurs a 1%, couleur rouge fonce/bordeaux, pH 2,5-3,5, aucune coloration artificielle, residus de pesticides conformes aux LMR. Disponible en fleurs entieres, coupees et tamisees, ou en poudre." },
+    },
+    {
+      "@type": "Question",
+      name: "A quoi sert l'hibiscus seche ?",
+      acceptedAnswer: { "@type": "Answer", text: "L'hibiscus seche est utilise dans le monde entier pour les boissons (bissap en Afrique de l'Ouest, karkade au Moyen-Orient, agua de jamaica au Mexique), les melanges de the, les colorants alimentaires naturels (E163), les complements alimentaires (riche en vitamine C et antioxydants) et les extraits cosmetiques." },
+    },
+  ],
+};
+---
+
+<Layout
+  title="Fleurs d'Hibiscus Sechees - Premier Exportateur du Nigeria | Origin Direct"
+  description="Fleurs d'hibiscus sechees premium du Nigeria, premier producteur mondial. Grade A rouge fonce. Pour boissons, the, colorants alimentaires. Prix B2B competitifs."
+  structuredData={[productSchema, breadcrumbSchema, faqSchema]}
+  lang="fr"
+  hreflangs={[
+    { lang: "en", href: `${siteUrl}/products/hibiscus` },
+    { lang: "fr", href: `${siteUrl}/fr/produits/hibiscus` },
+  ]}
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumbs items={[{ label: "Produits", href: "/fr/produits" }, { label: "Hibiscus" }]} />
+  </div>
+
+  <section class="relative py-24 sm:py-32 bg-gradient-to-br from-red-900 via-brand-800 to-brand-900 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(196,154,42,0.3),transparent_70%)]"></div>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-gold-light font-medium tracking-wide uppercase text-sm mb-4">Nigeria</p>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">Hibiscus Seche</h1>
+      <p class="text-xl text-brand-200 max-w-2xl mx-auto mb-10">
+        Fleurs d'hibiscus sechees au soleil pour les boissons, les melanges de the et les colorants alimentaires naturels. Du premier producteur mondial.
+      </p>
+      <a href="#quote-form" class="inline-flex items-center px-8 py-4 bg-gold hover:bg-gold-dark text-white font-bold rounded-lg transition-colors shadow-lg text-lg">
+        Demander un Devis
+        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <section class="py-12 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="rounded-2xl overflow-hidden shadow-lg border border-gray-100">
+        <img src="/images/products/hibiscus.jpg" alt="Fleurs d'hibiscus sechees premium du Nigeria" class="w-full h-64 sm:h-80 object-cover" loading="eager" />
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Apercu</h2>
+      <div class="prose prose-lg text-gray-700 space-y-5">
+        <p>
+          Le Nigeria est le premier producteur et exportateur mondial de fleurs d'hibiscus sechees (Hibiscus sabdariffa), connues sous le nom de bissap en Afrique francophone, karkade au Moyen-Orient et agua de jamaica au Mexique. La demande mondiale est en forte croissance, portee par l'interet pour les boissons naturelles, les colorants alimentaires bio et les complements riches en antioxydants.
+        </p>
+        <p>
+          Origin Direct s'approvisionne directement aupres des producteurs des zones de savane du nord du Nigeria, ou les conditions climatiques sont ideales pour produire des fleurs a la couleur rouge profond et a l'acidite elevee que les acheteurs exigent. Notre chaine d'approvisionnement garantit une teneur en humidite inferieure a 11%, des corps etrangers negligeables et un traitement conforme aux normes phytosanitaires internationales.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Specifications Techniques</h2>
+      <div class="overflow-x-auto rounded-xl border border-gray-200 shadow-sm">
+        <table class="w-full text-left text-sm">
+          <thead><tr class="bg-brand-800 text-white"><th class="px-6 py-4 font-semibold">Parametre</th><th class="px-6 py-4 font-semibold">Specification</th></tr></thead>
+          <tbody class="divide-y divide-gray-100">
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">Humidite</td><td class="px-6 py-4 text-gray-700">&lt; 11%</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">Corps Etrangers</td><td class="px-6 py-4 text-gray-700">&lt; 1%</td></tr>
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">Couleur</td><td class="px-6 py-4 text-gray-700">Rouge fonce / bordeaux</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">pH</td><td class="px-6 py-4 text-gray-700">2,5 - 3,5</td></tr>
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">Coloration Artificielle</td><td class="px-6 py-4 text-gray-700">Aucune</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">Residus de Pesticides</td><td class="px-6 py-4 text-gray-700">Conformes aux LMR</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Questions Frequentes</h2>
+      <div class="space-y-4">
+        <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+          <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">Le Nigeria est-il le premier producteur mondial ?</summary>
+          <div class="px-6 pb-4 text-gray-700">Oui. Le Nigeria est le premier producteur et exportateur mondial d'hibiscus seche. Il fournit 85% des importations du Mexique pour l'agua de jamaica.</div>
+        </details>
+        <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+          <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">Quelles sont vos specifications de qualite ?</summary>
+          <div class="px-6 pb-4 text-gray-700">Humidite < 11%, corps etrangers < 1%, couleur rouge fonce, pH 2,5-3,5, sans colorant artificiel. Disponible en fleurs entieres, coupees et tamisees, ou en poudre.</div>
+        </details>
+        <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+          <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">A quoi sert l'hibiscus seche ?</summary>
+          <div class="px-6 pb-4 text-gray-700">Boissons (bissap, karkade, agua de jamaica), melanges de the, colorants alimentaires naturels (E163), complements alimentaires et extraits cosmetiques.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <QuoteForm productName="Hibiscus" />
+</Layout>

@@ -1,0 +1,151 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import QuoteForm from '../../../components/QuoteForm.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+
+const siteUrl = "https://origindirectgroup.com";
+
+const productSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name: "Poudre de Moringa Bio",
+  description: "Poudre de moringa certifiee USDA et EU Organic du Ghana et du Nigeria. 25-30% de proteines, grade pharmaceutique disponible.",
+  image: `${siteUrl}/images/products/moringa.jpg`,
+  brand: { "@type": "Brand", name: "Origin Direct Group" },
+  category: "Superaliments et Complements",
+  countryOfOrigin: { "@type": "Country", name: "Ghana" },
+  offers: { "@type": "AggregateOffer", priceCurrency: "USD", availability: "https://schema.org/InStock" },
+  additionalProperty: [
+    { "@type": "PropertyValue", name: "Code SH", value: "1211.90" },
+    { "@type": "PropertyValue", name: "QMC", value: "1 TM (conventionnel), 500 kg (bio)" },
+    { "@type": "PropertyValue", name: "Proteines", value: "25-30%" },
+  ],
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Accueil", item: `${siteUrl}/fr/` },
+    { "@type": "ListItem", position: 2, name: "Produits", item: `${siteUrl}/fr/produits` },
+    { "@type": "ListItem", position: 3, name: "Moringa", item: `${siteUrl}/fr/produits/moringa` },
+  ],
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "La poudre de moringa est-elle autorisee a la vente dans l'UE ?",
+      acceptedAnswer: { "@type": "Answer", text: "La poudre de feuilles de Moringa oleifera n'est PAS classee comme Novel Food dans l'UE, ce qui signifie qu'elle peut etre vendue librement sans autorisation speciale. Cependant, Moringa stenopetala EST restreint. Nous ne fournissons que du Moringa oleifera." },
+    },
+    {
+      "@type": "Question",
+      name: "Quelles sont les specifications de qualite de votre moringa ?",
+      acceptedAnswer: { "@type": "Answer", text: "Proteines 25-30%, fer 25-30 mg/100g, calcium 2 000+ mg/100g, plomb < 0,3 mg/kg, cadmium < 0,2 mg/kg, denombrement total < 10 000 UFC/g, E. coli absent, Salmonella absente par 25g. Granulometrie 80-100 mesh." },
+    },
+    {
+      "@type": "Question",
+      name: "Votre moringa est-il certifie biologique ?",
+      acceptedAnswer: { "@type": "Answer", text: "Oui. Nous proposons de la poudre de moringa certifiee USDA Organic et EU Organic. Nos installations detiennent les certifications HACCP et GMP. Les documents de certification sont fournis avec chaque expedition." },
+    },
+  ],
+};
+---
+
+<Layout
+  title="Poudre de Moringa Bio - Ghana et Nigeria | Origin Direct"
+  description="Poudre de moringa certifiee USDA et EU Organic du Ghana et du Nigeria. 25-30% de proteines. Grade pharmaceutique disponible. Prix B2B competitifs."
+  structuredData={[productSchema, breadcrumbSchema, faqSchema]}
+  lang="fr"
+  hreflangs={[
+    { lang: "en", href: `${siteUrl}/products/moringa` },
+    { lang: "fr", href: `${siteUrl}/fr/produits/moringa` },
+  ]}
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumbs items={[{ label: "Produits", href: "/fr/produits" }, { label: "Moringa" }]} />
+  </div>
+
+  <section class="relative py-24 sm:py-32 bg-gradient-to-br from-green-900 via-brand-800 to-brand-900 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(196,154,42,0.3),transparent_70%)]"></div>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-gold-light font-medium tracking-wide uppercase text-sm mb-4">Ghana et Nigeria</p>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">Poudre de Moringa</h1>
+      <p class="text-xl text-brand-200 max-w-2xl mx-auto mb-10">
+        Poudre de feuilles de moringa certifiee biologique pour les marches des aliments sante, supplements et cosmetiques.
+      </p>
+      <a href="#quote-form" class="inline-flex items-center px-8 py-4 bg-gold hover:bg-gold-dark text-white font-bold rounded-lg transition-colors shadow-lg text-lg">
+        Demander un Devis
+        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <section class="py-12 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="rounded-2xl overflow-hidden shadow-lg border border-gray-100">
+        <img src="/images/products/moringa.jpg" alt="Poudre de moringa bio du Ghana et du Nigeria" class="w-full h-64 sm:h-80 object-cover" loading="eager" />
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Apercu</h2>
+      <div class="prose prose-lg text-gray-700 space-y-5">
+        <p>
+          Le moringa (Moringa oleifera) est l'un des superaliments a la croissance la plus rapide au monde, avec un marche global en pleine expansion porte par la demande en complements alimentaires, aliments fonctionnels et ingredients cosmetiques naturels. Les feuilles de moringa contiennent 25-30% de proteines, 7 fois plus de vitamine C que les oranges et 4 fois plus de calcium que le lait.
+        </p>
+        <p>
+          Origin Direct s'approvisionne en moringa aupres de plantations certifiees au Ghana et au Nigeria, ou les conditions tropicales permettent une production toute l'annee. Chaque lot est teste en laboratoire pour les metaux lourds, la charge microbienne et les salmonelles. Nous proposons de la poudre conventionnelle, certifiee biologique (USDA et EU Organic) et de grade pharmaceutique, conditionnee sous vide dans des sacs alimentaires de 5, 10 ou 25 kg.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Specifications Techniques</h2>
+      <div class="overflow-x-auto rounded-xl border border-gray-200 shadow-sm">
+        <table class="w-full text-left text-sm">
+          <thead><tr class="bg-brand-800 text-white"><th class="px-6 py-4 font-semibold">Parametre</th><th class="px-6 py-4 font-semibold">Specification</th></tr></thead>
+          <tbody class="divide-y divide-gray-100">
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">Proteines</td><td class="px-6 py-4 text-gray-700">25-30%</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">Fer</td><td class="px-6 py-4 text-gray-700">25-30 mg/100g</td></tr>
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">Calcium</td><td class="px-6 py-4 text-gray-700">2 000+ mg/100g</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">Plomb</td><td class="px-6 py-4 text-gray-700">&lt; 0,3 mg/kg</td></tr>
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">Granulometrie</td><td class="px-6 py-4 text-gray-700">80-100 mesh</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">Salmonella</td><td class="px-6 py-4 text-gray-700">Absente / 25g</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Questions Frequentes</h2>
+      <div class="space-y-4">
+        <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+          <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">Le moringa est-il autorise dans l'UE ?</summary>
+          <div class="px-6 pb-4 text-gray-700">La poudre de feuilles de Moringa oleifera n'est pas classee Novel Food dans l'UE et peut etre vendue librement. Attention : Moringa stenopetala est restreint. Nous fournissons exclusivement du Moringa oleifera.</div>
+        </details>
+        <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+          <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">Votre moringa est-il certifie bio ?</summary>
+          <div class="px-6 pb-4 text-gray-700">Oui. Certifie USDA Organic et EU Organic. Installations HACCP et GMP. Documents de certification fournis avec chaque expedition.</div>
+        </details>
+        <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+          <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">Quelle est la quantite minimale de commande ?</summary>
+          <div class="px-6 pb-4 text-gray-700">A partir de 1 TM pour le conventionnel et 500 kg pour le bio. Conditionnement en sacs de 5, 10 ou 25 kg sous vide. Etiquetage personnalise a partir de 5 TM.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <QuoteForm productName="Moringa" />
+</Layout>

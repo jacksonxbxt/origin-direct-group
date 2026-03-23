@@ -1,0 +1,111 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import QuoteForm from '../../../components/QuoteForm.astro';
+
+const siteUrl = "https://origindirectgroup.com";
+
+const markets = [
+  {
+    region: "Europe",
+    slug: "europe",
+    featured: ["France", "Belgique", "Pays-Bas", "Allemagne", "Royaume-Uni", "Italie", "Espagne", "Portugal", "Pologne", "Republique Tcheque", "Autriche", "Suisse", "Suede", "Danemark"],
+    moreCountries: ["Norvege", "Finlande", "Irlande", "Grece", "Roumanie", "Hongrie", "Slovenie", "Croatie", "Slovaquie", "Bulgarie", "Lituanie", "Lettonie", "Estonie"],
+    commodities: ["Cacao", "Beurre de karite", "Sesame", "Cajou", "Moringa"],
+    description: "L'Europe represente 40% de nos exportations. Nous maitrisons la conformite UE : EUDR, limites de cadmium, reglementations Novel Food et exigences phytosanitaires.",
+  },
+  {
+    region: "Ameriques",
+    slug: "ameriques",
+    featured: ["USA", "Canada", "Mexique", "Bresil", "Argentine", "Colombie", "Chili", "Perou", "Equateur", "Republique Dominicaine", "Jamaique", "Trinite-et-Tobago"],
+    moreCountries: ["Barbade", "Suriname", "Guyana", "Costa Rica", "Panama", "Guatemala", "Honduras", "Uruguay", "Paraguay", "Bolivie"],
+    commodities: ["Hibiscus", "Cacao", "Cajou", "Gingembre", "Moringa"],
+    description: "De l'hibiscus pour l'agua de jamaica du Mexique au gingembre pour les Caraibes, nous servons les Ameriques avec des prix directs competitifs.",
+  },
+  {
+    region: "Afrique et Moyen-Orient",
+    slug: "afrique-moyen-orient",
+    featured: ["EAU", "Arabie Saoudite", "Qatar", "Koweit", "Bahrein", "Oman", "Jordanie", "Liban", "Turquie", "Egypte", "Afrique du Sud", "Kenya"],
+    moreCountries: ["Tanzanie", "Maroc", "Tunisie", "Senegal", "Cote d'Ivoire"],
+    commodities: ["Charbon chicha", "Graines de sesame", "Hibiscus (karkade)", "Beurre de karite"],
+    description: "Le Moyen-Orient et l'Afrique sont notre marche a la croissance la plus rapide. Charbon chicha premium, sesame grade tahini et beurre de karite cosmetique.",
+  },
+];
+---
+
+<Layout
+  title="Marches que Nous Servons | Origin Direct Group"
+  description="Origin Direct Group livre des matieres premieres dans le monde entier : Europe, Ameriques, Moyen-Orient et Afrique. Approvisionnement direct depuis l'Afrique de l'Ouest et l'Inde."
+  lang="fr"
+  hreflangs={[
+    { lang: "en", href: `${siteUrl}/markets` },
+    { lang: "fr", href: `${siteUrl}/fr/marches` },
+  ]}
+>
+  <section class="relative py-20 md:py-28 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-green-950 via-green-900 to-amber-950"></div>
+    <div class="absolute inset-0 bg-black/20"></div>
+    <div class="relative z-10 max-w-3xl mx-auto px-6 text-center">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight mb-6">
+        Nous Livrons dans Plus de 150 Pays
+      </h1>
+      <p class="text-lg md:text-xl text-green-100/90 max-w-2xl mx-auto leading-relaxed">
+        D'Afrique de l'Ouest et d'Inde vers des acheteurs sur tous les continents. Ou que soit votre entreprise, nous livrons avec toute la documentation de conformite.
+      </p>
+    </div>
+    <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white to-transparent"></div>
+  </section>
+
+  <section class="py-20 md:py-28 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="space-y-8">
+        {markets.map((market) => (
+          <a
+            href={`/fr/marches/${market.slug}`}
+            class="group block bg-white rounded-2xl border border-gray-100 hover:border-green-200 hover:shadow-xl transition-all duration-300 overflow-hidden"
+          >
+            <div class="p-8 lg:p-10">
+              <div class="flex flex-col gap-6">
+                <div>
+                  <h2 class="text-2xl md:text-3xl font-bold text-gray-900 group-hover:text-green-700 transition-colors mb-3">{market.region}</h2>
+                  <p class="text-gray-600 leading-relaxed max-w-3xl">{market.description}</p>
+                </div>
+                <div>
+                  <h4 class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">Pays Desservis</h4>
+                  <div class="flex flex-wrap gap-2 mb-2">
+                    {market.featured.map((country: string) => (
+                      <span class="inline-flex items-center px-3 py-1.5 bg-gray-50 text-gray-700 text-sm font-medium rounded-full border border-gray-200">{country}</span>
+                    ))}
+                    <span class="inline-flex items-center px-3 py-1.5 bg-green-50 text-green-700 text-sm font-semibold rounded-full border border-green-200">
+                      + {market.moreCountries.length} autres
+                    </span>
+                  </div>
+                </div>
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-2 border-t border-gray-100">
+                  <div class="flex flex-wrap gap-2">
+                    {market.commodities.map((commodity: string) => (
+                      <span class="inline-flex items-center px-3 py-1 bg-green-50 text-green-800 text-sm font-medium rounded-full border border-green-100">{commodity}</span>
+                    ))}
+                  </div>
+                  <div class="flex items-center gap-2 text-green-700 font-semibold text-sm group-hover:gap-3 transition-all flex-shrink-0">
+                    Voir les Details
+                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 md:py-28 bg-green-950">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Livraison vers votre marche ?</h2>
+        <p class="text-lg text-green-200/80 max-w-xl mx-auto">Indiquez-nous votre destination et vos besoins en produits. Nous nous occupons du reste.</p>
+      </div>
+      <QuoteForm />
+    </div>
+  </section>
+</Layout>

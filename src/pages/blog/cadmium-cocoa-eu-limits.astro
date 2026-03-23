@@ -1,0 +1,260 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: "Cadmium in Cocoa: Understanding EU Limits and How to Comply",
+  description: "Complete guide to EU cadmium limits in cocoa products under Regulation 2023/915. Origins, testing requirements, reduction techniques, and compliance strategies for importers.",
+  author: { "@type": "Organization", name: "Origin Direct Group" },
+  publisher: { "@type": "Organization", name: "Origin Direct Group", logo: { "@type": "ImageObject", url: "https://origindirectgroup.com/logo.png" } },
+  datePublished: "2026-03-23",
+  dateModified: "2026-03-23",
+  mainEntityOfPage: "https://origindirectgroup.com/blog/cadmium-cocoa-eu-limits",
+  image: "https://origindirectgroup.com/images/blog/cadmium-cocoa.jpg",
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://origindirectgroup.com/" },
+    { "@type": "ListItem", position: 2, name: "Blog", item: "https://origindirectgroup.com/blog" },
+    { "@type": "ListItem", position: 3, name: "Cadmium in Cocoa: EU Limits", item: "https://origindirectgroup.com/blog/cadmium-cocoa-eu-limits" },
+  ],
+};
+---
+
+<Layout
+  title="Cadmium in Cocoa: Understanding EU Limits and How to Comply | Origin Direct Group"
+  description="Complete guide to EU cadmium limits in cocoa products under Regulation 2023/915. Origins, testing requirements, reduction techniques, and compliance strategies for importers."
+  structuredData={[articleSchema, breadcrumbSchema]}
+>
+  <!-- Breadcrumbs -->
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <nav class="flex text-sm text-gray-500">
+      <a href="/" class="hover:text-brand-700">Home</a>
+      <span class="mx-2">/</span>
+      <a href="/blog" class="hover:text-brand-700">Blog</a>
+      <span class="mx-2">/</span>
+      <span class="text-gray-900">Cadmium in Cocoa: EU Limits</span>
+    </nav>
+  </div>
+
+  <!-- Hero -->
+  <section class="relative py-20 sm:py-28 bg-gradient-to-br from-brand-900 via-brand-800 to-earth-800 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(196,154,42,0.3),transparent_70%)]"></div>
+    </div>
+    <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <span class="inline-block px-4 py-1.5 bg-amber-500/20 text-amber-300 text-sm font-semibold rounded-full mb-6 border border-amber-500/30">Compliance</span>
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">Cadmium in Cocoa: Understanding EU Limits and How to Comply</h1>
+      <p class="text-lg text-brand-200 max-w-2xl mx-auto">
+        What every cocoa buyer needs to know about EU Regulation 2023/915, cadmium testing, and how to ensure your cocoa meets European standards.
+      </p>
+      <div class="mt-6 flex items-center justify-center gap-4 text-sm text-brand-300">
+        <span>March 23, 2026</span>
+        <span class="w-1 h-1 rounded-full bg-brand-500"></span>
+        <span>11 min read</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Article Content -->
+  <article class="py-16 md:py-20 bg-white">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="prose prose-lg text-gray-700 max-w-none">
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">What Is Cadmium and Why Is It in Cocoa?</h2>
+        <p>
+          Cadmium is a naturally occurring heavy metal found in soils worldwide. It enters the food chain primarily through plant uptake from the soil, and cocoa trees (Theobroma cacao) are particularly efficient at absorbing cadmium through their root systems. The cadmium accumulates in the cocoa beans, making it impossible to wash off or remove through simple processing.
+        </p>
+        <p>
+          Cadmium levels in cocoa depend primarily on three factors: the natural cadmium content of the soil, the pH level of the soil (more acidic soils increase cadmium uptake), and the use of phosphate fertilizers, which can contain cadmium as a contaminant. Volcanic soils in parts of Latin America tend to have higher natural cadmium levels, which is why cocoa from countries like Ecuador, Colombia, and Peru often tests higher than West African cocoa.
+        </p>
+        <p>
+          The health concern with cadmium is long-term accumulation. Cadmium has a biological half-life of 10 to 30 years in the human body, meaning it builds up over time. Chronic exposure is linked to kidney damage, bone loss, and is classified as a Group 1 carcinogen by the International Agency for Research on Cancer (IARC).
+        </p>
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">EU Regulation 2023/915: The Legal Framework</h2>
+        <p>
+          The European Union introduced maximum cadmium levels for cocoa and chocolate products through Regulation (EU) 2023/915, which consolidated and updated previous contaminant regulations. These limits have been enforced since January 1, 2019, and apply to all cocoa and chocolate products placed on the EU market.
+        </p>
+
+        <div class="overflow-x-auto rounded-xl border border-gray-200 shadow-sm my-8">
+          <table class="w-full text-left text-sm">
+            <thead>
+              <tr class="bg-brand-800 text-white">
+                <th class="px-6 py-4 font-semibold">Product Category</th>
+                <th class="px-6 py-4 font-semibold">Maximum Cadmium (mg/kg)</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100">
+              <tr class="bg-white">
+                <td class="px-6 py-3 font-medium text-gray-900">Milk chocolate (&lt;30% total dry cocoa solids)</td>
+                <td class="px-6 py-3 text-gray-700">0.10</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="px-6 py-3 font-medium text-gray-900">Chocolate with 30-50% total dry cocoa solids</td>
+                <td class="px-6 py-3 text-gray-700">0.30</td>
+              </tr>
+              <tr class="bg-white">
+                <td class="px-6 py-3 font-medium text-gray-900">Chocolate with 50-70% total dry cocoa solids</td>
+                <td class="px-6 py-3 text-gray-700">0.80</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="px-6 py-3 font-medium text-gray-900">Chocolate with &ge;70% total dry cocoa solids</td>
+                <td class="px-6 py-3 text-gray-700">0.80</td>
+              </tr>
+              <tr class="bg-white">
+                <td class="px-6 py-3 font-medium text-gray-900">Cocoa powder (sold to final consumer)</td>
+                <td class="px-6 py-3 text-gray-700">0.60</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="px-6 py-3 font-medium text-gray-900">Cocoa powder in drinking chocolate</td>
+                <td class="px-6 py-3 text-gray-700">0.10 (as consumed)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>
+          These limits apply to the finished product, not to raw cocoa beans. However, since cadmium concentrates as cocoa is processed (the fat in cocoa butter contains very little cadmium, so removing fat increases cadmium concentration in the remaining solids), buyers of raw beans need to understand how their beans will test after processing.
+        </p>
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">Which Origins Have Lower Cadmium?</h2>
+        <p>
+          West African cocoa consistently tests lower in cadmium than Latin American origins. This is one of the key quality advantages of sourcing <a href="/products/cocoa" class="text-brand-700 underline hover:text-brand-900">Ghanaian cocoa beans</a> for European chocolate production.
+        </p>
+
+        <div class="overflow-x-auto rounded-xl border border-gray-200 shadow-sm my-8">
+          <table class="w-full text-left text-sm">
+            <thead>
+              <tr class="bg-brand-800 text-white">
+                <th class="px-6 py-4 font-semibold">Origin</th>
+                <th class="px-6 py-4 font-semibold">Typical Cadmium Range (mg/kg in beans)</th>
+                <th class="px-6 py-4 font-semibold">Risk Level</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100">
+              <tr class="bg-white">
+                <td class="px-6 py-3 font-medium text-gray-900">Ghana</td>
+                <td class="px-6 py-3 text-gray-700">0.02 - 0.15</td>
+                <td class="px-6 py-3"><span class="px-2 py-1 bg-green-100 text-green-800 rounded text-xs font-medium">Low</span></td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="px-6 py-3 font-medium text-gray-900">Ivory Coast</td>
+                <td class="px-6 py-3 text-gray-700">0.03 - 0.20</td>
+                <td class="px-6 py-3"><span class="px-2 py-1 bg-green-100 text-green-800 rounded text-xs font-medium">Low</span></td>
+              </tr>
+              <tr class="bg-white">
+                <td class="px-6 py-3 font-medium text-gray-900">Nigeria</td>
+                <td class="px-6 py-3 text-gray-700">0.05 - 0.25</td>
+                <td class="px-6 py-3"><span class="px-2 py-1 bg-green-100 text-green-800 rounded text-xs font-medium">Low</span></td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="px-6 py-3 font-medium text-gray-900">Ecuador</td>
+                <td class="px-6 py-3 text-gray-700">0.30 - 1.50+</td>
+                <td class="px-6 py-3"><span class="px-2 py-1 bg-red-100 text-red-800 rounded text-xs font-medium">High</span></td>
+              </tr>
+              <tr class="bg-white">
+                <td class="px-6 py-3 font-medium text-gray-900">Colombia</td>
+                <td class="px-6 py-3 text-gray-700">0.40 - 2.00+</td>
+                <td class="px-6 py-3"><span class="px-2 py-1 bg-red-100 text-red-800 rounded text-xs font-medium">High</span></td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="px-6 py-3 font-medium text-gray-900">Peru</td>
+                <td class="px-6 py-3 text-gray-700">0.20 - 1.80+</td>
+                <td class="px-6 py-3"><span class="px-2 py-1 bg-amber-100 text-amber-800 rounded text-xs font-medium">Medium-High</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>
+          The difference is dramatic. A typical Ghanaian cocoa bean might contain 0.05 to 0.10 mg/kg cadmium, while the same variety grown in volcanic soils in Ecuador could contain 0.80 mg/kg or more. For chocolate makers producing high-percentage dark chocolate (70%+), this distinction is critical because the EU limit of 0.80 mg/kg in the finished product leaves very little margin when starting with high-cadmium beans.
+        </p>
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">How Processors Can Reduce Cadmium</h2>
+        <p>
+          While cadmium cannot be completely eliminated from cocoa, several processing techniques can reduce levels:
+        </p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li><strong>Blending origins</strong> - Mixing low-cadmium West African beans with higher-cadmium Latin American beans is the most common industry approach. A blend of 70% Ghanaian and 30% Ecuadorian cocoa will have significantly lower cadmium than 100% Ecuadorian.</li>
+          <li><strong>Selective sourcing by region</strong> - Even within a single country, cadmium levels vary by region. Working with suppliers who can segregate by growing area allows targeted sourcing of lower-cadmium lots.</li>
+          <li><strong>Post-harvest processing</strong> - Research has shown that extended fermentation (6-7 days vs the standard 5 days) can reduce cadmium levels by 10-20%. Washing beans after fermentation also helps remove surface cadmium.</li>
+          <li><strong>Alkalisation adjustments</strong> - The Dutch process (alkalisation) can slightly increase cadmium concentration in cocoa powder. Adjusting alkalisation parameters or using natural cocoa powder can help stay within limits.</li>
+          <li><strong>Shell removal</strong> - Cocoa shells tend to accumulate cadmium. Thorough de-shelling before processing reduces cadmium in the resulting nibs.</li>
+        </ul>
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">Testing Requirements</h2>
+        <p>
+          The EU requires that testing follow specific protocols to ensure consistent and comparable results:
+        </p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li><strong>Method</strong> - Cadmium must be measured using ICP-MS (Inductively Coupled Plasma Mass Spectrometry) or ICP-OES (Optical Emission Spectrometry) following EN 15763 or equivalent validated methods.</li>
+          <li><strong>Sampling</strong> - Representative sampling must follow Commission Regulation (EC) No 333/2007. For a lot of 50-500 tonnes, a minimum of 20 incremental samples must be taken and combined into an aggregate sample.</li>
+          <li><strong>Measurement uncertainty</strong> - Results are assessed against the maximum level after deducting the expanded measurement uncertainty. This means a result of 0.85 mg/kg with an uncertainty of 0.10 mg/kg would be assessed as 0.75 mg/kg and would pass.</li>
+          <li><strong>Accreditation</strong> - Laboratories must be accredited to ISO 17025 for the specific cadmium analysis method.</li>
+        </ul>
+        <p>
+          We recommend testing at origin before shipment and again at destination. A pre-shipment test from an accredited lab at origin costs approximately $80-150 per sample and can prevent costly rejections at European ports. For buyers working with our <a href="/products/cocoa" class="text-brand-700 underline hover:text-brand-900">cocoa products</a>, we include cadmium test results with every shipment as standard.
+        </p>
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">Practical Compliance Strategy for Importers</h2>
+        <p>
+          Here is a straightforward approach to managing cadmium risk in your cocoa supply chain:
+        </p>
+        <div class="space-y-4 my-8">
+          {[
+            { step: "1", title: "Know your product type", desc: "Determine which EU limit applies to your finished product. Milk chocolate at 0.10 mg/kg is far stricter than dark chocolate at 0.80 mg/kg." },
+            { step: "2", title: "Request origin data", desc: "Ask your supplier for cadmium test certificates from the specific growing region, not just the country average." },
+            { step: "3", title: "Calculate your budget", desc: "Work backwards from the finished product limit to determine the maximum cadmium level acceptable in your raw beans, accounting for concentration during processing." },
+            { step: "4", title: "Diversify origins", desc: "Build a blending strategy that includes low-cadmium West African beans as the base, with specialty Latin American beans added in controlled proportions." },
+            { step: "5", title: "Test every lot", desc: "Do not rely on historical data alone. Cadmium levels can vary between harvests and even between farms in the same region." },
+            { step: "6", title: "Keep records", desc: "Maintain a database of cadmium results by origin, supplier, and harvest season. This data becomes invaluable for procurement planning." },
+          ].map((item) => (
+            <div class="flex gap-4 bg-gray-50 rounded-lg p-5 border border-gray-200">
+              <div class="flex-shrink-0 w-8 h-8 bg-brand-700 text-white rounded-full flex items-center justify-center text-sm font-bold">{item.step}</div>
+              <div>
+                <h4 class="font-semibold text-gray-900 mb-1">{item.title}</h4>
+                <p class="text-sm text-gray-600">{item.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">Why Ghanaian Cocoa Is a Safe Choice for EU Compliance</h2>
+        <p>
+          For chocolate manufacturers targeting the European market, Ghanaian cocoa offers a significant compliance advantage. With typical cadmium levels well below 0.20 mg/kg in the raw bean, Ghanaian cocoa provides substantial headroom even for the strictest product categories. Combined with its excellent flavor profile and reliable supply through the COCOBOD system, Ghana remains the preferred origin for EU-focused chocolate production.
+        </p>
+        <p>
+          Origin Direct Group sources cocoa from regions in Ghana with consistently low cadmium readings. Every lot is tested at an accredited laboratory before shipment, and we provide full analytical certificates including cadmium, lead, and other contaminant results. For more information on <a href="/blog/eudr-compliance-guide" class="text-brand-700 underline hover:text-brand-900">EUDR compliance</a> and other regulatory requirements, see our dedicated compliance guide.
+        </p>
+
+      </div>
+    </div>
+  </article>
+
+  <!-- CTA -->
+  <section class="py-20 md:py-24 bg-gradient-to-br from-brand-900 to-earth-800">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">
+        Need Low-Cadmium Cocoa for EU Markets?
+      </h2>
+      <p class="text-brand-200 mb-8 max-w-xl mx-auto">
+        Our Ghanaian cocoa consistently tests well below EU cadmium limits. Every shipment includes full lab analysis.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/quote" class="inline-flex items-center justify-center px-8 py-4 bg-gold hover:bg-gold-dark text-white font-bold rounded-lg transition-colors shadow-lg text-lg">
+          Request a Quote
+          <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+        <a href="/products/cocoa" class="inline-flex items-center justify-center px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-lg transition-colors border border-white/20">
+          View Cocoa Products
+        </a>
+      </div>
+    </div>
+  </section>
+
+</Layout>

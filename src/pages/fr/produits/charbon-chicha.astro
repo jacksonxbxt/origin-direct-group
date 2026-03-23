@@ -1,0 +1,152 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import QuoteForm from '../../../components/QuoteForm.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+
+const siteUrl = "https://origindirectgroup.com";
+
+const productSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name: "Charbon Chicha Premium",
+  description: "Charbon chicha premium en bois dur d'acacia nigerien. Carbone fixe > 85%, duree de combustion 90+ minutes. Certifie halal. OEM/marque blanche disponible.",
+  image: `${siteUrl}/images/products/hookah-charcoal.jpg`,
+  brand: { "@type": "Brand", name: "Origin Direct Group" },
+  category: "Accessoires Chicha et Narguilé",
+  countryOfOrigin: { "@type": "Country", name: "Nigeria" },
+  offers: { "@type": "AggregateOffer", priceCurrency: "USD", availability: "https://schema.org/InStock" },
+  additionalProperty: [
+    { "@type": "PropertyValue", name: "Code SH", value: "4402.90" },
+    { "@type": "PropertyValue", name: "QMC", value: "1 FCL (18-22 TM)" },
+    { "@type": "PropertyValue", name: "Carbone Fixe", value: "> 85%" },
+    { "@type": "PropertyValue", name: "Duree de Combustion", value: "90+ minutes" },
+  ],
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Accueil", item: `${siteUrl}/fr/` },
+    { "@type": "ListItem", position: 2, name: "Produits", item: `${siteUrl}/fr/produits` },
+    { "@type": "ListItem", position: 3, name: "Charbon Chicha", item: `${siteUrl}/fr/produits/charbon-chicha` },
+  ],
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Quelles sont les specifications de votre charbon chicha ?",
+      acceptedAnswer: { "@type": "Answer", text: "Specifications de notre charbon chicha premium : carbone fixe superieur a 85%, teneur en cendres inferieure a 2,5%, humidite inferieure a 5%, duree de combustion 90+ minutes, matieres volatiles inferieures a 15%. Zero soufre, zero additifs chimiques, inodore et sans gout. Fabrique a partir de bois dur d'acacia nigerien." },
+    },
+    {
+      "@type": "Question",
+      name: "Proposez-vous du charbon chicha en marque blanche / OEM ?",
+      acceptedAnswer: { "@type": "Answer", text: "Oui. Nous produisons du charbon chicha personnalise avec votre logo et design d'emballage. Disponible en cubes de 25 mm (standard mondial), cubes de 22 mm, formes plates/disque, doigt et hexagonales. Formes sur mesure disponibles pour les commandes de plus de 5 FCL." },
+    },
+    {
+      "@type": "Question",
+      name: "Votre charbon est-il certifie halal ?",
+      acceptedAnswer: { "@type": "Answer", text: "Oui. Notre charbon chicha est certifie halal. Nous fournissons egalement les rapports de test de laboratoire SGS, la FDS (Fiche de Donnees de Securite) et la documentation de test d'auto-echauffement requise pour la classification d'expedition UN3088." },
+    },
+  ],
+};
+---
+
+<Layout
+  title="Charbon Chicha Premium - Bois dur Nigerien | Origin Direct"
+  description="Charbon chicha premium en bois dur d'acacia nigerien. Carbone fixe > 85%, 90+ min de combustion. Certifie halal. OEM disponible. Prix B2B competitifs."
+  structuredData={[productSchema, breadcrumbSchema, faqSchema]}
+  lang="fr"
+  hreflangs={[
+    { lang: "en", href: `${siteUrl}/products/hookah-charcoal` },
+    { lang: "fr", href: `${siteUrl}/fr/produits/charbon-chicha` },
+  ]}
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumbs items={[{ label: "Produits", href: "/fr/produits" }, { label: "Charbon Chicha" }]} />
+  </div>
+
+  <section class="relative py-24 sm:py-32 bg-gradient-to-br from-gray-900 via-gray-800 to-brand-900 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(196,154,42,0.3),transparent_70%)]"></div>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-gold-light font-medium tracking-wide uppercase text-sm mb-4">Nigeria</p>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">Charbon Chicha</h1>
+      <p class="text-xl text-brand-200 max-w-2xl mx-auto mb-10">
+        Briquettes de charbon de bois dur premium pour le marche du narguilé. Combustion longue, sans additifs chimiques, certifie halal.
+      </p>
+      <a href="#quote-form" class="inline-flex items-center px-8 py-4 bg-gold hover:bg-gold-dark text-white font-bold rounded-lg transition-colors shadow-lg text-lg">
+        Demander un Devis
+        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <section class="py-12 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="rounded-2xl overflow-hidden shadow-lg border border-gray-100">
+        <img src="/images/products/hookah-charcoal.jpg" alt="Charbon chicha premium du Nigeria" class="w-full h-64 sm:h-80 object-cover" loading="eager" />
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Apercu</h2>
+      <div class="prose prose-lg text-gray-700 space-y-5">
+        <p>
+          Le Nigeria possede d'immenses reserves de bois dur d'acacia, matiere premiere ideale pour la fabrication de charbon chicha de haute qualite. Le charbon de bois dur nigerien offre un profil aromatique comparable au charbon somalien (sous embargo ONU depuis 2012), a une fraction du prix. Avec un carbone fixe superieur a 85% et une combustion de plus de 90 minutes, il repond aux exigences les plus strictes des marches du Moyen-Orient et d'Europe.
+        </p>
+        <p>
+          Origin Direct travaille directement avec les producteurs de charbon au Nigeria, supervisant chaque etape de la production depuis la carbonisation du bois jusqu'au briquetage et l'emballage. Nous proposons des solutions OEM/marque blanche completes, avec des formes personnalisees (cube, plat, doigt, hexagonal) et un emballage a votre marque. Notre charbon est certifie halal et conforme a la reglementation REACH pour l'Union europeenne.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Specifications Techniques</h2>
+      <div class="overflow-x-auto rounded-xl border border-gray-200 shadow-sm">
+        <table class="w-full text-left text-sm">
+          <thead><tr class="bg-brand-800 text-white"><th class="px-6 py-4 font-semibold">Parametre</th><th class="px-6 py-4 font-semibold">Specification</th></tr></thead>
+          <tbody class="divide-y divide-gray-100">
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">Carbone Fixe</td><td class="px-6 py-4 text-gray-700">&gt; 85%</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">Teneur en Cendres</td><td class="px-6 py-4 text-gray-700">&lt; 2,5%</td></tr>
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">Humidite</td><td class="px-6 py-4 text-gray-700">&lt; 5%</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">Duree de Combustion</td><td class="px-6 py-4 text-gray-700">90+ minutes</td></tr>
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">Matieres Volatiles</td><td class="px-6 py-4 text-gray-700">&lt; 15%</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">Soufre</td><td class="px-6 py-4 text-gray-700">0% (zero)</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Questions Frequentes</h2>
+      <div class="space-y-4">
+        <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+          <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">Quelles sont les specifications de votre charbon chicha ?</summary>
+          <div class="px-6 pb-4 text-gray-700">Carbone fixe > 85%, cendres < 2,5%, humidite < 5%, combustion 90+ min, volatiles < 15%. Zero soufre, zero additifs chimiques. Bois dur d'acacia nigerien.</div>
+        </details>
+        <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+          <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">Proposez-vous du charbon en marque blanche ?</summary>
+          <div class="px-6 pb-4 text-gray-700">Oui. Cubes de 25 mm (standard), 22 mm, plat, doigt et hexagonal. Logo et emballage personnalises. Formes sur mesure a partir de 5 FCL.</div>
+        </details>
+        <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+          <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">Votre charbon est-il certifie halal ?</summary>
+          <div class="px-6 pb-4 text-gray-700">Oui, certifie halal. Nous fournissons aussi les rapports SGS, la FDS et la documentation UN3088 pour l'expedition.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <QuoteForm productName="Hookah Charcoal" />
+</Layout>

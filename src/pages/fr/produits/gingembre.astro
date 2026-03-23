@@ -1,0 +1,151 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import QuoteForm from '../../../components/QuoteForm.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+
+const siteUrl = "https://origindirectgroup.com";
+
+const productSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name: "Gingembre Seche Premium",
+  description: "Gingembre seche nigerien premium avec la teneur en oleoresine et gingerol la plus elevee au monde. 4-6% oleoresine, ideal pour extraction pharmaceutique et huiles essentielles.",
+  image: `${siteUrl}/images/products/ginger.jpg`,
+  brand: { "@type": "Brand", name: "Origin Direct Group" },
+  category: "Epices et Herbes",
+  countryOfOrigin: { "@type": "Country", name: "Nigeria" },
+  offers: { "@type": "AggregateOffer", priceCurrency: "USD", availability: "https://schema.org/InStock" },
+  additionalProperty: [
+    { "@type": "PropertyValue", name: "Code SH", value: "0910.11" },
+    { "@type": "PropertyValue", name: "QMC", value: "1 FCL (18-20 TM)" },
+    { "@type": "PropertyValue", name: "Oleoresine", value: "4-6%" },
+  ],
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Accueil", item: `${siteUrl}/fr/` },
+    { "@type": "ListItem", position: 2, name: "Produits", item: `${siteUrl}/fr/produits` },
+    { "@type": "ListItem", position: 3, name: "Gingembre", item: `${siteUrl}/fr/produits/gingembre` },
+  ],
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Pourquoi le gingembre nigerien est-il considere comme premium ?",
+      acceptedAnswer: { "@type": "Answer", text: "Le gingembre nigerien a la teneur en oleoresine la plus elevee au monde (4-6%) et les niveaux de gingerol les plus hauts, ce qui le rend privilegie pour les applications pharmaceutiques et l'extraction d'huiles essentielles. Le gingembre indien a typiquement 3-4% d'oleoresine." },
+    },
+    {
+      "@type": "Question",
+      name: "Quelles sont les specifications de votre gingembre seche ?",
+      acceptedAnswer: { "@type": "Answer", text: "Oleoresine 4-6%, huile volatile > 1,5%, humidite < 12%, cendres < 8%, fibre brute < 8%, teneur en sol < 1% (exigence UE). Disponible en seche fendu, seche entier (non blanchi), poudre et certifie biologique." },
+    },
+    {
+      "@type": "Question",
+      name: "Quelles formes de gingembre proposez-vous ?",
+      acceptedAnswer: { "@type": "Answer", text: "Gingembre seche fendu (le plus courant pour l'export), gingembre seche entier non blanchi, poudre de gingembre et gingembre certifie biologique. Toutes les formes disponibles en sacs de 25 kg ou 50 kg en polypropylene tisse." },
+    },
+  ],
+};
+---
+
+<Layout
+  title="Gingembre Seche Premium du Nigeria | Origin Direct"
+  description="Gingembre seche nigerien premium, oleoresine 4-6%. Seche fendu, entier, poudre, bio. Pour pharma, huiles essentielles, alimentaire. Prix B2B competitifs."
+  structuredData={[productSchema, breadcrumbSchema, faqSchema]}
+  lang="fr"
+  hreflangs={[
+    { lang: "en", href: `${siteUrl}/products/ginger` },
+    { lang: "fr", href: `${siteUrl}/fr/produits/gingembre` },
+  ]}
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumbs items={[{ label: "Produits", href: "/fr/produits" }, { label: "Gingembre" }]} />
+  </div>
+
+  <section class="relative py-24 sm:py-32 bg-gradient-to-br from-amber-900 via-brand-800 to-brand-900 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(196,154,42,0.3),transparent_70%)]"></div>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-gold-light font-medium tracking-wide uppercase text-sm mb-4">Nigeria</p>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">Gingembre Seche</h1>
+      <p class="text-xl text-brand-200 max-w-2xl mx-auto mb-10">
+        Gingembre seche fendu et entier avec la teneur en oleoresine et gingerol la plus elevee au monde. Ideal pour l'industrie pharmaceutique et l'extraction.
+      </p>
+      <a href="#quote-form" class="inline-flex items-center px-8 py-4 bg-gold hover:bg-gold-dark text-white font-bold rounded-lg transition-colors shadow-lg text-lg">
+        Demander un Devis
+        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <section class="py-12 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="rounded-2xl overflow-hidden shadow-lg border border-gray-100">
+        <img src="/images/products/ginger.jpg" alt="Gingembre seche premium du Nigeria" class="w-full h-64 sm:h-80 object-cover" loading="eager" />
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Apercu</h2>
+      <div class="prose prose-lg text-gray-700 space-y-5">
+        <p>
+          Le gingembre nigerien est reconnu comme le gingembre de la plus haute qualite au monde en termes de teneur en oleoresine (4-6%) et de niveaux de gingerol, les composes actifs recherches par les industries pharmaceutiques et des huiles essentielles. Cette concentration superieure en principes actifs le rend incontournable pour les fabricants qui ont besoin d'un rendement d'extraction maximal.
+        </p>
+        <p>
+          Origin Direct travaille directement avec les producteurs de la ceinture de gingembre de l'Etat de Kaduna et du plateau de Jos au Nigeria. Nous proposons du gingembre seche fendu (la forme la plus courante pour l'exportation), du gingembre entier non blanchi, de la poudre de gingembre et du gingembre certifie biologique. Chaque lot est teste pour les aflatoxines, les residus de pesticides et la teneur en sol, conforme aux exigences de l'UE.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Specifications Techniques</h2>
+      <div class="overflow-x-auto rounded-xl border border-gray-200 shadow-sm">
+        <table class="w-full text-left text-sm">
+          <thead><tr class="bg-brand-800 text-white"><th class="px-6 py-4 font-semibold">Parametre</th><th class="px-6 py-4 font-semibold">Specification</th></tr></thead>
+          <tbody class="divide-y divide-gray-100">
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">Oleoresine</td><td class="px-6 py-4 text-gray-700">4-6%</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">Huile Volatile</td><td class="px-6 py-4 text-gray-700">&gt; 1,5%</td></tr>
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">Humidite</td><td class="px-6 py-4 text-gray-700">&lt; 12%</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">Cendres</td><td class="px-6 py-4 text-gray-700">&lt; 8%</td></tr>
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">Fibre Brute</td><td class="px-6 py-4 text-gray-700">&lt; 8%</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">Teneur en Sol</td><td class="px-6 py-4 text-gray-700">&lt; 1% (exigence UE)</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Questions Frequentes</h2>
+      <div class="space-y-4">
+        <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+          <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">Pourquoi le gingembre nigerien est-il premium ?</summary>
+          <div class="px-6 pb-4 text-gray-700">Teneur en oleoresine la plus elevee au monde (4-6%) et niveaux de gingerol superieurs, ideaux pour l'extraction pharmaceutique. Le gingembre indien n'atteint que 3-4%.</div>
+        </details>
+        <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+          <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">Quelles formes de gingembre proposez-vous ?</summary>
+          <div class="px-6 pb-4 text-gray-700">Seche fendu, seche entier non blanchi, poudre et bio. Sacs de 25 kg ou 50 kg en polypropylene tisse. Cartons pour la poudre.</div>
+        </details>
+        <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+          <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">Quelle est la quantite minimale de commande ?</summary>
+          <div class="px-6 pb-4 text-gray-700">1 FCL standard, soit 18-20 TM. Commandes d'essai a partir de 5 TM pour les nouveaux acheteurs.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <QuoteForm productName="Ginger" />
+</Layout>

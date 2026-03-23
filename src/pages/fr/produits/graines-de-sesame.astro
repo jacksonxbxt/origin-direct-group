@@ -1,0 +1,150 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import QuoteForm from '../../../components/QuoteForm.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+
+const siteUrl = "https://origindirectgroup.com";
+
+const productSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name: "Graines de Sesame",
+  description: "Graines de sesame nigerianes premium avec 48-55% de teneur en huile. Varietes blanc decortique, naturel, brun et noir. Conforme oxyde d'ethylene UE.",
+  image: `${siteUrl}/images/products/sesame-seeds.jpg`,
+  brand: { "@type": "Brand", name: "Origin Direct Group" },
+  category: "Graines et Cereales",
+  countryOfOrigin: { "@type": "Country", name: "Nigeria" },
+  offers: { "@type": "AggregateOffer", priceCurrency: "USD", availability: "https://schema.org/InStock" },
+  additionalProperty: [
+    { "@type": "PropertyValue", name: "Code SH", value: "1207.40" },
+    { "@type": "PropertyValue", name: "QMC", value: "1 FCL (20-22 TM)" },
+    { "@type": "PropertyValue", name: "Teneur en Huile", value: "48-55%" },
+  ],
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Accueil", item: `${siteUrl}/fr/` },
+    { "@type": "ListItem", position: 2, name: "Produits", item: `${siteUrl}/fr/produits` },
+    { "@type": "ListItem", position: 3, name: "Graines de Sesame", item: `${siteUrl}/fr/produits/graines-de-sesame` },
+  ],
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Vos graines de sesame sont-elles adaptees a la production de tahini ?",
+      acceptedAnswer: { "@type": "Answer", text: "Oui. Nos graines de sesame blanc decortique sont specifiquement calibrees pour le tahini : teneur en huile 48-55%, AGL inferieur a 2%, humidite inferieure a 5%, purete superieure a 99%. Nous fournissons les principaux producteurs de tahini en Turquie, au Moyen-Orient et en Europe." },
+    },
+    {
+      "@type": "Question",
+      name: "Vos graines de sesame sont-elles sans oxyde d'ethylene ?",
+      acceptedAnswer: { "@type": "Answer", text: "Oui. Toutes nos graines de sesame sont testees pour l'oxyde d'ethylene (OEt) a moins de 0,05 mg/kg, conforme aux limites maximales de residus de l'UE. Les rapports de laboratoire confirmant l'absence d'OEt sont fournis avec chaque expedition." },
+    },
+    {
+      "@type": "Question",
+      name: "Quelles varietes de graines de sesame proposez-vous ?",
+      acceptedAnswer: { "@type": "Answer", text: "Nous proposons du blanc decortique (grade tahini), du blanc naturel/non decortique, du brun naturel, du sesame noir et du certifie biologique. Le Nigeria est dans le top 3 des exportateurs mondiaux, et nos graines proviennent de la ceinture de savane du nord." },
+    },
+  ],
+};
+---
+
+<Layout
+  title="Graines de Sesame Premium du Nigeria | Origin Direct"
+  description="Graines de sesame nigerianes premium, 48-55% de teneur en huile. Blanc decortique, naturel, noir, bio. Conforme oxyde d'ethylene UE. Prix B2B competitifs."
+  structuredData={[productSchema, breadcrumbSchema, faqSchema]}
+  lang="fr"
+  hreflangs={[
+    { lang: "en", href: `${siteUrl}/products/sesame-seeds` },
+    { lang: "fr", href: `${siteUrl}/fr/produits/graines-de-sesame` },
+  ]}
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumbs items={[{ label: "Produits", href: "/fr/produits" }, { label: "Graines de Sesame" }]} />
+  </div>
+
+  <section class="relative py-24 sm:py-32 bg-gradient-to-br from-brand-900 via-brand-800 to-earth-800 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(196,154,42,0.3),transparent_70%)]"></div>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-gold-light font-medium tracking-wide uppercase text-sm mb-4">Nigeria</p>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">Graines de Sesame</h1>
+      <p class="text-xl text-brand-200 max-w-2xl mx-auto mb-10">
+        Graines de sesame premium pour la production de tahini, l'extraction d'huile et la transformation alimentaire. Teneur en huile de 48-55%.
+      </p>
+      <a href="#quote-form" class="inline-flex items-center px-8 py-4 bg-gold hover:bg-gold-dark text-white font-bold rounded-lg transition-colors shadow-lg text-lg">
+        Demander un Devis
+        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <section class="py-12 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="rounded-2xl overflow-hidden shadow-lg border border-gray-100">
+        <img src="/images/products/sesame-seeds.jpg" alt="Graines de sesame premium du Nigeria" class="w-full h-64 sm:h-80 object-cover" loading="eager" />
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Apercu</h2>
+      <div class="prose prose-lg text-gray-700 space-y-5">
+        <p>
+          Le Nigeria figure parmi les trois premiers exportateurs mondiaux de graines de sesame, avec une production concentree dans la ceinture de savane du nord. Les graines de sesame nigerianes sont particulierement prisees pour leur teneur en huile exceptionnelle de 48 a 55%, parmi les plus elevees au monde, ce qui les rend ideales pour l'extraction d'huile et la production de tahini.
+        </p>
+        <p>
+          Origin Direct s'approvisionne directement aupres des producteurs et des cooperatives de la zone de savane, garantissant une qualite constante et des prix competitifs. Toutes nos graines de sesame sont testees pour l'oxyde d'ethylene (conforme aux normes UE strictes), les salmonelles et les aflatoxines. Nous proposons des grades de sesame blanc decortique pour le tahini, du sesame naturel, brun, noir et certifie biologique.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Specifications Techniques</h2>
+      <div class="overflow-x-auto rounded-xl border border-gray-200 shadow-sm">
+        <table class="w-full text-left text-sm">
+          <thead><tr class="bg-brand-800 text-white"><th class="px-6 py-4 font-semibold">Parametre</th><th class="px-6 py-4 font-semibold">Specification</th></tr></thead>
+          <tbody class="divide-y divide-gray-100">
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">Teneur en Huile</td><td class="px-6 py-4 text-gray-700">48-55%</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">Humidite</td><td class="px-6 py-4 text-gray-700">&lt; 5%</td></tr>
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">AGL</td><td class="px-6 py-4 text-gray-700">&lt; 2%</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">Purete</td><td class="px-6 py-4 text-gray-700">&gt; 99%</td></tr>
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">Oxyde d'Ethylene</td><td class="px-6 py-4 text-gray-700">&lt; 0,05 mg/kg (conforme UE)</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Questions Frequentes</h2>
+      <div class="space-y-4">
+        <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+          <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">Vos graines sont-elles adaptees au tahini ?</summary>
+          <div class="px-6 pb-4 text-gray-700">Oui. Sesame blanc decortique : teneur en huile 48-55%, AGL < 2%, humidite < 5%, purete > 99%. Nous fournissons les principaux producteurs de tahini en Turquie, au Moyen-Orient et en Europe.</div>
+        </details>
+        <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+          <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">Vos graines sont-elles sans oxyde d'ethylene ?</summary>
+          <div class="px-6 pb-4 text-gray-700">Oui. Testees a < 0,05 mg/kg, conforme aux LMR de l'UE. Rapports de laboratoire fournis avec chaque expedition.</div>
+        </details>
+        <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+          <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">Quelles varietes proposez-vous ?</summary>
+          <div class="px-6 pb-4 text-gray-700">Blanc decortique (grade tahini), blanc naturel, brun naturel, sesame noir et certifie biologique. Le Nigeria est parmi les 3 premiers exportateurs mondiaux.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <QuoteForm productName="Sesame Seeds" />
+</Layout>

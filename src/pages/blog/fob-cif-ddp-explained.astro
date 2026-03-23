@@ -1,0 +1,324 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: "FOB vs CIF vs DDP - Which Incoterm for African Commodities?",
+  description: "Plain-English guide to FOB, CIF, and DDP Incoterms for commodity buyers. Cost breakdown examples, risk transfer points, and which term works best for your situation.",
+  author: { "@type": "Organization", name: "Origin Direct Group" },
+  publisher: { "@type": "Organization", name: "Origin Direct Group", logo: { "@type": "ImageObject", url: "https://origindirectgroup.com/logo.png" } },
+  datePublished: "2026-03-23",
+  dateModified: "2026-03-23",
+  mainEntityOfPage: "https://origindirectgroup.com/blog/fob-cif-ddp-explained",
+  image: "https://origindirectgroup.com/images/blog/fob-cif-ddp.jpg",
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://origindirectgroup.com/" },
+    { "@type": "ListItem", position: 2, name: "Blog", item: "https://origindirectgroup.com/blog" },
+    { "@type": "ListItem", position: 3, name: "FOB vs CIF vs DDP Explained", item: "https://origindirectgroup.com/blog/fob-cif-ddp-explained" },
+  ],
+};
+---
+
+<Layout
+  title="FOB vs CIF vs DDP - Which Incoterm for African Commodities? | Origin Direct Group"
+  description="Plain-English guide to FOB, CIF, and DDP Incoterms for commodity buyers. Cost breakdown examples, risk transfer points, and which term works best for your situation."
+  structuredData={[articleSchema, breadcrumbSchema]}
+>
+  <!-- Breadcrumbs -->
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <nav class="flex text-sm text-gray-500">
+      <a href="/" class="hover:text-brand-700">Home</a>
+      <span class="mx-2">/</span>
+      <a href="/blog" class="hover:text-brand-700">Blog</a>
+      <span class="mx-2">/</span>
+      <span class="text-gray-900">FOB vs CIF vs DDP Explained</span>
+    </nav>
+  </div>
+
+  <!-- Hero -->
+  <section class="relative py-20 sm:py-28 bg-gradient-to-br from-brand-900 via-brand-800 to-earth-800 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(196,154,42,0.3),transparent_70%)]"></div>
+    </div>
+    <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <span class="inline-block px-4 py-1.5 bg-amber-500/20 text-amber-300 text-sm font-semibold rounded-full mb-6 border border-amber-500/30">Shipping &amp; Logistics</span>
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">FOB vs CIF vs DDP: Which Incoterm for African Commodities?</h1>
+      <p class="text-lg text-brand-200 max-w-2xl mx-auto">
+        A plain-English guide to shipping terms, risk transfer points, and choosing the right Incoterm for your commodity imports.
+      </p>
+      <div class="mt-6 flex items-center justify-center gap-4 text-sm text-brand-300">
+        <span>March 23, 2026</span>
+        <span class="w-1 h-1 rounded-full bg-brand-500"></span>
+        <span>10 min read</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Article Content -->
+  <article class="py-16 md:py-20 bg-white">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="prose prose-lg text-gray-700 max-w-none">
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">What Are Incoterms and Why Do They Matter?</h2>
+        <p>
+          Incoterms (International Commercial Terms) are a set of standardized trade rules published by the International Chamber of Commerce (ICC). They define who pays for what, who bears the risk at each stage, and who handles documentation during an international shipment. The current version, Incoterms 2020, includes 11 terms, but three dominate commodity trading from Africa: FOB, CIF, and DDP.
+        </p>
+        <p>
+          Getting the Incoterm wrong can cost you thousands of dollars per shipment. It can also leave you exposed to risks you did not plan for, from damaged cargo on the ocean to unexpected customs fees at destination. This guide breaks down the three most common terms used in African commodity trade and helps you decide which one fits your business.
+        </p>
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">FOB (Free On Board)</h2>
+        <p>
+          FOB is the most common Incoterm in African commodity exports. It means the seller delivers the goods loaded onto the vessel at the port of origin. Once the goods pass the ship's rail, all risk and cost transfers to the buyer.
+        </p>
+
+        <h3 class="text-xl font-semibold text-brand-800 mt-8 mb-4">What the seller handles:</h3>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>Sourcing and processing the commodity</li>
+          <li>Inland transport to the port of origin</li>
+          <li>Export customs clearance and documentation</li>
+          <li>Loading the goods onto the vessel</li>
+        </ul>
+
+        <h3 class="text-xl font-semibold text-brand-800 mt-8 mb-4">What the buyer handles:</h3>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>Ocean freight booking and payment</li>
+          <li>Marine insurance</li>
+          <li>Destination port charges and unloading</li>
+          <li>Import customs clearance and duties</li>
+          <li>Inland transport from destination port to warehouse</li>
+        </ul>
+
+        <p>
+          FOB works well for experienced importers who have established relationships with freight forwarders and can negotiate competitive ocean freight rates. When you buy FOB Tema (Ghana's main port), you control the shipping leg and can often achieve better rates than the seller would offer through CIF.
+        </p>
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">CIF (Cost, Insurance, and Freight)</h2>
+        <p>
+          CIF means the seller arranges and pays for ocean freight and marine insurance to bring the goods to the destination port. However, and this is the critical distinction, risk still transfers to the buyer once the goods are loaded onto the vessel at origin.
+        </p>
+        <p>
+          This is the most misunderstood Incoterm. Many buyers assume that because the seller pays for insurance and freight, the seller carries all risk until delivery. That is not the case. Under CIF, if the cargo is damaged during transit, it is technically the buyer's problem, though the insurance arranged by the seller should cover it.
+        </p>
+
+        <h3 class="text-xl font-semibold text-brand-800 mt-8 mb-4">What the seller handles:</h3>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>Everything under FOB, plus:</li>
+          <li>Ocean freight to the destination port</li>
+          <li>Marine insurance (minimum coverage under Institute Cargo Clauses C)</li>
+        </ul>
+
+        <h3 class="text-xl font-semibold text-brand-800 mt-8 mb-4">What the buyer handles:</h3>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>Destination port charges and unloading</li>
+          <li>Import customs clearance and duties</li>
+          <li>Inland transport from destination port to warehouse</li>
+        </ul>
+
+        <p>
+          CIF is popular with first-time buyers because it simplifies the process. The seller gives you a single price that includes delivery to your port. But be aware: the insurance arranged under CIF is typically the minimum required (110% of invoice value under ICC C clauses). If you need broader coverage, you should arrange additional insurance yourself.
+        </p>
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">DDP (Delivered Duty Paid)</h2>
+        <p>
+          DDP is the maximum-obligation term for the seller. The seller handles everything: ocean freight, insurance, import customs clearance, duty payment, and delivery to the buyer's specified location. The buyer simply receives the goods at their door.
+        </p>
+
+        <h3 class="text-xl font-semibold text-brand-800 mt-8 mb-4">What the seller handles:</h3>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>Everything under CIF, plus:</li>
+          <li>Import customs clearance at destination</li>
+          <li>Payment of all import duties and taxes</li>
+          <li>Inland transport to the buyer's premises</li>
+        </ul>
+
+        <h3 class="text-xl font-semibold text-brand-800 mt-8 mb-4">What the buyer handles:</h3>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>Unloading at their premises (unless otherwise agreed)</li>
+        </ul>
+
+        <p>
+          DDP sounds attractive but comes with a significant premium. The seller prices in their cost of clearing customs in your country, which they may not be able to do as efficiently as a local agent. DDP also means you have less control over the import process and documentation, which can be problematic if your country has specific requirements for <a href="/blog/certifications-food-export-africa" class="text-brand-700 underline hover:text-brand-900">food import certifications</a>.
+        </p>
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">Cost Breakdown: 20ft Container of Shea Butter, Ghana to Rotterdam</h2>
+        <p>
+          To illustrate the real-world difference, here is a cost comparison for shipping one 20-foot container (approximately 18 MT) of <a href="/products/shea-butter" class="text-brand-700 underline hover:text-brand-900">unrefined shea butter</a> from Tema, Ghana to Rotterdam, Netherlands.
+        </p>
+
+        <div class="overflow-x-auto rounded-xl border border-gray-200 shadow-sm my-8">
+          <table class="w-full text-left text-sm">
+            <thead>
+              <tr class="bg-brand-800 text-white">
+                <th class="px-6 py-4 font-semibold">Cost Element</th>
+                <th class="px-6 py-4 font-semibold">FOB Tema</th>
+                <th class="px-6 py-4 font-semibold">CIF Rotterdam</th>
+                <th class="px-6 py-4 font-semibold">DDP Rotterdam</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100">
+              <tr class="bg-white">
+                <td class="px-6 py-3 font-medium text-gray-900">Product cost (18 MT)</td>
+                <td class="px-6 py-3 text-gray-700">$23,400</td>
+                <td class="px-6 py-3 text-gray-700">$23,400</td>
+                <td class="px-6 py-3 text-gray-700">$23,400</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="px-6 py-3 font-medium text-gray-900">Inland transport (origin)</td>
+                <td class="px-6 py-3 text-gray-700">Included</td>
+                <td class="px-6 py-3 text-gray-700">Included</td>
+                <td class="px-6 py-3 text-gray-700">Included</td>
+              </tr>
+              <tr class="bg-white">
+                <td class="px-6 py-3 font-medium text-gray-900">Export clearance</td>
+                <td class="px-6 py-3 text-gray-700">Included</td>
+                <td class="px-6 py-3 text-gray-700">Included</td>
+                <td class="px-6 py-3 text-gray-700">Included</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="px-6 py-3 font-medium text-gray-900">Ocean freight</td>
+                <td class="px-6 py-3 text-gray-700">$2,200 (buyer)</td>
+                <td class="px-6 py-3 text-gray-700">$2,400</td>
+                <td class="px-6 py-3 text-gray-700">$2,400</td>
+              </tr>
+              <tr class="bg-white">
+                <td class="px-6 py-3 font-medium text-gray-900">Marine insurance</td>
+                <td class="px-6 py-3 text-gray-700">$180 (buyer)</td>
+                <td class="px-6 py-3 text-gray-700">$200</td>
+                <td class="px-6 py-3 text-gray-700">$200</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="px-6 py-3 font-medium text-gray-900">Destination port charges</td>
+                <td class="px-6 py-3 text-gray-700">$450 (buyer)</td>
+                <td class="px-6 py-3 text-gray-700">$450 (buyer)</td>
+                <td class="px-6 py-3 text-gray-700">$500</td>
+              </tr>
+              <tr class="bg-white">
+                <td class="px-6 py-3 font-medium text-gray-900">Import customs clearance</td>
+                <td class="px-6 py-3 text-gray-700">$300 (buyer)</td>
+                <td class="px-6 py-3 text-gray-700">$300 (buyer)</td>
+                <td class="px-6 py-3 text-gray-700">$400</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="px-6 py-3 font-medium text-gray-900">Import duty (0% under EPA)</td>
+                <td class="px-6 py-3 text-gray-700">$0 (buyer)</td>
+                <td class="px-6 py-3 text-gray-700">$0 (buyer)</td>
+                <td class="px-6 py-3 text-gray-700">$0</td>
+              </tr>
+              <tr class="bg-white">
+                <td class="px-6 py-3 font-medium text-gray-900">Inland transport (destination)</td>
+                <td class="px-6 py-3 text-gray-700">$350 (buyer)</td>
+                <td class="px-6 py-3 text-gray-700">$350 (buyer)</td>
+                <td class="px-6 py-3 text-gray-700">$400</td>
+              </tr>
+              <tr class="bg-brand-50 font-bold">
+                <td class="px-6 py-3 text-brand-900">Seller's price</td>
+                <td class="px-6 py-3 text-brand-900">$23,400</td>
+                <td class="px-6 py-3 text-brand-900">$26,000</td>
+                <td class="px-6 py-3 text-brand-900">$27,300</td>
+              </tr>
+              <tr class="bg-brand-100 font-bold">
+                <td class="px-6 py-3 text-brand-900">Total landed cost</td>
+                <td class="px-6 py-3 text-brand-900">$26,880</td>
+                <td class="px-6 py-3 text-brand-900">$27,100</td>
+                <td class="px-6 py-3 text-brand-900">$27,300</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>
+          In this example, the FOB buyer saves roughly $220-$420 compared to CIF and DDP, primarily because they can negotiate freight rates directly and use a local customs broker. The savings grow significantly on larger volumes or if you ship multiple containers per month.
+        </p>
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">Which Incoterm Should You Choose?</h2>
+
+        <div class="bg-brand-50 rounded-xl p-8 my-8 border border-brand-100">
+          <h3 class="text-lg font-semibold text-brand-800 mb-4">Choose FOB if:</h3>
+          <ul class="list-disc pl-6 space-y-2 text-gray-700">
+            <li>You import regularly and have a trusted freight forwarder</li>
+            <li>You want maximum control over shipping and insurance</li>
+            <li>You can negotiate competitive ocean freight rates</li>
+            <li>You are comfortable managing import logistics</li>
+          </ul>
+        </div>
+
+        <div class="bg-brand-50 rounded-xl p-8 my-8 border border-brand-100">
+          <h3 class="text-lg font-semibold text-brand-800 mb-4">Choose CIF if:</h3>
+          <ul class="list-disc pl-6 space-y-2 text-gray-700">
+            <li>You are new to importing from Africa and want simplicity</li>
+            <li>You prefer a single quoted price that includes delivery to your port</li>
+            <li>You do not have established freight relationships at origin</li>
+            <li>You are buying smaller volumes where freight negotiation leverage is limited</li>
+          </ul>
+        </div>
+
+        <div class="bg-brand-50 rounded-xl p-8 my-8 border border-brand-100">
+          <h3 class="text-lg font-semibold text-brand-800 mb-4">Choose DDP if:</h3>
+          <ul class="list-disc pl-6 space-y-2 text-gray-700">
+            <li>You want a true door-to-door price with no surprises</li>
+            <li>You lack import clearance experience in your country</li>
+            <li>Your supplier has a logistics partner at destination</li>
+            <li>You are placing a trial order and want to minimize complexity</li>
+          </ul>
+        </div>
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">Risk Transfer: The Most Important Concept</h2>
+        <p>
+          The biggest mistake buyers make is confusing cost responsibility with risk transfer. Under both FOB and CIF, risk passes to the buyer once the goods are loaded onto the vessel at the origin port. The difference is only about who pays for freight and insurance, not who bears the risk.
+        </p>
+        <p>
+          Only under DDP does the seller carry the risk all the way to the buyer's door. This is why DDP commands a premium: the seller is exposed to transit risk, customs delays, and destination-side complications that are normally the buyer's concern.
+        </p>
+        <p>
+          For high-value shipments of commodities like <a href="/products/cocoa" class="text-brand-700 underline hover:text-brand-900">cocoa beans</a> or <a href="/products/cashew-nuts" class="text-brand-700 underline hover:text-brand-900">cashew nuts</a>, understanding these risk transfer points is essential for arranging adequate insurance coverage.
+        </p>
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">A Note on DAP and Other Terms</h2>
+        <p>
+          While FOB, CIF, and DDP cover the vast majority of African commodity trades, you may encounter DAP (Delivered at Place). DAP is similar to DDP except the buyer handles import customs clearance and duty payment. It can be a good middle ground when you want the seller to arrange delivery but prefer to handle customs yourself through your local broker.
+        </p>
+        <p>
+          The full Incoterms 2020 set includes 11 terms, but for commodity trading from West Africa, FOB and CIF account for roughly 85% of all transactions. Start with one of these, and graduate to other terms as your experience and volume grow.
+        </p>
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">How Origin Direct Group Handles Shipping Terms</h2>
+        <p>
+          We offer all three Incoterms across our product range. Most of our clients start with CIF for their first shipment and transition to FOB as they build confidence and establish their own logistics networks. Our team manages all origin-side logistics regardless of the Incoterm, and we provide full documentation including <a href="/blog/eudr-compliance-guide" class="text-brand-700 underline hover:text-brand-900">EUDR compliance paperwork</a> and certificates of origin.
+        </p>
+        <p>
+          For buyers who want a complete breakdown of <a href="/blog/real-cost-importing-africa" class="text-brand-700 underline hover:text-brand-900">the real cost of importing from Africa</a>, including all the line items beyond the Incoterm price, we have a dedicated guide that walks through every cost element.
+        </p>
+
+      </div>
+    </div>
+  </article>
+
+  <!-- CTA -->
+  <section class="py-20 md:py-24 bg-gradient-to-br from-brand-900 to-earth-800">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">
+        Ready to Source Commodities from Africa?
+      </h2>
+      <p class="text-brand-200 mb-8 max-w-xl mx-auto">
+        We quote FOB, CIF, and DDP for all products. Tell us what you need and we will provide a detailed price breakdown.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/quote" class="inline-flex items-center justify-center px-8 py-4 bg-gold hover:bg-gold-dark text-white font-bold rounded-lg transition-colors shadow-lg text-lg">
+          Request a Quote
+          <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+        <a href="/products" class="inline-flex items-center justify-center px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-lg transition-colors border border-white/20">
+          View All Products
+        </a>
+      </div>
+    </div>
+  </section>
+
+</Layout>

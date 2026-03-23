@@ -1,0 +1,165 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import QuoteForm from '../../../components/QuoteForm.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+
+const siteUrl = "https://origindirectgroup.com";
+
+const productSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name: "Beurre de Karite",
+  description: "Beurre de karite premium directement du Ghana. Grade cosmetique, raffine, certifie biologique. AGL < 1%, certifie COSMOS et ECOCERT.",
+  image: `${siteUrl}/images/products/shea-butter.jpg`,
+  brand: { "@type": "Brand", name: "Origin Direct Group" },
+  category: "Ingredients Cosmetiques et Alimentaires",
+  countryOfOrigin: { "@type": "Country", name: "Ghana" },
+  offers: {
+    "@type": "AggregateOffer",
+    priceCurrency: "USD",
+    availability: "https://schema.org/InStock",
+  },
+  additionalProperty: [
+    { "@type": "PropertyValue", name: "Code SH", value: "1515.90" },
+    { "@type": "PropertyValue", name: "QMC", value: "1 FCL (18-20 TM)" },
+    { "@type": "PropertyValue", name: "Certifications", value: "COSMOS, ECOCERT, USDA Organic, EU Organic" },
+  ],
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Accueil", item: `${siteUrl}/fr/` },
+    { "@type": "ListItem", position: 2, name: "Produits", item: `${siteUrl}/fr/produits` },
+    { "@type": "ListItem", position: 3, name: "Beurre de Karite", item: `${siteUrl}/fr/produits/beurre-de-karite` },
+  ],
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Quels grades de beurre de karite fournissez-vous ?",
+      acceptedAnswer: { "@type": "Answer", text: "Nous fournissons cinq grades : Grade A Non Raffine (brut, jaune), Raffine (blanc, inodore), Certifie Biologique (COSMOS/ECOCERT), Oleine de Karite (fraction liquide pour serums), et Stearine de Karite (fraction solide pour cosmetiques). Tous proviennent directement de cooperatives de femmes du nord du Ghana." },
+    },
+    {
+      "@type": "Question",
+      name: "Quelle est la quantite minimale de commande pour le beurre de karite ?",
+      acceptedAnswer: { "@type": "Answer", text: "La QMC standard est de 1 conteneur complet (FCL), soit environ 18-20 tonnes metriques. Nous proposons des cartons de 25 kg, des futs de 50 kg et des futs de 180 kg. Des commandes d'essai de 1 a 5 TM sont disponibles pour les nouveaux clients." },
+    },
+    {
+      "@type": "Question",
+      name: "Votre beurre de karite est-il certifie COSMOS et ECOCERT ?",
+      acceptedAnswer: { "@type": "Answer", text: "Oui. Notre beurre de karite biologique est certifie par COSMOS et ECOCERT. Nous detenons egalement les certifications USDA Organic et EU Organic. Les certificats sont fournis avec chaque expedition." },
+    },
+  ],
+};
+---
+
+<Layout
+  title="Fournisseur de Beurre de Karite - Direct du Ghana | Origin Direct"
+  description="Beurre de karite premium directement du Ghana. Grade cosmetique, raffine, certifie biologique. AGL < 1%, certifie COSMOS et ECOCERT. Prix B2B competitifs."
+  structuredData={[productSchema, breadcrumbSchema, faqSchema]}
+  lang="fr"
+  hreflangs={[
+    { lang: "en", href: `${siteUrl}/products/shea-butter` },
+    { lang: "fr", href: `${siteUrl}/fr/produits/beurre-de-karite` },
+  ]}
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumbs items={[{ label: "Produits", href: "/fr/produits" }, { label: "Beurre de Karite" }]} />
+  </div>
+
+  <!-- Hero -->
+  <section class="relative py-24 sm:py-32 bg-gradient-to-br from-brand-900 via-brand-800 to-earth-800 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(196,154,42,0.3),transparent_70%)]"></div>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-gold-light font-medium tracking-wide uppercase text-sm mb-4">Direct du Ghana</p>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">Beurre de Karite</h1>
+      <p class="text-xl text-brand-200 max-w-2xl mx-auto mb-10">
+        Beurre de karite non raffine et raffine de qualite superieure pour les applications cosmetiques, alimentaires et pharmaceutiques. Approvisionne directement aupres de cooperatives ghaneennes.
+      </p>
+      <a href="#quote-form" class="inline-flex items-center px-8 py-4 bg-gold hover:bg-gold-dark text-white font-bold rounded-lg transition-colors shadow-lg text-lg">
+        Demander un Devis
+        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- Image Produit -->
+  <section class="py-12 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="rounded-2xl overflow-hidden shadow-lg border border-gray-100">
+        <img src="/images/products/shea-butter.jpg" alt="Beurre de karite premium du Ghana" class="w-full h-64 sm:h-80 object-cover" loading="eager" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Apercu -->
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Apercu</h2>
+      <div class="prose prose-lg text-gray-700 space-y-5">
+        <p>
+          Le beurre de karite est l'une des exportations de matieres premieres les plus polyvalentes d'Afrique de l'Ouest, prise dans l'industrie cosmetique (57 % de la demande), la fabrication alimentaire et chocolatiere (35 %) et les applications pharmaceutiques (8 %). Les regions du Nord et de l'Upper du Ghana produisent certaines des noix de karite de la plus haute qualite au monde, donnant un beurre aux proprietes hydratantes superieures et un profil nutritif riche.
+        </p>
+        <p>
+          Origin Direct travaille avec des cooperatives et des installations de transformation etablies dans la ceinture du karite au Ghana, nous donnant un controle direct sur la qualite depuis la collecte des noix jusqu'a la transformation finale. Notre chaine d'approvisionnement elimine les intermediaires inutiles, offrant des prix competitifs sans compromettre les parametres de qualite stricts que les acheteurs europeens et americains exigent.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Specifications -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Specifications Techniques</h2>
+      <div class="overflow-x-auto rounded-xl border border-gray-200 shadow-sm">
+        <table class="w-full text-left text-sm">
+          <thead>
+            <tr class="bg-brand-800 text-white">
+              <th class="px-6 py-4 font-semibold">Parametre</th>
+              <th class="px-6 py-4 font-semibold">Specification</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-100">
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">Acides Gras Libres (AGL)</td><td class="px-6 py-4 text-gray-700">&lt; 1% (grade cosmetique)</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">Indice de Peroxyde</td><td class="px-6 py-4 text-gray-700">&lt; 10 meq/kg</td></tr>
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">Teneur en Humidite</td><td class="px-6 py-4 text-gray-700">&lt; 0,05%</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">Matiere Insaponifiable</td><td class="px-6 py-4 text-gray-700">6 - 17%</td></tr>
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">Point de Fusion</td><td class="px-6 py-4 text-gray-700">33 - 42&deg;C</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">Metaux Lourds</td><td class="px-6 py-4 text-gray-700">Indetectables</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Questions Frequentes</h2>
+      <div class="space-y-4">
+        <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+          <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">Quels grades de beurre de karite fournissez-vous ?</summary>
+          <div class="px-6 pb-4 text-gray-700">Nous fournissons cinq grades : Grade A Non Raffine (brut, jaune), Raffine (blanc, inodore), Certifie Biologique (COSMOS/ECOCERT), Oleine de Karite (fraction liquide pour serums), et Stearine de Karite (fraction solide pour cosmetiques). Tous proviennent directement de cooperatives de femmes du nord du Ghana.</div>
+        </details>
+        <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+          <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">Quelle est la quantite minimale de commande ?</summary>
+          <div class="px-6 pb-4 text-gray-700">La QMC standard est de 1 conteneur complet (FCL), soit environ 18-20 tonnes metriques. Nous proposons des cartons de 25 kg, des futs de 50 kg et des futs de 180 kg. Des commandes d'essai de 1 a 5 TM sont disponibles pour les nouveaux clients.</div>
+        </details>
+        <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+          <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">Votre beurre de karite est-il certifie COSMOS et ECOCERT ?</summary>
+          <div class="px-6 pb-4 text-gray-700">Oui. Notre beurre de karite biologique est certifie par COSMOS et ECOCERT. Nous detenons egalement les certifications USDA Organic et EU Organic. Les certificats sont fournis avec chaque expedition.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <QuoteForm productName="Shea Butter" />
+</Layout>
