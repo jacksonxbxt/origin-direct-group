@@ -1,0 +1,160 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import QuoteForm from '../../components/QuoteForm.astro';
+
+const defined_title = "Exporting Raw Cashew Nuts to India for Processing";
+const defined_description = "Guide to exporting raw cashew nuts (RCN) from West Africa to India for processing. Indian import regulations, DGFT requirements, port logistics, and pricing dynamics.";
+
+const breadcrumbItems = [
+  { label: "Guides", href: "/guides" },
+  { label: "Export Cashew Nuts to India" },
+];
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://origindirectgroup.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://origindirectgroup.com/guides" },
+    { "@type": "ListItem", "position": 3, "name": "Export Cashew Nuts to India" },
+  ],
+};
+
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to Export Raw Cashew Nuts to India for Processing",
+  "description": "Complete guide for exporting raw cashew nuts from West Africa to Indian processing facilities.",
+  "step": [
+    { "@type": "HowToStep", "position": 1, "name": "Identify Indian buyer or processor", "text": "Connect with cashew processing units in Kerala, Goa, Karnataka, or Maharashtra." },
+    { "@type": "HowToStep", "position": 2, "name": "Agree on RCN specifications", "text": "Negotiate based on KOR, nut count, moisture, and defect rates." },
+    { "@type": "HowToStep", "position": 3, "name": "Negotiate pricing and terms", "text": "Price per MT FOB, typically paid via L/C or advance plus balance against documents." },
+    { "@type": "HowToStep", "position": 4, "name": "Prepare export documentation", "text": "Obtain phytosanitary certificate, certificate of origin, and fumigation certificate." },
+    { "@type": "HowToStep", "position": 5, "name": "Arrange shipping to Indian port", "text": "Ship from West African ports to Tuticorin, Mangalore, Cochin, or JNPT. Transit 14-22 days." },
+    { "@type": "HowToStep", "position": 6, "name": "Indian buyer clears customs", "text": "Buyer files Bill of Entry, pays applicable duty, and clears FSSAI requirements." },
+    { "@type": "HowToStep", "position": 7, "name": "Delivery and quality verification", "text": "RCN delivered to processing unit, KOR verified against contract." },
+  ],
+};
+---
+
+<Layout title={defined_title} description={defined_description} structuredData={[breadcrumbSchema, howToSchema]}>
+  <section class="py-12 md:py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-6">
+      <Breadcrumbs items={breadcrumbItems} />
+
+      <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+        Exporting Raw Cashew Nuts to India for Processing
+      </h1>
+
+      <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+        India is the world's largest cashew processor, operating over 3,500 processing units primarily in Kerala, Goa, Karnataka, Maharashtra, and Tamil Nadu. Indian processors import approximately 800,000-1,000,000 metric tons of raw cashew nuts (RCN) annually, with West Africa supplying the majority. Ivory Coast, Guinea-Bissau, Nigeria, Ghana, Benin, and Tanzania are the primary origins. For West African RCN exporters and aggregators, India represents the largest and most consistent market. This guide covers how to successfully export RCN from West Africa to Indian processors.
+      </p>
+
+      <div class="prose prose-lg max-w-none text-gray-700">
+
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Step-by-Step Export Process</h2>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Step 1: Identify Indian Buyers</h3>
+        <p>
+          Indian cashew processors range from large integrated companies (processing 50,000+ MT/year) to small family-operated units (500-2,000 MT/year). The major processing hubs are: Kollam (Kerala, the traditional cashew capital of India), Mangalore (Karnataka), Goa, Sindhudurg (Maharashtra), and Kanyakumari (Tamil Nadu). Industry associations like the Cashew Export Promotion Council of India (CEPCI) and the Kerala State Cashew Development Corporation (KSCDC) can help identify buyers. Origin Direct maintains relationships with established processors across India and can match your RCN supply with the right buyer based on origin, quality, and volume.
+        </p>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Step 2: Agree on RCN Specifications</h3>
+        <p>
+          Indian processors evaluate RCN based on:
+        </p>
+        <ul>
+          <li><strong>Kernel Out-Turn (KOR)</strong> - The primary quality metric. Measured as the weight of usable kernels from an 80 kg bag of RCN. Nigerian RCN typically yields 46-50 lbs KOR, Ghanaian 44-48 lbs, Ivorian 42-46 lbs, and Guinea-Bissau 46-52 lbs. Higher KOR commands higher prices.</li>
+          <li><strong>Nut Count</strong> - Number of nuts per kg. Lower count (larger nuts) is preferred: 160-180 nuts/kg is premium, 180-200 is standard, above 200 is small-sized.</li>
+          <li><strong>Moisture</strong> - Max 10% for safe storage. Ideal is 8-9%. Above 10% risks mold and accelerated spoilage.</li>
+          <li><strong>Defective nuts</strong> - Max 10-12%. Includes immature, spotted, shriveled, and damaged nuts.</li>
+          <li><strong>Foreign matter</strong> - Max 1%. Sand, stones, shell fragments.</li>
+        </ul>
+        <p>
+          Quality is typically verified by cutting test (500g sample, manual shelling to determine KOR and kernel quality).
+        </p>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Step 3: Negotiate Pricing and Terms</h3>
+        <p>
+          RCN pricing is per metric ton, FOB West African port, referenced against prevailing market rates that fluctuate with global supply and demand. The RCN season runs from February to June in West Africa, with peak shipments March through May. Pricing is typically negotiated on a shipment-by-shipment basis. Payment terms: most Indian processors pay via L/C at sight, though established relationships may use 60-90 day L/C or a combination of advance payment (10-20%) plus balance against documents. Contract volumes range from 1 container (18 MT) to annual supply agreements of 1,000+ MT.
+        </p>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Step 4: Prepare Export Documentation</h3>
+        <ul>
+          <li><strong>Phytosanitary Certificate</strong> - Issued by the origin country's plant protection authority. India's Directorate of Plant Protection, Quarantine, and Storage requires this for all agricultural imports.</li>
+          <li><strong>Certificate of Origin</strong> - Required for customs and may provide preferential duty treatment.</li>
+          <li><strong>Fumigation Certificate</strong> - Proof of methyl bromide or phosphine treatment against stored-product pests. India requires fumigation of all RCN imports.</li>
+          <li><strong>Commercial Invoice</strong> - In USD, detailing quantity, unit price, total value, Incoterms.</li>
+          <li><strong>Packing List</strong> - Number of bags, net/gross weight per container.</li>
+          <li><strong>Bill of Lading</strong> - Clean, on-board ocean B/L.</li>
+          <li><strong>Quality Certificate</strong> - From an independent inspection agency (SGS, Bureau Veritas, Intertek) confirming KOR, nut count, moisture, and defects.</li>
+          <li><strong>Insurance Certificate</strong> - If shipping CIF.</li>
+        </ul>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Step 5: Arrange Shipping</h3>
+        <p>
+          RCN ships in 20ft dry containers, packed in jute or poly-woven bags at 80 kg each. A standard 20ft container holds approximately 18-20 MT (225-250 bags). Loading ports: Port of Abidjan (Ivory Coast), Tema (Ghana), Apapa/Tin Can (Nigeria), Port of Bissau (Guinea-Bissau), Cotonou (Benin). Indian destination ports: Tuticorin (Tamil Nadu, the main RCN import port), New Mangalore (Karnataka), Cochin/Kochi (Kerala), JNPT/Nhava Sheva (Mumbai), and Goa (Mormugao). Transit times: West Africa to Tuticorin 14-18 days, to Cochin 15-19 days, to JNPT 16-20 days, to Mangalore 15-19 days. Several shipping lines offer direct services from West Africa to South India.
+        </p>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Step 6: Indian Customs Clearance</h3>
+        <p>
+          The Indian buyer is responsible for customs clearance. Key requirements:
+        </p>
+        <ul>
+          <li><strong>Bill of Entry</strong> - Filed electronically through the Indian Customs EDI system (ICEGATE).</li>
+          <li><strong>Import Duty</strong> - Raw cashew nuts (HS 0801 31 00) currently attract 2.5% Basic Customs Duty (BCD). GST at 5% is applied on the assessable value plus duty. The Integrated GST (IGST) is reclaimable as input tax credit.</li>
+          <li><strong>FSSAI Import License</strong> - Food Safety and Standards Authority of India requires an import license for all food products. The Indian buyer must hold a valid FSSAI license.</li>
+          <li><strong>Plant Quarantine Clearance</strong> - The phytosanitary certificate is presented to the Plant Quarantine authorities at the port. Inspection may be required before release.</li>
+          <li><strong>DGFT IEC Code</strong> - The Indian importer must have a valid Importer Exporter Code from the Directorate General of Foreign Trade.</li>
+          <li><strong>Port Trust Charges</strong> - Demurrage and port charges at Indian ports can be significant. Prompt customs clearance is essential.</li>
+        </ul>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Step 7: Delivery and Quality Verification</h3>
+        <p>
+          After customs clearance, RCN is transported by truck to the processing unit. The buyer typically conducts a cutting test on arrival to verify KOR against the contracted specification. Any claims for quality discrepancy are made within the agreed timeframe (usually 7-14 days). Indian processors may accept a KOR tolerance of plus or minus 1-2 lbs from the contracted figure, with price adjustments for deviations.
+        </p>
+
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Key Documents Required</h2>
+        <ul>
+          <li>Phytosanitary Certificate</li>
+          <li>Fumigation Certificate</li>
+          <li>Certificate of Origin</li>
+          <li>Quality Certificate (independent inspection)</li>
+          <li>Commercial Invoice</li>
+          <li>Packing List</li>
+          <li>Bill of Lading</li>
+          <li>Insurance Certificate (for CIF shipments)</li>
+        </ul>
+
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">HS Codes and Duty Rates</h2>
+        <ul>
+          <li><strong>0801 31 00</strong> - Cashew nuts, in shell (RCN). Indian BCD: 2.5%. IGST: 5%.</li>
+          <li><strong>0801 32 00</strong> - Cashew nuts, shelled (kernels). Indian BCD: 5%. IGST: 12%.</li>
+        </ul>
+        <p>
+          India occasionally adjusts RCN import duties based on domestic production and processor demand. Monitor DGFT notifications for changes. For the full HS code reference, see our <a href="/resources/hs-codes" class="text-brand-700 underline hover:text-brand-600">HS Code Directory</a>.
+        </p>
+
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Common Pitfalls to Watch Out For</h2>
+        <ul>
+          <li><strong>KOR disputes</strong> - The most common source of conflict. KOR measured at origin vs KOR at destination can differ due to moisture changes during transit. Use independent inspection at both ends and agree on a methodology (wet weight vs dry weight).</li>
+          <li><strong>Delayed L/C opening</strong> - Indian processors sometimes delay opening L/Cs, especially when market prices are falling. Protect yourself with clear contract timelines and penalties for late L/C.</li>
+          <li><strong>Port congestion in India</strong> - Tuticorin and JNPT can experience significant congestion during peak season (March-May). Demurrage charges in India accumulate quickly. Ensure your Indian buyer has capacity to clear containers promptly.</li>
+          <li><strong>Moisture gain in transit</strong> - RCN can absorb moisture during ocean transit, especially on routes crossing the equator. Ship at 8-9% moisture to allow for some gain without exceeding 10%.</li>
+          <li><strong>Mixed quality</strong> - Mixing RCN from different farms or regions with varying KOR is a common complaint from Indian buyers. Ensure consistent quality within each container.</li>
+          <li><strong>Seasonal pricing volatility</strong> - RCN prices can swing 20-30% within a season. Consider forward contracts or averaging across multiple shipments to manage price risk.</li>
+        </ul>
+
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">How Origin Direct Makes This Easy</h2>
+        <p>
+          Origin Direct is one of the few commodity brokers with established operations in both West Africa and India. We aggregate RCN from farms and cooperatives in Ghana and Nigeria, manage quality control at origin (including independent KOR verification), prepare all export documentation, and coordinate shipping to Indian ports. Our relationships with processors across Kerala, Karnataka, and Goa mean we can match your RCN supply with the right buyer. We handle the entire logistics chain, reducing the risk of quality disputes and payment issues that are common in the West Africa-India RCN trade.
+        </p>
+      </div>
+
+      <div class="mt-12">
+        <QuoteForm productName="Cashew Nuts" />
+      </div>
+    </div>
+  </section>
+</Layout>
