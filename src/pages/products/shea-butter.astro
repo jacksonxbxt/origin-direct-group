@@ -1,12 +1,84 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import QuoteForm from '../../components/QuoteForm.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const productSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name: "Shea Butter",
+  description: "Premium shea butter sourced directly from Ghana. Cosmetic grade, refined, organic certified. FFA < 1%, COSMOS & ECOCERT certified.",
+  image: "https://origindirectgroup.com/images/products/shea-butter.jpg",
+  brand: { "@type": "Brand", name: "Origin Direct Group" },
+  category: "Cosmetic & Food Ingredients",
+  countryOfOrigin: { "@type": "Country", name: "Ghana" },
+  offers: {
+    "@type": "AggregateOffer",
+    priceCurrency: "USD",
+    availability: "https://schema.org/InStock",
+  },
+  additionalProperty: [
+    { "@type": "PropertyValue", name: "HS Code", value: "1515.90" },
+    { "@type": "PropertyValue", name: "MOQ", value: "1 FCL (18-20 MT)" },
+    { "@type": "PropertyValue", name: "Certifications", value: "COSMOS, ECOCERT, USDA Organic, EU Organic" },
+    { "@type": "PropertyValue", name: "FFA", value: "< 1%" },
+    { "@type": "PropertyValue", name: "Melting Point", value: "33-42°C" },
+  ],
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://origindirectgroup.com/" },
+    { "@type": "ListItem", position: 2, name: "Products", item: "https://origindirectgroup.com/products" },
+    { "@type": "ListItem", position: 3, name: "Shea Butter", item: "https://origindirectgroup.com/products/shea-butter" },
+  ],
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What grades of shea butter does Origin Direct supply?",
+      acceptedAnswer: { "@type": "Answer", text: "We supply five grades: Grade A Unrefined (raw, yellow), Refined (white, odorless), Organic Certified (COSMOS/ECOCERT), Shea Olein (liquid fraction for serums), and Shea Stearin (solid fraction for cosmetics). All sourced directly from women's cooperatives in northern Ghana." },
+    },
+    {
+      "@type": "Question",
+      name: "What is the minimum order quantity for shea butter?",
+      acceptedAnswer: { "@type": "Answer", text: "Standard MOQ is 1 full container load (FCL), approximately 18-20 metric tons. We offer 25kg cartons, 50kg drums, and 180kg drums. Smaller trial orders of 1-5 MT available for new customers." },
+    },
+    {
+      "@type": "Question",
+      name: "Is your shea butter COSMOS and ECOCERT certified?",
+      acceptedAnswer: { "@type": "Answer", text: "Yes. Our organic shea butter is certified by both COSMOS and ECOCERT. We also hold USDA Organic and EU Organic certifications. Certificates are provided with every shipment." },
+    },
+    {
+      "@type": "Question",
+      name: "What are the quality specifications for cosmetic grade shea butter?",
+      acceptedAnswer: { "@type": "Answer", text: "Our cosmetic grade shea butter meets: Free Fatty Acid (FFA) below 1%, Peroxide Value below 10 meq/kg, Moisture below 0.05%, Unsaponifiable Matter 6-17%, Melting Point 33-42 degrees C, and heavy metals undetectable." },
+    },
+    {
+      "@type": "Question",
+      name: "How much does wholesale shea butter cost?",
+      acceptedAnswer: { "@type": "Answer", text: "Pricing depends on grade, volume, and Incoterms. Indicative range: unrefined Grade A $2,500-3,600/MT FOB Tema (Ghana), refined $3,000-4,200/MT, organic certified $3,500-5,000/MT. Contact us for a firm quote." },
+    },
+  ],
+};
 ---
 
 <Layout
   title="Shea Butter Supplier - Direct from Ghana | Origin Direct"
   description="Premium shea butter sourced directly from Ghana. Cosmetic grade, refined, organic certified. FFA < 1%, COSMOS & ECOCERT certified. Competitive B2B pricing."
+  structuredData={[productSchema, breadcrumbSchema, faqSchema]}
 >
+  <!-- Breadcrumbs -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumbs items={[{ label: "Products", href: "/products" }, { label: "Shea Butter" }]} />
+  </div>
+
   <!-- Hero -->
   <section class="relative py-24 sm:py-32 bg-gradient-to-br from-brand-900 via-brand-800 to-earth-800 overflow-hidden">
     <div class="absolute inset-0 opacity-10">
@@ -210,6 +282,35 @@ import QuoteForm from '../../components/QuoteForm.astro';
           </ul>
           <p class="text-sm text-gray-500 mt-4">FOB Tema Port (Ghana). CIF and DDP terms available on request.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Frequently Asked Questions</h2>
+      <div class="space-y-4">
+        <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+          <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">What grades of shea butter does Origin Direct supply?</summary>
+          <div class="px-6 pb-4 text-gray-700">We supply five grades: Grade A Unrefined (raw, yellow), Refined (white, odorless), Organic Certified (COSMOS/ECOCERT), Shea Olein (liquid fraction for serums), and Shea Stearin (solid fraction for cosmetics). All sourced directly from women's cooperatives in northern Ghana.</div>
+        </details>
+        <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+          <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">What is the minimum order quantity for shea butter?</summary>
+          <div class="px-6 pb-4 text-gray-700">Standard MOQ is 1 full container load (FCL), approximately 18-20 metric tons. We offer 25kg cartons, 50kg drums, and 180kg drums. Smaller trial orders of 1-5 MT available for new customers.</div>
+        </details>
+        <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+          <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">Is your shea butter COSMOS and ECOCERT certified?</summary>
+          <div class="px-6 pb-4 text-gray-700">Yes. Our organic shea butter is certified by both COSMOS and ECOCERT. We also hold USDA Organic and EU Organic certifications. Certificates are provided with every shipment.</div>
+        </details>
+        <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+          <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">What are the quality specifications for cosmetic grade shea butter?</summary>
+          <div class="px-6 pb-4 text-gray-700">Our cosmetic grade shea butter meets: Free Fatty Acid (FFA) below 1%, Peroxide Value below 10 meq/kg, Moisture below 0.05%, Unsaponifiable Matter 6-17%, Melting Point 33-42 degrees C, and heavy metals undetectable.</div>
+        </details>
+        <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+          <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">How much does wholesale shea butter cost?</summary>
+          <div class="px-6 pb-4 text-gray-700">Pricing depends on grade, volume, and Incoterms. Indicative range: unrefined Grade A $2,500-3,600/MT FOB Tema (Ghana), refined $3,000-4,200/MT, organic certified $3,500-5,000/MT. Contact us for a firm quote.</div>
+        </details>
       </div>
     </div>
   </section>

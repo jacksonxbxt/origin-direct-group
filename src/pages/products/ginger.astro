@@ -1,12 +1,84 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import QuoteForm from '../../components/QuoteForm.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const productSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name: "Dried Ginger",
+  description: "Premium Nigerian dried ginger with the highest oleoresin and gingerol content globally. 4-6% oleoresin, ideal for pharmaceutical and essential oil extraction.",
+  image: "https://origindirectgroup.com/images/products/ginger.jpg",
+  brand: { "@type": "Brand", name: "Origin Direct Group" },
+  category: "Spices & Herbs",
+  countryOfOrigin: { "@type": "Country", name: "Nigeria" },
+  offers: {
+    "@type": "AggregateOffer",
+    priceCurrency: "USD",
+    availability: "https://schema.org/InStock",
+  },
+  additionalProperty: [
+    { "@type": "PropertyValue", name: "HS Code", value: "0910.11" },
+    { "@type": "PropertyValue", name: "MOQ", value: "1 FCL (18-20 MT)" },
+    { "@type": "PropertyValue", name: "Certifications", value: "Phytosanitary, CoA, Organic (available), SGS" },
+    { "@type": "PropertyValue", name: "Oleoresin", value: "4-6%" },
+    { "@type": "PropertyValue", name: "Volatile Oil", value: "> 1.5%" },
+  ],
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://origindirectgroup.com/" },
+    { "@type": "ListItem", position: 2, name: "Products", item: "https://origindirectgroup.com/products" },
+    { "@type": "ListItem", position: 3, name: "Dried Ginger", item: "https://origindirectgroup.com/products/ginger" },
+  ],
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Why is Nigerian ginger considered premium?",
+      acceptedAnswer: { "@type": "Answer", text: "Nigerian ginger has the highest oleoresin content (4-6%) and gingerol levels globally, making it preferred for pharmaceutical applications and essential oil extraction. Indian ginger typically has 3-4% oleoresin. This gives Nigerian ginger superior pungency and medicinal value." },
+    },
+    {
+      "@type": "Question",
+      name: "What are the specifications for your dried ginger?",
+      acceptedAnswer: { "@type": "Answer", text: "Our dried ginger specs: oleoresin 4-6%, volatile oil above 1.5%, moisture below 12%, ash below 8%, crude fiber below 8%, soil content below 1% (EU requirement). Available as split dried, whole dried (unbleached), powder, and organic certified." },
+    },
+    {
+      "@type": "Question",
+      name: "Can you supply ginger to the Caribbean market?",
+      acceptedAnswer: { "@type": "Answer", text: "Yes. We already supply dried ginger to Jamaica and Trinidad, where demand is strong for beverages and cooking. Nigerian ginger is 60-80% cheaper than what Caribbean buyers currently pay from Canadian and Thai middlemen." },
+    },
+    {
+      "@type": "Question",
+      name: "What forms of ginger do you offer?",
+      acceptedAnswer: { "@type": "Answer", text: "We supply split dried ginger (most common for export), whole dried unbleached ginger, ginger powder, and organic certified ginger. All forms available in 25kg or 50kg polypropylene woven bags." },
+    },
+    {
+      "@type": "Question",
+      name: "What is the minimum order for dried ginger?",
+      acceptedAnswer: { "@type": "Answer", text: "Standard MOQ is 1 FCL, approximately 18-20 MT. Packaging in 25kg or 50kg PP woven bags, or cartons for powder. Trial orders from 5 MT considered for new buyers." },
+    },
+  ],
+};
 ---
 
 <Layout
   title="Dried Ginger - Premium Nigerian Ginger | Origin Direct"
   description="Premium Nigerian dried ginger with the highest oleoresin and gingerol content globally. 4-6% oleoresin, ideal for pharmaceutical and essential oil extraction. B2B supply."
+  structuredData={[productSchema, breadcrumbSchema, faqSchema]}
 >
+  <!-- Breadcrumbs -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumbs items={[{ label: "Products", href: "/products" }, { label: "Dried Ginger" }]} />
+  </div>
+
   <!-- Hero -->
   <section class="relative py-24 sm:py-32 bg-gradient-to-br from-earth-900 via-earth-800 to-brand-800 overflow-hidden">
     <div class="absolute inset-0 opacity-10">
@@ -207,6 +279,35 @@ import QuoteForm from '../../components/QuoteForm.astro';
           </ul>
           <p class="text-sm text-gray-500 mt-4">FOB Lagos. Season: Nov&ndash;Mar. Climate-controlled storage available for year-round supply.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Frequently Asked Questions</h2>
+      <div class="space-y-4">
+        <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+          <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">Why is Nigerian ginger considered premium?</summary>
+          <div class="px-6 pb-4 text-gray-700">Nigerian ginger has the highest oleoresin content (4-6%) and gingerol levels globally, making it preferred for pharmaceutical applications and essential oil extraction. Indian ginger typically has 3-4% oleoresin. This gives Nigerian ginger superior pungency and medicinal value.</div>
+        </details>
+        <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+          <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">What are the specifications for your dried ginger?</summary>
+          <div class="px-6 pb-4 text-gray-700">Our dried ginger specs: oleoresin 4-6%, volatile oil above 1.5%, moisture below 12%, ash below 8%, crude fiber below 8%, soil content below 1% (EU requirement). Available as split dried, whole dried (unbleached), powder, and organic certified.</div>
+        </details>
+        <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+          <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">Can you supply ginger to the Caribbean market?</summary>
+          <div class="px-6 pb-4 text-gray-700">Yes. We already supply dried ginger to Jamaica and Trinidad, where demand is strong for beverages and cooking. Nigerian ginger is 60-80% cheaper than what Caribbean buyers currently pay from Canadian and Thai middlemen.</div>
+        </details>
+        <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+          <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">What forms of ginger do you offer?</summary>
+          <div class="px-6 pb-4 text-gray-700">We supply split dried ginger (most common for export), whole dried unbleached ginger, ginger powder, and organic certified ginger. All forms available in 25kg or 50kg polypropylene woven bags.</div>
+        </details>
+        <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+          <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">What is the minimum order for dried ginger?</summary>
+          <div class="px-6 pb-4 text-gray-700">Standard MOQ is 1 FCL, approximately 18-20 MT. Packaging in 25kg or 50kg PP woven bags, or cartons for powder. Trial orders from 5 MT considered for new buyers.</div>
+        </details>
       </div>
     </div>
   </section>

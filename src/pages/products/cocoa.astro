@@ -1,12 +1,83 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import QuoteForm from '../../components/QuoteForm.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const productSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name: "Cocoa Beans, Butter & Powder",
+  description: "Premium cocoa beans, butter and powder from Ghana and Nigeria. EU cadmium compliant, EUDR traceable. Rainforest Alliance and Fairtrade certified.",
+  image: "https://origindirectgroup.com/images/products/cocoa.jpg",
+  brand: { "@type": "Brand", name: "Origin Direct Group" },
+  category: "Cocoa & Chocolate Ingredients",
+  countryOfOrigin: { "@type": "Country", name: "Ghana" },
+  offers: {
+    "@type": "AggregateOffer",
+    priceCurrency: "USD",
+    availability: "https://schema.org/InStock",
+  },
+  additionalProperty: [
+    { "@type": "PropertyValue", name: "HS Code", value: "1801.00 / 1804.00 / 1805.00" },
+    { "@type": "PropertyValue", name: "MOQ", value: "1 FCL (15-18 MT)" },
+    { "@type": "PropertyValue", name: "Certifications", value: "Rainforest Alliance, Fairtrade, Organic, EUDR Compliant" },
+    { "@type": "PropertyValue", name: "Cadmium", value: "< 0.60 mg/kg (EU compliant)" },
+  ],
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://origindirectgroup.com/" },
+    { "@type": "ListItem", position: 2, name: "Products", item: "https://origindirectgroup.com/products" },
+    { "@type": "ListItem", position: 3, name: "Cocoa", item: "https://origindirectgroup.com/products/cocoa" },
+  ],
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Is your cocoa EUDR compliant?",
+      acceptedAnswer: { "@type": "Answer", text: "Yes. All our cocoa comes with complete geolocation data for every farm plot, ensuring full EU Deforestation Regulation (EUDR) compliance. We provide GPS coordinates, polygon maps, and chain of custody documentation." },
+    },
+    {
+      "@type": "Question",
+      name: "What are the cadmium levels in your cocoa?",
+      acceptedAnswer: { "@type": "Answer", text: "All our cocoa is tested below the EU threshold of 0.60 mg/kg cadmium, compliant with EU Regulation 2023/915. Lab reports with cadmium analysis are provided with every shipment." },
+    },
+    {
+      "@type": "Question",
+      name: "What cocoa grades and products do you supply?",
+      acceptedAnswer: { "@type": "Answer", text: "We supply Grade 1 and Grade 2 fermented cocoa beans, natural and deodorized cocoa butter, natural and alkalized cocoa powder (10-12% and 20-22% fat), and cocoa nibs. All sourced from Ghana and Nigeria." },
+    },
+    {
+      "@type": "Question",
+      name: "What certifications are available for your cocoa?",
+      acceptedAnswer: { "@type": "Answer", text: "Rainforest Alliance (merged with UTZ), Fairtrade, and Organic certified cocoa available. Every shipment includes Certificate of Analysis, phytosanitary certificate, Certificate of Origin, and EUR.1 for preferential EU tariff rates." },
+    },
+    {
+      "@type": "Question",
+      name: "What is the minimum order for cocoa products?",
+      acceptedAnswer: { "@type": "Answer", text: "Standard MOQ is one 20ft container: approximately 18 MT for cocoa beans (in 60kg jute bags), 15 MT for cocoa butter (in 25kg cartons), or 15 MT for cocoa powder. Trial orders from 5 MT considered." },
+    },
+  ],
+};
 ---
 
 <Layout
   title="Cocoa Beans, Butter & Powder - Ghana & Nigeria | Origin Direct"
   description="Premium cocoa beans, butter and powder from Ghana and Nigeria. EU cadmium compliant, EUDR traceable. Rainforest Alliance and Fairtrade certified. B2B supply."
+  structuredData={[productSchema, breadcrumbSchema, faqSchema]}
 >
+  <!-- Breadcrumbs -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumbs items={[{ label: "Products", href: "/products" }, { label: "Cocoa" }]} />
+  </div>
+
   <!-- Hero -->
   <section class="relative py-24 sm:py-32 bg-gradient-to-br from-earth-900 via-earth-800 to-brand-900 overflow-hidden">
     <div class="absolute inset-0 opacity-10">
@@ -214,6 +285,35 @@ import QuoteForm from '../../components/QuoteForm.astro';
           </ul>
           <p class="text-sm text-gray-500 mt-4">FOB Tema/Lagos. CIF terms available. EUR.1 certificate for preferential EU tariff rates.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Frequently Asked Questions</h2>
+      <div class="space-y-4">
+        <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+          <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">Is your cocoa EUDR compliant?</summary>
+          <div class="px-6 pb-4 text-gray-700">Yes. All our cocoa comes with complete geolocation data for every farm plot, ensuring full EU Deforestation Regulation (EUDR) compliance. We provide GPS coordinates, polygon maps, and chain of custody documentation.</div>
+        </details>
+        <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+          <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">What are the cadmium levels in your cocoa?</summary>
+          <div class="px-6 pb-4 text-gray-700">All our cocoa is tested below the EU threshold of 0.60 mg/kg cadmium, compliant with EU Regulation 2023/915. Lab reports with cadmium analysis are provided with every shipment.</div>
+        </details>
+        <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+          <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">What cocoa grades and products do you supply?</summary>
+          <div class="px-6 pb-4 text-gray-700">We supply Grade 1 and Grade 2 fermented cocoa beans, natural and deodorized cocoa butter, natural and alkalized cocoa powder (10-12% and 20-22% fat), and cocoa nibs. All sourced from Ghana and Nigeria.</div>
+        </details>
+        <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+          <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">What certifications are available for your cocoa?</summary>
+          <div class="px-6 pb-4 text-gray-700">Rainforest Alliance (merged with UTZ), Fairtrade, and Organic certified cocoa available. Every shipment includes Certificate of Analysis, phytosanitary certificate, Certificate of Origin, and EUR.1 for preferential EU tariff rates.</div>
+        </details>
+        <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+          <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">What is the minimum order for cocoa products?</summary>
+          <div class="px-6 pb-4 text-gray-700">Standard MOQ is one 20ft container: approximately 18 MT for cocoa beans (in 60kg jute bags), 15 MT for cocoa butter (in 25kg cartons), or 15 MT for cocoa powder. Trial orders from 5 MT considered.</div>
+        </details>
       </div>
     </div>
   </section>

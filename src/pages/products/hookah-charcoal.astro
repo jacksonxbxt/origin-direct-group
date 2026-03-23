@@ -1,12 +1,84 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import QuoteForm from '../../components/QuoteForm.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const productSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name: "Hookah Charcoal",
+  description: "Premium hookah charcoal from Nigerian acacia hardwood. Fixed carbon > 85%, 90+ minute burn time. Halal certified. OEM/private label available.",
+  image: "https://origindirectgroup.com/images/products/hookah-charcoal.jpg",
+  brand: { "@type": "Brand", name: "Origin Direct Group" },
+  category: "Hookah & Shisha Accessories",
+  countryOfOrigin: { "@type": "Country", name: "Nigeria" },
+  offers: {
+    "@type": "AggregateOffer",
+    priceCurrency: "USD",
+    availability: "https://schema.org/InStock",
+  },
+  additionalProperty: [
+    { "@type": "PropertyValue", name: "HS Code", value: "4402.90" },
+    { "@type": "PropertyValue", name: "MOQ", value: "1 FCL (18-22 MT)" },
+    { "@type": "PropertyValue", name: "Certifications", value: "Halal, SGS, MSDS, UN3088 Self-Heating Test" },
+    { "@type": "PropertyValue", name: "Fixed Carbon", value: "> 85%" },
+    { "@type": "PropertyValue", name: "Burn Time", value: "90+ minutes" },
+  ],
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://origindirectgroup.com/" },
+    { "@type": "ListItem", position: 2, name: "Products", item: "https://origindirectgroup.com/products" },
+    { "@type": "ListItem", position: 3, name: "Hookah Charcoal", item: "https://origindirectgroup.com/products/hookah-charcoal" },
+  ],
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What are the specifications for your hookah charcoal?",
+      acceptedAnswer: { "@type": "Answer", text: "Our premium hookah charcoal specs: fixed carbon above 85%, ash content below 2.5%, moisture below 5%, burn time 90+ minutes, volatile matter below 15%. Zero sulfur, zero chemical additives, odorless and tasteless. Made from Nigerian acacia hardwood." },
+    },
+    {
+      "@type": "Question",
+      name: "Do you offer OEM/private label hookah charcoal?",
+      acceptedAnswer: { "@type": "Answer", text: "Yes. We produce custom-branded hookah charcoal with your logo and packaging design. Available in 25mm cubes (global standard), 22mm cubes, flat/disc, finger, and hexagonal shapes. Custom shapes available for orders above 5 FCL." },
+    },
+    {
+      "@type": "Question",
+      name: "Is your charcoal halal certified?",
+      acceptedAnswer: { "@type": "Answer", text: "Yes. Our hookah charcoal is halal certified. We also provide SGS lab testing reports, MSDS (Material Safety Data Sheet), and Self-Heating Test documentation required for UN3088 classification shipping." },
+    },
+    {
+      "@type": "Question",
+      name: "How does Nigerian charcoal compare to Indonesian coconut charcoal?",
+      acceptedAnswer: { "@type": "Answer", text: "Nigerian acacia hardwood charcoal is 60-80% cheaper than Indonesian coconut charcoal at origin. It produces the same premium aroma profile as Somali charcoal (under UN embargo since 2012). FOB Nigeria: $260-500/ton vs Indonesian coconut: $1,250-1,500/ton." },
+    },
+    {
+      "@type": "Question",
+      name: "What is the minimum order for hookah charcoal?",
+      acceptedAnswer: { "@type": "Answer", text: "Minimum order is 1 FCL (20ft container), approximately 18-22 metric tons. Packaging: 10kg or 20kg master cartons, palletized. We can ship LCL (Less than Container Load) for trial orders starting at 1 ton." },
+    },
+  ],
+};
 ---
 
 <Layout
   title="Premium Hookah Charcoal - Nigerian Hardwood | Origin Direct"
   description="Premium hookah charcoal from Nigerian acacia hardwood. Fixed carbon > 85%, 90+ minute burn time. Halal certified. OEM/private label available. B2B supply to Middle East, EU, USA."
+  structuredData={[productSchema, breadcrumbSchema, faqSchema]}
 >
+  <!-- Breadcrumbs -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumbs items={[{ label: "Products", href: "/products" }, { label: "Hookah Charcoal" }]} />
+  </div>
+
   <!-- Hero -->
   <section class="relative py-24 sm:py-32 bg-gradient-to-br from-gray-900 via-earth-900 to-brand-900 overflow-hidden">
     <div class="absolute inset-0 opacity-10">
@@ -219,6 +291,35 @@ import QuoteForm from '../../components/QuoteForm.astro';
           </ul>
           <p class="text-sm text-gray-500 mt-4">FOB Lagos. UN3088 classified &mdash; shipped as self-heating substance. We handle all export documentation.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Frequently Asked Questions</h2>
+      <div class="space-y-4">
+        <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+          <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">What are the specifications for your hookah charcoal?</summary>
+          <div class="px-6 pb-4 text-gray-700">Our premium hookah charcoal specs: fixed carbon above 85%, ash content below 2.5%, moisture below 5%, burn time 90+ minutes, volatile matter below 15%. Zero sulfur, zero chemical additives, odorless and tasteless. Made from Nigerian acacia hardwood.</div>
+        </details>
+        <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+          <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">Do you offer OEM/private label hookah charcoal?</summary>
+          <div class="px-6 pb-4 text-gray-700">Yes. We produce custom-branded hookah charcoal with your logo and packaging design. Available in 25mm cubes (global standard), 22mm cubes, flat/disc, finger, and hexagonal shapes. Custom shapes available for orders above 5 FCL.</div>
+        </details>
+        <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+          <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">Is your charcoal halal certified?</summary>
+          <div class="px-6 pb-4 text-gray-700">Yes. Our hookah charcoal is halal certified. We also provide SGS lab testing reports, MSDS (Material Safety Data Sheet), and Self-Heating Test documentation required for UN3088 classification shipping.</div>
+        </details>
+        <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+          <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">How does Nigerian charcoal compare to Indonesian coconut charcoal?</summary>
+          <div class="px-6 pb-4 text-gray-700">Nigerian acacia hardwood charcoal is 60-80% cheaper than Indonesian coconut charcoal at origin. It produces the same premium aroma profile as Somali charcoal (under UN embargo since 2012). FOB Nigeria: $260-500/ton vs Indonesian coconut: $1,250-1,500/ton.</div>
+        </details>
+        <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+          <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">What is the minimum order for hookah charcoal?</summary>
+          <div class="px-6 pb-4 text-gray-700">Minimum order is 1 FCL (20ft container), approximately 18-22 metric tons. Packaging: 10kg or 20kg master cartons, palletized. We can ship LCL (Less than Container Load) for trial orders starting at 1 ton.</div>
+        </details>
       </div>
     </div>
   </section>

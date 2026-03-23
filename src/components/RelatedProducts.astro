@@ -1,0 +1,61 @@
+---
+interface Props {
+  currentSlug: string;
+}
+
+const { currentSlug } = Astro.props;
+
+const productInfo: Record<string, { name: string; href: string }> = {
+  "shea-butter": { name: "Shea Butter", href: "/products/shea-butter" },
+  "cocoa": { name: "Cocoa", href: "/products/cocoa" },
+  "cashew-nuts": { name: "Cashew Nuts", href: "/products/cashew-nuts" },
+  "hookah-charcoal": { name: "Hookah Charcoal", href: "/products/hookah-charcoal" },
+  "hibiscus": { name: "Dried Hibiscus", href: "/products/hibiscus" },
+  "sesame-seeds": { name: "Sesame Seeds", href: "/products/sesame-seeds" },
+  "moringa": { name: "Moringa Powder", href: "/products/moringa" },
+  "ginger": { name: "Dried Ginger", href: "/products/ginger" },
+  "custom-sourcing": { name: "Custom Sourcing", href: "/products/custom-sourcing" },
+};
+
+const relatedMap: Record<string, string[]> = {
+  "shea-butter": ["cocoa", "moringa", "custom-sourcing"],
+  "cocoa": ["shea-butter", "cashew-nuts", "custom-sourcing"],
+  "cashew-nuts": ["cocoa", "sesame-seeds", "custom-sourcing"],
+  "hookah-charcoal": ["hibiscus", "sesame-seeds", "custom-sourcing"],
+  "hibiscus": ["hookah-charcoal", "ginger", "sesame-seeds"],
+  "sesame-seeds": ["hibiscus", "cashew-nuts", "ginger"],
+  "moringa": ["shea-butter", "ginger", "custom-sourcing"],
+  "ginger": ["moringa", "hibiscus", "sesame-seeds"],
+  "custom-sourcing": ["shea-butter", "cocoa", "cashew-nuts"],
+};
+
+const relatedSlugs = relatedMap[currentSlug] || ["shea-butter", "cocoa", "cashew-nuts"];
+const relatedProducts = relatedSlugs
+  .filter((slug) => slug !== currentSlug && productInfo[slug])
+  .slice(0, 3)
+  .map((slug) => productInfo[slug]);
+---
+
+{relatedProducts.length > 0 && (
+  <section class="mt-16 border-t border-gray-200 pt-12">
+    <h2 class="text-2xl font-semibold text-gray-900 mb-6">Related Products</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {relatedProducts.map((product) => (
+        <a
+          href={product.href}
+          class="group block p-6 border border-gray-200 rounded-lg hover:border-green-600 hover:shadow-md transition-all"
+        >
+          <h3 class="text-lg font-medium text-gray-900 group-hover:text-green-700 transition-colors">
+            {product.name}
+          </h3>
+          <span class="inline-flex items-center mt-3 text-sm text-green-700 font-medium">
+            View details
+            <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </span>
+        </a>
+      ))}
+    </div>
+  </section>
+)}

@@ -1,0 +1,288 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://origindirectgroup.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Resources",
+      "item": "https://origindirectgroup.com/resources/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "HS Codes",
+      "item": "https://origindirectgroup.com/resources/hs-codes/"
+    }
+  ]
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is an HS code?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "An HS (Harmonized System) code is a standardized international numerical system used to classify traded products. Developed by the World Customs Organization (WCO), HS codes are used by customs authorities in over 200 countries to identify products, determine applicable tariff rates, and collect trade statistics. HS codes typically consist of 6 digits at the international level, with individual countries adding additional digits for further classification. For example, cocoa beans are classified under HS code 1801.00.00 worldwide."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do African commodities qualify for preferential EU tariffs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, many African commodities qualify for reduced or zero-duty access to the EU market. Countries in the ACP (African, Caribbean and Pacific) group, including Ghana and Nigeria, benefit from preferential trade agreements. To claim these preferential rates, exporters must provide an EUR.1 movement certificate issued by the customs authority in the exporting country. This certificate proves the goods originate in an eligible country. Without an EUR.1 certificate, standard MFN (Most Favoured Nation) duty rates apply, which can be significantly higher for processed products like cocoa butter or moringa powder."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where can I find the HS code for my product?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can find HS codes for African commodities on this page, which covers the most commonly traded products from West Africa including cocoa, shea butter, cashew nuts, sesame seeds, ginger, hibiscus, moringa, and charcoal. For official verification, consult the EU TARIC database (for EU imports), the USITC Harmonized Tariff Schedule (for US imports), or contact your customs broker. HS codes can vary at the national level (beyond the first 6 digits), so always confirm the exact code with your destination country's customs authority before shipping."
+      }
+    }
+  ]
+};
+
+const hsProducts = [
+  { name: "Cocoa Beans", hsCode: "1801.00.00", description: "Cocoa beans, whole or broken, raw or roasted", euDuty: "0% (ACP preference)", usDuty: "Free", link: "/products/cocoa" },
+  { name: "Cocoa Butter", hsCode: "1804.00.00", description: "Cocoa butter, fat and oil", euDuty: "7.7% (0% with EUR.1)", usDuty: "Free", link: "/products/cocoa" },
+  { name: "Cocoa Powder", hsCode: "1805.00.00", description: "Cocoa powder, not containing added sugar or sweetening matter", euDuty: "8% (0% with EUR.1)", usDuty: "0.52 cents/kg", link: "/products/cocoa" },
+  { name: "Shea Butter (crude)", hsCode: "1515.90.40", description: "Shea butter, crude or unrefined, for industrial or cosmetic use", euDuty: "0%", usDuty: "Free", link: "/products/shea-butter" },
+  { name: "Shea Nuts", hsCode: "1207.99.91", description: "Shea nuts (karite nuts), whether or not broken", euDuty: "0%", usDuty: "Free", link: "/products/shea-butter" },
+  { name: "Cashew Nuts (in shell)", hsCode: "0801.31.00", description: "Cashew nuts, in shell, fresh or dried", euDuty: "0%", usDuty: "Free", link: "/products/cashew-nuts" },
+  { name: "Cashew Nuts (shelled)", hsCode: "0801.32.00", description: "Cashew nuts, shelled, fresh or dried", euDuty: "0%", usDuty: "Free", link: "/products/cashew-nuts" },
+  { name: "Sesame Seeds", hsCode: "1207.40", description: "Sesame seeds, whether or not broken", euDuty: "0%", usDuty: "Free", link: "/products/sesame-seeds" },
+  { name: "Dried Ginger", hsCode: "0910.11", description: "Ginger, neither crushed nor ground, dried", euDuty: "0%", usDuty: "Free", link: "/products/ginger" },
+  { name: "Ginger (ground)", hsCode: "0910.12", description: "Ginger, crushed or ground", euDuty: "0%", usDuty: "Free", link: "/products/ginger" },
+  { name: "Dried Hibiscus", hsCode: "0902.20", description: "Dried hibiscus flowers (Roselle / Bissap)", euDuty: "0%", usDuty: "Free", link: "/products/hibiscus" },
+  { name: "Moringa Powder", hsCode: "0712.90", description: "Dried moringa leaves and powder", euDuty: "12.8% (0% with EUR.1)", usDuty: "Free", link: "/products/moringa" },
+  { name: "Charcoal (hardwood)", hsCode: "4402.90", description: "Wood charcoal, including shell or nut charcoal", euDuty: "0%", usDuty: "Free", link: "/products/hookah-charcoal" },
+  { name: "Raw Cashew (in shell)", hsCode: "0801.31.00", description: "Raw cashew nuts in shell for processing", euDuty: "0%", usDuty: "Free", link: "/products/cashew-nuts" },
+];
+---
+
+<Layout
+  title="HS Codes for African Commodities - Import Tariff Reference | Origin Direct"
+  description="Complete HS code reference for West African commodity imports. Cocoa, shea butter, cashew nuts, sesame seeds, moringa, ginger, hibiscus, charcoal. EU duty rates included."
+  structuredData={[breadcrumbSchema, faqSchema]}
+>
+
+  <!-- Hero -->
+  <section class="relative py-20 md:py-28 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-green-950 via-green-900 to-amber-950"></div>
+    <div class="absolute inset-0 bg-black/20"></div>
+    <div class="relative z-10 max-w-3xl mx-auto px-6 text-center">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight mb-6">
+        HS Codes for African Commodities
+      </h1>
+      <p class="text-lg md:text-xl text-green-100/90 max-w-2xl mx-auto leading-relaxed">
+        Quick reference for import tariff classifications, EU duty rates, and US duty rates on the most traded West African commodities.
+      </p>
+    </div>
+    <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white to-transparent"></div>
+  </section>
+
+  <!-- Breadcrumb -->
+  <nav class="max-w-7xl mx-auto px-6 py-4" aria-label="Breadcrumb">
+    <ol class="flex items-center gap-2 text-sm text-gray-500">
+      <li><a href="/" class="hover:text-green-700 transition-colors">Home</a></li>
+      <li><span class="mx-1">/</span></li>
+      <li><a href="/resources" class="hover:text-green-700 transition-colors">Resources</a></li>
+      <li><span class="mx-1">/</span></li>
+      <li class="text-gray-900 font-medium">HS Codes</li>
+    </ol>
+  </nav>
+
+  <!-- Introduction -->
+  <section class="py-12 md:py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-6">
+        <p>
+          <strong>Harmonized System (HS) codes</strong> are the universal language of international trade. Every product that crosses a border is classified under a standardized numerical code, used by customs authorities worldwide to determine tariff rates, enforce trade regulations, and collect import statistics.
+        </p>
+        <p>
+          If you are importing commodities from West Africa &mdash; whether cocoa from Ghana, sesame seeds from Nigeria, or shea butter from Burkina Faso &mdash; knowing the correct HS code is essential. The right classification determines how much duty you pay, whether you qualify for preferential rates, and what documentation you need.
+        </p>
+        <p>
+          Below you will find the HS codes, descriptions, and indicative duty rates for the most commonly traded African commodities. All rates are for reference only &mdash; always verify the applicable rate with your customs broker or the relevant customs authority before importing.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HS Code Table -->
+  <section class="py-12 md:py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">HS Code Reference Table</h2>
+        <div class="w-16 h-1 bg-amber-500 mx-auto rounded-full"></div>
+      </div>
+
+      <div class="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden">
+        <div class="overflow-x-auto">
+          <table class="w-full text-left">
+            <thead>
+              <tr class="bg-green-950 text-white">
+                <th class="px-6 py-4 text-sm font-semibold tracking-wider">Product</th>
+                <th class="px-6 py-4 text-sm font-semibold tracking-wider">HS Code</th>
+                <th class="px-6 py-4 text-sm font-semibold tracking-wider hidden md:table-cell">Description</th>
+                <th class="px-6 py-4 text-sm font-semibold tracking-wider">EU Duty Rate</th>
+                <th class="px-6 py-4 text-sm font-semibold tracking-wider">US Duty Rate</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100">
+              {hsProducts.map((product, i) => (
+                <tr class={i % 2 === 0 ? "bg-white" : "bg-gray-50/50"}>
+                  <td class="px-6 py-4">
+                    <a href={product.link} class="text-green-700 font-medium hover:text-green-900 hover:underline transition-colors">
+                      {product.name}
+                    </a>
+                  </td>
+                  <td class="px-6 py-4 font-mono text-sm text-gray-800">{product.hsCode}</td>
+                  <td class="px-6 py-4 text-sm text-gray-600 hidden md:table-cell">{product.description}</td>
+                  <td class="px-6 py-4 text-sm text-gray-800">{product.euDuty}</td>
+                  <td class="px-6 py-4 text-sm text-gray-800">{product.usDuty}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <p class="mt-6 text-sm text-gray-500 text-center max-w-3xl mx-auto">
+        Duty rates shown are indicative and based on standard MFN rates unless noted. Preferential rates may apply under trade agreements. Always confirm with your customs broker.
+      </p>
+    </div>
+  </section>
+
+  <!-- EUR.1 and ACP Preferences -->
+  <section class="py-12 md:py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">EUR.1 Certificates &amp; ACP Preferences</h2>
+        <div class="w-16 h-1 bg-amber-500 mx-auto rounded-full"></div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- EUR.1 -->
+        <div class="bg-green-50/50 rounded-2xl p-8 border border-green-100">
+          <div class="inline-flex items-center justify-center w-14 h-14 bg-green-100 text-green-700 rounded-xl mb-6">
+            <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">EUR.1 Movement Certificate</h3>
+          <p class="text-gray-600 leading-relaxed mb-4">
+            An EUR.1 certificate is a document issued by the customs authority of the exporting country that proves the goods originate in an eligible country under a trade agreement with the EU.
+          </p>
+          <p class="text-gray-600 leading-relaxed">
+            For products like cocoa butter (1804.00.00) and moringa powder (0712.90), presenting a valid EUR.1 certificate can reduce or eliminate EU import duties entirely. Without it, standard MFN rates of 7.7% to 12.8% apply.
+          </p>
+        </div>
+
+        <!-- ACP Preferences -->
+        <div class="bg-green-50/50 rounded-2xl p-8 border border-green-100">
+          <div class="inline-flex items-center justify-center w-14 h-14 bg-green-100 text-green-700 rounded-xl mb-6">
+            <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 003 12c0-1.605.42-3.113 1.157-4.418" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">ACP Preferential Access</h3>
+          <p class="text-gray-600 leading-relaxed mb-4">
+            Ghana and Nigeria are part of the ACP (African, Caribbean and Pacific) group of states that benefit from preferential access to the EU market under Economic Partnership Agreements (EPAs).
+          </p>
+          <p class="text-gray-600 leading-relaxed">
+            Under these agreements, most raw agricultural commodities from West Africa enter the EU at 0% duty. Processed products may still face reduced tariffs compared to standard MFN rates, provided the correct documentation is supplied.
+          </p>
+        </div>
+      </div>
+
+      <!-- Important Note -->
+      <div class="mt-10 bg-amber-50 border border-amber-200 rounded-2xl p-8">
+        <div class="flex items-start gap-4">
+          <div class="flex-shrink-0 mt-0.5">
+            <svg class="w-6 h-6 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-amber-900 mb-2">Always Verify with Your Customs Broker</h3>
+            <p class="text-amber-800 leading-relaxed">
+              The HS codes and duty rates listed on this page are for reference purposes only. Exact classifications can vary depending on product specifications, processing level, packaging, and the importing country's national tariff schedule. Always confirm the applicable HS code and duty rate with a licensed customs broker or the relevant customs authority before shipping.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-12 md:py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
+        <div class="w-16 h-1 bg-amber-500 mx-auto rounded-full"></div>
+      </div>
+
+      <div class="space-y-6">
+        <!-- FAQ 1 -->
+        <div class="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm">
+          <h3 class="text-lg font-bold text-gray-900 mb-3">What is an HS code?</h3>
+          <p class="text-gray-600 leading-relaxed">
+            An HS (Harmonized System) code is a standardized international numerical system used to classify traded products. Developed by the World Customs Organization (WCO), HS codes are used by customs authorities in over 200 countries to identify products, determine applicable tariff rates, and collect trade statistics. HS codes typically consist of 6 digits at the international level, with individual countries adding additional digits for further classification. For example, cocoa beans are classified under HS code 1801.00.00 worldwide.
+          </p>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm">
+          <h3 class="text-lg font-bold text-gray-900 mb-3">Do African commodities qualify for preferential EU tariffs?</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Yes, many African commodities qualify for reduced or zero-duty access to the EU market. Countries in the ACP (African, Caribbean and Pacific) group, including Ghana and Nigeria, benefit from preferential trade agreements. To claim these preferential rates, exporters must provide an EUR.1 movement certificate issued by the customs authority in the exporting country. This certificate proves the goods originate in an eligible country. Without an EUR.1 certificate, standard MFN (Most Favoured Nation) duty rates apply, which can be significantly higher for processed products like cocoa butter or moringa powder.
+          </p>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm">
+          <h3 class="text-lg font-bold text-gray-900 mb-3">Where can I find the HS code for my product?</h3>
+          <p class="text-gray-600 leading-relaxed">
+            You can find HS codes for the most commonly traded African commodities in the reference table above, covering cocoa, shea butter, cashew nuts, sesame seeds, ginger, hibiscus, moringa, and charcoal. For official verification, consult the <a href="https://ec.europa.eu/taxation_customs/dds2/taric/" target="_blank" rel="noopener noreferrer" class="text-green-700 hover:underline">EU TARIC database</a> (for EU imports), the <a href="https://hts.usitc.gov/" target="_blank" rel="noopener noreferrer" class="text-green-700 hover:underline">USITC Harmonized Tariff Schedule</a> (for US imports), or contact your customs broker. HS codes can vary at the national level (beyond the first 6 digits), so always confirm the exact code with your destination country's customs authority before shipping.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 md:py-28 bg-green-950">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Need Help with Import Documentation?</h2>
+      <p class="text-lg text-green-200/80 max-w-xl mx-auto mb-8">
+        We handle all export documentation including EUR.1 certificates, phytosanitary certificates, and certificates of origin. Get a quote and we will take care of the paperwork.
+      </p>
+      <a
+        href="/quote"
+        class="inline-flex items-center gap-2 px-8 py-4 bg-amber-500 text-white font-semibold rounded-lg hover:bg-amber-600 transition-colors shadow-lg text-lg"
+      >
+        Request a Quote
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
+      </a>
+    </div>
+  </section>
+
+</Layout>

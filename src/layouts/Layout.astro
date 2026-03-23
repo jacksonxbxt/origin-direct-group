@@ -8,6 +8,7 @@ interface Props {
   description?: string;
   ogImage?: string;
   ogType?: string;
+  structuredData?: Record<string, any>[];
 }
 
 const {
@@ -15,6 +16,7 @@ const {
   description = "Direct commodity sourcing from Ghana, Nigeria & India. Shea butter, cocoa, cashew nuts, hookah charcoal, hibiscus, sesame seeds, moringa & ginger. Competitive pricing, quality guaranteed.",
   ogImage = "/og-image.jpg",
   ogType = "website",
+  structuredData = [],
 } = Astro.props;
 
 const siteUrl = "https://origindirectgroup.com";
@@ -22,10 +24,11 @@ const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href;
 const whatsappNumber = "31612345678";
 const whatsappMessage = encodeURIComponent("Hi, I'm interested in your commodities. Please send me more information.");
 
-const structuredData = {
+const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "Origin Direct Group",
+  legalName: "Origin Direct Group",
   url: siteUrl,
   logo: `${siteUrl}/logo.png`,
   description: "B2B commodity broker exporting shea butter, cocoa, cashew nuts, hookah charcoal, hibiscus, sesame seeds, moringa and ginger from West Africa and India.",
@@ -43,7 +46,40 @@ const structuredData = {
     telephone: "+31612345678",
     availableLanguage: ["English", "French"],
   },
+  knowsAbout: [
+    "Shea Butter Export",
+    "Cocoa Trading",
+    "Cashew Nut Processing",
+    "Hookah Charcoal Manufacturing",
+    "Hibiscus Flower Export",
+    "Sesame Seed Trading",
+    "Moringa Powder Production",
+    "Ginger Export",
+    "West African Commodities",
+    "B2B Commodity Trading",
+  ],
+  areaServed: [
+    { "@type": "Continent", name: "Europe" },
+    { "@type": "Continent", name: "North America" },
+    { "@type": "Continent", name: "South America" },
+    { "@type": "Continent", name: "Asia" },
+    { "@type": "Continent", name: "Africa" },
+  ],
 };
+
+const webSiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "Origin Direct Group",
+  url: siteUrl,
+  description: "B2B commodity sourcing from West Africa and India. Direct from producers to buyers worldwide.",
+  publisher: {
+    "@type": "Organization",
+    name: "Origin Direct Group",
+  },
+};
+
+const allSchemas = [organizationSchema, webSiteSchema, ...structuredData];
 ---
 
 <!doctype html>
@@ -52,6 +88,9 @@ const structuredData = {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="author" content="Origin Direct Group" />
+    <meta name="theme-color" content="#1a2e1a" />
 
     <!-- SEO -->
     <title>{title}</title>
@@ -83,8 +122,14 @@ const structuredData = {
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
+    <!-- Prefetch key pages -->
+    <link rel="prefetch" href="/products" />
+    <link rel="prefetch" href="/quote" />
+
     <!-- Structured Data -->
-    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+    {allSchemas.map((schema) => (
+      <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+    ))}
   </head>
   <body class="min-h-screen flex flex-col text-gray-900 font-sans bg-white">
     <Header />

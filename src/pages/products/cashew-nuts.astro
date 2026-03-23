@@ -1,12 +1,84 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import QuoteForm from '../../components/QuoteForm.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const productSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name: "Cashew Nuts",
+  description: "Raw cashew nuts (RCN) and processed kernels from Ghana and Nigeria. KOR 48-54 lbs, W180 to W450 grades. EU aflatoxin compliant.",
+  image: "https://origindirectgroup.com/images/products/cashew-nuts.jpg",
+  brand: { "@type": "Brand", name: "Origin Direct Group" },
+  category: "Nuts & Dried Fruits",
+  countryOfOrigin: { "@type": "Country", name: "Ghana" },
+  offers: {
+    "@type": "AggregateOffer",
+    priceCurrency: "USD",
+    availability: "https://schema.org/InStock",
+  },
+  additionalProperty: [
+    { "@type": "PropertyValue", name: "HS Code", value: "0801.31 / 0801.32" },
+    { "@type": "PropertyValue", name: "MOQ", value: "1 FCL (18 MT)" },
+    { "@type": "PropertyValue", name: "Certifications", value: "Phytosanitary, CoA, SGS Inspection" },
+    { "@type": "PropertyValue", name: "KOR", value: "48-54 lbs per 80kg bag" },
+    { "@type": "PropertyValue", name: "Aflatoxin B1", value: "< 5 ug/kg (EU limit)" },
+  ],
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://origindirectgroup.com/" },
+    { "@type": "ListItem", position: 2, name: "Products", item: "https://origindirectgroup.com/products" },
+    { "@type": "ListItem", position: 3, name: "Cashew Nuts", item: "https://origindirectgroup.com/products/cashew-nuts" },
+  ],
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What cashew nut grades do you offer?",
+      acceptedAnswer: { "@type": "Answer", text: "We supply Raw Cashew Nuts (RCN) and processed kernels in all standard AFI grades: W180 (King size), W210, W240, W320 (most traded globally), W450, Splits, and Pieces. RCN from Ghana, which controls 43.8% of global in-shell exports." },
+    },
+    {
+      "@type": "Question",
+      name: "What is KOR and what are your cashew specs?",
+      acceptedAnswer: { "@type": "Answer", text: "KOR (Kernel Outturn Ratio) measures usable kernel per 80kg bag. Our RCN delivers 48-54 lbs KOR. Additional specs: moisture below 10%, nut count 170-210/kg, defective below 10%. For kernels: moisture below 5%, aflatoxin B1 below 5 ug/kg (EU limit)." },
+    },
+    {
+      "@type": "Question",
+      name: "What payment terms do you accept for cashew orders?",
+      acceptedAnswer: { "@type": "Answer", text: "Standard payment for Raw Cashew Nuts is 100% Irrevocable Letter of Credit (LC) at sight, which is industry norm. For processed kernels, we also accept TT (Telegraphic Transfer) and CAD (Cash Against Documents) for established customers." },
+    },
+    {
+      "@type": "Question",
+      name: "What is the difference between W180 and W320 cashew grades?",
+      acceptedAnswer: { "@type": "Answer", text: "The W-number indicates kernel count per pound. W180 means 180 kernels per pound (largest, most premium). W320 means 320 per pound (medium, most commonly traded). W180 commands 40-60% higher pricing than W320." },
+    },
+    {
+      "@type": "Question",
+      name: "Where do your cashew nuts come from?",
+      acceptedAnswer: { "@type": "Answer", text: "Our cashews come from Ghana and Nigeria. Ghana is the world's largest exporter of in-shell cashew nuts, controlling 43.8% of global exports. We work directly with farming cooperatives and collection centers." },
+    },
+  ],
+};
 ---
 
 <Layout
   title="Cashew Nuts - Raw & Processed from Ghana & Nigeria | Origin Direct"
   description="Raw cashew nuts (RCN) and processed kernels from Ghana and Nigeria. KOR 48-54 lbs, W180 to W450 grades. EU aflatoxin compliant. B2B supply with LC payment terms."
+  structuredData={[productSchema, breadcrumbSchema, faqSchema]}
 >
+  <!-- Breadcrumbs -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumbs items={[{ label: "Products", href: "/products" }, { label: "Cashew Nuts" }]} />
+  </div>
+
   <!-- Hero -->
   <section class="relative py-24 sm:py-32 bg-gradient-to-br from-brand-900 via-earth-700 to-earth-900 overflow-hidden">
     <div class="absolute inset-0 opacity-10">
@@ -239,6 +311,35 @@ import QuoteForm from '../../components/QuoteForm.astro';
           </ul>
           <p class="text-sm text-gray-500 mt-4">FOB Tema/Lagos. Season: Feb&ndash;May (RCN). Processed kernels available year-round.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Frequently Asked Questions</h2>
+      <div class="space-y-4">
+        <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+          <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">What cashew nut grades do you offer?</summary>
+          <div class="px-6 pb-4 text-gray-700">We supply Raw Cashew Nuts (RCN) and processed kernels in all standard AFI grades: W180 (King size), W210, W240, W320 (most traded globally), W450, Splits, and Pieces. RCN from Ghana, which controls 43.8% of global in-shell exports.</div>
+        </details>
+        <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+          <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">What is KOR and what are your cashew specs?</summary>
+          <div class="px-6 pb-4 text-gray-700">KOR (Kernel Outturn Ratio) measures usable kernel per 80kg bag. Our RCN delivers 48-54 lbs KOR. Additional specs: moisture below 10%, nut count 170-210/kg, defective below 10%. For kernels: moisture below 5%, aflatoxin B1 below 5 ug/kg (EU limit).</div>
+        </details>
+        <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+          <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">What payment terms do you accept for cashew orders?</summary>
+          <div class="px-6 pb-4 text-gray-700">Standard payment for Raw Cashew Nuts is 100% Irrevocable Letter of Credit (LC) at sight, which is industry norm. For processed kernels, we also accept TT (Telegraphic Transfer) and CAD (Cash Against Documents) for established customers.</div>
+        </details>
+        <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+          <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">What is the difference between W180 and W320 cashew grades?</summary>
+          <div class="px-6 pb-4 text-gray-700">The W-number indicates kernel count per pound. W180 means 180 kernels per pound (largest, most premium). W320 means 320 per pound (medium, most commonly traded). W180 commands 40-60% higher pricing than W320.</div>
+        </details>
+        <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+          <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">Where do your cashew nuts come from?</summary>
+          <div class="px-6 pb-4 text-gray-700">Our cashews come from Ghana and Nigeria. Ghana is the world's largest exporter of in-shell cashew nuts, controlling 43.8% of global exports. We work directly with farming cooperatives and collection centers.</div>
+        </details>
       </div>
     </div>
   </section>

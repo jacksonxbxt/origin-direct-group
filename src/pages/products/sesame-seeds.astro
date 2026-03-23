@@ -1,12 +1,84 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import QuoteForm from '../../components/QuoteForm.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const productSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name: "Sesame Seeds",
+  description: "Premium Nigerian sesame seeds with 48-55% oil content. Hulled white, natural, brown and black varieties. EU ethylene oxide compliant.",
+  image: "https://origindirectgroup.com/images/products/sesame-seeds.jpg",
+  brand: { "@type": "Brand", name: "Origin Direct Group" },
+  category: "Seeds & Grains",
+  countryOfOrigin: { "@type": "Country", name: "Nigeria" },
+  offers: {
+    "@type": "AggregateOffer",
+    priceCurrency: "USD",
+    availability: "https://schema.org/InStock",
+  },
+  additionalProperty: [
+    { "@type": "PropertyValue", name: "HS Code", value: "1207.40" },
+    { "@type": "PropertyValue", name: "MOQ", value: "1 FCL (20-22 MT)" },
+    { "@type": "PropertyValue", name: "Certifications", value: "CoA, Phytosanitary, Organic (available), ETO Test Report" },
+    { "@type": "PropertyValue", name: "Oil Content", value: "48-55%" },
+    { "@type": "PropertyValue", name: "Ethylene Oxide", value: "< 0.05 mg/kg (EU compliant)" },
+  ],
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://origindirectgroup.com/" },
+    { "@type": "ListItem", position: 2, name: "Products", item: "https://origindirectgroup.com/products" },
+    { "@type": "ListItem", position: 3, name: "Sesame Seeds", item: "https://origindirectgroup.com/products/sesame-seeds" },
+  ],
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Are your sesame seeds suitable for tahini production?",
+      acceptedAnswer: { "@type": "Answer", text: "Yes. Our hulled white sesame seeds are specifically graded for tahini: oil content 48-55%, FFA below 2%, moisture below 5%, purity above 99%. We supply major tahini producers in Turkey, the Middle East, and Europe." },
+    },
+    {
+      "@type": "Question",
+      name: "Are your sesame seeds ethylene oxide free?",
+      acceptedAnswer: { "@type": "Answer", text: "Yes. All our sesame seeds are tested for ethylene oxide (ETO) at below 0.05 mg/kg, compliant with EU Maximum Residue Limits. Lab reports confirming ETO-free status are provided with every shipment." },
+    },
+    {
+      "@type": "Question",
+      name: "What sesame seed varieties do you offer?",
+      acceptedAnswer: { "@type": "Answer", text: "We offer hulled white (tahini grade), natural/unhulled white, natural brown, black sesame, and organic certified. Nigeria is a top 3 global exporter, and our seeds come from the northern savanna belt." },
+    },
+    {
+      "@type": "Question",
+      name: "What is the minimum order for sesame seeds?",
+      acceptedAnswer: { "@type": "Answer", text: "Standard MOQ is 1 FCL (20ft container), approximately 20-22 MT in 25kg or 50kg polypropylene bags. Bulk container liners available for larger orders. Trial shipments from 5 MT considered." },
+    },
+    {
+      "@type": "Question",
+      name: "How does Nigerian sesame compare to other origins?",
+      acceptedAnswer: { "@type": "Answer", text: "Nigerian sesame seeds have oil content of 48-55% (among the highest globally) and are well-suited for oil extraction and tahini. They compete with Ethiopian, Sudanese, and Indian sesame. Key quality advantage: consistent white color for hulled grades." },
+    },
+  ],
+};
 ---
 
 <Layout
   title="Sesame Seeds - Premium Nigerian White & Brown | Origin Direct"
   description="Premium Nigerian sesame seeds with 48-55% oil content. Hulled white, natural, brown and black varieties. EU ethylene oxide compliant. B2B supply for tahini, bakery, and oil."
+  structuredData={[productSchema, breadcrumbSchema, faqSchema]}
 >
+  <!-- Breadcrumbs -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumbs items={[{ label: "Products", href: "/products" }, { label: "Sesame Seeds" }]} />
+  </div>
+
   <!-- Hero -->
   <section class="relative py-24 sm:py-32 bg-gradient-to-br from-earth-800 via-brand-900 to-earth-900 overflow-hidden">
     <div class="absolute inset-0 opacity-10">
@@ -208,6 +280,35 @@ import QuoteForm from '../../components/QuoteForm.astro';
           </ul>
           <p class="text-sm text-gray-500 mt-4">FOB Lagos. Season: Oct&ndash;Feb. Year-round supply from warehoused stock.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Frequently Asked Questions</h2>
+      <div class="space-y-4">
+        <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+          <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">Are your sesame seeds suitable for tahini production?</summary>
+          <div class="px-6 pb-4 text-gray-700">Yes. Our hulled white sesame seeds are specifically graded for tahini: oil content 48-55%, FFA below 2%, moisture below 5%, purity above 99%. We supply major tahini producers in Turkey, the Middle East, and Europe.</div>
+        </details>
+        <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+          <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">Are your sesame seeds ethylene oxide free?</summary>
+          <div class="px-6 pb-4 text-gray-700">Yes. All our sesame seeds are tested for ethylene oxide (ETO) at below 0.05 mg/kg, compliant with EU Maximum Residue Limits. Lab reports confirming ETO-free status are provided with every shipment.</div>
+        </details>
+        <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+          <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">What sesame seed varieties do you offer?</summary>
+          <div class="px-6 pb-4 text-gray-700">We offer hulled white (tahini grade), natural/unhulled white, natural brown, black sesame, and organic certified. Nigeria is a top 3 global exporter, and our seeds come from the northern savanna belt.</div>
+        </details>
+        <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+          <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">What is the minimum order for sesame seeds?</summary>
+          <div class="px-6 pb-4 text-gray-700">Standard MOQ is 1 FCL (20ft container), approximately 20-22 MT in 25kg or 50kg polypropylene bags. Bulk container liners available for larger orders. Trial shipments from 5 MT considered.</div>
+        </details>
+        <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+          <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">How does Nigerian sesame compare to other origins?</summary>
+          <div class="px-6 pb-4 text-gray-700">Nigerian sesame seeds have oil content of 48-55% (among the highest globally) and are well-suited for oil extraction and tahini. They compete with Ethiopian, Sudanese, and Indian sesame. Key quality advantage: consistent white color for hulled grades.</div>
+        </details>
       </div>
     </div>
   </section>

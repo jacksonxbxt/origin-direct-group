@@ -1,12 +1,84 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import QuoteForm from '../../components/QuoteForm.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const productSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name: "Dried Hibiscus Flowers",
+  description: "Premium dried hibiscus flowers from Nigeria, the world's largest producer. Grade A dark red, whole flowers and cut & sifted. NAQS-SENASICA compliant for Mexico trade.",
+  image: "https://origindirectgroup.com/images/products/hibiscus.jpg",
+  brand: { "@type": "Brand", name: "Origin Direct Group" },
+  category: "Dried Flowers & Herbal Ingredients",
+  countryOfOrigin: { "@type": "Country", name: "Nigeria" },
+  offers: {
+    "@type": "AggregateOffer",
+    priceCurrency: "USD",
+    availability: "https://schema.org/InStock",
+  },
+  additionalProperty: [
+    { "@type": "PropertyValue", name: "HS Code", value: "0902.10 / 1211.90" },
+    { "@type": "PropertyValue", name: "MOQ", value: "1 FCL (up to 22 MT)" },
+    { "@type": "PropertyValue", name: "Certifications", value: "NAQS-SENASICA Protocol, Phytosanitary, Fumigation Certificate" },
+    { "@type": "PropertyValue", name: "Moisture", value: "< 11%" },
+    { "@type": "PropertyValue", name: "Foreign Matter", value: "< 1%" },
+  ],
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://origindirectgroup.com/" },
+    { "@type": "ListItem", position: 2, name: "Products", item: "https://origindirectgroup.com/products" },
+    { "@type": "ListItem", position: 3, name: "Dried Hibiscus Flowers", item: "https://origindirectgroup.com/products/hibiscus" },
+  ],
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Is Nigeria the world's largest hibiscus producer?",
+      acceptedAnswer: { "@type": "Answer", text: "Yes. Nigeria is the world's largest producer and exporter of dried hibiscus flowers (Roselle/Hibiscus sabdariffa). Nigerian hibiscus supplies 85% of Mexico's imports for agua de jamaica, plus significant volumes to Germany, Egypt, and the USA." },
+    },
+    {
+      "@type": "Question",
+      name: "What are the quality specs for dried hibiscus?",
+      acceptedAnswer: { "@type": "Answer", text: "Our dried hibiscus flowers meet: moisture below 11%, foreign matter below 1%, deep red/burgundy color, pH 2.5-3.5, no artificial coloring, pesticide residues within MRL limits. Available as whole flowers, cut and sifted, or powder." },
+    },
+    {
+      "@type": "Question",
+      name: "Can you export hibiscus to Mexico?",
+      acceptedAnswer: { "@type": "Answer", text: "Yes. We are fully compliant with the NAQS-SENASICA protocol signed in 2022 that reopened Nigeria-Mexico hibiscus trade (banned 2017-2022 due to khapra beetle). We provide methyl bromide fumigation certificates as required by Mexico." },
+    },
+    {
+      "@type": "Question",
+      name: "What is dried hibiscus used for?",
+      acceptedAnswer: { "@type": "Answer", text: "Dried hibiscus is used globally for beverages (agua de jamaica in Mexico, karkade in Middle East, sorrel in Caribbean), herbal tea blends, natural food coloring (E163), dietary supplements (high in vitamin C and antioxidants), and cosmetic extracts." },
+    },
+    {
+      "@type": "Question",
+      name: "How much does wholesale dried hibiscus cost?",
+      acceptedAnswer: { "@type": "Answer", text: "Indicative pricing: $1,800-3,400/MT FOB Lagos depending on grade, season, and volume. Whole Grade A flowers command the highest price. Cut and sifted is 15-20% less. Organic certified adds 20-30% premium." },
+    },
+  ],
+};
 ---
 
 <Layout
   title="Dried Hibiscus Flowers - Nigeria's #1 Export | Origin Direct"
   description="Premium dried hibiscus flowers from Nigeria, the world's largest producer. Grade A dark red, whole flowers and cut & sifted. NAQS-SENASICA compliant for Mexico trade."
+  structuredData={[productSchema, breadcrumbSchema, faqSchema]}
 >
+  <!-- Breadcrumbs -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumbs items={[{ label: "Products", href: "/products" }, { label: "Dried Hibiscus Flowers" }]} />
+  </div>
+
   <!-- Hero -->
   <section class="relative py-24 sm:py-32 bg-gradient-to-br from-brand-900 via-[#5a1a2a] to-earth-900 overflow-hidden">
     <div class="absolute inset-0 opacity-10">
@@ -203,6 +275,35 @@ import QuoteForm from '../../components/QuoteForm.astro';
           </ul>
           <p class="text-sm text-gray-500 mt-4">FOB Lagos. Compressed bales optimize shipping costs &mdash; up to 22 MT per 20&rsquo; container.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Frequently Asked Questions</h2>
+      <div class="space-y-4">
+        <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+          <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">Is Nigeria the world's largest hibiscus producer?</summary>
+          <div class="px-6 pb-4 text-gray-700">Yes. Nigeria is the world's largest producer and exporter of dried hibiscus flowers (Roselle/Hibiscus sabdariffa). Nigerian hibiscus supplies 85% of Mexico's imports for agua de jamaica, plus significant volumes to Germany, Egypt, and the USA.</div>
+        </details>
+        <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+          <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">What are the quality specs for dried hibiscus?</summary>
+          <div class="px-6 pb-4 text-gray-700">Our dried hibiscus flowers meet: moisture below 11%, foreign matter below 1%, deep red/burgundy color, pH 2.5-3.5, no artificial coloring, pesticide residues within MRL limits. Available as whole flowers, cut and sifted, or powder.</div>
+        </details>
+        <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+          <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">Can you export hibiscus to Mexico?</summary>
+          <div class="px-6 pb-4 text-gray-700">Yes. We are fully compliant with the NAQS-SENASICA protocol signed in 2022 that reopened Nigeria-Mexico hibiscus trade (banned 2017-2022 due to khapra beetle). We provide methyl bromide fumigation certificates as required by Mexico.</div>
+        </details>
+        <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+          <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">What is dried hibiscus used for?</summary>
+          <div class="px-6 pb-4 text-gray-700">Dried hibiscus is used globally for beverages (agua de jamaica in Mexico, karkade in Middle East, sorrel in Caribbean), herbal tea blends, natural food coloring (E163), dietary supplements (high in vitamin C and antioxidants), and cosmetic extracts.</div>
+        </details>
+        <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+          <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">How much does wholesale dried hibiscus cost?</summary>
+          <div class="px-6 pb-4 text-gray-700">Indicative pricing: $1,800-3,400/MT FOB Lagos depending on grade, season, and volume. Whole Grade A flowers command the highest price. Cut and sifted is 15-20% less. Organic certified adds 20-30% premium.</div>
+        </details>
       </div>
     </div>
   </section>
