@@ -41,18 +41,19 @@ const navLinks = [
       <!-- Desktop Navigation -->
       <nav class="hidden lg:flex items-center gap-8">
         <!-- Products Dropdown -->
-        <div class="relative group" id="products-dropdown">
+        <div class="relative" id="products-dropdown">
           <button
+            id="desktop-products-btn"
             class="flex items-center gap-1 text-sm font-medium text-gray-700 hover:text-brand-700 transition-colors py-2"
             aria-expanded="false"
             aria-haspopup="true"
           >
             Products
-            <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg id="desktop-products-chevron" class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
             </svg>
           </button>
-          <div class="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+          <div id="desktop-products-menu" class="absolute top-full left-0 pt-2 opacity-0 invisible pointer-events-none transition-all duration-200">
             <div class="bg-white rounded-xl shadow-xl border border-gray-100 py-3 w-56">
               {products.map((product) => (
                 <a
@@ -220,5 +221,69 @@ const navLinks = [
   productsBtn?.addEventListener("click", () => {
     productsList?.classList.toggle("hidden");
     productsChevron?.classList.toggle("rotate-180");
+  });
+
+  // Desktop products dropdown (hover + click)
+  const desktopDropdown = document.getElementById("products-dropdown");
+  const desktopBtn = document.getElementById("desktop-products-btn");
+  const desktopMenu = document.getElementById("desktop-products-menu");
+  const desktopChevron = document.getElementById("desktop-products-chevron");
+  let dropdownTimeout: ReturnType<typeof setTimeout> | null = null;
+
+  function showDropdown() {
+    if (dropdownTimeout) { clearTimeout(dropdownTimeout); dropdownTimeout = null; }
+    desktopMenu?.classList.remove("opacity-0", "invisible", "pointer-events-none");
+    desktopMenu?.classList.add("opacity-100", "visible", "pointer-events-auto");
+    desktopChevron?.classList.add("rotate-180");
+    desktopBtn?.setAttribute("aria-expanded", "true");
+  }
+
+  function hideDropdown() {
+    dropdownTimeout = setTimeout(() => {
+      desktopMenu?.classList.add("opacity-0", "invisible", "pointer-events-none");
+      desktopMenu?.classList.remove("opacity-100", "visible", "pointer-events-auto");
+      desktopChevron?.classList.remove("rotate-180");
+      desktopBtn?.setAttribute("aria-expanded", "false");
+    }, 150);
+  }
+
+  // Hover behavior
+  desktopDropdown?.addEventListener("mouseenter", showDropdown);
+  desktopDropdown?.addEventListener("mouseleave", hideDropdown);
+
+  // Click behavior (toggle)
+  desktopBtn?.addEventListener("click", (e) => {
+    e.stopPropagation();
+    const isVisible = desktopMenu?.classList.contains("visible");
+    if (isVisible) {
+      if (dropdownTimeout) clearTimeout(dropdownTimeout);
+      desktopMenu?.classList.add("opacity-0", "invisible", "pointer-events-none");
+      desktopMenu?.classList.remove("opacity-100", "visible", "pointer-events-auto");
+      desktopChevron?.classList.remove("rotate-180");
+      desktopBtn?.setAttribute("aria-expanded", "false");
+    } else {
+      showDropdown();
+    }
+  });
+
+  // Close on outside click
+  document.addEventListener("click", (e) => {
+    if (!desktopDropdown?.contains(e.target as Node)) {
+      if (dropdownTimeout) clearTimeout(dropdownTimeout);
+      desktopMenu?.classList.add("opacity-0", "invisible", "pointer-events-none");
+      desktopMenu?.classList.remove("opacity-100", "visible", "pointer-events-auto");
+      desktopChevron?.classList.remove("rotate-180");
+      desktopBtn?.setAttribute("aria-expanded", "false");
+    }
+  });
+
+  // Close on Escape key
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && desktopMenu?.classList.contains("visible")) {
+      desktopMenu?.classList.add("opacity-0", "invisible", "pointer-events-none");
+      desktopMenu?.classList.remove("opacity-100", "visible", "pointer-events-auto");
+      desktopChevron?.classList.remove("rotate-180");
+      desktopBtn?.setAttribute("aria-expanded", "false");
+    }
   });
 </script>

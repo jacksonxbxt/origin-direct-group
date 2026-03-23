@@ -69,6 +69,11 @@ html {
   fill: #ffffff;
 }
 
+/* Custom height for header */
+.h-18 {
+  height: 4.5rem;
+}
+
 /* Header scroll transition */
 .header-transparent {
   background-color: transparent;
