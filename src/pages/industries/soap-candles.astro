@@ -1,0 +1,241 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import QuoteForm from '../../components/QuoteForm.astro';
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://origindirectgroup.com/" },
+    { "@type": "ListItem", position: 2, name: "Industries", item: "https://origindirectgroup.com/industries" },
+    { "@type": "ListItem", position: 3, name: "Soap & Candles", item: "https://origindirectgroup.com/industries/soap-candles" },
+  ],
+};
+
+const products = [
+  {
+    name: "Shea Butter",
+    slug: "/products/shea-butter",
+    description: "The cornerstone ingredient for natural soap making. Available in unrefined (Grade A), refined, and organic grades. Adds moisturizing properties, creates a creamy lather, and conditions skin.",
+    specs: ["Unrefined or refined", "COSMOS certified", "SAP value 0.128"],
+    use: "Cold process soap, melt & pour, lotion bars, lip balms",
+  },
+  {
+    name: "Coconut Products",
+    slug: "/products/coconut-products",
+    description: "Virgin coconut oil (VCO) and RBD coconut oil for soap making and candle production. Produces excellent lather and hardness in soap. Clean burn in candle formulations.",
+    specs: ["VCO or RBD", "76-degree melt point", "SAP value 0.190"],
+    use: "Soap base oil, candle wax blends, massage products",
+  },
+  {
+    name: "Palm Kernel Oil",
+    slug: "/products/palm-kernel-oil",
+    description: "Palm kernel oil adds cleansing power and lather to soap formulations. Similar to coconut oil but milder. Also used in candle blends for improved scent throw.",
+    specs: ["Refined", "SAP value 0.156", "West African origin"],
+    use: "Soap cleansing agent, candle hardener, cosmetic formulations",
+  },
+  {
+    name: "Cocoa Butter",
+    slug: "/products/cocoa",
+    description: "Natural and deodorized cocoa butter adds hardness, luxury feel, and skin conditioning to soap. Creates a firm bar with a silky lather. Deodorized grade for neutral-scented products.",
+    specs: ["Natural or deodorized", "Adds hardness", "SAP value 0.137"],
+    use: "Luxury soap bars, body butters, lip products",
+  },
+  {
+    name: "African Black Soap",
+    slug: "/products/african-black-soap",
+    description: "Traditional Ghanaian black soap base (alata samina) made from plantain ash, cocoa pod ash, palm kernel oil, and shea butter. Available as raw paste for reformulation or finished bars.",
+    specs: ["Raw paste or bars", "100% natural", "Traditional recipe"],
+    use: "Natural soap brands, acne care lines, artisan soap makers",
+  },
+  {
+    name: "Natural Honey",
+    slug: "/products/natural-honey",
+    description: "Raw, unfiltered honey from West Africa for soap making and candle wax blends. Adds moisturizing properties to soap and improves scent retention in beeswax candles.",
+    specs: ["Raw unfiltered", "West African origin", "Natural humectant"],
+    use: "Honey soap, beeswax candles, skincare products",
+  },
+];
+---
+
+<Layout
+  title="Natural Ingredients for Soap & Candle Makers | Origin Direct"
+  description="Shea butter, coconut oil, palm kernel oil, cocoa butter, African black soap base, and beeswax for soap and candle manufacturers. Direct from West Africa, competitive bulk pricing."
+  structuredData={[breadcrumbSchema]}
+>
+  <!-- Breadcrumbs -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumbs items={[{ label: "Industries", href: "/industries" }, { label: "Soap & Candles" }]} />
+  </div>
+
+  <!-- Hero -->
+  <section class="relative py-24 sm:py-32 bg-gradient-to-br from-brand-900 via-brand-800 to-earth-800 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(196,154,42,0.3),transparent_70%)]"></div>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-gold-light font-medium tracking-wide uppercase text-sm mb-4">Soap &amp; Candle Making</p>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">Natural Ingredients for Soap &amp; Candle Makers</h1>
+      <p class="text-xl text-brand-200 max-w-2xl mx-auto mb-10">
+        Shea butter, coconut oil, palm kernel oil, cocoa butter, and African black soap base. Everything natural soap and candle makers need, direct from source.
+      </p>
+      <a href="#quote-form" class="inline-flex items-center px-8 py-4 bg-gold hover:bg-gold-dark text-white font-bold rounded-lg transition-colors shadow-lg text-lg">
+        Request Quote
+        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- Overview -->
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Why Soap &amp; Candle Makers Choose Origin Direct</h2>
+      <div class="prose prose-lg text-gray-700 space-y-5">
+        <p>
+          The handmade soap and natural candle market continues to grow as consumers reject synthetic ingredients in favor of plant-based, sustainably sourced alternatives. West Africa produces many of the world's best soap-making oils and butters, from Ghana's shea butter to Nigeria's palm kernel oil and coconut oil.
+        </p>
+        <p>
+          Whether you are an artisan soap maker producing small batches or a commercial manufacturer running production lines, your ingredient costs directly impact your margins. Buying direct from Origin Direct eliminates the markups that domestic distributors add, giving you access to the same quality at significantly lower prices.
+        </p>
+        <p>
+          We supply in quantities that work for your business, from 1 MT trial orders for smaller operations to full container loads (18-20 MT) for established manufacturers. Every product comes with a Certificate of Analysis, SAP values, and the documentation your formulation team needs.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-10">Products for Soap &amp; Candle Makers</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {products.map((product) => (
+          <a href={product.slug} class="group block bg-white rounded-2xl border border-gray-100 hover:border-green-200 hover:shadow-xl transition-all duration-300 p-6">
+            <h3 class="text-lg font-bold text-gray-900 group-hover:text-green-700 transition-colors mb-3">
+              {product.name}
+            </h3>
+            <p class="text-sm text-gray-600 mb-3 leading-relaxed">{product.description}</p>
+            <p class="text-xs text-gray-500 mb-4"><strong>Best for:</strong> {product.use}</p>
+            <div class="flex flex-wrap gap-1.5 mb-4">
+              {product.specs.map((spec: string) => (
+                <span class="inline-flex items-center px-2.5 py-1 bg-green-50 text-green-800 text-xs font-medium rounded-full border border-green-100">
+                  {spec}
+                </span>
+              ))}
+            </div>
+            <div class="flex items-center gap-2 text-green-700 font-semibold text-sm group-hover:gap-3 transition-all">
+              View Product
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+              </svg>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Soap Making Guide -->
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Soap Making Reference</h2>
+      <div class="overflow-x-auto rounded-xl border border-gray-200 shadow-sm">
+        <table class="w-full text-left text-sm">
+          <thead>
+            <tr class="bg-brand-800 text-white">
+              <th class="px-6 py-4 font-semibold">Oil / Butter</th>
+              <th class="px-6 py-4 font-semibold">SAP Value (NaOH)</th>
+              <th class="px-6 py-4 font-semibold">Properties in Soap</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-100">
+            <tr class="bg-white">
+              <td class="px-6 py-4 font-medium text-gray-900">Shea Butter</td>
+              <td class="px-6 py-4 text-gray-700">0.128</td>
+              <td class="px-6 py-4 text-gray-700">Conditioning, creamy lather, moisturizing, gentle</td>
+            </tr>
+            <tr class="bg-gray-50">
+              <td class="px-6 py-4 font-medium text-gray-900">Coconut Oil</td>
+              <td class="px-6 py-4 text-gray-700">0.190</td>
+              <td class="px-6 py-4 text-gray-700">Big bubbly lather, hardness, cleansing</td>
+            </tr>
+            <tr class="bg-white">
+              <td class="px-6 py-4 font-medium text-gray-900">Palm Kernel Oil</td>
+              <td class="px-6 py-4 text-gray-700">0.156</td>
+              <td class="px-6 py-4 text-gray-700">Lather, hardness, cleansing (milder than coconut)</td>
+            </tr>
+            <tr class="bg-gray-50">
+              <td class="px-6 py-4 font-medium text-gray-900">Cocoa Butter</td>
+              <td class="px-6 py-4 text-gray-700">0.137</td>
+              <td class="px-6 py-4 text-gray-700">Hardness, silky feel, conditioning, luxury</td>
+            </tr>
+            <tr class="bg-white">
+              <td class="px-6 py-4 font-medium text-gray-900">Castor Oil</td>
+              <td class="px-6 py-4 text-gray-700">0.128</td>
+              <td class="px-6 py-4 text-gray-700">Lather booster, humectant, sticky lather</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Packaging -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Packaging &amp; MOQ</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div>
+          <h3 class="text-lg font-semibold text-brand-800 mb-4">Packaging Options</h3>
+          <ul class="space-y-3 text-gray-700">
+            <li class="flex items-start gap-2">
+              <span class="text-brand-600 mt-1">&#8226;</span>
+              <span>25 kg cartons (popular for small-to-mid manufacturers)</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-brand-600 mt-1">&#8226;</span>
+              <span>50 kg drums</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-brand-600 mt-1">&#8226;</span>
+              <span>180 kg steel drums (bulk production)</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-brand-600 mt-1">&#8226;</span>
+              <span>Flexi-tanks for liquid oils (20-24 MT)</span>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold text-brand-800 mb-4">Order Quantities</h3>
+          <ul class="space-y-3 text-gray-700">
+            <li class="flex items-start gap-2">
+              <span class="text-gold mt-1">&#9654;</span>
+              <span><strong>Trial order:</strong> 1-5 MT (great for testing quality)</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-gold mt-1">&#9654;</span>
+              <span><strong>Standard MOQ:</strong> 1 FCL (18-20 MT)</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-gold mt-1">&#9654;</span>
+              <span><strong>Samples:</strong> Available before committing to order</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-gold mt-1">&#9654;</span>
+              <span><strong>Co-loading:</strong> Mix multiple products in one container</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quote Form -->
+  <section id="quote-form" class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <QuoteForm />
+    </div>
+  </section>
+</Layout>

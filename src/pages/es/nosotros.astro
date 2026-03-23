@@ -1,0 +1,122 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import QuoteForm from '../../components/QuoteForm.astro';
+
+const siteUrl = "https://origindirectgroup.com";
+---
+
+<Layout
+  title="Sobre Origin Direct Group - Abastecimiento Directo de Materias Primas"
+  description="Origin Direct Group conecta compradores globales de materias primas con productores verificados en Africa Occidental e India. Eliminamos intermediarios para precios competitivos y calidad garantizada."
+  lang="es"
+  hreflangs={[
+    { lang: "en", href: `${siteUrl}/about` },
+    { lang: "fr", href: `${siteUrl}/fr/a-propos` },
+    { lang: "es", href: `${siteUrl}/es/nosotros` },
+  ]}
+>
+  <section class="relative py-20 md:py-28 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-green-950 via-green-900 to-amber-950"></div>
+    <div class="absolute inset-0 bg-black/20"></div>
+    <div class="relative z-10 max-w-3xl mx-auto px-6 text-center">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight mb-6">Eliminamos los Intermediarios</h1>
+      <p class="text-lg md:text-xl text-green-100/90 max-w-2xl mx-auto leading-relaxed">
+        Relaciones directas con productores significan mejores precios, trazabilidad completa y calidad constante para su negocio.
+      </p>
+    </div>
+    <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white to-transparent"></div>
+  </section>
+
+  <section class="py-20 md:py-28 bg-white">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Nuestra Historia</h2>
+        <div class="w-16 h-1 bg-amber-500 mx-auto rounded-full"></div>
+      </div>
+      <div class="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-6">
+        <p>
+          Origin Direct Group conecta compradores globales de materias primas con productores verificados en Africa Occidental e India. Eliminamos intermediarios (los procesadores europeos, los intermediarios asiaticos y los traders que inflan los costos entre 30 y 300%) manteniendo relaciones directas con agricultores, cooperativas y productores en campo.
+        </p>
+        <p>
+          Nuestros equipos en Ghana, Nigeria e India gestionan todo, desde el abastecimiento y control de calidad hasta la documentacion de exportacion y la logistica. Cuando trabaja con nosotros, obtiene el producto directamente de las personas que lo cultivan y procesan, con trazabilidad y documentacion completa en cada etapa.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 md:py-28 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Nuestra Presencia</h2>
+        <div class="w-16 h-1 bg-amber-500 mx-auto rounded-full"></div>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8 lg:gap-12">
+        <div class="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm">
+          <div class="text-3xl mb-4">&#127468;&#127469;</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-4">Ghana</h3>
+          <ul class="space-y-3 text-gray-600">
+            <li class="flex items-start gap-2"><span class="w-1.5 h-1.5 bg-green-600 rounded-full mt-2 flex-shrink-0"></span><span>Oficina en Accra - coordinacion central</span></li>
+            <li class="flex items-start gap-2"><span class="w-1.5 h-1.5 bg-green-600 rounded-full mt-2 flex-shrink-0"></span><span>Cinturon del cacao - regiones Ashanti y Western</span></li>
+            <li class="flex items-start gap-2"><span class="w-1.5 h-1.5 bg-green-600 rounded-full mt-2 flex-shrink-0"></span><span>Regiones de anacardo - Brong-Ahafo y Northern</span></li>
+            <li class="flex items-start gap-2"><span class="w-1.5 h-1.5 bg-green-600 rounded-full mt-2 flex-shrink-0"></span><span>Cinturon del karite - Upper East y Upper West</span></li>
+          </ul>
+        </div>
+        <div class="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm">
+          <div class="text-3xl mb-4">&#127475;&#127468;</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-4">Nigeria</h3>
+          <ul class="space-y-3 text-gray-600">
+            <li class="flex items-start gap-2"><span class="w-1.5 h-1.5 bg-green-600 rounded-full mt-2 flex-shrink-0"></span><span>Operaciones en Lagos - centro de exportacion</span></li>
+            <li class="flex items-start gap-2"><span class="w-1.5 h-1.5 bg-green-600 rounded-full mt-2 flex-shrink-0"></span><span>Cinturon agricola del norte - ajonjoli, jamaica, jengibre</span></li>
+            <li class="flex items-start gap-2"><span class="w-1.5 h-1.5 bg-green-600 rounded-full mt-2 flex-shrink-0"></span><span>Puertos de exportacion - Apapa y Tin Can Island</span></li>
+          </ul>
+        </div>
+        <div class="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm">
+          <div class="text-3xl mb-4">&#127470;&#127475;</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-4">India</h3>
+          <ul class="space-y-3 text-gray-600">
+            <li class="flex items-start gap-2"><span class="w-1.5 h-1.5 bg-green-600 rounded-full mt-2 flex-shrink-0"></span><span>Red de abastecimiento de especias</span></li>
+            <li class="flex items-start gap-2"><span class="w-1.5 h-1.5 bg-green-600 rounded-full mt-2 flex-shrink-0"></span><span>Aceite de ricino y derivados</span></li>
+            <li class="flex items-start gap-2"><span class="w-1.5 h-1.5 bg-green-600 rounded-full mt-2 flex-shrink-0"></span><span>Abastecimiento de goma guar</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 md:py-28 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Lo Que Nos Diferencia</h2>
+        <div class="w-16 h-1 bg-amber-500 mx-auto rounded-full"></div>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8 lg:gap-12">
+        <div class="bg-green-50/50 rounded-2xl p-8 lg:p-10 border border-green-100">
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Equipos en Campo</h3>
+          <p class="text-gray-600 leading-relaxed">No negociamos desde una oficina. Nuestros equipos locales visitan las fincas, inspeccionan los almacenes y supervisan la carga. Cada embarque se rastrea desde el origen hasta el puerto.</p>
+        </div>
+        <div class="bg-green-50/50 rounded-2xl p-8 lg:p-10 border border-green-100">
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Documentacion Completa</h3>
+          <p class="text-gray-600 leading-relaxed">Certificado de analisis, certificados fitosanitarios, certificados de origen, informes de laboratorio, documentos de embarque: todo lo que su agente aduanal necesita, incluido con cada embarque.</p>
+        </div>
+        <div class="bg-green-50/50 rounded-2xl p-8 lg:p-10 border border-green-100">
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Condiciones Flexibles</h3>
+          <p class="text-gray-600 leading-relaxed">FOB, CIF o DDP. Carta de credito, transferencia bancaria o pago contra documentos. Trabajamos con sus condiciones preferidas y nos adaptamos a sus necesidades.</p>
+        </div>
+        <div class="bg-green-50/50 rounded-2xl p-8 lg:p-10 border border-green-100">
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Garantia de Calidad</h3>
+          <p class="text-gray-600 leading-relaxed">Cada embarque se analiza de forma independiente. Si no cumple con las especificaciones, lo corregimos. Sin excusas, sin rodeos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 md:py-28 bg-green-950">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Listo para Comprar Directo?</h2>
+        <p class="text-lg text-green-200/80 max-w-xl mx-auto">Reciba una cotizacion competitiva en menos de 2 horas. Nuestro equipo esta listo para ayudarle.</p>
+      </div>
+      <QuoteForm />
+    </div>
+  </section>
+</Layout>

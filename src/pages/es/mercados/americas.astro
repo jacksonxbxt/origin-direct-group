@@ -1,0 +1,122 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import QuoteForm from '../../../components/QuoteForm.astro';
+
+const siteUrl = "https://origindirectgroup.com";
+
+const products = [
+  { name: "Flor de Jamaica Seca", description: "Flores de jamaica secas premium para el agua de jamaica de Mexico y el mercado de tisanas en Estados Unidos. Color rojo profundo, acidez elevada, perfil de sabor limpio.", markets: "Mexico, USA", highlight: "Mas vendido" },
+  { name: "Jengibre Seco", description: "Jengibre seco partido y entero con alto contenido de oleorresina y gingerol. Muy utilizado en la cocina caribena, bebidas y remedios tradicionales.", markets: "Caribe, USA", highlight: "Producto esencial" },
+  { name: "Polvo de Moringa", description: "Polvo de moringa certificado organico para el creciente mercado de alimentos saludables y suplementos en las Americas. Analizado en laboratorio para metales pesados y carga microbiana.", markets: "USA, Brasil", highlight: "Certificado organico" },
+  { name: "Anacardos", description: "Almendras de anacardo procesadas en todos los grados estandar (W180, W240, W320, W450) para empaque al detalle y fabricacion alimentaria.", markets: "USA, Brasil", highlight: "Todos los grados" },
+  { name: "Cacao", description: "Granos de cacao fermentados, manteca de cacao natural y polvo de cacao para chocolateros artesanales y fabricantes alimentarios de las Americas.", markets: "USA, Brasil, Mexico", highlight: "Bean to bar" },
+];
+
+const countries = [
+  "Mexico", "USA", "Canada", "Brasil", "Argentina", "Colombia", "Chile", "Peru", "Ecuador",
+  "Republica Dominicana", "Jamaica", "Trinidad y Tobago", "Barbados", "Surinam", "Guyana",
+  "Costa Rica", "Panama", "Guatemala", "Honduras", "Uruguay", "Paraguay", "Bolivia",
+];
+
+const ports = [
+  { name: "Manzanillo", country: "Mexico", transit: "22-26 dias" },
+  { name: "Houston", country: "USA", transit: "18-22 dias" },
+  { name: "New York / Newark", country: "USA", transit: "16-20 dias" },
+  { name: "Kingston", country: "Jamaica", transit: "18-22 dias" },
+];
+---
+
+<Layout
+  title="Materias Primas para Compradores en las Americas | Origin Direct"
+  description="Flor de jamaica para Mexico, jengibre para el Caribe, moringa y anacardos para USA. Conforme FDA y SENASICA. Exportaciones directas desde Africa Occidental."
+  lang="es"
+  hreflangs={[
+    { lang: "en", href: `${siteUrl}/markets/americas` },
+    { lang: "fr", href: `${siteUrl}/fr/marches/ameriques` },
+    { lang: "es", href: `${siteUrl}/es/mercados/americas` },
+  ]}
+>
+  <section class="relative py-20 md:py-28 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-green-950 via-green-900 to-red-950"></div>
+    <div class="absolute inset-0 bg-black/20"></div>
+    <div class="relative z-10 max-w-3xl mx-auto px-6 text-center">
+      <p class="text-amber-400 font-semibold text-sm uppercase tracking-wider mb-4">Mercado de las Americas</p>
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight mb-6">Materias Primas para las Americas</h1>
+      <p class="text-lg md:text-xl text-green-100/90 max-w-2xl mx-auto leading-relaxed">
+        Atendemos {countries.length} paises en America del Norte, America del Sur y el Caribe.
+      </p>
+    </div>
+    <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white to-transparent"></div>
+  </section>
+
+  <section class="py-16 md:py-20 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-10">
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-3">Paises Atendidos en las Americas</h2>
+        <p class="text-gray-600">Documentacion conforme FDA, SENASICA y ANVISA para cada destino.</p>
+      </div>
+      <div class="flex flex-wrap justify-center gap-2">
+        {countries.map((country) => (
+          <span class="inline-flex items-center px-3 py-1.5 bg-white text-gray-700 text-sm font-medium rounded-full border border-gray-200">{country}</span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 md:py-28 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Productos Clave para las Americas</h2>
+        <div class="w-16 h-1 bg-amber-500 mx-auto rounded-full"></div>
+      </div>
+      <div class="space-y-6">
+        {products.map((product) => (
+          <div class="bg-white rounded-2xl border border-gray-100 p-8 hover:shadow-lg transition-shadow">
+            <div class="flex flex-col md:flex-row md:items-start gap-4 md:gap-8">
+              <div class="flex-1">
+                <div class="flex items-center gap-3 mb-3">
+                  <h3 class="text-xl font-bold text-gray-900">{product.name}</h3>
+                  <span class="inline-flex items-center px-2.5 py-0.5 bg-green-100 text-green-800 text-xs font-semibold rounded-full">{product.highlight}</span>
+                </div>
+                <p class="text-gray-600 leading-relaxed">{product.description}</p>
+              </div>
+              <div class="md:w-40 flex-shrink-0">
+                <p class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1">Mercados Clave</p>
+                <p class="text-sm text-gray-700 font-medium">{product.markets}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 md:py-28 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Tiempos de Transito</h2>
+        <div class="w-16 h-1 bg-amber-500 mx-auto rounded-full"></div>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {ports.map((port) => (
+          <div class="bg-gray-50 rounded-xl border border-gray-100 p-6 text-center">
+            <h3 class="text-lg font-bold text-gray-900 mb-1">{port.name}</h3>
+            <p class="text-sm text-gray-500 mb-3">{port.country}</p>
+            <p class="text-2xl font-bold text-green-700">{port.transit}</p>
+            <p class="text-xs text-gray-400 mt-1">desde Africa Occidental</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 md:py-28 bg-green-950">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Obtener Cotizacion para las Americas</h2>
+        <p class="text-lg text-green-200/80 max-w-xl mx-auto">Materias primas conformes a FDA y SENASICA, precios competitivos, entregadas en su puerto.</p>
+      </div>
+      <QuoteForm />
+    </div>
+  </section>
+</Layout>

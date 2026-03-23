@@ -1,0 +1,332 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: "Sourcing from Africa vs Asia: A Buyer's Comparison Guide",
+  description: "Compare Africa and Asia as commodity sourcing origins covering cashews, cocoa, sesame, charcoal with analysis of price, quality, logistics, payment culture, and reliability.",
+  author: { "@type": "Organization", name: "Origin Direct Group" },
+  publisher: { "@type": "Organization", name: "Origin Direct Group", logo: { "@type": "ImageObject", url: "https://origindirectgroup.com/logo.png" } },
+  datePublished: "2026-03-23",
+  dateModified: "2026-03-23",
+  mainEntityOfPage: "https://origindirectgroup.com/blog/african-vs-asian-commodities",
+  image: "https://origindirectgroup.com/images/blog/african-vs-asian-commodities.jpg",
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://origindirectgroup.com/" },
+    { "@type": "ListItem", position: 2, name: "Blog", item: "https://origindirectgroup.com/blog" },
+    { "@type": "ListItem", position: 3, name: "Africa vs Asia Commodities", item: "https://origindirectgroup.com/blog/african-vs-asian-commodities" },
+  ],
+};
+---
+
+<Layout
+  title="Sourcing from Africa vs Asia: A Buyer's Comparison Guide | Origin Direct Group"
+  description="Compare Africa and Asia as commodity sourcing origins covering cashews, cocoa, sesame, charcoal with analysis of price, quality, logistics, payment culture, and reliability."
+  structuredData={[articleSchema, breadcrumbSchema]}
+>
+  <!-- Breadcrumbs -->
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <nav class="flex text-sm text-gray-500">
+      <a href="/" class="hover:text-brand-700">Home</a>
+      <span class="mx-2">/</span>
+      <a href="/blog" class="hover:text-brand-700">Blog</a>
+      <span class="mx-2">/</span>
+      <span class="text-gray-900">Africa vs Asia Commodities</span>
+    </nav>
+  </div>
+
+  <!-- Hero -->
+  <section class="relative py-20 sm:py-28 bg-gradient-to-br from-brand-900 via-brand-800 to-earth-800 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(196,154,42,0.3),transparent_70%)]"></div>
+    </div>
+    <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <span class="inline-block px-4 py-1.5 bg-amber-500/20 text-amber-300 text-sm font-semibold rounded-full mb-6 border border-amber-500/30">Comparison</span>
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">Sourcing from Africa vs Asia: A Buyer's Comparison Guide</h1>
+      <p class="text-lg text-brand-200 max-w-2xl mx-auto">
+        Africa grows many of the world's best commodities. Asia processes most of them. Understanding when to source from each region can reshape your supply chain economics.
+      </p>
+      <div class="mt-6 flex items-center justify-center gap-4 text-sm text-brand-300">
+        <span>March 23, 2026</span>
+        <span class="w-1 h-1 rounded-full bg-brand-500"></span>
+        <span>13 min read</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Article Content -->
+  <article class="py-16 md:py-20 bg-white">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="prose prose-lg text-gray-700 max-w-none">
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">The Big Picture</h2>
+        <p>
+          Africa and Asia play fundamentally different roles in global commodity trade. Africa is the origin of many of the world's most important agricultural commodities, from cocoa and cashews to shea butter and sesame. Asia, particularly India, Vietnam, and Indonesia, has built massive processing industries that add value to raw materials, often imported from Africa.
+        </p>
+        <p>
+          This creates an ironic situation: buyers in Europe, the Middle East, and the Americas often buy "Vietnamese" cashew kernels or "Indian" sesame that started life as African raw material. By the time it reaches the final buyer, the African origin is invisible, and the Asian processor has captured most of the margin.
+        </p>
+        <p>
+          For a deeper analysis of why this matters, see our article on <a href="/blog/why-source-direct-africa" class="text-brand-700 underline hover:text-brand-900">why sourcing direct from Africa is both cheaper and better</a>.
+        </p>
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">Commodity-by-Commodity Comparison</h2>
+
+        <h3 class="text-xl font-semibold text-brand-800 mt-8 mb-4">Cashew Nuts</h3>
+        <div class="overflow-x-auto rounded-xl border border-gray-200 shadow-sm my-8">
+          <table class="w-full text-left text-sm">
+            <thead>
+              <tr class="bg-brand-800 text-white">
+                <th class="px-6 py-4 font-semibold">Factor</th>
+                <th class="px-6 py-4 font-semibold">Africa (Nigeria, Ghana, Ivory Coast)</th>
+                <th class="px-6 py-4 font-semibold">Asia (Vietnam, India)</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100">
+              <tr class="bg-white">
+                <td class="px-6 py-3 font-medium text-gray-900">Primary Product</td>
+                <td class="px-6 py-3 text-gray-700">Raw cashew nuts (RCN)</td>
+                <td class="px-6 py-3 text-gray-700">Processed kernels</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="px-6 py-3 font-medium text-gray-900">Price (W320 kernels)</td>
+                <td class="px-6 py-3 text-gray-700">$5,000-6,000/MT (African processed)</td>
+                <td class="px-6 py-3 text-gray-700">$5,500-6,500/MT</td>
+              </tr>
+              <tr class="bg-white">
+                <td class="px-6 py-3 font-medium text-gray-900">Raw Material Origin</td>
+                <td class="px-6 py-3 text-gray-700">Domestic</td>
+                <td class="px-6 py-3 text-gray-700">~70% imported from Africa</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="px-6 py-3 font-medium text-gray-900">Processing Capacity</td>
+                <td class="px-6 py-3 text-gray-700">Growing (10-15% of RCN processed locally)</td>
+                <td class="px-6 py-3 text-gray-700">Dominant (Vietnam: 60%, India: 25%)</td>
+              </tr>
+              <tr class="bg-white">
+                <td class="px-6 py-3 font-medium text-gray-900">Quality Consistency</td>
+                <td class="px-6 py-3 text-gray-700">Improving but variable</td>
+                <td class="px-6 py-3 text-gray-700">Highly consistent</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          The cashew story illustrates the Africa-Asia dynamic perfectly. Africa produces roughly 55-60% of the world's raw cashew nuts, but processes only a small fraction domestically. The raw nuts are shipped to Vietnam and India for shelling, peeling, grading, and packaging, then exported to consuming markets at 5-7x the raw material cost. This value capture by Asian processors represents the single biggest opportunity for African cashew value chain development.
+        </p>
+        <p>
+          For buyers, sourcing <a href="/products/cashew-nuts" class="text-brand-700 underline hover:text-brand-900">processed kernels from African processors</a> can be 10-15% cheaper than Vietnamese or Indian equivalents, because the raw material does not need to be shipped to Asia first. Quality from the better African processors now matches Asian standards.
+        </p>
+
+        <h3 class="text-xl font-semibold text-brand-800 mt-8 mb-4">Cocoa</h3>
+        <div class="overflow-x-auto rounded-xl border border-gray-200 shadow-sm my-8">
+          <table class="w-full text-left text-sm">
+            <thead>
+              <tr class="bg-brand-800 text-white">
+                <th class="px-6 py-4 font-semibold">Factor</th>
+                <th class="px-6 py-4 font-semibold">Africa (Ghana, Ivory Coast)</th>
+                <th class="px-6 py-4 font-semibold">Asia (Indonesia)</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100">
+              <tr class="bg-white">
+                <td class="px-6 py-3 font-medium text-gray-900">Global Production Share</td>
+                <td class="px-6 py-3 text-gray-700">~70%</td>
+                <td class="px-6 py-3 text-gray-700">~5-7%</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="px-6 py-3 font-medium text-gray-900">Bean Type</td>
+                <td class="px-6 py-3 text-gray-700">Forastero (bulk grade, consistent)</td>
+                <td class="px-6 py-3 text-gray-700">Mixed (often under-fermented)</td>
+              </tr>
+              <tr class="bg-white">
+                <td class="px-6 py-3 font-medium text-gray-900">Fat Content</td>
+                <td class="px-6 py-3 text-gray-700">54-58%</td>
+                <td class="px-6 py-3 text-gray-700">50-54%</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="px-6 py-3 font-medium text-gray-900">Quality Reputation</td>
+                <td class="px-6 py-3 text-gray-700">Gold standard</td>
+                <td class="px-6 py-3 text-gray-700">Lower tier</td>
+              </tr>
+              <tr class="bg-white">
+                <td class="px-6 py-3 font-medium text-gray-900">EUDR Status</td>
+                <td class="px-6 py-3 text-gray-700">Active compliance programs</td>
+                <td class="px-6 py-3 text-gray-700">Deforestation concerns</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          For cocoa, Africa is the undisputed origin of choice. West Africa produces approximately 70% of global cocoa, and <a href="/products/cocoa" class="text-brand-700 underline hover:text-brand-900">Ghanaian cocoa</a> in particular is the quality benchmark for the industry. Indonesian cocoa has a niche in cocoa powder production but lacks the flavor profile and fat content that butter and chocolate manufacturers require. There is no debate here: if you need quality cocoa, you source from Africa.
+        </p>
+
+        <h3 class="text-xl font-semibold text-brand-800 mt-8 mb-4">Sesame Seeds</h3>
+        <div class="overflow-x-auto rounded-xl border border-gray-200 shadow-sm my-8">
+          <table class="w-full text-left text-sm">
+            <thead>
+              <tr class="bg-brand-800 text-white">
+                <th class="px-6 py-4 font-semibold">Factor</th>
+                <th class="px-6 py-4 font-semibold">Africa (Nigeria, Ethiopia, Sudan)</th>
+                <th class="px-6 py-4 font-semibold">Asia (India, Myanmar)</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100">
+              <tr class="bg-white">
+                <td class="px-6 py-3 font-medium text-gray-900">Production Volume</td>
+                <td class="px-6 py-3 text-gray-700">~2.5 million MT combined</td>
+                <td class="px-6 py-3 text-gray-700">~1.5 million MT combined</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="px-6 py-3 font-medium text-gray-900">Oil Content</td>
+                <td class="px-6 py-3 text-gray-700">48-55%</td>
+                <td class="px-6 py-3 text-gray-700">45-52%</td>
+              </tr>
+              <tr class="bg-white">
+                <td class="px-6 py-3 font-medium text-gray-900">Ethylene Oxide Risk</td>
+                <td class="px-6 py-3 text-gray-700">Low</td>
+                <td class="px-6 py-3 text-gray-700">Higher (India flagged in RASFF)</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="px-6 py-3 font-medium text-gray-900">Hulled Availability</td>
+                <td class="px-6 py-3 text-gray-700">Limited processing capacity</td>
+                <td class="px-6 py-3 text-gray-700">Wide range of processed formats</td>
+              </tr>
+              <tr class="bg-white">
+                <td class="px-6 py-3 font-medium text-gray-900">Best For</td>
+                <td class="px-6 py-3 text-gray-700">Tahini, oil extraction</td>
+                <td class="px-6 py-3 text-gray-700">Bakery, confectionery, retail</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          <a href="/products/sesame-seeds" class="text-brand-700 underline hover:text-brand-900">African sesame</a> often has higher oil content, making it preferred for tahini production and oil extraction. Indian sesame benefits from a more developed processing industry that can deliver hulled, roasted, and other value-added formats. Ethylene oxide contamination has been a significant issue with Indian sesame exports to the EU, leading some European buyers to shift sourcing to Africa.
+        </p>
+
+        <h3 class="text-xl font-semibold text-brand-800 mt-8 mb-4">Charcoal</h3>
+        <div class="overflow-x-auto rounded-xl border border-gray-200 shadow-sm my-8">
+          <table class="w-full text-left text-sm">
+            <thead>
+              <tr class="bg-brand-800 text-white">
+                <th class="px-6 py-4 font-semibold">Factor</th>
+                <th class="px-6 py-4 font-semibold">Africa (Nigeria)</th>
+                <th class="px-6 py-4 font-semibold">Asia (Indonesia)</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100">
+              <tr class="bg-white">
+                <td class="px-6 py-3 font-medium text-gray-900">Type</td>
+                <td class="px-6 py-3 text-gray-700">Hardwood</td>
+                <td class="px-6 py-3 text-gray-700">Coconut shell</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="px-6 py-3 font-medium text-gray-900">FOB Price</td>
+                <td class="px-6 py-3 text-gray-700">$260-500/MT</td>
+                <td class="px-6 py-3 text-gray-700">$1,250-1,500/MT</td>
+              </tr>
+              <tr class="bg-white">
+                <td class="px-6 py-3 font-medium text-gray-900">Market Segment</td>
+                <td class="px-6 py-3 text-gray-700">Value hookah, BBQ</td>
+                <td class="px-6 py-3 text-gray-700">Premium hookah</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="px-6 py-3 font-medium text-gray-900">Ash Content</td>
+                <td class="px-6 py-3 text-gray-700">3-6%</td>
+                <td class="px-6 py-3 text-gray-700">2-4%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          The <a href="/blog/coconut-vs-hardwood-hookah-charcoal" class="text-brand-700 underline hover:text-brand-900">charcoal comparison</a> is less about origin quality and more about entirely different products. Nigerian hardwood and Indonesian coconut shell charcoal serve different market segments. Many <a href="/products/hookah-charcoal" class="text-brand-700 underline hover:text-brand-900">hookah charcoal</a> brands source both to cover premium and value tiers.
+        </p>
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">Beyond Product: Operational Comparison</h2>
+
+        <h3 class="text-xl font-semibold text-brand-800 mt-8 mb-4">Logistics and Shipping</h3>
+        <p>
+          Asia has better-developed port infrastructure, more frequent shipping lines, and shorter transit times to major consuming markets in East Asia. Africa's logistics are improving but still face challenges: port congestion (particularly in Lagos), less frequent direct shipping connections, and higher inland transport costs.
+        </p>
+        <p>
+          Transit times from West Africa to Europe are comparable to Southeast Asia (14-21 days). Transit to North America is slightly longer from Africa. Transit to the Middle East is shorter from Africa. These logistics factors influence landed costs and should be part of your sourcing calculation.
+        </p>
+
+        <h3 class="text-xl font-semibold text-brand-800 mt-8 mb-4">Payment Culture</h3>
+        <p>
+          Asian suppliers, particularly in India and Vietnam, are more accustomed to international trade payment instruments. Letters of Credit, CAD (Cash Against Documents), and even open account terms are common for established relationships. Documentation tends to be professional and standardized.
+        </p>
+        <p>
+          African suppliers more frequently require advance payment, particularly for raw materials during harvest season. LC at sight is standard for larger transactions. Building payment trust takes longer, and banking infrastructure can add complexity. Working with an established export company like Origin Direct mitigates these challenges.
+        </p>
+
+        <h3 class="text-xl font-semibold text-brand-800 mt-8 mb-4">Quality Assurance</h3>
+        <p>
+          Asian exporters generally have more established quality management systems, lab testing capabilities, and food safety certifications (ISO 22000, FSSC 22000, BRC). This infrastructure gap is narrowing in Africa, but buyers sourcing directly from smaller African exporters should plan for more hands-on quality verification.
+        </p>
+        <p>
+          Pre-shipment inspection by international firms (SGS, Bureau Veritas, Cotecna) is recommended for African sourcing until a track record is established. For more on managing quality when importing from Africa, see our guide on <a href="/blog/certifications-food-export-africa" class="text-brand-700 underline hover:text-brand-900">certifications for food export from Africa</a>.
+        </p>
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">Growth Trends Favoring Africa</h2>
+        <p>
+          Several trends are shifting the sourcing landscape in Africa's favor:
+        </p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li><strong>Processing capacity investment</strong> - African governments and private investors are building processing facilities to capture more value domestically. Ghana, Nigeria, and Ivory Coast all have active programs to increase local cashew processing.</li>
+          <li><strong>Supply chain diversification</strong> - Post-COVID, buyers are actively diversifying away from single-region dependency. Africa offers a genuine alternative to Asian supply chains.</li>
+          <li><strong>EUDR advantage</strong> - The EU Deforestation Regulation creates new compliance requirements that favor traceable, origin-verified supply chains. Africa's smallholder structure, while challenging, allows for farm-level traceability that is harder to achieve with Asian re-processing operations.</li>
+          <li><strong>AfCFTA</strong> - The African Continental Free Trade Area is gradually reducing intra-African trade barriers, making it easier for African processors to source raw materials regionally.</li>
+          <li><strong>Ethylene oxide concerns</strong> - EU enforcement on ethylene oxide contamination has disproportionately affected Indian exports (sesame, spices), creating openings for African alternatives.</li>
+        </ul>
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">Our Recommendation: A Balanced Approach</h2>
+        <p>
+          For most commodity buyers, the optimal strategy is not Africa or Asia, but a calibrated mix that leverages each region's strengths:
+        </p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li><strong>Source raw materials from Africa</strong> where you have processing capability, or work with Africa-based processors for finished products. The cost advantage and traceability are compelling.</li>
+          <li><strong>Use Asian processors</strong> when you need specialized formats, very large volumes of processed goods, or when the Asian processing adds genuine value (specific kernel grades, hulled sesame, etc.).</li>
+          <li><strong>Diversify across both regions</strong> to reduce supply chain risk. Having qualified suppliers in both Africa and Asia protects against regional disruptions.</li>
+        </ul>
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">How Origin Direct Group Bridges the Gap</h2>
+        <p>
+          We specialize in helping international buyers source directly from Africa with the reliability and documentation standards they expect from Asian suppliers. Our on-the-ground operations in Ghana and Nigeria handle quality control, export documentation, and logistics management, so you get the cost and traceability advantages of African sourcing without the operational complexity.
+        </p>
+        <p>
+          Whether you are looking to supplement your existing Asian supply chain or build a new African sourcing channel from scratch, we can help you navigate the process.
+        </p>
+
+      </div>
+    </div>
+  </article>
+
+  <!-- CTA -->
+  <section class="py-20 md:py-24 bg-gradient-to-br from-brand-900 to-earth-800">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">
+        Ready to Source Direct from Africa?
+      </h2>
+      <p class="text-brand-200 mb-8 max-w-xl mx-auto">
+        Get competitive pricing on African commodities with international-grade quality assurance and documentation.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/quote" class="inline-flex items-center justify-center px-8 py-4 bg-gold hover:bg-gold-dark text-white font-bold rounded-lg transition-colors shadow-lg text-lg">
+          Request a Quote
+          <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+        <a href="/products" class="inline-flex items-center justify-center px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-lg transition-colors border border-white/20">
+          View All Products
+        </a>
+      </div>
+    </div>
+  </section>
+
+</Layout>

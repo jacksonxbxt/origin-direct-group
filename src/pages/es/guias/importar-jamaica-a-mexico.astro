@@ -1,0 +1,133 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+import QuoteForm from '../../../components/QuoteForm.astro';
+
+const siteUrl = "https://origindirectgroup.com";
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Inicio", item: `${siteUrl}/es/` },
+    { "@type": "ListItem", position: 2, name: "Guias", item: `${siteUrl}/es/guias` },
+    { "@type": "ListItem", position: 3, name: "Importar Flor de Jamaica a Mexico" },
+  ],
+};
+
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  name: "Como Importar Flor de Jamaica a Mexico",
+  description: "Guia paso a paso para importar flor de jamaica seca (hibisco) a Mexico, incluyendo requisitos de SENASICA, documentacion aduanal y logistica.",
+  step: [
+    { "@type": "HowToStep", position: 1, name: "Encontrar un proveedor verificado en Nigeria", text: "Identificar un exportador confiable con certificados fitosanitarios de NAQS y analisis de laboratorio conformes a normas mexicanas." },
+    { "@type": "HowToStep", position: 2, name: "Solicitar muestras y verificar calidad", text: "Analizar humedad, materia extrana, aflatoxinas, pesticidas y microbiologia. Confirmar color rojo oscuro y pH 2,5-3,5." },
+    { "@type": "HowToStep", position: 3, name: "Negociar terminos y precios", text: "Acordar Incoterms (FOB Lagos, CIF Manzanillo o DDP), cantidades, empaque y condiciones de pago." },
+    { "@type": "HowToStep", position: 4, name: "Obtener permisos SENASICA", text: "Tramitar la Hoja de Requisitos Fitosanitarios ante SENASICA para importacion de Hibiscus sabdariffa de Nigeria." },
+    { "@type": "HowToStep", position: 5, name: "Preparar documentacion de embarque", text: "Asegurar certificado fitosanitario de NAQS, certificado de analisis, certificado de origen, BL, factura comercial y lista de empaque." },
+    { "@type": "HowToStep", position: 6, name: "Embarcar y rastrear", text: "Embarcar desde Lagos hacia Manzanillo, Lazaro Cardenas o Veracruz. Transito de 20-28 dias." },
+    { "@type": "HowToStep", position: 7, name: "Despacho aduanal en Mexico", text: "Presentar pedimento de importacion, pasar inspeccion fitosanitaria de SENASICA y cumplir con regulaciones de la COFEPRIS si aplica." },
+  ],
+};
+---
+
+<Layout
+  title="Como Importar Flor de Jamaica a Mexico - Guia SENASICA | Origin Direct"
+  description="Guia completa para importar flor de jamaica seca (hibisco) de Nigeria a Mexico. Requisitos SENASICA, documentacion aduanal, codigos SA, logistica y costos. Para importadores mexicanos."
+  structuredData={[breadcrumbSchema, howToSchema]}
+  lang="es"
+  hreflangs={[
+    { lang: "es", href: `${siteUrl}/es/guias/importar-jamaica-a-mexico` },
+    { lang: "en", href: `${siteUrl}/products/hibiscus` },
+  ]}
+>
+  <section class="py-12 md:py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-6">
+      <Breadcrumbs items={[{ label: "Guias", href: "/es/guias" }, { label: "Importar Jamaica a Mexico" }]} />
+
+      <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Como Importar Flor de Jamaica a Mexico - Guia SENASICA</h1>
+
+      <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+        Mexico es el mayor importador mundial de flor de jamaica seca (Hibiscus sabdariffa), consumiendo mas de 15.000 toneladas anuales, de las cuales el 85% provienen de Nigeria. Esta guia cubre el proceso completo de importacion, desde la seleccion del proveedor hasta el despacho aduanal, con enfoque en los requisitos de SENASICA y las regulaciones fitosanitarias mexicanas.
+      </p>
+
+      <div class="prose prose-lg max-w-none text-gray-700">
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Proceso de Importacion Paso a Paso</h2>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Paso 1: Encontrar un Proveedor Verificado en Nigeria</h3>
+        <p>
+          Nigeria es el primer productor y exportador mundial de flor de jamaica seca. Las principales zonas de produccion se encuentran en los estados de Jigawa, Kano, Bauchi, Borno y Adamawa, en el norte del pais. Al seleccionar un proveedor, verifique que cuente con: registro ante NAQS (Nigeria Agricultural Quarantine Service), capacidad de emitir certificados fitosanitarios validos para Mexico, instalaciones de almacenamiento con control de humedad, y laboratorio de analisis o acceso a laboratorios acreditados. Origin Direct mantiene equipos permanentes en estas regiones, lo que nos permite verificar la calidad en campo antes del embarque.
+        </p>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Paso 2: Solicitar Muestras y Verificar Calidad</h3>
+        <p>
+          Antes de comprometerse con un pedido, solicite muestras de al menos 500g y envie a un laboratorio acreditado en Mexico para verificar: humedad (debe ser inferior al 11%), materia extrana (inferior al 1%), color (rojo oscuro uniforme, sin manchas ni decoloracion), pH (2,5-3,5), aflatoxinas (totales inferior a 10 ppb, B1 inferior a 5 ppb), residuos de pesticidas (conforme a LMR de COFEPRIS), y microbiologia (recuento total, E. coli, Salmonella). La calidad del agua de jamaica que se obtiene de las flores depende directamente de estos parametros, especialmente el color y la acidez.
+        </p>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Paso 3: Negociar Terminos y Precios</h3>
+        <p>
+          Los Incoterms mas comunes para importar jamaica a Mexico son FOB Lagos (usted gestiona el flete maritimo), CIF Manzanillo/Veracruz (el proveedor incluye flete y seguro) o DDP (entrega en su almacen, todo incluido). Los precios se negocian por tonelada metrica en dolares americanos. El empaque estandar es en sacos de polipropileno tejido de 25 kg o 50 kg, palletizados. Para el pago, lo mas comun es Carta de Credito Irrevocable a la vista, aunque tambien se aceptan transferencias bancarias (TT) con anticipo parcial para clientes nuevos.
+        </p>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Paso 4: Obtener Permisos SENASICA</h3>
+        <p>
+          Para importar productos vegetales a Mexico, necesita cumplir con los requisitos fitosanitarios establecidos por SENASICA (Servicio Nacional de Sanidad, Inocuidad y Calidad Agroalimentaria). Los pasos incluyen: consultar la Hoja de Requisitos Fitosanitarios para Hibiscus sabdariffa de Nigeria en el Modulo de Consulta de Requisitos Fitosanitarios de Importacion (MCRFI), tramitar su registro como importador ante SENASICA si no lo tiene, y coordinar con su agente aduanal la inspeccion fitosanitaria en puerto de arribo. SENASICA puede requerir inspeccion fisica del embarque, analisis de laboratorio en Mexico, y verificacion de que el certificado fitosanitario del pais de origen cumple con los requisitos establecidos.
+        </p>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Paso 5: Preparar Documentacion de Embarque</h3>
+        <p>Los documentos necesarios incluyen:</p>
+        <ul>
+          <li><strong>Certificado fitosanitario</strong> - Emitido por NAQS, confirmando que el producto esta libre de plagas y enfermedades cuarentenarias.</li>
+          <li><strong>Certificado de analisis (CoA)</strong> - Con resultados de humedad, aflatoxinas, pesticidas y microbiologia.</li>
+          <li><strong>Certificado de origen</strong> - Emitido por la camara de comercio de Nigeria.</li>
+          <li><strong>Conocimiento de embarque (Bill of Lading)</strong> - Documento de transporte maritimo.</li>
+          <li><strong>Factura comercial</strong> - Con descripcion del producto, cantidad, precio unitario y total.</li>
+          <li><strong>Lista de empaque (Packing List)</strong> - Detalle de bultos, pesos y dimensiones.</li>
+        </ul>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Paso 6: Embarque y Transito</h3>
+        <p>
+          Los principales puertos de entrada para jamaica a Mexico son Manzanillo (Colima), Lazaro Cardenas (Michoacan) y Veracruz. El transito maritimo desde Lagos toma 20-28 dias dependiendo de la ruta y las escalas. La jamaica se embarca en contenedores secos de 20 pies (hasta 22 TM por contenedor) o 40 pies. Es importante que el contenedor este limpio, seco y libre de olores residuales. La ventilacion natural es recomendable para evitar condensacion durante el transito.
+        </p>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Paso 7: Despacho Aduanal en Mexico</h3>
+        <p>
+          Al llegar al puerto mexicano, su agente aduanal debe: presentar el pedimento de importacion ante la aduana, someter el embarque a inspeccion fitosanitaria de SENASICA, presentar toda la documentacion de soporte, y pagar los aranceles e impuestos correspondientes. La fraccion arancelaria para flor de jamaica seca es 0902.10.01 o 1211.90.99 dependiendo de la clasificacion. El arancel general es del 20%, pero puede reducirse con tratados comerciales aplicables. Adicionalmente se paga IVA del 16% sobre el valor en aduana. Si el producto se destina a la industria alimentaria, COFEPRIS puede requerir aviso de funcionamiento y cumplimiento de las NOM aplicables.
+        </p>
+
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Codigos SA para Flor de Jamaica</h2>
+        <ul>
+          <li><strong>0902.10.01</strong> - Te verde (sin fermentar), incluida la flor de jamaica para infusiones</li>
+          <li><strong>1211.90.99</strong> - Plantas y partes de plantas utilizadas en perfumeria, medicina o para usos similares (clasificacion alternativa)</li>
+        </ul>
+
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Temporada de Cosecha y Disponibilidad</h2>
+        <p>
+          La cosecha principal de flor de jamaica en Nigeria se realiza entre noviembre y febrero. Los embarques estan disponibles desde diciembre en adelante, con el grueso de las exportaciones entre enero y junio. Es recomendable planificar sus compras con anticipacion, ya que los precios tienden a subir hacia el final de la temporada cuando la disponibilidad disminuye. Origin Direct le ayuda a asegurar volumenes y precios fijos con contratos de suministro anticipados.
+        </p>
+
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Documentos Esenciales (Resumen)</h2>
+        <ul>
+          <li>Certificado fitosanitario de NAQS</li>
+          <li>Certificado de analisis (humedad, aflatoxinas, pesticidas, microbiologia)</li>
+          <li>Certificado de origen</li>
+          <li>Conocimiento de embarque (Bill of Lading)</li>
+          <li>Factura comercial y lista de empaque</li>
+          <li>Pedimento de importacion</li>
+          <li>Registro como importador ante SENASICA</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-green-950">
+    <div class="max-w-3xl mx-auto px-6">
+      <div class="text-center mb-10">
+        <h2 class="text-2xl font-bold text-white">Necesita Ayuda para Importar Jamaica a Mexico?</h2>
+        <p class="mt-3 text-gray-300">Gestionamos toda la documentacion y logistica de exportacion por usted. Embarques regulares a Manzanillo, Lazaro Cardenas y Veracruz.</p>
+      </div>
+      <QuoteForm productName="Hibiscus" />
+    </div>
+  </section>
+</Layout>

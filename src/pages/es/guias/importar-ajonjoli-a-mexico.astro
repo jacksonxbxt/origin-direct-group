@@ -1,0 +1,124 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+import QuoteForm from '../../../components/QuoteForm.astro';
+
+const siteUrl = "https://origindirectgroup.com";
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Inicio", item: `${siteUrl}/es/` },
+    { "@type": "ListItem", position: 2, name: "Guias", item: `${siteUrl}/es/guias` },
+    { "@type": "ListItem", position: 3, name: "Importar Ajonjoli a Mexico" },
+  ],
+};
+
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  name: "Como Importar Ajonjoli a Mexico",
+  description: "Guia paso a paso para importar semillas de ajonjoli (sesamo) de Nigeria a Mexico. Requisitos de SENASICA, especificaciones de calidad y logistica.",
+  step: [
+    { "@type": "HowToStep", position: 1, name: "Identificar proveedor en Nigeria", text: "Seleccionar exportador con analisis de laboratorio y certificados fitosanitarios de NAQS." },
+    { "@type": "HowToStep", position: 2, name: "Verificar especificaciones de calidad", text: "Analizar contenido de aceite, humedad, pureza, AGL, aflatoxinas y salmonela." },
+    { "@type": "HowToStep", position: 3, name: "Negociar terminos", text: "Acordar Incoterms, cantidades, empaque y condiciones de pago." },
+    { "@type": "HowToStep", position: 4, name: "Tramitar permisos SENASICA", text: "Obtener la Hoja de Requisitos Fitosanitarios para semillas de sesamo de Nigeria." },
+    { "@type": "HowToStep", position: 5, name: "Preparar documentacion", text: "Reunir certificado fitosanitario, CoA, certificado de origen, BL y factura comercial." },
+    { "@type": "HowToStep", position: 6, name: "Embarcar hacia Mexico", text: "Embarcar desde Lagos hacia puertos mexicanos. Transito 20-28 dias." },
+    { "@type": "HowToStep", position: 7, name: "Despacho aduanal", text: "Presentar pedimento, pasar inspeccion fitosanitaria y cumplir regulaciones aplicables." },
+  ],
+};
+---
+
+<Layout
+  title="Como Importar Ajonjoli a Mexico - Guia para Importadores | Origin Direct"
+  description="Guia completa para importar semillas de ajonjoli (sesamo) de Nigeria a Mexico. Requisitos SENASICA, especificaciones de calidad, documentacion aduanal, codigos SA y logistica."
+  structuredData={[breadcrumbSchema, howToSchema]}
+  lang="es"
+  hreflangs={[
+    { lang: "es", href: `${siteUrl}/es/guias/importar-ajonjoli-a-mexico` },
+    { lang: "en", href: `${siteUrl}/products/sesame-seeds` },
+  ]}
+>
+  <section class="py-12 md:py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-6">
+      <Breadcrumbs items={[{ label: "Guias", href: "/es/guias" }, { label: "Importar Ajonjoli a Mexico" }]} />
+
+      <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Como Importar Ajonjoli a Mexico</h1>
+
+      <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+        Mexico consume cantidades significativas de semillas de ajonjoli (sesamo) para la industria alimentaria, panaderia, produccion de aceite y fabricacion de tahini. Nigeria, entre los tres principales exportadores mundiales, ofrece semillas con contenido de aceite excepcional (48-55%) a precios competitivos. Esta guia cubre el proceso completo para importar ajonjoli nigeriano a Mexico.
+      </p>
+
+      <div class="prose prose-lg max-w-none text-gray-700">
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Proceso de Importacion Paso a Paso</h2>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Paso 1: Seleccionar Proveedor en Nigeria</h3>
+        <p>
+          Las semillas de ajonjoli nigerianas provienen principalmente del cinturon de sabana del norte, en los estados de Nasarawa, Benue, Jigawa, Taraba y Niger. Al evaluar proveedores, verifique: registro ante NAQS, capacidad de proporcionar analisis de laboratorio completos (contenido de aceite, humedad, pureza, AGL, aflatoxinas, salmonela y pesticidas), instalaciones de limpieza y clasificacion con maquinaria de seleccion por color, y experiencia exportando a mercados internacionales con regulaciones estrictas.
+        </p>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Paso 2: Verificar Especificaciones de Calidad</h3>
+        <p>
+          Los parametros criticos para ajonjoli de exportacion incluyen: contenido de aceite (48-55%, cuanto mas alto mejor), humedad (maximo 5%), pureza (superior a 99%), AGL (inferior a 2%), aflatoxinas (totales inferior a 10 ppb), Salmonella (ausente por 25g), y residuos de pesticidas conformes a los LMR aplicables en Mexico. Para el mercado mexicano, tambien es importante verificar la ausencia de semillas de malezas y materias extranas, ya que SENASICA puede rechazar embarques con contaminacion vegetal excesiva.
+        </p>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Paso 3: Negociar Terminos Comerciales</h3>
+        <p>
+          Los Incoterms comunes son FOB Lagos o CIF Manzanillo/Veracruz. El ajonjoli se embarca en sacos de polipropileno de 25 kg o 50 kg, palletizados en contenedores de 20 pies con capacidad de 20-22 toneladas metricas. El pago tipico es por Carta de Credito o transferencia bancaria con anticipo parcial. Los precios se negocian por tonelada metrica en dolares americanos.
+        </p>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Paso 4: Tramitar Permisos SENASICA</h3>
+        <p>
+          Consulte los requisitos fitosanitarios para semillas de sesamo (Sesamum indicum) de Nigeria en el MCRFI de SENASICA. Las semillas de ajonjoli requieren certificado fitosanitario del pais de origen. Dependiendo de la clasificacion y el uso final, pueden aplicar requisitos adicionales. Coordine con su agente aduanal para confirmar los requisitos especificos.
+        </p>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Paso 5: Documentacion Necesaria</h3>
+        <p>Los documentos requeridos incluyen:</p>
+        <ul>
+          <li><strong>Certificado fitosanitario</strong> - Emitido por NAQS</li>
+          <li><strong>Certificado de analisis</strong> - Contenido de aceite, humedad, pureza, AGL, aflatoxinas, salmonela, pesticidas</li>
+          <li><strong>Certificado de origen</strong></li>
+          <li><strong>Conocimiento de embarque (Bill of Lading)</strong></li>
+          <li><strong>Factura comercial y lista de empaque</strong></li>
+        </ul>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Paso 6: Embarque y Logistica</h3>
+        <p>
+          El transito maritimo desde Lagos hasta puertos mexicanos toma 20-28 dias. Manzanillo es la opcion preferida para la costa pacifico y Veracruz para la costa atlantica. Las semillas de ajonjoli deben embarcarse en contenedores secos, limpios y sin olores residuales. Es importante mantener la carga seca durante el transito para evitar desarrollo de mohos.
+        </p>
+
+        <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">Paso 7: Despacho Aduanal</h3>
+        <p>
+          La fraccion arancelaria para semillas de ajonjoli es 1207.40.01. Su agente aduanal presentara el pedimento de importacion con toda la documentacion de soporte. SENASICA realizara inspeccion fitosanitaria. Si el ajonjoli se destina a uso alimentario, verifique el cumplimiento de las NOM aplicables de COFEPRIS. El arancel general varia, consulte con su agente aduanal los aranceles vigentes y posibles beneficios por tratados comerciales.
+        </p>
+
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Variedades Disponibles</h2>
+        <ul>
+          <li><strong>Blanco descascarado</strong> - Para panaderia, confiteria y produccion de tahini</li>
+          <li><strong>Blanco natural</strong> - Para extraccion de aceite y uso industrial</li>
+          <li><strong>Cafe/marron natural</strong> - Para la industria alimentaria y panaderia</li>
+          <li><strong>Negro</strong> - Para mercados especializados y gastronomia</li>
+          <li><strong>Certificado organico</strong> - Para el mercado de alimentos organicos</li>
+        </ul>
+
+        <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Codigo SA para Ajonjoli</h2>
+        <ul>
+          <li><strong>1207.40</strong> - Semillas de sesamo (ajonjoli), incluso quebrantadas</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-green-950">
+    <div class="max-w-3xl mx-auto px-6">
+      <div class="text-center mb-10">
+        <h2 class="text-2xl font-bold text-white">Necesita Ayuda para Importar Ajonjoli?</h2>
+        <p class="mt-3 text-gray-300">Gestionamos toda la documentacion y logistica desde Nigeria hasta su almacen en Mexico.</p>
+      </div>
+      <QuoteForm productName="Sesame Seeds" />
+    </div>
+  </section>
+</Layout>
