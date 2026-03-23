@@ -25,6 +25,11 @@ const products = [
   },
 ];
 
+const countries = [
+  "UAE", "Saudi Arabia", "Qatar", "Kuwait", "Bahrain", "Oman", "Jordan", "Lebanon", "Turkey",
+  "Israel", "Egypt", "South Africa", "Kenya", "Tanzania", "Morocco", "Tunisia", "Senegal", "Ivory Coast",
+];
+
 const ports = [
   { name: "Jebel Ali", country: "UAE", transit: "18-22 days" },
   { name: "Kuwait City", country: "Kuwait", transit: "20-24 days" },
@@ -43,15 +48,32 @@ const ports = [
     <div class="absolute inset-0 bg-gradient-to-br from-green-950 via-green-900 to-amber-900"></div>
     <div class="absolute inset-0 bg-black/20"></div>
     <div class="relative z-10 max-w-3xl mx-auto px-6 text-center">
-      <p class="text-amber-400 font-semibold text-sm uppercase tracking-wider mb-4">Middle East Market</p>
+      <p class="text-amber-400 font-semibold text-sm uppercase tracking-wider mb-4">Middle East & Africa Market</p>
       <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight mb-6">
-        Commodities for Middle East Buyers
+        Commodities for Middle East & African Buyers
       </h1>
       <p class="text-lg md:text-xl text-green-100/90 max-w-2xl mx-auto leading-relaxed">
-        🇦🇪 🇰🇼 🇶🇦 🇸🇦 🇹🇷 🇯🇴 🇱🇧
+        Serving {countries.length} countries across the Middle East and Africa.
       </p>
     </div>
     <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white to-transparent"></div>
+  </section>
+
+  <!-- Countries We Serve -->
+  <section class="py-16 md:py-20 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-10">
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-3">Countries We Serve</h2>
+        <p class="text-gray-600">Halal certified products, Dubai re-export hub, and direct shipping to African ports.</p>
+      </div>
+      <div class="flex flex-wrap justify-center gap-2">
+        {countries.map((country) => (
+          <span class="inline-flex items-center px-3 py-1.5 bg-white text-gray-700 text-sm font-medium rounded-full border border-gray-200">
+            {country}
+          </span>
+        ))}
+      </div>
+    </div>
   </section>
 
   <!-- Our Fastest-Growing Market -->

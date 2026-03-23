@@ -29,6 +29,12 @@ const products = [
   },
 ];
 
+const countries = [
+  "China", "Japan", "South Korea", "India", "Vietnam", "Indonesia", "Thailand", "Malaysia",
+  "Singapore", "Philippines", "Taiwan", "Hong Kong", "Australia", "New Zealand", "Bangladesh",
+  "Sri Lanka", "Pakistan", "Myanmar", "Cambodia",
+];
+
 const ports = [
   { name: "Nhava Sheva", country: "India", transit: "20-24 days" },
   { name: "Ho Chi Minh City", country: "Vietnam", transit: "28-32 days" },
@@ -47,15 +53,32 @@ const ports = [
     <div class="absolute inset-0 bg-gradient-to-br from-green-950 via-green-900 to-rose-950"></div>
     <div class="absolute inset-0 bg-black/20"></div>
     <div class="relative z-10 max-w-3xl mx-auto px-6 text-center">
-      <p class="text-amber-400 font-semibold text-sm uppercase tracking-wider mb-4">Asia Market</p>
+      <p class="text-amber-400 font-semibold text-sm uppercase tracking-wider mb-4">Asia & Pacific Market</p>
       <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight mb-6">
-        Commodities for Asian Buyers
+        Commodities for Asian & Pacific Buyers
       </h1>
       <p class="text-lg md:text-xl text-green-100/90 max-w-2xl mx-auto leading-relaxed">
-        🇮🇳 🇻🇳 🇨🇳 🇯🇵 🇰🇷
+        Serving {countries.length} countries across Asia and the Pacific region.
       </p>
     </div>
     <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white to-transparent"></div>
+  </section>
+
+  <!-- Countries We Serve -->
+  <section class="py-16 md:py-20 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-10">
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-3">Countries We Serve in Asia & Pacific</h2>
+        <p class="text-gray-600">Letter of Credit terms accepted. Bulk volumes for processing industries across the region.</p>
+      </div>
+      <div class="flex flex-wrap justify-center gap-2">
+        {countries.map((country) => (
+          <span class="inline-flex items-center px-3 py-1.5 bg-white text-gray-700 text-sm font-medium rounded-full border border-gray-200">
+            {country}
+          </span>
+        ))}
+      </div>
+    </div>
   </section>
 
   <!-- Supplying Asia's Processing Industries -->
