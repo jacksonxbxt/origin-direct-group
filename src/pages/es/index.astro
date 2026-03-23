@@ -1,0 +1,337 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import TrustBar from '../../components/TrustBar.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import QuoteForm from '../../components/QuoteForm.astro';
+
+const siteUrl = "https://origindirectgroup.com";
+
+const products = [
+  {
+    name: "Flor de Jamaica Seca",
+    slug: "es/productos/hibisco",
+    origin: "Nigeria \u{1F1F3}\u{1F1EC}",
+    description: "Flor de jamaica seca premium para agua de jamaica, mezclas de te y colorantes alimentarios naturales",
+    grades: "Flor Entera | Cortada y Tamizada | Polvo",
+  },
+  {
+    name: "Cacao",
+    slug: "es/productos/cacao",
+    origin: "Ghana \u{1F1EC}\u{1F1ED} / Nigeria \u{1F1F3}\u{1F1EC}",
+    description: "Granos, manteca, polvo y nibs de cacao, directo de la principal region productora mundial",
+    grades: "Granos Fermentados | Manteca Natural | Polvo Alcalinizado",
+  },
+  {
+    name: "Manteca de Karite",
+    slug: "es/productos/manteca-de-karite",
+    origin: "Ghana \u{1F1EC}\u{1F1ED}",
+    description: "Grados sin refinar, refinado y organico para las industrias cosmetica y alimentaria",
+    grades: "Grado A Sin Refinar | Refinada | Certificada Organica",
+  },
+  {
+    name: "Anacardos",
+    slug: "es/productos/anacardos",
+    origin: "Ghana \u{1F1EC}\u{1F1ED} / Nigeria \u{1F1F3}\u{1F1EC}",
+    description: "Nueces de la India crudas y almendras procesadas en todos los grados estandar",
+    grades: "RCN | W180 | W240 | W320 | W450",
+  },
+  {
+    name: "Semillas de Ajonjoli",
+    slug: "es/productos/ajonjoli",
+    origin: "Nigeria \u{1F1F3}\u{1F1EC}",
+    description: "Semillas de sesamo premium para produccion de tahini y procesamiento alimentario",
+    grades: "Blanco Descascarado | Natural | Negro | Organico",
+  },
+  {
+    name: "Polvo de Moringa",
+    slug: "es/productos/moringa",
+    origin: "Ghana \u{1F1EC}\u{1F1ED} / Nigeria \u{1F1F3}\u{1F1EC}",
+    description: "Polvo de moringa certificado organico para mercados de alimentos saludables y suplementos",
+    grades: "Convencional | Organico | Grado Farmaceutico",
+  },
+  {
+    name: "Jengibre Seco",
+    slug: "es/productos/jengibre",
+    origin: "Nigeria \u{1F1F3}\u{1F1EC}",
+    description: "Jengibre seco con el mayor contenido de oleorresina y gingerol del mundo",
+    grades: "Seco Partido | Entero | Polvo | Organico",
+  },
+];
+
+const steps = [
+  {
+    number: "01",
+    title: "Diganos lo que necesita",
+    description: "Envie una solicitud de cotizacion con su producto, cantidad y destino. Nosotros planificamos desde el origen.",
+  },
+  {
+    number: "02",
+    title: "Compramos directo en campo",
+    description: "Nuestros equipos en campo visitan a los productores, inspeccionan la calidad en origen, negocian precios y aseguran el mejor producto directo de la fuente.",
+  },
+  {
+    number: "03",
+    title: "Gestionamos documentos y flete",
+    description: "Analisis de laboratorio, certificados fitosanitarios, documentos de exportacion, supervision de carga de contenedores y reserva de flete maritimo. Todo lo manejamos nosotros.",
+  },
+  {
+    number: "04",
+    title: "Entrega en su puerta",
+    description: "Rastree su embarque en tiempo real. Coordinamos la documentacion aduanera y la entrega hasta su almacen.",
+  },
+];
+
+const markets = [
+  {
+    region: "Americas",
+    slug: "es/mercados/americas",
+    featured: ["Mexico", "USA", "Colombia", "Brasil", "Argentina", "Chile", "Peru", "Costa Rica", "Jamaica", "Trinidad y Tobago"],
+    moreCount: 12,
+    icon: `<svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5a17.92 17.92 0 01-8.716-2.247m0 0A8.966 8.966 0 013 12c0-1.528.38-2.968 1.05-4.228" /></svg>`,
+  },
+  {
+    region: "Europa",
+    slug: "es/mercados/americas",
+    featured: ["Espana", "Alemania", "Paises Bajos", "Francia", "Reino Unido", "Italia", "Belgica", "Portugal", "Polonia", "Republica Checa"],
+    moreCount: 17,
+    icon: `<svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5a17.92 17.92 0 01-8.716-2.247m0 0A8.966 8.966 0 013 12c0-1.528.38-2.968 1.05-4.228" /></svg>`,
+  },
+];
+---
+
+<Layout
+  title="Origin Direct Group | Materias Primas Directo de Africa Occidental e India"
+  description="Abastecimiento directo de materias primas desde Ghana, Nigeria e India. Flor de jamaica, cacao, manteca de karite, anacardos, ajonjoli, moringa y jengibre. Precios competitivos, calidad garantizada."
+  lang="es"
+  hreflangs={[
+    { lang: "en", href: `${siteUrl}/` },
+    { lang: "fr", href: `${siteUrl}/fr/` },
+    { lang: "es", href: `${siteUrl}/es/` },
+  ]}
+>
+
+  <!-- Hero Section -->
+  <section class="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-green-950 via-green-900 to-amber-950"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(180,130,50,0.15),transparent_60%)]"></div>
+    <div class="absolute inset-0 bg-black/30"></div>
+
+    <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
+      <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-white tracking-tight leading-tight mb-6 animate-fade-in">
+        Materias Primas<br />Directo de Origen
+      </h1>
+      <p class="text-lg md:text-xl text-gray-200 max-w-2xl mx-auto mb-10 leading-relaxed">
+        Conectamos a compradores globales con proveedores verificados en Africa Occidental e India.
+        Sin intermediarios. Sin sobrecostos. Trazabilidad completa.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+        <a
+          href="#quote"
+          class="inline-flex items-center px-8 py-4 bg-amber-500 hover:bg-amber-400 text-green-950 font-semibold rounded-lg transition-all duration-200 hover:shadow-lg hover:shadow-amber-500/25 text-lg"
+        >
+          Solicitar Cotizacion
+        </a>
+        <a
+          href="#products"
+          class="inline-flex items-center px-8 py-4 border-2 border-white/80 hover:border-white text-white font-semibold rounded-lg transition-all duration-200 hover:bg-white/10 text-lg"
+        >
+          Ver Productos
+        </a>
+      </div>
+
+      <div class="inline-flex items-center gap-2 px-5 py-2.5 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full mb-4">
+        <svg class="w-5 h-5 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3" />
+        </svg>
+        <span class="text-sm font-semibold text-amber-200 tracking-wide">Del Campo a Su Puerta - Gestionamos Todo</span>
+      </div>
+
+      <p class="text-sm text-gray-300/80 tracking-wide uppercase">
+        Compradores en mas de 150 paises confian en nosotros
+      </p>
+    </div>
+
+    <div class="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-transparent"></div>
+  </section>
+
+  <!-- Trust Bar -->
+  <TrustBar />
+
+  <!-- Por que Origin Direct -->
+  <section class="py-24 md:py-28 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Por Que los Compradores Nos Eligen</h2>
+        <div class="w-16 h-1 bg-amber-500 mx-auto rounded-full"></div>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8 lg:gap-12">
+        <div class="text-center p-8 rounded-2xl hover:bg-green-50/50 transition-colors duration-300">
+          <div class="inline-flex items-center justify-center w-16 h-16 bg-green-100 text-green-700 rounded-2xl mb-6">
+            <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Directo de Origen</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Nuestros equipos en Ghana, Nigeria e India trabajan directamente con los productores.
+            Sin intermediarios europeos o asiaticos que inflen sus costos.
+          </p>
+        </div>
+
+        <div class="text-center p-8 rounded-2xl hover:bg-green-50/50 transition-colors duration-300">
+          <div class="inline-flex items-center justify-center w-16 h-16 bg-green-100 text-green-700 rounded-2xl mb-6">
+            <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Control de Calidad Completo</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Cada embarque es inspeccionado, analizado y documentado. Informes de laboratorio,
+            certificados de analisis y certificados fitosanitarios incluidos.
+          </p>
+        </div>
+
+        <div class="text-center p-8 rounded-2xl hover:bg-green-50/50 transition-colors duration-300">
+          <div class="inline-flex items-center justify-center w-16 h-16 bg-green-100 text-green-700 rounded-2xl mb-6">
+            <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5a17.92 17.92 0 01-8.716-2.247m0 0A8.966 8.966 0 013 12c0-1.528.38-2.968 1.05-4.228" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Servicio del Campo a Su Puerta</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Gestionamos cada eslabon de la cadena: abastecimiento en campo, control de calidad en origen,
+            documentos de exportacion, flete maritimo y entrega en su almacen. FOB, CIF o DDP.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Productos -->
+  <section id="products" class="py-24 md:py-28 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Nuestros Productos</h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          Abastecidos directamente de productores verificados en Africa Occidental e India
+        </p>
+        <div class="w-16 h-1 bg-amber-500 mx-auto rounded-full mt-4"></div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {products.map((product) => (
+          <ProductCard
+            name={product.name}
+            slug={product.slug}
+            origin={product.origin}
+            description={product.description}
+            grades={product.grades}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Como Funciona -->
+  <section class="py-24 md:py-28 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Como Funciona</h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-2">Del campo a su puerta en cuatro pasos simples</p>
+        <div class="w-16 h-1 bg-amber-500 mx-auto rounded-full"></div>
+      </div>
+
+      <div class="relative">
+        <div class="hidden md:block absolute top-12 left-[12.5%] right-[12.5%] h-0.5 border-t-2 border-dashed border-green-200"></div>
+
+        <div class="grid md:grid-cols-4 gap-8 md:gap-6">
+          {steps.map((step) => (
+            <div class="relative text-center">
+              <div class="inline-flex items-center justify-center w-24 h-24 bg-green-50 border-2 border-green-200 rounded-full mb-6 relative z-10 bg-white">
+                <span class="text-2xl font-bold text-green-700">{step.number}</span>
+              </div>
+              <h3 class="text-lg font-bold text-gray-900 mb-2">{step.title}</h3>
+              <p class="text-gray-600 text-sm leading-relaxed">{step.description}</p>
+            </div>
+          ))}
+        </div>
+
+        <div class="md:hidden absolute top-0 bottom-0 left-1/2 -translate-x-1/2 w-0.5 border-l-2 border-dashed border-green-200 -z-10"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mercados -->
+  <section class="py-24 md:py-28 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-6">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Mercados que Atendemos</h2>
+        <div class="w-16 h-1 bg-amber-500 mx-auto rounded-full"></div>
+      </div>
+      <p class="text-center text-lg text-gray-600 mb-12 max-w-2xl mx-auto">
+        Entregamos en <span class="font-semibold text-green-700">mas de 150 paises</span> en todo el mundo. Donde este su empresa, nosotros entregamos.
+      </p>
+
+      <div class="grid sm:grid-cols-2 gap-6">
+        {markets.map((market) => (
+          <a
+            href={`/${market.slug}`}
+            class="group bg-white rounded-2xl p-8 border border-gray-100 hover:border-green-200 hover:shadow-lg transition-all duration-300"
+          >
+            <div class="flex items-center gap-3 mb-4">
+              <div class="text-green-700" set:html={market.icon} />
+              <h3 class="text-xl font-bold text-gray-900 group-hover:text-green-700 transition-colors">
+                {market.region}
+              </h3>
+            </div>
+            <div class="flex flex-wrap gap-2 mb-3">
+              {market.featured.map((country: string) => (
+                <span class="inline-flex items-center px-2.5 py-1 bg-gray-50 text-gray-700 text-xs font-medium rounded-full border border-gray-200">
+                  {country}
+                </span>
+              ))}
+            </div>
+            <p class="text-sm text-green-700 font-medium">
+              + {market.moreCount} paises mas &rarr;
+            </p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA / Cotizacion -->
+  <section id="quote" class="py-24 md:py-28 bg-green-950">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Listo para Comprar Directo?</h2>
+        <p class="text-lg text-green-200/80 max-w-xl mx-auto">
+          Reciba una cotizacion competitiva en menos de 2 horas. Nuestro equipo esta listo para ayudarle.
+        </p>
+      </div>
+
+      <QuoteForm />
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.8s ease-out both;
+  }
+</style>

@@ -1,0 +1,152 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import QuoteForm from '../../../components/QuoteForm.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+
+const siteUrl = "https://origindirectgroup.com";
+
+const productSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name: "Jengibre Seco Premium",
+  description: "Jengibre seco nigeriano premium con el contenido de oleorresina y gingerol mas alto del mundo. 4-6% oleorresina, ideal para extraccion farmaceutica y aceites esenciales.",
+  image: `${siteUrl}/images/products/ginger.jpg`,
+  brand: { "@type": "Brand", name: "Origin Direct Group" },
+  category: "Especias y Hierbas",
+  countryOfOrigin: { "@type": "Country", name: "Nigeria" },
+  offers: { "@type": "AggregateOffer", priceCurrency: "USD", availability: "https://schema.org/InStock" },
+  additionalProperty: [
+    { "@type": "PropertyValue", name: "Codigo SA", value: "0910.11" },
+    { "@type": "PropertyValue", name: "CMC", value: "1 FCL (18-20 TM)" },
+    { "@type": "PropertyValue", name: "Oleorresina", value: "4-6%" },
+  ],
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Inicio", item: `${siteUrl}/es/` },
+    { "@type": "ListItem", position: 2, name: "Productos", item: `${siteUrl}/es/productos` },
+    { "@type": "ListItem", position: 3, name: "Jengibre", item: `${siteUrl}/es/productos/jengibre` },
+  ],
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Por que el jengibre nigeriano se considera premium?",
+      acceptedAnswer: { "@type": "Answer", text: "El jengibre nigeriano tiene el contenido de oleorresina mas alto del mundo (4-6%) y los niveles de gingerol mas elevados, lo que lo hace preferido para aplicaciones farmaceuticas y extraccion de aceites esenciales. El jengibre indio tipicamente tiene 3-4% de oleorresina." },
+    },
+    {
+      "@type": "Question",
+      name: "Cuales son las especificaciones de su jengibre seco?",
+      acceptedAnswer: { "@type": "Answer", text: "Oleorresina 4-6%, aceite volatil superior a 1,5%, humedad inferior a 12%, cenizas inferior a 8%, fibra cruda inferior a 8%, contenido de tierra inferior a 1% (requisito UE). Disponible en seco partido, seco entero (sin blanquear), polvo y certificado organico." },
+    },
+    {
+      "@type": "Question",
+      name: "Que formas de jengibre ofrecen?",
+      acceptedAnswer: { "@type": "Answer", text: "Jengibre seco partido (el mas comun para exportacion), jengibre seco entero sin blanquear, polvo de jengibre y jengibre certificado organico. Todas las formas disponibles en sacos de 25 kg o 50 kg de polipropileno tejido." },
+    },
+  ],
+};
+---
+
+<Layout
+  title="Jengibre Seco Premium de Nigeria | Origin Direct"
+  description="Jengibre seco nigeriano premium, oleorresina 4-6%. Seco partido, entero, polvo, organico. Para farmaceutica, aceites esenciales, alimentacion. Precios B2B competitivos."
+  structuredData={[productSchema, breadcrumbSchema, faqSchema]}
+  lang="es"
+  hreflangs={[
+    { lang: "en", href: `${siteUrl}/products/ginger` },
+    { lang: "fr", href: `${siteUrl}/fr/produits/gingembre` },
+    { lang: "es", href: `${siteUrl}/es/productos/jengibre` },
+  ]}
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumbs items={[{ label: "Productos", href: "/es/productos" }, { label: "Jengibre" }]} />
+  </div>
+
+  <section class="relative py-24 sm:py-32 bg-gradient-to-br from-amber-900 via-brand-800 to-brand-900 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(196,154,42,0.3),transparent_70%)]"></div>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-gold-light font-medium tracking-wide uppercase text-sm mb-4">Nigeria</p>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">Jengibre Seco</h1>
+      <p class="text-xl text-brand-200 max-w-2xl mx-auto mb-10">
+        Jengibre seco partido y entero con el contenido de oleorresina y gingerol mas alto del mundo. Ideal para la industria farmaceutica y la extraccion.
+      </p>
+      <a href="#quote-form" class="inline-flex items-center px-8 py-4 bg-gold hover:bg-gold-dark text-white font-bold rounded-lg transition-colors shadow-lg text-lg">
+        Solicitar Cotizacion
+        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <section class="py-12 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="rounded-2xl overflow-hidden shadow-lg border border-gray-100">
+        <img src="/images/products/ginger.jpg" alt="Jengibre seco premium de Nigeria" class="w-full h-64 sm:h-80 object-cover" loading="eager" />
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Resumen</h2>
+      <div class="prose prose-lg text-gray-700 space-y-5">
+        <p>
+          El jengibre nigeriano es reconocido como el jengibre de mas alta calidad del mundo en terminos de contenido de oleorresina (4-6%) y niveles de gingerol, los compuestos activos buscados por las industrias farmaceutica y de aceites esenciales. Esta concentracion superior en principios activos lo hace indispensable para fabricantes que necesitan el maximo rendimiento de extraccion.
+        </p>
+        <p>
+          Origin Direct trabaja directamente con productores del cinturon de jengibre del Estado de Kaduna y la meseta de Jos en Nigeria. Ofrecemos jengibre seco partido (la forma mas comun para exportacion), jengibre entero sin blanquear, polvo de jengibre y jengibre certificado organico. Cada lote se analiza para aflatoxinas, residuos de pesticidas y contenido de tierra, conforme a exigencias internacionales.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Especificaciones Tecnicas</h2>
+      <div class="overflow-x-auto rounded-xl border border-gray-200 shadow-sm">
+        <table class="w-full text-left text-sm">
+          <thead><tr class="bg-brand-800 text-white"><th class="px-6 py-4 font-semibold">Parametro</th><th class="px-6 py-4 font-semibold">Especificacion</th></tr></thead>
+          <tbody class="divide-y divide-gray-100">
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">Oleorresina</td><td class="px-6 py-4 text-gray-700">4-6%</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">Aceite Volatil</td><td class="px-6 py-4 text-gray-700">&gt; 1,5%</td></tr>
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">Humedad</td><td class="px-6 py-4 text-gray-700">&lt; 12%</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">Cenizas</td><td class="px-6 py-4 text-gray-700">&lt; 8%</td></tr>
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">Fibra Cruda</td><td class="px-6 py-4 text-gray-700">&lt; 8%</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">Contenido de Tierra</td><td class="px-6 py-4 text-gray-700">&lt; 1% (requisito UE)</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Preguntas Frecuentes</h2>
+      <div class="space-y-4">
+        <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+          <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">Por que el jengibre nigeriano es premium?</summary>
+          <div class="px-6 pb-4 text-gray-700">Contenido de oleorresina mas alto del mundo (4-6%) y niveles de gingerol superiores, ideales para extraccion farmaceutica. El jengibre indio solo alcanza 3-4%.</div>
+        </details>
+        <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+          <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">Que formas de jengibre ofrecen?</summary>
+          <div class="px-6 pb-4 text-gray-700">Seco partido, seco entero sin blanquear, polvo y organico. Sacos de 25 kg o 50 kg de polipropileno tejido. Cajas para el polvo.</div>
+        </details>
+        <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+          <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">Cual es la cantidad minima de pedido?</summary>
+          <div class="px-6 pb-4 text-gray-700">1 FCL estandar, aproximadamente 18-20 TM. Pedidos de prueba a partir de 5 TM para nuevos compradores.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <QuoteForm productName="Ginger" />
+</Layout>

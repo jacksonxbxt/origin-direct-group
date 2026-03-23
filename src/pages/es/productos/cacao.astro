@@ -1,0 +1,152 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import QuoteForm from '../../../components/QuoteForm.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+
+const siteUrl = "https://origindirectgroup.com";
+
+const productSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name: "Cacao en Grano, Manteca y Polvo",
+  description: "Cacao premium de Ghana y Nigeria. Granos fermentados, manteca natural y desodorizada, polvo natural y alcalinizado. Conforme a cadmio UE, trazabilidad EUDR.",
+  image: `${siteUrl}/images/products/cocoa.jpg`,
+  brand: { "@type": "Brand", name: "Origin Direct Group" },
+  category: "Cacao e Ingredientes para Chocolate",
+  countryOfOrigin: { "@type": "Country", name: "Ghana" },
+  offers: { "@type": "AggregateOffer", priceCurrency: "USD", availability: "https://schema.org/InStock" },
+  additionalProperty: [
+    { "@type": "PropertyValue", name: "Codigo SA", value: "1801.00 / 1804.00 / 1805.00" },
+    { "@type": "PropertyValue", name: "CMC", value: "1 FCL (15-18 TM)" },
+    { "@type": "PropertyValue", name: "Cadmio", value: "< 0,60 mg/kg (conforme UE)" },
+  ],
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Inicio", item: `${siteUrl}/es/` },
+    { "@type": "ListItem", position: 2, name: "Productos", item: `${siteUrl}/es/productos` },
+    { "@type": "ListItem", position: 3, name: "Cacao", item: `${siteUrl}/es/productos/cacao` },
+  ],
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Su cacao cumple con el EUDR?",
+      acceptedAnswer: { "@type": "Answer", text: "Si. Todo nuestro cacao incluye datos de geolocalizacion completos para cada parcela agricola, asegurando pleno cumplimiento del Reglamento de la UE sobre Deforestacion (EUDR). Proporcionamos coordenadas GPS, mapas poligonales y documentacion de la cadena de trazabilidad." },
+    },
+    {
+      "@type": "Question",
+      name: "Cuales son los niveles de cadmio en su cacao?",
+      acceptedAnswer: { "@type": "Answer", text: "Todo nuestro cacao se analiza por debajo del umbral UE de 0,60 mg/kg de cadmio, conforme al Reglamento UE 2023/915. Los informes de laboratorio con analisis de cadmio se entregan con cada embarque." },
+    },
+    {
+      "@type": "Question",
+      name: "Que grados y productos de cacao suministran?",
+      acceptedAnswer: { "@type": "Answer", text: "Suministramos granos de cacao fermentados Grado 1 y Grado 2, manteca de cacao natural y desodorizada, polvo de cacao natural y alcalinizado (10-12% y 20-22% de grasa), y nibs de cacao. Todo proveniente de Ghana y Nigeria." },
+    },
+  ],
+};
+---
+
+<Layout
+  title="Cacao en Grano, Manteca y Polvo - Ghana y Nigeria | Origin Direct"
+  description="Cacao premium de Ghana y Nigeria. Granos fermentados, manteca y polvo. Conforme a cadmio UE, trazabilidad EUDR. Precios B2B competitivos para Mexico, Latinoamerica y Espana."
+  structuredData={[productSchema, breadcrumbSchema, faqSchema]}
+  lang="es"
+  hreflangs={[
+    { lang: "en", href: `${siteUrl}/products/cocoa` },
+    { lang: "fr", href: `${siteUrl}/fr/produits/cacao` },
+    { lang: "es", href: `${siteUrl}/es/productos/cacao` },
+  ]}
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumbs items={[{ label: "Productos", href: "/es/productos" }, { label: "Cacao" }]} />
+  </div>
+
+  <section class="relative py-24 sm:py-32 bg-gradient-to-br from-earth-900 via-earth-800 to-brand-900 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(196,154,42,0.3),transparent_70%)]"></div>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-gold-light font-medium tracking-wide uppercase text-sm mb-4">Ghana y Nigeria</p>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">Cacao</h1>
+      <p class="text-xl text-brand-200 max-w-2xl mx-auto mb-10">
+        Granos fermentados, manteca natural y desodorizada, polvo de cacao y nibs. Conforme a cadmio UE con trazabilidad EUDR completa.
+      </p>
+      <a href="#quote-form" class="inline-flex items-center px-8 py-4 bg-gold hover:bg-gold-dark text-white font-bold rounded-lg transition-colors shadow-lg text-lg">
+        Solicitar Cotizacion
+        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <section class="py-12 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="rounded-2xl overflow-hidden shadow-lg border border-gray-100">
+        <img src="/images/products/cocoa.jpg" alt="Granos de cacao premium de Ghana y Nigeria" class="w-full h-64 sm:h-80 object-cover" loading="eager" />
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Resumen</h2>
+      <div class="prose prose-lg text-gray-700 space-y-5">
+        <p>
+          Ghana y Nigeria representan juntos una parte significativa de la produccion mundial de cacao, y sus granos son apreciados por chocolateros de todo el mundo por sus perfiles aromaticos distintivos. El cacao ghanes es reconocido por su calidad constante y su sabor chocolateado profundo, mientras que el cacao nigeriano ofrece una excelente relacion calidad-precio con caracteristicas gustativas comparables.
+        </p>
+        <p>
+          Origin Direct suministra la gama completa de derivados del cacao: granos fermentados para produccion de chocolate, manteca de cacao natural y desodorizada para confiteria y cosmeticos, y polvo de cacao en formas natural y alcalinizada para panaderia y bebidas. Cada lote se analiza para cadmio (por debajo del umbral UE de 0,60 mg/kg), micotoxinas y residuos de pesticidas.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Especificaciones Tecnicas</h2>
+      <div class="overflow-x-auto rounded-xl border border-gray-200 shadow-sm">
+        <table class="w-full text-left text-sm">
+          <thead><tr class="bg-earth-800 text-white"><th class="px-6 py-4 font-semibold">Parametro</th><th class="px-6 py-4 font-semibold">Especificacion</th></tr></thead>
+          <tbody class="divide-y divide-gray-100">
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">Cadmio</td><td class="px-6 py-4 text-gray-700">&lt; 0,60 mg/kg (conforme UE)</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">Humedad (granos)</td><td class="px-6 py-4 text-gray-700">&lt; 7,5%</td></tr>
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">AGL (manteca)</td><td class="px-6 py-4 text-gray-700">&lt; 1,75%</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">Contenido de Cascara</td><td class="px-6 py-4 text-gray-700">&lt; 5%</td></tr>
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">Micotoxinas</td><td class="px-6 py-4 text-gray-700">Conformes a limites UE</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">Residuos de Pesticidas</td><td class="px-6 py-4 text-gray-700">Conformes a LMR</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Preguntas Frecuentes</h2>
+      <div class="space-y-4">
+        <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+          <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">Su cacao cumple con el EUDR?</summary>
+          <div class="px-6 pb-4 text-gray-700">Si. Todo nuestro cacao incluye datos de geolocalizacion completos para cada parcela agricola, asegurando pleno cumplimiento del Reglamento de la UE sobre Deforestacion (EUDR).</div>
+        </details>
+        <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+          <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">Cuales son los niveles de cadmio?</summary>
+          <div class="px-6 pb-4 text-gray-700">Todo nuestro cacao se analiza por debajo del umbral UE de 0,60 mg/kg de cadmio, conforme al Reglamento UE 2023/915. Los informes de laboratorio se entregan con cada embarque.</div>
+        </details>
+        <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+          <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">Que grados de cacao suministran?</summary>
+          <div class="px-6 pb-4 text-gray-700">Granos fermentados Grado 1 y Grado 2, manteca de cacao natural y desodorizada, polvo de cacao natural y alcalinizado (10-12% y 20-22% de grasa), y nibs de cacao.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <QuoteForm productName="Cocoa" />
+</Layout>

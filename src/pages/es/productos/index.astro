@@ -1,0 +1,66 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import ProductCard from '../../../components/ProductCard.astro';
+import QuoteForm from '../../../components/QuoteForm.astro';
+
+const siteUrl = "https://origindirectgroup.com";
+
+const products = [
+  { name: "Flor de Jamaica Seca", slug: "es/productos/hibisco", origin: "Nigeria \u{1F1F3}\u{1F1EC}", description: "Flor de jamaica seca premium para agua de jamaica, mezclas de te y colorantes alimentarios", grades: "Flor Entera | Cortada y Tamizada | Polvo" },
+  { name: "Cacao", slug: "es/productos/cacao", origin: "Ghana \u{1F1EC}\u{1F1ED} / Nigeria \u{1F1F3}\u{1F1EC}", description: "Granos, manteca, polvo y nibs de cacao, directo de la principal region productora", grades: "Granos Fermentados | Manteca | Polvo" },
+  { name: "Manteca de Karite", slug: "es/productos/manteca-de-karite", origin: "Ghana \u{1F1EC}\u{1F1ED}", description: "Grados sin refinar, refinado y organico para las industrias cosmetica y alimentaria", grades: "Grado A Sin Refinar | Refinada | Organica" },
+  { name: "Anacardos", slug: "es/productos/anacardos", origin: "Ghana \u{1F1EC}\u{1F1ED} / Nigeria \u{1F1F3}\u{1F1EC}", description: "Nueces de la India crudas y almendras procesadas en todos los grados estandar", grades: "RCN | W180 | W240 | W320 | W450" },
+  { name: "Semillas de Ajonjoli", slug: "es/productos/ajonjoli", origin: "Nigeria \u{1F1F3}\u{1F1EC}", description: "Semillas de sesamo premium para produccion de tahini y procesamiento alimentario", grades: "Blanco Descascarado | Natural | Negro | Organico" },
+  { name: "Polvo de Moringa", slug: "es/productos/moringa", origin: "Ghana \u{1F1EC}\u{1F1ED} / Nigeria \u{1F1F3}\u{1F1EC}", description: "Polvo de moringa certificado organico para alimentos saludables y suplementos", grades: "Convencional | Organico | Farmaceutico" },
+  { name: "Jengibre Seco", slug: "es/productos/jengibre", origin: "Nigeria \u{1F1F3}\u{1F1EC}", description: "Jengibre seco con el mayor contenido de oleorresina del mundo", grades: "Seco Partido | Entero | Polvo | Organico" },
+];
+---
+
+<Layout
+  title="Nuestros Productos | Origin Direct Group"
+  description="Conozca nuestra gama completa de materias primas de Africa Occidental e India. Flor de jamaica, cacao, manteca de karite, anacardos, ajonjoli, moringa y jengibre."
+  lang="es"
+  hreflangs={[
+    { lang: "en", href: `${siteUrl}/products` },
+    { lang: "fr", href: `${siteUrl}/fr/produits` },
+    { lang: "es", href: `${siteUrl}/es/productos` },
+  ]}
+>
+  <section class="relative py-24 bg-gradient-to-br from-green-950 via-green-900 to-earth-900">
+    <div class="absolute inset-0 bg-black/30"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight">Nuestros Productos</h1>
+      <div class="w-16 h-1 bg-amber-500 mx-auto mt-6 mb-6"></div>
+      <p class="text-lg md:text-xl text-gray-200/90 max-w-3xl mx-auto">
+        Mas de 33 materias primas abastecidas directamente de productores verificados en Africa Occidental e India.
+        Control de calidad completo, documentacion y entrega del campo a su puerta.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-bold text-brand-900">Materias Primas Principales</h2>
+        <p class="mt-3 text-gray-500 max-w-2xl mx-auto">
+          Nuestros productos mas solicitados con cadenas de suministro establecidas y documentacion de cumplimiento completa.
+        </p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+        {products.map((product) => (
+          <ProductCard {...product} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-green-950">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10">
+        <h2 class="text-3xl font-bold text-white">Solicitar Cotizacion</h2>
+        <p class="mt-3 text-gray-300">Diganos lo que necesita. Respondemos en menos de 2 horas.</p>
+      </div>
+      <QuoteForm />
+    </div>
+  </section>
+</Layout>

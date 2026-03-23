@@ -1,0 +1,270 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: "Refined vs Unrefined Shea Butter: Which is Right for Your Products?",
+  description: "Compare refined and unrefined shea butter on processing methods, appearance, FFA levels, shelf life, applications in cosmetics, food, and pharmaceutical industries.",
+  author: { "@type": "Organization", name: "Origin Direct Group" },
+  publisher: { "@type": "Organization", name: "Origin Direct Group", logo: { "@type": "ImageObject", url: "https://origindirectgroup.com/logo.png" } },
+  datePublished: "2026-03-23",
+  dateModified: "2026-03-23",
+  mainEntityOfPage: "https://origindirectgroup.com/blog/refined-vs-unrefined-shea-butter",
+  image: "https://origindirectgroup.com/images/blog/refined-vs-unrefined-shea-butter.jpg",
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://origindirectgroup.com/" },
+    { "@type": "ListItem", position: 2, name: "Blog", item: "https://origindirectgroup.com/blog" },
+    { "@type": "ListItem", position: 3, name: "Refined vs Unrefined Shea Butter", item: "https://origindirectgroup.com/blog/refined-vs-unrefined-shea-butter" },
+  ],
+};
+---
+
+<Layout
+  title="Refined vs Unrefined Shea Butter: Which is Right for Your Products? | Origin Direct Group"
+  description="Compare refined and unrefined shea butter on processing methods, appearance, FFA levels, shelf life, applications in cosmetics, food, and pharmaceutical industries."
+  structuredData={[articleSchema, breadcrumbSchema]}
+>
+  <!-- Breadcrumbs -->
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <nav class="flex text-sm text-gray-500">
+      <a href="/" class="hover:text-brand-700">Home</a>
+      <span class="mx-2">/</span>
+      <a href="/blog" class="hover:text-brand-700">Blog</a>
+      <span class="mx-2">/</span>
+      <span class="text-gray-900">Refined vs Unrefined Shea Butter</span>
+    </nav>
+  </div>
+
+  <!-- Hero -->
+  <section class="relative py-20 sm:py-28 bg-gradient-to-br from-brand-900 via-brand-800 to-earth-800 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(196,154,42,0.3),transparent_70%)]"></div>
+    </div>
+    <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <span class="inline-block px-4 py-1.5 bg-amber-500/20 text-amber-300 text-sm font-semibold rounded-full mb-6 border border-amber-500/30">Comparison</span>
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">Refined vs Unrefined Shea Butter: Which is Right for Your Products?</h1>
+      <p class="text-lg text-brand-200 max-w-2xl mx-auto">
+        The choice between refined and unrefined shea butter affects everything from product texture to shelf life to marketing claims. Here is what you need to know.
+      </p>
+      <div class="mt-6 flex items-center justify-center gap-4 text-sm text-brand-300">
+        <span>March 23, 2026</span>
+        <span class="w-1 h-1 rounded-full bg-brand-500"></span>
+        <span>11 min read</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Article Content -->
+  <article class="py-16 md:py-20 bg-white">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="prose prose-lg text-gray-700 max-w-none">
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">Understanding the Difference</h2>
+        <p>
+          Shea butter starts as shea nuts harvested from the Vitellaria paradoxa tree, which grows across the West African Sahel belt from Senegal to Uganda. The nuts are cracked, roasted, ground, and kneaded with water to extract the fat. This traditional extraction produces raw, unrefined shea butter. From there, the butter can be further processed (refined) or sold as-is (unrefined).
+        </p>
+        <p>
+          The distinction between refined and unrefined is not simply about quality. Both have legitimate, distinct applications. The right choice depends on your end product, your formulation requirements, and your marketing positioning. For a deeper look at grading classifications, see our <a href="/blog/shea-butter-grades-explained" class="text-brand-700 underline hover:text-brand-900">shea butter grades guide</a>.
+        </p>
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">Complete Comparison Table</h2>
+
+        <div class="overflow-x-auto rounded-xl border border-gray-200 shadow-sm my-8">
+          <table class="w-full text-left text-sm">
+            <thead>
+              <tr class="bg-brand-800 text-white">
+                <th class="px-6 py-4 font-semibold">Parameter</th>
+                <th class="px-6 py-4 font-semibold">Unrefined Shea Butter</th>
+                <th class="px-6 py-4 font-semibold">Refined Shea Butter</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100">
+              <tr class="bg-white">
+                <td class="px-6 py-3 font-medium text-gray-900">Color</td>
+                <td class="px-6 py-3 text-gray-700">Ivory to yellow-beige</td>
+                <td class="px-6 py-3 text-gray-700">White to off-white</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="px-6 py-3 font-medium text-gray-900">Smell</td>
+                <td class="px-6 py-3 text-gray-700">Nutty, earthy, smoky</td>
+                <td class="px-6 py-3 text-gray-700">Minimal to odorless</td>
+              </tr>
+              <tr class="bg-white">
+                <td class="px-6 py-3 font-medium text-gray-900">Texture</td>
+                <td class="px-6 py-3 text-gray-700">Slightly grainy, variable</td>
+                <td class="px-6 py-3 text-gray-700">Smooth, uniform</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="px-6 py-3 font-medium text-gray-900">FFA (Free Fatty Acids)</td>
+                <td class="px-6 py-3 text-gray-700">3-8% (Grade A: under 3%)</td>
+                <td class="px-6 py-3 text-gray-700">Under 1%</td>
+              </tr>
+              <tr class="bg-white">
+                <td class="px-6 py-3 font-medium text-gray-900">Moisture Content</td>
+                <td class="px-6 py-3 text-gray-700">0.05-0.2%</td>
+                <td class="px-6 py-3 text-gray-700">Under 0.05%</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="px-6 py-3 font-medium text-gray-900">Peroxide Value</td>
+                <td class="px-6 py-3 text-gray-700">Up to 15 meq/kg</td>
+                <td class="px-6 py-3 text-gray-700">Under 5 meq/kg</td>
+              </tr>
+              <tr class="bg-white">
+                <td class="px-6 py-3 font-medium text-gray-900">Shelf Life</td>
+                <td class="px-6 py-3 text-gray-700">12-18 months</td>
+                <td class="px-6 py-3 text-gray-700">24-36 months</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="px-6 py-3 font-medium text-gray-900">Bioactive Compounds</td>
+                <td class="px-6 py-3 text-gray-700">Higher (vitamins A, E, F retained)</td>
+                <td class="px-6 py-3 text-gray-700">Reduced (some removed in refining)</td>
+              </tr>
+              <tr class="bg-white">
+                <td class="px-6 py-3 font-medium text-gray-900">Price (FOB)</td>
+                <td class="px-6 py-3 text-gray-700">$1,200-1,800/MT</td>
+                <td class="px-6 py-3 text-gray-700">$1,800-2,500/MT</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="px-6 py-3 font-medium text-gray-900">Processing</td>
+                <td class="px-6 py-3 text-gray-700">Traditional extraction, filtration</td>
+                <td class="px-6 py-3 text-gray-700">Neutralization, bleaching, deodorizing</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">How Refining Works</h2>
+        <p>
+          Refining shea butter involves a multi-step industrial process designed to remove impurities, color, odor, and free fatty acids:
+        </p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li><strong>Degumming</strong> - Removes phospholipids and other gummy substances using water or acid treatment.</li>
+          <li><strong>Neutralization</strong> - Sodium hydroxide (caustic soda) is added to react with free fatty acids, forming soap stock that is separated out. This dramatically reduces FFA levels.</li>
+          <li><strong>Bleaching</strong> - Activated bleaching earth or clay absorbs pigments, removing the yellow/beige color and producing a white butter.</li>
+          <li><strong>Deodorization</strong> - Steam distillation at high temperature (200-250 degrees C) under vacuum removes volatile compounds responsible for shea butter's characteristic nutty/smoky smell.</li>
+        </ul>
+        <p>
+          This process removes unwanted characteristics but also reduces some beneficial compounds. The unsaponifiable fraction (which contains vitamins, phytosterols, and anti-inflammatory triterpenes) is partially reduced during refining, though the exact loss depends on the specific refining process used.
+        </p>
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">Unrefined Shea Butter: Benefits and Limitations</h2>
+        <p>
+          Unrefined shea butter retains the full spectrum of bioactive compounds found naturally in the shea nut. This includes vitamins A and E, allantoin (a skin-soothing compound), and phytosterols like lupeol and cinnamic acid, which have anti-inflammatory properties. This is why unrefined shea butter is marketed as the more "therapeutic" option.
+        </p>
+        <p>
+          However, unrefined shea butter has practical limitations for formulators:
+        </p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li><strong>Inconsistent appearance</strong> - Color can vary from batch to batch, which is problematic for products with a visual standard.</li>
+          <li><strong>Strong scent</strong> - The nutty/smoky smell can overpower fragrance formulations or be off-putting in skincare products marketed as "unscented."</li>
+          <li><strong>Graininess</strong> - Temperature fluctuations during storage can cause unrefined shea butter to develop a grainy texture, which affects product consistency.</li>
+          <li><strong>Shorter shelf life</strong> - Higher FFA levels and the presence of natural impurities reduce shelf stability.</li>
+          <li><strong>Higher FFA variability</strong> - FFA can range from 1% (excellent Grade A) to 8%+ (poor quality), making incoming quality control essential.</li>
+        </ul>
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">Refined Shea Butter: Benefits and Limitations</h2>
+        <p>
+          Refined shea butter solves many of unrefined's practical challenges. It is white, odorless, smooth, and consistent, making it ideal for cosmetic and pharmaceutical formulations where standardization matters. The dramatically lower FFA and peroxide values give it a longer shelf life and more predictable performance in formulations.
+        </p>
+        <p>
+          The limitations of refined shea butter include:
+        </p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li><strong>Reduced bioactives</strong> - Some vitamins and beneficial compounds are partially removed during refining. However, the primary moisturizing fatty acids (oleic, stearic) are largely retained.</li>
+          <li><strong>Higher cost</strong> - The refining process adds $500-800/MT to the cost, making refined butter 30-50% more expensive than unrefined.</li>
+          <li><strong>Less "natural" positioning</strong> - For brands marketing on naturalness and minimal processing, refined shea butter is harder to position authentically.</li>
+          <li><strong>Chemical processing concerns</strong> - Some consumers object to the use of sodium hydroxide and bleaching earth in the refining process, even though these substances are removed from the final product.</li>
+        </ul>
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">Which for Which Application?</h2>
+
+        <h3 class="text-xl font-semibold text-brand-800 mt-8 mb-4">Cosmetics and Skincare</h3>
+        <p>
+          Both types are widely used. Unrefined is preferred for natural/organic skincare lines, body butters, and products marketed on the "raw" or "pure" angle. Refined is preferred for mainstream cosmetics, lotions, creams, and products where a neutral base is needed to let added fragrances and active ingredients shine.
+        </p>
+        <p>
+          Lip balms and hair care products typically use refined shea butter for its smooth texture and neutral taste/smell.
+        </p>
+
+        <h3 class="text-xl font-semibold text-brand-800 mt-8 mb-4">Food Industry (CBE Production)</h3>
+        <p>
+          The food industry, particularly cocoa butter equivalent (CBE) manufacturers, almost exclusively uses refined shea butter. CBE production requires precise control of fatty acid composition, low FFA, and no off-flavors or colors. Shea stearin (the high-melting fraction of shea butter) is the primary shea product used in CBE, and it is always refined.
+        </p>
+
+        <h3 class="text-xl font-semibold text-brand-800 mt-8 mb-4">Pharmaceutical</h3>
+        <p>
+          Pharmaceutical-grade shea butter is refined and must meet pharmacopoeia standards for purity, FFA, peroxide value, and heavy metals. It is used as an excipient (carrier) in suppositories, ointments, and topical medications. Only refined shea butter meets the consistency and purity requirements for pharmaceutical manufacturing.
+        </p>
+
+        <div class="bg-brand-50 rounded-xl p-8 my-8 border border-brand-100">
+          <h3 class="text-lg font-semibold text-brand-800 mb-4">Choose Unrefined If:</h3>
+          <ul class="list-disc pl-6 space-y-2 text-gray-700">
+            <li>You manufacture natural/organic skincare products</li>
+            <li>Your brand positioning emphasizes raw, minimally processed ingredients</li>
+            <li>You want maximum bioactive compound retention</li>
+            <li>You produce body butters, balms, or whipped shea products</li>
+            <li>Your customers value traditional African processing methods</li>
+            <li>You can manage batch-to-batch variation in color and scent</li>
+          </ul>
+        </div>
+
+        <div class="bg-gray-50 rounded-xl p-8 my-8 border border-gray-200">
+          <h3 class="text-lg font-semibold text-gray-800 mb-4">Choose Refined If:</h3>
+          <ul class="list-disc pl-6 space-y-2 text-gray-700">
+            <li>You need a neutral, odorless base for fragranced products</li>
+            <li>Your manufacturing requires consistent raw material specs</li>
+            <li>You produce food products (CBE, confectionery)</li>
+            <li>You need pharmaceutical-grade purity</li>
+            <li>You require a longer shelf life (24-36 months)</li>
+            <li>You make products where shea is one ingredient among many</li>
+          </ul>
+        </div>
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">Certification Options</h2>
+        <p>
+          Both refined and unrefined shea butter can be certified organic (USDA NOP or EU Organic). However, the refining process must use only approved methods and materials for the organic certification to carry through. Some refining agents are not permitted under organic standards, so organic refined shea butter costs more due to the specialized processing requirements.
+        </p>
+        <p>
+          Fair Trade certification is available for both types and is particularly relevant for unrefined shea butter, which is often produced by women's cooperatives in rural West Africa. The Fair Trade story resonates strongly with natural beauty brands and their customers.
+        </p>
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">Sourcing Through Origin Direct Group</h2>
+        <p>
+          We supply both <a href="/products/shea-butter" class="text-brand-700 underline hover:text-brand-900">unrefined and refined shea butter</a> from Ghana's Northern Region, the heart of the shea belt. Our unrefined butter is Grade A quality with FFA under 3%, and our refined butter meets cosmetic and food-grade specifications with FFA under 1%.
+        </p>
+        <p>
+          We work directly with women's cooperatives for traditional extraction and with certified refineries for industrial-grade refined butter. Both products come with full Certificates of Analysis including FFA, peroxide value, moisture, iodine value, and melting point.
+        </p>
+
+      </div>
+    </div>
+  </article>
+
+  <!-- CTA -->
+  <section class="py-20 md:py-24 bg-gradient-to-br from-brand-900 to-earth-800">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">
+        Need Quality Shea Butter?
+      </h2>
+      <p class="text-brand-200 mb-8 max-w-xl mx-auto">
+        Get competitive pricing on both unrefined and refined shea butter with full lab analysis and certification options.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/quote" class="inline-flex items-center justify-center px-8 py-4 bg-gold hover:bg-gold-dark text-white font-bold rounded-lg transition-colors shadow-lg text-lg">
+          Request a Quote
+          <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+        <a href="/products/shea-butter" class="inline-flex items-center justify-center px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-lg transition-colors border border-white/20">
+          View Shea Butter Products
+        </a>
+      </div>
+    </div>
+  </section>
+
+</Layout>

@@ -1,0 +1,277 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import QuoteForm from '../../../components/QuoteForm.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+
+const siteUrl = "https://origindirectgroup.com";
+
+const productSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name: "Flor de Jamaica Seca (Hibiscus sabdariffa)",
+  description: "Flor de jamaica seca premium de Nigeria, primer productor mundial. Grado A rojo oscuro, flor entera y cortada. Para agua de jamaica, te de hibisco y colorantes naturales. Conforme NAQS-SENASICA.",
+  image: `${siteUrl}/images/products/hibiscus.jpg`,
+  brand: { "@type": "Brand", name: "Origin Direct Group" },
+  category: "Flores Secas e Ingredientes Herbales",
+  countryOfOrigin: { "@type": "Country", name: "Nigeria" },
+  offers: { "@type": "AggregateOffer", priceCurrency: "USD", availability: "https://schema.org/InStock" },
+  additionalProperty: [
+    { "@type": "PropertyValue", name: "Codigo SA", value: "0902.10 / 1211.90" },
+    { "@type": "PropertyValue", name: "CMC", value: "1 FCL (hasta 22 TM)" },
+    { "@type": "PropertyValue", name: "Humedad", value: "< 11%" },
+  ],
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Inicio", item: `${siteUrl}/es/` },
+    { "@type": "ListItem", position: 2, name: "Productos", item: `${siteUrl}/es/productos` },
+    { "@type": "ListItem", position: 3, name: "Flor de Jamaica", item: `${siteUrl}/es/productos/hibisco` },
+  ],
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Es Nigeria el principal productor mundial de flor de jamaica?",
+      acceptedAnswer: { "@type": "Answer", text: "Si. Nigeria es el primer productor y exportador mundial de flor de jamaica seca (Roselle/Hibiscus sabdariffa). El hibisco nigeriano abastece el 85% de las importaciones de Mexico para agua de jamaica, ademas de volumenes importantes hacia Alemania, Egipto y Estados Unidos." },
+    },
+    {
+      "@type": "Question",
+      name: "Que especificaciones de calidad tiene su flor de jamaica?",
+      acceptedAnswer: { "@type": "Answer", text: "Nuestras flores de jamaica secas cumplen: humedad inferior al 11%, materia extrana inferior al 1%, color rojo oscuro/burdeos, pH 2,5-3,5, sin colorantes artificiales, residuos de pesticidas conformes a los LMR. Disponible en flor entera, cortada y tamizada, o en polvo." },
+    },
+    {
+      "@type": "Question",
+      name: "Su hibisco cumple con los requisitos de SENASICA para importar a Mexico?",
+      acceptedAnswer: { "@type": "Answer", text: "Si. Toda nuestra flor de jamaica se exporta con certificado fitosanitario de NAQS (Nigeria Agricultural Quarantine Service) que cumple con los requisitos de SENASICA Mexico. Incluimos analisis de laboratorio para aflatoxinas, pesticidas y microbiologia conforme a las normas NOM mexicanas." },
+    },
+    {
+      "@type": "Question",
+      name: "Para que se usa la flor de jamaica seca?",
+      acceptedAnswer: { "@type": "Answer", text: "La flor de jamaica seca se utiliza globalmente para bebidas (agua de jamaica en Mexico, bissap en Africa Occidental, karkade en Medio Oriente), mezclas de te, colorantes alimentarios naturales (E163), suplementos alimenticios (rica en vitamina C y antioxidantes) y extractos cosmeticos." },
+    },
+    {
+      "@type": "Question",
+      name: "Cual es el tiempo de transito desde Nigeria hasta Mexico?",
+      acceptedAnswer: { "@type": "Answer", text: "El tiempo de transito maritimo desde Lagos (Nigeria) hasta Manzanillo o Lazaro Cardenas (Mexico) es de 22-28 dias. Tambien embarcamos via Veracruz con transito de 20-25 dias. Gestionamos toda la documentacion de exportacion y coordinamos con agentes aduanales en Mexico." },
+    },
+  ],
+};
+---
+
+<Layout
+  title="Flor de Jamaica Seca - Principal Exportador de Nigeria | Origin Direct"
+  description="Flor de jamaica seca premium de Nigeria, primer productor mundial. Grado A rojo oscuro. Para agua de jamaica, te, colorantes alimentarios. Conforme SENASICA. Precios B2B competitivos. Embarques directos a Mexico."
+  structuredData={[productSchema, breadcrumbSchema, faqSchema]}
+  lang="es"
+  hreflangs={[
+    { lang: "en", href: `${siteUrl}/products/hibiscus` },
+    { lang: "fr", href: `${siteUrl}/fr/produits/hibiscus` },
+    { lang: "es", href: `${siteUrl}/es/productos/hibisco` },
+  ]}
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumbs items={[{ label: "Productos", href: "/es/productos" }, { label: "Flor de Jamaica" }]} />
+  </div>
+
+  <section class="relative py-24 sm:py-32 bg-gradient-to-br from-red-900 via-brand-800 to-brand-900 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(196,154,42,0.3),transparent_70%)]"></div>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-gold-light font-medium tracking-wide uppercase text-sm mb-4">Nigeria</p>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">Flor de Jamaica Seca</h1>
+      <p class="text-xl text-brand-200 max-w-2xl mx-auto mb-10">
+        Flores de hibisco secadas al sol para agua de jamaica, mezclas de te y colorantes alimentarios naturales. Del primer productor mundial.
+      </p>
+      <a href="#quote-form" class="inline-flex items-center px-8 py-4 bg-gold hover:bg-gold-dark text-white font-bold rounded-lg transition-colors shadow-lg text-lg">
+        Solicitar Cotizacion
+        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <section class="py-12 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="rounded-2xl overflow-hidden shadow-lg border border-gray-100">
+        <img src="/images/products/hibiscus.jpg" alt="Flor de jamaica seca premium de Nigeria para agua de jamaica" class="w-full h-64 sm:h-80 object-cover" loading="eager" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Resumen -->
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Resumen</h2>
+      <div class="prose prose-lg text-gray-700 space-y-5">
+        <p>
+          Nigeria es el primer productor y exportador mundial de flor de jamaica seca (Hibiscus sabdariffa), conocida como flor de jamaica en Mexico, bissap en Africa Occidental y karkade en Medio Oriente. La demanda global esta en fuerte crecimiento, impulsada por el interes en bebidas naturales, colorantes alimentarios organicos y suplementos ricos en antioxidantes.
+        </p>
+        <p>
+          Origin Direct se abastece directamente de productores en las zonas de sabana del norte de Nigeria, donde las condiciones climaticas son ideales para producir flores con el color rojo profundo y la acidez elevada que los compradores exigen. Nuestra cadena de suministro garantiza un contenido de humedad inferior al 11%, materia extrana negligible y un procesamiento conforme a las normas fitosanitarias internacionales.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mercado Mexicano -->
+  <section class="py-20 bg-amber-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Mexico: Nuestro Principal Mercado de Jamaica</h2>
+      <div class="prose prose-lg text-gray-700 space-y-5">
+        <p>
+          Mexico es el mayor importador mundial de flor de jamaica seca, consumiendo mas de 15.000 toneladas anuales. El 85% de estas importaciones provienen de Nigeria. El agua de jamaica es una de las tres aguas frescas tradicionales mas populares del pais, junto con la horchata y el tamarindo, y su consumo crece anualmente tanto en hogares como en la industria de bebidas.
+        </p>
+        <p>
+          Nuestra flor de jamaica cumple con todos los requisitos de SENASICA (Servicio Nacional de Sanidad, Inocuidad y Calidad Agroalimentaria) para importacion a Mexico. Cada embarque incluye certificado fitosanitario emitido por NAQS (Nigeria Agricultural Quarantine Service), analisis de laboratorio para aflatoxinas y pesticidas, y toda la documentacion requerida para despacho aduanal en puertos mexicanos.
+        </p>
+        <p>
+          Embarcamos regularmente hacia los puertos de Manzanillo, Lazaro Cardenas y Veracruz, con tiempos de transito de 22-28 dias. Trabajamos tanto con importadores directos como con distribuidores de ingredientes en la Ciudad de Mexico, Guadalajara y Monterrey.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Usos y Aplicaciones -->
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Usos y Aplicaciones</h2>
+      <div class="grid sm:grid-cols-2 gap-6">
+        <div class="bg-white rounded-xl border border-gray-200 p-6">
+          <h3 class="text-lg font-bold text-gray-900 mb-2">Agua de Jamaica y Bebidas</h3>
+          <p class="text-gray-600 text-sm">Ingrediente principal del agua de jamaica tradicional mexicana. Tambien se usa en tes frios, concentrados para restaurantes, y como base para bebidas artesanales y cocteles.</p>
+        </div>
+        <div class="bg-white rounded-xl border border-gray-200 p-6">
+          <h3 class="text-lg font-bold text-gray-900 mb-2">Mezclas de Te e Infusiones</h3>
+          <p class="text-gray-600 text-sm">Componente clave en mezclas de te de frutas, tisanas e infusiones herbales. Aporta color rojo vibrante, acidez natural y notas frutales.</p>
+        </div>
+        <div class="bg-white rounded-xl border border-gray-200 p-6">
+          <h3 class="text-lg font-bold text-gray-900 mb-2">Colorantes Alimentarios Naturales</h3>
+          <p class="text-gray-600 text-sm">Fuente natural del colorante E163 (antocianinas). Utilizado por la industria alimentaria como alternativa a colorantes sinteticos en bebidas, lacteos y confiteria.</p>
+        </div>
+        <div class="bg-white rounded-xl border border-gray-200 p-6">
+          <h3 class="text-lg font-bold text-gray-900 mb-2">Suplementos y Cosmeticos</h3>
+          <p class="text-gray-600 text-sm">Rico en vitamina C, antioxidantes y acidos organicos. Se usa en capsulas, polvos para bebidas funcionales y extractos para la industria cosmetica.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Grados Disponibles -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Grados Disponibles</h2>
+      <div class="space-y-6">
+        <div class="bg-white rounded-xl border border-gray-200 p-6">
+          <h3 class="text-lg font-bold text-gray-900 mb-2">Flor Entera (Grado A)</h3>
+          <p class="text-gray-600 text-sm">Calices completos, secados al sol, color rojo oscuro uniforme. Seleccion manual. Ideal para agua de jamaica premium, te de hoja suelta y presentaciones de alta gama. Empaque en sacos de polipropileno de 25 kg o 50 kg.</p>
+        </div>
+        <div class="bg-white rounded-xl border border-gray-200 p-6">
+          <h3 class="text-lg font-bold text-gray-900 mb-2">Cortada y Tamizada (C&T)</h3>
+          <p class="text-gray-600 text-sm">Flores cortadas a tamano uniforme para produccion industrial de te en bolsitas, mezclas de tisanas y extractos. Tamano de corte personalizable segun especificacion del comprador.</p>
+        </div>
+        <div class="bg-white rounded-xl border border-gray-200 p-6">
+          <h3 class="text-lg font-bold text-gray-900 mb-2">Polvo de Jamaica</h3>
+          <p class="text-gray-600 text-sm">Polvo fino de malla 80-100 para produccion de bebidas instantaneas, suplementos alimenticios, colorantes naturales y aplicaciones cosmeticas. Disponible en empaques de 5, 10 y 25 kg.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Especificaciones -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Especificaciones Tecnicas</h2>
+      <div class="overflow-x-auto rounded-xl border border-gray-200 shadow-sm">
+        <table class="w-full text-left text-sm">
+          <thead><tr class="bg-brand-800 text-white"><th class="px-6 py-4 font-semibold">Parametro</th><th class="px-6 py-4 font-semibold">Especificacion</th></tr></thead>
+          <tbody class="divide-y divide-gray-100">
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">Humedad</td><td class="px-6 py-4 text-gray-700">&lt; 11%</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">Materia Extrana</td><td class="px-6 py-4 text-gray-700">&lt; 1%</td></tr>
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">Color</td><td class="px-6 py-4 text-gray-700">Rojo oscuro / burdeos</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">pH</td><td class="px-6 py-4 text-gray-700">2,5 - 3,5</td></tr>
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">Colorantes Artificiales</td><td class="px-6 py-4 text-gray-700">Ninguno</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">Residuos de Pesticidas</td><td class="px-6 py-4 text-gray-700">Conformes a LMR</td></tr>
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">Aflatoxinas</td><td class="px-6 py-4 text-gray-700">&lt; 10 ppb (totales)</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">Codigo SA</td><td class="px-6 py-4 text-gray-700">0902.10 / 1211.90</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Logistica a Mexico -->
+  <section class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Logistica y Embarques a Mexico</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-gray-50 rounded-xl border border-gray-100 p-6 text-center">
+          <h3 class="text-lg font-bold text-gray-900 mb-1">Manzanillo</h3>
+          <p class="text-sm text-gray-500 mb-3">Colima, Mexico</p>
+          <p class="text-2xl font-bold text-green-700">22-26 dias</p>
+          <p class="text-xs text-gray-400 mt-1">desde Lagos, Nigeria</p>
+        </div>
+        <div class="bg-gray-50 rounded-xl border border-gray-100 p-6 text-center">
+          <h3 class="text-lg font-bold text-gray-900 mb-1">Lazaro Cardenas</h3>
+          <p class="text-sm text-gray-500 mb-3">Michoacan, Mexico</p>
+          <p class="text-2xl font-bold text-green-700">23-28 dias</p>
+          <p class="text-xs text-gray-400 mt-1">desde Lagos, Nigeria</p>
+        </div>
+        <div class="bg-gray-50 rounded-xl border border-gray-100 p-6 text-center">
+          <h3 class="text-lg font-bold text-gray-900 mb-1">Veracruz</h3>
+          <p class="text-sm text-gray-500 mb-3">Veracruz, Mexico</p>
+          <p class="text-2xl font-bold text-green-700">20-25 dias</p>
+          <p class="text-xs text-gray-400 mt-1">desde Lagos, Nigeria</p>
+        </div>
+      </div>
+      <div class="mt-8 bg-green-50 rounded-xl border border-green-200 p-6">
+        <h3 class="text-lg font-bold text-gray-900 mb-2">Documentacion para Mexico</h3>
+        <ul class="space-y-2 text-gray-700 text-sm">
+          <li class="flex items-start gap-2"><span class="w-1.5 h-1.5 bg-green-600 rounded-full mt-2 flex-shrink-0"></span><span>Certificado fitosanitario emitido por NAQS (Nigeria Agricultural Quarantine Service)</span></li>
+          <li class="flex items-start gap-2"><span class="w-1.5 h-1.5 bg-green-600 rounded-full mt-2 flex-shrink-0"></span><span>Certificado de analisis (humedad, aflatoxinas, pesticidas, microbiologia)</span></li>
+          <li class="flex items-start gap-2"><span class="w-1.5 h-1.5 bg-green-600 rounded-full mt-2 flex-shrink-0"></span><span>Certificado de origen</span></li>
+          <li class="flex items-start gap-2"><span class="w-1.5 h-1.5 bg-green-600 rounded-full mt-2 flex-shrink-0"></span><span>Conocimiento de embarque (Bill of Lading)</span></li>
+          <li class="flex items-start gap-2"><span class="w-1.5 h-1.5 bg-green-600 rounded-full mt-2 flex-shrink-0"></span><span>Factura comercial y lista de empaque</span></li>
+          <li class="flex items-start gap-2"><span class="w-1.5 h-1.5 bg-green-600 rounded-full mt-2 flex-shrink-0"></span><span>Pedimento de importacion conforme a SENASICA</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Preguntas Frecuentes -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Preguntas Frecuentes</h2>
+      <div class="space-y-4">
+        <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+          <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">Es Nigeria el principal productor mundial de flor de jamaica?</summary>
+          <div class="px-6 pb-4 text-gray-700">Si. Nigeria es el primer productor y exportador mundial de flor de jamaica seca. Abastece el 85% de las importaciones de Mexico para agua de jamaica, ademas de volumenes significativos hacia Alemania, Egipto y Estados Unidos.</div>
+        </details>
+        <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+          <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">Su hibisco cumple con los requisitos de SENASICA?</summary>
+          <div class="px-6 pb-4 text-gray-700">Si. Toda nuestra flor de jamaica se exporta con certificado fitosanitario de NAQS conforme a SENASICA. Incluimos analisis de laboratorio para aflatoxinas, pesticidas y microbiologia segun las normas NOM mexicanas.</div>
+        </details>
+        <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+          <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">Cuales son las especificaciones de calidad?</summary>
+          <div class="px-6 pb-4 text-gray-700">Humedad inferior al 11%, materia extrana inferior al 1%, color rojo oscuro, pH 2,5-3,5, sin colorantes artificiales. Disponible en flor entera, cortada y tamizada, o en polvo.</div>
+        </details>
+        <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+          <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">Cual es la cantidad minima de pedido?</summary>
+          <div class="px-6 pb-4 text-gray-700">1 contenedor completo (FCL), hasta 22 toneladas metricas. Pedidos de prueba a partir de 5 TM para nuevos compradores. Empaque en sacos de polipropileno de 25 kg o 50 kg.</div>
+        </details>
+        <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+          <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">Cuanto tarda el embarque a Mexico?</summary>
+          <div class="px-6 pb-4 text-gray-700">El transito maritimo desde Lagos hasta Manzanillo o Lazaro Cardenas toma 22-28 dias. Hasta Veracruz, 20-25 dias. Gestionamos toda la documentacion de exportacion y coordinamos con agentes aduanales en Mexico.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <QuoteForm productName="Hibiscus" />
+</Layout>

@@ -1,0 +1,211 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import QuoteForm from '../../components/QuoteForm.astro';
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://origindirectgroup.com/" },
+    { "@type": "ListItem", position: 2, name: "Industries", item: "https://origindirectgroup.com/industries" },
+    { "@type": "ListItem", position: 3, name: "Industrial", item: "https://origindirectgroup.com/industries/industrial" },
+  ],
+};
+
+const products = [
+  {
+    name: "Castor Oil",
+    slug: "/products/castor-oil",
+    description: "Cold-pressed and refined castor oil from India for industrial lubricants, biofuel production, hydraulic fluids, coatings, and plasticizers. India produces 85%+ of the world's castor oil.",
+    specs: ["Cold-pressed or refined", "Indian origin", "BS/SS grades"],
+    applications: "Lubricants, biofuel, polyurethanes, coatings, hydraulic fluids",
+  },
+  {
+    name: "Guar Gum",
+    slug: "/products/guar-gum",
+    description: "Guar gum powder from India for hydraulic fracturing (fracking), drilling fluids, paper manufacturing, textile sizing, and food processing. Available in industrial and food grades.",
+    specs: ["Industrial & food grade", "3500+ cps viscosity", "Indian origin"],
+    applications: "Fracking, drilling fluids, paper, textiles, food thickening",
+  },
+  {
+    name: "Natural Rubber",
+    slug: "/products/natural-rubber",
+    description: "Technically specified rubber (TSR) and ribbed smoked sheets (RSS) from West Africa for tire manufacturing, industrial goods, and rubber product manufacturing.",
+    specs: ["TSR 10, TSR 20", "RSS grades", "West African origin"],
+    applications: "Tires, conveyor belts, gaskets, industrial hoses, footwear",
+  },
+  {
+    name: "Kaolin Clay",
+    slug: "/products/kaolin-clay",
+    description: "Washed and processed kaolin clay from Nigeria for ceramics, paper coating, paint manufacturing, rubber filler, and pharmaceutical applications.",
+    specs: ["Washed & processed", "High whiteness", "Fine particle size"],
+    applications: "Ceramics, paper coating, paint, rubber filler, pharmaceuticals",
+  },
+  {
+    name: "Gum Arabic",
+    slug: "/products/gum-arabic",
+    description: "Acacia gum (gum arabic) from Nigeria for pharmaceutical tablet coating, food emulsification, lithography, and industrial adhesives. E414 food additive grade available.",
+    specs: ["E414 food grade", "Pharma grade", "Nigerian origin"],
+    applications: "Pharma coating, food emulsifier, lithography, adhesives, beverages",
+  },
+];
+---
+
+<Layout
+  title="Industrial Raw Materials from Africa & India | Origin Direct"
+  description="Castor oil, guar gum, natural rubber, kaolin clay, and gum arabic for industrial manufacturers. Direct from Africa and India with competitive bulk pricing and consistent supply."
+  structuredData={[breadcrumbSchema]}
+>
+  <!-- Breadcrumbs -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumbs items={[{ label: "Industries", href: "/industries" }, { label: "Industrial" }]} />
+  </div>
+
+  <!-- Hero -->
+  <section class="relative py-24 sm:py-32 bg-gradient-to-br from-gray-900 via-earth-900 to-brand-900 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_60%_40%,rgba(196,154,42,0.3),transparent_70%)]"></div>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-gold-light font-medium tracking-wide uppercase text-sm mb-4">Industrial Applications</p>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">Industrial Raw Materials from Africa &amp; India</h1>
+      <p class="text-xl text-brand-200 max-w-2xl mx-auto mb-10">
+        Castor oil, guar gum, natural rubber, kaolin clay, and gum arabic. Essential industrial inputs sourced directly from origin.
+      </p>
+      <a href="#quote-form" class="inline-flex items-center px-8 py-4 bg-gold hover:bg-gold-dark text-white font-bold rounded-lg transition-colors shadow-lg text-lg">
+        Request Quote
+        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- Overview -->
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Why Industrial Buyers Choose Origin Direct</h2>
+      <div class="prose prose-lg text-gray-700 space-y-5">
+        <p>
+          Africa and India supply critical raw materials for industries worldwide, from India's castor oil (85% of global production) and guar gum (80% of global supply) to West Africa's natural rubber, kaolin clay, and gum arabic. These materials are essential inputs for manufacturing sectors ranging from oil and gas to pharmaceuticals.
+        </p>
+        <p>
+          Origin Direct provides industrial buyers with direct access to these supply chains, eliminating the layers of intermediaries that add cost without adding value. We work with established processors and exporters in India, Nigeria, and Ghana who consistently produce to international quality standards.
+        </p>
+        <p>
+          For industrial applications, consistency and reliability matter as much as price. We offer annual supply contracts with fixed volumes, regular shipping schedules, and quality parameters locked in to your specifications. Technical data sheets and MSDS documentation are provided with every shipment.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-10">Products for Industrial Manufacturers</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {products.map((product) => (
+          <a href={product.slug} class="group block bg-white rounded-2xl border border-gray-100 hover:border-green-200 hover:shadow-xl transition-all duration-300 p-6">
+            <h3 class="text-lg font-bold text-gray-900 group-hover:text-green-700 transition-colors mb-3">
+              {product.name}
+            </h3>
+            <p class="text-sm text-gray-600 mb-3 leading-relaxed">{product.description}</p>
+            <p class="text-xs text-gray-500 mb-4"><strong>Applications:</strong> {product.applications}</p>
+            <div class="flex flex-wrap gap-1.5 mb-4">
+              {product.specs.map((spec: string) => (
+                <span class="inline-flex items-center px-2.5 py-1 bg-green-50 text-green-800 text-xs font-medium rounded-full border border-green-100">
+                  {spec}
+                </span>
+              ))}
+            </div>
+            <div class="flex items-center gap-2 text-green-700 font-semibold text-sm group-hover:gap-3 transition-all">
+              View Product
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+              </svg>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Industry Sectors -->
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Industry Sectors We Serve</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {[
+          { sector: "Oil & Gas", detail: "Guar gum for hydraulic fracturing and drilling fluids. Castor oil derivatives for lubricants and corrosion inhibitors." },
+          { sector: "Automotive & Tires", detail: "Natural rubber (TSR, RSS) for tire manufacturing. Castor oil for brake fluids and coatings." },
+          { sector: "Paper & Packaging", detail: "Kaolin clay for paper coating and filler. Guar gum for paper sizing and strengthening. Gum arabic for adhesives." },
+          { sector: "Paints & Coatings", detail: "Kaolin clay as extender pigment. Castor oil derivatives for alkyd resins and polyurethane coatings." },
+          { sector: "Pharmaceuticals", detail: "Gum arabic (E414) for tablet coating and emulsification. Castor oil for drug delivery systems. Kaolin for excipients." },
+          { sector: "Ceramics & Construction", detail: "Kaolin clay for ceramic bodies, sanitaryware, and tiles. High whiteness and plasticity grades available." },
+        ].map((item) => (
+          <div class="bg-gray-50 rounded-xl border border-gray-200 p-6">
+            <h3 class="text-sm font-bold text-brand-800 mb-2">{item.sector}</h3>
+            <p class="text-sm text-gray-600">{item.detail}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Supply Terms -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Supply Terms &amp; Logistics</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div>
+          <h3 class="text-lg font-semibold text-brand-800 mb-4">Packaging</h3>
+          <ul class="space-y-3 text-gray-700">
+            <li class="flex items-start gap-2">
+              <span class="text-brand-600 mt-1">&#8226;</span>
+              <span>Steel drums (castor oil, 190-200 kg)</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-brand-600 mt-1">&#8226;</span>
+              <span>Flexi-tanks for bulk liquids (20-24 MT)</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-brand-600 mt-1">&#8226;</span>
+              <span>25-50 kg bags (guar gum, kaolin, gum arabic)</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-brand-600 mt-1">&#8226;</span>
+              <span>Palletized bales (natural rubber)</span>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold text-brand-800 mb-4">Contract Terms</h3>
+          <ul class="space-y-3 text-gray-700">
+            <li class="flex items-start gap-2">
+              <span class="text-gold mt-1">&#9654;</span>
+              <span><strong>Spot orders:</strong> 1 FCL minimum</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-gold mt-1">&#9654;</span>
+              <span><strong>Annual contracts:</strong> Fixed volume with monthly/quarterly shipments</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-gold mt-1">&#9654;</span>
+              <span><strong>Incoterms:</strong> FOB, CFR, CIF, DDP available</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-gold mt-1">&#9654;</span>
+              <span><strong>Payment:</strong> LC, T/T, CAD</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quote Form -->
+  <section id="quote-form" class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <QuoteForm />
+    </div>
+  </section>
+</Layout>

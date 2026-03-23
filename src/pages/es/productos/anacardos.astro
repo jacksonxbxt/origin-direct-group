@@ -1,0 +1,152 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import QuoteForm from '../../../components/QuoteForm.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+
+const siteUrl = "https://origindirectgroup.com";
+
+const productSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name: "Anacardos (Nueces de la India)",
+  description: "Anacardos crudos (RCN) y almendras procesadas de Ghana y Nigeria. KOR 48-54 lbs, grados W180 a W450. Conforme a aflatoxinas.",
+  image: `${siteUrl}/images/products/cashew-nuts.jpg`,
+  brand: { "@type": "Brand", name: "Origin Direct Group" },
+  category: "Frutos Secos",
+  countryOfOrigin: { "@type": "Country", name: "Ghana" },
+  offers: { "@type": "AggregateOffer", priceCurrency: "USD", availability: "https://schema.org/InStock" },
+  additionalProperty: [
+    { "@type": "PropertyValue", name: "Codigo SA", value: "0801.31 / 0801.32" },
+    { "@type": "PropertyValue", name: "CMC", value: "1 FCL (18 TM)" },
+    { "@type": "PropertyValue", name: "KOR", value: "48-54 lbs por saco de 80 kg" },
+  ],
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Inicio", item: `${siteUrl}/es/` },
+    { "@type": "ListItem", position: 2, name: "Productos", item: `${siteUrl}/es/productos` },
+    { "@type": "ListItem", position: 3, name: "Anacardos", item: `${siteUrl}/es/productos/anacardos` },
+  ],
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Que grados de anacardos ofrecen?",
+      acceptedAnswer: { "@type": "Answer", text: "Suministramos anacardos crudos (RCN) y almendras procesadas en todos los grados AFI estandar: W180 (tamano rey), W210, W240, W320 (el mas comercializado mundialmente), W450, Splits y Pedazos. RCN de Ghana, que controla el 43,8% de las exportaciones mundiales en cascara." },
+    },
+    {
+      "@type": "Question",
+      name: "Que es el KOR y cuales son sus especificaciones?",
+      acceptedAnswer: { "@type": "Answer", text: "El KOR (Kernel Outturn Ratio) mide la almendra utilizable por saco de 80 kg. Nuestro RCN ofrece 48-54 lbs de KOR. Otras especificaciones: humedad inferior al 10%, conteo 170-210/kg, defectuosos inferior al 10%. Para almendras: humedad inferior al 5%, aflatoxina B1 inferior a 5 ug/kg." },
+    },
+    {
+      "@type": "Question",
+      name: "Que condiciones de pago aceptan?",
+      acceptedAnswer: { "@type": "Answer", text: "Para anacardos crudos, el pago estandar es Carta de Credito Irrevocable (LC) a la vista al 100%. Para almendras procesadas, tambien aceptamos transferencia bancaria (TT) y pago contra documentos (CAD) para clientes establecidos." },
+    },
+  ],
+};
+---
+
+<Layout
+  title="Anacardos - Crudos y Procesados de Ghana y Nigeria | Origin Direct"
+  description="Anacardos crudos y almendras procesadas de Ghana y Nigeria. Grados W180 a W450. KOR 48-54 lbs. Precios B2B competitivos."
+  structuredData={[productSchema, breadcrumbSchema, faqSchema]}
+  lang="es"
+  hreflangs={[
+    { lang: "en", href: `${siteUrl}/products/cashew-nuts` },
+    { lang: "fr", href: `${siteUrl}/fr/produits/noix-de-cajou` },
+    { lang: "es", href: `${siteUrl}/es/productos/anacardos` },
+  ]}
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumbs items={[{ label: "Productos", href: "/es/productos" }, { label: "Anacardos" }]} />
+  </div>
+
+  <section class="relative py-24 sm:py-32 bg-gradient-to-br from-brand-900 via-brand-800 to-earth-800 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(196,154,42,0.3),transparent_70%)]"></div>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-gold-light font-medium tracking-wide uppercase text-sm mb-4">Ghana y Nigeria</p>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">Anacardos</h1>
+      <p class="text-xl text-brand-200 max-w-2xl mx-auto mb-10">
+        Nueces de la India crudas y almendras procesadas en todos los grados estandar. Directamente de productores de Africa Occidental.
+      </p>
+      <a href="#quote-form" class="inline-flex items-center px-8 py-4 bg-gold hover:bg-gold-dark text-white font-bold rounded-lg transition-colors shadow-lg text-lg">
+        Solicitar Cotizacion
+        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <section class="py-12 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="rounded-2xl overflow-hidden shadow-lg border border-gray-100">
+        <img src="/images/products/cashew-nuts.jpg" alt="Anacardos premium de Ghana y Nigeria" class="w-full h-64 sm:h-80 object-cover" loading="eager" />
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Resumen</h2>
+      <div class="prose prose-lg text-gray-700 space-y-5">
+        <p>
+          Ghana es el primer exportador mundial de anacardos en cascara, controlando el 43,8% de las exportaciones mundiales. La region Brong-Ahafo y el norte de Ghana albergan las principales zonas de produccion, beneficiandose de condiciones climaticas ideales para producir nueces con alto contenido de almendra. Nigeria complementa esta oferta con volumenes crecientes y precios competitivos.
+        </p>
+        <p>
+          Origin Direct ofrece tanto anacardos crudos (RCN) para plantas de procesamiento como almendras descascaradas listas para uso en todos los grados AFI estandar. Nuestro equipo en campo supervisa la recoleccion, almacenamiento y embarque, garantizando un KOR (rendimiento en almendra) conforme a las especificaciones contractuales y un contenido de aflatoxinas muy por debajo de los limites regulatorios.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Especificaciones Tecnicas</h2>
+      <div class="overflow-x-auto rounded-xl border border-gray-200 shadow-sm">
+        <table class="w-full text-left text-sm">
+          <thead><tr class="bg-brand-800 text-white"><th class="px-6 py-4 font-semibold">Parametro</th><th class="px-6 py-4 font-semibold">Especificacion</th></tr></thead>
+          <tbody class="divide-y divide-gray-100">
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">KOR (Rendimiento en Almendra)</td><td class="px-6 py-4 text-gray-700">48-54 lbs por saco de 80 kg</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">Humedad (RCN)</td><td class="px-6 py-4 text-gray-700">&lt; 10%</td></tr>
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">Conteo</td><td class="px-6 py-4 text-gray-700">170-210 nueces/kg</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">Humedad (almendras)</td><td class="px-6 py-4 text-gray-700">&lt; 5%</td></tr>
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">Aflatoxina B1</td><td class="px-6 py-4 text-gray-700">&lt; 5 ug/kg</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">Defectuosos</td><td class="px-6 py-4 text-gray-700">&lt; 10%</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Preguntas Frecuentes</h2>
+      <div class="space-y-4">
+        <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+          <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">Que grados de anacardos ofrecen?</summary>
+          <div class="px-6 pb-4 text-gray-700">Suministramos RCN y almendras en todos los grados AFI: W180, W210, W240, W320, W450, Splits y Pedazos. Ghana controla el 43,8% de las exportaciones mundiales en cascara.</div>
+        </details>
+        <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+          <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">Que es el KOR?</summary>
+          <div class="px-6 pb-4 text-gray-700">El KOR (Kernel Outturn Ratio) mide el peso de almendra utilizable por saco de 80 kg de nueces crudas. Nuestro RCN ofrece un KOR de 48-54 lbs, entre los mejores rendimientos a nivel mundial.</div>
+        </details>
+        <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+          <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">Que condiciones de pago aceptan?</summary>
+          <div class="px-6 pb-4 text-gray-700">Para RCN: Carta de Credito Irrevocable a la vista al 100%. Para almendras procesadas: TT y CAD tambien aceptados para clientes establecidos.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <QuoteForm productName="Cashew Nuts" />
+</Layout>

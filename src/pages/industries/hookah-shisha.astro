@@ -1,0 +1,229 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import QuoteForm from '../../components/QuoteForm.astro';
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://origindirectgroup.com/" },
+    { "@type": "ListItem", position: 2, name: "Industries", item: "https://origindirectgroup.com/industries" },
+    { "@type": "ListItem", position: 3, name: "Hookah & Shisha", item: "https://origindirectgroup.com/industries/hookah-shisha" },
+  ],
+};
+---
+
+<Layout
+  title="Premium Hookah Charcoal for Shisha Businesses | Origin Direct"
+  description="Premium Nigerian hardwood hookah charcoal for lounges, distributors, and private label brands. Fixed carbon > 85%, 90+ minute burn time, halal certified. OEM available. 60-80% cheaper than Indonesian coconut charcoal."
+  structuredData={[breadcrumbSchema]}
+>
+  <!-- Breadcrumbs -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumbs items={[{ label: "Industries", href: "/industries" }, { label: "Hookah & Shisha" }]} />
+  </div>
+
+  <!-- Hero -->
+  <section class="relative py-24 sm:py-32 bg-gradient-to-br from-gray-900 via-earth-900 to-brand-900 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_60%_40%,rgba(196,154,42,0.3),transparent_70%)]"></div>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-gold-light font-medium tracking-wide uppercase text-sm mb-4">Hookah &amp; Shisha Industry</p>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">Premium Hookah Charcoal for Shisha Businesses</h1>
+      <p class="text-xl text-brand-200 max-w-2xl mx-auto mb-10">
+        Nigerian acacia hardwood charcoal with 90+ minute burn time. The same aroma profile as Somali charcoal, at a fraction of the cost. OEM and private label available.
+      </p>
+      <a href="#quote-form" class="inline-flex items-center px-8 py-4 bg-gold hover:bg-gold-dark text-white font-bold rounded-lg transition-colors shadow-lg text-lg">
+        Request Quote
+        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- Overview -->
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Why Shisha Businesses Choose Origin Direct</h2>
+      <div class="prose prose-lg text-gray-700 space-y-5">
+        <p>
+          Charcoal quality makes or breaks the hookah experience. Poor charcoal produces off-flavors, inconsistent heat, and excessive ash that ruins even premium tobacco. Your customers notice the difference. That is why the best hookah lounges, distributors, and brands insist on high-carbon, additive-free hardwood charcoal.
+        </p>
+        <p>
+          Our Nigerian acacia hardwood charcoal delivers the same premium aroma profile once associated exclusively with Somali charcoal (under UN embargo since 2012). With fixed carbon above 85%, burn times exceeding 90 minutes, and zero chemical additives, it provides a clean, consistent smoking experience.
+        </p>
+        <p>
+          The price advantage is significant: Nigerian hardwood charcoal is 60 to 80% cheaper than Indonesian coconut charcoal at origin. Whether you are a hookah lounge chain looking to reduce costs, a distributor building a private label brand, or an established charcoal brand seeking a new supply source, we deliver quality and value.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Specifications -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Charcoal Specifications</h2>
+      <div class="overflow-x-auto rounded-xl border border-gray-200 shadow-sm">
+        <table class="w-full text-left text-sm">
+          <thead>
+            <tr class="bg-gray-800 text-white">
+              <th class="px-6 py-4 font-semibold">Parameter</th>
+              <th class="px-6 py-4 font-semibold">Our Charcoal</th>
+              <th class="px-6 py-4 font-semibold">Indonesian Coconut</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-100">
+            <tr class="bg-white">
+              <td class="px-6 py-4 font-medium text-gray-900">Fixed Carbon</td>
+              <td class="px-6 py-4 text-gray-700">&gt; 85%</td>
+              <td class="px-6 py-4 text-gray-700">75-85%</td>
+            </tr>
+            <tr class="bg-gray-50">
+              <td class="px-6 py-4 font-medium text-gray-900">Ash Content</td>
+              <td class="px-6 py-4 text-gray-700">&lt; 2.5%</td>
+              <td class="px-6 py-4 text-gray-700">2-4%</td>
+            </tr>
+            <tr class="bg-white">
+              <td class="px-6 py-4 font-medium text-gray-900">Burn Time</td>
+              <td class="px-6 py-4 text-gray-700">90+ minutes</td>
+              <td class="px-6 py-4 text-gray-700">60-90 minutes</td>
+            </tr>
+            <tr class="bg-gray-50">
+              <td class="px-6 py-4 font-medium text-gray-900">Chemical Additives</td>
+              <td class="px-6 py-4 text-gray-700">None (100% natural)</td>
+              <td class="px-6 py-4 text-gray-700">Often tapioca binder</td>
+            </tr>
+            <tr class="bg-white">
+              <td class="px-6 py-4 font-medium text-gray-900">FOB Price Range</td>
+              <td class="px-6 py-4 text-gray-700 font-semibold">$260-500/MT</td>
+              <td class="px-6 py-4 text-gray-700">$1,250-1,500/MT</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="mt-6 p-4 bg-gold/10 border border-gold/30 rounded-lg">
+        <p class="text-sm text-earth-800"><strong>Bottom line:</strong> Same quality, 60-80% lower cost. Nigerian acacia hardwood produces the same premium smoking experience as Somali charcoal at a price point that lets you compete.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Shapes Available -->
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Available Shapes &amp; Sizes</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {[
+          { shape: "Cube 25mm", detail: "Global standard. Fits all standard bowls and heat management devices like Kaloud Lotus." },
+          { shape: "Cube 22mm", detail: "Compact cube for smaller bowls and more precise heat control." },
+          { shape: "Flat / Disc", detail: "Traditional shape popular in Middle Eastern and North African markets." },
+          { shape: "Finger Shape", detail: "Elongated shape for even heat distribution across the bowl." },
+          { shape: "Hexagonal", detail: "Unique shape with increased surface area for consistent, even burning." },
+          { shape: "Custom OEM Shapes", detail: "Private label with your branding. Custom molds available for orders above 5 FCL." },
+        ].map((item) => (
+          <div class="bg-gray-50 rounded-xl border border-gray-200 p-6">
+            <h3 class="text-sm font-bold text-brand-800 mb-2">{item.shape}</h3>
+            <p class="text-sm text-gray-600">{item.detail}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- OEM / Private Label -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-white rounded-2xl border border-green-200 p-8 lg:p-10">
+        <h2 class="text-2xl font-bold text-brand-900 mb-4">OEM &amp; Private Label Services</h2>
+        <p class="text-gray-700 mb-6">
+          Build your own charcoal brand without the capital investment of setting up production. We handle manufacturing, shaping, and packaging to your specifications.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <ul class="space-y-3 text-gray-700">
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-brand-600 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+              <span>Your logo and brand design on packaging</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-brand-600 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+              <span>Custom shapes and sizes</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-brand-600 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+              <span>Retail-ready inner boxes (1kg, 2.5kg, 5kg)</span>
+            </li>
+          </ul>
+          <ul class="space-y-3 text-gray-700">
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-brand-600 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+              <span>Halal certification included</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-brand-600 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+              <span>MOQ: 1 FCL for standard shapes, 5 FCL for custom molds</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-brand-600 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+              <span>Free samples before committing to production</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications -->
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Certifications &amp; Documentation</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {[
+          "Halal Certification",
+          "SGS Lab Testing Report",
+          "MSDS / Safety Data Sheet",
+          "Self-Heating Test (UN3088)",
+          "Certificate of Origin",
+          "Customs Documentation",
+        ].map((cert) => (
+          <div class="flex items-start gap-3 bg-white rounded-lg p-4 border border-gray-200">
+            <svg class="w-5 h-5 text-brand-600 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+            <span class="text-sm font-medium text-gray-800">{cert}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Link -->
+  <section class="py-12 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <a href="/products/hookah-charcoal" class="inline-flex items-center gap-2 text-brand-700 hover:text-brand-900 font-semibold text-lg transition-colors">
+        View full Hookah Charcoal product page with detailed specs
+        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- Quote Form -->
+  <section id="quote-form" class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <QuoteForm productName="Hookah Charcoal" />
+    </div>
+  </section>
+</Layout>

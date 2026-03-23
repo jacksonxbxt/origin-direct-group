@@ -1,0 +1,264 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: "Ghana vs Ivory Coast Cocoa: Quality, Price, and Sourcing Comparison",
+  description: "In-depth comparison of Ghana and Ivory Coast cocoa covering production volumes, quality differences, pricing, flavor profiles, certification availability, and EUDR compliance status.",
+  author: { "@type": "Organization", name: "Origin Direct Group" },
+  publisher: { "@type": "Organization", name: "Origin Direct Group", logo: { "@type": "ImageObject", url: "https://origindirectgroup.com/logo.png" } },
+  datePublished: "2026-03-23",
+  dateModified: "2026-03-23",
+  mainEntityOfPage: "https://origindirectgroup.com/blog/ghana-vs-ivory-coast-cocoa",
+  image: "https://origindirectgroup.com/images/blog/ghana-vs-ivory-coast-cocoa.jpg",
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://origindirectgroup.com/" },
+    { "@type": "ListItem", position: 2, name: "Blog", item: "https://origindirectgroup.com/blog" },
+    { "@type": "ListItem", position: 3, name: "Ghana vs Ivory Coast Cocoa", item: "https://origindirectgroup.com/blog/ghana-vs-ivory-coast-cocoa" },
+  ],
+};
+---
+
+<Layout
+  title="Ghana vs Ivory Coast Cocoa: Quality, Price, and Sourcing Comparison | Origin Direct Group"
+  description="In-depth comparison of Ghana and Ivory Coast cocoa covering production volumes, quality differences, pricing, flavor profiles, certification availability, and EUDR compliance status."
+  structuredData={[articleSchema, breadcrumbSchema]}
+>
+  <!-- Breadcrumbs -->
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <nav class="flex text-sm text-gray-500">
+      <a href="/" class="hover:text-brand-700">Home</a>
+      <span class="mx-2">/</span>
+      <a href="/blog" class="hover:text-brand-700">Blog</a>
+      <span class="mx-2">/</span>
+      <span class="text-gray-900">Ghana vs Ivory Coast Cocoa</span>
+    </nav>
+  </div>
+
+  <!-- Hero -->
+  <section class="relative py-20 sm:py-28 bg-gradient-to-br from-brand-900 via-brand-800 to-earth-800 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(196,154,42,0.3),transparent_70%)]"></div>
+    </div>
+    <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <span class="inline-block px-4 py-1.5 bg-amber-500/20 text-amber-300 text-sm font-semibold rounded-full mb-6 border border-amber-500/30">Comparison</span>
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">Ghana vs Ivory Coast Cocoa: Quality, Price, and Sourcing Comparison</h1>
+      <p class="text-lg text-brand-200 max-w-2xl mx-auto">
+        The two West African giants produce over 60% of the world's cocoa. Here is how they compare on quality, pricing, and sourcing considerations.
+      </p>
+      <div class="mt-6 flex items-center justify-center gap-4 text-sm text-brand-300">
+        <span>March 23, 2026</span>
+        <span class="w-1 h-1 rounded-full bg-brand-500"></span>
+        <span>11 min read</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Article Content -->
+  <article class="py-16 md:py-20 bg-white">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="prose prose-lg text-gray-700 max-w-none">
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">Why This Comparison Matters</h2>
+        <p>
+          Ghana and Ivory Coast together account for roughly 60-65% of global cocoa production. If you buy cocoa beans, cocoa butter, or cocoa powder, your supply chain almost certainly touches one or both of these origins. Yet the two countries produce distinctly different cocoa, and the choice between them affects everything from flavor to compliance burden to landed cost.
+        </p>
+        <p>
+          This guide breaks down the key differences so you can make an informed sourcing decision based on your specific use case, whether you are manufacturing chocolate, producing cosmetics, or formulating cocoa-based food products.
+        </p>
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">Production Volumes at a Glance</h2>
+        <p>
+          Ivory Coast is the undisputed volume leader. In the 2024/2025 season, Ivory Coast produced approximately 2.2 million metric tons of cocoa, while Ghana produced around 750,000 metric tons. To put this in perspective, Ivory Coast alone produces more cocoa than the rest of the world combined outside of Ghana.
+        </p>
+        <p>
+          However, Ghana has historically been the more consistent producer. Ivory Coast's output can swing significantly year-over-year due to weather patterns and farmer incentives, while Ghana's COCOBOD (Ghana Cocoa Board) system provides a stabilizing mechanism through fixed farmgate pricing that keeps production more predictable.
+        </p>
+
+        <div class="overflow-x-auto rounded-xl border border-gray-200 shadow-sm my-8">
+          <table class="w-full text-left text-sm">
+            <thead>
+              <tr class="bg-brand-800 text-white">
+                <th class="px-6 py-4 font-semibold">Parameter</th>
+                <th class="px-6 py-4 font-semibold">Ghana</th>
+                <th class="px-6 py-4 font-semibold">Ivory Coast</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100">
+              <tr class="bg-white">
+                <td class="px-6 py-3 font-medium text-gray-900">Annual Production</td>
+                <td class="px-6 py-3 text-gray-700">~750,000 MT</td>
+                <td class="px-6 py-3 text-gray-700">~2,200,000 MT</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="px-6 py-3 font-medium text-gray-900">Global Share</td>
+                <td class="px-6 py-3 text-gray-700">~14%</td>
+                <td class="px-6 py-3 text-gray-700">~40%</td>
+              </tr>
+              <tr class="bg-white">
+                <td class="px-6 py-3 font-medium text-gray-900">Typical Bean Size (count/100g)</td>
+                <td class="px-6 py-3 text-gray-700">90-100 beans</td>
+                <td class="px-6 py-3 text-gray-700">95-110 beans</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="px-6 py-3 font-medium text-gray-900">Fat Content</td>
+                <td class="px-6 py-3 text-gray-700">54-58%</td>
+                <td class="px-6 py-3 text-gray-700">52-56%</td>
+              </tr>
+              <tr class="bg-white">
+                <td class="px-6 py-3 font-medium text-gray-900">Moisture (at export)</td>
+                <td class="px-6 py-3 text-gray-700">6.0-7.5%</td>
+                <td class="px-6 py-3 text-gray-700">7.0-8.0%</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="px-6 py-3 font-medium text-gray-900">Fermentation Quality</td>
+                <td class="px-6 py-3 text-gray-700">Highly consistent</td>
+                <td class="px-6 py-3 text-gray-700">Variable</td>
+              </tr>
+              <tr class="bg-white">
+                <td class="px-6 py-3 font-medium text-gray-900">Main Season</td>
+                <td class="px-6 py-3 text-gray-700">Oct - Mar (main), May - Aug (light)</td>
+                <td class="px-6 py-3 text-gray-700">Oct - Mar (main), Apr - Sep (mid)</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="px-6 py-3 font-medium text-gray-900">FOB Price Premium</td>
+                <td class="px-6 py-3 text-gray-700">+$50-150/MT over ICE</td>
+                <td class="px-6 py-3 text-gray-700">At or near ICE benchmark</td>
+              </tr>
+              <tr class="bg-white">
+                <td class="px-6 py-3 font-medium text-gray-900">Regulatory Body</td>
+                <td class="px-6 py-3 text-gray-700">COCOBOD</td>
+                <td class="px-6 py-3 text-gray-700">CCC (Conseil Cafe Cacao)</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="px-6 py-3 font-medium text-gray-900">EUDR Readiness</td>
+                <td class="px-6 py-3 text-gray-700">Advanced (COCOBOD GPS program)</td>
+                <td class="px-6 py-3 text-gray-700">In progress (varied by exporter)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">Quality and Grading Differences</h2>
+        <p>
+          Ghana's quality advantage is well known in the industry. The COCOBOD system includes mandatory quality control at every stage: purchasing clerks grade beans at the farmgate, Licensed Buying Companies (LBCs) re-grade before delivery to COCOBOD, and COCOBOD's Quality Control Company (QCC) conducts final inspection before export. The result is consistent quality that buyers can rely on.
+        </p>
+        <p>
+          Ghana cocoa is graded as Grade I (main grade) and Grade II (light crop). Grade I beans typically have at least 80% fully fermented beans in cut tests, while the industry standard for "good fermented" cocoa is above 70%. This consistency makes Ghana cocoa the preferred origin for premium chocolate manufacturers.
+        </p>
+        <p>
+          Ivory Coast cocoa quality is more variable. While the CCC regulates exports, the private market structure means quality control is less standardized than Ghana's state-managed system. Top-tier Ivorian exporters can match Ghana quality, but the average shipment tends to have higher variance in bean size, fermentation, and moisture content.
+        </p>
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">Flavor Profiles</h2>
+        <p>
+          Ghana cocoa is known for a strong, classic cocoa flavor with robust chocolate notes, moderate bitterness, and mild acidity. It is the benchmark flavor for traditional chocolate manufacturing and blends well with other origins. Many European chocolate makers use Ghanaian cocoa as their base.
+        </p>
+        <p>
+          Ivory Coast cocoa tends to have a lighter, somewhat milder flavor with slightly more acidity and fruity notes in well-fermented lots. It is widely used in couverture and compound chocolate, cocoa powder production, and industrial applications where volume matters more than a distinctive flavor signature.
+        </p>
+        <p>
+          For cocoa butter production, Ghana cocoa's higher fat content (54-58%) gives it a clear advantage over Ivory Coast (52-56%). The higher yield per ton of beans processed translates directly to better economics for butter manufacturers.
+        </p>
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">Pricing Comparison</h2>
+        <p>
+          Ghana cocoa consistently trades at a premium to Ivory Coast cocoa. This premium typically ranges from $50 to $150 per metric ton on an FOB basis, depending on market conditions and quality specifications. The premium reflects Ghana's quality reputation, COCOBOD's fixed pricing system, and the consistency buyers receive.
+        </p>
+        <p>
+          Ivory Coast cocoa pricing is more market-responsive and volatile. When global cocoa prices spike, Ivorian exporters can adjust faster than COCOBOD, which sets prices annually. This can create opportunities for buyers who time their purchases well, but also introduces more pricing risk.
+        </p>
+        <p>
+          For buyers focused purely on cost, Ivory Coast offers better value per metric ton. For buyers focused on total cost of quality (accounting for sorting losses, processing yield, and product consistency), Ghana often proves more economical despite the higher FOB price.
+        </p>
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">Certification Availability</h2>
+        <p>
+          Both origins offer Fairtrade, Rainforest Alliance, UTZ (now part of Rainforest Alliance), and organic certified cocoa. However, the availability and cost of certified cocoa differs:
+        </p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li><strong>Fairtrade</strong> - Both origins have large Fairtrade-certified cooperatives. Ghana has a slight edge in cooperative organization due to COCOBOD's structure.</li>
+          <li><strong>Rainforest Alliance</strong> - Ivory Coast leads in Rainforest Alliance certified volume due to larger overall production. Many major exporters have RA-certified programs.</li>
+          <li><strong>Organic</strong> - Ghana has a growing organic cocoa sector, particularly in the Eastern and Volta regions. Ivory Coast's organic cocoa is available but represents a smaller share of total production.</li>
+        </ul>
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">EUDR Compliance Status</h2>
+        <p>
+          With the <a href="/blog/eudr-compliance-guide" class="text-brand-700 underline hover:text-brand-900">EU Deforestation Regulation</a> now in effect for large enterprises, compliance readiness is a critical sourcing factor.
+        </p>
+        <p>
+          Ghana is better positioned for EUDR compliance. COCOBOD has been collecting farm-level GPS data through its Cocoa Management System (CMS) for several years, covering a significant portion of the country's cocoa farms. This institutional data collection gives Ghana a structural advantage for providing the geolocation data that EUDR requires.
+        </p>
+        <p>
+          Ivory Coast's EUDR readiness varies widely by exporter. Large multinational trading companies operating in Ivory Coast have invested in traceability systems, but smaller exporters may lack the infrastructure for farm-level GPS mapping. Buyers importing from Ivory Coast should carefully verify their exporter's traceability capabilities before committing to volumes.
+        </p>
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">Which Origin Should You Choose?</h2>
+
+        <div class="bg-brand-50 rounded-xl p-8 my-8 border border-brand-100">
+          <h3 class="text-lg font-semibold text-brand-800 mb-4">Choose Ghana Cocoa If You Need:</h3>
+          <ul class="list-disc pl-6 space-y-2 text-gray-700">
+            <li>Consistent quality batch to batch</li>
+            <li>Higher fat content for cocoa butter production</li>
+            <li>Strong, classic chocolate flavor profile</li>
+            <li>Straightforward EUDR compliance documentation</li>
+            <li>Premium chocolate manufacturing</li>
+            <li>A reliable baseline for blending</li>
+          </ul>
+        </div>
+
+        <div class="bg-gray-50 rounded-xl p-8 my-8 border border-gray-200">
+          <h3 class="text-lg font-semibold text-gray-800 mb-4">Choose Ivory Coast Cocoa If You Need:</h3>
+          <ul class="list-disc pl-6 space-y-2 text-gray-700">
+            <li>Large volumes at competitive pricing</li>
+            <li>Cocoa powder for industrial applications</li>
+            <li>Flexibility in purchase timing and pricing</li>
+            <li>Compound chocolate or couverture production</li>
+            <li>Access to the largest pool of certified cocoa</li>
+          </ul>
+        </div>
+
+        <p>
+          Many experienced cocoa buyers source from both origins, using Ghana as their quality base and Ivory Coast for volume. This blending approach provides flavor consistency while managing costs effectively.
+        </p>
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">How Origin Direct Group Can Help</h2>
+        <p>
+          We source <a href="/products/cocoa" class="text-brand-700 underline hover:text-brand-900">premium cocoa beans</a> from Ghana with full EUDR compliance documentation, including geolocation data, chain of custody records, and pre-filled Due Diligence Statements. Our team on the ground in Ghana's cocoa belt works directly with farming communities to ensure consistent quality and full traceability.
+        </p>
+        <p>
+          Whether you need Grade I Ghanaian beans for premium chocolate or are looking to establish a reliable West African cocoa supply chain, we can help you navigate the complexities of origin selection, quality assurance, and regulatory compliance.
+        </p>
+
+      </div>
+    </div>
+  </article>
+
+  <!-- CTA -->
+  <section class="py-20 md:py-24 bg-gradient-to-br from-brand-900 to-earth-800">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">
+        Ready to Source Premium Cocoa?
+      </h2>
+      <p class="text-brand-200 mb-8 max-w-xl mx-auto">
+        Get competitive pricing on EUDR-compliant Ghanaian cocoa beans with full traceability documentation.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/quote" class="inline-flex items-center justify-center px-8 py-4 bg-gold hover:bg-gold-dark text-white font-bold rounded-lg transition-colors shadow-lg text-lg">
+          Request a Quote
+          <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+        <a href="/products/cocoa" class="inline-flex items-center justify-center px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-lg transition-colors border border-white/20">
+          View Cocoa Products
+        </a>
+      </div>
+    </div>
+  </section>
+
+</Layout>

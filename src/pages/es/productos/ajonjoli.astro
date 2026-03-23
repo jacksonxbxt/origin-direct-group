@@ -1,0 +1,151 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import QuoteForm from '../../../components/QuoteForm.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+
+const siteUrl = "https://origindirectgroup.com";
+
+const productSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name: "Semillas de Ajonjoli (Sesamo)",
+  description: "Semillas de ajonjoli premium de Nigeria con 48-55% de contenido de aceite. Variedades blanco descascarado, natural, cafe y negro.",
+  image: `${siteUrl}/images/products/sesame-seeds.jpg`,
+  brand: { "@type": "Brand", name: "Origin Direct Group" },
+  category: "Semillas y Granos",
+  countryOfOrigin: { "@type": "Country", name: "Nigeria" },
+  offers: { "@type": "AggregateOffer", priceCurrency: "USD", availability: "https://schema.org/InStock" },
+  additionalProperty: [
+    { "@type": "PropertyValue", name: "Codigo SA", value: "1207.40" },
+    { "@type": "PropertyValue", name: "CMC", value: "1 FCL (20-22 TM)" },
+    { "@type": "PropertyValue", name: "Contenido de Aceite", value: "48-55%" },
+  ],
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Inicio", item: `${siteUrl}/es/` },
+    { "@type": "ListItem", position: 2, name: "Productos", item: `${siteUrl}/es/productos` },
+    { "@type": "ListItem", position: 3, name: "Ajonjoli", item: `${siteUrl}/es/productos/ajonjoli` },
+  ],
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Sus semillas de ajonjoli son aptas para produccion de tahini?",
+      acceptedAnswer: { "@type": "Answer", text: "Si. Nuestras semillas de ajonjoli blanco descascarado estan calibradas especificamente para tahini: contenido de aceite 48-55%, AGL inferior a 2%, humedad inferior a 5%, pureza superior a 99%. Suministramos a los principales productores de tahini en Turquia, Medio Oriente y Europa." },
+    },
+    {
+      "@type": "Question",
+      name: "Sus semillas de ajonjoli estan libres de oxido de etileno?",
+      acceptedAnswer: { "@type": "Answer", text: "Si. Todas nuestras semillas de ajonjoli se analizan para oxido de etileno (OEt) por debajo de 0,05 mg/kg, conforme a los limites maximos de residuos de la UE. Los informes de laboratorio confirmando la ausencia de OEt se entregan con cada embarque." },
+    },
+    {
+      "@type": "Question",
+      name: "Que variedades de ajonjoli ofrecen?",
+      acceptedAnswer: { "@type": "Answer", text: "Ofrecemos blanco descascarado (grado tahini), blanco natural/sin descascarar, cafe natural, sesamo negro y certificado organico. Nigeria esta entre los 3 principales exportadores mundiales, y nuestras semillas provienen del cinturon de sabana del norte." },
+    },
+  ],
+};
+---
+
+<Layout
+  title="Semillas de Ajonjoli Premium de Nigeria | Origin Direct"
+  description="Semillas de ajonjoli (sesamo) premium de Nigeria, 48-55% de contenido de aceite. Blanco descascarado, natural, negro, organico. Precios B2B competitivos."
+  structuredData={[productSchema, breadcrumbSchema, faqSchema]}
+  lang="es"
+  hreflangs={[
+    { lang: "en", href: `${siteUrl}/products/sesame-seeds` },
+    { lang: "fr", href: `${siteUrl}/fr/produits/graines-de-sesame` },
+    { lang: "es", href: `${siteUrl}/es/productos/ajonjoli` },
+  ]}
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumbs items={[{ label: "Productos", href: "/es/productos" }, { label: "Ajonjoli" }]} />
+  </div>
+
+  <section class="relative py-24 sm:py-32 bg-gradient-to-br from-brand-900 via-brand-800 to-earth-800 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(196,154,42,0.3),transparent_70%)]"></div>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-gold-light font-medium tracking-wide uppercase text-sm mb-4">Nigeria</p>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">Semillas de Ajonjoli</h1>
+      <p class="text-xl text-brand-200 max-w-2xl mx-auto mb-10">
+        Semillas de sesamo premium para produccion de tahini, extraccion de aceite y procesamiento alimentario. Contenido de aceite de 48-55%.
+      </p>
+      <a href="#quote-form" class="inline-flex items-center px-8 py-4 bg-gold hover:bg-gold-dark text-white font-bold rounded-lg transition-colors shadow-lg text-lg">
+        Solicitar Cotizacion
+        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <section class="py-12 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="rounded-2xl overflow-hidden shadow-lg border border-gray-100">
+        <img src="/images/products/sesame-seeds.jpg" alt="Semillas de ajonjoli premium de Nigeria" class="w-full h-64 sm:h-80 object-cover" loading="eager" />
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Resumen</h2>
+      <div class="prose prose-lg text-gray-700 space-y-5">
+        <p>
+          Nigeria se encuentra entre los tres principales exportadores mundiales de semillas de ajonjoli, con produccion concentrada en el cinturon de sabana del norte. Las semillas nigerianas son particularmente apreciadas por su contenido de aceite excepcional de 48 a 55%, entre los mas altos del mundo, lo que las hace ideales para extraccion de aceite y produccion de tahini.
+        </p>
+        <p>
+          Origin Direct se abastece directamente de productores y cooperativas de la zona de sabana, garantizando calidad constante y precios competitivos. Todas nuestras semillas de ajonjoli se analizan para oxido de etileno (conforme a normas UE estrictas), salmonela y aflatoxinas. Ofrecemos grados de sesamo blanco descascarado para tahini, sesamo natural, cafe, negro y certificado organico.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Especificaciones Tecnicas</h2>
+      <div class="overflow-x-auto rounded-xl border border-gray-200 shadow-sm">
+        <table class="w-full text-left text-sm">
+          <thead><tr class="bg-brand-800 text-white"><th class="px-6 py-4 font-semibold">Parametro</th><th class="px-6 py-4 font-semibold">Especificacion</th></tr></thead>
+          <tbody class="divide-y divide-gray-100">
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">Contenido de Aceite</td><td class="px-6 py-4 text-gray-700">48-55%</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">Humedad</td><td class="px-6 py-4 text-gray-700">&lt; 5%</td></tr>
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">AGL</td><td class="px-6 py-4 text-gray-700">&lt; 2%</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">Pureza</td><td class="px-6 py-4 text-gray-700">&gt; 99%</td></tr>
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">Oxido de Etileno</td><td class="px-6 py-4 text-gray-700">&lt; 0,05 mg/kg (conforme UE)</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Preguntas Frecuentes</h2>
+      <div class="space-y-4">
+        <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+          <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">Sus semillas son aptas para tahini?</summary>
+          <div class="px-6 pb-4 text-gray-700">Si. Ajonjoli blanco descascarado: contenido de aceite 48-55%, AGL inferior a 2%, humedad inferior a 5%, pureza superior a 99%. Suministramos a los principales productores de tahini en Turquia, Medio Oriente y Europa.</div>
+        </details>
+        <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+          <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">Estan libres de oxido de etileno?</summary>
+          <div class="px-6 pb-4 text-gray-700">Si. Analizadas por debajo de 0,05 mg/kg, conforme a los LMR de la UE. Informes de laboratorio incluidos con cada embarque.</div>
+        </details>
+        <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+          <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">Que variedades ofrecen?</summary>
+          <div class="px-6 pb-4 text-gray-700">Blanco descascarado (grado tahini), blanco natural, cafe natural, sesamo negro y certificado organico. Nigeria esta entre los 3 principales exportadores mundiales.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <QuoteForm productName="Sesame Seeds" />
+</Layout>

@@ -1,0 +1,192 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import QuoteForm from '../../components/QuoteForm.astro';
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://origindirectgroup.com/" },
+    { "@type": "ListItem", position: 2, name: "Industries", item: "https://origindirectgroup.com/industries" },
+    { "@type": "ListItem", position: 3, name: "Chocolate & Confectionery", item: "https://origindirectgroup.com/industries/chocolate" },
+  ],
+};
+
+const products = [
+  {
+    name: "Cocoa Beans",
+    slug: "/products/cocoa",
+    description: "Fermented and sun-dried Ghanaian and Nigerian cocoa beans. Single-origin lots available for bean-to-bar makers. Ghana Premium grade with rich, classic chocolate flavor.",
+    specs: ["Ghana Premium Grade", "Single-origin lots", "Fermentation 5-7 days"],
+  },
+  {
+    name: "Cocoa Butter",
+    slug: "/products/cocoa",
+    description: "Natural and deodorized cocoa butter for chocolate tempering, enrobing, and confectionery. Meets EU and FDA requirements for cocoa butter composition.",
+    specs: ["Natural or Deodorized", "FFA < 1.75%", "Melting point 32-35 C"],
+  },
+  {
+    name: "Cocoa Powder",
+    slug: "/products/cocoa",
+    description: "Natural and alkalized (Dutch-process) cocoa powder for baking, beverages, and confectionery coatings. Available in 10-12% and 20-22% fat content.",
+    specs: ["Natural or Alkalized", "10-22% fat", "Fine mesh"],
+  },
+  {
+    name: "Shea Stearin (CBE)",
+    slug: "/products/shea-butter",
+    description: "Shea stearin is the hard fraction of shea butter, widely used as a cocoa butter equivalent (CBE) in chocolate manufacturing. Reduces costs while maintaining texture and snap.",
+    specs: ["Cocoa butter equivalent", "Melting point 38-45 C", "EU-approved CBE"],
+  },
+  {
+    name: "Cashew Nuts",
+    slug: "/products/cashew-nuts",
+    description: "Whole and split cashew kernels for chocolate-covered cashews, pralines, and confectionery inclusions. W240, W320, and split grades available.",
+    specs: ["W240, W320 grades", "Splits available", "Low moisture"],
+  },
+];
+---
+
+<Layout
+  title="Cocoa & Ingredients for Chocolate Makers | Origin Direct"
+  description="Direct cocoa beans, cocoa butter, cocoa powder, and shea stearin (CBE) for chocolate manufacturers. EUDR compliant, low cadmium, single-origin lots. Competitive B2B pricing from Ghana and Nigeria."
+  structuredData={[breadcrumbSchema]}
+>
+  <!-- Breadcrumbs -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumbs items={[{ label: "Industries", href: "/industries" }, { label: "Chocolate & Confectionery" }]} />
+  </div>
+
+  <!-- Hero -->
+  <section class="relative py-24 sm:py-32 bg-gradient-to-br from-earth-900 via-brand-900 to-brand-800 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_40%_50%,rgba(196,154,42,0.3),transparent_70%)]"></div>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-gold-light font-medium tracking-wide uppercase text-sm mb-4">Chocolate &amp; Confectionery</p>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">Cocoa &amp; Ingredients for Chocolate Makers</h1>
+      <p class="text-xl text-brand-200 max-w-2xl mx-auto mb-10">
+        Single-origin cocoa beans, butter, and powder from Ghana and Nigeria. EUDR compliant, traceable to farm level, competitive direct pricing.
+      </p>
+      <a href="#quote-form" class="inline-flex items-center px-8 py-4 bg-gold hover:bg-gold-dark text-white font-bold rounded-lg transition-colors shadow-lg text-lg">
+        Request Quote
+        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- Overview -->
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Why Chocolate Makers Choose Origin Direct</h2>
+      <div class="prose prose-lg text-gray-700 space-y-5">
+        <p>
+          Ghana and Nigeria together produce over 35% of the world's cocoa. Ghana's Premium cocoa is recognized as the benchmark for quality by the global chocolate industry, known for its classic, balanced chocolate flavor with fruity and nutty notes. Nigerian cocoa offers a bolder, more robust profile that is popular in dark chocolate formulations.
+        </p>
+        <p>
+          As a direct sourcing partner, Origin Direct gives chocolate manufacturers access to single-origin lots with full traceability from farm to factory. We work with licensed buying companies and cooperatives that follow proper fermentation protocols (5-7 day box fermentation, sun-drying to 7% moisture), resulting in consistently well-fermented beans that produce superior chocolate.
+        </p>
+        <p>
+          With the EU Deforestation Regulation (EUDR) reshaping cocoa supply chains, traceability is no longer optional. Our supply chain provides GPS-level plot data and deforestation-free declarations that help your business stay compliant from day one.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- What Matters for Chocolate -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">What Matters for Chocolate Manufacturers</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {[
+          { title: "EUDR Compliance", detail: "Full traceability with GPS plot coordinates and deforestation-free declarations. Ready for the EU Deforestation Regulation." },
+          { title: "Cadmium Levels", detail: "Regularly tested to meet EU cadmium limits (0.10-0.80 mg/kg depending on product). Ghanaian cocoa typically tests well below limits." },
+          { title: "Flavor Profile", detail: "Ghana Premium: classic chocolate with fruity/nutty notes. Nigerian: bold, robust. Sample lots available for flavor evaluation." },
+          { title: "Fermentation Quality", detail: "5-7 day box fermentation, sun-dried to 7% moisture. Cut test showing 75%+ well-fermented beans." },
+          { title: "Rainforest Alliance", detail: "Certified sustainable cocoa available. Chain of custody documentation for RA/UTZ certified beans." },
+          { title: "Bean Size & Count", detail: "100 beans per 100g (Ghana standard). Consistent sizing for uniform roasting results." },
+        ].map((spec) => (
+          <div class="bg-white rounded-xl border border-gray-200 p-6">
+            <h3 class="text-sm font-bold text-brand-800 mb-2">{spec.title}</h3>
+            <p class="text-sm text-gray-600">{spec.detail}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section class="py-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-10">Products for Chocolate &amp; Confectionery</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {products.map((product) => (
+          <a href={product.slug} class="group block bg-white rounded-2xl border border-gray-100 hover:border-green-200 hover:shadow-xl transition-all duration-300 p-6">
+            <h3 class="text-lg font-bold text-gray-900 group-hover:text-green-700 transition-colors mb-3">
+              {product.name}
+            </h3>
+            <p class="text-sm text-gray-600 mb-4 leading-relaxed">{product.description}</p>
+            <div class="flex flex-wrap gap-1.5 mb-4">
+              {product.specs.map((spec: string) => (
+                <span class="inline-flex items-center px-2.5 py-1 bg-green-50 text-green-800 text-xs font-medium rounded-full border border-green-100">
+                  {spec}
+                </span>
+              ))}
+            </div>
+            <div class="flex items-center gap-2 text-green-700 font-semibold text-sm group-hover:gap-3 transition-all">
+              View Product
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+              </svg>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- EUDR Compliance Callout -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-white rounded-2xl border border-green-200 p-8 lg:p-10">
+        <h2 class="text-2xl font-bold text-brand-900 mb-4">EUDR Compliance Built In</h2>
+        <p class="text-gray-700 mb-6">
+          The EU Deforestation Regulation requires importers to demonstrate their cocoa is not linked to deforestation after December 31, 2020. Our supply chain is designed for compliance from the ground up.
+        </p>
+        <ul class="space-y-3 text-gray-700">
+          <li class="flex items-start gap-2">
+            <svg class="w-5 h-5 text-brand-600 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+            <span>GPS coordinates for every plot in our supply chain</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <svg class="w-5 h-5 text-brand-600 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+            <span>Deforestation-free declarations backed by satellite monitoring</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <svg class="w-5 h-5 text-brand-600 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+            <span>Due diligence documentation ready for submission to EU authorities</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <svg class="w-5 h-5 text-brand-600 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+            <span>Rainforest Alliance / UTZ certified supply available</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quote Form -->
+  <section id="quote-form" class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <QuoteForm productName="Cocoa" />
+    </div>
+  </section>
+</Layout>

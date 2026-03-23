@@ -1,0 +1,201 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import QuoteForm from '../../components/QuoteForm.astro';
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://origindirectgroup.com/" },
+    { "@type": "ListItem", position: 2, name: "Industries", item: "https://origindirectgroup.com/industries" },
+    { "@type": "ListItem", position: 3, name: "Animal Feed", item: "https://origindirectgroup.com/industries/animal-feed" },
+  ],
+};
+
+const products = [
+  {
+    name: "Cashew Shell Cake",
+    slug: "/products/cashew-nuts",
+    description: "By-product of cashew nut processing. High in fiber and residual oil, cashew shell cake is used as a protein and energy supplement in ruminant feed formulations.",
+    specs: ["High fiber", "Residual oil content", "Bulk available"],
+  },
+  {
+    name: "Palm Kernel Cake",
+    slug: "/products/palm-kernel-oil",
+    description: "The solid residue after palm kernel oil extraction. Rich in protein (14-18%) and fiber, widely used in dairy cattle, beef cattle, and sheep feed rations.",
+    specs: ["14-18% protein", "High energy", "Pellets or meal"],
+  },
+  {
+    name: "Cassava Chips",
+    slug: "/products/cassava-starch",
+    description: "Dried cassava chips for animal feed as an energy source. High starch content (65-70%) makes cassava an economical replacement for corn in feed formulations.",
+    specs: ["65-70% starch", "Low fiber", "Energy source"],
+  },
+  {
+    name: "Sesame Meal",
+    slug: "/products/sesame-seeds",
+    description: "By-product of sesame oil extraction. High protein content (35-50%) with good amino acid profile. Used in poultry, swine, and aquaculture feed.",
+    specs: ["35-50% protein", "High methionine", "Aquaculture suitable"],
+  },
+  {
+    name: "Shea Nut Cake",
+    slug: "/products/shea-nuts",
+    description: "Residue from shea butter extraction. Used as a supplementary feed ingredient and also as organic fertilizer. Available in large volumes from Ghana.",
+    specs: ["Bulk quantities", "Ghanaian origin", "Feed or fertilizer"],
+  },
+  {
+    name: "Moringa Leaf Meal",
+    slug: "/products/moringa",
+    description: "Dried and ground moringa leaves used as a high-protein, vitamin-rich feed additive for poultry, swine, and cattle. Improves growth rates and egg production in poultry.",
+    specs: ["25%+ protein", "Rich in vitamins", "Growth promoter"],
+  },
+];
+---
+
+<Layout
+  title="Agricultural By-Products for Animal Feed | Origin Direct"
+  description="Cashew shell cake, palm kernel cake, cassava chips, sesame meal, and other agricultural by-products for animal feed manufacturers. Bulk supply from West Africa at competitive prices."
+  structuredData={[breadcrumbSchema]}
+>
+  <!-- Breadcrumbs -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumbs items={[{ label: "Industries", href: "/industries" }, { label: "Animal Feed" }]} />
+  </div>
+
+  <!-- Hero -->
+  <section class="relative py-24 sm:py-32 bg-gradient-to-br from-brand-900 via-earth-800 to-brand-800 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(196,154,42,0.3),transparent_70%)]"></div>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-gold-light font-medium tracking-wide uppercase text-sm mb-4">Animal Feed Industry</p>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">Agricultural By-Products for Animal Feed</h1>
+      <p class="text-xl text-brand-200 max-w-2xl mx-auto mb-10">
+        Protein-rich cakes, energy-dense chips, and nutritional meals from West African agriculture. Bulk quantities for feed manufacturers.
+      </p>
+      <a href="#quote-form" class="inline-flex items-center px-8 py-4 bg-gold hover:bg-gold-dark text-white font-bold rounded-lg transition-colors shadow-lg text-lg">
+        Request Quote
+        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- Overview -->
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Why Feed Manufacturers Choose Origin Direct</h2>
+      <div class="prose prose-lg text-gray-700 space-y-5">
+        <p>
+          West Africa's agricultural processing industries generate millions of tons of by-products each year that are highly valuable as animal feed ingredients. Palm kernel cake, cashew shell cake, sesame meal, and cassava chips provide protein, energy, and fiber at a fraction of the cost of traditional feed ingredients like soybean meal and corn.
+        </p>
+        <p>
+          Origin Direct supplies these by-products in bulk quantities directly from processing facilities across Ghana and Nigeria. We handle quality testing, export documentation, and logistics to your destination. Our supply is consistent year-round, with the volumes that commercial feed mills require.
+        </p>
+        <p>
+          Whether you are formulating feed for dairy cattle, beef cattle, poultry, swine, or aquaculture, our technical team can advise on the right products and inclusion rates for your specific application.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-10">Products for Animal Feed</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {products.map((product) => (
+          <a href={product.slug} class="group block bg-white rounded-2xl border border-gray-100 hover:border-green-200 hover:shadow-xl transition-all duration-300 p-6">
+            <h3 class="text-lg font-bold text-gray-900 group-hover:text-green-700 transition-colors mb-3">
+              {product.name}
+            </h3>
+            <p class="text-sm text-gray-600 mb-4 leading-relaxed">{product.description}</p>
+            <div class="flex flex-wrap gap-1.5 mb-4">
+              {product.specs.map((spec: string) => (
+                <span class="inline-flex items-center px-2.5 py-1 bg-green-50 text-green-800 text-xs font-medium rounded-full border border-green-100">
+                  {spec}
+                </span>
+              ))}
+            </div>
+            <div class="flex items-center gap-2 text-green-700 font-semibold text-sm group-hover:gap-3 transition-all">
+              View Product
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+              </svg>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Feed Applications -->
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Applications by Livestock Type</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {[
+          { type: "Dairy Cattle", detail: "Palm kernel cake (up to 30% inclusion) and cassava chips provide energy and protein for milk production. Sesame meal offers high methionine for improved milk composition." },
+          { type: "Beef Cattle & Sheep", detail: "Palm kernel cake and shea nut cake are cost-effective protein and energy sources for ruminant fattening rations. Cassava chips replace corn as an energy source." },
+          { type: "Poultry", detail: "Sesame meal (up to 15% inclusion) provides high-quality protein. Moringa leaf meal improves egg production and yolk color at 3-5% inclusion rates." },
+          { type: "Aquaculture", detail: "Sesame meal is an excellent fish meal replacement in aquaculture feed. Moringa leaf meal supports growth in tilapia and catfish farming." },
+        ].map((item) => (
+          <div class="bg-gray-50 rounded-xl border border-gray-200 p-6">
+            <h3 class="text-sm font-bold text-brand-800 mb-2">{item.type}</h3>
+            <p class="text-sm text-gray-600">{item.detail}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Logistics -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Packaging &amp; Logistics</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div>
+          <h3 class="text-lg font-semibold text-brand-800 mb-4">Packaging</h3>
+          <ul class="space-y-3 text-gray-700">
+            <li class="flex items-start gap-2">
+              <span class="text-brand-600 mt-1">&#8226;</span>
+              <span>50 kg polypropylene bags</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-brand-600 mt-1">&#8226;</span>
+              <span>1 MT jumbo bags (FIBC)</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-brand-600 mt-1">&#8226;</span>
+              <span>Bulk (loose in container) for maximum volume</span>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold text-brand-800 mb-4">Volume &amp; Shipping</h3>
+          <ul class="space-y-3 text-gray-700">
+            <li class="flex items-start gap-2">
+              <span class="text-gold mt-1">&#9654;</span>
+              <span><strong>MOQ:</strong> 1 FCL (20-28 MT depending on product)</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-gold mt-1">&#9654;</span>
+              <span><strong>Annual contracts:</strong> Available for consistent supply</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-gold mt-1">&#9654;</span>
+              <span><strong>Incoterms:</strong> FOB, CFR, CIF available</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quote Form -->
+  <section id="quote-form" class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <QuoteForm />
+    </div>
+  </section>
+</Layout>

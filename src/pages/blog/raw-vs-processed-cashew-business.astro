@@ -1,0 +1,278 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: "Raw Cashew Nuts vs Processed Kernels: Which to Buy?",
+  description: "Compare raw cashew nuts (RCN) and processed cashew kernels on pricing, quality metrics, buyer profiles, payment terms, and logistics for informed sourcing decisions.",
+  author: { "@type": "Organization", name: "Origin Direct Group" },
+  publisher: { "@type": "Organization", name: "Origin Direct Group", logo: { "@type": "ImageObject", url: "https://origindirectgroup.com/logo.png" } },
+  datePublished: "2026-03-23",
+  dateModified: "2026-03-23",
+  mainEntityOfPage: "https://origindirectgroup.com/blog/raw-vs-processed-cashew-business",
+  image: "https://origindirectgroup.com/images/blog/raw-vs-processed-cashew.jpg",
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://origindirectgroup.com/" },
+    { "@type": "ListItem", position: 2, name: "Blog", item: "https://origindirectgroup.com/blog" },
+    { "@type": "ListItem", position: 3, name: "Raw vs Processed Cashew Nuts", item: "https://origindirectgroup.com/blog/raw-vs-processed-cashew-business" },
+  ],
+};
+---
+
+<Layout
+  title="Raw Cashew Nuts vs Processed Kernels: Which to Buy? | Origin Direct Group"
+  description="Compare raw cashew nuts (RCN) and processed cashew kernels on pricing, quality metrics, buyer profiles, payment terms, and logistics for informed sourcing decisions."
+  structuredData={[articleSchema, breadcrumbSchema]}
+>
+  <!-- Breadcrumbs -->
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <nav class="flex text-sm text-gray-500">
+      <a href="/" class="hover:text-brand-700">Home</a>
+      <span class="mx-2">/</span>
+      <a href="/blog" class="hover:text-brand-700">Blog</a>
+      <span class="mx-2">/</span>
+      <span class="text-gray-900">Raw vs Processed Cashew Nuts</span>
+    </nav>
+  </div>
+
+  <!-- Hero -->
+  <section class="relative py-20 sm:py-28 bg-gradient-to-br from-brand-900 via-brand-800 to-earth-800 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(196,154,42,0.3),transparent_70%)]"></div>
+    </div>
+    <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <span class="inline-block px-4 py-1.5 bg-amber-500/20 text-amber-300 text-sm font-semibold rounded-full mb-6 border border-amber-500/30">Comparison</span>
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">Raw Cashew Nuts vs Processed Kernels: Which to Buy?</h1>
+      <p class="text-lg text-brand-200 max-w-2xl mx-auto">
+        RCN at $800-1,200/MT or W320 kernels at $5,500-6,500/MT. Understanding the cashew value chain is key to making the right sourcing decision.
+      </p>
+      <div class="mt-6 flex items-center justify-center gap-4 text-sm text-brand-300">
+        <span>March 23, 2026</span>
+        <span class="w-1 h-1 rounded-full bg-brand-500"></span>
+        <span>11 min read</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Article Content -->
+  <article class="py-16 md:py-20 bg-white">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="prose prose-lg text-gray-700 max-w-none">
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">What Are Raw Cashew Nuts (RCN)?</h2>
+        <p>
+          Raw cashew nuts, commonly abbreviated as RCN in the trade, are unprocessed cashew nuts still in their shell. After harvest, the cashew apple is separated from the nut, and the nuts are dried to reduce moisture content to around 8-10%. At this stage, the nut consists of three parts: the outer shell (which contains caustic cashew nut shell liquid, or CNSL), the thin inner skin (testa), and the edible kernel inside.
+        </p>
+        <p>
+          RCN is the raw material that cashew processing factories purchase. The processing involves roasting or steaming to neutralize the caustic shell liquid, shelling to extract the kernel, drying, peeling the testa, grading, and packaging. This labor-intensive process is why processed kernels cost many times more than RCN.
+        </p>
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">What Are Processed Cashew Kernels?</h2>
+        <p>
+          Processed cashew kernels are the finished, edible product. They have been shelled, peeled, dried to approximately 3-5% moisture, graded by size and quality, and packaged in vacuum-sealed bags or nitrogen-flushed tins for shelf stability. The kernels are graded according to the AFI (Association of Food Industries) system, with grades ranging from W180 (the largest whole kernels) down through W210, W240, W320, W450 (smaller whole kernels), and various split and broken grades.
+        </p>
+        <p>
+          For a detailed explanation of cashew grading, see our <a href="/blog/cashew-grades-w180-w320" class="text-brand-700 underline hover:text-brand-900">cashew grades guide</a>.
+        </p>
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">Side-by-Side Comparison</h2>
+
+        <div class="overflow-x-auto rounded-xl border border-gray-200 shadow-sm my-8">
+          <table class="w-full text-left text-sm">
+            <thead>
+              <tr class="bg-brand-800 text-white">
+                <th class="px-6 py-4 font-semibold">Parameter</th>
+                <th class="px-6 py-4 font-semibold">Raw Cashew Nuts (RCN)</th>
+                <th class="px-6 py-4 font-semibold">Processed Kernels</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100">
+              <tr class="bg-white">
+                <td class="px-6 py-3 font-medium text-gray-900">FOB Price Range</td>
+                <td class="px-6 py-3 text-gray-700">$800-1,200/MT</td>
+                <td class="px-6 py-3 text-gray-700">$5,500-6,500/MT (W320)</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="px-6 py-3 font-medium text-gray-900">Typical Buyers</td>
+                <td class="px-6 py-3 text-gray-700">Processing factories</td>
+                <td class="px-6 py-3 text-gray-700">Food companies, retailers, snack brands</td>
+              </tr>
+              <tr class="bg-white">
+                <td class="px-6 py-3 font-medium text-gray-900">Key Quality Metric</td>
+                <td class="px-6 py-3 text-gray-700">KOR (Kernel Outturn Ratio)</td>
+                <td class="px-6 py-3 text-gray-700">Grade (W180-W450), defect count</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="px-6 py-3 font-medium text-gray-900">Moisture Content</td>
+                <td class="px-6 py-3 text-gray-700">8-10%</td>
+                <td class="px-6 py-3 text-gray-700">3-5%</td>
+              </tr>
+              <tr class="bg-white">
+                <td class="px-6 py-3 font-medium text-gray-900">Shelf Life</td>
+                <td class="px-6 py-3 text-gray-700">6-12 months (in shell)</td>
+                <td class="px-6 py-3 text-gray-700">12-18 months (vacuum sealed)</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="px-6 py-3 font-medium text-gray-900">Container Load</td>
+                <td class="px-6 py-3 text-gray-700">18-20 MT per 20ft</td>
+                <td class="px-6 py-3 text-gray-700">14-15 MT per 20ft</td>
+              </tr>
+              <tr class="bg-white">
+                <td class="px-6 py-3 font-medium text-gray-900">HS Code</td>
+                <td class="px-6 py-3 text-gray-700">0801.31 (in shell)</td>
+                <td class="px-6 py-3 text-gray-700">0801.32 (shelled)</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="px-6 py-3 font-medium text-gray-900">Payment Terms</td>
+                <td class="px-6 py-3 text-gray-700">Often 100% advance or LC at sight</td>
+                <td class="px-6 py-3 text-gray-700">LC at sight, some CAD</td>
+              </tr>
+              <tr class="bg-white">
+                <td class="px-6 py-3 font-medium text-gray-900">Major Origins</td>
+                <td class="px-6 py-3 text-gray-700">West Africa (Nigeria, Ghana, Ivory Coast, Guinea-Bissau)</td>
+                <td class="px-6 py-3 text-gray-700">Vietnam, India (mostly re-processing African RCN)</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="px-6 py-3 font-medium text-gray-900">Trade Volume</td>
+                <td class="px-6 py-3 text-gray-700">~3 million MT globally</td>
+                <td class="px-6 py-3 text-gray-700">~800,000 MT globally</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">Understanding KOR: The RCN Quality Metric</h2>
+        <p>
+          Kernel Outturn Ratio (KOR) is the single most important quality metric for raw cashew nuts. It measures the weight of usable kernels you can extract from a given weight of RCN. A KOR of 48 lbs means that from 80 kg (176 lbs) of RCN, you can extract 48 lbs (approximately 21.8 kg) of usable kernels.
+        </p>
+        <p>
+          Good quality RCN has a KOR of 46-52 lbs. Premium West African RCN, particularly from Guinea-Bissau and parts of Nigeria, can reach KOR of 50-54 lbs. Lower quality RCN with KOR below 44 lbs is considered poor and will not be profitable for most processors.
+        </p>
+        <p>
+          The KOR directly determines the economics of cashew processing. A 2-pound difference in KOR on a 1,000 MT purchase of RCN translates to roughly 11 additional metric tons of kernels, worth approximately $60,000-70,000 at current kernel prices. This is why KOR testing is critical before any RCN purchase.
+        </p>
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">Who Buys RCN?</h2>
+        <p>
+          Raw cashew nuts are purchased almost exclusively by processing factories. The global cashew processing industry is dominated by two countries:
+        </p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li><strong>Vietnam</strong> - Processes approximately 60-65% of the world's RCN. Vietnamese factories purchase millions of tons of African RCN annually for processing into kernels that are then exported worldwide.</li>
+          <li><strong>India</strong> - Processes approximately 25-30% of global RCN. India has a long history of cashew processing, particularly in Kerala, Goa, and Karnataka states.</li>
+        </ul>
+        <p>
+          A growing number of African countries are investing in domestic processing capacity to capture more value from their RCN production. Nigeria, Ghana, Ivory Coast, Mozambique, and Tanzania all have processing factories, though most African RCN is still exported for processing elsewhere.
+        </p>
+        <p>
+          If you are not a cashew processor, you should be buying processed kernels, not RCN. The processing equipment, expertise, and labor required to convert RCN into edible kernels is substantial, and the caustic shell liquid poses safety hazards that require specialized facilities.
+        </p>
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">Who Buys Processed Kernels?</h2>
+        <p>
+          Processed cashew kernels are purchased by a wide range of buyers:
+        </p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li><strong>Snack food companies</strong> - For roasting, salting, and packaging as retail snacks. These buyers typically want W320 or W240 grades for visual appeal.</li>
+          <li><strong>Food manufacturers</strong> - For use in baked goods, confections, trail mixes, and nut butters. These buyers often use splits and pieces (S, LP, SP grades) which cost less than whole kernels.</li>
+          <li><strong>Retail chains and supermarkets</strong> - Private label cashew products. Usually W320 for standard offerings, W240 or W210 for premium lines.</li>
+          <li><strong>Distributors and traders</strong> - Who supply the above categories and maintain inventory positions.</li>
+          <li><strong>Cosmetic and pharmaceutical companies</strong> - Cashew oil extracted from kernels is used in some cosmetic formulations.</li>
+        </ul>
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">Payment Terms: A Key Difference</h2>
+        <p>
+          Payment terms differ significantly between RCN and kernel transactions, reflecting the different risk profiles and market structures:
+        </p>
+        <p>
+          <strong>RCN transactions</strong> typically require more aggressive payment terms from the buyer. Many West African RCN suppliers require 50-100% advance payment, or a Letter of Credit at sight with no deferred payment. This is because RCN is a seasonal product (main harvest from February to May in West Africa), suppliers need cash to purchase from farmers during a short window, and the RCN market moves fast during harvest season.
+        </p>
+        <p>
+          <strong>Kernel transactions</strong> are more flexible. Payment by Letter of Credit at sight is standard, but some established suppliers offer CAD (Cash Against Documents) or even 30-day payment terms for repeat buyers with strong credit. Vietnam's competitive kernel export market has pushed payment terms in the buyer's favor compared to RCN.
+        </p>
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">Logistics Considerations</h2>
+        <p>
+          Shipping RCN and kernels involves different logistics considerations:
+        </p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li><strong>RCN</strong> is shipped in jute bags, typically 80 kg per bag. A 20-foot container holds 18-20 MT. RCN is relatively robust during transport but must be kept dry. Moisture above 10% can cause mold and reduce KOR.</li>
+          <li><strong>Kernels</strong> are shipped in vacuum-sealed bags inside cartons. A 20-foot container holds 14-15 MT. Kernels are perishable and sensitive to moisture, heat, and oxidation. They must be shipped in clean, dry containers with no odor contamination.</li>
+        </ul>
+        <p>
+          For a detailed breakdown of importing costs, see our guide on the <a href="/blog/real-cost-importing-africa" class="text-brand-700 underline hover:text-brand-900">real cost of importing from Africa</a>.
+        </p>
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">The Value Chain Economics</h2>
+        <p>
+          Understanding why kernels cost 5-7x more than RCN helps explain the cashew industry's structure:
+        </p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li><strong>Processing loss</strong> - From 1 MT of RCN, you extract only 200-250 kg of kernels. The rest is shell (65-70%), testa (2-3%), and processing losses.</li>
+          <li><strong>Labor costs</strong> - Cashew processing is labor-intensive. Shelling, peeling, and grading are done manually in many factories, particularly in India. Vietnamese factories are more mechanized but still require significant labor.</li>
+          <li><strong>Energy costs</strong> - Roasting/steaming, drying, and climate-controlled storage require substantial energy inputs.</li>
+          <li><strong>Yield uncertainty</strong> - Actual kernel yield varies with RCN quality. Poor quality RCN can reduce yields and increase breakage, producing more splits and pieces (lower-value grades) instead of whole kernels.</li>
+        </ul>
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">Which Should You Buy?</h2>
+
+        <div class="bg-brand-50 rounded-xl p-8 my-8 border border-brand-100">
+          <h3 class="text-lg font-semibold text-brand-800 mb-4">Buy RCN If:</h3>
+          <ul class="list-disc pl-6 space-y-2 text-gray-700">
+            <li>You own or operate a cashew processing factory</li>
+            <li>You are an RCN trader supplying processing factories</li>
+            <li>You want to invest in African cashew processing</li>
+            <li>You can handle seasonal procurement and advance payment requirements</li>
+          </ul>
+        </div>
+
+        <div class="bg-gray-50 rounded-xl p-8 my-8 border border-gray-200">
+          <h3 class="text-lg font-semibold text-gray-800 mb-4">Buy Processed Kernels If:</h3>
+          <ul class="list-disc pl-6 space-y-2 text-gray-700">
+            <li>You are a food manufacturer, snack brand, or retailer</li>
+            <li>You need ready-to-use cashew products</li>
+            <li>You want specific grades (W180, W240, W320, etc.)</li>
+            <li>You prefer more standard payment terms (LC, CAD)</li>
+            <li>You do not have cashew processing facilities</li>
+          </ul>
+        </div>
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">Sourcing Through Origin Direct Group</h2>
+        <p>
+          We supply both <a href="/products/cashew-nuts" class="text-brand-700 underline hover:text-brand-900">raw cashew nuts and processed cashew kernels</a> from West Africa. For RCN, we source from Nigeria and Ghana during the main harvest season (February to May) with KOR testing and quality verification before shipment. For processed kernels, we offer a full range of AFI grades from W180 to W450, plus splits and pieces.
+        </p>
+        <p>
+          Whether you are a processor looking for high-KOR RCN or a food company needing graded kernels, we can match you with the right product at competitive pricing.
+        </p>
+
+      </div>
+    </div>
+  </article>
+
+  <!-- CTA -->
+  <section class="py-20 md:py-24 bg-gradient-to-br from-brand-900 to-earth-800">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">
+        Need Cashew Nuts?
+      </h2>
+      <p class="text-brand-200 mb-8 max-w-xl mx-auto">
+        Whether you need raw cashew nuts for processing or graded kernels for your products, we can help.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/quote" class="inline-flex items-center justify-center px-8 py-4 bg-gold hover:bg-gold-dark text-white font-bold rounded-lg transition-colors shadow-lg text-lg">
+          Request a Quote
+          <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+        <a href="/products/cashew-nuts" class="inline-flex items-center justify-center px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-lg transition-colors border border-white/20">
+          View Cashew Products
+        </a>
+      </div>
+    </div>
+  </section>
+
+</Layout>

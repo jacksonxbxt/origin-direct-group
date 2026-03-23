@@ -1,0 +1,152 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import QuoteForm from '../../../components/QuoteForm.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+
+const siteUrl = "https://origindirectgroup.com";
+
+const productSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name: "Manteca de Karite",
+  description: "Manteca de karite premium directamente de Ghana. Grado cosmetico, refinada, certificada organica. AGL < 1%, certificada COSMOS y ECOCERT.",
+  image: `${siteUrl}/images/products/shea-butter.jpg`,
+  brand: { "@type": "Brand", name: "Origin Direct Group" },
+  category: "Ingredientes Cosmeticos y Alimentarios",
+  countryOfOrigin: { "@type": "Country", name: "Ghana" },
+  offers: { "@type": "AggregateOffer", priceCurrency: "USD", availability: "https://schema.org/InStock" },
+  additionalProperty: [
+    { "@type": "PropertyValue", name: "Codigo SA", value: "1515.90" },
+    { "@type": "PropertyValue", name: "CMC", value: "1 FCL (18-20 TM)" },
+    { "@type": "PropertyValue", name: "Certificaciones", value: "COSMOS, ECOCERT, USDA Organic, EU Organic" },
+  ],
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Inicio", item: `${siteUrl}/es/` },
+    { "@type": "ListItem", position: 2, name: "Productos", item: `${siteUrl}/es/productos` },
+    { "@type": "ListItem", position: 3, name: "Manteca de Karite", item: `${siteUrl}/es/productos/manteca-de-karite` },
+  ],
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Que grados de manteca de karite suministran?",
+      acceptedAnswer: { "@type": "Answer", text: "Suministramos cinco grados: Grado A Sin Refinar (cruda, amarilla), Refinada (blanca, inodora), Certificada Organica (COSMOS/ECOCERT), Oleina de Karite (fraccion liquida para sueros) y Estearina de Karite (fraccion solida para cosmeticos). Todo proviene directamente de cooperativas de mujeres del norte de Ghana." },
+    },
+    {
+      "@type": "Question",
+      name: "Cual es la cantidad minima de pedido?",
+      acceptedAnswer: { "@type": "Answer", text: "La CMC estandar es de 1 contenedor completo (FCL), aproximadamente 18-20 toneladas metricas. Ofrecemos cajas de 25 kg, tambores de 50 kg y tambores de 180 kg. Pedidos de prueba de 1 a 5 TM disponibles para nuevos clientes." },
+    },
+    {
+      "@type": "Question",
+      name: "Su manteca de karite esta certificada COSMOS y ECOCERT?",
+      acceptedAnswer: { "@type": "Answer", text: "Si. Nuestra manteca de karite organica esta certificada por COSMOS y ECOCERT. Tambien contamos con certificaciones USDA Organic y EU Organic. Los certificados se entregan con cada embarque." },
+    },
+  ],
+};
+---
+
+<Layout
+  title="Manteca de Karite - Directo de Ghana | Origin Direct"
+  description="Manteca de karite premium directamente de Ghana. Grado cosmetico, refinada, certificada organica. AGL < 1%, certificada COSMOS y ECOCERT. Precios B2B competitivos."
+  structuredData={[productSchema, breadcrumbSchema, faqSchema]}
+  lang="es"
+  hreflangs={[
+    { lang: "en", href: `${siteUrl}/products/shea-butter` },
+    { lang: "fr", href: `${siteUrl}/fr/produits/beurre-de-karite` },
+    { lang: "es", href: `${siteUrl}/es/productos/manteca-de-karite` },
+  ]}
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumbs items={[{ label: "Productos", href: "/es/productos" }, { label: "Manteca de Karite" }]} />
+  </div>
+
+  <section class="relative py-24 sm:py-32 bg-gradient-to-br from-brand-900 via-brand-800 to-earth-800 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(196,154,42,0.3),transparent_70%)]"></div>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-gold-light font-medium tracking-wide uppercase text-sm mb-4">Directo de Ghana</p>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">Manteca de Karite</h1>
+      <p class="text-xl text-brand-200 max-w-2xl mx-auto mb-10">
+        Manteca de karite sin refinar y refinada de calidad superior para aplicaciones cosmeticas, alimentarias y farmaceuticas. Abastecida directamente de cooperativas ghanesas.
+      </p>
+      <a href="#quote-form" class="inline-flex items-center px-8 py-4 bg-gold hover:bg-gold-dark text-white font-bold rounded-lg transition-colors shadow-lg text-lg">
+        Solicitar Cotizacion
+        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <section class="py-12 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="rounded-2xl overflow-hidden shadow-lg border border-gray-100">
+        <img src="/images/products/shea-butter.jpg" alt="Manteca de karite premium de Ghana" class="w-full h-64 sm:h-80 object-cover" loading="eager" />
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Resumen</h2>
+      <div class="prose prose-lg text-gray-700 space-y-5">
+        <p>
+          La manteca de karite es una de las exportaciones de materias primas mas versatiles de Africa Occidental, apreciada en la industria cosmetica (57% de la demanda), la fabricacion alimentaria y chocolatera (35%) y las aplicaciones farmaceuticas (8%). Las regiones del norte de Ghana producen algunas de las nueces de karite de mas alta calidad del mundo, con propiedades hidratantes superiores y un perfil nutritivo rico.
+        </p>
+        <p>
+          Origin Direct trabaja con cooperativas e instalaciones de procesamiento establecidas en el cinturon del karite en Ghana, lo que nos da control directo sobre la calidad desde la recoleccion de nueces hasta el procesamiento final. Nuestra cadena de suministro elimina intermediarios innecesarios, ofreciendo precios competitivos sin comprometer los estrictos parametros de calidad que exigen los compradores internacionales.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Especificaciones Tecnicas</h2>
+      <div class="overflow-x-auto rounded-xl border border-gray-200 shadow-sm">
+        <table class="w-full text-left text-sm">
+          <thead><tr class="bg-brand-800 text-white"><th class="px-6 py-4 font-semibold">Parametro</th><th class="px-6 py-4 font-semibold">Especificacion</th></tr></thead>
+          <tbody class="divide-y divide-gray-100">
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">Acidos Grasos Libres (AGL)</td><td class="px-6 py-4 text-gray-700">&lt; 1% (grado cosmetico)</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">Indice de Peroxido</td><td class="px-6 py-4 text-gray-700">&lt; 10 meq/kg</td></tr>
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">Contenido de Humedad</td><td class="px-6 py-4 text-gray-700">&lt; 0,05%</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">Materia Insaponificable</td><td class="px-6 py-4 text-gray-700">6 - 17%</td></tr>
+            <tr class="bg-white"><td class="px-6 py-4 font-medium text-gray-900">Punto de Fusion</td><td class="px-6 py-4 text-gray-700">33 - 42&deg;C</td></tr>
+            <tr class="bg-gray-50"><td class="px-6 py-4 font-medium text-gray-900">Metales Pesados</td><td class="px-6 py-4 text-gray-700">Indetectables</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Preguntas Frecuentes</h2>
+      <div class="space-y-4">
+        <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+          <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">Que grados de manteca de karite suministran?</summary>
+          <div class="px-6 pb-4 text-gray-700">Suministramos cinco grados: Grado A Sin Refinar (cruda, amarilla), Refinada (blanca, inodora), Certificada Organica (COSMOS/ECOCERT), Oleina de Karite (fraccion liquida para sueros) y Estearina de Karite (fraccion solida para cosmeticos).</div>
+        </details>
+        <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+          <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">Cual es la cantidad minima de pedido?</summary>
+          <div class="px-6 pb-4 text-gray-700">1 contenedor completo (FCL), aproximadamente 18-20 TM. Cajas de 25 kg, tambores de 50 kg y tambores de 180 kg disponibles. Pedidos de prueba de 1 a 5 TM para nuevos clientes.</div>
+        </details>
+        <details class="bg-white rounded-xl border border-gray-200 shadow-sm">
+          <summary class="px-6 py-4 cursor-pointer font-semibold text-brand-900 hover:text-brand-700 transition-colors">Esta certificada COSMOS y ECOCERT?</summary>
+          <div class="px-6 pb-4 text-gray-700">Si. Certificada por COSMOS y ECOCERT. Tambien contamos con USDA Organic y EU Organic. Certificados incluidos con cada embarque.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <QuoteForm productName="Shea Butter" />
+</Layout>

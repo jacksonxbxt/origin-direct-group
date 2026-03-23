@@ -1,0 +1,235 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import QuoteForm from '../../components/QuoteForm.astro';
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://origindirectgroup.com/" },
+    { "@type": "ListItem", position: 2, name: "Industries", item: "https://origindirectgroup.com/industries" },
+    { "@type": "ListItem", position: 3, name: "Cosmetics", item: "https://origindirectgroup.com/industries/cosmetics" },
+  ],
+};
+
+const products = [
+  {
+    name: "Shea Butter",
+    slug: "/products/shea-butter",
+    description: "The gold standard for natural moisturizers. Available in unrefined (Grade A), refined, and COSMOS/ECOCERT organic certified grades. FFA below 1%, melting point 33-42 degrees C.",
+    specs: ["FFA < 1%", "COSMOS Certified", "Non-comedogenic"],
+  },
+  {
+    name: "Cocoa Butter",
+    slug: "/products/cocoa",
+    description: "Natural and deodorized cocoa butter for lip balms, body butters, and luxury skincare. Rich in polyphenols and fatty acids that protect and nourish skin.",
+    specs: ["Natural or Deodorized", "Food & Cosmetic Grade", "Rich in antioxidants"],
+  },
+  {
+    name: "Moringa Oil",
+    slug: "/products/moringa-oil",
+    description: "Cold-pressed moringa oleifera seed oil, also known as Ben oil. Lightweight, non-greasy, and highly stable. Excellent for serums, hair oils, and anti-aging formulations.",
+    specs: ["Cold-pressed", "High oleic acid (>70%)", "Long shelf life"],
+  },
+  {
+    name: "Moringa Powder",
+    slug: "/products/moringa",
+    description: "Fine-ground moringa leaf powder for face masks, hair treatments, and cosmetic formulations. Rich in vitamins A, C, and E with natural antioxidant properties.",
+    specs: ["Mesh 80-200", "Organic available", "Rich in vitamins A, C, E"],
+  },
+  {
+    name: "African Black Soap",
+    slug: "/products/african-black-soap",
+    description: "Traditional Ghanaian black soap (alata samina) made from plantain ash, cocoa pod ash, palm kernel oil, and shea butter. Available as raw paste or processed bars.",
+    specs: ["Raw paste or bars", "100% natural", "pH 9-10"],
+  },
+  {
+    name: "Baobab Powder",
+    slug: "/products/baobab-powder",
+    description: "Baobab fruit powder with natural vitamin C content. Used in face masks, exfoliants, and antioxidant skincare formulations.",
+    specs: ["High vitamin C", "Natural exfoliant", "Fine powder"],
+  },
+];
+---
+
+<Layout
+  title="Raw Materials for Cosmetics Manufacturers | Origin Direct"
+  description="Natural cosmetic ingredients sourced directly from Africa. Shea butter, cocoa butter, moringa oil, African black soap, and baobab for cosmetics manufacturers. COSMOS certified, competitive B2B pricing."
+  structuredData={[breadcrumbSchema]}
+>
+  <!-- Breadcrumbs -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumbs items={[{ label: "Industries", href: "/industries" }, { label: "Cosmetics" }]} />
+  </div>
+
+  <!-- Hero -->
+  <section class="relative py-24 sm:py-32 bg-gradient-to-br from-brand-900 via-brand-800 to-earth-800 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(196,154,42,0.3),transparent_70%)]"></div>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-gold-light font-medium tracking-wide uppercase text-sm mb-4">Cosmetics &amp; Personal Care</p>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">Raw Materials for Cosmetics Manufacturers</h1>
+      <p class="text-xl text-brand-200 max-w-2xl mx-auto mb-10">
+        Premium natural ingredients from West Africa for skincare, haircare, and personal care formulations. COSMOS certified, full traceability, competitive bulk pricing.
+      </p>
+      <a href="#quote-form" class="inline-flex items-center px-8 py-4 bg-gold hover:bg-gold-dark text-white font-bold rounded-lg transition-colors shadow-lg text-lg">
+        Request Quote
+        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- Overview -->
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Why Cosmetics Manufacturers Choose Origin Direct</h2>
+      <div class="prose prose-lg text-gray-700 space-y-5">
+        <p>
+          The global natural cosmetics market continues to grow as consumers demand clean-label, sustainably sourced ingredients. West Africa produces some of the world's finest cosmetic raw materials, from Ghana's shea butter to Nigeria's moringa oil, but sourcing directly from the region has traditionally been challenging for manufacturers.
+        </p>
+        <p>
+          Origin Direct bridges that gap. We work with certified processors and cooperatives across Ghana and Nigeria to supply cosmetic-grade ingredients that meet the strict quality parameters European, American, and Asian buyers require. Every shipment comes with a Certificate of Analysis (CoA), MSDS, and the certifications your formulation team needs.
+        </p>
+        <p>
+          Whether you are a multinational personal care brand or a growing indie skincare label, we provide the same level of quality consistency, documentation, and supply chain transparency. Our minimum order starts at 1 MT for trial orders, with standard FCL quantities for ongoing supply.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Specs That Matter -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Specifications That Matter for Cosmetics</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {[
+          { title: "Free Fatty Acid (FFA)", detail: "Below 1% for cosmetic-grade shea butter. Critical for product stability and skin compatibility." },
+          { title: "COSMOS / ECOCERT", detail: "Organic certification for natural and organic product lines. Full chain-of-custody documentation." },
+          { title: "Comedogenic Rating", detail: "Shea butter rates 0-2 (non-comedogenic). Moringa oil rates 0. Safe for facial formulations." },
+          { title: "Peroxide Value", detail: "Below 10 meq/kg for fresh, stable ingredients. Regular testing at origin and destination." },
+          { title: "Heavy Metals", detail: "Undetectable levels of lead, arsenic, cadmium, and mercury. Compliant with EU Cosmetics Regulation." },
+          { title: "Microbial Testing", detail: "Total plate count, yeast, and mold within cosmetic limits. CoA included with every shipment." },
+        ].map((spec) => (
+          <div class="bg-white rounded-xl border border-gray-200 p-6">
+            <h3 class="text-sm font-bold text-brand-800 mb-2">{spec.title}</h3>
+            <p class="text-sm text-gray-600">{spec.detail}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Products for Cosmetics -->
+  <section class="py-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-10">Products for Cosmetics Manufacturers</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {products.map((product) => (
+          <a href={product.slug} class="group block bg-white rounded-2xl border border-gray-100 hover:border-green-200 hover:shadow-xl transition-all duration-300 p-6">
+            <h3 class="text-lg font-bold text-gray-900 group-hover:text-green-700 transition-colors mb-3">
+              {product.name}
+            </h3>
+            <p class="text-sm text-gray-600 mb-4 leading-relaxed">{product.description}</p>
+            <div class="flex flex-wrap gap-1.5 mb-4">
+              {product.specs.map((spec: string) => (
+                <span class="inline-flex items-center px-2.5 py-1 bg-green-50 text-green-800 text-xs font-medium rounded-full border border-green-100">
+                  {spec}
+                </span>
+              ))}
+            </div>
+            <div class="flex items-center gap-2 text-green-700 font-semibold text-sm group-hover:gap-3 transition-all">
+              View Product
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+              </svg>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Packaging for Cosmetics -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Packaging for Cosmetics Manufacturers</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div>
+          <h3 class="text-lg font-semibold text-brand-800 mb-4">Standard Options</h3>
+          <ul class="space-y-3 text-gray-700">
+            <li class="flex items-start gap-2">
+              <span class="text-brand-600 mt-1">&#8226;</span>
+              <span>25 kg cartons (most popular for cosmetic buyers)</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-brand-600 mt-1">&#8226;</span>
+              <span>50 kg food-grade drums</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-brand-600 mt-1">&#8226;</span>
+              <span>180 kg steel drums (industrial formulation)</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-brand-600 mt-1">&#8226;</span>
+              <span>Flexi-tanks for bulk liquid oils (moringa oil, shea olein)</span>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold text-brand-800 mb-4">MOQ &amp; Trial Orders</h3>
+          <ul class="space-y-3 text-gray-700">
+            <li class="flex items-start gap-2">
+              <span class="text-gold mt-1">&#9654;</span>
+              <span><strong>Standard MOQ:</strong> 1 FCL (18-20 MT)</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-gold mt-1">&#9654;</span>
+              <span><strong>Trial orders:</strong> 1-5 MT for new customers</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-gold mt-1">&#9654;</span>
+              <span><strong>Samples:</strong> Available on request before order</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications -->
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Certifications &amp; Documentation</h2>
+      <p class="text-gray-700 mb-8">Every shipment includes the documentation your regulatory and quality teams need.</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {[
+          "COSMOS Certified",
+          "ECOCERT Certified",
+          "USDA Organic",
+          "EU Organic",
+          "Certificate of Analysis (CoA)",
+          "MSDS / Safety Data Sheet",
+          "Certificate of Origin",
+          "EU Cosmetics Regulation Compliant",
+          "Fair Trade (available)",
+        ].map((cert) => (
+          <div class="flex items-start gap-3 bg-white rounded-lg p-4 border border-gray-200">
+            <svg class="w-5 h-5 text-brand-600 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+            <span class="text-sm font-medium text-gray-800">{cert}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Quote Form -->
+  <section id="quote-form" class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <QuoteForm />
+    </div>
+  </section>
+</Layout>

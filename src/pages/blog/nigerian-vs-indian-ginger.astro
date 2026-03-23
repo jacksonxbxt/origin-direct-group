@@ -1,0 +1,248 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: "Nigerian vs Indian Ginger: Which Origin is Better for Your Business?",
+  description: "Compare Nigerian and Indian ginger on oleoresin content, gingerol levels, pricing, availability, and best use cases for pharmaceutical and culinary applications.",
+  author: { "@type": "Organization", name: "Origin Direct Group" },
+  publisher: { "@type": "Organization", name: "Origin Direct Group", logo: { "@type": "ImageObject", url: "https://origindirectgroup.com/logo.png" } },
+  datePublished: "2026-03-23",
+  dateModified: "2026-03-23",
+  mainEntityOfPage: "https://origindirectgroup.com/blog/nigerian-vs-indian-ginger",
+  image: "https://origindirectgroup.com/images/blog/nigerian-vs-indian-ginger.jpg",
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://origindirectgroup.com/" },
+    { "@type": "ListItem", position: 2, name: "Blog", item: "https://origindirectgroup.com/blog" },
+    { "@type": "ListItem", position: 3, name: "Nigerian vs Indian Ginger", item: "https://origindirectgroup.com/blog/nigerian-vs-indian-ginger" },
+  ],
+};
+---
+
+<Layout
+  title="Nigerian vs Indian Ginger: Which Origin is Better for Your Business? | Origin Direct Group"
+  description="Compare Nigerian and Indian ginger on oleoresin content, gingerol levels, pricing, availability, and best use cases for pharmaceutical and culinary applications."
+  structuredData={[articleSchema, breadcrumbSchema]}
+>
+  <!-- Breadcrumbs -->
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <nav class="flex text-sm text-gray-500">
+      <a href="/" class="hover:text-brand-700">Home</a>
+      <span class="mx-2">/</span>
+      <a href="/blog" class="hover:text-brand-700">Blog</a>
+      <span class="mx-2">/</span>
+      <span class="text-gray-900">Nigerian vs Indian Ginger</span>
+    </nav>
+  </div>
+
+  <!-- Hero -->
+  <section class="relative py-20 sm:py-28 bg-gradient-to-br from-brand-900 via-brand-800 to-earth-800 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(196,154,42,0.3),transparent_70%)]"></div>
+    </div>
+    <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <span class="inline-block px-4 py-1.5 bg-amber-500/20 text-amber-300 text-sm font-semibold rounded-full mb-6 border border-amber-500/30">Comparison</span>
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">Nigerian vs Indian Ginger: Which Origin is Better for Your Business?</h1>
+      <p class="text-lg text-brand-200 max-w-2xl mx-auto">
+        Nigeria produces the most potent ginger in the world. India produces the most ginger, period. Which one is right for you?
+      </p>
+      <div class="mt-6 flex items-center justify-center gap-4 text-sm text-brand-300">
+        <span>March 23, 2026</span>
+        <span class="w-1 h-1 rounded-full bg-brand-500"></span>
+        <span>10 min read</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Article Content -->
+  <article class="py-16 md:py-20 bg-white">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="prose prose-lg text-gray-700 max-w-none">
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">The Two Giants of the Global Ginger Market</h2>
+        <p>
+          India is the world's largest ginger producer, harvesting roughly 2.2 million metric tons annually. Nigeria ranks as Africa's top producer and among the world's top five, with annual production of approximately 350,000-400,000 metric tons. Together, these two origins supply a significant share of international ginger trade.
+        </p>
+        <p>
+          But volume only tells part of the story. The critical difference lies in what is inside the ginger root: the concentration of bioactive compounds that determine potency, flavor intensity, and suitability for different applications. This is where Nigerian ginger stands apart.
+        </p>
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">Head-to-Head Comparison</h2>
+
+        <div class="overflow-x-auto rounded-xl border border-gray-200 shadow-sm my-8">
+          <table class="w-full text-left text-sm">
+            <thead>
+              <tr class="bg-brand-800 text-white">
+                <th class="px-6 py-4 font-semibold">Parameter</th>
+                <th class="px-6 py-4 font-semibold">Nigerian Ginger</th>
+                <th class="px-6 py-4 font-semibold">Indian Ginger</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100">
+              <tr class="bg-white">
+                <td class="px-6 py-3 font-medium text-gray-900">Oleoresin Content</td>
+                <td class="px-6 py-3 text-gray-700">4-6%</td>
+                <td class="px-6 py-3 text-gray-700">3-4%</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="px-6 py-3 font-medium text-gray-900">Gingerol Levels</td>
+                <td class="px-6 py-3 text-gray-700">2.5-3.5%</td>
+                <td class="px-6 py-3 text-gray-700">1.5-2.5%</td>
+              </tr>
+              <tr class="bg-white">
+                <td class="px-6 py-3 font-medium text-gray-900">Essential Oil Content</td>
+                <td class="px-6 py-3 text-gray-700">2.5-3.5%</td>
+                <td class="px-6 py-3 text-gray-700">1.5-2.5%</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="px-6 py-3 font-medium text-gray-900">Pungency</td>
+                <td class="px-6 py-3 text-gray-700">Very high</td>
+                <td class="px-6 py-3 text-gray-700">Moderate to high</td>
+              </tr>
+              <tr class="bg-white">
+                <td class="px-6 py-3 font-medium text-gray-900">Annual Production</td>
+                <td class="px-6 py-3 text-gray-700">350,000-400,000 MT</td>
+                <td class="px-6 py-3 text-gray-700">~2,200,000 MT</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="px-6 py-3 font-medium text-gray-900">Typical FOB Price (dried, split)</td>
+                <td class="px-6 py-3 text-gray-700">$2,200-3,000/MT</td>
+                <td class="px-6 py-3 text-gray-700">$1,800-2,500/MT</td>
+              </tr>
+              <tr class="bg-white">
+                <td class="px-6 py-3 font-medium text-gray-900">Main Varieties</td>
+                <td class="px-6 py-3 text-gray-700">Tafin Giwa, Yatsun Biri</td>
+                <td class="px-6 py-3 text-gray-700">Cochin, Calicut, Maran</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="px-6 py-3 font-medium text-gray-900">Harvest Season</td>
+                <td class="px-6 py-3 text-gray-700">Nov - Feb</td>
+                <td class="px-6 py-3 text-gray-700">Dec - Mar</td>
+              </tr>
+              <tr class="bg-white">
+                <td class="px-6 py-3 font-medium text-gray-900">Fiber Content</td>
+                <td class="px-6 py-3 text-gray-700">Higher (more fibrous)</td>
+                <td class="px-6 py-3 text-gray-700">Lower (smoother texture)</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="px-6 py-3 font-medium text-gray-900">Best For</td>
+                <td class="px-6 py-3 text-gray-700">Pharma, oleoresin extraction, health products</td>
+                <td class="px-6 py-3 text-gray-700">Culinary, food processing, retail spice</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">Oleoresin and Gingerol: Why They Matter</h2>
+        <p>
+          Oleoresin is the total extract of flavor and pungency compounds in ginger. It is the single most important quality metric for pharmaceutical and nutraceutical buyers. Nigerian ginger's oleoresin content of 4-6% is roughly 40-60% higher than Indian ginger's 3-4% range. This means you need less Nigerian ginger to achieve the same concentration of active compounds.
+        </p>
+        <p>
+          Gingerol, the primary bioactive compound responsible for ginger's anti-inflammatory and anti-nausea properties, follows the same pattern. Nigerian ginger typically contains 2.5-3.5% gingerol compared to 1.5-2.5% in Indian ginger. For supplement manufacturers and pharmaceutical companies, this higher gingerol concentration translates directly to fewer raw materials needed per unit of finished product.
+        </p>
+        <p>
+          This potency advantage is why Nigerian ginger commands a premium in pharmaceutical supply chains. When you calculate the cost per gram of active ingredient rather than cost per kilogram of raw ginger, Nigerian ginger often proves more economical despite its higher per-unit price.
+        </p>
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">Flavor and Culinary Characteristics</h2>
+        <p>
+          Nigerian ginger is intensely pungent with a sharp, almost peppery bite. It has strong aromatic notes and a lingering heat that makes it excellent for concentrated applications like ginger extracts, ginger beer, and traditional medicine preparations. However, this intensity can be overpowering in dishes that call for a milder ginger presence.
+        </p>
+        <p>
+          Indian ginger varieties, particularly Cochin ginger, offer a more balanced flavor profile with moderate pungency, subtle sweetness, and a lemony-citrus undertone. This makes Indian ginger the preferred choice for culinary applications, ground spice blends, ginger tea, and food processing where a rounded, approachable ginger flavor is desired.
+        </p>
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">Pricing and Supply Dynamics</h2>
+        <p>
+          Indian ginger is generally cheaper on a per-kilogram basis, reflecting India's massive production scale, established processing infrastructure, and competitive domestic market. FOB prices for Indian dried split ginger typically range from $1,800 to $2,500 per metric ton, while Nigerian ginger ranges from $2,200 to $3,000 per metric ton.
+        </p>
+        <p>
+          India's supply chain is also more developed, with a well-established network of cleaning, drying, and processing facilities. Indian exporters can offer a wider range of processed ginger products, including ginger powder, ginger flakes, ginger oil, and pre-standardized oleoresin extracts.
+        </p>
+        <p>
+          Nigerian ginger supply can be less predictable. Infrastructure challenges in Nigeria's Middle Belt (the primary growing region, centered on Kaduna and Nasarawa states) can affect processing quality and export timelines. However, Nigeria's ginger export sector has professionalized significantly in recent years, with improved drying techniques and better quality control.
+        </p>
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">Quality and Processing Standards</h2>
+        <p>
+          Both origins face different quality challenges. Nigerian ginger's main quality concerns are:
+        </p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li><strong>Aflatoxin levels</strong> - Sun-drying on bare ground can increase contamination risk. Reputable exporters use raised drying racks and controlled environments.</li>
+          <li><strong>Moisture content</strong> - Target is below 12% for export. Some lots arrive at 14-15% if processing is rushed.</li>
+          <li><strong>Foreign matter</strong> - Soil, stones, and other debris need to be removed through sorting and cleaning.</li>
+        </ul>
+        <p>
+          Indian ginger quality concerns include:
+        </p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li><strong>Pesticide residues</strong> - India's intensive farming practices can result in higher pesticide levels. EU MRL (Maximum Residue Level) testing is essential.</li>
+          <li><strong>Sulfur dioxide treatment</strong> - Some Indian ginger is bleached with sulfur to improve appearance, which may not meet import standards in all markets.</li>
+          <li><strong>Ethylene oxide</strong> - EU has strict limits; Indian ginger has been flagged in RASFF notifications.</li>
+        </ul>
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">Which Origin for Which Use Case?</h2>
+
+        <div class="bg-brand-50 rounded-xl p-8 my-8 border border-brand-100">
+          <h3 class="text-lg font-semibold text-brand-800 mb-4">Choose Nigerian Ginger If:</h3>
+          <ul class="list-disc pl-6 space-y-2 text-gray-700">
+            <li>You manufacture pharmaceutical or nutraceutical products</li>
+            <li>You need high oleoresin content for extraction</li>
+            <li>You produce ginger-based health supplements</li>
+            <li>You make ginger beer, ginger shots, or concentrated ginger beverages</li>
+            <li>You need maximum potency per kilogram of raw material</li>
+            <li>You want to diversify supply away from Asian dependency</li>
+          </ul>
+        </div>
+
+        <div class="bg-gray-50 rounded-xl p-8 my-8 border border-gray-200">
+          <h3 class="text-lg font-semibold text-gray-800 mb-4">Choose Indian Ginger If:</h3>
+          <ul class="list-disc pl-6 space-y-2 text-gray-700">
+            <li>You need large volumes at competitive prices</li>
+            <li>You produce ground ginger for retail spice markets</li>
+            <li>You manufacture food products requiring mild, balanced ginger flavor</li>
+            <li>You need a wide range of processed ginger formats</li>
+            <li>You require consistent year-round supply with minimal disruptions</li>
+          </ul>
+        </div>
+
+        <h2 class="text-2xl font-bold text-brand-900 mt-12 mb-6">Sourcing Nigerian Ginger Through Origin Direct</h2>
+        <p>
+          We source <a href="/products/ginger" class="text-brand-700 underline hover:text-brand-900">premium Nigerian ginger</a> directly from farming communities in Kaduna State, Nigeria's primary ginger-growing region. Our ginger is sun-dried on raised platforms, cleaned and sorted to export standard, and tested for aflatoxin, moisture, and oleoresin content before shipment.
+        </p>
+        <p>
+          We provide full lab analysis with every shipment, including oleoresin and gingerol content testing, so you know exactly what you are getting. Whether you need dried split ginger, dried unpeeled, or peeled and polished, we can supply to your specification.
+        </p>
+
+      </div>
+    </div>
+  </article>
+
+  <!-- CTA -->
+  <section class="py-20 md:py-24 bg-gradient-to-br from-brand-900 to-earth-800">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">
+        Need High-Potency Nigerian Ginger?
+      </h2>
+      <p class="text-brand-200 mb-8 max-w-xl mx-auto">
+        Get competitive pricing on premium Nigerian ginger with full lab analysis including oleoresin and gingerol content.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/quote" class="inline-flex items-center justify-center px-8 py-4 bg-gold hover:bg-gold-dark text-white font-bold rounded-lg transition-colors shadow-lg text-lg">
+          Request a Quote
+          <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+        <a href="/products/ginger" class="inline-flex items-center justify-center px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-lg transition-colors border border-white/20">
+          View Ginger Products
+        </a>
+      </div>
+    </div>
+  </section>
+
+</Layout>

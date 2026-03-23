@@ -1,0 +1,206 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import QuoteForm from '../../components/QuoteForm.astro';
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://origindirectgroup.com/" },
+    { "@type": "ListItem", position: 2, name: "Industries", item: "https://origindirectgroup.com/industries" },
+    { "@type": "ListItem", position: 3, name: "Food Ingredients", item: "https://origindirectgroup.com/industries/food-ingredients" },
+  ],
+};
+
+const products = [
+  {
+    name: "Sesame Seeds",
+    slug: "/products/sesame-seeds",
+    description: "Premium white and brown sesame seeds for tahini production, bakery toppings, oil extraction, and snack food manufacturing. Hulled and natural grades available.",
+    specs: ["Hulled or Natural", "Oil content 50%+", "99.95% purity"],
+  },
+  {
+    name: "Cashew Nuts",
+    slug: "/products/cashew-nuts",
+    description: "Whole and split cashew kernels for roasted snacks, nut butters, trail mixes, and confectionery inclusions. All standard AFI grades: W180, W240, W320, W450.",
+    specs: ["W180 to W450", "Raw or roasted", "Low moisture"],
+  },
+  {
+    name: "Ginger",
+    slug: "/products/ginger",
+    description: "Dried split ginger and ground ginger from Nigeria. High gingerol content for beverages, spice blends, baking, and food manufacturing.",
+    specs: ["Dried split or ground", "High gingerol", "Low fiber"],
+  },
+  {
+    name: "Dried Hibiscus",
+    slug: "/products/hibiscus",
+    description: "Sun-dried hibiscus flowers (Roselle) for natural food coloring, beverage concentrates, jams, and flavoring. Deep red color with tart, cranberry-like flavor.",
+    specs: ["Whole or cut & sifted", "Natural colorant", "High anthocyanin"],
+  },
+  {
+    name: "Moringa Powder",
+    slug: "/products/moringa",
+    description: "Fine-ground moringa leaf powder for health food products, smoothie mixes, protein bars, and nutritional supplements. Rich in protein, iron, and calcium.",
+    specs: ["Organic available", "Mesh 80-200", "High protein"],
+  },
+  {
+    name: "Turmeric",
+    slug: "/products/turmeric",
+    description: "Ground turmeric powder and dried fingers for spice blends, food coloring, and curry production. High curcumin content from Indian origin.",
+    specs: ["3-5% curcumin", "Indian origin", "Powder or fingers"],
+  },
+  {
+    name: "Dried Chili Peppers",
+    slug: "/products/dried-chili-peppers",
+    description: "Dried chili peppers and ground chili for hot sauce production, spice blends, and food processing. Multiple heat levels available.",
+    specs: ["Multiple varieties", "Whole or ground", "Consistent heat"],
+  },
+  {
+    name: "Baobab Powder",
+    slug: "/products/baobab-powder",
+    description: "Baobab fruit powder with naturally high vitamin C content. Used in juice blends, snack bars, yogurt, and health food formulations.",
+    specs: ["6x vitamin C of oranges", "Natural preservative", "Tart flavor"],
+  },
+  {
+    name: "Tiger Nuts",
+    slug: "/products/tiger-nuts",
+    description: "Dried tiger nuts (chufa) for horchata de chufa, gluten-free flour, and snack food production. Rich in fiber and healthy fats.",
+    specs: ["Whole or peeled", "Gluten-free", "High fiber"],
+  },
+];
+---
+
+<Layout
+  title="Bulk Food Ingredients from Africa & India | Origin Direct"
+  description="Bulk food ingredients for processors and manufacturers. Sesame seeds, cashew nuts, ginger, hibiscus, moringa, turmeric, and more. Direct from Africa and India with competitive B2B pricing."
+  structuredData={[breadcrumbSchema]}
+>
+  <!-- Breadcrumbs -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumbs items={[{ label: "Industries", href: "/industries" }, { label: "Food Ingredients" }]} />
+  </div>
+
+  <!-- Hero -->
+  <section class="relative py-24 sm:py-32 bg-gradient-to-br from-brand-900 via-brand-800 to-earth-800 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_40%,rgba(196,154,42,0.3),transparent_70%)]"></div>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-gold-light font-medium tracking-wide uppercase text-sm mb-4">Food Processing &amp; Manufacturing</p>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">Bulk Food Ingredients from Africa &amp; India</h1>
+      <p class="text-xl text-brand-200 max-w-2xl mx-auto mb-10">
+        Sesame, cashews, ginger, hibiscus, moringa, and more. Food-grade quality, full documentation, direct from origin.
+      </p>
+      <a href="#quote-form" class="inline-flex items-center px-8 py-4 bg-gold hover:bg-gold-dark text-white font-bold rounded-lg transition-colors shadow-lg text-lg">
+        Request Quote
+        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- Overview -->
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Why Food Manufacturers Choose Origin Direct</h2>
+      <div class="prose prose-lg text-gray-700 space-y-5">
+        <p>
+          Food processors, bakeries, snack companies, and spice blenders need consistent quality at competitive prices. West Africa and India produce many of the world's essential food ingredients, from Nigerian sesame seeds (the world's largest producer) to Indian spices and Ghanaian cashews.
+        </p>
+        <p>
+          Origin Direct connects food manufacturers directly to origin, eliminating the layers of brokers and middlemen that inflate costs. We handle quality control at source, export documentation, phytosanitary certificates, and logistics to your destination port or warehouse.
+        </p>
+        <p>
+          Every product ships with a Certificate of Analysis, Certificate of Origin, phytosanitary certificate, and any additional documentation your food safety team requires. We work within HACCP, BRC, and IFS frameworks and can supply organic certified ingredients where available.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-10">Products for Food Manufacturers</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {products.map((product) => (
+          <a href={product.slug} class="group block bg-white rounded-2xl border border-gray-100 hover:border-green-200 hover:shadow-xl transition-all duration-300 p-6">
+            <h3 class="text-lg font-bold text-gray-900 group-hover:text-green-700 transition-colors mb-3">
+              {product.name}
+            </h3>
+            <p class="text-sm text-gray-600 mb-4 leading-relaxed">{product.description}</p>
+            <div class="flex flex-wrap gap-1.5 mb-4">
+              {product.specs.map((spec: string) => (
+                <span class="inline-flex items-center px-2.5 py-1 bg-green-50 text-green-800 text-xs font-medium rounded-full border border-green-100">
+                  {spec}
+                </span>
+              ))}
+            </div>
+            <div class="flex items-center gap-2 text-green-700 font-semibold text-sm group-hover:gap-3 transition-all">
+              View Product
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+              </svg>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Use Cases -->
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Common Applications</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {[
+          { title: "Bakeries & Snack Companies", items: "Sesame seeds for toppings and crackers, cashew nuts for trail mixes and nut bars, ginger for baked goods" },
+          { title: "Tahini & Nut Butter Producers", items: "Hulled sesame seeds for tahini, cashew kernels for cashew butter, peanuts for peanut butter" },
+          { title: "Spice Blenders & Packagers", items: "Ginger, turmeric, chili peppers, cumin for retail spice blends and food service packs" },
+          { title: "Beverage Concentrates", items: "Hibiscus for natural coloring and flavoring, ginger for ginger shots and ales, baobab for vitamin drinks" },
+          { title: "Health Food Brands", items: "Moringa powder for superfood blends, baobab for vitamin C content, tiger nuts for gluten-free products" },
+          { title: "Natural Food Coloring", items: "Hibiscus extract for red/pink coloring, turmeric for yellow, all-natural alternatives to synthetic dyes" },
+        ].map((useCase) => (
+          <div class="bg-gray-50 rounded-xl border border-gray-200 p-6">
+            <h3 class="text-sm font-bold text-brand-800 mb-2">{useCase.title}</h3>
+            <p class="text-sm text-gray-600">{useCase.items}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Food Safety -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Food Safety &amp; Documentation</h2>
+      <p class="text-gray-700 mb-8">Every shipment includes comprehensive documentation for your food safety and regulatory teams.</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {[
+          "Certificate of Analysis (CoA)",
+          "Phytosanitary Certificate",
+          "Certificate of Origin",
+          "Fumigation Certificate",
+          "Aflatoxin Testing",
+          "Pesticide Residue Testing",
+          "Heavy Metal Analysis",
+          "Microbiological Testing",
+          "Organic Certification (available)",
+        ].map((cert) => (
+          <div class="flex items-start gap-3 bg-white rounded-lg p-4 border border-gray-200">
+            <svg class="w-5 h-5 text-brand-600 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+            <span class="text-sm font-medium text-gray-800">{cert}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Quote Form -->
+  <section id="quote-form" class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <QuoteForm />
+    </div>
+  </section>
+</Layout>
