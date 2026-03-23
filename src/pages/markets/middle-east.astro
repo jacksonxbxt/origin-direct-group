@@ -1,0 +1,163 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import QuoteForm from '../../components/QuoteForm.astro';
+
+const products = [
+  {
+    name: "Hookah Charcoal",
+    description: "Premium hardwood and coconut shell charcoal briquettes. Cube, flat, finger, and custom shapes. Low ash, long burn time, no chemical additives.",
+    highlight: "Biggest opportunity",
+  },
+  {
+    name: "Sesame Seeds",
+    description: "Tahini-grade hulled white sesame seeds. 99.95%+ purity, low FFA, ideal for tahini paste and halva production.",
+    highlight: "Tahini grade",
+  },
+  {
+    name: "Dried Hibiscus",
+    description: "Premium whole dried hibiscus flowers for karkade — the traditional Middle Eastern cold drink. Deep red color, high acidity, excellent flavor.",
+    highlight: "Karkade quality",
+  },
+  {
+    name: "Shea Butter",
+    description: "Refined and unrefined shea butter for cosmetics manufacturing. High oleic content, smooth texture, ideal for skincare formulations.",
+    highlight: "Cosmetic grade",
+  },
+];
+
+const ports = [
+  { name: "Jebel Ali", country: "UAE", transit: "18-22 days" },
+  { name: "Kuwait City", country: "Kuwait", transit: "20-24 days" },
+  { name: "Hamad Port", country: "Qatar", transit: "20-24 days" },
+  { name: "Jeddah", country: "Saudi Arabia", transit: "16-20 days" },
+];
+---
+
+<Layout
+  title="Commodities for Middle East Buyers | Origin Direct"
+  description="Premium hookah charcoal, tahini-grade sesame, karkade hibiscus, and cosmetic shea butter for Middle East buyers. Halal certified, shipped to Jebel Ali, Kuwait, Doha."
+>
+
+  <!-- Hero -->
+  <section class="relative py-20 md:py-28 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-green-950 via-green-900 to-amber-900"></div>
+    <div class="absolute inset-0 bg-black/20"></div>
+    <div class="relative z-10 max-w-3xl mx-auto px-6 text-center">
+      <p class="text-amber-400 font-semibold text-sm uppercase tracking-wider mb-4">Middle East Market</p>
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight mb-6">
+        Commodities for Middle East Buyers
+      </h1>
+      <p class="text-lg md:text-xl text-green-100/90 max-w-2xl mx-auto leading-relaxed">
+        🇦🇪 🇰🇼 🇶🇦 🇸🇦 🇹🇷 🇯🇴 🇱🇧
+      </p>
+    </div>
+    <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white to-transparent"></div>
+  </section>
+
+  <!-- Our Fastest-Growing Market -->
+  <section class="py-20 md:py-28 bg-white">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Fastest-Growing Market</h2>
+        <div class="w-16 h-1 bg-amber-500 mx-auto rounded-full"></div>
+      </div>
+
+      <p class="text-gray-700 leading-relaxed text-center max-w-3xl mx-auto mb-8">
+        The Middle East represents our fastest-growing region. With Dubai as a major re-export hub and strong demand
+        for hookah charcoal, tahini-grade sesame, and traditional karkade, we've built dedicated supply chains
+        to serve this market efficiently.
+      </p>
+
+      <div class="grid sm:grid-cols-3 gap-6">
+        <div class="bg-amber-50 rounded-xl border border-amber-100 p-6 text-center">
+          <div class="inline-flex items-center justify-center w-12 h-12 bg-amber-100 text-amber-700 rounded-xl mb-3">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+            </svg>
+          </div>
+          <h3 class="font-bold text-gray-900 mb-1">Halal Certified</h3>
+          <p class="text-sm text-gray-600">Halal certification available for all food-grade products</p>
+        </div>
+
+        <div class="bg-amber-50 rounded-xl border border-amber-100 p-6 text-center">
+          <div class="inline-flex items-center justify-center w-12 h-12 bg-amber-100 text-amber-700 rounded-xl mb-3">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3H21m-3.75 3H21" />
+            </svg>
+          </div>
+          <h3 class="font-bold text-gray-900 mb-1">Dubai Hub</h3>
+          <p class="text-sm text-gray-600">Dubai as trading and re-export hub for the wider region</p>
+        </div>
+
+        <div class="bg-amber-50 rounded-xl border border-amber-100 p-6 text-center">
+          <div class="inline-flex items-center justify-center w-12 h-12 bg-amber-100 text-amber-700 rounded-xl mb-3">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <h3 class="font-bold text-gray-900 mb-1">Fast Transit</h3>
+          <p class="text-sm text-gray-600">18-24 day transit times from West African ports</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Products -->
+  <section class="py-20 md:py-28 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Key Products for the Middle East</h2>
+        <div class="w-16 h-1 bg-amber-500 mx-auto rounded-full"></div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        {products.map((product) => (
+          <div class="bg-white rounded-2xl border border-gray-100 p-8 hover:shadow-lg transition-shadow">
+            <div class="flex items-center gap-3 mb-4">
+              <h3 class="text-xl font-bold text-gray-900">{product.name}</h3>
+              <span class="inline-flex items-center px-2.5 py-0.5 bg-amber-100 text-amber-800 text-xs font-semibold rounded-full">
+                {product.highlight}
+              </span>
+            </div>
+            <p class="text-gray-600 leading-relaxed">{product.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Transit Times -->
+  <section class="py-20 md:py-28 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Transit Times</h2>
+        <div class="w-16 h-1 bg-amber-500 mx-auto rounded-full"></div>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {ports.map((port) => (
+          <div class="bg-gray-50 rounded-xl border border-gray-100 p-6 text-center">
+            <h3 class="text-lg font-bold text-gray-900 mb-1">{port.name}</h3>
+            <p class="text-sm text-gray-500 mb-3">{port.country}</p>
+            <p class="text-2xl font-bold text-green-700">{port.transit}</p>
+            <p class="text-xs text-gray-400 mt-1">from West Africa</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA / Quote -->
+  <section class="py-20 md:py-28 bg-green-950">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Get a Quote for the Middle East</h2>
+        <p class="text-lg text-green-200/80 max-w-xl mx-auto">
+          Premium commodities, halal certified, delivered to your port.
+        </p>
+      </div>
+      <QuoteForm />
+    </div>
+  </section>
+
+</Layout>

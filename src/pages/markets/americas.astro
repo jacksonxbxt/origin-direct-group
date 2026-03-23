@@ -1,0 +1,221 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import QuoteForm from '../../components/QuoteForm.astro';
+
+const products = [
+  {
+    name: "Dried Hibiscus",
+    description: "Premium whole dried hibiscus flowers for Mexico's agua de jamaica and the US herbal tea market. Deep red color, high acidity, clean flavor profile.",
+    markets: "Mexico, USA",
+    highlight: "Top seller",
+  },
+  {
+    name: "Dried Ginger",
+    description: "Split and whole dried ginger with high oleoresin and gingerol content. Widely used in Caribbean cuisine, beverages, and traditional remedies.",
+    markets: "Caribbean, USA",
+    highlight: "Caribbean staple",
+  },
+  {
+    name: "Moringa Powder",
+    description: "Certified organic moringa leaf powder for the booming US health food and supplement market. Lab tested for heavy metals and microbial counts.",
+    markets: "USA, Brazil",
+    highlight: "Organic certified",
+  },
+  {
+    name: "Cashew Nuts",
+    description: "Processed cashew kernels in all standard grades (W180, W240, W320, W450) for retail packaging and food manufacturing.",
+    markets: "USA, Brazil",
+    highlight: "All grades",
+  },
+  {
+    name: "Cocoa Products",
+    description: "Fermented cocoa beans, natural cocoa butter, and cocoa powder for artisan chocolate makers and food manufacturers across the Americas.",
+    markets: "USA, Brazil, Mexico",
+    highlight: "Bean to bar",
+  },
+];
+
+const ports = [
+  { name: "Houston", country: "USA", transit: "18-22 days" },
+  { name: "New York / Newark", country: "USA", transit: "16-20 days" },
+  { name: "Manzanillo", country: "Mexico", transit: "22-26 days" },
+  { name: "Kingston", country: "Jamaica", transit: "18-22 days" },
+];
+---
+
+<Layout
+  title="Commodities for American Buyers | Origin Direct"
+  description="Hibiscus for Mexico, ginger for the Caribbean, moringa and cashews for the USA. FDA compliant, SENASICA certified. Direct commodity exports from West Africa."
+>
+
+  <!-- Hero -->
+  <section class="relative py-20 md:py-28 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-green-950 via-green-900 to-red-950"></div>
+    <div class="absolute inset-0 bg-black/20"></div>
+    <div class="relative z-10 max-w-3xl mx-auto px-6 text-center">
+      <p class="text-amber-400 font-semibold text-sm uppercase tracking-wider mb-4">Americas Market</p>
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight mb-6">
+        Commodities for American Buyers
+      </h1>
+      <p class="text-lg md:text-xl text-green-100/90 max-w-2xl mx-auto leading-relaxed">
+        🇺🇸 🇲🇽 🇯🇲 🇹🇹 🇧🇧 🇧🇷
+      </p>
+    </div>
+    <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white to-transparent"></div>
+  </section>
+
+  <!-- Compliance -->
+  <section class="py-20 md:py-28 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Compliance for the Americas</h2>
+        <div class="w-16 h-1 bg-amber-500 mx-auto rounded-full"></div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8 lg:gap-12">
+        <!-- FDA -->
+        <div class="bg-green-50/50 rounded-2xl p-8 lg:p-10 border border-green-100">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="inline-flex items-center justify-center w-12 h-12 bg-green-100 text-green-700 rounded-xl">
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900">FDA Compliance (USA)</h3>
+          </div>
+          <ul class="space-y-3 text-gray-600">
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+              </svg>
+              <span>FDA Prior Notice filing assistance</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+              </svg>
+              <span>FSMA (Food Safety Modernization Act) compliant</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+              </svg>
+              <span>Heavy metal and pesticide residue testing</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+              </svg>
+              <span>Nutritional labeling data available</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- SENASICA -->
+        <div class="bg-green-50/50 rounded-2xl p-8 lg:p-10 border border-green-100">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="inline-flex items-center justify-center w-12 h-12 bg-green-100 text-green-700 rounded-xl">
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900">SENASICA Compliance (Mexico)</h3>
+          </div>
+          <ul class="space-y-3 text-gray-600">
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+              </svg>
+              <span>SENASICA import permit documentation</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+              </svg>
+              <span>Phytosanitary certificates for hibiscus exports</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+              </svg>
+              <span>Fumigation and pest-free certification</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+              </svg>
+              <span>Experience with Mexico hibiscus import requirements</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Products -->
+  <section class="py-20 md:py-28 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Key Products for the Americas</h2>
+        <div class="w-16 h-1 bg-amber-500 mx-auto rounded-full"></div>
+      </div>
+
+      <div class="space-y-6">
+        {products.map((product) => (
+          <div class="bg-white rounded-2xl border border-gray-100 p-8 hover:shadow-lg transition-shadow">
+            <div class="flex flex-col md:flex-row md:items-start gap-4 md:gap-8">
+              <div class="flex-1">
+                <div class="flex items-center gap-3 mb-3">
+                  <h3 class="text-xl font-bold text-gray-900">{product.name}</h3>
+                  <span class="inline-flex items-center px-2.5 py-0.5 bg-green-100 text-green-800 text-xs font-semibold rounded-full">
+                    {product.highlight}
+                  </span>
+                </div>
+                <p class="text-gray-600 leading-relaxed">{product.description}</p>
+              </div>
+              <div class="md:w-40 flex-shrink-0">
+                <p class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1">Key Markets</p>
+                <p class="text-sm text-gray-700 font-medium">{product.markets}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Transit Times -->
+  <section class="py-20 md:py-28 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Transit Times</h2>
+        <div class="w-16 h-1 bg-amber-500 mx-auto rounded-full"></div>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {ports.map((port) => (
+          <div class="bg-gray-50 rounded-xl border border-gray-100 p-6 text-center">
+            <h3 class="text-lg font-bold text-gray-900 mb-1">{port.name}</h3>
+            <p class="text-sm text-gray-500 mb-3">{port.country}</p>
+            <p class="text-2xl font-bold text-green-700">{port.transit}</p>
+            <p class="text-xs text-gray-400 mt-1">from West Africa</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA / Quote -->
+  <section class="py-20 md:py-28 bg-green-950">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Get a Quote for the Americas</h2>
+        <p class="text-lg text-green-200/80 max-w-xl mx-auto">
+          FDA and SENASICA compliant commodities, competitive pricing, delivered to your port.
+        </p>
+      </div>
+      <QuoteForm />
+    </div>
+  </section>
+
+</Layout>

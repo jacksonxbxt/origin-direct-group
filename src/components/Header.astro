@@ -1,0 +1,224 @@
+---
+const products = [
+  { name: "Shea Butter", slug: "shea-butter" },
+  { name: "Cocoa", slug: "cocoa" },
+  { name: "Cashew Nuts", slug: "cashew-nuts" },
+  { name: "Hookah Charcoal", slug: "hookah-charcoal" },
+  { name: "Hibiscus", slug: "hibiscus" },
+  { name: "Sesame Seeds", slug: "sesame-seeds" },
+  { name: "Moringa", slug: "moringa" },
+  { name: "Ginger", slug: "ginger" },
+];
+
+const navLinks = [
+  { name: "Markets", href: "/markets" },
+  { name: "About", href: "/about" },
+  { name: "Blog", href: "/blog" },
+];
+---
+
+<header id="site-header" class="header-transparent fixed top-0 left-0 right-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-18">
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-2 group">
+        <svg class="w-8 h-8 text-brand-600 group-hover:text-brand-500 transition-colors" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M16 2C16 2 8 8 8 16c0 5.5 3.6 10 8 10s8-4.5 8-10c0-8-8-14-8-14z" fill="currentColor" opacity="0.2"/>
+          <path d="M16 4c0 0-6 5-6 12 0 4.4 2.7 8 6 8s6-3.6 6-8c0-7-6-12-6-12z" fill="currentColor" opacity="0.4"/>
+          <path d="M16 8c0 0-4 3.5-4 8 0 3 1.8 5.5 4 5.5s4-2.5 4-5.5c0-4.5-4-8-4-8z" fill="currentColor"/>
+          <path d="M16 8v13.5" stroke="white" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M13 14c1.5 1 3 1 5 0" stroke="white" stroke-width="1" stroke-linecap="round" fill="none"/>
+          <path d="M13.5 17.5c1.2 0.8 2.8 0.8 5 0" stroke="white" stroke-width="1" stroke-linecap="round" fill="none"/>
+          <!-- Trade arrows -->
+          <path d="M4 20l4-3M4 20l4 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M28 20l-4-3M28 20l-4 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <span class="text-xl font-bold tracking-tight header-logo-text text-brand-900">
+          ORIGIN <span class="font-medium text-brand-600">DIRECT</span>
+        </span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden lg:flex items-center gap-8">
+        <!-- Products Dropdown -->
+        <div class="relative group" id="products-dropdown">
+          <button
+            class="flex items-center gap-1 text-sm font-medium text-gray-700 hover:text-brand-700 transition-colors py-2"
+            aria-expanded="false"
+            aria-haspopup="true"
+          >
+            Products
+            <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+            <div class="bg-white rounded-xl shadow-xl border border-gray-100 py-3 w-56">
+              {products.map((product) => (
+                <a
+                  href={`/products/${product.slug}`}
+                  class="block px-5 py-2.5 text-sm text-gray-700 hover:bg-brand-50 hover:text-brand-700 transition-colors"
+                >
+                  {product.name}
+                </a>
+              ))}
+              <hr class="my-2 border-gray-100" />
+              <a
+                href="/products"
+                class="block px-5 py-2.5 text-sm font-medium text-brand-700 hover:bg-brand-50 transition-colors"
+              >
+                View All Products
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {navLinks.map((link) => (
+          <a
+            href={link.href}
+            class="text-sm font-medium text-gray-700 hover:text-brand-700 transition-colors"
+          >
+            {link.name}
+          </a>
+        ))}
+
+        <!-- CTA -->
+        <a
+          href="/quote"
+          class="inline-flex items-center px-5 py-2.5 bg-brand-700 text-white text-sm font-semibold rounded-lg hover:bg-brand-600 transition-colors shadow-sm"
+        >
+          Request Quote
+        </a>
+      </nav>
+
+      <!-- Mobile Menu Button -->
+      <button
+        id="mobile-menu-btn"
+        class="lg:hidden p-2 text-gray-700 hover:text-brand-700 transition-colors"
+        aria-label="Toggle menu"
+        aria-expanded="false"
+      >
+        <svg id="menu-open-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <svg id="menu-close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="lg:hidden hidden bg-white border-t border-gray-100">
+    <div class="max-w-7xl mx-auto px-4 py-4 space-y-1">
+      <!-- Mobile Products Accordion -->
+      <div>
+        <button
+          id="mobile-products-btn"
+          class="flex items-center justify-between w-full px-3 py-3 text-sm font-medium text-gray-700 hover:bg-brand-50 rounded-lg"
+        >
+          Products
+          <svg id="mobile-products-chevron" class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <div id="mobile-products-list" class="hidden pl-4 space-y-1">
+          {products.map((product) => (
+            <a
+              href={`/products/${product.slug}`}
+              class="block px-3 py-2 text-sm text-gray-600 hover:text-brand-700 hover:bg-brand-50 rounded-lg transition-colors"
+            >
+              {product.name}
+            </a>
+          ))}
+          <a
+            href="/products"
+            class="block px-3 py-2 text-sm font-medium text-brand-700 hover:bg-brand-50 rounded-lg transition-colors"
+          >
+            View All Products
+          </a>
+        </div>
+      </div>
+
+      {navLinks.map((link) => (
+        <a
+          href={link.href}
+          class="block px-3 py-3 text-sm font-medium text-gray-700 hover:bg-brand-50 rounded-lg transition-colors"
+        >
+          {link.name}
+        </a>
+      ))}
+
+      <div class="pt-3">
+        <a
+          href="/quote"
+          class="block w-full text-center px-5 py-3 bg-brand-700 text-white text-sm font-semibold rounded-lg hover:bg-brand-600 transition-colors"
+        >
+          Request Quote
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Spacer for fixed header -->
+<div class="h-18"></div>
+
+<!-- Soil to Door banner strip -->
+<div class="bg-green-900 text-center py-1.5">
+  <p class="text-xs sm:text-sm text-green-100 font-medium tracking-wide">
+    Soil to Door Commodity Sourcing &mdash; We manage the entire supply chain
+  </p>
+</div>
+
+<script>
+  // Header scroll behavior
+  const header = document.getElementById("site-header");
+  const logoText = header?.querySelector(".header-logo-text");
+
+  function updateHeader() {
+    if (!header) return;
+    if (window.scrollY > 50) {
+      header.classList.remove("header-transparent");
+      header.classList.add("header-solid");
+    } else {
+      header.classList.remove("header-solid");
+      header.classList.add("header-transparent");
+    }
+  }
+
+  window.addEventListener("scroll", updateHeader, { passive: true });
+  updateHeader();
+
+  // Mobile menu toggle
+  const mobileBtn = document.getElementById("mobile-menu-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const openIcon = document.getElementById("menu-open-icon");
+  const closeIcon = document.getElementById("menu-close-icon");
+
+  mobileBtn?.addEventListener("click", () => {
+    const isOpen = !mobileMenu?.classList.contains("hidden");
+    mobileMenu?.classList.toggle("hidden");
+    openIcon?.classList.toggle("hidden");
+    closeIcon?.classList.toggle("hidden");
+    mobileBtn.setAttribute("aria-expanded", String(!isOpen));
+
+    // Ensure solid header when menu is open
+    if (!isOpen) {
+      header?.classList.remove("header-transparent");
+      header?.classList.add("header-solid");
+    } else {
+      updateHeader();
+    }
+  });
+
+  // Mobile products accordion
+  const productsBtn = document.getElementById("mobile-products-btn");
+  const productsList = document.getElementById("mobile-products-list");
+  const productsChevron = document.getElementById("mobile-products-chevron");
+
+  productsBtn?.addEventListener("click", () => {
+    productsList?.classList.toggle("hidden");
+    productsChevron?.classList.toggle("rotate-180");
+  });
+</script>

@@ -1,0 +1,209 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import QuoteForm from '../../components/QuoteForm.astro';
+---
+
+<Layout
+  title="Cocoa Beans, Butter & Powder — Ghana & Nigeria | Origin Direct"
+  description="Premium cocoa beans, butter and powder from Ghana and Nigeria. EU cadmium compliant, EUDR traceable. Rainforest Alliance and Fairtrade certified. B2B supply."
+>
+  <!-- Hero -->
+  <section class="relative py-24 sm:py-32 bg-gradient-to-br from-earth-900 via-earth-800 to-brand-900 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(196,154,42,0.3),transparent_70%)]"></div>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-gold-light font-medium tracking-wide uppercase text-sm mb-4">Ghana &amp; Nigeria</p>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">Cocoa</h1>
+      <p class="text-xl text-brand-200 max-w-2xl mx-auto mb-10">
+        Fermented beans, natural and deodorized butter, cocoa powder and nibs. EU cadmium compliant with full EUDR traceability.
+      </p>
+      <a href="#quote-form" class="inline-flex items-center px-8 py-4 bg-gold hover:bg-gold-dark text-white font-bold rounded-lg transition-colors shadow-lg text-lg">
+        Request Quote
+        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- Overview -->
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Overview</h2>
+      <div class="prose prose-lg text-gray-700 space-y-5">
+        <p>
+          Ghana and Nigeria together account for a significant share of global cocoa production, and their beans are prized by chocolate manufacturers worldwide for their distinctive flavor profiles. Ghanaian cocoa is renowned for its consistent quality and deep chocolate flavor, while Nigerian cocoa offers excellent value with comparable taste characteristics.
+        </p>
+        <p>
+          Origin Direct supplies the full range of cocoa derivatives: fermented beans for chocolate production, natural and deodorized cocoa butter for confectionery and cosmetics, and cocoa powder in both natural and alkalized forms for bakeries and beverages. Every lot is tested for cadmium (below EU threshold of 0.60 mg/kg), mycotoxins, and pesticide residues.
+        </p>
+        <p>
+          With the EU Deforestation Regulation (EUDR) now in effect, traceability is no longer optional. Our cocoa comes with complete geolocation data for every farm plot, ensuring your supply chain is fully EUDR compliant from day one.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Specifications -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Technical Specifications</h2>
+      <div class="overflow-x-auto rounded-xl border border-gray-200 shadow-sm">
+        <table class="w-full text-left text-sm">
+          <thead>
+            <tr class="bg-earth-800 text-white">
+              <th class="px-6 py-4 font-semibold">Parameter</th>
+              <th class="px-6 py-4 font-semibold">Specification</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-100">
+            <tr class="bg-white">
+              <td class="px-6 py-4 font-medium text-gray-900">Cadmium</td>
+              <td class="px-6 py-4 text-gray-700">&lt; 0.60 mg/kg (EU compliant)</td>
+            </tr>
+            <tr class="bg-gray-50">
+              <td class="px-6 py-4 font-medium text-gray-900">Moisture (beans)</td>
+              <td class="px-6 py-4 text-gray-700">&lt; 7.5%</td>
+            </tr>
+            <tr class="bg-white">
+              <td class="px-6 py-4 font-medium text-gray-900">FFA (butter)</td>
+              <td class="px-6 py-4 text-gray-700">&lt; 1.75%</td>
+            </tr>
+            <tr class="bg-gray-50">
+              <td class="px-6 py-4 font-medium text-gray-900">Shell Content</td>
+              <td class="px-6 py-4 text-gray-700">&lt; 5%</td>
+            </tr>
+            <tr class="bg-white">
+              <td class="px-6 py-4 font-medium text-gray-900">Mycotoxins</td>
+              <td class="px-6 py-4 text-gray-700">Within EU limits</td>
+            </tr>
+            <tr class="bg-gray-50">
+              <td class="px-6 py-4 font-medium text-gray-900">Pesticide Residues</td>
+              <td class="px-6 py-4 text-gray-700">Within MRL (Maximum Residue Levels)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Available Grades -->
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Available Grades</h2>
+      <div class="overflow-x-auto rounded-xl border border-gray-200 shadow-sm">
+        <table class="w-full text-left text-sm">
+          <thead>
+            <tr class="bg-earth-800 text-white">
+              <th class="px-6 py-4 font-semibold">Grade</th>
+              <th class="px-6 py-4 font-semibold">Description</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-100">
+            <tr class="bg-white">
+              <td class="px-6 py-4 font-medium text-gray-900">Fermented Beans &mdash; Grade 1</td>
+              <td class="px-6 py-4 text-gray-700">Premium fermented, fully dried beans. Well-fermented with consistent bean size.</td>
+            </tr>
+            <tr class="bg-gray-50">
+              <td class="px-6 py-4 font-medium text-gray-900">Fermented Beans &mdash; Grade 2</td>
+              <td class="px-6 py-4 text-gray-700">Standard commercial grade. Suitable for bulk chocolate and cocoa processing.</td>
+            </tr>
+            <tr class="bg-white">
+              <td class="px-6 py-4 font-medium text-gray-900">Natural Cocoa Butter</td>
+              <td class="px-6 py-4 text-gray-700">Cold-pressed, natural aroma and color. For premium chocolate and cosmetics.</td>
+            </tr>
+            <tr class="bg-gray-50">
+              <td class="px-6 py-4 font-medium text-gray-900">Deodorized Cocoa Butter</td>
+              <td class="px-6 py-4 text-gray-700">Neutral flavor and aroma. Ideal for white chocolate and pharmaceutical applications.</td>
+            </tr>
+            <tr class="bg-white">
+              <td class="px-6 py-4 font-medium text-gray-900">Natural Cocoa Powder</td>
+              <td class="px-6 py-4 text-gray-700">10&ndash;12% fat content. For beverages, bakery, and dairy applications.</td>
+            </tr>
+            <tr class="bg-gray-50">
+              <td class="px-6 py-4 font-medium text-gray-900">Alkalized Cocoa Powder</td>
+              <td class="px-6 py-4 text-gray-700">20&ndash;22% fat content. Darker color, milder taste. Dutch-process style.</td>
+            </tr>
+            <tr class="bg-white">
+              <td class="px-6 py-4 font-medium text-gray-900">Cocoa Nibs</td>
+              <td class="px-6 py-4 text-gray-700">Roasted and cracked cocoa beans. Growing demand in health food and snacking.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Certifications &amp; Documentation</h2>
+      <p class="text-gray-700 mb-8">Full compliance documentation provided with every shipment, including EUDR traceability data.</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {[
+          "Rainforest Alliance",
+          "Fairtrade Certified",
+          "Organic Certified",
+          "EUDR Compliant (geolocation traceability)",
+          "Phytosanitary Certificate",
+          "Certificate of Origin",
+          "EUR.1 (preferential EU tariff)",
+          "Certificate of Analysis (CoA)",
+        ].map((cert) => (
+          <div class="flex items-start gap-3 bg-white rounded-lg p-4 border border-gray-200">
+            <svg class="w-5 h-5 text-brand-600 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+            <span class="text-sm font-medium text-gray-800">{cert}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Packaging & Shipping -->
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-900 mb-8">Packaging &amp; Shipping</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div>
+          <h3 class="text-lg font-semibold text-brand-800 mb-4">Packaging Options</h3>
+          <ul class="space-y-3 text-gray-700">
+            <li class="flex items-start gap-2">
+              <span class="text-brand-600 mt-1">&#8226;</span>
+              <span>60 kg jute bags (cocoa beans &mdash; industry standard)</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-brand-600 mt-1">&#8226;</span>
+              <span>25 kg cartons (butter and powder)</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-brand-600 mt-1">&#8226;</span>
+              <span>Bulk containers with food-grade liners</span>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold text-brand-800 mb-4">Key Markets &amp; Transit</h3>
+          <ul class="space-y-3 text-gray-700">
+            <li class="flex items-start gap-2">
+              <span class="text-gold mt-1">&#9654;</span>
+              <span><strong>Netherlands</strong> &mdash; Amsterdam, Rotterdam</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-gold mt-1">&#9654;</span>
+              <span><strong>Belgium &amp; Germany</strong> &mdash; Antwerp, Hamburg</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-gold mt-1">&#9654;</span>
+              <span><strong>USA &amp; Japan</strong> &mdash; New York, Yokohama</span>
+            </li>
+          </ul>
+          <p class="text-sm text-gray-500 mt-4">FOB Tema/Lagos. CIF terms available. EUR.1 certificate for preferential EU tariff rates.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quote Form -->
+  <QuoteForm productName="Cocoa" />
+</Layout>
