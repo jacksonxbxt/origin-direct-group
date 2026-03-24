@@ -272,40 +272,40 @@ const faqSchema = {
 
             <!-- Commodity Filters -->
             <div class="flex items-center gap-2 overflow-x-auto pb-1 sm:pb-0 scrollbar-hide">
-              <button data-commodity="all" class="commodity-btn active shrink-0 px-3 py-1.5 text-xs font-semibold rounded-full border transition-all duration-200">
+              <button type="button" data-commodity="all" class="commodity-btn active shrink-0 px-3 py-1.5 text-xs font-semibold rounded-full border transition-all duration-200">
                 All
               </button>
-              <button data-commodity="Cocoa" class="commodity-btn shrink-0 px-3 py-1.5 text-xs font-semibold rounded-full border transition-all duration-200">
+              <button type="button" data-commodity="Cocoa" class="commodity-btn shrink-0 px-3 py-1.5 text-xs font-semibold rounded-full border transition-all duration-200">
                 Cocoa
               </button>
-              <button data-commodity="Shea Butter" class="commodity-btn shrink-0 px-3 py-1.5 text-xs font-semibold rounded-full border transition-all duration-200">
+              <button type="button" data-commodity="Shea Butter" class="commodity-btn shrink-0 px-3 py-1.5 text-xs font-semibold rounded-full border transition-all duration-200">
                 Shea
               </button>
-              <button data-commodity="Cashew" class="commodity-btn shrink-0 px-3 py-1.5 text-xs font-semibold rounded-full border transition-all duration-200">
+              <button type="button" data-commodity="Cashew" class="commodity-btn shrink-0 px-3 py-1.5 text-xs font-semibold rounded-full border transition-all duration-200">
                 Cashew
               </button>
-              <button data-commodity="Sesame" class="commodity-btn shrink-0 px-3 py-1.5 text-xs font-semibold rounded-full border transition-all duration-200">
+              <button type="button" data-commodity="Sesame" class="commodity-btn shrink-0 px-3 py-1.5 text-xs font-semibold rounded-full border transition-all duration-200">
                 Sesame
               </button>
-              <button data-commodity="Hibiscus" class="commodity-btn shrink-0 px-3 py-1.5 text-xs font-semibold rounded-full border transition-all duration-200">
+              <button type="button" data-commodity="Hibiscus" class="commodity-btn shrink-0 px-3 py-1.5 text-xs font-semibold rounded-full border transition-all duration-200">
                 Hibiscus
               </button>
-              <button data-commodity="Ginger" class="commodity-btn shrink-0 px-3 py-1.5 text-xs font-semibold rounded-full border transition-all duration-200">
+              <button type="button" data-commodity="Ginger" class="commodity-btn shrink-0 px-3 py-1.5 text-xs font-semibold rounded-full border transition-all duration-200">
                 Ginger
               </button>
-              <button data-commodity="Turmeric" class="commodity-btn shrink-0 px-3 py-1.5 text-xs font-semibold rounded-full border transition-all duration-200">
+              <button type="button" data-commodity="Turmeric" class="commodity-btn shrink-0 px-3 py-1.5 text-xs font-semibold rounded-full border transition-all duration-200">
                 Turmeric
               </button>
-              <button data-commodity="Coffee" class="commodity-btn shrink-0 px-3 py-1.5 text-xs font-semibold rounded-full border transition-all duration-200">
+              <button type="button" data-commodity="Coffee" class="commodity-btn shrink-0 px-3 py-1.5 text-xs font-semibold rounded-full border transition-all duration-200">
                 Coffee
               </button>
-              <button data-commodity="Castor Oil" class="commodity-btn shrink-0 px-3 py-1.5 text-xs font-semibold rounded-full border transition-all duration-200">
+              <button type="button" data-commodity="Castor Oil" class="commodity-btn shrink-0 px-3 py-1.5 text-xs font-semibold rounded-full border transition-all duration-200">
                 Castor
               </button>
-              <button data-commodity="Palm Oil" class="commodity-btn shrink-0 px-3 py-1.5 text-xs font-semibold rounded-full border transition-all duration-200">
+              <button type="button" data-commodity="Palm Oil" class="commodity-btn shrink-0 px-3 py-1.5 text-xs font-semibold rounded-full border transition-all duration-200">
                 Palm Oil
               </button>
-              <button data-commodity="Olive Oil" class="commodity-btn shrink-0 px-3 py-1.5 text-xs font-semibold rounded-full border transition-all duration-200">
+              <button type="button" data-commodity="Olive Oil" class="commodity-btn shrink-0 px-3 py-1.5 text-xs font-semibold rounded-full border transition-all duration-200">
                 Olive Oil
               </button>
             </div>
@@ -1077,14 +1077,17 @@ const faqSchema = {
       // EVENT LISTENERS
       // ========================================
       document.addEventListener("DOMContentLoaded", function() {
-        initMap();
-        renderCards();
-        renderTable();
+        // Render cards and table first (these don't depend on Leaflet)
+        try { renderCards(); } catch(e) { console.error("renderCards error:", e); }
+        try { renderTable(); } catch(e) { console.error("renderTable error:", e); }
+
+        // Init map (may fail if Leaflet not loaded)
+        try { initMap(); } catch(e) { console.error("initMap error:", e); }
 
         // Search
         var searchInput = document.getElementById("commodity-search");
         var searchTimeout;
-        searchInput.addEventListener("input", function(e) {
+        if (searchInput) searchInput.addEventListener("input", function(e) {
           clearTimeout(searchTimeout);
           searchTimeout = setTimeout(function() {
             searchTerm = e.target.value.toLowerCase().trim();
