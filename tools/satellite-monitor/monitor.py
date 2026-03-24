@@ -1033,9 +1033,7 @@ def main():
     # 5. Summary
     alert_count = sum(len(a["alerts"]) for a in analyses)
     print(f"\nDone. {alert_count} alert(s) across {total} monitoring points.")
-    if alert_count > 0:
-        return 1
-    return 0
+    return 0  # Always exit 0 - alerts are normal, not errors
 
 
 if __name__ == "__main__":
