@@ -34,6 +34,205 @@ from config import (
 
 SCRIPT_DIR = Path(__file__).parent.resolve()
 
+# ---------------------------------------------------------------------------
+# Indicative commodity prices (USD/MT) - updated periodically
+# These are approximate market references for price impact estimation
+# ---------------------------------------------------------------------------
+COMMODITY_PRICES = {
+    "Cocoa": {"price_usd_mt": 8500, "unit": "MT", "source": "ICCO reference"},
+    "Shea": {"price_usd_mt": 1200, "unit": "MT", "source": "West Africa FOB"},
+    "Cashew": {"price_usd_mt": 1800, "unit": "MT (RCN)", "source": "West Africa FOB"},
+    "Castor/Guar": {"price_usd_mt": 1400, "unit": "MT", "source": "India FOB"},
+    "Cumin/Guar": {"price_usd_mt": 3200, "unit": "MT", "source": "India FOB"},
+    "Turmeric": {"price_usd_mt": 4500, "unit": "MT", "source": "India FOB"},
+    "Sesame": {"price_usd_mt": 2200, "unit": "MT", "source": "Nigeria FOB"},
+    "Ginger": {"price_usd_mt": 2800, "unit": "MT", "source": "Nigeria FOB"},
+}
+
+# Historical precedents for context
+HISTORICAL_PRECEDENTS = {
+    "Cocoa": "In 2023-24, West African drought drove cocoa from $2,500 to $10,000+/MT (300% increase). Similar patterns are a serious warning sign.",
+    "Shea": "In 2022, poor rains in northern Ghana reduced shea kernel output by ~25%, pushing prices up 30-40% within 4 months.",
+    "Cashew": "In 2023, erratic rainfall during Ghana's cashew flowering season led to 20% yield losses and 35% price spikes.",
+    "Turmeric": "In 2023-24, failed monsoon rains in Tamil Nadu and Andhra Pradesh drove turmeric from $3,500 to $6,000/MT.",
+    "Castor/Guar": "El Nino years (2015, 2023) typically reduce Gujarat castor output 15-20%, with 6-month price increases of 25-40%.",
+    "Cumin/Guar": "Rajasthan cumin is highly weather-sensitive. 2023 drought reduced output 30%, prices doubled within 4 months.",
+    "Sesame": "Nigerian sesame is resilient but 2021 flooding destroyed 15% of crop, causing 20% price increase.",
+    "Ginger": "Nigerian ginger supply is tight. Any weather disruption in Kaduna typically results in 20-30% price response within 2-3 months.",
+}
+
+# Seasonal calendar - built after stage functions are defined below
+SEASONAL_CALENDAR = {}
+
+
+def _get_cocoa_stage(month):
+    if month in [10, 11, 12, 1, 2, 3]:
+        return "Main crop harvest season"
+    elif month in [6, 7, 8]:
+        return "Mid-crop harvest"
+    elif month in [4, 5]:
+        return "Early rainy season - pod development"
+    else:
+        return "Late rainy season - new pod formation"
+
+
+def _get_shea_stage(month):
+    if month in [3, 4]:
+        return "Flowering period (rainfall critical)"
+    elif month in [5, 6, 7]:
+        return "Fruit development"
+    elif month in [8, 9]:
+        return "Harvest season"
+    else:
+        return "Off-season / dry period"
+
+
+def _get_cashew_stage(month):
+    if month in [12, 1, 2]:
+        return "Flowering period"
+    elif month in [3, 4]:
+        return "Peak harvest season"
+    elif month == 5:
+        return "Late harvest"
+    else:
+        return "Off-season"
+
+
+def _get_monsoon_crop_stage(month):
+    if month in [6, 7]:
+        return "Sowing / early monsoon (critical)"
+    elif month in [8, 9]:
+        return "Growing season / peak monsoon"
+    elif month in [10, 11, 12]:
+        return "Harvest period"
+    else:
+        return "Off-season / pre-monsoon"
+
+
+def _get_cumin_stage(month):
+    if month in [10, 11]:
+        return "Cumin sowing (rabi season)"
+    elif month in [12, 1]:
+        return "Cumin growing period"
+    elif month in [2, 3]:
+        return "Cumin harvest"
+    elif month in [7, 8]:
+        return "Guar sowing (kharif season)"
+    elif month in [9, 10]:
+        return "Guar growing / harvest"
+    else:
+        return "Between seasons"
+
+
+def _get_turmeric_stage(month):
+    if month in [6, 7]:
+        return "Planting season"
+    elif month in [8, 9, 10, 11]:
+        return "Growing season (monsoon)"
+    elif month in [1, 2, 3]:
+        return "Harvest and curing"
+    else:
+        return "Pre-planting / processing"
+
+
+def _get_sesame_stage(month):
+    if month in [6, 7]:
+        return "Sowing period"
+    elif month in [8, 9]:
+        return "Growing season"
+    elif month in [10, 11]:
+        return "Harvest"
+    else:
+        return "Off-season"
+
+
+def _get_ginger_stage(month):
+    if month in [4, 5]:
+        return "Planting season"
+    elif month in [6, 7, 8, 9]:
+        return "Growing season (rainfall critical)"
+    elif month in [10, 11, 12]:
+        return "Harvest season"
+    else:
+        return "Dry ginger processing / off-season"
+
+
+# Build seasonal calendar now that stage functions are defined
+SEASONAL_CALENDAR.update({
+    "Cocoa": {
+        "key_dates": [
+            "Ghana main crop harvest: Oct-Mar",
+            "Ghana mid-crop: Jun-Aug",
+            "Rainy season (critical): Mar-Jul, Sep-Nov",
+            "Dry season / Harmattan: Dec-Feb",
+        ],
+        "current_stage": _get_cocoa_stage,
+    },
+    "Shea": {
+        "key_dates": [
+            "Shea flowering: Mar-Apr",
+            "Fruit development: May-Jul",
+            "Harvest: Jun-Sep",
+            "Rainy season: Apr-Oct",
+        ],
+        "current_stage": _get_shea_stage,
+    },
+    "Cashew": {
+        "key_dates": [
+            "Flowering: Dec-Feb",
+            "Fruit/nut development: Feb-Apr",
+            "Harvest: Feb-May (peak Mar-Apr)",
+            "Off-season: Jun-Nov",
+        ],
+        "current_stage": _get_cashew_stage,
+    },
+    "Castor/Guar": {
+        "key_dates": [
+            "Sowing (monsoon): Jun-Jul",
+            "Growing: Jul-Oct",
+            "Harvest: Oct-Dec",
+            "Indian monsoon: Jun-Sep (critical)",
+        ],
+        "current_stage": _get_monsoon_crop_stage,
+    },
+    "Cumin/Guar": {
+        "key_dates": [
+            "Cumin sowing (rabi): Oct-Nov",
+            "Cumin harvest: Feb-Mar",
+            "Guar sowing (kharif): Jul-Aug",
+            "Guar harvest: Oct-Nov",
+        ],
+        "current_stage": _get_cumin_stage,
+    },
+    "Turmeric": {
+        "key_dates": [
+            "Planting: Jun-Jul",
+            "Growing (monsoon): Jul-Nov",
+            "Harvest: Jan-Mar",
+            "Curing/drying: Feb-Apr",
+        ],
+        "current_stage": _get_turmeric_stage,
+    },
+    "Sesame": {
+        "key_dates": [
+            "Sowing: Jun-Jul",
+            "Growing: Jul-Sep",
+            "Harvest: Oct-Nov",
+            "Off-season: Dec-May",
+        ],
+        "current_stage": _get_sesame_stage,
+    },
+    "Ginger": {
+        "key_dates": [
+            "Planting: Apr-May",
+            "Growing (monsoon): Jun-Sep",
+            "Harvest: Oct-Dec",
+            "Dry ginger processing: Jan-Mar",
+        ],
+        "current_stage": _get_ginger_stage,
+    },
+})
+
 
 def ensure_dirs():
     for d in [DATA_DIR, REPORTS_DIR, CACHE_DIR]:
@@ -325,8 +524,224 @@ def analyze_point(point, recent, climatology):
     return analysis
 
 
+# ---------------------------------------------------------------------------
+# Price impact calculations
+# ---------------------------------------------------------------------------
+
+def calculate_price_impact(commodity, analyses_for_commodity, enso):
+    """Calculate estimated price impact based on anomaly severity."""
+    price_info = COMMODITY_PRICES.get(commodity, {})
+    current_price = price_info.get("price_usd_mt", 0)
+
+    # Gather all deviations from the latest month across monitoring points
+    worst_drought_dev = 0  # most negative
+    worst_excess_dev = 0   # most positive
+    alert_count = 0
+    severe_count = 0
+    total_points = len(analyses_for_commodity)
+    points_with_alerts = 0
+
+    for a in analyses_for_commodity:
+        if a["alerts"]:
+            points_with_alerts += 1
+        for alert in a["alerts"]:
+            alert_count += 1
+            if alert["severity"] == "alert":
+                severe_count += 1
+            dev = alert.get("deviation_pct", 0)
+            if dev < worst_drought_dev:
+                worst_drought_dev = dev
+            if dev > worst_excess_dev:
+                worst_excess_dev = dev
+
+    # Determine primary risk type and price impact
+    price_increase_low = 0
+    price_increase_high = 0
+    timeline = ""
+    risk_description = ""
+
+    abs_drought = abs(worst_drought_dev)
+
+    if abs_drought > 50:
+        price_increase_low = 40
+        price_increase_high = 80
+        timeline = "1-3 months"
+        risk_description = "Severe shortage risk"
+    elif abs_drought > 30:
+        price_increase_low = 20
+        price_increase_high = 40
+        timeline = "2-4 months"
+        risk_description = "High shortage risk"
+    elif abs_drought > 20:
+        price_increase_low = 10
+        price_increase_high = 20
+        timeline = "3-6 months"
+        risk_description = "Moderate shortage risk"
+
+    # Excess rainfall (disease risk, especially for cocoa)
+    if worst_excess_dev > 50 and commodity == "Cocoa":
+        excess_low = 15
+        excess_high = 30
+        excess_timeline = "3-5 months"
+        if price_increase_low < excess_low:
+            price_increase_low = excess_low
+            price_increase_high = excess_high
+            timeline = excess_timeline
+            risk_description = "Disease risk (black pod/excess moisture)"
+    elif worst_excess_dev > 50:
+        excess_low = 10
+        excess_high = 20
+        if price_increase_low < excess_low:
+            price_increase_low = excess_low
+            price_increase_high = excess_high
+            timeline = "3-6 months"
+            risk_description = "Flood/quality risk"
+
+    # ENSO overlay
+    enso_addition = 0
+    enso_note = ""
+    if enso and enso["phase"] == "El Nino" and commodity in EL_NINO_SENSITIVE:
+        enso_addition = 12  # midpoint of 10-15%
+        enso_note = f"El Nino ({enso['oni_value']:+.1f} ONI) adds 10-15% additional risk"
+        price_increase_low += 10
+        price_increase_high += 15
+
+    # Confidence level
+    if total_points > 0:
+        alert_ratio = points_with_alerts / total_points
+    else:
+        alert_ratio = 0
+
+    if alert_ratio >= 0.75 and severe_count >= 2:
+        confidence = "High"
+    elif alert_ratio >= 0.5 or severe_count >= 1:
+        confidence = "Medium"
+    else:
+        confidence = "Low"
+
+    # Calculate estimated future price
+    if price_increase_low > 0:
+        est_price_low = round(current_price * (1 + price_increase_low / 100))
+        est_price_high = round(current_price * (1 + price_increase_high / 100))
+    else:
+        est_price_low = current_price
+        est_price_high = current_price
+
+    return {
+        "current_price": current_price,
+        "unit": price_info.get("unit", "MT"),
+        "price_source": price_info.get("source", ""),
+        "est_price_low": est_price_low,
+        "est_price_high": est_price_high,
+        "price_increase_low_pct": price_increase_low,
+        "price_increase_high_pct": price_increase_high,
+        "timeline": timeline,
+        "risk_description": risk_description,
+        "confidence": confidence,
+        "enso_note": enso_note,
+        "historical_precedent": HISTORICAL_PRECEDENTS.get(commodity, ""),
+        "alert_count": alert_count,
+        "severe_count": severe_count,
+        "points_with_alerts": points_with_alerts,
+        "total_points": total_points,
+    }
+
+
+def get_recommendation(risk_level, commodity):
+    """Generate actionable recommendation text based on risk level."""
+    if risk_level == "high":
+        return {
+            "action": "Lock in supply NOW",
+            "detail": f"Secure {commodity} at current prices immediately. Contact Origin Direct for forward contracts covering the next 3-6 months. Current market conditions suggest significant upward price pressure.",
+            "urgency": "IMMEDIATE ACTION",
+            "icon": "alert",
+        }
+    elif risk_level == "medium":
+        return {
+            "action": "Monitor closely, consider securing inventory",
+            "detail": f"Consider securing 1-2 months of additional {commodity} inventory at current prices as a hedge. Review supply contracts and identify backup suppliers.",
+            "urgency": "ACTION RECOMMENDED",
+            "icon": "warning",
+        }
+    else:
+        return {
+            "action": "No immediate action needed",
+            "detail": f"{commodity} supply conditions are currently normal. Continue routine monitoring. Next assessment in 2 weeks.",
+            "urgency": "ROUTINE",
+            "icon": "ok",
+        }
+
+
+def get_seasonal_context(commodity, month=None):
+    """Get seasonal context for a commodity."""
+    if month is None:
+        month = datetime.utcnow().month
+
+    cal = SEASONAL_CALENDAR.get(commodity, {})
+    stage_fn = cal.get("current_stage")
+    current_stage = stage_fn(month) if stage_fn else "Unknown"
+
+    return {
+        "key_dates": cal.get("key_dates", []),
+        "current_stage": current_stage,
+    }
+
+
+def get_three_month_outlook(commodity, risk_level, enso, month=None):
+    """Generate a 3-month forward outlook."""
+    if month is None:
+        month = datetime.utcnow().month
+
+    months_ahead = []
+    month_names = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+                   "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+
+    for i in range(1, 4):
+        m = ((month - 1 + i) % 12) + 1
+        months_ahead.append(month_names[m - 1])
+
+    outlook_period = f"{months_ahead[0]}-{months_ahead[2]}"
+
+    # What to watch for
+    watch_items = []
+    if enso:
+        if abs(enso["oni_value"]) > 0.3:
+            watch_items.append(f"ENSO trend: currently {enso['phase']} ({enso['oni_value']:+.1f}). Watch for strengthening/weakening.")
+        else:
+            watch_items.append("ENSO near neutral. Watch for transition signals.")
+
+    # Commodity-specific watch items
+    if commodity == "Cocoa":
+        if month in [2, 3, 4]:
+            watch_items.append("Approaching main rainy season. Rainfall onset timing is critical for pod development.")
+        if month in [9, 10]:
+            watch_items.append("Main crop harvest starting. Watch for Harmattan onset timing.")
+    elif commodity in ["Castor/Guar", "Cumin/Guar", "Turmeric"]:
+        if month in [4, 5]:
+            watch_items.append("Indian monsoon forecast (IMD) due in April/May. Key driver for kharif crops.")
+        if month in [6, 7]:
+            watch_items.append("Monsoon onset and progression. Watch rainfall distribution across Gujarat/Rajasthan/Tamil Nadu.")
+    elif commodity == "Shea":
+        if month in [3, 4, 5]:
+            watch_items.append("Rainy season onset in Sahel belt. Early rains critical for shea flowering.")
+    elif commodity == "Cashew":
+        if month in [1, 2]:
+            watch_items.append("Cashew flowering underway. Dry conditions needed for good fruit set.")
+        if month in [3, 4]:
+            watch_items.append("Peak harvest. Watch for unexpected rain disrupting drying.")
+
+    if not watch_items:
+        watch_items.append("Continue routine satellite monitoring of growing regions.")
+
+    return {
+        "period": outlook_period,
+        "months": months_ahead,
+        "watch_items": watch_items,
+    }
+
+
 def assess_commodity_impacts(analyses, enso):
-    """Generate commodity-level impact assessments."""
+    """Generate commodity-level impact assessments with price impacts."""
     commodity_data = {}
     for a in analyses:
         c = a["commodity"]
@@ -336,6 +751,8 @@ def assess_commodity_impacts(analyses, enso):
         commodity_data[c]["alerts"].extend(a["alerts"])
 
     impacts = []
+    current_month = datetime.utcnow().month
+
     for commodity, data in sorted(commodity_data.items()):
         alert_count = len(data["alerts"])
         severe_count = sum(1 for a in data["alerts"] if a["severity"] == "alert")
@@ -366,12 +783,28 @@ def assess_commodity_impacts(analyses, enso):
         else:
             detail = f"Monitoring: {regions}. All regions within normal parameters.{enso_note}"
 
+        # Price impact calculation
+        price_impact = calculate_price_impact(commodity, data["analyses"], enso)
+
+        # Recommendation
+        recommendation = get_recommendation(risk_level, commodity)
+
+        # Seasonal context
+        seasonal = get_seasonal_context(commodity, current_month)
+
+        # 3-month outlook
+        outlook = get_three_month_outlook(commodity, risk_level, enso, current_month)
+
         impacts.append({
             "commodity": commodity,
             "risk_level": risk_level,
             "risk_label": risk_label,
             "detail": detail,
             "alert_count": alert_count,
+            "price_impact": price_impact,
+            "recommendation": recommendation,
+            "seasonal": seasonal,
+            "outlook": outlook,
         })
 
     impacts.sort(key=lambda x: {"high": 0, "medium": 1, "low": 2}[x["risk_level"]])
@@ -451,6 +884,11 @@ def build_report_context(analyses, enso, commodity_impacts):
     severity_order = {"alert": 0, "warning": 1}
     all_alerts.sort(key=lambda x: severity_order.get(x["severity"], 2))
 
+    # Summary stats
+    high_risk = sum(1 for c in commodity_impacts if c["risk_level"] == "high")
+    medium_risk = sum(1 for c in commodity_impacts if c["risk_level"] == "medium")
+    low_risk = sum(1 for c in commodity_impacts if c["risk_level"] == "low")
+
     return {
         "report_date": datetime.utcnow().strftime("%Y-%m-%d %H:%M UTC"),
         "data_period": data_period,
@@ -459,6 +897,15 @@ def build_report_context(analyses, enso, commodity_impacts):
         "region_groups": region_groups,
         "commodity_impacts": commodity_impacts,
         "map_points": project_points(analyses),
+        "summary_stats": {
+            "high_risk": high_risk,
+            "medium_risk": medium_risk,
+            "low_risk": low_risk,
+            "total_alerts": len(all_alerts),
+            "total_points": len(analyses),
+        },
+        "current_month": datetime.utcnow().month,
+        "current_year": datetime.utcnow().year,
     }
 
 
@@ -500,6 +947,7 @@ def save_json_results(analyses, enso, commodity_impacts):
 def main():
     print("=" * 60)
     print("  Origin Direct Trading - Satellite Crop Monitor")
+    print("  Commodity Supply Shortage Early Warning System")
     print("=" * 60)
     print()
 
@@ -544,7 +992,11 @@ def main():
     print("-" * 60)
     commodity_impacts = assess_commodity_impacts(analyses, enso)
     for ci in commodity_impacts:
+        pi = ci["price_impact"]
         print(f"  {ci['risk_label']:12s} | {ci['commodity']}: {ci['detail']}")
+        if pi["price_increase_low_pct"] > 0:
+            print(f"               Price impact: +{pi['price_increase_low_pct']}-{pi['price_increase_high_pct']}% within {pi['timeline']} ({pi['confidence']} confidence)")
+        print(f"               Action: {ci['recommendation']['action']}")
 
     # 4. Generate reports
     print("\n" + "-" * 60)
