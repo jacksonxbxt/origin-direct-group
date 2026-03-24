@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Supply Intelligence Report - {{ report_date }}</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -411,66 +414,19 @@
             margin-top: 4px;
         }
 
-        /* Map */
+        /* Leaflet Map */
         .map-wrapper {
             background: #fff;
             border: 1px solid #e0ddd0;
             border-radius: 8px;
             padding: 20px;
         }
-        .map-container {
-            position: relative;
+        #satellite-map {
             width: 100%;
-            padding-top: 45%;
-            background: #f0efe8;
+            height: 500px;
             border-radius: 6px;
-            overflow: hidden;
             border: 1px solid #e0ddd0;
-        }
-        /* Simple continent outlines via SVG background */
-        .map-container::before {
-            content: "";
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 500'%3E%3C!-- Africa --%3E%3Cpath d='M 150 180 Q 140 200 135 230 Q 130 260 140 290 Q 150 310 165 330 Q 155 350 160 370 Q 175 380 185 365 Q 195 345 200 320 Q 210 290 205 260 Q 200 230 195 210 Q 190 190 180 180 Q 170 175 155 178 Z' fill='%23e0ddd0' stroke='%23ccc' stroke-width='1'/%3E%3C!-- India --%3E%3Cpath d='M 680 170 Q 690 180 695 200 Q 700 220 695 245 Q 685 265 675 280 Q 670 260 665 240 Q 660 220 665 200 Q 670 180 680 170 Z' fill='%23e0ddd0' stroke='%23ccc' stroke-width='1'/%3E%3C/svg%3E");
-            background-size: cover;
-            opacity: 0.5;
-        }
-        .map-point {
-            position: absolute;
-            width: 14px;
-            height: 14px;
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
-            border: 2px solid white;
-            box-shadow: 0 1px 4px rgba(0,0,0,0.3);
-            cursor: pointer;
-            z-index: 2;
-            transition: transform 0.15s;
-        }
-        .map-point:hover {
-            transform: translate(-50%, -50%) scale(1.5);
-            z-index: 10;
-        }
-        .map-point-ok { background: #27804a; }
-        .map-point-warning { background: #d4860b; }
-        .map-point-alert { background: #c0392b; }
-        .map-point-no_data { background: #999; }
-        .map-point:hover .map-tooltip { display: block; }
-        .map-tooltip {
-            display: none;
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: #1a2e1a;
-            color: white;
-            padding: 6px 12px;
-            border-radius: 4px;
-            white-space: nowrap;
-            font-size: 0.75em;
-            z-index: 20;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            z-index: 1;
         }
         .map-legend {
             display: flex;
@@ -488,6 +444,23 @@
             width: 10px;
             height: 10px;
             border-radius: 50%;
+        }
+        /* Pulse animation for high-risk markers */
+        @keyframes pulse-ring {
+            0% { transform: scale(1); opacity: 1; }
+            80% { transform: scale(2.5); opacity: 0; }
+            100% { transform: scale(2.5); opacity: 0; }
+        }
+        .pulse-marker {
+            position: relative;
+        }
+        .pulse-marker::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            border-radius: 50%;
+            border: 2px solid #c0392b;
+            animation: pulse-ring 1.5s ease-out infinite;
         }
 
         /* Data tables */
@@ -645,6 +618,7 @@
             .price-impact { grid-template-columns: 1fr; }
             .summary-row { grid-template-columns: repeat(2, 1fr); }
             .enso-card { flex-direction: column; text-align: center; }
+            #satellite-map { height: 350px; }
         }
     </style>
 </head>
@@ -829,18 +803,11 @@
     </div>
     {% endif %}
 
-    <!-- Map -->
+    <!-- Interactive Satellite Map -->
     <div class="section">
-        <div class="section-title">Monitoring Points</div>
+        <div class="section-title">Monitoring Points - Satellite View</div>
         <div class="map-wrapper">
-            <div class="map-container">
-                {% for point in map_points %}
-                <div class="map-point map-point-{{ point.status }}"
-                     style="left: {{ point.x }}%; top: {{ point.y }}%;">
-                    <div class="map-tooltip">{{ point.name }} ({{ point.commodity }}) &mdash; {{ point.status|upper }}</div>
-                </div>
-                {% endfor %}
-            </div>
+            <div id="satellite-map"></div>
             <div class="map-legend">
                 <div class="map-legend-item"><span class="legend-dot" style="background:#27804a;"></span> Normal</div>
                 <div class="map-legend-item"><span class="legend-dot" style="background:#d4860b;"></span> Watch</div>
@@ -916,6 +883,8 @@
     </div>
 </footer>
 
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
 <script>
 function toggleCard(id) {
     var card = document.getElementById(id);
@@ -923,7 +892,158 @@ function toggleCard(id) {
         card.classList.toggle('expanded');
     }
 }
-// Expand all cards with high risk by default (already done via class in template)
+
+// --- Interactive Satellite Map ---
+(function() {
+    // Monitoring point data embedded from Jinja2
+    var mapPoints = [
+        {% for point in map_points %}
+        {
+            name: {{ point.name | tojson }},
+            commodity: {{ point.commodity | tojson }},
+            status: {{ point.status | tojson }},
+            lat: {{ point.lat }},
+            lon: {{ point.lon }},
+            risk_level: {{ point.risk_level | tojson }},
+            rainfall_anomaly: {{ point.rainfall_anomaly }},
+            price_impact: {{ point.price_impact | tojson }},
+            alert_count: {{ point.alert_count }}
+        }{% if not loop.last %},{% endif %}
+        {% endfor %}
+    ];
+
+    // Initialize map centered on Africa/India view
+    var map = L.map('satellite-map', {
+        center: [5, 10],
+        zoom: 3,
+        minZoom: 2,
+        maxZoom: 15
+    });
+
+    // Tile layers
+    var satellite = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+        attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community',
+        maxZoom: 18
+    });
+
+    var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        maxZoom: 19
+    });
+
+    // Default to satellite view
+    satellite.addTo(map);
+
+    // Layer control
+    L.control.layers({
+        'Satellite': satellite,
+        'Street Map': osm
+    }, null, { position: 'topright' }).addTo(map);
+
+    // Color mapping
+    function riskColor(riskLevel, status) {
+        if (riskLevel === 'no_data' || status === 'no_data') return '#999999';
+        if (riskLevel === 'high' || status === 'alert') return '#c0392b';
+        if (riskLevel === 'medium' || status === 'warning') return '#d4860b';
+        return '#27804a';
+    }
+
+    function statusLabel(status) {
+        var labels = { 'ok': 'Normal', 'warning': 'Watch', 'alert': 'Alert', 'no_data': 'No Data' };
+        return labels[status] || status;
+    }
+
+    // Marker cluster group
+    var markers = L.markerClusterGroup({
+        maxClusterRadius: 30,
+        spiderfyOnMaxZoom: true,
+        showCoverageOnHover: false,
+        iconCreateFunction: function(cluster) {
+            var children = cluster.getAllChildMarkers();
+            var hasHigh = children.some(function(m) { return m.options.riskLevel === 'high'; });
+            var hasMedium = children.some(function(m) { return m.options.riskLevel === 'medium'; });
+            var color = hasHigh ? '#c0392b' : (hasMedium ? '#d4860b' : '#27804a');
+            return L.divIcon({
+                html: '<div style="background:' + color + ';color:white;border-radius:50%;width:36px;height:36px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;border:3px solid white;box-shadow:0 2px 6px rgba(0,0,0,0.4);">' + children.length + '</div>',
+                className: '',
+                iconSize: [36, 36],
+                iconAnchor: [18, 18]
+            });
+        }
+    });
+
+    // Add markers and region circles
+    mapPoints.forEach(function(pt) {
+        var color = riskColor(pt.risk_level, pt.status);
+        var isHigh = (pt.risk_level === 'high' || pt.status === 'alert');
+
+        // Growing region circle (~50km radius)
+        L.circle([pt.lat, pt.lon], {
+            radius: 50000,
+            color: color,
+            fillColor: color,
+            fillOpacity: 0.12,
+            weight: 1,
+            opacity: 0.4
+        }).addTo(map);
+
+        // Custom circle marker icon
+        var size = isHigh ? 18 : 14;
+        var pulseHtml = isHigh
+            ? '<div style="position:relative;width:' + size + 'px;height:' + size + 'px;">' +
+              '<div style="position:absolute;top:0;left:0;width:100%;height:100%;background:' + color + ';border-radius:50%;border:2px solid white;box-shadow:0 1px 4px rgba(0,0,0,0.4);z-index:2;"></div>' +
+              '<div style="position:absolute;top:-4px;left:-4px;width:' + (size+8) + 'px;height:' + (size+8) + 'px;border-radius:50%;border:2px solid ' + color + ';animation:pulse-ring 1.5s ease-out infinite;z-index:1;"></div>' +
+              '</div>'
+            : '<div style="width:' + size + 'px;height:' + size + 'px;background:' + color + ';border-radius:50%;border:2px solid white;box-shadow:0 1px 4px rgba(0,0,0,0.4);"></div>';
+
+        var icon = L.divIcon({
+            html: pulseHtml,
+            className: '',
+            iconSize: [size + (isHigh ? 8 : 0), size + (isHigh ? 8 : 0)],
+            iconAnchor: [(size + (isHigh ? 8 : 0)) / 2, (size + (isHigh ? 8 : 0)) / 2]
+        });
+
+        // Popup content
+        var anomalyClass = pt.rainfall_anomaly < -30 ? 'color:#c0392b;font-weight:700' :
+                           pt.rainfall_anomaly > 50 ? 'color:#c0392b;font-weight:700' :
+                           pt.rainfall_anomaly < -15 || pt.rainfall_anomaly > 30 ? 'color:#d4860b;font-weight:700' :
+                           'color:#27804a;font-weight:700';
+
+        var popupHtml = '<div style="font-family:-apple-system,BlinkMacSystemFont,sans-serif;min-width:200px;">' +
+            '<div style="font-weight:700;font-size:14px;color:#1a2e1a;margin-bottom:4px;">' + pt.name + '</div>' +
+            '<div style="font-size:12px;color:#777;margin-bottom:8px;">' + pt.commodity + '</div>' +
+            '<div style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:11px;font-weight:700;text-transform:uppercase;' +
+            'background:' + (pt.status === 'alert' ? '#fdecea' : pt.status === 'warning' ? '#fef5e7' : '#eafaf1') + ';' +
+            'color:' + color + ';">' + statusLabel(pt.status) + '</div>' +
+            '<div style="margin-top:8px;font-size:12px;">' +
+            '<div style="display:flex;justify-content:space-between;padding:3px 0;border-bottom:1px solid #f0ede0;">' +
+            '<span style="color:#888;">Rainfall Anomaly</span>' +
+            '<span style="' + anomalyClass + '">' + (pt.rainfall_anomaly > 0 ? '+' : '') + pt.rainfall_anomaly + '%</span></div>';
+
+        if (pt.price_impact) {
+            popupHtml += '<div style="display:flex;justify-content:space-between;padding:3px 0;border-bottom:1px solid #f0ede0;">' +
+                '<span style="color:#888;">Price Impact</span>' +
+                '<span style="color:#c0392b;font-weight:600;">' + pt.price_impact + '</span></div>';
+        }
+
+        if (pt.alert_count > 0) {
+            popupHtml += '<div style="display:flex;justify-content:space-between;padding:3px 0;">' +
+                '<span style="color:#888;">Active Alerts</span>' +
+                '<span style="color:#c0392b;font-weight:600;">' + pt.alert_count + '</span></div>';
+        }
+
+        popupHtml += '</div></div>';
+
+        var marker = L.marker([pt.lat, pt.lon], {
+            icon: icon,
+            riskLevel: pt.risk_level
+        }).bindPopup(popupHtml, { maxWidth: 280 });
+
+        markers.addLayer(marker);
+    });
+
+    map.addLayer(markers);
+})();
 </script>
 
 </body>

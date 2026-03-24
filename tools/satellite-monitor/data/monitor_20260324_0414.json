@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-03-24T04:15:47.192858",
+  "generated_utc": "2026-03-24T04:14:50.458557",
   "enso": {
     "season": "DJF 2026",
     "oni_value": -0.39,
@@ -10,7 +10,7 @@
       "commodity": "Cocoa",
       "risk_level": "high",
       "risk_label": "HIGH RISK",
-      "detail": "Monitoring: Ashanti, Ghana, Western, Ghana, Cross River, Nigeria, Ondo, Nigeria. Issues: severe drought, excess rainfall (4 alerts).",
+      "detail": "Monitoring: Ashanti, Ghana, Western, Ghana, Cross River, Nigeria, Ondo, Nigeria. Issues: excess rainfall, severe drought (4 alerts).",
       "alert_count": 4,
       "price_impact": {
         "current_price": 8500,
@@ -62,7 +62,7 @@
       "commodity": "Turmeric",
       "risk_level": "high",
       "risk_label": "HIGH RISK",
-      "detail": "Monitoring: Tamil Nadu, India. Issues: severe drought, excess rainfall (3 alerts).",
+      "detail": "Monitoring: Tamil Nadu, India. Issues: excess rainfall, severe drought (3 alerts).",
       "alert_count": 3,
       "price_impact": {
         "current_price": 4500,

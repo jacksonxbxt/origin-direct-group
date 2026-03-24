@@ -815,23 +815,48 @@ def assess_commodity_impacts(analyses, enso):
 # Map projection (simple Mercator-ish for the report)
 # ---------------------------------------------------------------------------
 
-def project_points(analyses):
-    """Convert lat/lon to x/y percentages for the map div."""
-    # Our points span roughly: lat 5-27, lon -3 to 79
-    # Add padding
-    min_lon, max_lon = -5, 82
-    min_lat, max_lat = 3, 29
+def project_points(analyses, commodity_impacts=None):
+    """Build map point data with lat/lon and enriched info for Leaflet markers."""
+    # Build a lookup from commodity to risk_level and price impact
+    commodity_lookup = {}
+    if commodity_impacts:
+        for ci in commodity_impacts:
+            commodity_lookup[ci["commodity"]] = ci
 
     points = []
     for a in analyses:
-        x_pct = ((a["lon"] - min_lon) / (max_lon - min_lon)) * 100
-        y_pct = (1 - (a["lat"] - min_lat) / (max_lat - min_lat)) * 100  # invert y
+        # Determine risk level from commodity impacts or fall back to status
+        ci = commodity_lookup.get(a["commodity"], {})
+        risk_level = ci.get("risk_level", "low")
+        if a["status"] == "no_data":
+            risk_level = "no_data"
+        elif a["status"] == "alert":
+            risk_level = "high"
+        elif a["status"] == "warning":
+            risk_level = "medium"
+
+        # Get latest month rainfall anomaly
+        rainfall_anomaly = 0
+        if a["months"]:
+            latest_key = max(a["months"].keys())
+            rainfall_anomaly = a["months"][latest_key].get("precip_deviation", 0)
+
+        # Price impact summary
+        pi = ci.get("price_impact", {})
+        price_impact_str = ""
+        if pi.get("price_increase_low_pct", 0) > 0:
+            price_impact_str = f"+{pi['price_increase_low_pct']}-{pi['price_increase_high_pct']}% in {pi.get('timeline', 'N/A')}"
+
         points.append({
             "name": a["name"],
             "commodity": a["commodity"],
             "status": a["status"],
-            "x": round(x_pct, 1),
-            "y": round(y_pct, 1),
+            "lat": a["lat"],
+            "lon": a["lon"],
+            "risk_level": risk_level,
+            "rainfall_anomaly": round(rainfall_anomaly, 1),
+            "price_impact": price_impact_str,
+            "alert_count": len(a.get("alerts", [])),
         })
     return points
 
@@ -896,7 +921,7 @@ def build_report_context(analyses, enso, commodity_impacts):
         "alerts": all_alerts,
         "region_groups": region_groups,
         "commodity_impacts": commodity_impacts,
-        "map_points": project_points(analyses),
+        "map_points": project_points(analyses, commodity_impacts),
         "summary_stats": {
             "high_risk": high_risk,
             "medium_risk": medium_risk,
