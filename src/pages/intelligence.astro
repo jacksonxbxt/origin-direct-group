@@ -1,0 +1,1011 @@
+---
+import "../styles/global.css";
+
+const siteUrl = "https://origindirectgroup.com";
+const canonicalUrl = new URL("/intelligence", siteUrl).href;
+const pageTitle = "LIVE Commodity Intelligence Dashboard - Global Supply Monitor | Origin Direct";
+const pageDescription = "Free real-time commodity supply intelligence. Track cocoa, shea butter, cashew, sesame, coffee, palm oil, wheat and 20+ commodities worldwide. Satellite-powered shortage alerts.";
+
+const products = [
+  { name: "Shea Butter", slug: "shea-butter" },
+  { name: "Cocoa", slug: "cocoa" },
+  { name: "Cashew Nuts", slug: "cashew-nuts" },
+  { name: "Hookah Charcoal", slug: "hookah-charcoal" },
+  { name: "Hibiscus", slug: "hibiscus" },
+  { name: "Sesame Seeds", slug: "sesame-seeds" },
+  { name: "Moringa", slug: "moringa" },
+  { name: "Ginger", slug: "ginger" },
+];
+
+const navLinks = [
+  { name: "Prices", href: "/prices" },
+  { name: "Markets", href: "/markets" },
+  { name: "Guides", href: "/guides" },
+  { name: "About", href: "/about" },
+  { name: "Blog", href: "/blog" },
+];
+
+const webAppSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Origin Direct Commodity Intelligence Dashboard",
+  "url": canonicalUrl,
+  "description": pageDescription,
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Origin Direct Group",
+    "url": siteUrl
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What commodities are tracked on this dashboard?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We track over 30 commodities worldwide including cocoa, shea butter, cashew nuts, sesame seeds, coffee (Arabica and Robusta), palm oil, wheat, rice, sugar, vanilla, black pepper, cardamom, and many more. Our own products from West Africa and India are highlighted with supply risk indicators."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is the supply risk calculated?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Supply risk is calculated using NASA POWER satellite data including rainfall, NDVI vegetation indices, temperature anomalies, and ENSO climate patterns. We compare current conditions against 10+ year historical baselines for each growing region and assess the likelihood and severity of supply disruptions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How often is the data updated?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The dashboard data is updated daily at 06:00 UTC. Satellite weather data is refreshed from NASA POWER, and risk levels are recalculated based on the latest conditions in each monitored growing region."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this commodity intelligence dashboard free to use?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, this dashboard is completely free. No login, no paywall. We provide this as a service to the commodity trading community. When you need to source commodities directly from West Africa or India, Origin Direct Group can help."
+      }
+    }
+  ]
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="author" content="Origin Direct Group" />
+    <meta name="theme-color" content="#0a0f1a" />
+
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDescription} />
+    <link rel="canonical" href={canonicalUrl} />
+
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDescription} />
+    <meta property="og:image" content={`${siteUrl}/og-intelligence.jpg`} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Origin Direct Group" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={pageDescription} />
+    <meta name="twitter:image" content={`${siteUrl}/og-intelligence.jpg`} />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <script type="application/ld+json" set:html={JSON.stringify(webAppSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </head>
+
+  <body class="bg-[#0a0f1a] text-white font-sans min-h-screen">
+
+    <!-- Dark Header -->
+    <header id="intel-header" class="fixed top-0 left-0 right-0 z-50 bg-[#0a0f1a]/90 backdrop-blur-xl border-b border-white/5">
+      <div class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+          <a href="/" class="flex items-center gap-2 group">
+            <svg class="w-7 h-7 text-emerald-400 group-hover:text-emerald-300 transition-colors" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M16 2C16 2 8 8 8 16c0 5.5 3.6 10 8 10s8-4.5 8-10c0-8-8-14-8-14z" fill="currentColor" opacity="0.2"/>
+              <path d="M16 4c0 0-6 5-6 12 0 4.4 2.7 8 6 8s6-3.6 6-8c0-7-6-12-6-12z" fill="currentColor" opacity="0.4"/>
+              <path d="M16 8c0 0-4 3.5-4 8 0 3 1.8 5.5 4 5.5s4-2.5 4-5.5c0-4.5-4-8-4-8z" fill="currentColor"/>
+            </svg>
+            <span class="text-lg font-bold tracking-tight text-white">
+              ORIGIN <span class="font-medium text-emerald-400">DIRECT</span>
+            </span>
+          </a>
+
+          <nav class="hidden lg:flex items-center gap-6">
+            <div class="relative" id="intel-products-dropdown">
+              <button id="intel-products-btn" class="flex items-center gap-1 text-sm font-medium text-gray-300 hover:text-white transition-colors py-2">
+                Products
+                <svg class="w-4 h-4 transition-transform" id="intel-products-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div id="intel-products-menu" class="absolute top-full left-0 pt-2 opacity-0 invisible pointer-events-none transition-all duration-200">
+                <div class="bg-[#141a2a] rounded-xl shadow-2xl border border-white/10 py-3 w-56">
+                  {products.map((product) => (
+                    <a href={`/products/${product.slug}`} class="block px-5 py-2.5 text-sm text-gray-300 hover:bg-white/5 hover:text-white transition-colors">
+                      {product.name}
+                    </a>
+                  ))}
+                  <hr class="my-2 border-white/10" />
+                  <a href="/products" class="block px-5 py-2.5 text-sm font-medium text-emerald-400 hover:bg-white/5 transition-colors">
+                    View All Products
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {navLinks.map((link) => (
+              <a href={link.href} class="text-sm font-medium text-gray-300 hover:text-white transition-colors">
+                {link.name}
+              </a>
+            ))}
+
+            <a href="/quote" class="inline-flex items-center px-4 py-2 bg-emerald-600 text-white text-sm font-semibold rounded-lg hover:bg-emerald-500 transition-colors">
+              Request Quote
+            </a>
+          </nav>
+
+          <button id="intel-mobile-btn" class="lg:hidden p-2 text-gray-300 hover:text-white transition-colors" aria-label="Toggle menu">
+            <svg id="intel-menu-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            <svg id="intel-menu-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile menu -->
+      <div id="intel-mobile-menu" class="lg:hidden hidden bg-[#0a0f1a] border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 py-4 space-y-1">
+          <a href="/products" class="block px-3 py-3 text-sm font-medium text-gray-300 hover:bg-white/5 rounded-lg">Products</a>
+          {navLinks.map((link) => (
+            <a href={link.href} class="block px-3 py-3 text-sm font-medium text-gray-300 hover:bg-white/5 rounded-lg">
+              {link.name}
+            </a>
+          ))}
+          <div class="pt-3">
+            <a href="/quote" class="block w-full text-center px-5 py-3 bg-emerald-600 text-white text-sm font-semibold rounded-lg hover:bg-emerald-500 transition-colors">
+              Request Quote
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Spacer -->
+    <div class="h-16"></div>
+
+    <main>
+      <!-- Hero Bar -->
+      <section class="bg-gradient-to-r from-[#0a0f1a] via-[#0f1a2e] to-[#0a0f1a] border-b border-white/5 py-6 sm:py-8">
+        <div class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+            <div>
+              <div class="flex items-center gap-3 mb-2">
+                <span class="relative flex h-2.5 w-2.5">
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+                </span>
+                <span class="text-xs font-bold tracking-widest uppercase text-emerald-400">Live Intelligence</span>
+                <span class="text-xs text-gray-500">Updated daily at 06:00 UTC</span>
+              </div>
+              <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight">
+                Global Commodity Intelligence Dashboard
+              </h1>
+              <p class="text-sm sm:text-base text-gray-400 mt-1 max-w-2xl">
+                Track 30+ commodities worldwide. Satellite-powered risk analysis for cocoa, coffee, palm oil, spices, nuts, and more.
+              </p>
+            </div>
+            <div class="flex items-center gap-3 shrink-0">
+              <div class="hidden sm:flex items-center gap-2 px-3 py-1.5 bg-red-500/10 border border-red-500/20 rounded-lg">
+                <span class="text-xs font-bold text-red-400">3 HIGH RISK</span>
+              </div>
+              <div class="hidden sm:flex items-center gap-2 px-3 py-1.5 bg-amber-500/10 border border-amber-500/20 rounded-lg">
+                <span class="text-xs font-bold text-amber-400">5 ELEVATED</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Filter Bar -->
+      <section class="sticky top-16 z-40 bg-[#0d1320]/95 backdrop-blur-xl border-b border-white/5">
+        <div class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 py-3">
+          <div class="flex flex-col sm:flex-row gap-3">
+            <!-- Search -->
+            <div class="relative flex-1 max-w-md">
+              <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
+              <input
+                type="text"
+                id="commodity-search"
+                placeholder="Search commodities..."
+                class="w-full pl-10 pr-4 py-2 bg-white/5 border border-white/10 rounded-lg text-sm text-white placeholder-gray-500 focus:outline-none focus:border-emerald-500/50 focus:ring-1 focus:ring-emerald-500/30 transition-colors"
+              />
+            </div>
+
+            <!-- Category Filters -->
+            <div class="flex items-center gap-2 overflow-x-auto pb-1 sm:pb-0 scrollbar-hide">
+              <button data-category="all" class="category-btn active shrink-0 px-3 py-1.5 text-xs font-semibold rounded-full border transition-all duration-200">
+                All
+              </button>
+              <button data-category="agriculture" class="category-btn shrink-0 px-3 py-1.5 text-xs font-semibold rounded-full border transition-all duration-200">
+                Agriculture
+              </button>
+              <button data-category="oils" class="category-btn shrink-0 px-3 py-1.5 text-xs font-semibold rounded-full border transition-all duration-200">
+                Oils & Fats
+              </button>
+              <button data-category="spices" class="category-btn shrink-0 px-3 py-1.5 text-xs font-semibold rounded-full border transition-all duration-200">
+                Spices
+              </button>
+              <button data-category="nuts" class="category-btn shrink-0 px-3 py-1.5 text-xs font-semibold rounded-full border transition-all duration-200">
+                Nuts & Seeds
+              </button>
+              <button data-category="industrial" class="category-btn shrink-0 px-3 py-1.5 text-xs font-semibold rounded-full border transition-all duration-200">
+                Industrial
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Globe + Commodity Cards -->
+      <section class="border-b border-white/5">
+        <div class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 py-6">
+          <div class="grid lg:grid-cols-[1fr_420px] gap-6">
+            <!-- Globe -->
+            <div class="relative bg-[#060b16] rounded-2xl border border-white/5 overflow-hidden" style="min-height: 550px;">
+              <div id="globe-container" style="width: 100%; height: 550px; position: relative;"></div>
+              <!-- Globe overlay info -->
+              <div class="absolute top-4 left-4 z-10">
+                <div class="bg-black/60 backdrop-blur-md rounded-lg px-3 py-2 border border-white/10">
+                  <div class="text-[10px] uppercase tracking-widest text-gray-500 mb-0.5">Trade Routes</div>
+                  <div class="text-sm font-semibold text-white" id="globe-route-count">Loading...</div>
+                </div>
+              </div>
+              <div class="absolute bottom-4 left-4 z-10 flex gap-2 flex-wrap">
+                <span class="inline-flex items-center gap-1.5 px-2 py-1 bg-black/60 backdrop-blur-md rounded text-[10px] text-gray-400 border border-white/10">
+                  <span class="w-2 h-0.5 bg-emerald-400 rounded-full"></span> Agriculture
+                </span>
+                <span class="inline-flex items-center gap-1.5 px-2 py-1 bg-black/60 backdrop-blur-md rounded text-[10px] text-gray-400 border border-white/10">
+                  <span class="w-2 h-0.5 bg-amber-400 rounded-full"></span> Oils & Fats
+                </span>
+                <span class="inline-flex items-center gap-1.5 px-2 py-1 bg-black/60 backdrop-blur-md rounded text-[10px] text-gray-400 border border-white/10">
+                  <span class="w-2 h-0.5 bg-rose-400 rounded-full"></span> Spices
+                </span>
+                <span class="inline-flex items-center gap-1.5 px-2 py-1 bg-black/60 backdrop-blur-md rounded text-[10px] text-gray-400 border border-white/10">
+                  <span class="w-2 h-0.5 bg-sky-400 rounded-full"></span> Nuts
+                </span>
+                <span class="inline-flex items-center gap-1.5 px-2 py-1 bg-black/60 backdrop-blur-md rounded text-[10px] text-gray-400 border border-white/10">
+                  <span class="w-2 h-0.5 bg-purple-400 rounded-full"></span> Industrial
+                </span>
+              </div>
+            </div>
+
+            <!-- Commodity Cards (scrollable) -->
+            <div class="flex flex-col">
+              <div class="flex items-center justify-between mb-3">
+                <h2 class="text-sm font-semibold text-gray-400 uppercase tracking-wider">Commodities</h2>
+                <span class="text-xs text-gray-500" id="commodity-count">33 tracked</span>
+              </div>
+              <div id="commodity-cards" class="space-y-2 overflow-y-auto pr-1" style="max-height: 510px;">
+                <!-- Cards injected by JS -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Worldwide Price Table -->
+      <section class="py-8 sm:py-12">
+        <div class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
+            <div>
+              <h2 class="text-xl sm:text-2xl font-bold text-white">Worldwide Price Table</h2>
+              <p class="text-sm text-gray-500 mt-1">Click column headers to sort. Our products are highlighted.</p>
+            </div>
+            <div class="text-xs text-gray-600">Prices in USD. Indicative market rates, not live quotes.</div>
+          </div>
+
+          <div class="overflow-x-auto rounded-xl border border-white/5">
+            <table class="w-full text-sm" id="price-table">
+              <thead>
+                <tr class="bg-[#111827] text-gray-400 text-xs uppercase tracking-wider">
+                  <th class="px-4 py-3 text-left cursor-pointer hover:text-white transition-colors select-none" data-sort="name">
+                    Commodity <span class="sort-arrow"></span>
+                  </th>
+                  <th class="px-4 py-3 text-left cursor-pointer hover:text-white transition-colors select-none" data-sort="category">
+                    Category <span class="sort-arrow"></span>
+                  </th>
+                  <th class="px-4 py-3 text-right cursor-pointer hover:text-white transition-colors select-none" data-sort="price">
+                    Price/MT <span class="sort-arrow"></span>
+                  </th>
+                  <th class="px-4 py-3 text-right cursor-pointer hover:text-white transition-colors select-none" data-sort="change">
+                    30d Change <span class="sort-arrow"></span>
+                  </th>
+                  <th class="px-4 py-3 text-center cursor-pointer hover:text-white transition-colors select-none" data-sort="risk">
+                    Risk <span class="sort-arrow"></span>
+                  </th>
+                  <th class="px-4 py-3 text-left cursor-pointer hover:text-white transition-colors select-none" data-sort="origin">
+                    Origin <span class="sort-arrow"></span>
+                  </th>
+                  <th class="px-4 py-3 text-center">
+                    <!-- actions -->
+                  </th>
+                </tr>
+              </thead>
+              <tbody id="price-table-body" class="divide-y divide-white/5">
+                <!-- Rows injected by JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="py-12 sm:py-16 bg-gradient-to-r from-emerald-900/30 via-emerald-800/20 to-emerald-900/30 border-y border-emerald-500/10">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 class="text-2xl sm:text-3xl font-bold text-white mb-3">Need to source these commodities?</h2>
+          <p class="text-gray-400 mb-6 max-w-xl mx-auto">
+            Origin Direct supplies cocoa, shea butter, cashew, sesame, spices, and more - direct from producers in Ghana, Nigeria, and India. Cut out the middlemen and save 15-40%.
+          </p>
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a href="/quote" class="inline-flex items-center gap-2 px-6 py-3 bg-emerald-600 text-white font-semibold rounded-lg hover:bg-emerald-500 transition-colors shadow-lg shadow-emerald-900/30">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+              Request a Quote
+            </a>
+            <a href="/products" class="inline-flex items-center gap-2 px-6 py-3 border border-white/20 text-white font-semibold rounded-lg hover:bg-white/5 transition-colors">
+              Browse All Products
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ Section (for SEO) -->
+      <section class="py-12 sm:py-16">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 class="text-xl font-bold text-white mb-8 text-center">Frequently Asked Questions</h2>
+          <div class="space-y-4" id="faq-list">
+            <details class="group bg-white/[0.03] border border-white/5 rounded-xl">
+              <summary class="flex items-center justify-between px-5 py-4 cursor-pointer text-sm font-semibold text-white list-none">
+                What commodities are tracked?
+                <svg class="w-4 h-4 text-gray-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </summary>
+              <div class="px-5 pb-4 text-sm text-gray-400 leading-relaxed">
+                We track over 30 commodities worldwide including cocoa, shea butter, cashew nuts, sesame seeds, moringa, hibiscus, ginger, turmeric, castor oil, guar gum, hookah charcoal, coffee (Arabica and Robusta), palm oil, coconut oil, soybean, wheat, rice, sugar, cotton, natural rubber, vanilla, black pepper, cardamom, cinnamon, cloves, macadamia, almonds, groundnuts, sunflower oil, olive oil, avocado oil, and gum arabic. Our own products from West Africa and India are highlighted with supply risk data and direct sourcing options.
+              </div>
+            </details>
+            <details class="group bg-white/[0.03] border border-white/5 rounded-xl">
+              <summary class="flex items-center justify-between px-5 py-4 cursor-pointer text-sm font-semibold text-white list-none">
+                How is the supply risk calculated?
+                <svg class="w-4 h-4 text-gray-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </summary>
+              <div class="px-5 pb-4 text-sm text-gray-400 leading-relaxed">
+                Supply risk is calculated using NASA POWER satellite data including rainfall, NDVI vegetation indices, temperature anomalies, and ENSO climate patterns. We compare current conditions against 10+ year historical baselines for each growing region and assess the likelihood and severity of supply disruptions based on crop calendars, growth stages, and historical yield data.
+              </div>
+            </details>
+            <details class="group bg-white/[0.03] border border-white/5 rounded-xl">
+              <summary class="flex items-center justify-between px-5 py-4 cursor-pointer text-sm font-semibold text-white list-none">
+                How often is the data updated?
+                <svg class="w-4 h-4 text-gray-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </summary>
+              <div class="px-5 pb-4 text-sm text-gray-400 leading-relaxed">
+                The dashboard data is updated daily at 06:00 UTC. Satellite weather data is refreshed from NASA POWER, and risk levels are recalculated based on the latest conditions in each monitored growing region across Ghana, Nigeria, India, and other key production areas.
+              </div>
+            </details>
+            <details class="group bg-white/[0.03] border border-white/5 rounded-xl">
+              <summary class="flex items-center justify-between px-5 py-4 cursor-pointer text-sm font-semibold text-white list-none">
+                Is this dashboard free?
+                <svg class="w-4 h-4 text-gray-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </summary>
+              <div class="px-5 pb-4 text-sm text-gray-400 leading-relaxed">
+                Yes, completely free. No login, no paywall, no email required. We share this intelligence because informed buyers make better supply chain decisions, and that benefits everyone. When you need to source commodities directly from producers, Origin Direct Group is here to help.
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#060b16] border-t border-white/5">
+      <div class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div class="flex items-center gap-2">
+            <svg class="w-6 h-6 text-emerald-400" viewBox="0 0 32 32" fill="none">
+              <path d="M16 2C16 2 8 8 8 16c0 5.5 3.6 10 8 10s8-4.5 8-10c0-8-8-14-8-14z" fill="currentColor" opacity="0.2"/>
+              <path d="M16 4c0 0-6 5-6 12 0 4.4 2.7 8 6 8s6-3.6 6-8c0-7-6-12-6-12z" fill="currentColor" opacity="0.4"/>
+              <path d="M16 8c0 0-4 3.5-4 8 0 3 1.8 5.5 4 5.5s4-2.5 4-5.5c0-4.5-4-8-4-8z" fill="currentColor"/>
+            </svg>
+            <span class="text-sm text-gray-500">&copy; 2026 Origin Direct Group B.V.</span>
+          </div>
+          <div class="flex items-center gap-6 text-sm text-gray-500">
+            <a href="/products" class="hover:text-gray-300 transition-colors">Products</a>
+            <a href="/about" class="hover:text-gray-300 transition-colors">About</a>
+            <a href="/quote" class="hover:text-gray-300 transition-colors">Request Quote</a>
+            <a href="/privacy" class="hover:text-gray-300 transition-colors">Privacy</a>
+            <a href="/terms" class="hover:text-gray-300 transition-colors">Terms</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Globe.gl from CDN -->
+    <script is:inline src="https://unpkg.com/globe.gl@2.35.0/dist/globe.gl.min.js"></script>
+
+    <script is:inline>
+      // ========================================
+      // COMMODITY DATABASE
+      // ========================================
+      const commodities = [
+        // OUR PRODUCTS
+        { name: "Cocoa Beans", category: "agriculture", price: 3500, unit: "MT", change: 12.5, risk: "high", origin: "Ghana/Nigeria", ours: true, slug: "cocoa", lat: 7.5, lng: -1.5 },
+        { name: "Shea Butter", category: "oils", price: 2800, unit: "MT", change: 8.2, risk: "elevated", origin: "Ghana", ours: true, slug: "shea-butter", lat: 9.5, lng: -1.0 },
+        { name: "Cashew Nuts (RCN)", category: "nuts", price: 1050, unit: "MT", change: 5.1, risk: "elevated", origin: "Ghana/Nigeria", ours: true, slug: "cashew-nuts", lat: 8.0, lng: 4.0 },
+        { name: "Cashew Kernels W320", category: "nuts", price: 6200, unit: "MT", change: 4.8, risk: "elevated", origin: "Ghana/Nigeria", ours: true, slug: "cashew-nuts", lat: 8.5, lng: 3.5 },
+        { name: "Hookah Charcoal", category: "industrial", price: 380, unit: "MT", change: -1.2, risk: "normal", origin: "Nigeria", ours: true, slug: "hookah-charcoal", lat: 9.0, lng: 7.5 },
+        { name: "Dried Hibiscus", category: "agriculture", price: 2600, unit: "MT", change: 3.4, risk: "normal", origin: "Nigeria", ours: true, slug: "hibiscus", lat: 12.0, lng: 8.5 },
+        { name: "Sesame Seeds", category: "agriculture", price: 1900, unit: "MT", change: 2.1, risk: "normal", origin: "Nigeria", ours: true, slug: "sesame-seeds", lat: 10.0, lng: 9.0 },
+        { name: "Moringa Powder", category: "agriculture", price: 5500, unit: "MT", change: 6.7, risk: "normal", origin: "Ghana/Nigeria", ours: true, slug: "moringa", lat: 9.0, lng: 1.5 },
+        { name: "Dried Ginger", category: "spices", price: 2500, unit: "MT", change: 4.3, risk: "watch", origin: "Nigeria", ours: true, slug: "ginger", lat: 10.5, lng: 7.4 },
+        { name: "Turmeric", category: "spices", price: 2000, unit: "MT", change: 15.8, risk: "high", origin: "India", ours: true, slug: null, lat: 13.0, lng: 80.0 },
+        { name: "Castor Oil", category: "oils", price: 1350, unit: "MT", change: 3.1, risk: "normal", origin: "India", ours: true, slug: null, lat: 23.0, lng: 72.6 },
+        { name: "Guar Gum", category: "industrial", price: 1450, unit: "MT", change: -2.3, risk: "normal", origin: "India", ours: true, slug: null, lat: 26.9, lng: 70.9 },
+        { name: "Gum Arabic", category: "industrial", price: 3200, unit: "MT", change: 6.7, risk: "elevated", origin: "Sudan/Nigeria", ours: true, slug: null, lat: 13.5, lng: 33.4 },
+
+        // WORLD COMMODITIES
+        { name: "Coffee Arabica", category: "agriculture", price: 4800, unit: "MT", change: 9.2, risk: "elevated", origin: "Brazil/Colombia", ours: false, slug: null, lat: -14.2, lng: -51.9 },
+        { name: "Coffee Robusta", category: "agriculture", price: 3200, unit: "MT", change: 11.4, risk: "elevated", origin: "Vietnam/Indonesia", ours: false, slug: null, lat: 14.0, lng: 108.0 },
+        { name: "Palm Oil (CPO)", category: "oils", price: 850, unit: "MT", change: -3.5, risk: "normal", origin: "Indonesia/Malaysia", ours: false, slug: null, lat: -2.5, lng: 118.0 },
+        { name: "Coconut Oil", category: "oils", price: 1200, unit: "MT", change: 2.8, risk: "normal", origin: "Philippines/Indonesia", ours: false, slug: null, lat: 12.9, lng: 121.8 },
+        { name: "Soybean", category: "agriculture", price: 380, unit: "MT", change: -1.8, risk: "normal", origin: "USA/Brazil/Argentina", ours: false, slug: null, lat: 39.8, lng: -98.6 },
+        { name: "Wheat", category: "agriculture", price: 220, unit: "MT", change: 4.1, risk: "watch", origin: "Russia/USA/Canada", ours: false, slug: null, lat: 55.7, lng: 37.6 },
+        { name: "Rice", category: "agriculture", price: 540, unit: "MT", change: 6.3, risk: "elevated", origin: "India/Thailand/Vietnam", ours: false, slug: null, lat: 20.6, lng: 79.0 },
+        { name: "Sugar (Raw)", category: "agriculture", price: 480, unit: "MT", change: 7.5, risk: "elevated", origin: "Brazil/India", ours: false, slug: null, lat: -15.8, lng: -47.9 },
+        { name: "Cotton", category: "industrial", price: 1800, unit: "MT", change: -0.9, risk: "normal", origin: "USA/India/China", ours: false, slug: null, lat: 35.0, lng: -100.0 },
+        { name: "Natural Rubber", category: "industrial", price: 1650, unit: "MT", change: 5.6, risk: "watch", origin: "Thailand/Indonesia", ours: false, slug: null, lat: 15.9, lng: 100.0 },
+        { name: "Vanilla", category: "spices", price: 45000, unit: "MT", change: -12.3, risk: "normal", origin: "Madagascar", ours: false, slug: null, lat: -18.8, lng: 47.5 },
+        { name: "Black Pepper", category: "spices", price: 5200, unit: "MT", change: 3.8, risk: "normal", origin: "Vietnam/India", ours: false, slug: null, lat: 10.8, lng: 106.7 },
+        { name: "Cardamom", category: "spices", price: 18000, unit: "MT", change: 8.9, risk: "elevated", origin: "Guatemala/India", ours: false, slug: null, lat: 14.6, lng: -90.5 },
+        { name: "Cinnamon", category: "spices", price: 3200, unit: "MT", change: 2.1, risk: "normal", origin: "Sri Lanka/Indonesia", ours: false, slug: null, lat: 7.9, lng: 80.8 },
+        { name: "Cloves", category: "spices", price: 8500, unit: "MT", change: 4.5, risk: "watch", origin: "Indonesia/Madagascar", ours: false, slug: null, lat: -3.6, lng: 128.1 },
+        { name: "Macadamia Nuts", category: "nuts", price: 12000, unit: "MT", change: 3.2, risk: "normal", origin: "Australia/South Africa", ours: false, slug: null, lat: -25.3, lng: 151.2 },
+        { name: "Almonds", category: "nuts", price: 5800, unit: "MT", change: -2.1, risk: "normal", origin: "USA/Spain/Australia", ours: false, slug: null, lat: 36.8, lng: -119.4 },
+        { name: "Groundnuts", category: "nuts", price: 1200, unit: "MT", change: 1.5, risk: "normal", origin: "China/India/Nigeria", ours: false, slug: null, lat: 35.9, lng: 104.2 },
+        { name: "Sunflower Oil", category: "oils", price: 950, unit: "MT", change: 3.8, risk: "normal", origin: "Ukraine/Russia/Argentina", ours: false, slug: null, lat: 48.4, lng: 31.2 },
+        { name: "Olive Oil", category: "oils", price: 7500, unit: "MT", change: 22.4, risk: "high", origin: "Spain/Italy/Greece", ours: false, slug: null, lat: 40.5, lng: -3.7 },
+        { name: "Avocado Oil", category: "oils", price: 8000, unit: "MT", change: 5.1, risk: "normal", origin: "Mexico/Kenya", ours: false, slug: null, lat: 23.6, lng: -102.6 },
+      ];
+
+      // ========================================
+      // TRADE ROUTES
+      // ========================================
+      const tradeRoutes = [
+        // Our routes
+        { from: [7.5, -1.5], to: [52.4, 4.9], category: "agriculture", label: "Cocoa: Ghana > Netherlands" },
+        { from: [9.0, 7.5], to: [40.7, -74.0], category: "agriculture", label: "Cocoa: Nigeria > USA" },
+        { from: [7.5, -1.5], to: [51.2, 6.8], category: "agriculture", label: "Cocoa: Ghana > Germany" },
+        { from: [9.5, -1.0], to: [52.4, 4.9], category: "oils", label: "Shea: Ghana > Netherlands" },
+        { from: [9.5, -1.0], to: [48.9, 2.3], category: "oils", label: "Shea: Ghana > France" },
+        { from: [8.0, 4.0], to: [20.6, 79.0], category: "nuts", label: "Cashew: Nigeria > India" },
+        { from: [8.0, 4.0], to: [14.0, 108.0], category: "nuts", label: "Cashew: Nigeria > Vietnam" },
+        { from: [9.0, 7.5], to: [25.3, 55.3], category: "industrial", label: "Charcoal: Nigeria > UAE" },
+        { from: [9.0, 7.5], to: [24.7, 46.7], category: "industrial", label: "Charcoal: Nigeria > Saudi Arabia" },
+        { from: [12.0, 8.5], to: [51.5, -0.1], category: "agriculture", label: "Hibiscus: Nigeria > UK" },
+        { from: [12.0, 8.5], to: [51.2, 6.8], category: "agriculture", label: "Hibiscus: Nigeria > Germany" },
+        { from: [10.0, 9.0], to: [35.7, 139.7], category: "agriculture", label: "Sesame: Nigeria > Japan" },
+        { from: [10.0, 9.0], to: [31.2, 121.5], category: "agriculture", label: "Sesame: Nigeria > China" },
+        { from: [10.5, 7.4], to: [51.5, -0.1], category: "spices", label: "Ginger: Nigeria > UK" },
+        { from: [13.0, 80.0], to: [40.7, -74.0], category: "spices", label: "Turmeric: India > USA" },
+
+        // World routes
+        { from: [-14.2, -51.9], to: [40.7, -74.0], category: "agriculture", label: "Coffee: Brazil > USA" },
+        { from: [-14.2, -51.9], to: [51.2, 6.8], category: "agriculture", label: "Coffee: Brazil > Germany" },
+        { from: [-14.2, -51.9], to: [35.7, 139.7], category: "agriculture", label: "Coffee: Brazil > Japan" },
+        { from: [14.0, 108.0], to: [51.2, 6.8], category: "agriculture", label: "Coffee: Vietnam > Germany" },
+        { from: [-2.5, 118.0], to: [20.6, 79.0], category: "oils", label: "Palm Oil: Indonesia > India" },
+        { from: [-2.5, 118.0], to: [35.9, 104.2], category: "oils", label: "Palm Oil: Indonesia > China" },
+        { from: [-2.5, 118.0], to: [52.5, 13.4], category: "oils", label: "Palm Oil: Indonesia > EU" },
+        { from: [20.6, 79.0], to: [9.0, 38.7], category: "agriculture", label: "Rice: India > Africa" },
+        { from: [15.9, 100.0], to: [25.0, 45.0], category: "agriculture", label: "Rice: Thailand > Middle East" },
+        { from: [-15.8, -47.9], to: [20.6, 79.0], category: "agriculture", label: "Sugar: Brazil > India" },
+        { from: [-15.8, -47.9], to: [35.9, 104.2], category: "agriculture", label: "Sugar: Brazil > China" },
+        { from: [55.7, 37.6], to: [30.0, 45.0], category: "agriculture", label: "Wheat: Russia > Middle East" },
+        { from: [39.8, -98.6], to: [9.0, 38.7], category: "agriculture", label: "Wheat: USA > Africa" },
+        { from: [40.5, -3.7], to: [40.7, -74.0], category: "oils", label: "Olive Oil: Spain > USA" },
+        { from: [40.5, -3.7], to: [35.7, 139.7], category: "oils", label: "Olive Oil: Spain > Japan" },
+        { from: [-18.8, 47.5], to: [48.9, 2.3], category: "spices", label: "Vanilla: Madagascar > France" },
+        { from: [-18.8, 47.5], to: [40.7, -74.0], category: "spices", label: "Vanilla: Madagascar > USA" },
+        { from: [14.6, -90.5], to: [25.0, 45.0], category: "spices", label: "Cardamom: Guatemala > Middle East" },
+        { from: [48.4, 31.2], to: [20.6, 79.0], category: "oils", label: "Sunflower Oil: Ukraine > India" },
+        { from: [48.4, 31.2], to: [35.9, 104.2], category: "oils", label: "Sunflower Oil: Ukraine > China" },
+      ];
+
+      // ========================================
+      // CATEGORY COLORS
+      // ========================================
+      const categoryColors = {
+        agriculture: { color: "#34d399", bg: "rgba(52,211,153,0.1)", border: "rgba(52,211,153,0.3)" },
+        oils: { color: "#fbbf24", bg: "rgba(251,191,36,0.1)", border: "rgba(251,191,36,0.3)" },
+        spices: { color: "#fb7185", bg: "rgba(251,113,133,0.1)", border: "rgba(251,113,133,0.3)" },
+        nuts: { color: "#38bdf8", bg: "rgba(56,189,248,0.1)", border: "rgba(56,189,248,0.3)" },
+        industrial: { color: "#a78bfa", bg: "rgba(167,139,250,0.1)", border: "rgba(167,139,250,0.3)" },
+      };
+
+      const categoryLabels = {
+        agriculture: "Agriculture",
+        oils: "Oils & Fats",
+        spices: "Spices",
+        nuts: "Nuts & Seeds",
+        industrial: "Industrial",
+      };
+
+      const riskConfig = {
+        high: { label: "HIGH", class: "bg-red-500/20 text-red-400 border-red-500/30" },
+        elevated: { label: "ELEVATED", class: "bg-amber-500/20 text-amber-400 border-amber-500/30" },
+        watch: { label: "WATCH", class: "bg-yellow-500/20 text-yellow-400 border-yellow-500/30" },
+        normal: { label: "NORMAL", class: "bg-emerald-500/15 text-emerald-400 border-emerald-500/30" },
+      };
+
+      const riskOrder = { high: 0, elevated: 1, watch: 2, normal: 3 };
+
+      // ========================================
+      // STATE
+      // ========================================
+      let activeCategory = "all";
+      let searchTerm = "";
+      let sortCol = "risk";
+      let sortDir = "asc";
+
+      function getFiltered() {
+        return commodities.filter(c => {
+          const matchCat = activeCategory === "all" || c.category === activeCategory;
+          const matchSearch = !searchTerm || c.name.toLowerCase().includes(searchTerm) || c.origin.toLowerCase().includes(searchTerm) || c.category.includes(searchTerm);
+          return matchCat && matchSearch;
+        });
+      }
+
+      function getSorted(list) {
+        const arr = [...list];
+        arr.sort((a, b) => {
+          let va, vb;
+          switch (sortCol) {
+            case "name": va = a.name; vb = b.name; break;
+            case "category": va = a.category; vb = b.category; break;
+            case "price": va = a.price; vb = b.price; break;
+            case "change": va = a.change; vb = b.change; break;
+            case "risk": va = riskOrder[a.risk]; vb = riskOrder[b.risk]; break;
+            case "origin": va = a.origin; vb = b.origin; break;
+            default: va = a.name; vb = b.name;
+          }
+          if (typeof va === "string") {
+            return sortDir === "asc" ? va.localeCompare(vb) : vb.localeCompare(va);
+          }
+          return sortDir === "asc" ? va - vb : vb - va;
+        });
+        return arr;
+      }
+
+      // ========================================
+      // SPARKLINE SVG GENERATOR
+      // ========================================
+      function sparkline(change) {
+        // Generate a fake but plausible 30-day sparkline based on the overall change
+        const pts = 20;
+        const seed = Math.abs(change * 137) % 100;
+        const vals = [];
+        let v = 50;
+        for (let i = 0; i < pts; i++) {
+          v += (change / pts) + Math.sin(seed + i * 0.7) * 2 + (Math.cos(seed * i * 0.3) * 1.5);
+          v = Math.max(5, Math.min(95, v));
+          vals.push(v);
+        }
+        // Normalize to 0-28 height range
+        const minV = Math.min(...vals);
+        const maxV = Math.max(...vals);
+        const range = maxV - minV || 1;
+        const normalized = vals.map(v => 28 - ((v - minV) / range) * 28);
+        const points = normalized.map((y, i) => `${(i / (pts - 1)) * 72},${y}`).join(" ");
+        const color = change >= 0 ? "#34d399" : "#f87171";
+        return `<svg width="72" height="28" viewBox="0 0 72 28" class="inline-block"><polyline fill="none" stroke="${color}" stroke-width="1.5" points="${points}"/></svg>`;
+      }
+
+      // ========================================
+      // RENDER COMMODITY CARDS
+      // ========================================
+      function renderCards() {
+        const container = document.getElementById("commodity-cards");
+        const filtered = getFiltered();
+        // Sort: ours first, then by risk
+        const sorted = [...filtered].sort((a, b) => {
+          if (a.ours !== b.ours) return a.ours ? -1 : 1;
+          return riskOrder[a.risk] - riskOrder[b.risk];
+        });
+
+        document.getElementById("commodity-count").textContent = filtered.length + " tracked";
+
+        container.innerHTML = sorted.map(c => {
+          const cat = categoryColors[c.category];
+          const risk = riskConfig[c.risk];
+          const changeSign = c.change >= 0 ? "+" : "";
+          const changeColor = c.change >= 0 ? "text-emerald-400" : "text-red-400";
+          const arrow = c.change >= 0
+            ? '<svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 15l7-7 7 7"/></svg>'
+            : '<svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7"/></svg>';
+          const oursTag = c.ours
+            ? `<a href="${c.slug ? '/products/' + c.slug : '/quote'}" class="inline-flex items-center gap-1 px-1.5 py-0.5 bg-amber-500/20 text-amber-400 text-[10px] font-bold rounded border border-amber-500/30 hover:bg-amber-500/30 transition-colors">WE SUPPLY</a>`
+            : '';
+          const goldBorder = c.ours ? "border-l-2 border-l-amber-500/60" : "";
+
+          return `
+            <div class="commodity-card bg-white/[0.03] hover:bg-white/[0.06] rounded-xl p-3.5 border border-white/5 ${goldBorder} transition-all duration-200 cursor-pointer" data-name="${c.name}">
+              <div class="flex items-start justify-between mb-2">
+                <div class="flex-1 min-w-0">
+                  <div class="flex items-center gap-2 mb-0.5">
+                    <span class="text-sm font-semibold text-white truncate">${c.name}</span>
+                    ${oursTag}
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span class="text-[10px] px-1.5 py-0.5 rounded-full font-medium" style="background:${cat.bg};color:${cat.color};border:1px solid ${cat.border}">${categoryLabels[c.category]}</span>
+                    <span class="text-[10px] text-gray-500">${c.origin}</span>
+                  </div>
+                </div>
+                <span class="px-2 py-0.5 text-[10px] font-bold rounded-full border ${risk.class}">${risk.label}</span>
+              </div>
+              <div class="flex items-end justify-between">
+                <div>
+                  <div class="text-lg font-bold text-white font-mono">$${c.price.toLocaleString()}<span class="text-xs text-gray-500 font-sans">/${c.unit}</span></div>
+                  <div class="flex items-center gap-1 ${changeColor}">
+                    ${arrow}
+                    <span class="text-xs font-semibold">${changeSign}${c.change}%</span>
+                    <span class="text-[10px] text-gray-500">30d</span>
+                  </div>
+                </div>
+                <div>${sparkline(c.change)}</div>
+              </div>
+            </div>
+          `;
+        }).join("");
+      }
+
+      // ========================================
+      // RENDER PRICE TABLE
+      // ========================================
+      function renderTable() {
+        const tbody = document.getElementById("price-table-body");
+        const filtered = getFiltered();
+        const sorted = getSorted(filtered);
+
+        tbody.innerHTML = sorted.map(c => {
+          const cat = categoryColors[c.category];
+          const risk = riskConfig[c.risk];
+          const changeSign = c.change >= 0 ? "+" : "";
+          const changeColor = c.change >= 0 ? "text-emerald-400" : "text-red-400";
+          const arrow = c.change >= 0 ? "&#9650;" : "&#9660;";
+          const rowBorder = c.ours ? "border-l-2 border-l-amber-500/60" : "";
+          const oursTag = c.ours
+            ? `<span class="inline-flex items-center gap-1 ml-2 px-1.5 py-0.5 bg-amber-500/20 text-amber-400 text-[10px] font-bold rounded border border-amber-500/30">WE SUPPLY</span>`
+            : '';
+          const quoteBtn = c.ours
+            ? `<a href="${c.slug ? '/products/' + c.slug : '/quote'}" class="inline-flex items-center px-3 py-1 bg-emerald-600/80 text-white text-xs font-semibold rounded hover:bg-emerald-500 transition-colors">Quote</a>`
+            : '';
+
+          return `
+            <tr class="${rowBorder} hover:bg-white/[0.03] transition-colors">
+              <td class="px-4 py-3 font-medium text-white whitespace-nowrap">${c.name}${oursTag}</td>
+              <td class="px-4 py-3">
+                <span class="text-xs px-2 py-0.5 rounded-full font-medium" style="background:${cat.bg};color:${cat.color};border:1px solid ${cat.border}">${categoryLabels[c.category]}</span>
+              </td>
+              <td class="px-4 py-3 text-right font-mono font-medium text-white">$${c.price.toLocaleString()}</td>
+              <td class="px-4 py-3 text-right">
+                <span class="${changeColor} font-semibold">
+                  <span class="text-xs">${arrow}</span> ${changeSign}${c.change}%
+                </span>
+              </td>
+              <td class="px-4 py-3 text-center">
+                <span class="px-2 py-0.5 text-[10px] font-bold rounded-full border ${risk.class}">${risk.label}</span>
+              </td>
+              <td class="px-4 py-3 text-gray-400 text-xs">${c.origin}</td>
+              <td class="px-4 py-3 text-center">${quoteBtn}</td>
+            </tr>
+          `;
+        }).join("");
+
+        // Update sort arrows
+        document.querySelectorAll("#price-table th[data-sort]").forEach(th => {
+          const arrow = th.querySelector(".sort-arrow");
+          if (th.dataset.sort === sortCol) {
+            arrow.textContent = sortDir === "asc" ? " \u25B2" : " \u25BC";
+            th.classList.add("text-white");
+          } else {
+            arrow.textContent = "";
+            th.classList.remove("text-white");
+          }
+        });
+      }
+
+      // ========================================
+      // GLOBE INITIALIZATION
+      // ========================================
+      function initGlobe() {
+        const container = document.getElementById("globe-container");
+        if (!container || typeof Globe === "undefined") return;
+
+        const width = container.clientWidth;
+        const height = 550;
+
+        const globe = Globe()
+          .width(width)
+          .height(height)
+          .backgroundColor("rgba(0,0,0,0)")
+          .globeImageUrl("https://unpkg.com/three-globe/example/img/earth-night.jpg")
+          .atmosphereColor("#1a6b3c")
+          .atmosphereAltitude(0.2)
+          .pointsData(commodities.map(c => ({ lat: c.lat, lng: c.lng, size: c.ours ? 0.4 : 0.2, color: categoryColors[c.category].color, name: c.name, ours: c.ours })))
+          .pointLat("lat")
+          .pointLng("lng")
+          .pointAltitude(d => d.ours ? 0.06 : 0.02)
+          .pointRadius(d => d.size)
+          .pointColor(d => d.color)
+          .pointLabel(d => `<div style="background:rgba(0,0,0,0.8);padding:6px 10px;border-radius:6px;font-size:12px;color:white;border:1px solid rgba(255,255,255,0.1);">${d.name}${d.ours ? ' <span style="color:#fbbf24;font-weight:bold;">[We Supply]</span>' : ''}</div>`)
+          .arcsData(tradeRoutes.map(r => ({
+            startLat: r.from[0], startLng: r.from[1],
+            endLat: r.to[0], endLng: r.to[1],
+            color: categoryColors[r.category].color,
+            label: r.label,
+            category: r.category
+          })))
+          .arcStartLat("startLat")
+          .arcStartLng("startLng")
+          .arcEndLat("endLat")
+          .arcEndLng("endLng")
+          .arcColor(d => d.color)
+          .arcAltitude(0.15)
+          .arcStroke(0.4)
+          .arcDashLength(0.5)
+          .arcDashGap(0.3)
+          .arcDashAnimateTime(3000)
+          .arcLabel(d => `<div style="background:rgba(0,0,0,0.8);padding:6px 10px;border-radius:6px;font-size:11px;color:white;border:1px solid rgba(255,255,255,0.1);">${d.label}</div>`)
+          (container);
+
+        // Auto-rotate
+        globe.controls().autoRotate = true;
+        globe.controls().autoRotateSpeed = 0.4;
+        globe.controls().enableZoom = true;
+
+        // Set initial view to show Africa
+        globe.pointOfView({ lat: 10, lng: 20, altitude: 2.5 }, 0);
+
+        document.getElementById("globe-route-count").textContent = tradeRoutes.length + " active routes";
+
+        // Resize observer
+        const ro = new ResizeObserver(entries => {
+          for (const entry of entries) {
+            const w = entry.contentRect.width;
+            globe.width(w);
+          }
+        });
+        ro.observe(container);
+
+        // Store globe reference for filtering
+        window._globe = globe;
+      }
+
+      // ========================================
+      // UPDATE GLOBE ARCS ON FILTER
+      // ========================================
+      function updateGlobeArcs() {
+        if (!window._globe) return;
+        const filteredRoutes = tradeRoutes.filter(r => {
+          if (activeCategory !== "all" && r.category !== activeCategory) return false;
+          if (searchTerm) {
+            return r.label.toLowerCase().includes(searchTerm);
+          }
+          return true;
+        });
+
+        window._globe.arcsData(filteredRoutes.map(r => ({
+          startLat: r.from[0], startLng: r.from[1],
+          endLat: r.to[0], endLng: r.to[1],
+          color: categoryColors[r.category].color,
+          label: r.label,
+          category: r.category
+        })));
+
+        document.getElementById("globe-route-count").textContent = filteredRoutes.length + " active routes";
+      }
+
+      // ========================================
+      // EVENT LISTENERS
+      // ========================================
+      document.addEventListener("DOMContentLoaded", () => {
+        renderCards();
+        renderTable();
+
+        // Wait a tick for container to have dimensions, then init globe
+        setTimeout(initGlobe, 100);
+
+        // Search
+        const searchInput = document.getElementById("commodity-search");
+        let searchTimeout;
+        searchInput.addEventListener("input", (e) => {
+          clearTimeout(searchTimeout);
+          searchTimeout = setTimeout(() => {
+            searchTerm = e.target.value.toLowerCase().trim();
+            renderCards();
+            renderTable();
+            updateGlobeArcs();
+          }, 150);
+        });
+
+        // Category filters
+        document.querySelectorAll(".category-btn").forEach(btn => {
+          btn.addEventListener("click", () => {
+            document.querySelectorAll(".category-btn").forEach(b => b.classList.remove("active"));
+            btn.classList.add("active");
+            activeCategory = btn.dataset.category;
+            renderCards();
+            renderTable();
+            updateGlobeArcs();
+          });
+        });
+
+        // Table sorting
+        document.querySelectorAll("#price-table th[data-sort]").forEach(th => {
+          th.addEventListener("click", () => {
+            const col = th.dataset.sort;
+            if (sortCol === col) {
+              sortDir = sortDir === "asc" ? "desc" : "asc";
+            } else {
+              sortCol = col;
+              sortDir = "asc";
+            }
+            renderTable();
+          });
+        });
+
+        // Header nav dropdown
+        const dropdown = document.getElementById("intel-products-dropdown");
+        const btn = document.getElementById("intel-products-btn");
+        const menu = document.getElementById("intel-products-menu");
+        const chevron = document.getElementById("intel-products-chevron");
+        let ddTimeout;
+
+        function showMenu() {
+          if (ddTimeout) clearTimeout(ddTimeout);
+          menu.classList.remove("opacity-0", "invisible", "pointer-events-none");
+          menu.classList.add("opacity-100", "visible", "pointer-events-auto");
+          chevron.classList.add("rotate-180");
+        }
+        function hideMenu() {
+          ddTimeout = setTimeout(() => {
+            menu.classList.add("opacity-0", "invisible", "pointer-events-none");
+            menu.classList.remove("opacity-100", "visible", "pointer-events-auto");
+            chevron.classList.remove("rotate-180");
+          }, 150);
+        }
+
+        dropdown?.addEventListener("mouseenter", showMenu);
+        dropdown?.addEventListener("mouseleave", hideMenu);
+
+        // Mobile menu
+        const mobileBtn = document.getElementById("intel-mobile-btn");
+        const mobileMenu = document.getElementById("intel-mobile-menu");
+        const openIcon = document.getElementById("intel-menu-open");
+        const closeIcon = document.getElementById("intel-menu-close");
+
+        mobileBtn?.addEventListener("click", () => {
+          mobileMenu.classList.toggle("hidden");
+          openIcon.classList.toggle("hidden");
+          closeIcon.classList.toggle("hidden");
+        });
+      });
+    </script>
+
+    <style is:inline>
+      /* Category button states */
+      .category-btn {
+        color: #9ca3af;
+        border-color: rgba(255,255,255,0.1);
+        background: transparent;
+      }
+      .category-btn:hover {
+        color: #e5e7eb;
+        border-color: rgba(255,255,255,0.2);
+        background: rgba(255,255,255,0.03);
+      }
+      .category-btn.active {
+        color: #34d399;
+        border-color: rgba(52,211,153,0.4);
+        background: rgba(52,211,153,0.1);
+      }
+
+      /* Scrollbar styling */
+      #commodity-cards::-webkit-scrollbar {
+        width: 4px;
+      }
+      #commodity-cards::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      #commodity-cards::-webkit-scrollbar-thumb {
+        background: rgba(255,255,255,0.1);
+        border-radius: 4px;
+      }
+      #commodity-cards::-webkit-scrollbar-thumb:hover {
+        background: rgba(255,255,255,0.2);
+      }
+
+      /* Hide scrollbar on filter strip */
+      .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+      }
+      .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+
+      /* Table row hover */
+      #price-table-body tr {
+        transition: background-color 0.15s;
+      }
+
+      /* Font mono for prices */
+      .font-mono {
+        font-family: "JetBrains Mono", ui-monospace, monospace;
+      }
+
+      /* Responsive globe */
+      @media (max-width: 1023px) {
+        #globe-container {
+          height: 400px !important;
+        }
+      }
+
+      @media (max-width: 639px) {
+        #globe-container {
+          height: 320px !important;
+        }
+      }
+
+      /* Details/summary arrow removal */
+      details > summary::-webkit-details-marker {
+        display: none;
+      }
+      details > summary {
+        list-style: none;
+      }
+    </style>
+  </body>
+</html>
