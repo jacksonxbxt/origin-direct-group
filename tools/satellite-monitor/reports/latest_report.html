@@ -3,2025 +3,1626 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Supply Intelligence Report - 2026-03-24 04:15 UTC</title>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
-    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
+    <title>Origin Direct Group | Commodity Intelligence Terminal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/globe.gl@2.35.2/dist/globe.gl.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
+        :root {
+            --bg-deep: #0a0e17;
+            --bg-panel: #111827;
+            --border: #1e293b;
+            --green: #10b981;
+            --red: #ef4444;
+            --amber: #f59e0b;
+            --cyan: #06b6d4;
+            --text-primary: #e2e8f0;
+            --text-secondary: #94a3b8;
+            --font-data: 'JetBrains Mono', monospace;
+            --font-label: 'Inter', sans-serif;
+        }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: #f5f5f0;
-            color: #2c2c2c;
-            line-height: 1.6;
+            font-family: var(--font-label);
+            background: var(--bg-deep);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            min-height: 100vh;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Header */
-        .header {
-            background: linear-gradient(135deg, #1a2e1a 0%, #2d4a2d 100%);
-            color: white;
-            padding: 30px 0;
-            border-bottom: 4px solid #c49a2a;
-        }
-        .header .container {
+        /* ===================== TOP BAR ===================== */
+        .top-bar {
             display: flex;
+            align-items: center;
             justify-content: space-between;
-            align-items: flex-start;
-            flex-wrap: wrap;
-            gap: 20px;
+            padding: 0 24px;
+            height: 56px;
+            background: linear-gradient(180deg, #111827 0%, #0f1729 100%);
+            border-bottom: 1px solid var(--border);
+            position: relative;
+            z-index: 100;
         }
-        .header-left h1 {
-            font-size: 1.6em;
-            font-weight: 700;
-            margin-bottom: 4px;
-            color: #c49a2a;
+        .top-bar::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+            opacity: 0.4;
         }
-        .header-left .subtitle {
-            font-size: 1.05em;
-            font-weight: 400;
-            color: #d4d4c8;
-            margin-bottom: 6px;
-        }
-        .header-left .meta {
-            font-size: 0.85em;
-            color: #a0a090;
-        }
-        .header-right {
-            text-align: right;
+        .top-bar-left {
+            display: flex;
+            align-items: center;
+            gap: 16px;
         }
         .logo-text {
-            font-size: 1.1em;
+            font-family: var(--font-data);
             font-weight: 700;
-            color: #c49a2a;
+            font-size: 15px;
+            letter-spacing: 2px;
+            color: var(--text-primary);
+            text-transform: uppercase;
+        }
+        .logo-text span {
+            color: var(--cyan);
+        }
+        .logo-divider {
+            width: 1px;
+            height: 24px;
+            background: var(--border);
+        }
+        .logo-subtitle {
+            font-size: 11px;
+            color: var(--text-secondary);
             letter-spacing: 1px;
-        }
-        .logo-sub {
-            font-size: 0.8em;
-            color: #a0a090;
-        }
-
-        /* Purpose banner */
-        .purpose-banner {
-            background: #fff;
-            border: 1px solid #e0ddd0;
-            border-left: 4px solid #c49a2a;
-            padding: 18px 24px;
-            margin: 24px 0;
-            border-radius: 0 6px 6px 0;
-        }
-        .purpose-banner p {
-            font-size: 0.92em;
-            color: #555;
-        }
-        .purpose-banner strong {
-            color: #1a2e1a;
-        }
-
-        /* Summary cards row */
-        .summary-row {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
-            gap: 12px;
-            margin: 20px 0;
-        }
-        .summary-card {
-            background: #fff;
-            border: 1px solid #e0ddd0;
-            border-radius: 8px;
-            padding: 16px;
-            text-align: center;
-        }
-        .summary-card .number {
-            font-size: 2em;
-            font-weight: 700;
-        }
-        .summary-card .label {
-            font-size: 0.8em;
-            color: #777;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
         }
-        .num-high { color: #c0392b; }
-        .num-medium { color: #d4860b; }
-        .num-low { color: #27804a; }
-        .num-neutral { color: #555; }
-
-        /* Section headers */
-        .section {
-            margin: 30px 0;
-        }
-        .section-title {
-            font-size: 1.15em;
-            font-weight: 700;
-            color: #1a2e1a;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #c49a2a;
-            margin-bottom: 16px;
-        }
-
-        /* Commodity cards */
-        .commodity-card {
-            background: #fff;
-            border: 1px solid #e0ddd0;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            overflow: hidden;
-        }
-        .commodity-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 16px 20px;
-            cursor: pointer;
-            user-select: none;
-            transition: background 0.15s;
-        }
-        .commodity-header:hover {
-            background: #fafaf5;
-        }
-        .commodity-name {
-            font-size: 1.15em;
-            font-weight: 700;
-            color: #1a2e1a;
-        }
-        .commodity-stage {
-            font-size: 0.82em;
-            color: #777;
-            margin-top: 2px;
-        }
-
-        /* Traffic light */
-        .traffic-light {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 5px 14px;
-            border-radius: 20px;
-            font-size: 0.82em;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        .traffic-light .dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-        }
-        .tl-high {
-            background: #fdecea;
-            color: #c0392b;
-        }
-        .tl-high .dot { background: #c0392b; }
-        .tl-medium {
-            background: #fef5e7;
-            color: #d4860b;
-        }
-        .tl-medium .dot { background: #d4860b; }
-        .tl-low {
-            background: #eafaf1;
-            color: #27804a;
-        }
-        .tl-low .dot { background: #27804a; }
-
-        /* Commodity detail (collapsible) */
-        .commodity-detail {
-            padding: 0 20px 20px;
-            border-top: 1px solid #f0ede0;
-        }
-
-        /* Price impact box */
-        .price-impact {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 16px;
-            margin: 14px 0;
-        }
-        .price-box {
-            background: #fafaf5;
-            border: 1px solid #e8e5d8;
-            border-radius: 6px;
-            padding: 14px;
-            text-align: center;
-        }
-        .price-box .price-label {
-            font-size: 0.75em;
-            color: #888;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 4px;
-        }
-        .price-box .price-value {
-            font-size: 1.4em;
-            font-weight: 700;
-            color: #1a2e1a;
-        }
-        .price-box .price-value.est {
-            color: #c0392b;
-        }
-        .price-box .price-sub {
-            font-size: 0.78em;
-            color: #999;
-            margin-top: 2px;
-        }
-
-        /* Confidence bar */
-        .confidence-row {
+        .top-bar-center {
             display: flex;
             align-items: center;
             gap: 12px;
-            margin: 10px 0;
-            font-size: 0.85em;
         }
-        .confidence-label {
-            color: #777;
-            min-width: 80px;
-        }
-        .confidence-badge {
-            display: inline-block;
-            padding: 2px 10px;
-            border-radius: 10px;
-            font-weight: 600;
-            font-size: 0.82em;
-        }
-        .conf-high { background: #eafaf1; color: #27804a; }
-        .conf-medium { background: #fef5e7; color: #d4860b; }
-        .conf-low { background: #f5f5f0; color: #999; }
-
-        /* Recommendation box */
-        .recommendation {
-            border-radius: 6px;
-            padding: 14px 18px;
-            margin: 14px 0;
-        }
-        .rec-alert {
-            background: #fdecea;
-            border: 1px solid #f5c6cb;
-        }
-        .rec-warning {
-            background: #fef5e7;
-            border: 1px solid #fde2a8;
-        }
-        .rec-ok {
-            background: #eafaf1;
-            border: 1px solid #c3e6cb;
-        }
-        .rec-urgency {
-            font-size: 0.75em;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 4px;
-        }
-        .rec-alert .rec-urgency { color: #c0392b; }
-        .rec-warning .rec-urgency { color: #d4860b; }
-        .rec-ok .rec-urgency { color: #27804a; }
-        .rec-action {
-            font-weight: 700;
-            font-size: 1em;
-            margin-bottom: 4px;
-            color: #2c2c2c;
-        }
-        .rec-detail {
-            font-size: 0.88em;
-            color: #555;
-        }
-
-        /* Historical precedent */
-        .precedent {
-            background: #f9f8f3;
-            border-left: 3px solid #c49a2a;
-            padding: 10px 14px;
-            margin: 12px 0;
-            font-size: 0.85em;
-            color: #666;
-        }
-        .precedent strong {
-            color: #1a2e1a;
-        }
-
-        /* Outlook box */
-        .outlook-box {
-            background: #f5f8f5;
-            border: 1px solid #d0e0d0;
-            border-radius: 6px;
-            padding: 14px 18px;
-            margin: 12px 0;
-        }
-        .outlook-title {
-            font-weight: 700;
-            font-size: 0.9em;
-            color: #1a2e1a;
-            margin-bottom: 8px;
-        }
-        .outlook-dates {
-            list-style: none;
-            padding: 0;
-        }
-        .outlook-dates li {
-            font-size: 0.85em;
-            color: #555;
-            padding: 3px 0;
-            padding-left: 16px;
-            position: relative;
-        }
-        .outlook-dates li::before {
-            content: "";
-            position: absolute;
-            left: 0;
-            top: 10px;
+        .live-dot {
             width: 8px;
             height: 8px;
             border-radius: 50%;
-            background: #c49a2a;
+            background: var(--green);
+            animation: pulse-dot 2s infinite;
+            box-shadow: 0 0 8px var(--green);
         }
-        .watch-items {
-            margin-top: 8px;
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; box-shadow: 0 0 8px var(--green); }
+            50% { opacity: 0.5; box-shadow: 0 0 16px var(--green); }
         }
-        .watch-items li::before {
-            background: #1a2e1a;
+        .live-label {
+            font-family: var(--font-data);
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--green);
+            letter-spacing: 2px;
         }
-
-        /* Alert list */
-        .alert-item {
-            border-left: 4px solid;
-            padding: 10px 14px;
-            margin-bottom: 8px;
-            border-radius: 0 6px 6px 0;
-            font-size: 0.88em;
+        .timestamp {
+            font-family: var(--font-data);
+            font-size: 11px;
+            color: var(--text-secondary);
         }
-        .alert-critical {
-            background: #fdecea;
-            border-left-color: #c0392b;
-        }
-        .alert-warning {
-            background: #fef5e7;
-            border-left-color: #d4860b;
-        }
-        .alert-title {
-            font-weight: 700;
-            color: #2c2c2c;
-            margin-bottom: 2px;
-        }
-        .alert-detail {
-            color: #666;
-            font-size: 0.92em;
-        }
-
-        /* ENSO card */
-        .enso-card {
-            background: #fff;
-            border: 1px solid #e0ddd0;
-            border-radius: 8px;
-            padding: 20px;
+        .top-bar-right {
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: 12px;
         }
-        .enso-phase-circle {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
+        .enso-badge {
             display: flex;
             align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 0.7em;
-            text-transform: uppercase;
-            flex-shrink: 0;
-        }
-        .phase-neutral { background: #e8e8e0; color: #666; }
-        .phase-nino { background: #fdecea; color: #c0392b; }
-        .phase-nina { background: #e8f4fd; color: #2980b9; }
-        .enso-info h3 {
-            font-size: 1.1em;
-            color: #1a2e1a;
-            margin-bottom: 4px;
-        }
-        .enso-info .oni {
-            font-size: 0.85em;
-            color: #888;
-        }
-        .enso-info .impact {
-            font-size: 0.88em;
-            color: #555;
-            margin-top: 4px;
-        }
-
-        /* Leaflet Map */
-        .map-wrapper {
-            background: #fff;
-            border: 1px solid #e0ddd0;
-            border-radius: 8px;
-            padding: 20px;
-        }
-        #satellite-map {
-            width: 100%;
-            height: 500px;
+            gap: 8px;
+            padding: 4px 12px;
             border-radius: 6px;
-            border: 1px solid #e0ddd0;
-            z-index: 1;
+            font-family: var(--font-data);
+            font-size: 11px;
+            font-weight: 600;
+            border: 1px solid;
         }
-        .map-legend {
-            display: flex;
-            gap: 20px;
-            margin-top: 10px;
-            font-size: 0.8em;
-            color: #777;
+        .enso-neutral { border-color: var(--cyan); color: var(--cyan); background: rgba(6,182,212,0.08); }
+        .enso-elnino { border-color: var(--red); color: var(--red); background: rgba(239,68,68,0.08); }
+        .enso-lanina { border-color: var(--green); color: var(--green); background: rgba(16,185,129,0.08); }
+
+        /* ===================== MAIN GRID ===================== */
+        .main-grid {
+            display: grid;
+            grid-template-columns: 1fr 420px;
+            grid-template-rows: 1fr auto auto;
+            height: calc(100vh - 56px);
+            gap: 0;
         }
-        .map-legend-item {
+
+        /* Globe Container */
+        .globe-container {
+            position: relative;
+            background: var(--bg-deep);
+            border-right: 1px solid var(--border);
+            overflow: hidden;
+            min-height: 500px;
+        }
+        #globe-viz {
+            width: 100%;
+            height: 100%;
+        }
+        .globe-overlay-stats {
+            position: absolute;
+            top: 16px;
+            left: 16px;
             display: flex;
+            flex-direction: column;
+            gap: 8px;
+            z-index: 10;
+        }
+        .globe-stat {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 12px;
+            border-radius: 6px;
+            background: rgba(17,24,39,0.85);
+            border: 1px solid var(--border);
+            backdrop-filter: blur(8px);
+            font-family: var(--font-data);
+            font-size: 11px;
+        }
+        .globe-stat .stat-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+        }
+        .globe-stat .stat-count {
+            font-weight: 700;
+            margin-right: 4px;
+        }
+
+        /* Right Panel - Commodity Risk */
+        .risk-panel {
+            background: var(--bg-panel);
+            border-bottom: 1px solid var(--border);
+            overflow-y: auto;
+            padding: 0;
+        }
+        .risk-panel-header {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            background: var(--bg-panel);
+            padding: 16px 20px 12px;
+            border-bottom: 1px solid var(--border);
+        }
+        .risk-panel-header h2 {
+            font-family: var(--font-data);
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+        }
+        .risk-panel-header h2 span {
+            color: var(--cyan);
+        }
+
+        /* Commodity Card */
+        .commodity-card {
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--border);
+            transition: background 0.2s;
+            cursor: default;
+        }
+        .commodity-card:hover {
+            background: rgba(30,41,59,0.5);
+        }
+        .commodity-card-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+        .commodity-name {
+            font-family: var(--font-data);
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+        .commodity-origin {
+            font-size: 11px;
+            color: var(--text-secondary);
+            margin-top: 2px;
+        }
+        .risk-badge {
+            font-family: var(--font-data);
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            padding: 3px 10px;
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
+        .risk-high { background: rgba(239,68,68,0.15); color: var(--red); border: 1px solid rgba(239,68,68,0.3); }
+        .risk-medium { background: rgba(245,158,11,0.15); color: var(--amber); border: 1px solid rgba(245,158,11,0.3); }
+        .risk-low { background: rgba(16,185,129,0.15); color: var(--green); border: 1px solid rgba(16,185,129,0.3); }
+
+        .price-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin: 8px 0;
+            font-family: var(--font-data);
+            font-size: 13px;
+        }
+        .price-current {
+            color: var(--text-secondary);
+        }
+        .price-arrow {
+            color: var(--text-secondary);
+            font-size: 16px;
+        }
+        .price-projected {
+            font-weight: 700;
+        }
+        .price-up { color: var(--red); }
+        .price-down { color: var(--green); }
+        .price-neutral { color: var(--text-secondary); }
+        .price-change {
+            font-size: 11px;
+            padding: 1px 6px;
+            border-radius: 3px;
+            font-weight: 600;
+        }
+        .change-up { background: rgba(239,68,68,0.15); color: var(--red); }
+        .change-neutral { background: rgba(148,163,184,0.15); color: var(--text-secondary); }
+
+        .commodity-sparkline {
+            height: 32px;
+            margin: 8px 0 4px;
+        }
+
+        .commodity-detail-text {
+            font-size: 11px;
+            color: var(--text-secondary);
+            line-height: 1.5;
+            margin-top: 6px;
+        }
+        .commodity-stage {
+            font-size: 10px;
+            color: var(--cyan);
+            font-family: var(--font-data);
+            margin-top: 4px;
+            letter-spacing: 0.5px;
+        }
+
+        .cta-lock {
+            display: inline-flex;
             align-items: center;
             gap: 6px;
-        }
-        .legend-dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-        }
-        /* Pulse animation for high-risk markers */
-        @keyframes pulse-ring {
-            0% { transform: scale(1); opacity: 1; }
-            80% { transform: scale(2.5); opacity: 0; }
-            100% { transform: scale(2.5); opacity: 0; }
-        }
-        .pulse-marker {
-            position: relative;
-        }
-        .pulse-marker::after {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            border-radius: 50%;
-            border: 2px solid #c0392b;
-            animation: pulse-ring 1.5s ease-out infinite;
-        }
-
-        /* Data tables */
-        .data-table-wrap {
-            background: #fff;
-            border: 1px solid #e0ddd0;
-            border-radius: 8px;
-            overflow: hidden;
-            margin-bottom: 16px;
-        }
-        .data-table-title {
-            padding: 12px 16px;
-            font-weight: 700;
-            font-size: 0.95em;
-            color: #1a2e1a;
-            border-bottom: 1px solid #e0ddd0;
-            background: #fafaf5;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 0.85em;
-        }
-        th {
-            text-align: left;
-            padding: 10px 14px;
-            color: #888;
+            margin-top: 10px;
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-family: var(--font-data);
+            font-size: 11px;
             font-weight: 600;
-            font-size: 0.85em;
-            text-transform: uppercase;
             letter-spacing: 0.5px;
-            border-bottom: 2px solid #e8e5d8;
-            background: #fafaf5;
+            text-decoration: none;
+            transition: all 0.2s;
+            cursor: pointer;
         }
-        td {
-            padding: 10px 14px;
-            border-bottom: 1px solid #f0ede0;
+        .cta-high {
+            background: rgba(239,68,68,0.15);
+            color: var(--red);
+            border: 1px solid rgba(239,68,68,0.4);
         }
-        tbody tr:nth-child(even) {
-            background: #fafaf5;
+        .cta-high:hover { background: rgba(239,68,68,0.25); }
+        .cta-medium {
+            background: rgba(245,158,11,0.15);
+            color: var(--amber);
+            border: 1px solid rgba(245,158,11,0.4);
         }
-        tbody tr:hover {
-            background: #f0efe8;
-        }
-        .val-neg { color: #c0392b; font-weight: 600; }
-        .val-pos { color: #27804a; font-weight: 600; }
-        .val-warn { color: #d4860b; font-weight: 600; }
-        .val-neutral { color: #888; }
+        .cta-medium:hover { background: rgba(245,158,11,0.25); }
 
-        /* Status badges */
-        .status-badge {
-            display: inline-block;
-            padding: 3px 10px;
-            border-radius: 12px;
-            font-size: 0.78em;
-            font-weight: 700;
+        /* ===================== BOTTOM CHARTS ===================== */
+        .charts-row {
+            grid-column: 1 / -1;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0;
+            border-top: 1px solid var(--border);
+            background: var(--bg-panel);
+            height: 200px;
+        }
+        .chart-cell {
+            border-right: 1px solid var(--border);
+            padding: 12px 16px;
+            display: flex;
+            flex-direction: column;
+        }
+        .chart-cell:last-child { border-right: none; }
+        .chart-label {
+            font-family: var(--font-data);
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            letter-spacing: 1px;
             text-transform: uppercase;
-            letter-spacing: 0.3px;
+            margin-bottom: 2px;
         }
-        .badge-ok { background: #eafaf1; color: #27804a; }
-        .badge-warning { background: #fef5e7; color: #d4860b; }
-        .badge-alert { background: #fdecea; color: #c0392b; }
-        .badge-no_data { background: #f0f0f0; color: #999; }
+        .chart-price {
+            font-family: var(--font-data);
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .chart-change-label {
+            font-family: var(--font-data);
+            font-size: 10px;
+            font-weight: 600;
+        }
+        .chart-canvas-wrap {
+            flex: 1;
+            position: relative;
+            min-height: 0;
+        }
+        .chart-canvas-wrap canvas {
+            width: 100% !important;
+            height: 100% !important;
+        }
 
-        /* Data sources */
-        .sources {
-            background: #fff;
-            border: 1px solid #e0ddd0;
-            border-radius: 8px;
-            padding: 16px 20px;
-            font-size: 0.85em;
-            color: #777;
+        /* ===================== ALERT TICKER ===================== */
+        .alert-ticker {
+            grid-column: 1 / -1;
+            height: 40px;
+            background: #0d1117;
+            border-top: 1px solid var(--border);
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            align-items: center;
         }
-        .sources a {
-            color: #1a2e1a;
+        .ticker-track {
+            display: flex;
+            align-items: center;
+            white-space: nowrap;
+            animation: ticker-scroll 60s linear infinite;
+            font-family: var(--font-data);
+            font-size: 12px;
+            font-weight: 500;
+        }
+        @keyframes ticker-scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .ticker-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 0 32px;
+        }
+        .ticker-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+        }
+        .ticker-commodity {
+            font-weight: 700;
+        }
+        .ticker-sep {
+            color: #2d3748;
+            padding: 0 8px;
+        }
+
+        /* ===================== FOOTER ===================== */
+        .footer {
+            grid-column: 1 / -1;
+            padding: 12px 24px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            font-size: 11px;
+            color: #475569;
+            background: var(--bg-deep);
+            border-top: 1px solid var(--border);
+        }
+        .footer a {
+            color: var(--cyan);
+            text-decoration: none;
+        }
+        .footer a:hover {
             text-decoration: underline;
         }
 
-        /* Share section */
-        .share-section {
-            background: linear-gradient(135deg, #1a2e1a 0%, #2d4a2d 100%);
-            border-radius: 8px;
-            padding: 24px;
-            color: white;
-            text-align: center;
-            margin: 30px 0;
+        /* Tooltip for globe */
+        .globe-tooltip {
+            background: rgba(17,24,39,0.95) !important;
+            border: 1px solid var(--border) !important;
+            border-radius: 8px !important;
+            padding: 12px 16px !important;
+            font-family: var(--font-label) !important;
+            color: var(--text-primary) !important;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+            max-width: 280px;
         }
-        .share-section h3 {
-            color: #c49a2a;
-            margin-bottom: 8px;
+        .tooltip-name {
+            font-family: var(--font-data);
+            font-weight: 600;
+            font-size: 13px;
+            margin-bottom: 4px;
         }
-        .share-section p {
-            font-size: 0.9em;
-            color: #d4d4c8;
-            margin-bottom: 12px;
+        .tooltip-commodity {
+            font-size: 11px;
+            color: var(--cyan);
+            margin-bottom: 6px;
         }
-        .share-section a {
-            display: inline-block;
-            background: #c49a2a;
-            color: #1a2e1a;
-            padding: 10px 24px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 0.9em;
-            transition: background 0.15s;
+        .tooltip-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 11px;
+            color: var(--text-secondary);
+            padding: 2px 0;
         }
-        .share-section a:hover {
-            background: #d4aa3a;
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            color: #999;
-            font-size: 0.78em;
-            padding: 24px 0;
-            border-top: 1px solid #e0ddd0;
+        .tooltip-row span:last-child {
+            font-family: var(--font-data);
+            font-weight: 600;
         }
 
-        /* Expand/collapse */
-        .expand-icon {
-            display: inline-block;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background: #f0efe8;
-            text-align: center;
-            line-height: 20px;
-            font-size: 0.8em;
-            color: #888;
-            flex-shrink: 0;
-            transition: transform 0.2s;
-        }
-        .commodity-card.expanded .expand-icon {
-            transform: rotate(180deg);
-        }
-        .commodity-detail { display: none; }
-        .commodity-card.expanded .commodity-detail { display: block; }
-
-        /* Print styles */
-        @media print {
-            body { background: white; font-size: 11px; }
-            .header { background: #1a2e1a !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-            .commodity-detail { display: block !important; }
-            .expand-icon { display: none; }
-            .share-section { display: none; }
-            .map-point:hover .map-tooltip { display: none; }
+        /* Pulsing ring for high-risk points */
+        @keyframes pulse-ring {
+            0% { transform: scale(1); opacity: 0.8; }
+            100% { transform: scale(3); opacity: 0; }
         }
 
-        /* Mobile responsive */
-        @media (max-width: 768px) {
-            .header .container { flex-direction: column; }
-            .header-right { text-align: left; }
-            .price-impact { grid-template-columns: 1fr; }
-            .summary-row { grid-template-columns: repeat(2, 1fr); }
-            .enso-card { flex-direction: column; text-align: center; }
-            #satellite-map { height: 350px; }
+        /* Scrollbar styling */
+        .risk-panel::-webkit-scrollbar { width: 6px; }
+        .risk-panel::-webkit-scrollbar-track { background: transparent; }
+        .risk-panel::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+        .risk-panel::-webkit-scrollbar-thumb:hover { background: #334155; }
+
+        /* ===================== RESPONSIVE ===================== */
+        @media (max-width: 1024px) {
+            .main-grid {
+                grid-template-columns: 1fr;
+                grid-template-rows: 60vh auto auto auto;
+                height: auto;
+            }
+            .globe-container {
+                min-height: 400px;
+                border-right: none;
+                border-bottom: 1px solid var(--border);
+            }
+            .risk-panel {
+                max-height: 500px;
+            }
+            .charts-row {
+                grid-template-columns: repeat(2, 1fr);
+                height: auto;
+            }
+            .chart-cell {
+                height: 180px;
+            }
+        }
+        @media (max-width: 640px) {
+            .top-bar {
+                padding: 0 12px;
+                flex-wrap: wrap;
+                height: auto;
+                padding: 8px 12px;
+                gap: 8px;
+            }
+            .logo-subtitle { display: none; }
+            .logo-divider { display: none; }
+            .charts-row {
+                grid-template-columns: 1fr;
+            }
+            .chart-cell { height: 160px; }
+            .globe-container { min-height: 300px; }
         }
     </style>
 </head>
 <body>
 
-<!-- Header -->
-<div class="header">
-    <div class="container">
-        <div class="header-left">
-            <h1>Commodity Supply Intelligence Report</h1>
-            <div class="subtitle">Satellite-Based Early Warning System</div>
-            <div class="meta">Generated: 2026-03-24 04:15 UTC | Data period: 2025-12 to 2026-03</div>
+<!-- ==================== TOP BAR ==================== -->
+<div class="top-bar">
+    <div class="top-bar-left">
+        <div class="logo-text">ORIGIN <span>DIRECT</span> GROUP</div>
+        <div class="logo-divider"></div>
+        <div class="logo-subtitle">Commodity Intelligence Terminal</div>
+    </div>
+    <div class="top-bar-center">
+        <div class="live-dot"></div>
+        <span class="live-label">LIVE</span>
+        <span class="timestamp">Updated: 2026-03-24 05:27 UTC</span>
+    </div>
+    <div class="top-bar-right">
+        
+        <div class="enso-badge enso-neutral">
+            ENSO: Neutral (-0.4 ONI)
         </div>
-        <div class="header-right">
-            <div class="logo-text">ORIGIN DIRECT GROUP</div>
-            <div class="logo-sub">Supply Intelligence Division</div>
-        </div>
+        
     </div>
 </div>
 
-<div class="container">
+<!-- ==================== MAIN GRID ==================== -->
+<div class="main-grid">
 
-    <!-- Purpose Banner -->
-    <div class="purpose-banner">
-        <p><strong>What is this?</strong> This dashboard monitors satellite weather data across key growing regions in Ghana, Nigeria, and India. Anomalies in rainfall patterns signal potential crop failures and supply shortages &mdash; giving you <strong>2-6 months advance warning</strong> to secure supply or adjust pricing.</p>
-    </div>
-
-    <!-- Summary Stats -->
-    <div class="summary-row">
-        <div class="summary-card">
-            <div class="number num-high">2</div>
-            <div class="label">High Risk</div>
-        </div>
-        <div class="summary-card">
-            <div class="number num-medium">4</div>
-            <div class="label">Medium Risk</div>
-        </div>
-        <div class="summary-card">
-            <div class="number num-low">2</div>
-            <div class="label">Low Risk</div>
-        </div>
-        <div class="summary-card">
-            <div class="number num-neutral">11</div>
-            <div class="label">Total Alerts</div>
-        </div>
-        <div class="summary-card">
-            <div class="number num-neutral">14</div>
-            <div class="label">Monitoring Points</div>
-        </div>
-    </div>
-
-    <!-- ENSO Status -->
-    <div class="section">
-        <div class="section-title">ENSO Status (El Nino/La Nina)</div>
-        <div class="enso-card">
-            
-            <div class="enso-phase-circle phase-neutral">
-                Neu
+    <!-- Globe -->
+    <div class="globe-container">
+        <div id="globe-viz"></div>
+        <div class="globe-overlay-stats">
+            <div class="globe-stat">
+                <div class="stat-dot" style="background: var(--red);"></div>
+                <span class="stat-count" style="color: var(--red);">2</span> High Risk
             </div>
-            <div class="enso-info">
-                <h3>Neutral</h3>
-                <div class="oni">ONI Value: -0.39 | Season: DJF 2026</div>
-                <div class="impact">
-                    
-                        Neutral ENSO conditions. No significant ENSO-driven anomaly expected. Standard seasonal patterns apply.
-                    
-                </div>
+            <div class="globe-stat">
+                <div class="stat-dot" style="background: var(--amber);"></div>
+                <span class="stat-count" style="color: var(--amber);">4</span> Elevated
             </div>
-            
+            <div class="globe-stat">
+                <div class="stat-dot" style="background: var(--green);"></div>
+                <span class="stat-count" style="color: var(--green);">2</span> Normal
+            </div>
+            <div class="globe-stat">
+                <div class="stat-dot" style="background: var(--cyan);"></div>
+                <span class="stat-count" style="color: var(--cyan);">14</span> Monitoring Points
+            </div>
         </div>
     </div>
 
-    <!-- Commodity-Level Assessments -->
-    <div class="section">
-        <div class="section-title">Commodity Supply Assessments</div>
-
+    <!-- Right Panel: Commodity Risk Cards -->
+    <div class="risk-panel">
+        <div class="risk-panel-header">
+            <h2><span>//</span> Commodity Risk Assessment</h2>
+        </div>
         
-        <div class="commodity-card expanded" id="commodity-1">
-            <div class="commodity-header" onclick="toggleCard('commodity-1')">
+        <div class="commodity-card" data-commodity="Cocoa">
+            <div class="commodity-card-top">
                 <div>
                     <div class="commodity-name">Cocoa</div>
-                    <div class="commodity-stage">Main crop harvest season</div>
+                    <div class="commodity-origin">Monitoring: Ashanti, Ghana, Western, Ghana, Cross River, Nig...</div>
                 </div>
-                <div style="display: flex; align-items: center; gap: 12px;">
-                    <div class="traffic-light tl-high">
-                        <span class="dot"></span>
-                        HIGH RISK
-                    </div>
-                    <span class="expand-icon">&#9660;</span>
-                </div>
+                <div class="risk-badge risk-high">HIGH RISK</div>
             </div>
 
-            <div class="commodity-detail">
-                <!-- Alert summary -->
-                <p style="font-size: 0.88em; color: #666; margin-bottom: 14px;">Monitoring: Ashanti, Ghana, Western, Ghana, Cross River, Nigeria, Ondo, Nigeria. Issues: severe drought, excess rainfall (4 alerts).</p>
-
-                <!-- Price Impact -->
+            
+            <div class="price-row">
+                <span class="price-current">$8,500/MT</span>
+                <span class="price-arrow">&#8594;</span>
                 
-                <h4 style="font-size: 0.85em; font-weight: 700; color: #1a2e1a; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px;">Estimated Price Impact</h4>
-                <div class="price-impact">
-                    <div class="price-box">
-                        <div class="price-label">Current Price</div>
-                        <div class="price-value">$8,500</div>
-                        <div class="price-sub">per MT (ICCO reference)</div>
-                    </div>
-                    <div class="price-box">
-                        <div class="price-label">Est. in 1-3 months</div>
-                        <div class="price-value est">$11,900 - $15,300</div>
-                        <div class="price-sub">+40-80% increase</div>
-                    </div>
-                    <div class="price-box">
-                        <div class="price-label">Confidence</div>
-                        <div class="price-value" style="font-size: 1.1em;">
-                            <span class="confidence-badge conf-high">High</span>
-                        </div>
-                        <div class="price-sub">3/4 points with alerts</div>
-                    </div>
-                </div>
+                <span class="price-projected price-up">$11,900-$15,300</span>
+                <span class="price-change change-up">+40-80%</span>
                 
-                <p style="font-size: 0.82em; color: #888; margin-bottom: 4px;">Severe shortage risk</p>
-                
-
-                <!-- Historical Precedent -->
-                
-                <div class="precedent">
-                    <strong>Historical precedent:</strong> In 2023-24, West African drought drove cocoa from $2,500 to $10,000+/MT (300% increase). Similar patterns are a serious warning sign.
-                </div>
-                
-
-                <!-- Recommendation -->
-                <div class="recommendation rec-alert">
-                    <div class="rec-urgency">IMMEDIATE ACTION</div>
-                    <div class="rec-action">Lock in supply NOW</div>
-                    <div class="rec-detail">Secure Cocoa at current prices immediately. Contact Origin Direct for forward contracts covering the next 3-6 months. Current market conditions suggest significant upward price pressure.</div>
-                </div>
-
-                <!-- 3-Month Outlook -->
-                <div class="outlook-box">
-                    <div class="outlook-title">Next 3 Months Outlook (Apr-Jun)</div>
-                    <div style="font-size: 0.82em; font-weight: 600; color: #555; margin-bottom: 6px;">Key Dates:</div>
-                    <ul class="outlook-dates">
-                        
-                        <li>Ghana main crop harvest: Oct-Mar</li>
-                        
-                        <li>Ghana mid-crop: Jun-Aug</li>
-                        
-                        <li>Rainy season (critical): Mar-Jul, Sep-Nov</li>
-                        
-                        <li>Dry season / Harmattan: Dec-Feb</li>
-                        
-                    </ul>
-                    <div style="font-size: 0.82em; font-weight: 600; color: #555; margin: 10px 0 6px;">What to Watch:</div>
-                    <ul class="outlook-dates watch-items">
-                        
-                        <li>ENSO trend: currently Neutral (-0.4). Watch for strengthening/weakening.</li>
-                        
-                        <li>Approaching main rainy season. Rainfall onset timing is critical for pod development.</li>
-                        
-                    </ul>
-                </div>
             </div>
+            
+
+            <div class="commodity-sparkline">
+                <canvas id="spark-1"></canvas>
+            </div>
+
+            
+            <div class="commodity-stage">Main crop harvest season</div>
+            
+
+            
+            <div class="commodity-detail-text">
+                Severe shortage risk | Timeline: 1-3 months | Confidence: High
+                
+            </div>
+            
+
+            
+            <a class="cta-lock cta-high" href="https://origindirectgroup.com/quote" target="_blank">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+                LOCK IN SUPPLY NOW
+            </a>
+            
         </div>
         
-        <div class="commodity-card expanded" id="commodity-2">
-            <div class="commodity-header" onclick="toggleCard('commodity-2')">
+        <div class="commodity-card" data-commodity="Turmeric">
+            <div class="commodity-card-top">
                 <div>
                     <div class="commodity-name">Turmeric</div>
-                    <div class="commodity-stage">Harvest and curing</div>
+                    <div class="commodity-origin">Monitoring: Tamil Nadu, India. Issues: excess rainfall, seve...</div>
                 </div>
-                <div style="display: flex; align-items: center; gap: 12px;">
-                    <div class="traffic-light tl-high">
-                        <span class="dot"></span>
-                        HIGH RISK
-                    </div>
-                    <span class="expand-icon">&#9660;</span>
-                </div>
+                <div class="risk-badge risk-high">HIGH RISK</div>
             </div>
 
-            <div class="commodity-detail">
-                <!-- Alert summary -->
-                <p style="font-size: 0.88em; color: #666; margin-bottom: 14px;">Monitoring: Tamil Nadu, India. Issues: severe drought, excess rainfall (3 alerts).</p>
-
-                <!-- Price Impact -->
+            
+            <div class="price-row">
+                <span class="price-current">$4,500/MT</span>
+                <span class="price-arrow">&#8594;</span>
                 
-                <h4 style="font-size: 0.85em; font-weight: 700; color: #1a2e1a; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px;">Estimated Price Impact</h4>
-                <div class="price-impact">
-                    <div class="price-box">
-                        <div class="price-label">Current Price</div>
-                        <div class="price-value">$4,500</div>
-                        <div class="price-sub">per MT (India FOB)</div>
-                    </div>
-                    <div class="price-box">
-                        <div class="price-label">Est. in 1-3 months</div>
-                        <div class="price-value est">$6,300 - $8,100</div>
-                        <div class="price-sub">+40-80% increase</div>
-                    </div>
-                    <div class="price-box">
-                        <div class="price-label">Confidence</div>
-                        <div class="price-value" style="font-size: 1.1em;">
-                            <span class="confidence-badge conf-high">High</span>
-                        </div>
-                        <div class="price-sub">1/1 points with alerts</div>
-                    </div>
-                </div>
+                <span class="price-projected price-up">$6,300-$8,100</span>
+                <span class="price-change change-up">+40-80%</span>
                 
-                <p style="font-size: 0.82em; color: #888; margin-bottom: 4px;">Severe shortage risk</p>
-                
-
-                <!-- Historical Precedent -->
-                
-                <div class="precedent">
-                    <strong>Historical precedent:</strong> In 2023-24, failed monsoon rains in Tamil Nadu and Andhra Pradesh drove turmeric from $3,500 to $6,000/MT.
-                </div>
-                
-
-                <!-- Recommendation -->
-                <div class="recommendation rec-alert">
-                    <div class="rec-urgency">IMMEDIATE ACTION</div>
-                    <div class="rec-action">Lock in supply NOW</div>
-                    <div class="rec-detail">Secure Turmeric at current prices immediately. Contact Origin Direct for forward contracts covering the next 3-6 months. Current market conditions suggest significant upward price pressure.</div>
-                </div>
-
-                <!-- 3-Month Outlook -->
-                <div class="outlook-box">
-                    <div class="outlook-title">Next 3 Months Outlook (Apr-Jun)</div>
-                    <div style="font-size: 0.82em; font-weight: 600; color: #555; margin-bottom: 6px;">Key Dates:</div>
-                    <ul class="outlook-dates">
-                        
-                        <li>Planting: Jun-Jul</li>
-                        
-                        <li>Growing (monsoon): Jul-Nov</li>
-                        
-                        <li>Harvest: Jan-Mar</li>
-                        
-                        <li>Curing/drying: Feb-Apr</li>
-                        
-                    </ul>
-                    <div style="font-size: 0.82em; font-weight: 600; color: #555; margin: 10px 0 6px;">What to Watch:</div>
-                    <ul class="outlook-dates watch-items">
-                        
-                        <li>ENSO trend: currently Neutral (-0.4). Watch for strengthening/weakening.</li>
-                        
-                    </ul>
-                </div>
             </div>
+            
+
+            <div class="commodity-sparkline">
+                <canvas id="spark-2"></canvas>
+            </div>
+
+            
+            <div class="commodity-stage">Harvest and curing</div>
+            
+
+            
+            <div class="commodity-detail-text">
+                Severe shortage risk | Timeline: 1-3 months | Confidence: High
+                
+            </div>
+            
+
+            
+            <a class="cta-lock cta-high" href="https://origindirectgroup.com/quote" target="_blank">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+                LOCK IN SUPPLY NOW
+            </a>
+            
         </div>
         
-        <div class="commodity-card " id="commodity-3">
-            <div class="commodity-header" onclick="toggleCard('commodity-3')">
+        <div class="commodity-card" data-commodity="Cashew">
+            <div class="commodity-card-top">
                 <div>
                     <div class="commodity-name">Cashew</div>
-                    <div class="commodity-stage">Peak harvest season</div>
+                    <div class="commodity-origin">Monitoring: Brong-Ahafo, Ghana, Benue, Nigeria. Issues: exce...</div>
                 </div>
-                <div style="display: flex; align-items: center; gap: 12px;">
-                    <div class="traffic-light tl-medium">
-                        <span class="dot"></span>
-                        MEDIUM RISK
-                    </div>
-                    <span class="expand-icon">&#9660;</span>
-                </div>
+                <div class="risk-badge risk-medium">MEDIUM RISK</div>
             </div>
 
-            <div class="commodity-detail">
-                <!-- Alert summary -->
-                <p style="font-size: 0.88em; color: #666; margin-bottom: 14px;">Monitoring: Brong-Ahafo, Ghana, Benue, Nigeria. Issues: excess rainfall (1 alerts).</p>
-
-                <!-- Price Impact -->
+            
+            <div class="price-row">
+                <span class="price-current">$1,800/MT (RCN)</span>
+                <span class="price-arrow">&#8594;</span>
                 
-                <h4 style="font-size: 0.85em; font-weight: 700; color: #1a2e1a; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px;">Estimated Price Impact</h4>
-                <div class="price-impact">
-                    <div class="price-box">
-                        <div class="price-label">Current Price</div>
-                        <div class="price-value">$1,800</div>
-                        <div class="price-sub">per MT (RCN) (West Africa FOB)</div>
-                    </div>
-                    <div class="price-box">
-                        <div class="price-label">Est. in 3-6 months</div>
-                        <div class="price-value est">$1,980 - $2,160</div>
-                        <div class="price-sub">+10-20% increase</div>
-                    </div>
-                    <div class="price-box">
-                        <div class="price-label">Confidence</div>
-                        <div class="price-value" style="font-size: 1.1em;">
-                            <span class="confidence-badge conf-medium">Medium</span>
-                        </div>
-                        <div class="price-sub">1/2 points with alerts</div>
-                    </div>
-                </div>
+                <span class="price-projected price-up">$1,980-$2,160</span>
+                <span class="price-change change-up">+10-20%</span>
                 
-                <p style="font-size: 0.82em; color: #888; margin-bottom: 4px;">Flood/quality risk</p>
-                
-
-                <!-- Historical Precedent -->
-                
-                <div class="precedent">
-                    <strong>Historical precedent:</strong> In 2023, erratic rainfall during Ghana's cashew flowering season led to 20% yield losses and 35% price spikes.
-                </div>
-                
-
-                <!-- Recommendation -->
-                <div class="recommendation rec-warning">
-                    <div class="rec-urgency">ACTION RECOMMENDED</div>
-                    <div class="rec-action">Monitor closely, consider securing inventory</div>
-                    <div class="rec-detail">Consider securing 1-2 months of additional Cashew inventory at current prices as a hedge. Review supply contracts and identify backup suppliers.</div>
-                </div>
-
-                <!-- 3-Month Outlook -->
-                <div class="outlook-box">
-                    <div class="outlook-title">Next 3 Months Outlook (Apr-Jun)</div>
-                    <div style="font-size: 0.82em; font-weight: 600; color: #555; margin-bottom: 6px;">Key Dates:</div>
-                    <ul class="outlook-dates">
-                        
-                        <li>Flowering: Dec-Feb</li>
-                        
-                        <li>Fruit/nut development: Feb-Apr</li>
-                        
-                        <li>Harvest: Feb-May (peak Mar-Apr)</li>
-                        
-                        <li>Off-season: Jun-Nov</li>
-                        
-                    </ul>
-                    <div style="font-size: 0.82em; font-weight: 600; color: #555; margin: 10px 0 6px;">What to Watch:</div>
-                    <ul class="outlook-dates watch-items">
-                        
-                        <li>ENSO trend: currently Neutral (-0.4). Watch for strengthening/weakening.</li>
-                        
-                        <li>Peak harvest. Watch for unexpected rain disrupting drying.</li>
-                        
-                    </ul>
-                </div>
             </div>
+            
+
+            <div class="commodity-sparkline">
+                <canvas id="spark-3"></canvas>
+            </div>
+
+            
+            <div class="commodity-stage">Peak harvest season</div>
+            
+
+            
+            <div class="commodity-detail-text">
+                Flood/quality risk | Timeline: 3-6 months | Confidence: Medium
+                
+            </div>
+            
+
+            
+            <a class="cta-lock cta-medium" href="https://origindirectgroup.com/quote" target="_blank">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                SECURE INVENTORY
+            </a>
+            
         </div>
         
-        <div class="commodity-card " id="commodity-4">
-            <div class="commodity-header" onclick="toggleCard('commodity-4')">
+        <div class="commodity-card" data-commodity="Cumin/Guar">
+            <div class="commodity-card-top">
                 <div>
                     <div class="commodity-name">Cumin/Guar</div>
-                    <div class="commodity-stage">Cumin harvest</div>
+                    <div class="commodity-origin">Monitoring: Rajasthan, India. Issues: excess rainfall (1 ale...</div>
                 </div>
-                <div style="display: flex; align-items: center; gap: 12px;">
-                    <div class="traffic-light tl-medium">
-                        <span class="dot"></span>
-                        MEDIUM RISK
-                    </div>
-                    <span class="expand-icon">&#9660;</span>
-                </div>
+                <div class="risk-badge risk-medium">MEDIUM RISK</div>
             </div>
 
-            <div class="commodity-detail">
-                <!-- Alert summary -->
-                <p style="font-size: 0.88em; color: #666; margin-bottom: 14px;">Monitoring: Rajasthan, India. Issues: excess rainfall (1 alerts).</p>
-
-                <!-- Price Impact -->
+            
+            <div class="price-row">
+                <span class="price-current">$3,200/MT</span>
+                <span class="price-arrow">&#8594;</span>
                 
-                <h4 style="font-size: 0.85em; font-weight: 700; color: #1a2e1a; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px;">Estimated Price Impact</h4>
-                <div class="price-impact">
-                    <div class="price-box">
-                        <div class="price-label">Current Price</div>
-                        <div class="price-value">$3,200</div>
-                        <div class="price-sub">per MT (India FOB)</div>
-                    </div>
-                    <div class="price-box">
-                        <div class="price-label">Est. in 3-6 months</div>
-                        <div class="price-value est">$3,520 - $3,840</div>
-                        <div class="price-sub">+10-20% increase</div>
-                    </div>
-                    <div class="price-box">
-                        <div class="price-label">Confidence</div>
-                        <div class="price-value" style="font-size: 1.1em;">
-                            <span class="confidence-badge conf-medium">Medium</span>
-                        </div>
-                        <div class="price-sub">1/1 points with alerts</div>
-                    </div>
-                </div>
+                <span class="price-projected price-up">$3,520-$3,840</span>
+                <span class="price-change change-up">+10-20%</span>
                 
-                <p style="font-size: 0.82em; color: #888; margin-bottom: 4px;">Flood/quality risk</p>
-                
-
-                <!-- Historical Precedent -->
-                
-                <div class="precedent">
-                    <strong>Historical precedent:</strong> Rajasthan cumin is highly weather-sensitive. 2023 drought reduced output 30%, prices doubled within 4 months.
-                </div>
-                
-
-                <!-- Recommendation -->
-                <div class="recommendation rec-warning">
-                    <div class="rec-urgency">ACTION RECOMMENDED</div>
-                    <div class="rec-action">Monitor closely, consider securing inventory</div>
-                    <div class="rec-detail">Consider securing 1-2 months of additional Cumin/Guar inventory at current prices as a hedge. Review supply contracts and identify backup suppliers.</div>
-                </div>
-
-                <!-- 3-Month Outlook -->
-                <div class="outlook-box">
-                    <div class="outlook-title">Next 3 Months Outlook (Apr-Jun)</div>
-                    <div style="font-size: 0.82em; font-weight: 600; color: #555; margin-bottom: 6px;">Key Dates:</div>
-                    <ul class="outlook-dates">
-                        
-                        <li>Cumin sowing (rabi): Oct-Nov</li>
-                        
-                        <li>Cumin harvest: Feb-Mar</li>
-                        
-                        <li>Guar sowing (kharif): Jul-Aug</li>
-                        
-                        <li>Guar harvest: Oct-Nov</li>
-                        
-                    </ul>
-                    <div style="font-size: 0.82em; font-weight: 600; color: #555; margin: 10px 0 6px;">What to Watch:</div>
-                    <ul class="outlook-dates watch-items">
-                        
-                        <li>ENSO trend: currently Neutral (-0.4). Watch for strengthening/weakening.</li>
-                        
-                    </ul>
-                </div>
             </div>
+            
+
+            <div class="commodity-sparkline">
+                <canvas id="spark-4"></canvas>
+            </div>
+
+            
+            <div class="commodity-stage">Cumin harvest</div>
+            
+
+            
+            <div class="commodity-detail-text">
+                Flood/quality risk | Timeline: 3-6 months | Confidence: Medium
+                
+            </div>
+            
+
+            
+            <a class="cta-lock cta-medium" href="https://origindirectgroup.com/quote" target="_blank">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                SECURE INVENTORY
+            </a>
+            
         </div>
         
-        <div class="commodity-card " id="commodity-5">
-            <div class="commodity-header" onclick="toggleCard('commodity-5')">
+        <div class="commodity-card" data-commodity="Ginger">
+            <div class="commodity-card-top">
                 <div>
                     <div class="commodity-name">Ginger</div>
-                    <div class="commodity-stage">Dry ginger processing / off-season</div>
+                    <div class="commodity-origin">Monitoring: Kaduna, Nigeria. Issues: severe drought (1 alert...</div>
                 </div>
-                <div style="display: flex; align-items: center; gap: 12px;">
-                    <div class="traffic-light tl-medium">
-                        <span class="dot"></span>
-                        MEDIUM RISK
-                    </div>
-                    <span class="expand-icon">&#9660;</span>
-                </div>
+                <div class="risk-badge risk-medium">MEDIUM RISK</div>
             </div>
 
-            <div class="commodity-detail">
-                <!-- Alert summary -->
-                <p style="font-size: 0.88em; color: #666; margin-bottom: 14px;">Monitoring: Kaduna, Nigeria. Issues: severe drought (1 alerts).</p>
-
-                <!-- Price Impact -->
+            
+            <div class="price-row">
+                <span class="price-current">$2,800/MT</span>
+                <span class="price-arrow">&#8594;</span>
                 
-                <h4 style="font-size: 0.85em; font-weight: 700; color: #1a2e1a; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px;">Estimated Price Impact</h4>
-                <div class="price-impact">
-                    <div class="price-box">
-                        <div class="price-label">Current Price</div>
-                        <div class="price-value">$2,800</div>
-                        <div class="price-sub">per MT (Nigeria FOB)</div>
-                    </div>
-                    <div class="price-box">
-                        <div class="price-label">Est. in 1-3 months</div>
-                        <div class="price-value est">$3,920 - $5,040</div>
-                        <div class="price-sub">+40-80% increase</div>
-                    </div>
-                    <div class="price-box">
-                        <div class="price-label">Confidence</div>
-                        <div class="price-value" style="font-size: 1.1em;">
-                            <span class="confidence-badge conf-medium">Medium</span>
-                        </div>
-                        <div class="price-sub">1/1 points with alerts</div>
-                    </div>
-                </div>
+                <span class="price-projected price-up">$3,920-$5,040</span>
+                <span class="price-change change-up">+40-80%</span>
                 
-                <p style="font-size: 0.82em; color: #888; margin-bottom: 4px;">Severe shortage risk</p>
-                
-
-                <!-- Historical Precedent -->
-                
-                <div class="precedent">
-                    <strong>Historical precedent:</strong> Nigerian ginger supply is tight. Any weather disruption in Kaduna typically results in 20-30% price response within 2-3 months.
-                </div>
-                
-
-                <!-- Recommendation -->
-                <div class="recommendation rec-warning">
-                    <div class="rec-urgency">ACTION RECOMMENDED</div>
-                    <div class="rec-action">Monitor closely, consider securing inventory</div>
-                    <div class="rec-detail">Consider securing 1-2 months of additional Ginger inventory at current prices as a hedge. Review supply contracts and identify backup suppliers.</div>
-                </div>
-
-                <!-- 3-Month Outlook -->
-                <div class="outlook-box">
-                    <div class="outlook-title">Next 3 Months Outlook (Apr-Jun)</div>
-                    <div style="font-size: 0.82em; font-weight: 600; color: #555; margin-bottom: 6px;">Key Dates:</div>
-                    <ul class="outlook-dates">
-                        
-                        <li>Planting: Apr-May</li>
-                        
-                        <li>Growing (monsoon): Jun-Sep</li>
-                        
-                        <li>Harvest: Oct-Dec</li>
-                        
-                        <li>Dry ginger processing: Jan-Mar</li>
-                        
-                    </ul>
-                    <div style="font-size: 0.82em; font-weight: 600; color: #555; margin: 10px 0 6px;">What to Watch:</div>
-                    <ul class="outlook-dates watch-items">
-                        
-                        <li>ENSO trend: currently Neutral (-0.4). Watch for strengthening/weakening.</li>
-                        
-                    </ul>
-                </div>
             </div>
+            
+
+            <div class="commodity-sparkline">
+                <canvas id="spark-5"></canvas>
+            </div>
+
+            
+            <div class="commodity-stage">Dry ginger processing / off-season</div>
+            
+
+            
+            <div class="commodity-detail-text">
+                Severe shortage risk | Timeline: 1-3 months | Confidence: Medium
+                
+            </div>
+            
+
+            
+            <a class="cta-lock cta-medium" href="https://origindirectgroup.com/quote" target="_blank">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                SECURE INVENTORY
+            </a>
+            
         </div>
         
-        <div class="commodity-card " id="commodity-6">
-            <div class="commodity-header" onclick="toggleCard('commodity-6')">
+        <div class="commodity-card" data-commodity="Shea">
+            <div class="commodity-card-top">
                 <div>
                     <div class="commodity-name">Shea</div>
-                    <div class="commodity-stage">Flowering period (rainfall critical)</div>
+                    <div class="commodity-origin">Monitoring: Northern, Ghana, Upper West, Ghana, Niger State,...</div>
                 </div>
-                <div style="display: flex; align-items: center; gap: 12px;">
-                    <div class="traffic-light tl-medium">
-                        <span class="dot"></span>
-                        MEDIUM RISK
-                    </div>
-                    <span class="expand-icon">&#9660;</span>
-                </div>
+                <div class="risk-badge risk-medium">MEDIUM RISK</div>
             </div>
 
-            <div class="commodity-detail">
-                <!-- Alert summary -->
-                <p style="font-size: 0.88em; color: #666; margin-bottom: 14px;">Monitoring: Northern, Ghana, Upper West, Ghana, Niger State, Nigeria. Issues: severe drought (1 alerts).</p>
-
-                <!-- Price Impact -->
+            
+            <div class="price-row">
+                <span class="price-current">$1,200/MT</span>
+                <span class="price-arrow">&#8594;</span>
                 
-                <h4 style="font-size: 0.85em; font-weight: 700; color: #1a2e1a; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px;">Estimated Price Impact</h4>
-                <div class="price-impact">
-                    <div class="price-box">
-                        <div class="price-label">Current Price</div>
-                        <div class="price-value">$1,200</div>
-                        <div class="price-sub">per MT (West Africa FOB)</div>
-                    </div>
-                    <div class="price-box">
-                        <div class="price-label">Est. in 1-3 months</div>
-                        <div class="price-value est">$1,680 - $2,160</div>
-                        <div class="price-sub">+40-80% increase</div>
-                    </div>
-                    <div class="price-box">
-                        <div class="price-label">Confidence</div>
-                        <div class="price-value" style="font-size: 1.1em;">
-                            <span class="confidence-badge conf-medium">Medium</span>
-                        </div>
-                        <div class="price-sub">1/3 points with alerts</div>
-                    </div>
-                </div>
+                <span class="price-projected price-up">$1,680-$2,160</span>
+                <span class="price-change change-up">+40-80%</span>
                 
-                <p style="font-size: 0.82em; color: #888; margin-bottom: 4px;">Severe shortage risk</p>
-                
-
-                <!-- Historical Precedent -->
-                
-                <div class="precedent">
-                    <strong>Historical precedent:</strong> In 2022, poor rains in northern Ghana reduced shea kernel output by ~25%, pushing prices up 30-40% within 4 months.
-                </div>
-                
-
-                <!-- Recommendation -->
-                <div class="recommendation rec-warning">
-                    <div class="rec-urgency">ACTION RECOMMENDED</div>
-                    <div class="rec-action">Monitor closely, consider securing inventory</div>
-                    <div class="rec-detail">Consider securing 1-2 months of additional Shea inventory at current prices as a hedge. Review supply contracts and identify backup suppliers.</div>
-                </div>
-
-                <!-- 3-Month Outlook -->
-                <div class="outlook-box">
-                    <div class="outlook-title">Next 3 Months Outlook (Apr-Jun)</div>
-                    <div style="font-size: 0.82em; font-weight: 600; color: #555; margin-bottom: 6px;">Key Dates:</div>
-                    <ul class="outlook-dates">
-                        
-                        <li>Shea flowering: Mar-Apr</li>
-                        
-                        <li>Fruit development: May-Jul</li>
-                        
-                        <li>Harvest: Jun-Sep</li>
-                        
-                        <li>Rainy season: Apr-Oct</li>
-                        
-                    </ul>
-                    <div style="font-size: 0.82em; font-weight: 600; color: #555; margin: 10px 0 6px;">What to Watch:</div>
-                    <ul class="outlook-dates watch-items">
-                        
-                        <li>ENSO trend: currently Neutral (-0.4). Watch for strengthening/weakening.</li>
-                        
-                        <li>Rainy season onset in Sahel belt. Early rains critical for shea flowering.</li>
-                        
-                    </ul>
-                </div>
             </div>
+            
+
+            <div class="commodity-sparkline">
+                <canvas id="spark-6"></canvas>
+            </div>
+
+            
+            <div class="commodity-stage">Flowering period (rainfall critical)</div>
+            
+
+            
+            <div class="commodity-detail-text">
+                Severe shortage risk | Timeline: 1-3 months | Confidence: Medium
+                
+            </div>
+            
+
+            
+            <a class="cta-lock cta-medium" href="https://origindirectgroup.com/quote" target="_blank">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                SECURE INVENTORY
+            </a>
+            
         </div>
         
-        <div class="commodity-card " id="commodity-7">
-            <div class="commodity-header" onclick="toggleCard('commodity-7')">
+        <div class="commodity-card" data-commodity="Castor/Guar">
+            <div class="commodity-card-top">
                 <div>
                     <div class="commodity-name">Castor/Guar</div>
-                    <div class="commodity-stage">Off-season / pre-monsoon</div>
+                    <div class="commodity-origin">Monitoring: Gujarat, India. All regions within normal parame...</div>
                 </div>
-                <div style="display: flex; align-items: center; gap: 12px;">
-                    <div class="traffic-light tl-low">
-                        <span class="dot"></span>
-                        LOW RISK
-                    </div>
-                    <span class="expand-icon">&#9660;</span>
-                </div>
+                <div class="risk-badge risk-low">LOW RISK</div>
             </div>
 
-            <div class="commodity-detail">
-                <!-- Alert summary -->
-                <p style="font-size: 0.88em; color: #666; margin-bottom: 14px;">Monitoring: Gujarat, India. All regions within normal parameters.</p>
-
-                <!-- Price Impact -->
+            
+            <div class="price-row">
+                <span class="price-current">$1,400/MT</span>
+                <span class="price-arrow">&#8594;</span>
                 
-                <div style="padding: 12px 0; font-size: 0.88em; color: #27804a; font-weight: 600;">No significant price impact expected under current conditions.</div>
+                <span class="price-projected price-neutral">$1,400</span>
+                <span class="price-change change-neutral">STABLE</span>
                 
-
-                <!-- Historical Precedent -->
-                
-
-                <!-- Recommendation -->
-                <div class="recommendation rec-ok">
-                    <div class="rec-urgency">ROUTINE</div>
-                    <div class="rec-action">No immediate action needed</div>
-                    <div class="rec-detail">Castor/Guar supply conditions are currently normal. Continue routine monitoring. Next assessment in 2 weeks.</div>
-                </div>
-
-                <!-- 3-Month Outlook -->
-                <div class="outlook-box">
-                    <div class="outlook-title">Next 3 Months Outlook (Apr-Jun)</div>
-                    <div style="font-size: 0.82em; font-weight: 600; color: #555; margin-bottom: 6px;">Key Dates:</div>
-                    <ul class="outlook-dates">
-                        
-                        <li>Sowing (monsoon): Jun-Jul</li>
-                        
-                        <li>Growing: Jul-Oct</li>
-                        
-                        <li>Harvest: Oct-Dec</li>
-                        
-                        <li>Indian monsoon: Jun-Sep (critical)</li>
-                        
-                    </ul>
-                    <div style="font-size: 0.82em; font-weight: 600; color: #555; margin: 10px 0 6px;">What to Watch:</div>
-                    <ul class="outlook-dates watch-items">
-                        
-                        <li>ENSO trend: currently Neutral (-0.4). Watch for strengthening/weakening.</li>
-                        
-                    </ul>
-                </div>
             </div>
+            
+
+            <div class="commodity-sparkline">
+                <canvas id="spark-7"></canvas>
+            </div>
+
+            
+            <div class="commodity-stage">Off-season / pre-monsoon</div>
+            
+
+            
+
+            
         </div>
         
-        <div class="commodity-card " id="commodity-8">
-            <div class="commodity-header" onclick="toggleCard('commodity-8')">
+        <div class="commodity-card" data-commodity="Sesame">
+            <div class="commodity-card-top">
                 <div>
                     <div class="commodity-name">Sesame</div>
-                    <div class="commodity-stage">Off-season</div>
+                    <div class="commodity-origin">Monitoring: Jigawa, Nigeria. All regions within normal param...</div>
                 </div>
-                <div style="display: flex; align-items: center; gap: 12px;">
-                    <div class="traffic-light tl-low">
-                        <span class="dot"></span>
-                        LOW RISK
-                    </div>
-                    <span class="expand-icon">&#9660;</span>
-                </div>
+                <div class="risk-badge risk-low">LOW RISK</div>
             </div>
 
-            <div class="commodity-detail">
-                <!-- Alert summary -->
-                <p style="font-size: 0.88em; color: #666; margin-bottom: 14px;">Monitoring: Jigawa, Nigeria. All regions within normal parameters.</p>
-
-                <!-- Price Impact -->
+            
+            <div class="price-row">
+                <span class="price-current">$2,200/MT</span>
+                <span class="price-arrow">&#8594;</span>
                 
-                <div style="padding: 12px 0; font-size: 0.88em; color: #27804a; font-weight: 600;">No significant price impact expected under current conditions.</div>
+                <span class="price-projected price-neutral">$2,200</span>
+                <span class="price-change change-neutral">STABLE</span>
                 
-
-                <!-- Historical Precedent -->
-                
-
-                <!-- Recommendation -->
-                <div class="recommendation rec-ok">
-                    <div class="rec-urgency">ROUTINE</div>
-                    <div class="rec-action">No immediate action needed</div>
-                    <div class="rec-detail">Sesame supply conditions are currently normal. Continue routine monitoring. Next assessment in 2 weeks.</div>
-                </div>
-
-                <!-- 3-Month Outlook -->
-                <div class="outlook-box">
-                    <div class="outlook-title">Next 3 Months Outlook (Apr-Jun)</div>
-                    <div style="font-size: 0.82em; font-weight: 600; color: #555; margin-bottom: 6px;">Key Dates:</div>
-                    <ul class="outlook-dates">
-                        
-                        <li>Sowing: Jun-Jul</li>
-                        
-                        <li>Growing: Jul-Sep</li>
-                        
-                        <li>Harvest: Oct-Nov</li>
-                        
-                        <li>Off-season: Dec-May</li>
-                        
-                    </ul>
-                    <div style="font-size: 0.82em; font-weight: 600; color: #555; margin: 10px 0 6px;">What to Watch:</div>
-                    <ul class="outlook-dates watch-items">
-                        
-                        <li>ENSO trend: currently Neutral (-0.4). Watch for strengthening/weakening.</li>
-                        
-                    </ul>
-                </div>
             </div>
-        </div>
-        
-    </div>
+            
 
-    <!-- Active Alerts -->
-    
-    <div class="section">
-        <div class="section-title">Active Alerts (11)</div>
-        
-        <div class="alert-item alert-critical">
-            <div class="alert-title">Excess rainfall: Ashanti, Ghana</div>
-            <div class="alert-detail">202512: 193% above average (2.0 vs 0.7 mm/day). Flood/disease risk for Cocoa.</div>
-        </div>
-        
-        <div class="alert-item alert-critical">
-            <div class="alert-title">Excess rainfall: Western, Ghana</div>
-            <div class="alert-detail">202512: 195% above average (3.9 vs 1.3 mm/day). Flood/disease risk for Cocoa.</div>
-        </div>
-        
-        <div class="alert-item alert-critical">
-            <div class="alert-title">Severe drought: Cross River, Nigeria</div>
-            <div class="alert-detail">202603: -66% below average (1.0 vs 2.9 mm/day). Critical for Cocoa.</div>
-        </div>
-        
-        <div class="alert-item alert-critical">
-            <div class="alert-title">Severe drought: Upper West, Ghana</div>
-            <div class="alert-detail">202603: -71% below average (0.2 vs 0.7 mm/day). Critical for Shea.</div>
-        </div>
-        
-        <div class="alert-item alert-critical">
-            <div class="alert-title">Excess rainfall: Brong-Ahafo, Ghana</div>
-            <div class="alert-detail">202512: 100% above average (0.8 vs 0.2 mm/day). Flood/disease risk for Cashew.</div>
-        </div>
-        
-        <div class="alert-item alert-critical">
-            <div class="alert-title">Excess rainfall: Rajasthan, India</div>
-            <div class="alert-detail">202512: 100% above average (0.5 vs 0.1 mm/day). Flood/disease risk for Cumin/Guar.</div>
-        </div>
-        
-        <div class="alert-item alert-critical">
-            <div class="alert-title">Severe drought: Tamil Nadu, India</div>
-            <div class="alert-detail">202512: -77% below average (0.5 vs 2.1 mm/day). Critical for Turmeric.</div>
-        </div>
-        
-        <div class="alert-item alert-critical">
-            <div class="alert-title">Excess rainfall: Tamil Nadu, India</div>
-            <div class="alert-detail">202601: 100% above average (1.4 vs 0.3 mm/day). Flood/disease risk for Turmeric.</div>
-        </div>
-        
-        <div class="alert-item alert-critical">
-            <div class="alert-title">Severe drought: Tamil Nadu, India</div>
-            <div class="alert-detail">202603: -54% below average (0.2 vs 0.5 mm/day). Critical for Turmeric.</div>
-        </div>
-        
-        <div class="alert-item alert-critical">
-            <div class="alert-title">Severe drought: Kaduna, Nigeria</div>
-            <div class="alert-detail">202603: -85% below average (0.1 vs 0.8 mm/day). Critical for Ginger.</div>
-        </div>
-        
-        <div class="alert-item alert-warning">
-            <div class="alert-title">Excess rainfall: Western, Ghana</div>
-            <div class="alert-detail">202601: 76% above average (1.7 vs 1.0 mm/day). Flood/disease risk for Cocoa.</div>
-        </div>
-        
-    </div>
-    
-
-    <!-- Interactive Satellite Map -->
-    <div class="section">
-        <div class="section-title">Monitoring Points - Satellite View</div>
-        <div class="map-wrapper">
-            <div id="satellite-map"></div>
-            <div class="map-legend">
-                <div class="map-legend-item"><span class="legend-dot" style="background:#27804a;"></span> Normal</div>
-                <div class="map-legend-item"><span class="legend-dot" style="background:#d4860b;"></span> Watch</div>
-                <div class="map-legend-item"><span class="legend-dot" style="background:#c0392b;"></span> Alert</div>
-                <div class="map-legend-item"><span class="legend-dot" style="background:#999;"></span> No Data</div>
+            <div class="commodity-sparkline">
+                <canvas id="spark-8"></canvas>
             </div>
-        </div>
-    </div>
 
-    <!-- Regional Detail Tables -->
-    <div class="section">
-        <div class="section-title">Regional Detail</div>
-        
-        <div class="data-table-wrap">
-            <div class="data-table-title">West Africa - Cocoa</div>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Location</th>
-                        <th>Commodity</th>
-                        <th>Precip (mm/day)</th>
-                        <th>Avg (mm/day)</th>
-                        <th>Deviation</th>
-                        <th>Temp (&deg;C)</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    
-                    <tr>
-                        <td>Ashanti, Ghana</td>
-                        <td>Cocoa</td>
-                        <td>4.5</td>
-                        <td>3.8</td>
-                        <td class="val-pos">
-                            +19%
-                        </td>
-                        <td>28.3</td>
-                        <td><span class="status-badge badge-alert">Alert</span></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>Western, Ghana</td>
-                        <td>Cocoa</td>
-                        <td>4.2</td>
-                        <td>4.3</td>
-                        <td class="val-pos">
-                            -3%
-                        </td>
-                        <td>27.9</td>
-                        <td><span class="status-badge badge-alert">Alert</span></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>Cross River, Nigeria</td>
-                        <td>Cocoa</td>
-                        <td>1.0</td>
-                        <td>2.9</td>
-                        <td class="val-neg">
-                            -66%
-                        </td>
-                        <td>26.2</td>
-                        <td><span class="status-badge badge-alert">Alert</span></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>Ondo, Nigeria</td>
-                        <td>Cocoa</td>
-                        <td>1.4</td>
-                        <td>2.2</td>
-                        <td class="val-neg">
-                            -35%
-                        </td>
-                        <td>26.6</td>
-                        <td><span class="status-badge badge-ok">OK</span></td>
-                    </tr>
-                    
-                </tbody>
-            </table>
-        </div>
-        
-        <div class="data-table-wrap">
-            <div class="data-table-title">West Africa - Shea</div>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Location</th>
-                        <th>Commodity</th>
-                        <th>Precip (mm/day)</th>
-                        <th>Avg (mm/day)</th>
-                        <th>Deviation</th>
-                        <th>Temp (&deg;C)</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    
-                    <tr>
-                        <td>Northern, Ghana</td>
-                        <td>Shea</td>
-                        <td>0.6</td>
-                        <td>1.1</td>
-                        <td class="val-neg">
-                            -48%
-                        </td>
-                        <td>31.9</td>
-                        <td><span class="status-badge badge-ok">OK</span></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>Upper West, Ghana</td>
-                        <td>Shea</td>
-                        <td>0.2</td>
-                        <td>0.7</td>
-                        <td class="val-neg">
-                            -71%
-                        </td>
-                        <td>31.8</td>
-                        <td><span class="status-badge badge-alert">Alert</span></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>Niger State, Nigeria</td>
-                        <td>Shea</td>
-                        <td>0.2</td>
-                        <td>0.4</td>
-                        <td class="val-pos">
-                            +0%
-                        </td>
-                        <td>31.2</td>
-                        <td><span class="status-badge badge-ok">OK</span></td>
-                    </tr>
-                    
-                </tbody>
-            </table>
-        </div>
-        
-        <div class="data-table-wrap">
-            <div class="data-table-title">West Africa - Cashew</div>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Location</th>
-                        <th>Commodity</th>
-                        <th>Precip (mm/day)</th>
-                        <th>Avg (mm/day)</th>
-                        <th>Deviation</th>
-                        <th>Temp (&deg;C)</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    
-                    <tr>
-                        <td>Brong-Ahafo, Ghana</td>
-                        <td>Cashew</td>
-                        <td>2.2</td>
-                        <td>2.0</td>
-                        <td class="val-pos">
-                            +14%
-                        </td>
-                        <td>30.1</td>
-                        <td><span class="status-badge badge-alert">Alert</span></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>Benue, Nigeria</td>
-                        <td>Cashew</td>
-                        <td>0.6</td>
-                        <td>1.1</td>
-                        <td class="val-neg">
-                            -47%
-                        </td>
-                        <td>29.7</td>
-                        <td><span class="status-badge badge-ok">OK</span></td>
-                    </tr>
-                    
-                </tbody>
-            </table>
-        </div>
-        
-        <div class="data-table-wrap">
-            <div class="data-table-title">India - Monsoon</div>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Location</th>
-                        <th>Commodity</th>
-                        <th>Precip (mm/day)</th>
-                        <th>Avg (mm/day)</th>
-                        <th>Deviation</th>
-                        <th>Temp (&deg;C)</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    
-                    <tr>
-                        <td>Gujarat, India</td>
-                        <td>Castor/Guar</td>
-                        <td>0.0</td>
-                        <td>0.1</td>
-                        <td class="val-pos">
-                            +0%
-                        </td>
-                        <td>29.4</td>
-                        <td><span class="status-badge badge-ok">OK</span></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>Rajasthan, India</td>
-                        <td>Cumin/Guar</td>
-                        <td>0.0</td>
-                        <td>0.2</td>
-                        <td class="val-pos">
-                            +0%
-                        </td>
-                        <td>28.5</td>
-                        <td><span class="status-badge badge-alert">Alert</span></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>Tamil Nadu, India</td>
-                        <td>Turmeric</td>
-                        <td>0.2</td>
-                        <td>0.5</td>
-                        <td class="val-neg">
-                            -54%
-                        </td>
-                        <td>27.6</td>
-                        <td><span class="status-badge badge-alert">Alert</span></td>
-                    </tr>
-                    
-                </tbody>
-            </table>
-        </div>
-        
-        <div class="data-table-wrap">
-            <div class="data-table-title">Nigeria - Sesame/Ginger</div>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Location</th>
-                        <th>Commodity</th>
-                        <th>Precip (mm/day)</th>
-                        <th>Avg (mm/day)</th>
-                        <th>Deviation</th>
-                        <th>Temp (&deg;C)</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    
-                    <tr>
-                        <td>Jigawa, Nigeria</td>
-                        <td>Sesame</td>
-                        <td>0.0</td>
-                        <td>0.5</td>
-                        <td class="val-pos">
-                            +0%
-                        </td>
-                        <td>29.5</td>
-                        <td><span class="status-badge badge-ok">OK</span></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>Kaduna, Nigeria</td>
-                        <td>Ginger</td>
-                        <td>0.1</td>
-                        <td>0.8</td>
-                        <td class="val-neg">
-                            -85%
-                        </td>
-                        <td>28.7</td>
-                        <td><span class="status-badge badge-alert">Alert</span></td>
-                    </tr>
-                    
-                </tbody>
-            </table>
+            
+            <div class="commodity-stage">Off-season</div>
+            
+
+            
+
+            
         </div>
         
     </div>
 
-    <!-- Data Sources -->
-    <div class="section">
-        <div class="section-title">Data Sources & Methodology</div>
-        <div class="sources">
-            <p><strong>Satellite weather data:</strong> <a href="https://power.larc.nasa.gov/" target="_blank">NASA POWER API</a> &mdash; Prediction of Worldwide Energy Resources. Provides daily precipitation, temperature, and humidity data at 0.5-degree resolution, with ~5 day lag.</p>
-            <p style="margin-top: 8px;"><strong>ENSO monitoring:</strong> <a href="https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/ensostuff/ONI_v5.php" target="_blank">NOAA Climate Prediction Center</a> &mdash; Oceanic Nino Index (ONI) for El Nino/La Nina classification.</p>
-            <p style="margin-top: 8px;"><strong>Methodology:</strong> Current-month rainfall is compared against 30-year climatological averages from NASA POWER. Deviations exceeding 30% trigger monitoring alerts; deviations exceeding 50% trigger severe alerts. Price impact estimates are based on historical supply-price relationships for each commodity and should be treated as directional guidance, not precise forecasts.</p>
-            <p style="margin-top: 8px;"><strong>Indicative prices:</strong> Reference prices are approximate FOB/origin values for estimation purposes. Actual contract prices depend on quality, volume, delivery terms, and negotiation.</p>
+    <!-- Bottom Price Charts -->
+    <div class="charts-row">
+        <div class="chart-cell" id="chart-cell-0">
+            <div class="chart-label">Cocoa</div>
+            <div class="chart-price" id="chart-price-0" style="color: var(--red);">$8,500/MT</div>
+            <div class="chart-change-label" id="chart-change-0" style="color: var(--red);"></div>
+            <div class="chart-canvas-wrap"><canvas id="price-chart-0"></canvas></div>
+        </div>
+        <div class="chart-cell" id="chart-cell-1">
+            <div class="chart-label">Shea Butter</div>
+            <div class="chart-price" id="chart-price-1" style="color: var(--green);">$1,200/MT</div>
+            <div class="chart-change-label" id="chart-change-1" style="color: var(--green);"></div>
+            <div class="chart-canvas-wrap"><canvas id="price-chart-1"></canvas></div>
+        </div>
+        <div class="chart-cell" id="chart-cell-2">
+            <div class="chart-label">Cashew (RCN)</div>
+            <div class="chart-price" id="chart-price-2" style="color: var(--amber);">$1,800/MT</div>
+            <div class="chart-change-label" id="chart-change-2" style="color: var(--amber);"></div>
+            <div class="chart-canvas-wrap"><canvas id="price-chart-2"></canvas></div>
+        </div>
+        <div class="chart-cell" id="chart-cell-3">
+            <div class="chart-label">Sesame Seeds</div>
+            <div class="chart-price" id="chart-price-3" style="color: var(--cyan);">$2,200/MT</div>
+            <div class="chart-change-label" id="chart-change-3" style="color: var(--cyan);"></div>
+            <div class="chart-canvas-wrap"><canvas id="price-chart-3"></canvas></div>
         </div>
     </div>
 
-    <!-- Share / CTA -->
-    <div class="share-section">
-        <h3>Need to Secure Supply?</h3>
-        <p>This report is generated by Origin Direct Group's proprietary supply intelligence system.<br>
-        For forward contracts, spot pricing, or sourcing inquiries:</p>
-        <a href="https://origindirectgroup.com/quote" target="_blank">Request a Quote &rarr;</a>
+    <!-- Alert Ticker -->
+    <div class="alert-ticker">
+        <div class="ticker-track" id="ticker-track">
+            
+            <div class="ticker-item">
+                <div class="ticker-dot" style="background: var(--red);"></div>
+                <span class="ticker-commodity" style="color: var(--red);">Cocoa</span>
+                <span style="color: var(--text-secondary);">
+                    HIGH RISK
+                    
+                    +40-80% est.
+                    
+                </span>
+            </div>
+            <span class="ticker-sep">|</span>
+            
+            <div class="ticker-item">
+                <div class="ticker-dot" style="background: var(--red);"></div>
+                <span class="ticker-commodity" style="color: var(--red);">Turmeric</span>
+                <span style="color: var(--text-secondary);">
+                    HIGH RISK
+                    
+                    +40-80% est.
+                    
+                </span>
+            </div>
+            <span class="ticker-sep">|</span>
+            
+            <div class="ticker-item">
+                <div class="ticker-dot" style="background: var(--amber);"></div>
+                <span class="ticker-commodity" style="color: var(--amber);">Cashew</span>
+                <span style="color: var(--text-secondary);">
+                    MEDIUM RISK
+                    
+                    +10-20% est.
+                    
+                </span>
+            </div>
+            <span class="ticker-sep">|</span>
+            
+            <div class="ticker-item">
+                <div class="ticker-dot" style="background: var(--amber);"></div>
+                <span class="ticker-commodity" style="color: var(--amber);">Cumin/Guar</span>
+                <span style="color: var(--text-secondary);">
+                    MEDIUM RISK
+                    
+                    +10-20% est.
+                    
+                </span>
+            </div>
+            <span class="ticker-sep">|</span>
+            
+            <div class="ticker-item">
+                <div class="ticker-dot" style="background: var(--amber);"></div>
+                <span class="ticker-commodity" style="color: var(--amber);">Ginger</span>
+                <span style="color: var(--text-secondary);">
+                    MEDIUM RISK
+                    
+                    +40-80% est.
+                    
+                </span>
+            </div>
+            <span class="ticker-sep">|</span>
+            
+            <div class="ticker-item">
+                <div class="ticker-dot" style="background: var(--amber);"></div>
+                <span class="ticker-commodity" style="color: var(--amber);">Shea</span>
+                <span style="color: var(--text-secondary);">
+                    MEDIUM RISK
+                    
+                    +40-80% est.
+                    
+                </span>
+            </div>
+            <span class="ticker-sep">|</span>
+            
+            <div class="ticker-item">
+                <div class="ticker-dot" style="background: var(--green);"></div>
+                <span class="ticker-commodity" style="color: var(--green);">Castor/Guar</span>
+                <span style="color: var(--text-secondary);">
+                    LOW RISK
+                    
+                    STABLE
+                    
+                </span>
+            </div>
+            <span class="ticker-sep">|</span>
+            
+            <div class="ticker-item">
+                <div class="ticker-dot" style="background: var(--green);"></div>
+                <span class="ticker-commodity" style="color: var(--green);">Sesame</span>
+                <span style="color: var(--text-secondary);">
+                    LOW RISK
+                    
+                    STABLE
+                    
+                </span>
+            </div>
+            <span class="ticker-sep">|</span>
+            
+            
+            <div class="ticker-item">
+                <div class="ticker-dot" style="background: var(--red);"></div>
+                <span style="color: var(--red);">Excess rainfall: Ashanti, Ghana</span>
+            </div>
+            <span class="ticker-sep">|</span>
+            
+            <div class="ticker-item">
+                <div class="ticker-dot" style="background: var(--red);"></div>
+                <span style="color: var(--red);">Excess rainfall: Western, Ghana</span>
+            </div>
+            <span class="ticker-sep">|</span>
+            
+            <div class="ticker-item">
+                <div class="ticker-dot" style="background: var(--red);"></div>
+                <span style="color: var(--red);">Severe drought: Cross River, Nigeria</span>
+            </div>
+            <span class="ticker-sep">|</span>
+            
+            <div class="ticker-item">
+                <div class="ticker-dot" style="background: var(--red);"></div>
+                <span style="color: var(--red);">Severe drought: Upper West, Ghana</span>
+            </div>
+            <span class="ticker-sep">|</span>
+            
+            <div class="ticker-item">
+                <div class="ticker-dot" style="background: var(--red);"></div>
+                <span style="color: var(--red);">Excess rainfall: Brong-Ahafo, Ghana</span>
+            </div>
+            <span class="ticker-sep">|</span>
+            
+            <div class="ticker-item">
+                <div class="ticker-dot" style="background: var(--red);"></div>
+                <span style="color: var(--red);">Excess rainfall: Rajasthan, India</span>
+            </div>
+            <span class="ticker-sep">|</span>
+            
+            <div class="ticker-item">
+                <div class="ticker-dot" style="background: var(--red);"></div>
+                <span style="color: var(--red);">Severe drought: Tamil Nadu, India</span>
+            </div>
+            <span class="ticker-sep">|</span>
+            
+            <div class="ticker-item">
+                <div class="ticker-dot" style="background: var(--red);"></div>
+                <span style="color: var(--red);">Excess rainfall: Tamil Nadu, India</span>
+            </div>
+            <span class="ticker-sep">|</span>
+            
+            <!-- Duplicate for seamless loop -->
+            
+            <div class="ticker-item">
+                <div class="ticker-dot" style="background: var(--red);"></div>
+                <span class="ticker-commodity" style="color: var(--red);">Cocoa</span>
+                <span style="color: var(--text-secondary);">
+                    HIGH RISK
+                    
+                    +40-80% est.
+                    
+                </span>
+            </div>
+            <span class="ticker-sep">|</span>
+            
+            <div class="ticker-item">
+                <div class="ticker-dot" style="background: var(--red);"></div>
+                <span class="ticker-commodity" style="color: var(--red);">Turmeric</span>
+                <span style="color: var(--text-secondary);">
+                    HIGH RISK
+                    
+                    +40-80% est.
+                    
+                </span>
+            </div>
+            <span class="ticker-sep">|</span>
+            
+            <div class="ticker-item">
+                <div class="ticker-dot" style="background: var(--amber);"></div>
+                <span class="ticker-commodity" style="color: var(--amber);">Cashew</span>
+                <span style="color: var(--text-secondary);">
+                    MEDIUM RISK
+                    
+                    +10-20% est.
+                    
+                </span>
+            </div>
+            <span class="ticker-sep">|</span>
+            
+            <div class="ticker-item">
+                <div class="ticker-dot" style="background: var(--amber);"></div>
+                <span class="ticker-commodity" style="color: var(--amber);">Cumin/Guar</span>
+                <span style="color: var(--text-secondary);">
+                    MEDIUM RISK
+                    
+                    +10-20% est.
+                    
+                </span>
+            </div>
+            <span class="ticker-sep">|</span>
+            
+            <div class="ticker-item">
+                <div class="ticker-dot" style="background: var(--amber);"></div>
+                <span class="ticker-commodity" style="color: var(--amber);">Ginger</span>
+                <span style="color: var(--text-secondary);">
+                    MEDIUM RISK
+                    
+                    +40-80% est.
+                    
+                </span>
+            </div>
+            <span class="ticker-sep">|</span>
+            
+            <div class="ticker-item">
+                <div class="ticker-dot" style="background: var(--amber);"></div>
+                <span class="ticker-commodity" style="color: var(--amber);">Shea</span>
+                <span style="color: var(--text-secondary);">
+                    MEDIUM RISK
+                    
+                    +40-80% est.
+                    
+                </span>
+            </div>
+            <span class="ticker-sep">|</span>
+            
+            <div class="ticker-item">
+                <div class="ticker-dot" style="background: var(--green);"></div>
+                <span class="ticker-commodity" style="color: var(--green);">Castor/Guar</span>
+                <span style="color: var(--text-secondary);">
+                    LOW RISK
+                    
+                    STABLE
+                    
+                </span>
+            </div>
+            <span class="ticker-sep">|</span>
+            
+            <div class="ticker-item">
+                <div class="ticker-dot" style="background: var(--green);"></div>
+                <span class="ticker-commodity" style="color: var(--green);">Sesame</span>
+                <span style="color: var(--text-secondary);">
+                    LOW RISK
+                    
+                    STABLE
+                    
+                </span>
+            </div>
+            <span class="ticker-sep">|</span>
+            
+            
+            <div class="ticker-item">
+                <div class="ticker-dot" style="background: var(--red);"></div>
+                <span style="color: var(--red);">Excess rainfall: Ashanti, Ghana</span>
+            </div>
+            <span class="ticker-sep">|</span>
+            
+            <div class="ticker-item">
+                <div class="ticker-dot" style="background: var(--red);"></div>
+                <span style="color: var(--red);">Excess rainfall: Western, Ghana</span>
+            </div>
+            <span class="ticker-sep">|</span>
+            
+            <div class="ticker-item">
+                <div class="ticker-dot" style="background: var(--red);"></div>
+                <span style="color: var(--red);">Severe drought: Cross River, Nigeria</span>
+            </div>
+            <span class="ticker-sep">|</span>
+            
+            <div class="ticker-item">
+                <div class="ticker-dot" style="background: var(--red);"></div>
+                <span style="color: var(--red);">Severe drought: Upper West, Ghana</span>
+            </div>
+            <span class="ticker-sep">|</span>
+            
+            <div class="ticker-item">
+                <div class="ticker-dot" style="background: var(--red);"></div>
+                <span style="color: var(--red);">Excess rainfall: Brong-Ahafo, Ghana</span>
+            </div>
+            <span class="ticker-sep">|</span>
+            
+            <div class="ticker-item">
+                <div class="ticker-dot" style="background: var(--red);"></div>
+                <span style="color: var(--red);">Excess rainfall: Rajasthan, India</span>
+            </div>
+            <span class="ticker-sep">|</span>
+            
+            <div class="ticker-item">
+                <div class="ticker-dot" style="background: var(--red);"></div>
+                <span style="color: var(--red);">Severe drought: Tamil Nadu, India</span>
+            </div>
+            <span class="ticker-sep">|</span>
+            
+            <div class="ticker-item">
+                <div class="ticker-dot" style="background: var(--red);"></div>
+                <span style="color: var(--red);">Excess rainfall: Tamil Nadu, India</span>
+            </div>
+            <span class="ticker-sep">|</span>
+            
+        </div>
     </div>
 
+    <!-- Footer -->
+    <div class="footer">
+        Powered by <strong>Origin Direct Group</strong> &nbsp;|&nbsp;
+        <a href="https://origindirectgroup.com/quote" target="_blank">origindirectgroup.com/quote</a>
+        &nbsp;|&nbsp; Data: NASA POWER, NOAA CPC &nbsp;|&nbsp; 2026-03-24 05:27 UTC
+    </div>
 </div>
 
-<footer>
-    <div class="container">
-        Origin Direct Group &mdash; Commodity Supply Intelligence | Automated satellite monitoring report<br>
-        Data: NASA POWER API, NOAA CPC | &copy; 2026 Origin Direct Group
-    </div>
-</footer>
-
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
 <script>
-function toggleCard(id) {
-    var card = document.getElementById(id);
-    if (card) {
-        card.classList.toggle('expanded');
-    }
-}
+// ==================== DATA FROM JINJA2 ====================
+const mapPoints = [{"alert_count": 1, "commodity": "Cocoa", "lat": 6.7, "lon": -1.6, "name": "Ashanti, Ghana", "price_impact": "+40-80% in 1-3 months", "rainfall_anomaly": 19.3, "risk_level": "high", "status": "alert"}, {"alert_count": 2, "commodity": "Cocoa", "lat": 5.5, "lon": -2.5, "name": "Western, Ghana", "price_impact": "+40-80% in 1-3 months", "rainfall_anomaly": -2.8, "risk_level": "high", "status": "alert"}, {"alert_count": 1, "commodity": "Cocoa", "lat": 5.8, "lon": 8.5, "name": "Cross River, Nigeria", "price_impact": "+40-80% in 1-3 months", "rainfall_anomaly": -66.4, "risk_level": "high", "status": "alert"}, {"alert_count": 0, "commodity": "Cocoa", "lat": 7.1, "lon": 4.8, "name": "Ondo, Nigeria", "price_impact": "+40-80% in 1-3 months", "rainfall_anomaly": -35.3, "risk_level": "high", "status": "ok"}, {"alert_count": 0, "commodity": "Shea", "lat": 9.5, "lon": -1.0, "name": "Northern, Ghana", "price_impact": "+40-80% in 1-3 months", "rainfall_anomaly": -47.7, "risk_level": "medium", "status": "ok"}, {"alert_count": 1, "commodity": "Shea", "lat": 10.3, "lon": -2.5, "name": "Upper West, Ghana", "price_impact": "+40-80% in 1-3 months", "rainfall_anomaly": -71.2, "risk_level": "high", "status": "alert"}, {"alert_count": 0, "commodity": "Shea", "lat": 9.6, "lon": 6.5, "name": "Niger State, Nigeria", "price_impact": "+40-80% in 1-3 months", "rainfall_anomaly": 0, "risk_level": "medium", "status": "ok"}, {"alert_count": 1, "commodity": "Cashew", "lat": 7.9, "lon": -1.7, "name": "Brong-Ahafo, Ghana", "price_impact": "+10-20% in 3-6 months", "rainfall_anomaly": 13.5, "risk_level": "high", "status": "alert"}, {"alert_count": 0, "commodity": "Cashew", "lat": 7.3, "lon": 8.5, "name": "Benue, Nigeria", "price_impact": "+10-20% in 3-6 months", "rainfall_anomaly": -46.6, "risk_level": "medium", "status": "ok"}, {"alert_count": 0, "commodity": "Castor/Guar", "lat": 22.3, "lon": 71.2, "name": "Gujarat, India", "price_impact": "", "rainfall_anomaly": 0, "risk_level": "low", "status": "ok"}, {"alert_count": 1, "commodity": "Cumin/Guar", "lat": 26.9, "lon": 70.9, "name": "Rajasthan, India", "price_impact": "+10-20% in 3-6 months", "rainfall_anomaly": 0, "risk_level": "high", "status": "alert"}, {"alert_count": 3, "commodity": "Turmeric", "lat": 11.1, "lon": 78.7, "name": "Tamil Nadu, India", "price_impact": "+40-80% in 1-3 months", "rainfall_anomaly": -53.5, "risk_level": "high", "status": "alert"}, {"alert_count": 0, "commodity": "Sesame", "lat": 12.2, "lon": 9.6, "name": "Jigawa, Nigeria", "price_impact": "", "rainfall_anomaly": 0, "risk_level": "low", "status": "ok"}, {"alert_count": 1, "commodity": "Ginger", "lat": 10.5, "lon": 7.4, "name": "Kaduna, Nigeria", "price_impact": "+40-80% in 1-3 months", "rainfall_anomaly": -85.3, "risk_level": "high", "status": "alert"}];
+const commodityImpacts = [{"alert_count": 4, "commodity": "Cocoa", "detail": "Monitoring: Ashanti, Ghana, Western, Ghana, Cross River, Nigeria, Ondo, Nigeria. Issues: excess rainfall, severe drought (4 alerts).", "outlook": {"months": ["Apr", "May", "Jun"], "period": "Apr-Jun", "watch_items": ["ENSO trend: currently Neutral (-0.4). Watch for strengthening/weakening.", "Approaching main rainy season. Rainfall onset timing is critical for pod development."]}, "price_impact": {"alert_count": 4, "confidence": "High", "current_price": 8500, "enso_note": "", "est_price_high": 15300, "est_price_low": 11900, "historical_precedent": "In 2023-24, West African drought drove cocoa from $2,500 to $10,000+/MT (300% increase). Similar patterns are a serious warning sign.", "points_with_alerts": 3, "price_increase_high_pct": 80, "price_increase_low_pct": 40, "price_source": "ICCO reference", "risk_description": "Severe shortage risk", "severe_count": 3, "timeline": "1-3 months", "total_points": 4, "unit": "MT"}, "recommendation": {"action": "Lock in supply NOW", "detail": "Secure Cocoa at current prices immediately. Contact Origin Direct for forward contracts covering the next 3-6 months. Current market conditions suggest significant upward price pressure.", "icon": "alert", "urgency": "IMMEDIATE ACTION"}, "risk_label": "HIGH RISK", "risk_level": "high", "seasonal": {"current_stage": "Main crop harvest season", "key_dates": ["Ghana main crop harvest: Oct-Mar", "Ghana mid-crop: Jun-Aug", "Rainy season (critical): Mar-Jul, Sep-Nov", "Dry season / Harmattan: Dec-Feb"]}}, {"alert_count": 3, "commodity": "Turmeric", "detail": "Monitoring: Tamil Nadu, India. Issues: excess rainfall, severe drought (3 alerts).", "outlook": {"months": ["Apr", "May", "Jun"], "period": "Apr-Jun", "watch_items": ["ENSO trend: currently Neutral (-0.4). Watch for strengthening/weakening."]}, "price_impact": {"alert_count": 3, "confidence": "High", "current_price": 4500, "enso_note": "", "est_price_high": 8100, "est_price_low": 6300, "historical_precedent": "In 2023-24, failed monsoon rains in Tamil Nadu and Andhra Pradesh drove turmeric from $3,500 to $6,000/MT.", "points_with_alerts": 1, "price_increase_high_pct": 80, "price_increase_low_pct": 40, "price_source": "India FOB", "risk_description": "Severe shortage risk", "severe_count": 3, "timeline": "1-3 months", "total_points": 1, "unit": "MT"}, "recommendation": {"action": "Lock in supply NOW", "detail": "Secure Turmeric at current prices immediately. Contact Origin Direct for forward contracts covering the next 3-6 months. Current market conditions suggest significant upward price pressure.", "icon": "alert", "urgency": "IMMEDIATE ACTION"}, "risk_label": "HIGH RISK", "risk_level": "high", "seasonal": {"current_stage": "Harvest and curing", "key_dates": ["Planting: Jun-Jul", "Growing (monsoon): Jul-Nov", "Harvest: Jan-Mar", "Curing/drying: Feb-Apr"]}}, {"alert_count": 1, "commodity": "Cashew", "detail": "Monitoring: Brong-Ahafo, Ghana, Benue, Nigeria. Issues: excess rainfall (1 alerts).", "outlook": {"months": ["Apr", "May", "Jun"], "period": "Apr-Jun", "watch_items": ["ENSO trend: currently Neutral (-0.4). Watch for strengthening/weakening.", "Peak harvest. Watch for unexpected rain disrupting drying."]}, "price_impact": {"alert_count": 1, "confidence": "Medium", "current_price": 1800, "enso_note": "", "est_price_high": 2160, "est_price_low": 1980, "historical_precedent": "In 2023, erratic rainfall during Ghana\u0027s cashew flowering season led to 20% yield losses and 35% price spikes.", "points_with_alerts": 1, "price_increase_high_pct": 20, "price_increase_low_pct": 10, "price_source": "West Africa FOB", "risk_description": "Flood/quality risk", "severe_count": 1, "timeline": "3-6 months", "total_points": 2, "unit": "MT (RCN)"}, "recommendation": {"action": "Monitor closely, consider securing inventory", "detail": "Consider securing 1-2 months of additional Cashew inventory at current prices as a hedge. Review supply contracts and identify backup suppliers.", "icon": "warning", "urgency": "ACTION RECOMMENDED"}, "risk_label": "MEDIUM RISK", "risk_level": "medium", "seasonal": {"current_stage": "Peak harvest season", "key_dates": ["Flowering: Dec-Feb", "Fruit/nut development: Feb-Apr", "Harvest: Feb-May (peak Mar-Apr)", "Off-season: Jun-Nov"]}}, {"alert_count": 1, "commodity": "Cumin/Guar", "detail": "Monitoring: Rajasthan, India. Issues: excess rainfall (1 alerts).", "outlook": {"months": ["Apr", "May", "Jun"], "period": "Apr-Jun", "watch_items": ["ENSO trend: currently Neutral (-0.4). Watch for strengthening/weakening."]}, "price_impact": {"alert_count": 1, "confidence": "Medium", "current_price": 3200, "enso_note": "", "est_price_high": 3840, "est_price_low": 3520, "historical_precedent": "Rajasthan cumin is highly weather-sensitive. 2023 drought reduced output 30%, prices doubled within 4 months.", "points_with_alerts": 1, "price_increase_high_pct": 20, "price_increase_low_pct": 10, "price_source": "India FOB", "risk_description": "Flood/quality risk", "severe_count": 1, "timeline": "3-6 months", "total_points": 1, "unit": "MT"}, "recommendation": {"action": "Monitor closely, consider securing inventory", "detail": "Consider securing 1-2 months of additional Cumin/Guar inventory at current prices as a hedge. Review supply contracts and identify backup suppliers.", "icon": "warning", "urgency": "ACTION RECOMMENDED"}, "risk_label": "MEDIUM RISK", "risk_level": "medium", "seasonal": {"current_stage": "Cumin harvest", "key_dates": ["Cumin sowing (rabi): Oct-Nov", "Cumin harvest: Feb-Mar", "Guar sowing (kharif): Jul-Aug", "Guar harvest: Oct-Nov"]}}, {"alert_count": 1, "commodity": "Ginger", "detail": "Monitoring: Kaduna, Nigeria. Issues: severe drought (1 alerts).", "outlook": {"months": ["Apr", "May", "Jun"], "period": "Apr-Jun", "watch_items": ["ENSO trend: currently Neutral (-0.4). Watch for strengthening/weakening."]}, "price_impact": {"alert_count": 1, "confidence": "Medium", "current_price": 2800, "enso_note": "", "est_price_high": 5040, "est_price_low": 3920, "historical_precedent": "Nigerian ginger supply is tight. Any weather disruption in Kaduna typically results in 20-30% price response within 2-3 months.", "points_with_alerts": 1, "price_increase_high_pct": 80, "price_increase_low_pct": 40, "price_source": "Nigeria FOB", "risk_description": "Severe shortage risk", "severe_count": 1, "timeline": "1-3 months", "total_points": 1, "unit": "MT"}, "recommendation": {"action": "Monitor closely, consider securing inventory", "detail": "Consider securing 1-2 months of additional Ginger inventory at current prices as a hedge. Review supply contracts and identify backup suppliers.", "icon": "warning", "urgency": "ACTION RECOMMENDED"}, "risk_label": "MEDIUM RISK", "risk_level": "medium", "seasonal": {"current_stage": "Dry ginger processing / off-season", "key_dates": ["Planting: Apr-May", "Growing (monsoon): Jun-Sep", "Harvest: Oct-Dec", "Dry ginger processing: Jan-Mar"]}}, {"alert_count": 1, "commodity": "Shea", "detail": "Monitoring: Northern, Ghana, Upper West, Ghana, Niger State, Nigeria. Issues: severe drought (1 alerts).", "outlook": {"months": ["Apr", "May", "Jun"], "period": "Apr-Jun", "watch_items": ["ENSO trend: currently Neutral (-0.4). Watch for strengthening/weakening.", "Rainy season onset in Sahel belt. Early rains critical for shea flowering."]}, "price_impact": {"alert_count": 1, "confidence": "Medium", "current_price": 1200, "enso_note": "", "est_price_high": 2160, "est_price_low": 1680, "historical_precedent": "In 2022, poor rains in northern Ghana reduced shea kernel output by ~25%, pushing prices up 30-40% within 4 months.", "points_with_alerts": 1, "price_increase_high_pct": 80, "price_increase_low_pct": 40, "price_source": "West Africa FOB", "risk_description": "Severe shortage risk", "severe_count": 1, "timeline": "1-3 months", "total_points": 3, "unit": "MT"}, "recommendation": {"action": "Monitor closely, consider securing inventory", "detail": "Consider securing 1-2 months of additional Shea inventory at current prices as a hedge. Review supply contracts and identify backup suppliers.", "icon": "warning", "urgency": "ACTION RECOMMENDED"}, "risk_label": "MEDIUM RISK", "risk_level": "medium", "seasonal": {"current_stage": "Flowering period (rainfall critical)", "key_dates": ["Shea flowering: Mar-Apr", "Fruit development: May-Jul", "Harvest: Jun-Sep", "Rainy season: Apr-Oct"]}}, {"alert_count": 0, "commodity": "Castor/Guar", "detail": "Monitoring: Gujarat, India. All regions within normal parameters.", "outlook": {"months": ["Apr", "May", "Jun"], "period": "Apr-Jun", "watch_items": ["ENSO trend: currently Neutral (-0.4). Watch for strengthening/weakening."]}, "price_impact": {"alert_count": 0, "confidence": "Low", "current_price": 1400, "enso_note": "", "est_price_high": 1400, "est_price_low": 1400, "historical_precedent": "El Nino years (2015, 2023) typically reduce Gujarat castor output 15-20%, with 6-month price increases of 25-40%.", "points_with_alerts": 0, "price_increase_high_pct": 0, "price_increase_low_pct": 0, "price_source": "India FOB", "risk_description": "", "severe_count": 0, "timeline": "", "total_points": 1, "unit": "MT"}, "recommendation": {"action": "No immediate action needed", "detail": "Castor/Guar supply conditions are currently normal. Continue routine monitoring. Next assessment in 2 weeks.", "icon": "ok", "urgency": "ROUTINE"}, "risk_label": "LOW RISK", "risk_level": "low", "seasonal": {"current_stage": "Off-season / pre-monsoon", "key_dates": ["Sowing (monsoon): Jun-Jul", "Growing: Jul-Oct", "Harvest: Oct-Dec", "Indian monsoon: Jun-Sep (critical)"]}}, {"alert_count": 0, "commodity": "Sesame", "detail": "Monitoring: Jigawa, Nigeria. All regions within normal parameters.", "outlook": {"months": ["Apr", "May", "Jun"], "period": "Apr-Jun", "watch_items": ["ENSO trend: currently Neutral (-0.4). Watch for strengthening/weakening."]}, "price_impact": {"alert_count": 0, "confidence": "Low", "current_price": 2200, "enso_note": "", "est_price_high": 2200, "est_price_low": 2200, "historical_precedent": "Nigerian sesame is resilient but 2021 flooding destroyed 15% of crop, causing 20% price increase.", "points_with_alerts": 0, "price_increase_high_pct": 0, "price_increase_low_pct": 0, "price_source": "Nigeria FOB", "risk_description": "", "severe_count": 0, "timeline": "", "total_points": 1, "unit": "MT"}, "recommendation": {"action": "No immediate action needed", "detail": "Sesame supply conditions are currently normal. Continue routine monitoring. Next assessment in 2 weeks.", "icon": "ok", "urgency": "ROUTINE"}, "risk_label": "LOW RISK", "risk_level": "low", "seasonal": {"current_stage": "Off-season", "key_dates": ["Sowing: Jun-Jul", "Growing: Jul-Sep", "Harvest: Oct-Nov", "Off-season: Dec-May"]}}];
+const summaryStats = {"high_risk": 2, "low_risk": 2, "medium_risk": 4, "total_alerts": 11, "total_points": 14};
 
-// --- Interactive Satellite Map ---
-(function() {
-    // Monitoring point data embedded from Jinja2
-    var mapPoints = [
-        
-        {
-            name: "Ashanti, Ghana",
-            commodity: "Cocoa",
-            status: "alert",
-            lat: 6.7,
-            lon: -1.6,
-            risk_level: "high",
-            rainfall_anomaly: 19.3,
-            price_impact: "+40-80% in 1-3 months",
-            alert_count: 1
-        },
-        
-        {
-            name: "Western, Ghana",
-            commodity: "Cocoa",
-            status: "alert",
-            lat: 5.5,
-            lon: -2.5,
-            risk_level: "high",
-            rainfall_anomaly: -2.8,
-            price_impact: "+40-80% in 1-3 months",
-            alert_count: 2
-        },
-        
-        {
-            name: "Cross River, Nigeria",
-            commodity: "Cocoa",
-            status: "alert",
-            lat: 5.8,
-            lon: 8.5,
-            risk_level: "high",
-            rainfall_anomaly: -66.4,
-            price_impact: "+40-80% in 1-3 months",
-            alert_count: 1
-        },
-        
-        {
-            name: "Ondo, Nigeria",
-            commodity: "Cocoa",
-            status: "ok",
-            lat: 7.1,
-            lon: 4.8,
-            risk_level: "high",
-            rainfall_anomaly: -35.3,
-            price_impact: "+40-80% in 1-3 months",
-            alert_count: 0
-        },
-        
-        {
-            name: "Northern, Ghana",
-            commodity: "Shea",
-            status: "ok",
-            lat: 9.5,
-            lon: -1.0,
-            risk_level: "medium",
-            rainfall_anomaly: -47.7,
-            price_impact: "+40-80% in 1-3 months",
-            alert_count: 0
-        },
-        
-        {
-            name: "Upper West, Ghana",
-            commodity: "Shea",
-            status: "alert",
-            lat: 10.3,
-            lon: -2.5,
-            risk_level: "high",
-            rainfall_anomaly: -71.2,
-            price_impact: "+40-80% in 1-3 months",
-            alert_count: 1
-        },
-        
-        {
-            name: "Niger State, Nigeria",
-            commodity: "Shea",
-            status: "ok",
-            lat: 9.6,
-            lon: 6.5,
-            risk_level: "medium",
-            rainfall_anomaly: 0,
-            price_impact: "+40-80% in 1-3 months",
-            alert_count: 0
-        },
-        
-        {
-            name: "Brong-Ahafo, Ghana",
-            commodity: "Cashew",
-            status: "alert",
-            lat: 7.9,
-            lon: -1.7,
-            risk_level: "high",
-            rainfall_anomaly: 13.5,
-            price_impact: "+10-20% in 3-6 months",
-            alert_count: 1
-        },
-        
-        {
-            name: "Benue, Nigeria",
-            commodity: "Cashew",
-            status: "ok",
-            lat: 7.3,
-            lon: 8.5,
-            risk_level: "medium",
-            rainfall_anomaly: -46.6,
-            price_impact: "+10-20% in 3-6 months",
-            alert_count: 0
-        },
-        
-        {
-            name: "Gujarat, India",
-            commodity: "Castor/Guar",
-            status: "ok",
-            lat: 22.3,
-            lon: 71.2,
-            risk_level: "low",
-            rainfall_anomaly: 0,
-            price_impact: "",
-            alert_count: 0
-        },
-        
-        {
-            name: "Rajasthan, India",
-            commodity: "Cumin/Guar",
-            status: "alert",
-            lat: 26.9,
-            lon: 70.9,
-            risk_level: "high",
-            rainfall_anomaly: 0,
-            price_impact: "+10-20% in 3-6 months",
-            alert_count: 1
-        },
-        
-        {
-            name: "Tamil Nadu, India",
-            commodity: "Turmeric",
-            status: "alert",
-            lat: 11.1,
-            lon: 78.7,
-            risk_level: "high",
-            rainfall_anomaly: -53.5,
-            price_impact: "+40-80% in 1-3 months",
-            alert_count: 3
-        },
-        
-        {
-            name: "Jigawa, Nigeria",
-            commodity: "Sesame",
-            status: "ok",
-            lat: 12.2,
-            lon: 9.6,
-            risk_level: "low",
-            rainfall_anomaly: 0,
-            price_impact: "",
-            alert_count: 0
-        },
-        
-        {
-            name: "Kaduna, Nigeria",
-            commodity: "Ginger",
-            status: "alert",
-            lat: 10.5,
-            lon: 7.4,
-            risk_level: "high",
-            rainfall_anomaly: -85.3,
-            price_impact: "+40-80% in 1-3 months",
-            alert_count: 1
+// ==================== COMMODITY COLORS ====================
+const commodityColors = {
+    'Cocoa': '#c2884e',
+    'Shea': '#a3c44a',
+    'Cashew': '#e8a838',
+    'Castor/Guar': '#9b59b6',
+    'Cumin/Guar': '#d4860b',
+    'Turmeric': '#f1c40f',
+    'Sesame': '#06b6d4',
+    'Ginger': '#e67e22',
+    'Charcoal': '#7f8c8d',
+    'Hibiscus': '#e74c3c',
+};
+
+const riskColors = {
+    'high': '#ef4444',
+    'medium': '#f59e0b',
+    'low': '#10b981',
+    'no_data': '#475569',
+};
+
+// ==================== TRADE ROUTES ====================
+const tradeRoutes = [
+    // Shea routes
+    { from: [5.6, 0.0], to: [51.9, 4.5], commodity: 'Shea', label: 'Tema -> Rotterdam' },
+    { from: [5.6, 0.0], to: [53.5, 10.0], commodity: 'Shea', label: 'Tema -> Hamburg' },
+    { from: [5.6, 0.0], to: [40.7, -74.0], commodity: 'Shea', label: 'Tema -> New York' },
+    // Cocoa routes
+    { from: [5.6, 0.0], to: [51.9, 4.5], commodity: 'Cocoa', label: 'Tema -> Rotterdam' },
+    { from: [5.6, 0.0], to: [51.2, 4.4], commodity: 'Cocoa', label: 'Tema -> Antwerp' },
+    { from: [5.6, 0.0], to: [40.7, -74.0], commodity: 'Cocoa', label: 'Tema -> New York' },
+    { from: [5.6, 0.0], to: [35.7, 139.7], commodity: 'Cocoa', label: 'Tema -> Tokyo' },
+    // Cashew routes
+    { from: [5.6, 0.0], to: [18.9, 72.9], commodity: 'Cashew', label: 'Tema -> Nhava Sheva' },
+    { from: [5.6, 0.0], to: [10.8, 106.6], commodity: 'Cashew', label: 'Tema -> Ho Chi Minh' },
+    { from: [5.6, 0.0], to: [51.9, 4.5], commodity: 'Cashew', label: 'Tema -> Rotterdam' },
+    // Charcoal routes
+    { from: [6.5, 3.4], to: [25.0, 55.1], commodity: 'Charcoal', label: 'Lagos -> Jebel Ali' },
+    { from: [6.5, 3.4], to: [29.4, 47.9], commodity: 'Charcoal', label: 'Lagos -> Kuwait' },
+    // Hibiscus routes
+    { from: [6.5, 3.4], to: [19.1, -104.3], commodity: 'Hibiscus', label: 'Lagos -> Manzanillo' },
+    { from: [6.5, 3.4], to: [53.5, 10.0], commodity: 'Hibiscus', label: 'Lagos -> Hamburg' },
+    // Sesame routes
+    { from: [6.5, 3.4], to: [41.0, 29.0], commodity: 'Sesame', label: 'Lagos -> Istanbul' },
+    { from: [6.5, 3.4], to: [31.2, 121.5], commodity: 'Sesame', label: 'Lagos -> Shanghai' },
+    // Ginger routes
+    { from: [6.5, 3.4], to: [18.0, -76.8], commodity: 'Ginger', label: 'Lagos -> Kingston' },
+    { from: [6.5, 3.4], to: [51.5, -0.1], commodity: 'Ginger', label: 'Lagos -> London' },
+    // Turmeric routes
+    { from: [19.0, 72.8], to: [40.7, -74.0], commodity: 'Turmeric', label: 'Nhava Sheva -> New York' },
+    { from: [19.0, 72.8], to: [51.9, 4.5], commodity: 'Turmeric', label: 'Nhava Sheva -> Rotterdam' },
+    // Castor routes
+    { from: [19.0, 72.8], to: [31.2, 121.5], commodity: 'Castor/Guar', label: 'Nhava Sheva -> Shanghai' },
+    { from: [19.0, 72.8], to: [51.9, 4.5], commodity: 'Castor/Guar', label: 'Nhava Sheva -> Rotterdam' },
+];
+
+// ==================== PORT MARKERS ====================
+const ports = [
+    { lat: 5.6, lng: 0.0, name: 'Tema', country: 'Ghana' },
+    { lat: 6.5, lng: 3.4, name: 'Lagos', country: 'Nigeria' },
+    { lat: 18.9, lng: 72.9, name: 'Nhava Sheva', country: 'India' },
+    { lat: 51.9, lng: 4.5, name: 'Rotterdam', country: 'Netherlands' },
+    { lat: 53.5, lng: 10.0, name: 'Hamburg', country: 'Germany' },
+    { lat: 51.2, lng: 4.4, name: 'Antwerp', country: 'Belgium' },
+    { lat: 40.7, lng: -74.0, name: 'New York', country: 'USA' },
+    { lat: 35.7, lng: 139.7, name: 'Tokyo', country: 'Japan' },
+    { lat: 25.0, lng: 55.1, name: 'Jebel Ali', country: 'UAE' },
+    { lat: 31.2, lng: 121.5, name: 'Shanghai', country: 'China' },
+    { lat: 41.0, lng: 29.0, name: 'Istanbul', country: 'Turkey' },
+    { lat: 10.8, lng: 106.6, name: 'Ho Chi Minh', country: 'Vietnam' },
+    { lat: 51.5, lng: -0.1, name: 'London', country: 'UK' },
+    { lat: 19.1, lng: -104.3, name: 'Manzanillo', country: 'Mexico' },
+    { lat: 18.0, lng: -76.8, name: 'Kingston', country: 'Jamaica' },
+    { lat: 29.4, lng: 47.9, name: 'Kuwait', country: 'Kuwait' },
+];
+
+// ==================== GLOBE INITIALIZATION ====================
+document.addEventListener('DOMContentLoaded', function() {
+    const container = document.getElementById('globe-viz');
+    if (!container) return;
+
+    const globe = Globe()
+        .globeImageUrl('//unpkg.com/three-globe/example/img/earth-dark.jpg')
+        .bumpImageUrl('//unpkg.com/three-globe/example/img/earth-topology.png')
+        .backgroundImageUrl('//unpkg.com/three-globe/example/img/night-sky.png')
+        .showAtmosphere(true)
+        .atmosphereColor('#1a3a5c')
+        .atmosphereAltitude(0.2)
+        .width(container.offsetWidth)
+        .height(container.offsetHeight)
+        (container);
+
+    // Auto-rotate
+    globe.controls().autoRotate = true;
+    globe.controls().autoRotateSpeed = 0.4;
+    globe.controls().enableDamping = true;
+    globe.controls().dampingFactor = 0.1;
+
+    // Initial position: centered on West Africa
+    globe.pointOfView({ lat: 15, lng: 10, altitude: 2.2 }, 0);
+
+    // --- Production region points (hex-bin style) ---
+    const pointsData = mapPoints.map(p => ({
+        lat: p.lat,
+        lng: p.lon,
+        name: p.name,
+        commodity: p.commodity,
+        risk: p.risk_level,
+        rainfall: p.rainfall_anomaly,
+        priceImpact: p.price_impact,
+        alertCount: p.alert_count,
+        size: p.risk_level === 'high' ? 0.7 : p.risk_level === 'medium' ? 0.5 : 0.35,
+        color: riskColors[p.risk_level] || '#475569',
+    }));
+
+    globe
+        .pointsData(pointsData)
+        .pointAltitude(d => d.risk === 'high' ? 0.12 : d.risk === 'medium' ? 0.06 : 0.03)
+        .pointRadius(d => d.size)
+        .pointColor(d => d.color)
+        .pointResolution(6)
+        .pointsMerge(false)
+        .pointLabel(d => `
+            <div class="globe-tooltip">
+                <div class="tooltip-name">${d.name}</div>
+                <div class="tooltip-commodity">${d.commodity}</div>
+                <div class="tooltip-row"><span>Risk Level</span><span style="color:${d.color}">${d.risk.toUpperCase()}</span></div>
+                <div class="tooltip-row"><span>Rainfall Anomaly</span><span>${d.rainfall > 0 ? '+' : ''}${d.rainfall}%</span></div>
+                ${d.priceImpact ? `<div class="tooltip-row"><span>Price Impact</span><span style="color:#ef4444">${d.priceImpact}</span></div>` : ''}
+                ${d.alertCount > 0 ? `<div class="tooltip-row"><span>Active Alerts</span><span style="color:#ef4444">${d.alertCount}</span></div>` : ''}
+            </div>
+        `);
+
+    // --- Rings for high-risk points ---
+    const highRiskPoints = pointsData.filter(p => p.risk === 'high');
+    globe
+        .ringsData(highRiskPoints)
+        .ringLat(d => d.lat)
+        .ringLng(d => d.lng)
+        .ringColor(() => t => `rgba(239, 68, 68, ${1 - t})`)
+        .ringMaxRadius(3)
+        .ringPropagationSpeed(1.5)
+        .ringRepeatPeriod(2000);
+
+    // --- Trade route arcs ---
+    const arcsData = tradeRoutes.map(r => ({
+        startLat: r.from[0],
+        startLng: r.from[1],
+        endLat: r.to[0],
+        endLng: r.to[1],
+        color: commodityColors[r.commodity] || '#06b6d4',
+        commodity: r.commodity,
+        label: r.label,
+    }));
+
+    globe
+        .arcsData(arcsData)
+        .arcColor(d => d.color)
+        .arcAltitude(0.15)
+        .arcStroke(0.4)
+        .arcDashLength(0.6)
+        .arcDashGap(0.3)
+        .arcDashAnimateTime(4000)
+        .arcLabel(d => `
+            <div class="globe-tooltip">
+                <div class="tooltip-name">${d.label}</div>
+                <div class="tooltip-commodity">${d.commodity}</div>
+            </div>
+        `);
+
+    // --- Port labels ---
+    const labelsData = ports.map(p => ({
+        lat: p.lat,
+        lng: p.lng,
+        name: p.name,
+        country: p.country,
+        size: 0.4,
+        dotRadius: 0.2,
+        color: '#06b6d4',
+    }));
+
+    globe
+        .labelsData(labelsData)
+        .labelLat(d => d.lat)
+        .labelLng(d => d.lng)
+        .labelText(d => d.name)
+        .labelSize(d => d.size)
+        .labelDotRadius(d => d.dotRadius)
+        .labelColor(() => '#06b6d4')
+        .labelResolution(2)
+        .labelAltitude(0.005);
+
+    // Resize handler
+    window.addEventListener('resize', () => {
+        globe.width(container.offsetWidth).height(container.offsetHeight);
+    });
+});
+
+// ==================== SPARKLINE CHARTS ====================
+document.addEventListener('DOMContentLoaded', function() {
+    // Generate rainfall anomaly sparklines for each commodity card
+    const impacts = commodityImpacts;
+    impacts.forEach((ci, index) => {
+        const canvas = document.getElementById(`spark-${index + 1}`);
+        if (!canvas) return;
+
+        // Generate mock rainfall anomaly trend data (6 months)
+        const riskSeed = ci.risk_level === 'high' ? -40 : ci.risk_level === 'medium' ? -15 : 5;
+        const data = [];
+        for (let i = 0; i < 6; i++) {
+            const base = riskSeed + (Math.random() - 0.5) * 30;
+            data.push(Math.round(base + (i - 3) * (ci.risk_level === 'high' ? -5 : ci.risk_level === 'medium' ? -2 : 1)));
         }
-        
+
+        const color = ci.risk_level === 'high' ? '#ef4444' : ci.risk_level === 'medium' ? '#f59e0b' : '#10b981';
+
+        new Chart(canvas, {
+            type: 'line',
+            data: {
+                labels: ['M-5', 'M-4', 'M-3', 'M-2', 'M-1', 'Now'],
+                datasets: [{
+                    data: data,
+                    borderColor: color,
+                    borderWidth: 1.5,
+                    pointRadius: 0,
+                    fill: true,
+                    backgroundColor: color + '15',
+                    tension: 0.4,
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false }, tooltip: { enabled: false } },
+                scales: {
+                    x: { display: false },
+                    y: {
+                        display: false,
+                        suggestedMin: -80,
+                        suggestedMax: 40,
+                    }
+                },
+                elements: { line: { borderCapStyle: 'round' } },
+                animation: { duration: 1500, easing: 'easeOutQuart' },
+            }
+        });
+    });
+});
+
+// ==================== PRICE TREND CHARTS ====================
+document.addEventListener('DOMContentLoaded', function() {
+    const chartConfigs = [
+        { id: 0, name: 'Cocoa', basePrice: 8500, trend: 'up', color: '#ef4444', volatility: 0.06 },
+        { id: 1, name: 'Shea', basePrice: 1200, trend: 'stable', color: '#10b981', volatility: 0.03 },
+        { id: 2, name: 'Cashew', basePrice: 1800, trend: 'up-mild', color: '#f59e0b', volatility: 0.04 },
+        { id: 3, name: 'Sesame', basePrice: 2200, trend: 'stable', color: '#06b6d4', volatility: 0.03 },
     ];
 
-    // Initialize map centered on Africa/India view
-    var map = L.map('satellite-map', {
-        center: [5, 10],
-        zoom: 3,
-        minZoom: 2,
-        maxZoom: 15
-    });
-
-    // Tile layers
-    var satellite = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-        attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community',
-        maxZoom: 18
-    });
-
-    var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-        maxZoom: 19
-    });
-
-    // Default to satellite view
-    satellite.addTo(map);
-
-    // Layer control
-    L.control.layers({
-        'Satellite': satellite,
-        'Street Map': osm
-    }, null, { position: 'topright' }).addTo(map);
-
-    // Color mapping
-    function riskColor(riskLevel, status) {
-        if (riskLevel === 'no_data' || status === 'no_data') return '#999999';
-        if (riskLevel === 'high' || status === 'alert') return '#c0392b';
-        if (riskLevel === 'medium' || status === 'warning') return '#d4860b';
-        return '#27804a';
-    }
-
-    function statusLabel(status) {
-        var labels = { 'ok': 'Normal', 'warning': 'Watch', 'alert': 'Alert', 'no_data': 'No Data' };
-        return labels[status] || status;
-    }
-
-    // Marker cluster group
-    var markers = L.markerClusterGroup({
-        maxClusterRadius: 30,
-        spiderfyOnMaxZoom: true,
-        showCoverageOnHover: false,
-        iconCreateFunction: function(cluster) {
-            var children = cluster.getAllChildMarkers();
-            var hasHigh = children.some(function(m) { return m.options.riskLevel === 'high'; });
-            var hasMedium = children.some(function(m) { return m.options.riskLevel === 'medium'; });
-            var color = hasHigh ? '#c0392b' : (hasMedium ? '#d4860b' : '#27804a');
-            return L.divIcon({
-                html: '<div style="background:' + color + ';color:white;border-radius:50%;width:36px;height:36px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;border:3px solid white;box-shadow:0 2px 6px rgba(0,0,0,0.4);">' + children.length + '</div>',
-                className: '',
-                iconSize: [36, 36],
-                iconAnchor: [18, 18]
-            });
+    // Update prices from actual data if available
+    const priceMap = {};
+    commodityImpacts.forEach(ci => {
+        if (ci.price_impact && ci.price_impact.current_price) {
+            priceMap[ci.commodity] = ci.price_impact;
         }
     });
 
-    // Add markers and region circles
-    mapPoints.forEach(function(pt) {
-        var color = riskColor(pt.risk_level, pt.status);
-        var isHigh = (pt.risk_level === 'high' || pt.status === 'alert');
+    chartConfigs.forEach(cfg => {
+        const canvas = document.getElementById(`price-chart-${cfg.id}`);
+        if (!canvas) return;
 
-        // Growing region circle (~50km radius)
-        L.circle([pt.lat, pt.lon], {
-            radius: 50000,
-            color: color,
-            fillColor: color,
-            fillOpacity: 0.12,
-            weight: 1,
-            opacity: 0.4
-        }).addTo(map);
+        // Look up actual risk data
+        const actualData = priceMap[cfg.name];
+        if (actualData) {
+            cfg.basePrice = actualData.current_price;
+            if (actualData.price_increase_high_pct > 30) { cfg.trend = 'up'; cfg.color = '#ef4444'; }
+            else if (actualData.price_increase_high_pct > 10) { cfg.trend = 'up-mild'; cfg.color = '#f59e0b'; }
+            else { cfg.trend = 'stable'; cfg.color = '#10b981'; }
+        }
 
-        // Custom circle marker icon
-        var size = isHigh ? 18 : 14;
-        var pulseHtml = isHigh
-            ? '<div style="position:relative;width:' + size + 'px;height:' + size + 'px;">' +
-              '<div style="position:absolute;top:0;left:0;width:100%;height:100%;background:' + color + ';border-radius:50%;border:2px solid white;box-shadow:0 1px 4px rgba(0,0,0,0.4);z-index:2;"></div>' +
-              '<div style="position:absolute;top:-4px;left:-4px;width:' + (size+8) + 'px;height:' + (size+8) + 'px;border-radius:50%;border:2px solid ' + color + ';animation:pulse-ring 1.5s ease-out infinite;z-index:1;"></div>' +
-              '</div>'
-            : '<div style="width:' + size + 'px;height:' + size + 'px;background:' + color + ';border-radius:50%;border:2px solid white;box-shadow:0 1px 4px rgba(0,0,0,0.4);"></div>';
+        // Generate 12 months of mock price data
+        const months = ['Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar'];
+        const prices = [];
+        let price = cfg.basePrice * 0.85;
 
-        var icon = L.divIcon({
-            html: pulseHtml,
-            className: '',
-            iconSize: [size + (isHigh ? 8 : 0), size + (isHigh ? 8 : 0)],
-            iconAnchor: [(size + (isHigh ? 8 : 0)) / 2, (size + (isHigh ? 8 : 0)) / 2]
+        for (let i = 0; i < 12; i++) {
+            const trendFactor = cfg.trend === 'up' ? 0.04 :
+                               cfg.trend === 'up-mild' ? 0.015 : 0.003;
+            const noise = (Math.random() - 0.45) * cfg.basePrice * cfg.volatility;
+            price = price + (cfg.basePrice * trendFactor) + noise;
+            price = Math.max(price, cfg.basePrice * 0.7);
+            prices.push(Math.round(price));
+        }
+
+        // Update display
+        const currentPrice = prices[prices.length - 1];
+        const startPrice = prices[0];
+        const change = ((currentPrice - startPrice) / startPrice * 100).toFixed(1);
+        const priceEl = document.getElementById(`chart-price-${cfg.id}`);
+        const changeEl = document.getElementById(`chart-change-${cfg.id}`);
+        if (priceEl) {
+            priceEl.textContent = `$${currentPrice.toLocaleString()}/MT`;
+            priceEl.style.color = cfg.color;
+        }
+        if (changeEl) {
+            const sign = change >= 0 ? '+' : '';
+            changeEl.textContent = `${sign}${change}% 12M`;
+            changeEl.style.color = cfg.color;
+        }
+
+        const gradient = canvas.getContext('2d').createLinearGradient(0, 0, 0, 120);
+        gradient.addColorStop(0, cfg.color + '40');
+        gradient.addColorStop(1, cfg.color + '00');
+
+        new Chart(canvas, {
+            type: 'line',
+            data: {
+                labels: months,
+                datasets: [{
+                    data: prices,
+                    borderColor: cfg.color,
+                    borderWidth: 2,
+                    pointRadius: 0,
+                    pointHoverRadius: 4,
+                    pointHoverBackgroundColor: cfg.color,
+                    fill: true,
+                    backgroundColor: gradient,
+                    tension: 0.35,
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        backgroundColor: '#111827',
+                        borderColor: '#1e293b',
+                        borderWidth: 1,
+                        titleFont: { family: "'JetBrains Mono', monospace", size: 11 },
+                        bodyFont: { family: "'JetBrains Mono', monospace", size: 12 },
+                        callbacks: {
+                            label: ctx => `$${ctx.parsed.y.toLocaleString()}/MT`
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        display: true,
+                        grid: { color: '#1e293b33' },
+                        ticks: {
+                            font: { family: "'JetBrains Mono', monospace", size: 9 },
+                            color: '#475569',
+                            maxTicksLimit: 6,
+                        },
+                        border: { color: '#1e293b' },
+                    },
+                    y: {
+                        display: true,
+                        position: 'right',
+                        grid: { color: '#1e293b33' },
+                        ticks: {
+                            font: { family: "'JetBrains Mono', monospace", size: 9 },
+                            color: '#475569',
+                            maxTicksLimit: 4,
+                            callback: v => `$${(v/1000).toFixed(1)}k`
+                        },
+                        border: { display: false },
+                    }
+                },
+                interaction: { intersect: false, mode: 'index' },
+                animation: { duration: 2000, easing: 'easeOutQuart' },
+            }
         });
-
-        // Popup content
-        var anomalyClass = pt.rainfall_anomaly < -30 ? 'color:#c0392b;font-weight:700' :
-                           pt.rainfall_anomaly > 50 ? 'color:#c0392b;font-weight:700' :
-                           pt.rainfall_anomaly < -15 || pt.rainfall_anomaly > 30 ? 'color:#d4860b;font-weight:700' :
-                           'color:#27804a;font-weight:700';
-
-        var popupHtml = '<div style="font-family:-apple-system,BlinkMacSystemFont,sans-serif;min-width:200px;">' +
-            '<div style="font-weight:700;font-size:14px;color:#1a2e1a;margin-bottom:4px;">' + pt.name + '</div>' +
-            '<div style="font-size:12px;color:#777;margin-bottom:8px;">' + pt.commodity + '</div>' +
-            '<div style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:11px;font-weight:700;text-transform:uppercase;' +
-            'background:' + (pt.status === 'alert' ? '#fdecea' : pt.status === 'warning' ? '#fef5e7' : '#eafaf1') + ';' +
-            'color:' + color + ';">' + statusLabel(pt.status) + '</div>' +
-            '<div style="margin-top:8px;font-size:12px;">' +
-            '<div style="display:flex;justify-content:space-between;padding:3px 0;border-bottom:1px solid #f0ede0;">' +
-            '<span style="color:#888;">Rainfall Anomaly</span>' +
-            '<span style="' + anomalyClass + '">' + (pt.rainfall_anomaly > 0 ? '+' : '') + pt.rainfall_anomaly + '%</span></div>';
-
-        if (pt.price_impact) {
-            popupHtml += '<div style="display:flex;justify-content:space-between;padding:3px 0;border-bottom:1px solid #f0ede0;">' +
-                '<span style="color:#888;">Price Impact</span>' +
-                '<span style="color:#c0392b;font-weight:600;">' + pt.price_impact + '</span></div>';
-        }
-
-        if (pt.alert_count > 0) {
-            popupHtml += '<div style="display:flex;justify-content:space-between;padding:3px 0;">' +
-                '<span style="color:#888;">Active Alerts</span>' +
-                '<span style="color:#c0392b;font-weight:600;">' + pt.alert_count + '</span></div>';
-        }
-
-        popupHtml += '</div></div>';
-
-        var marker = L.marker([pt.lat, pt.lon], {
-            icon: icon,
-            riskLevel: pt.risk_level
-        }).bindPopup(popupHtml, { maxWidth: 280 });
-
-        markers.addLayer(marker);
     });
-
-    map.addLayer(markers);
-})();
+});
 </script>
 
 </body>
