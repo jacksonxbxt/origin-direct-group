@@ -13,7 +13,6 @@ const products = [
 const navLinks = [
   { name: "Prices", href: "/prices" },
   { name: "Markets", href: "/markets" },
-  { name: "Market Intel", href: "/market-intelligence" },
   { name: "Guides", href: "/guides" },
   { name: "About", href: "/about" },
   { name: "Blog", href: "/blog" },
@@ -168,11 +167,78 @@ const navLinks = [
 <!-- Spacer for fixed header -->
 <div class="h-18"></div>
 
-<!-- Soil to Door banner strip -->
-<div class="bg-green-900 text-center py-1.5">
-  <p class="text-xs sm:text-sm text-green-100 font-medium tracking-wide">
-    Soil to Door Commodity Sourcing &mdash; We manage the entire supply chain
-  </p>
+<!-- LIVE Market Intelligence Ticker -->
+<div class="bg-brand-900 border-b border-brand-800 overflow-hidden">
+  <a href="/market-intelligence" class="block hover:bg-brand-800 transition-colors">
+    <div class="ticker-wrap py-1.5">
+      <div class="ticker-content">
+        <span class="inline-flex items-center gap-1.5 mx-6 text-xs sm:text-sm text-green-100">
+          <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
+          </span>
+          <span class="font-bold text-amber-400">LIVE</span>
+          <span class="text-green-200">Market Intelligence</span>
+        </span>
+        <span class="inline-flex items-center gap-1 mx-6 text-xs sm:text-sm text-green-200">
+          <span class="text-red-400 font-semibold">HIGH RISK:</span> Cocoa - drought signals in Ghana, est. +40-80% price impact
+        </span>
+        <span class="mx-3 text-brand-600">|</span>
+        <span class="inline-flex items-center gap-1 mx-6 text-xs sm:text-sm text-green-200">
+          <span class="text-red-400 font-semibold">HIGH RISK:</span> Turmeric - erratic rainfall in Tamil Nadu, est. +40-80%
+        </span>
+        <span class="mx-3 text-brand-600">|</span>
+        <span class="inline-flex items-center gap-1 mx-6 text-xs sm:text-sm text-green-200">
+          <span class="text-amber-400 font-semibold">ELEVATED:</span> Cashew - Benue State drought, est. +10-20%
+        </span>
+        <span class="mx-3 text-brand-600">|</span>
+        <span class="inline-flex items-center gap-1 mx-6 text-xs sm:text-sm text-green-200">
+          <span class="text-amber-400 font-semibold">ELEVATED:</span> Shea Butter - Upper West Ghana dry spell
+        </span>
+        <span class="mx-3 text-brand-600">|</span>
+        <span class="inline-flex items-center gap-1 mx-6 text-xs sm:text-sm text-green-200">
+          <span class="text-green-400 font-semibold">ENSO:</span> Neutral (-0.4 ONI)
+        </span>
+        <span class="mx-3 text-brand-600">|</span>
+        <span class="inline-flex items-center gap-1 mx-6 text-xs sm:text-sm text-green-200">
+          Soil to Door Commodity Sourcing - We manage the entire supply chain
+        </span>
+        <span class="mx-3 text-brand-600">|</span>
+        <!-- Duplicate for seamless loop -->
+        <span class="inline-flex items-center gap-1.5 mx-6 text-xs sm:text-sm text-green-100">
+          <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
+          </span>
+          <span class="font-bold text-amber-400">LIVE</span>
+          <span class="text-green-200">Market Intelligence</span>
+        </span>
+        <span class="inline-flex items-center gap-1 mx-6 text-xs sm:text-sm text-green-200">
+          <span class="text-red-400 font-semibold">HIGH RISK:</span> Cocoa - drought signals in Ghana, est. +40-80% price impact
+        </span>
+        <span class="mx-3 text-brand-600">|</span>
+        <span class="inline-flex items-center gap-1 mx-6 text-xs sm:text-sm text-green-200">
+          <span class="text-red-400 font-semibold">HIGH RISK:</span> Turmeric - erratic rainfall in Tamil Nadu, est. +40-80%
+        </span>
+        <span class="mx-3 text-brand-600">|</span>
+        <span class="inline-flex items-center gap-1 mx-6 text-xs sm:text-sm text-green-200">
+          <span class="text-amber-400 font-semibold">ELEVATED:</span> Cashew - Benue State drought, est. +10-20%
+        </span>
+        <span class="mx-3 text-brand-600">|</span>
+        <span class="inline-flex items-center gap-1 mx-6 text-xs sm:text-sm text-green-200">
+          <span class="text-amber-400 font-semibold">ELEVATED:</span> Shea Butter - Upper West Ghana dry spell
+        </span>
+        <span class="mx-3 text-brand-600">|</span>
+        <span class="inline-flex items-center gap-1 mx-6 text-xs sm:text-sm text-green-200">
+          <span class="text-green-400 font-semibold">ENSO:</span> Neutral (-0.4 ONI)
+        </span>
+        <span class="mx-3 text-brand-600">|</span>
+        <span class="inline-flex items-center gap-1 mx-6 text-xs sm:text-sm text-green-200">
+          Soil to Door Commodity Sourcing - We manage the entire supply chain
+        </span>
+      </div>
+    </div>
+  </a>
 </div>
 
 <script>

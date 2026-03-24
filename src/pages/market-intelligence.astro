@@ -223,78 +223,126 @@ const riskLevels = [
     </div>
   </section>
 
-  <!-- Current Status -->
+  <!-- LIVE Dashboard -->
   <section class="py-20 md:py-28 bg-white">
     <div class="max-w-6xl mx-auto px-6">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Current Risk Overview</h2>
-        <p class="text-lg text-gray-600 max-w-2xl mx-auto">Latest risk assessments across monitored commodities</p>
+      <div class="text-center mb-12">
+        <div class="inline-flex items-center gap-2 px-4 py-2 bg-red-50 border border-red-200 rounded-full mb-6">
+          <span class="relative flex h-2.5 w-2.5">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-red-500"></span>
+          </span>
+          <span class="text-sm font-bold text-red-700">LIVE - Updated Daily</span>
+        </div>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Current Risk Dashboard</h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">Real-time supply shortage risk levels based on satellite weather data. Free for everyone - updated daily at 06:00 UTC.</p>
         <div class="w-16 h-1 bg-amber-500 mx-auto rounded-full mt-4"></div>
       </div>
 
-      <div class="grid gap-4">
-        {riskLevels.map((item) => (
-          <div class="bg-white rounded-xl border border-gray-100 p-6 flex flex-col sm:flex-row sm:items-center gap-4 hover:shadow-sm transition-shadow">
-            <div class="sm:w-40 flex-shrink-0">
-              <h3 class="font-semibold text-gray-900">{item.commodity}</h3>
-              <p class="text-sm text-gray-500">{item.region}</p>
-            </div>
-            <div class="flex-shrink-0">
-              <span class={`inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold ${item.statusColor}`}>
-                {item.status}
-              </span>
-            </div>
-            <p class="text-sm text-gray-600 flex-1">{item.note}</p>
+      <!-- Current Risk Cards -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+        <div class="bg-red-50 border border-red-200 rounded-xl p-5">
+          <div class="flex items-center justify-between mb-3">
+            <h3 class="font-bold text-gray-900">Cocoa</h3>
+            <span class="px-2.5 py-1 bg-red-100 text-red-800 text-xs font-bold rounded-full">HIGH RISK</span>
           </div>
-        ))}
+          <p class="text-sm text-gray-700 mb-2">Drought signals in Ghana Western Region + Nigeria Cross River</p>
+          <p class="text-sm font-semibold text-red-700">Est. price impact: +40-80% within 2-4 months</p>
+          <p class="text-xs text-gray-500 mt-2">Current: ~$3,500/MT - Projected: $4,900-6,300/MT</p>
+        </div>
+
+        <div class="bg-red-50 border border-red-200 rounded-xl p-5">
+          <div class="flex items-center justify-between mb-3">
+            <h3 class="font-bold text-gray-900">Turmeric</h3>
+            <span class="px-2.5 py-1 bg-red-100 text-red-800 text-xs font-bold rounded-full">HIGH RISK</span>
+          </div>
+          <p class="text-sm text-gray-700 mb-2">Erratic rainfall in Tamil Nadu - drought Dec + Mar, excess Jan</p>
+          <p class="text-sm font-semibold text-red-700">Est. price impact: +40-80% within 2-4 months</p>
+          <p class="text-xs text-gray-500 mt-2">Current: ~$2,000/MT - Projected: $2,800-3,600/MT</p>
+        </div>
+
+        <div class="bg-amber-50 border border-amber-200 rounded-xl p-5">
+          <div class="flex items-center justify-between mb-3">
+            <h3 class="font-bold text-gray-900">Cashew Nuts</h3>
+            <span class="px-2.5 py-1 bg-amber-100 text-amber-800 text-xs font-bold rounded-full">ELEVATED</span>
+          </div>
+          <p class="text-sm text-gray-700 mb-2">Benue State drought in March affecting flowering period</p>
+          <p class="text-sm font-semibold text-amber-700">Est. price impact: +10-20% within 3-6 months</p>
+          <p class="text-xs text-gray-500 mt-2">Current: ~$1,000/MT RCN - Projected: $1,100-1,200/MT</p>
+        </div>
+
+        <div class="bg-amber-50 border border-amber-200 rounded-xl p-5">
+          <div class="flex items-center justify-between mb-3">
+            <h3 class="font-bold text-gray-900">Shea Butter</h3>
+            <span class="px-2.5 py-1 bg-amber-100 text-amber-800 text-xs font-bold rounded-full">ELEVATED</span>
+          </div>
+          <p class="text-sm text-gray-700 mb-2">Upper West Ghana dry spell during pre-flowering</p>
+          <p class="text-sm font-semibold text-amber-700">Est. price impact: +10-20% within 3-6 months</p>
+          <p class="text-xs text-gray-500 mt-2">Current: ~$2,500/MT - Projected: $2,750-3,000/MT</p>
+        </div>
+
+        <div class="bg-amber-50 border border-amber-200 rounded-xl p-5">
+          <div class="flex items-center justify-between mb-3">
+            <h3 class="font-bold text-gray-900">Ginger</h3>
+            <span class="px-2.5 py-1 bg-yellow-100 text-yellow-800 text-xs font-bold rounded-full">WATCH</span>
+          </div>
+          <p class="text-sm text-gray-700 mb-2">Kaduna drought in March - monitoring soil recovery</p>
+          <p class="text-sm font-semibold text-amber-700">Est. price impact: +5-15% if conditions persist</p>
+          <p class="text-xs text-gray-500 mt-2">Current: ~$2,500/MT</p>
+        </div>
+
+        <div class="bg-green-50 border border-green-200 rounded-xl p-5">
+          <div class="flex items-center justify-between mb-3">
+            <h3 class="font-bold text-gray-900">Sesame Seeds</h3>
+            <span class="px-2.5 py-1 bg-green-100 text-green-800 text-xs font-bold rounded-full">NORMAL</span>
+          </div>
+          <p class="text-sm text-gray-700 mb-2">Pre-season conditions within normal range</p>
+          <p class="text-sm font-semibold text-green-700">No significant price impact expected</p>
+          <p class="text-xs text-gray-500 mt-2">Current: ~$1,800/MT</p>
+        </div>
       </div>
 
-      <p class="mt-6 text-center text-sm text-gray-500">
-        Last updated: March 2026. Detailed reports with full data available to active clients.
-      </p>
+      <!-- Link to full report -->
+      <div class="text-center">
+        <a href="/intelligence-report.html" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 bg-brand-700 text-white font-semibold rounded-lg hover:bg-brand-600 transition-colors">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+          </svg>
+          View Full Interactive Report with Satellite Map
+        </a>
+        <p class="text-sm text-gray-500 mt-3">Includes interactive satellite map, detailed anomaly data, and historical analysis. No login required.</p>
+      </div>
     </div>
   </section>
 
-  <!-- How to Access -->
+  <!-- Why It's Free -->
   <section class="py-20 md:py-28 bg-brand-50">
-    <div class="max-w-4xl mx-auto px-6 text-center">
-      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">How to Access</h2>
-      <div class="w-16 h-1 bg-amber-500 mx-auto rounded-full mb-8"></div>
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Why We Share This For Free</h2>
+        <div class="w-16 h-1 bg-amber-500 mx-auto rounded-full"></div>
+      </div>
 
-      <div class="bg-white rounded-2xl p-8 lg:p-12 border border-green-100 shadow-sm text-left">
-        <div class="grid md:grid-cols-2 gap-8">
-          <div>
-            <h3 class="text-lg font-bold text-gray-900 mb-3">Included for Active Clients</h3>
-            <p class="text-gray-600 leading-relaxed mb-4">
-              Market intelligence reports are available to all active Origin Direct Group clients at no additional cost. When you source through us, you automatically get access to:
-            </p>
-            <ul class="space-y-3 text-gray-600">
-              <li class="flex items-start gap-2">
-                <span class="w-1.5 h-1.5 bg-green-600 rounded-full mt-2 flex-shrink-0"></span>
-                <span>Monthly commodity risk summaries</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="w-1.5 h-1.5 bg-green-600 rounded-full mt-2 flex-shrink-0"></span>
-                <span>Anomaly alerts for your sourced commodities</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="w-1.5 h-1.5 bg-green-600 rounded-full mt-2 flex-shrink-0"></span>
-                <span>Price impact forecasts with buy/wait recommendations</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="w-1.5 h-1.5 bg-green-600 rounded-full mt-2 flex-shrink-0"></span>
-                <span>Priority notification of emerging supply risks</span>
-              </li>
-            </ul>
+      <div class="bg-white rounded-2xl p-8 lg:p-12 border border-green-100 shadow-sm">
+        <p class="text-lg text-gray-700 leading-relaxed mb-6">
+          We believe commodity buyers deserve transparency. When you can see a shortage developing months in advance, you make better decisions - and that's good for the entire supply chain.
+        </p>
+        <p class="text-gray-600 leading-relaxed mb-8">
+          This dashboard is free for everyone. Use it to monitor the commodities you buy, plan your inventory, and time your purchases. When you're ready to source directly from West Africa or India - at prices 15-40% below what you're paying middlemen today - we're here.
+        </p>
+
+        <div class="grid sm:grid-cols-3 gap-6">
+          <div class="text-center p-4">
+            <div class="text-3xl font-bold text-brand-700 mb-1">Free</div>
+            <p class="text-sm text-gray-500">Dashboard access, forever. No login, no paywall.</p>
           </div>
-          <div>
-            <h3 class="text-lg font-bold text-gray-900 mb-3">Available on Request</h3>
-            <p class="text-gray-600 leading-relaxed mb-4">
-              Not yet a client? You can request a sample market intelligence report as part of your initial quote. We will include a current risk overview for your commodities of interest so you can see the value firsthand.
-            </p>
-            <p class="text-gray-600 leading-relaxed">
-              Simply mention "market intelligence" in your quote request, and we will include a snapshot with your proposal.
-            </p>
+          <div class="text-center p-4">
+            <div class="text-3xl font-bold text-brand-700 mb-1">Daily</div>
+            <p class="text-sm text-gray-500">Updated every morning at 06:00 UTC from NASA satellite data.</p>
+          </div>
+          <div class="text-center p-4">
+            <div class="text-3xl font-bold text-brand-700 mb-1">14</div>
+            <p class="text-sm text-gray-500">Monitoring points across Ghana, Nigeria, and India.</p>
           </div>
         </div>
       </div>
