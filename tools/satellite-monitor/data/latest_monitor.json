@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-10-16T11:00:44.781804",
+  "generated_utc": "2026-10-17T10:22:19.913592",
   "enso": {
     "season": "DJF 2026",
     "oni_value": -0.39,
@@ -10,7 +10,7 @@
       "commodity": "Shea",
       "risk_level": "high",
       "risk_label": "HIGH RISK",
-      "detail": "Monitoring: Northern, Ghana, Upper West, Ghana, Niger State, Nigeria. Issues: severe drought, excess rainfall (3 alerts).",
+      "detail": "Monitoring: Northern, Ghana, Upper West, Ghana, Niger State, Nigeria. Issues: excess rainfall, severe drought (3 alerts).",
       "alert_count": 3,
       "price_impact": {
         "current_price": 1200,
@@ -26,7 +26,7 @@
         "enso_note": "",
         "historical_precedent": "In 2022, poor rains in northern Ghana reduced shea kernel output by ~25%, pushing prices up 30-40% within 4 months.",
         "alert_count": 3,
-        "severe_count": 3,
+        "severe_count": 2,
         "points_with_alerts": 2,
         "total_points": 3
       },
@@ -215,7 +215,7 @@
       "commodity": "Cumin/Guar",
       "risk_level": "medium",
       "risk_label": "MEDIUM RISK",
-      "detail": "Monitoring: Rajasthan, India. Issues: severe drought, excess rainfall (2 alerts).",
+      "detail": "Monitoring: Rajasthan, India. Issues: excess rainfall, severe drought (2 alerts).",
       "alert_count": 2,
       "price_impact": {
         "current_price": 3200,
@@ -314,10 +314,61 @@
       }
     },
     {
+      "commodity": "Sesame",
+      "risk_level": "medium",
+      "risk_label": "MEDIUM RISK",
+      "detail": "Monitoring: Jigawa, Nigeria. Issues: excess rainfall (2 alerts).",
+      "alert_count": 2,
+      "price_impact": {
+        "current_price": 2200,
+        "unit": "MT",
+        "price_source": "Nigeria FOB",
+        "est_price_low": 2420,
+        "est_price_high": 2640,
+        "price_increase_low_pct": 10,
+        "price_increase_high_pct": 20,
+        "timeline": "3-6 months",
+        "risk_description": "Flood/quality risk",
+        "confidence": "Medium",
+        "enso_note": "",
+        "historical_precedent": "Nigerian sesame is resilient but 2021 flooding destroyed 15% of crop, causing 20% price increase.",
+        "alert_count": 2,
+        "severe_count": 0,
+        "points_with_alerts": 1,
+        "total_points": 1
+      },
+      "recommendation": {
+        "action": "Monitor closely, consider securing inventory",
+        "detail": "Consider securing 1-2 months of additional Sesame inventory at current prices as a hedge. Review supply contracts and identify backup suppliers.",
+        "urgency": "ACTION RECOMMENDED",
+        "icon": "warning"
+      },
+      "seasonal": {
+        "key_dates": [
+          "Sowing: Jun-Jul",
+          "Growing: Jul-Sep",
+          "Harvest: Oct-Nov",
+          "Off-season: Dec-May"
+        ],
+        "current_stage": "Harvest"
+      },
+      "outlook": {
+        "period": "Nov-Jan",
+        "months": [
+          "Nov",
+          "Dec",
+          "Jan"
+        ],
+        "watch_items": [
+          "ENSO trend: currently Neutral (-0.4). Watch for strengthening/weakening."
+        ]
+      }
+    },
+    {
       "commodity": "Turmeric",
       "risk_level": "medium",
       "risk_label": "MEDIUM RISK",
-      "detail": "Monitoring: Tamil Nadu, India. Issues: severe drought, excess rainfall (2 alerts).",
+      "detail": "Monitoring: Tamil Nadu, India. Issues: excess rainfall, severe drought (2 alerts).",
       "alert_count": 2,
       "price_impact": {
         "current_price": 4500,
@@ -363,57 +414,6 @@
           "ENSO trend: currently Neutral (-0.4). Watch for strengthening/weakening."
         ]
       }
-    },
-    {
-      "commodity": "Sesame",
-      "risk_level": "low",
-      "risk_label": "LOW RISK",
-      "detail": "Monitoring: Jigawa, Nigeria. Issues: excess rainfall (1 alerts).",
-      "alert_count": 1,
-      "price_impact": {
-        "current_price": 2200,
-        "unit": "MT",
-        "price_source": "Nigeria FOB",
-        "est_price_low": 2420,
-        "est_price_high": 2640,
-        "price_increase_low_pct": 10,
-        "price_increase_high_pct": 20,
-        "timeline": "3-6 months",
-        "risk_description": "Flood/quality risk",
-        "confidence": "Medium",
-        "enso_note": "",
-        "historical_precedent": "Nigerian sesame is resilient but 2021 flooding destroyed 15% of crop, causing 20% price increase.",
-        "alert_count": 1,
-        "severe_count": 0,
-        "points_with_alerts": 1,
-        "total_points": 1
-      },
-      "recommendation": {
-        "action": "No immediate action needed",
-        "detail": "Sesame supply conditions are currently normal. Continue routine monitoring. Next assessment in 2 weeks.",
-        "urgency": "ROUTINE",
-        "icon": "ok"
-      },
-      "seasonal": {
-        "key_dates": [
-          "Sowing: Jun-Jul",
-          "Growing: Jul-Sep",
-          "Harvest: Oct-Nov",
-          "Off-season: Dec-May"
-        ],
-        "current_stage": "Harvest"
-      },
-      "outlook": {
-        "period": "Nov-Jan",
-        "months": [
-          "Nov",
-          "Dec",
-          "Jan"
-        ],
-        "watch_items": [
-          "ENSO trend: currently Neutral (-0.4). Watch for strengthening/weakening."
-        ]
-      }
     }
   ],
   "regions": [
@@ -426,12 +426,12 @@
       "months": {
         "202607": {
           "month": "202607",
-          "precip_current": 3.137916666666666,
+          "precip_current": 3.097826086956521,
           "precip_avg": 4.5,
-          "precip_deviation": -30.3,
-          "temp_current": 24.76625,
+          "precip_deviation": -31.2,
+          "temp_current": 24.738260869565217,
           "temp_avg": 24.22,
-          "humidity": 89.96374999999999
+          "humidity": 89.92521739130434
         },
         "202608": {
           "month": "202608",
@@ -453,12 +453,12 @@
         },
         "202610": {
           "month": "202610",
-          "precip_current": 6.166666666666667,
+          "precip_current": 5.768,
           "precip_avg": 7.5,
-          "precip_deviation": -17.8,
-          "temp_current": 24.434444444444445,
+          "precip_deviation": -23.1,
+          "temp_current": 24.541,
           "temp_avg": 25.2,
-          "humidity": 90.20777777777776
+          "humidity": 90.15299999999999
         }
       },
       "alerts": [
@@ -482,12 +482,12 @@
       "months": {
         "202607": {
           "month": "202607",
-          "precip_current": 2.1891666666666665,
+          "precip_current": 2.1847826086956523,
           "precip_avg": 4.01,
-          "precip_deviation": -45.4,
-          "temp_current": 24.47333333333334,
+          "precip_deviation": -45.5,
+          "temp_current": 24.466956521739135,
           "temp_avg": 24.07,
-          "humidity": 90.61208333333333
+          "humidity": 90.5504347826087
         },
         "202608": {
           "month": "202608",
@@ -509,12 +509,12 @@
         },
         "202610": {
           "month": "202610",
-          "precip_current": 8.013333333333332,
+          "precip_current": 8.129999999999999,
           "precip_avg": 7.28,
-          "precip_deviation": 10.1,
-          "temp_current": 24.59444444444445,
+          "precip_deviation": 11.7,
+          "temp_current": 24.675000000000004,
           "temp_avg": 25.44,
-          "humidity": 89.26777777777778
+          "humidity": 89.372
         }
       },
       "alerts": [],
@@ -529,12 +529,12 @@
       "months": {
         "202607": {
           "month": "202607",
-          "precip_current": 9.13,
+          "precip_current": 9.444782608695652,
           "precip_avg": 7.75,
-          "precip_deviation": 17.8,
-          "temp_current": 25.468333333333337,
+          "precip_deviation": 21.9,
+          "temp_current": 25.45826086956522,
           "temp_avg": 24.76,
-          "humidity": 89.79416666666668
+          "humidity": 89.70217391304348
         },
         "202608": {
           "month": "202608",
@@ -556,12 +556,12 @@
         },
         "202610": {
           "month": "202610",
-          "precip_current": 16.316666666666663,
+          "precip_current": 15.308999999999997,
           "precip_avg": 9.26,
-          "precip_deviation": 76.2,
-          "temp_current": 25.22222222222222,
+          "precip_deviation": 65.3,
+          "temp_current": 25.294,
           "temp_avg": 25.21,
-          "humidity": 91.4688888888889
+          "humidity": 91.385
         }
       },
       "alerts": [
@@ -577,9 +577,9 @@
           "type": "excess_rainfall",
           "severity": "warning",
           "month": "202610",
-          "deviation_pct": 76.2,
+          "deviation_pct": 65.3,
           "title": "Excess rainfall: Cross River, Nigeria",
-          "detail": "202610: 76% above average (16.3 vs 9.3 mm/day). Flood/disease risk for Cocoa."
+          "detail": "202610: 65% above average (15.3 vs 9.3 mm/day). Flood/disease risk for Cocoa."
         }
       ],
       "status": "alert"
@@ -593,12 +593,12 @@
       "months": {
         "202607": {
           "month": "202607",
-          "precip_current": 10.64,
+          "precip_current": 10.75304347826087,
           "precip_avg": 8.16,
-          "precip_deviation": 30.4,
-          "temp_current": 25.09041666666667,
+          "precip_deviation": 31.8,
+          "temp_current": 25.046521739130437,
           "temp_avg": 24.17,
-          "humidity": 91.88416666666667
+          "humidity": 91.89739130434783
         },
         "202608": {
           "month": "202608",
@@ -620,12 +620,12 @@
         },
         "202610": {
           "month": "202610",
-          "precip_current": 4.297777777777778,
+          "precip_current": 4.218999999999999,
           "precip_avg": 6.71,
-          "precip_deviation": -35.9,
-          "temp_current": 24.613333333333333,
+          "precip_deviation": -37.1,
+          "temp_current": 24.694,
           "temp_avg": 24.96,
-          "humidity": 91.20888888888891
+          "humidity": 91.25500000000001
         }
       },
       "alerts": [],
@@ -640,12 +640,12 @@
       "months": {
         "202607": {
           "month": "202607",
-          "precip_current": 2.032916666666667,
+          "precip_current": 2.098695652173913,
           "precip_avg": 5.17,
-          "precip_deviation": -60.7,
-          "temp_current": 27.354583333333338,
+          "precip_deviation": -59.4,
+          "temp_current": 27.303478260869564,
           "temp_avg": 26.52,
-          "humidity": 80.9975
+          "humidity": 81.07043478260869
         },
         "202608": {
           "month": "202608",
@@ -667,12 +667,12 @@
         },
         "202610": {
           "month": "202610",
-          "precip_current": 7.521111111111111,
+          "precip_current": 7.066,
           "precip_avg": 3.58,
-          "precip_deviation": 110.1,
-          "temp_current": 27.542222222222225,
+          "precip_deviation": 97.4,
+          "temp_current": 27.665000000000003,
           "temp_avg": 27.01,
-          "humidity": 79.3288888888889
+          "humidity": 78.826
         }
       },
       "alerts": [
@@ -680,17 +680,17 @@
           "type": "severe_drought",
           "severity": "alert",
           "month": "202607",
-          "deviation_pct": -60.7,
+          "deviation_pct": -59.4,
           "title": "Severe drought: Northern, Ghana",
-          "detail": "202607: -61% below average (2.0 vs 5.2 mm/day). Critical for Shea."
+          "detail": "202607: -59% below average (2.1 vs 5.2 mm/day). Critical for Shea."
         },
         {
           "type": "excess_rainfall",
-          "severity": "alert",
+          "severity": "warning",
           "month": "202610",
-          "deviation_pct": 110.1,
+          "deviation_pct": 97.4,
           "title": "Excess rainfall: Northern, Ghana",
-          "detail": "202610: 110% above average (7.5 vs 3.6 mm/day). Flood/disease risk for Shea."
+          "detail": "202610: 97% above average (7.1 vs 3.6 mm/day). Flood/disease risk for Shea."
         }
       ],
       "status": "alert"
@@ -704,12 +704,12 @@
       "months": {
         "202607": {
           "month": "202607",
-          "precip_current": 6.29,
+          "precip_current": 6.560434782608696,
           "precip_avg": 6.98,
-          "precip_deviation": -9.9,
-          "temp_current": 26.843749999999996,
+          "precip_deviation": -6.0,
+          "temp_current": 26.803043478260864,
           "temp_avg": 26.16,
-          "humidity": 79.88375
+          "humidity": 79.94695652173915
         },
         "202608": {
           "month": "202608",
@@ -731,12 +731,12 @@
         },
         "202610": {
           "month": "202610",
-          "precip_current": 7.616666666666668,
+          "precip_current": 7.113000000000001,
           "precip_avg": 2.55,
-          "precip_deviation": 198.7,
-          "temp_current": 27.258888888888894,
+          "precip_deviation": 178.9,
+          "temp_current": 27.409000000000002,
           "temp_avg": 26.44,
-          "humidity": 78.22666666666666
+          "humidity": 77.52799999999999
         }
       },
       "alerts": [
@@ -744,9 +744,9 @@
           "type": "excess_rainfall",
           "severity": "alert",
           "month": "202610",
-          "deviation_pct": 198.7,
+          "deviation_pct": 178.9,
           "title": "Excess rainfall: Upper West, Ghana",
-          "detail": "202610: 199% above average (7.6 vs 2.5 mm/day). Flood/disease risk for Shea."
+          "detail": "202610: 179% above average (7.1 vs 2.5 mm/day). Flood/disease risk for Shea."
         }
       ],
       "status": "alert"
@@ -760,12 +760,12 @@
       "months": {
         "202607": {
           "month": "202607",
-          "precip_current": 7.166250000000001,
+          "precip_current": 7.416956521739131,
           "precip_avg": 6.19,
-          "precip_deviation": 15.8,
-          "temp_current": 26.73,
+          "precip_deviation": 19.8,
+          "temp_current": 26.681304347826085,
           "temp_avg": 25.87,
-          "humidity": 85.17708333333333
+          "humidity": 85.20391304347827
         },
         "202608": {
           "month": "202608",
@@ -787,12 +787,12 @@
         },
         "202610": {
           "month": "202610",
-          "precip_current": 4.402222222222223,
+          "precip_current": 4.101000000000001,
           "precip_avg": 3.79,
-          "precip_deviation": 16.2,
-          "temp_current": 27.78222222222222,
+          "precip_deviation": 8.2,
+          "temp_current": 27.921,
           "temp_avg": 26.41,
-          "humidity": 79.84333333333332
+          "humidity": 79.398
         }
       },
       "alerts": [],
@@ -807,12 +807,12 @@
       "months": {
         "202607": {
           "month": "202607",
-          "precip_current": 3.2900000000000005,
+          "precip_current": 3.3473913043478265,
           "precip_avg": 5.26,
-          "precip_deviation": -37.5,
-          "temp_current": 25.928750000000004,
+          "precip_deviation": -36.4,
+          "temp_current": 25.868260869565223,
           "temp_avg": 25.37,
-          "humidity": 85.98583333333333
+          "humidity": 86.03999999999998
         },
         "202608": {
           "month": "202608",
@@ -834,12 +834,12 @@
         },
         "202610": {
           "month": "202610",
-          "precip_current": 5.97,
+          "precip_current": 5.691,
           "precip_avg": 4.48,
-          "precip_deviation": 33.3,
-          "temp_current": 26.72555555555555,
+          "precip_deviation": 27.0,
+          "temp_current": 26.833999999999996,
           "temp_avg": 26.02,
-          "humidity": 79.97888888888889
+          "humidity": 79.93100000000001
         }
       },
       "alerts": [
@@ -863,12 +863,12 @@
       "months": {
         "202607": {
           "month": "202607",
-          "precip_current": 5.612500000000002,
+          "precip_current": 5.7630434782608715,
           "precip_avg": 5.47,
-          "precip_deviation": 2.6,
-          "temp_current": 26.241249999999994,
+          "precip_deviation": 5.4,
+          "temp_current": 26.23652173913043,
           "temp_avg": 25.32,
-          "humidity": 86.3825
+          "humidity": 86.30565217391302
         },
         "202608": {
           "month": "202608",
@@ -890,12 +890,12 @@
         },
         "202610": {
           "month": "202610",
-          "precip_current": 9.203333333333333,
+          "precip_current": 8.459999999999999,
           "precip_avg": 4.96,
-          "precip_deviation": 85.6,
-          "temp_current": 26.90333333333333,
+          "precip_deviation": 70.6,
+          "temp_current": 27.038,
           "temp_avg": 25.64,
-          "humidity": 82.6911111111111
+          "humidity": 82.454
         }
       },
       "alerts": [
@@ -903,9 +903,9 @@
           "type": "excess_rainfall",
           "severity": "warning",
           "month": "202610",
-          "deviation_pct": 85.6,
+          "deviation_pct": 70.6,
           "title": "Excess rainfall: Benue, Nigeria",
-          "detail": "202610: 86% above average (9.2 vs 5.0 mm/day). Flood/disease risk for Cashew."
+          "detail": "202610: 71% above average (8.5 vs 5.0 mm/day). Flood/disease risk for Cashew."
         }
       ],
       "status": "warning"
@@ -919,12 +919,12 @@
       "months": {
         "202607": {
           "month": "202607",
-          "precip_current": 7.593750000000001,
+          "precip_current": 7.834782608695653,
           "precip_avg": 7.8,
-          "precip_deviation": -2.6,
-          "temp_current": 29.397499999999997,
+          "precip_deviation": 0.4,
+          "temp_current": 29.36521739130435,
           "temp_avg": 28.92,
-          "humidity": 74.83375000000002
+          "humidity": 74.83695652173914
         },
         "202608": {
           "month": "202608",
@@ -946,12 +946,12 @@
         },
         "202610": {
           "month": "202610",
-          "precip_current": 0.020000000000000004,
+          "precip_current": 0.018000000000000002,
           "precip_avg": 0.45,
           "precip_deviation": 0,
-          "temp_current": 28.345555555555556,
+          "temp_current": 28.282,
           "temp_avg": 27.17,
-          "humidity": 67.17777777777778
+          "humidity": 67.07300000000001
         }
       },
       "alerts": [
@@ -975,12 +975,12 @@
       "months": {
         "202607": {
           "month": "202607",
-          "precip_current": 2.5541666666666667,
+          "precip_current": 2.5556521739130433,
           "precip_avg": 1.68,
-          "precip_deviation": 52.0,
-          "temp_current": 34.574166666666656,
+          "precip_deviation": 52.1,
+          "temp_current": 34.443913043478254,
           "temp_avg": 34.66,
-          "humidity": 48.72291666666666
+          "humidity": 49.201739130434774
         },
         "202608": {
           "month": "202608",
@@ -1005,9 +1005,9 @@
           "precip_current": 0.0,
           "precip_avg": 0.1,
           "precip_deviation": 0,
-          "temp_current": 31.73,
+          "temp_current": 31.686,
           "temp_avg": 28.79,
-          "humidity": 35.602222222222224
+          "humidity": 36.419
         }
       },
       "alerts": [
@@ -1015,7 +1015,7 @@
           "type": "excess_rainfall",
           "severity": "warning",
           "month": "202607",
-          "deviation_pct": 52.0,
+          "deviation_pct": 52.1,
           "title": "Excess rainfall: Rajasthan, India",
           "detail": "202607: 52% above average (2.6 vs 1.7 mm/day). Flood/disease risk for Cumin/Guar."
         },
@@ -1039,12 +1039,12 @@
       "months": {
         "202607": {
           "month": "202607",
-          "precip_current": 0.5612499999999999,
+          "precip_current": 0.5830434782608696,
           "precip_avg": 1.91,
-          "precip_deviation": -70.6,
-          "temp_current": 31.4425,
+          "precip_deviation": -69.5,
+          "temp_current": 31.436086956521734,
           "temp_avg": 29.1,
-          "humidity": 55.13291666666668
+          "humidity": 55.08739130434783
         },
         "202608": {
           "month": "202608",
@@ -1066,12 +1066,12 @@
         },
         "202610": {
           "month": "202610",
-          "precip_current": 4.373333333333333,
+          "precip_current": 4.254,
           "precip_avg": 5.25,
-          "precip_deviation": -16.7,
-          "temp_current": 28.81888888888889,
+          "precip_deviation": -19.0,
+          "temp_current": 28.781,
           "temp_avg": 26.83,
-          "humidity": 72.99333333333334
+          "humidity": 73.04
         }
       },
       "alerts": [
@@ -1079,9 +1079,9 @@
           "type": "severe_drought",
           "severity": "alert",
           "month": "202607",
-          "deviation_pct": -70.6,
+          "deviation_pct": -69.5,
           "title": "Severe drought: Tamil Nadu, India",
-          "detail": "202607: -71% below average (0.6 vs 1.9 mm/day). Critical for Turmeric."
+          "detail": "202607: -69% below average (0.6 vs 1.9 mm/day). Critical for Turmeric."
         },
         {
           "type": "excess_rainfall",
@@ -1103,12 +1103,12 @@
       "months": {
         "202607": {
           "month": "202607",
-          "precip_current": 6.384166666666666,
+          "precip_current": 6.661739130434783,
           "precip_avg": 4.38,
-          "precip_deviation": 45.8,
-          "temp_current": 29.671250000000004,
+          "precip_deviation": 52.1,
+          "temp_current": 29.58695652173913,
           "temp_avg": 28.67,
-          "humidity": 60.418333333333344
+          "humidity": 60.851304347826094
         },
         "202608": {
           "month": "202608",
@@ -1130,22 +1130,30 @@
         },
         "202610": {
           "month": "202610",
-          "precip_current": 1.2633333333333334,
+          "precip_current": 1.137,
           "precip_avg": 0.69,
-          "precip_deviation": 83.1,
-          "temp_current": 30.689999999999998,
+          "precip_deviation": 64.8,
+          "temp_current": 30.826,
           "temp_avg": 27.42,
-          "humidity": 50.52777777777778
+          "humidity": 48.563
         }
       },
       "alerts": [
         {
           "type": "excess_rainfall",
           "severity": "warning",
-          "month": "202610",
-          "deviation_pct": 83.1,
+          "month": "202607",
+          "deviation_pct": 52.1,
           "title": "Excess rainfall: Jigawa, Nigeria",
-          "detail": "202610: 83% above average (1.3 vs 0.7 mm/day). Flood/disease risk for Sesame."
+          "detail": "202607: 52% above average (6.7 vs 4.4 mm/day). Flood/disease risk for Sesame."
+        },
+        {
+          "type": "excess_rainfall",
+          "severity": "warning",
+          "month": "202610",
+          "deviation_pct": 64.8,
+          "title": "Excess rainfall: Jigawa, Nigeria",
+          "detail": "202610: 65% above average (1.1 vs 0.7 mm/day). Flood/disease risk for Sesame."
         }
       ],
       "status": "warning"
@@ -1159,12 +1167,12 @@
       "months": {
         "202607": {
           "month": "202607",
-          "precip_current": 18.381666666666668,
+          "precip_current": 19.042608695652174,
           "precip_avg": 9.67,
-          "precip_deviation": 90.1,
-          "temp_current": 24.8075,
+          "precip_deviation": 96.9,
+          "temp_current": 24.74086956521739,
           "temp_avg": 24.0,
-          "humidity": 84.77958333333335
+          "humidity": 84.99434782608697
         },
         "202608": {
           "month": "202608",
@@ -1186,12 +1194,12 @@
         },
         "202610": {
           "month": "202610",
-          "precip_current": 3.1966666666666668,
+          "precip_current": 2.897,
           "precip_avg": 2.82,
-          "precip_deviation": 13.4,
-          "temp_current": 26.29888888888889,
+          "precip_deviation": 2.7,
+          "temp_current": 26.418,
           "temp_avg": 24.26,
-          "humidity": 75.52777777777777
+          "humidity": 74.64099999999999
         }
       },
       "alerts": [
@@ -1199,9 +1207,9 @@
           "type": "excess_rainfall",
           "severity": "warning",
           "month": "202607",
-          "deviation_pct": 90.1,
+          "deviation_pct": 96.9,
           "title": "Excess rainfall: Kaduna, Nigeria",
-          "detail": "202607: 90% above average (18.4 vs 9.7 mm/day). Flood/disease risk for Ginger."
+          "detail": "202607: 97% above average (19.0 vs 9.7 mm/day). Flood/disease risk for Ginger."
         },
         {
           "type": "excess_rainfall",
