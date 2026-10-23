@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-10-22T11:25:52.310732",
+  "generated_utc": "2026-10-23T11:15:49.433047",
   "enso": {
     "season": "DJF 2026",
     "oni_value": -0.39,
@@ -366,33 +366,33 @@
     },
     {
       "commodity": "Turmeric",
-      "risk_level": "high",
-      "risk_label": "HIGH RISK",
-      "detail": "Monitoring: Tamil Nadu, India. Issues: excess rainfall (4 alerts).",
-      "alert_count": 4,
+      "risk_level": "medium",
+      "risk_label": "MEDIUM RISK",
+      "detail": "Monitoring: Tamil Nadu, India. Issues: severe drought (1 alerts).",
+      "alert_count": 1,
       "price_impact": {
         "current_price": 4500,
         "unit": "MT",
         "price_source": "India FOB",
-        "est_price_low": 4950,
-        "est_price_high": 5400,
-        "price_increase_low_pct": 10,
-        "price_increase_high_pct": 20,
-        "timeline": "3-6 months",
-        "risk_description": "Flood/quality risk",
-        "confidence": "High",
+        "est_price_low": 6300,
+        "est_price_high": 8100,
+        "price_increase_low_pct": 40,
+        "price_increase_high_pct": 80,
+        "timeline": "1-3 months",
+        "risk_description": "Severe shortage risk",
+        "confidence": "Medium",
         "enso_note": "",
         "historical_precedent": "In 2023-24, failed monsoon rains in Tamil Nadu and Andhra Pradesh drove turmeric from $3,500 to $6,000/MT.",
-        "alert_count": 4,
-        "severe_count": 4,
+        "alert_count": 1,
+        "severe_count": 1,
         "points_with_alerts": 1,
         "total_points": 1
       },
       "recommendation": {
-        "action": "Lock in supply NOW",
-        "detail": "Secure Turmeric at current prices immediately. Contact Origin Direct for forward contracts covering the next 3-6 months. Current market conditions suggest significant upward price pressure.",
-        "urgency": "IMMEDIATE ACTION",
-        "icon": "alert"
+        "action": "Monitor closely, consider securing inventory",
+        "detail": "Consider securing 1-2 months of additional Turmeric inventory at current prices as a hedge. Review supply contracts and identify backup suppliers.",
+        "urgency": "ACTION RECOMMENDED",
+        "icon": "warning"
       },
       "seasonal": {
         "key_dates": [
@@ -426,12 +426,12 @@
       "months": {
         "202607": {
           "month": "202607",
-          "precip_current": 68.30666666666667,
+          "precip_current": 43.21411764705881,
           "precip_avg": 4.5,
-          "precip_deviation": 1417.9,
-          "temp_current": 24.76888888888889,
+          "precip_deviation": 860.3,
+          "temp_current": 24.757058823529412,
           "temp_avg": 24.22,
-          "humidity": 89.56555555555555
+          "humidity": 89.51647058823528
         },
         "202608": {
           "month": "202608",
@@ -453,12 +453,12 @@
         },
         "202610": {
           "month": "202610",
-          "precip_current": 129.77599999999998,
+          "precip_current": 126.24,
           "precip_avg": 7.5,
-          "precip_deviation": 1630.3,
-          "temp_current": 24.948,
+          "precip_deviation": 1583.2,
+          "temp_current": 25.027500000000003,
           "temp_avg": 25.2,
-          "humidity": 89.858
+          "humidity": 89.76500000000001
         }
       },
       "alerts": [
@@ -466,9 +466,9 @@
           "type": "excess_rainfall",
           "severity": "alert",
           "month": "202607",
-          "deviation_pct": 1417.9,
+          "deviation_pct": 860.3,
           "title": "Excess rainfall: Ashanti, Ghana",
-          "detail": "202607: 1418% above average (68.3 vs 4.5 mm/day). Flood/disease risk for Cocoa."
+          "detail": "202607: 860% above average (43.2 vs 4.5 mm/day). Flood/disease risk for Cocoa."
         },
         {
           "type": "excess_rainfall",
@@ -490,9 +490,9 @@
           "type": "excess_rainfall",
           "severity": "alert",
           "month": "202610",
-          "deviation_pct": 1630.3,
+          "deviation_pct": 1583.2,
           "title": "Excess rainfall: Ashanti, Ghana",
-          "detail": "202610: 1630% above average (129.8 vs 7.5 mm/day). Flood/disease risk for Cocoa."
+          "detail": "202610: 1583% above average (126.2 vs 7.5 mm/day). Flood/disease risk for Cocoa."
         }
       ],
       "status": "alert"
@@ -506,12 +506,12 @@
       "months": {
         "202607": {
           "month": "202607",
-          "precip_current": 40.306666666666665,
+          "precip_current": 25.355294117647063,
           "precip_avg": 4.01,
-          "precip_deviation": 905.2,
-          "temp_current": 24.53222222222223,
+          "precip_deviation": 532.3,
+          "temp_current": 24.526470588235302,
           "temp_avg": 24.07,
-          "humidity": 90.04944444444442
+          "humidity": 89.95294117647057
         },
         "202608": {
           "month": "202608",
@@ -533,12 +533,12 @@
         },
         "202610": {
           "month": "202610",
-          "precip_current": 197.18400000000003,
+          "precip_current": 191.49,
           "precip_avg": 7.28,
-          "precip_deviation": 2608.6,
-          "temp_current": 24.960666666666672,
+          "precip_deviation": 2530.4,
+          "temp_current": 25.030625000000004,
           "temp_avg": 25.44,
-          "humidity": 89.75333333333334
+          "humidity": 89.75062500000001
         }
       },
       "alerts": [
@@ -546,9 +546,9 @@
           "type": "excess_rainfall",
           "severity": "alert",
           "month": "202607",
-          "deviation_pct": 905.2,
+          "deviation_pct": 532.3,
           "title": "Excess rainfall: Western, Ghana",
-          "detail": "202607: 905% above average (40.3 vs 4.0 mm/day). Flood/disease risk for Cocoa."
+          "detail": "202607: 532% above average (25.4 vs 4.0 mm/day). Flood/disease risk for Cocoa."
         },
         {
           "type": "excess_rainfall",
@@ -570,9 +570,9 @@
           "type": "excess_rainfall",
           "severity": "alert",
           "month": "202610",
-          "deviation_pct": 2608.6,
+          "deviation_pct": 2530.4,
           "title": "Excess rainfall: Western, Ghana",
-          "detail": "202610: 2609% above average (197.2 vs 7.3 mm/day). Flood/disease risk for Cocoa."
+          "detail": "202610: 2530% above average (191.5 vs 7.3 mm/day). Flood/disease risk for Cocoa."
         }
       ],
       "status": "alert"
@@ -586,12 +586,12 @@
       "months": {
         "202607": {
           "month": "202607",
-          "precip_current": 241.76000000000002,
+          "precip_current": 242.2870588235294,
           "precip_avg": 7.75,
-          "precip_deviation": 3019.5,
-          "temp_current": 25.500000000000004,
+          "precip_deviation": 3026.3,
+          "temp_current": 25.488235294117647,
           "temp_avg": 24.76,
-          "humidity": 89.25777777777778
+          "humidity": 89.37705882352941
         },
         "202608": {
           "month": "202608",
@@ -613,12 +613,12 @@
         },
         "202610": {
           "month": "202610",
-          "precip_current": 293.184,
+          "precip_current": 279.48,
           "precip_avg": 9.26,
-          "precip_deviation": 3066.1,
-          "temp_current": 25.34,
+          "precip_deviation": 2918.1,
+          "temp_current": 25.415625000000002,
           "temp_avg": 25.21,
-          "humidity": 91.76266666666668
+          "humidity": 91.64500000000001
         }
       },
       "alerts": [
@@ -626,9 +626,9 @@
           "type": "excess_rainfall",
           "severity": "alert",
           "month": "202607",
-          "deviation_pct": 3019.5,
+          "deviation_pct": 3026.3,
           "title": "Excess rainfall: Cross River, Nigeria",
-          "detail": "202607: 3019% above average (241.8 vs 7.8 mm/day). Flood/disease risk for Cocoa."
+          "detail": "202607: 3026% above average (242.3 vs 7.8 mm/day). Flood/disease risk for Cocoa."
         },
         {
           "type": "excess_rainfall",
@@ -650,9 +650,9 @@
           "type": "excess_rainfall",
           "severity": "alert",
           "month": "202610",
-          "deviation_pct": 3066.1,
+          "deviation_pct": 2918.1,
           "title": "Excess rainfall: Cross River, Nigeria",
-          "detail": "202610: 3066% above average (293.2 vs 9.3 mm/day). Flood/disease risk for Cocoa."
+          "detail": "202610: 2918% above average (279.5 vs 9.3 mm/day). Flood/disease risk for Cocoa."
         }
       ],
       "status": "alert"
@@ -666,12 +666,12 @@
       "months": {
         "202607": {
           "month": "202607",
-          "precip_current": 144.80000000000004,
+          "precip_current": 108.52235294117649,
           "precip_avg": 8.16,
-          "precip_deviation": 1674.5,
-          "temp_current": 24.95222222222222,
+          "precip_deviation": 1229.9,
+          "temp_current": 24.94470588235294,
           "temp_avg": 24.17,
-          "humidity": 91.77611111111112
+          "humidity": 91.77882352941178
         },
         "202608": {
           "month": "202608",
@@ -693,12 +693,12 @@
         },
         "202610": {
           "month": "202610",
-          "precip_current": 89.90400000000001,
+          "precip_current": 88.17000000000002,
           "precip_avg": 6.71,
-          "precip_deviation": 1239.9,
-          "temp_current": 24.967333333333332,
+          "precip_deviation": 1214.0,
+          "temp_current": 25.024375,
           "temp_avg": 24.96,
-          "humidity": 91.19866666666668
+          "humidity": 91.01812500000001
         }
       },
       "alerts": [
@@ -706,9 +706,9 @@
           "type": "excess_rainfall",
           "severity": "alert",
           "month": "202607",
-          "deviation_pct": 1674.5,
+          "deviation_pct": 1229.9,
           "title": "Excess rainfall: Ondo, Nigeria",
-          "detail": "202607: 1675% above average (144.8 vs 8.2 mm/day). Flood/disease risk for Cocoa."
+          "detail": "202607: 1230% above average (108.5 vs 8.2 mm/day). Flood/disease risk for Cocoa."
         },
         {
           "type": "excess_rainfall",
@@ -730,9 +730,9 @@
           "type": "excess_rainfall",
           "severity": "alert",
           "month": "202610",
-          "deviation_pct": 1239.9,
+          "deviation_pct": 1214.0,
           "title": "Excess rainfall: Ondo, Nigeria",
-          "detail": "202610: 1240% above average (89.9 vs 6.7 mm/day). Flood/disease risk for Cocoa."
+          "detail": "202610: 1214% above average (88.2 vs 6.7 mm/day). Flood/disease risk for Cocoa."
         }
       ],
       "status": "alert"
@@ -746,12 +746,12 @@
       "months": {
         "202607": {
           "month": "202607",
-          "precip_current": 55.72,
+          "precip_current": 52.63058823529412,
           "precip_avg": 5.17,
-          "precip_deviation": 977.8,
-          "temp_current": 27.284999999999993,
+          "precip_deviation": 918.0,
+          "temp_current": 27.274705882352936,
           "temp_avg": 26.52,
-          "humidity": 81.03833333333333
+          "humidity": 81.06411764705884
         },
         "202608": {
           "month": "202608",
@@ -773,12 +773,12 @@
         },
         "202610": {
           "month": "202610",
-          "precip_current": 135.136,
+          "precip_current": 128.20499999999998,
           "precip_avg": 3.58,
-          "precip_deviation": 3674.7,
-          "temp_current": 28.005333333333333,
+          "precip_deviation": 3481.1,
+          "temp_current": 28.11125,
           "temp_avg": 27.01,
-          "humidity": 77.09666666666666
+          "humidity": 76.5625
         }
       },
       "alerts": [
@@ -786,9 +786,9 @@
           "type": "excess_rainfall",
           "severity": "alert",
           "month": "202607",
-          "deviation_pct": 977.8,
+          "deviation_pct": 918.0,
           "title": "Excess rainfall: Northern, Ghana",
-          "detail": "202607: 978% above average (55.7 vs 5.2 mm/day). Flood/disease risk for Shea."
+          "detail": "202607: 918% above average (52.6 vs 5.2 mm/day). Flood/disease risk for Shea."
         },
         {
           "type": "excess_rainfall",
@@ -810,9 +810,9 @@
           "type": "excess_rainfall",
           "severity": "alert",
           "month": "202610",
-          "deviation_pct": 3674.7,
+          "deviation_pct": 3481.1,
           "title": "Excess rainfall: Northern, Ghana",
-          "detail": "202610: 3675% above average (135.1 vs 3.6 mm/day). Flood/disease risk for Shea."
+          "detail": "202610: 3481% above average (128.2 vs 3.6 mm/day). Flood/disease risk for Shea."
         }
       ],
       "status": "alert"
@@ -826,12 +826,12 @@
       "months": {
         "202607": {
           "month": "202607",
-          "precip_current": 194.52,
+          "precip_current": 187.3976470588235,
           "precip_avg": 6.98,
-          "precip_deviation": 2686.8,
-          "temp_current": 26.64611111111111,
+          "precip_deviation": 2584.8,
+          "temp_current": 26.615882352941178,
           "temp_avg": 26.16,
-          "humidity": 80.71611111111112
+          "humidity": 80.78529411764704
         },
         "202608": {
           "month": "202608",
@@ -853,12 +853,12 @@
         },
         "202610": {
           "month": "202610",
-          "precip_current": 128.99200000000002,
+          "precip_current": 124.48500000000001,
           "precip_avg": 2.55,
-          "precip_deviation": 4958.5,
-          "temp_current": 27.893333333333338,
+          "precip_deviation": 4781.8,
+          "temp_current": 27.971250000000005,
           "temp_avg": 26.44,
-          "humidity": 74.79733333333334
+          "humidity": 74.4875
         }
       },
       "alerts": [
@@ -866,9 +866,9 @@
           "type": "excess_rainfall",
           "severity": "alert",
           "month": "202607",
-          "deviation_pct": 2686.8,
+          "deviation_pct": 2584.8,
           "title": "Excess rainfall: Upper West, Ghana",
-          "detail": "202607: 2687% above average (194.5 vs 7.0 mm/day). Flood/disease risk for Shea."
+          "detail": "202607: 2585% above average (187.4 vs 7.0 mm/day). Flood/disease risk for Shea."
         },
         {
           "type": "excess_rainfall",
@@ -890,9 +890,9 @@
           "type": "excess_rainfall",
           "severity": "alert",
           "month": "202610",
-          "deviation_pct": 4958.5,
+          "deviation_pct": 4781.8,
           "title": "Excess rainfall: Upper West, Ghana",
-          "detail": "202610: 4959% above average (129.0 vs 2.5 mm/day). Flood/disease risk for Shea."
+          "detail": "202610: 4782% above average (124.5 vs 2.5 mm/day). Flood/disease risk for Shea."
         }
       ],
       "status": "alert"
@@ -906,12 +906,12 @@
       "months": {
         "202607": {
           "month": "202607",
-          "precip_current": 174.94666666666663,
+          "precip_current": 162.04235294117646,
           "precip_avg": 6.19,
-          "precip_deviation": 2726.3,
-          "temp_current": 26.631666666666664,
+          "precip_deviation": 2517.8,
+          "temp_current": 26.645294117647058,
           "temp_avg": 25.87,
-          "humidity": 85.38777777777779
+          "humidity": 85.23117647058825
         },
         "202608": {
           "month": "202608",
@@ -933,12 +933,12 @@
         },
         "202610": {
           "month": "202610",
-          "precip_current": 79.376,
+          "precip_current": 74.44500000000001,
           "precip_avg": 3.79,
-          "precip_deviation": 1994.4,
-          "temp_current": 28.28266666666666,
+          "precip_deviation": 1864.2,
+          "temp_current": 28.332499999999992,
           "temp_avg": 26.41,
-          "humidity": 77.89599999999999
+          "humidity": 77.458125
         }
       },
       "alerts": [
@@ -946,9 +946,9 @@
           "type": "excess_rainfall",
           "severity": "alert",
           "month": "202607",
-          "deviation_pct": 2726.3,
+          "deviation_pct": 2517.8,
           "title": "Excess rainfall: Niger State, Nigeria",
-          "detail": "202607: 2726% above average (174.9 vs 6.2 mm/day). Flood/disease risk for Shea."
+          "detail": "202607: 2518% above average (162.0 vs 6.2 mm/day). Flood/disease risk for Shea."
         },
         {
           "type": "excess_rainfall",
@@ -970,9 +970,9 @@
           "type": "excess_rainfall",
           "severity": "alert",
           "month": "202610",
-          "deviation_pct": 1994.4,
+          "deviation_pct": 1864.2,
           "title": "Excess rainfall: Niger State, Nigeria",
-          "detail": "202610: 1994% above average (79.4 vs 3.8 mm/day). Flood/disease risk for Shea."
+          "detail": "202610: 1864% above average (74.4 vs 3.8 mm/day). Flood/disease risk for Shea."
         }
       ],
       "status": "alert"
@@ -986,12 +986,12 @@
       "months": {
         "202607": {
           "month": "202607",
-          "precip_current": 72.37333333333333,
+          "precip_current": 69.14823529411764,
           "precip_avg": 5.26,
-          "precip_deviation": 1275.9,
-          "temp_current": 25.850555555555562,
+          "precip_deviation": 1214.6,
+          "temp_current": 25.82176470588236,
           "temp_avg": 25.37,
-          "humidity": 85.88000000000001
+          "humidity": 85.97764705882352
         },
         "202608": {
           "month": "202608",
@@ -1013,12 +1013,12 @@
         },
         "202610": {
           "month": "202610",
-          "precip_current": 127.968,
+          "precip_current": 124.44,
           "precip_avg": 4.48,
-          "precip_deviation": 2756.4,
-          "temp_current": 27.288666666666664,
+          "precip_deviation": 2677.7,
+          "temp_current": 27.370625,
           "temp_avg": 26.02,
-          "humidity": 78.90266666666666
+          "humidity": 78.699375
         }
       },
       "alerts": [
@@ -1026,9 +1026,9 @@
           "type": "excess_rainfall",
           "severity": "alert",
           "month": "202607",
-          "deviation_pct": 1275.9,
+          "deviation_pct": 1214.6,
           "title": "Excess rainfall: Brong-Ahafo, Ghana",
-          "detail": "202607: 1276% above average (72.4 vs 5.3 mm/day). Flood/disease risk for Cashew."
+          "detail": "202607: 1215% above average (69.1 vs 5.3 mm/day). Flood/disease risk for Cashew."
         },
         {
           "type": "excess_rainfall",
@@ -1050,9 +1050,9 @@
           "type": "excess_rainfall",
           "severity": "alert",
           "month": "202610",
-          "deviation_pct": 2756.4,
+          "deviation_pct": 2677.7,
           "title": "Excess rainfall: Brong-Ahafo, Ghana",
-          "detail": "202610: 2756% above average (128.0 vs 4.5 mm/day). Flood/disease risk for Cashew."
+          "detail": "202610: 2678% above average (124.4 vs 4.5 mm/day). Flood/disease risk for Cashew."
         }
       ],
       "status": "alert"
@@ -1066,12 +1066,12 @@
       "months": {
         "202607": {
           "month": "202607",
-          "precip_current": 126.13333333333334,
+          "precip_current": 125.97176470588235,
           "precip_avg": 5.47,
-          "precip_deviation": 2205.9,
-          "temp_current": 26.185,
+          "precip_deviation": 2203.0,
+          "temp_current": 26.157647058823528,
           "temp_avg": 25.32,
-          "humidity": 86.3122222222222
+          "humidity": 86.44882352941175
         },
         "202608": {
           "month": "202608",
@@ -1093,12 +1093,12 @@
         },
         "202610": {
           "month": "202610",
-          "precip_current": 152.11200000000005,
+          "precip_current": 143.70000000000005,
           "precip_avg": 4.96,
-          "precip_deviation": 2966.8,
-          "temp_current": 27.338,
+          "precip_deviation": 2797.2,
+          "temp_current": 27.440625,
           "temp_avg": 25.64,
-          "humidity": 81.72733333333333
+          "humidity": 81.27125000000001
         }
       },
       "alerts": [
@@ -1106,9 +1106,9 @@
           "type": "excess_rainfall",
           "severity": "alert",
           "month": "202607",
-          "deviation_pct": 2205.9,
+          "deviation_pct": 2203.0,
           "title": "Excess rainfall: Benue, Nigeria",
-          "detail": "202607: 2206% above average (126.1 vs 5.5 mm/day). Flood/disease risk for Cashew."
+          "detail": "202607: 2203% above average (126.0 vs 5.5 mm/day). Flood/disease risk for Cashew."
         },
         {
           "type": "excess_rainfall",
@@ -1130,9 +1130,9 @@
           "type": "excess_rainfall",
           "severity": "alert",
           "month": "202610",
-          "deviation_pct": 2966.8,
+          "deviation_pct": 2797.2,
           "title": "Excess rainfall: Benue, Nigeria",
-          "detail": "202610: 2967% above average (152.1 vs 5.0 mm/day). Flood/disease risk for Cashew."
+          "detail": "202610: 2797% above average (143.7 vs 5.0 mm/day). Flood/disease risk for Cashew."
         }
       ],
       "status": "alert"
@@ -1146,12 +1146,12 @@
       "months": {
         "202607": {
           "month": "202607",
-          "precip_current": 240.26666666666662,
+          "precip_current": 254.37176470588233,
           "precip_avg": 7.8,
-          "precip_deviation": 2980.3,
-          "temp_current": 29.049444444444436,
+          "precip_deviation": 3161.2,
+          "temp_current": 28.978823529411763,
           "temp_avg": 28.92,
-          "humidity": 76.66833333333334
+          "humidity": 77.14058823529412
         },
         "202608": {
           "month": "202608",
@@ -1173,12 +1173,12 @@
         },
         "202610": {
           "month": "202610",
-          "precip_current": 0.4,
+          "precip_current": 0.39,
           "precip_avg": 0.45,
           "precip_deviation": 0,
-          "temp_current": 28.389999999999997,
+          "temp_current": 28.487499999999997,
           "temp_avg": 27.17,
-          "humidity": 63.82066666666666
+          "humidity": 63.263749999999995
         }
       },
       "alerts": [
@@ -1186,9 +1186,9 @@
           "type": "excess_rainfall",
           "severity": "alert",
           "month": "202607",
-          "deviation_pct": 2980.3,
+          "deviation_pct": 3161.2,
           "title": "Excess rainfall: Gujarat, India",
-          "detail": "202607: 2980% above average (240.3 vs 7.8 mm/day). Flood/disease risk for Castor/Guar."
+          "detail": "202607: 3161% above average (254.4 vs 7.8 mm/day). Flood/disease risk for Castor/Guar."
         },
         {
           "type": "excess_rainfall",
@@ -1218,12 +1218,12 @@
       "months": {
         "202607": {
           "month": "202607",
-          "precip_current": 78.37333333333335,
+          "precip_current": 82.96941176470588,
           "precip_avg": 1.68,
-          "precip_deviation": 4565.1,
-          "temp_current": 34.08444444444444,
+          "precip_deviation": 4838.7,
+          "temp_current": 34.07470588235294,
           "temp_avg": 34.66,
-          "humidity": 50.89277777777778
+          "humidity": 51.19
         },
         "202608": {
           "month": "202608",
@@ -1245,12 +1245,12 @@
         },
         "202610": {
           "month": "202610",
-          "precip_current": 0.112,
+          "precip_current": 0.105,
           "precip_avg": 0.1,
           "precip_deviation": 0,
-          "temp_current": 32.132,
+          "temp_current": 32.07125,
           "temp_avg": 28.79,
-          "humidity": 35.562
+          "humidity": 35.388749999999995
         }
       },
       "alerts": [
@@ -1258,9 +1258,9 @@
           "type": "excess_rainfall",
           "severity": "alert",
           "month": "202607",
-          "deviation_pct": 4565.1,
+          "deviation_pct": 4838.7,
           "title": "Excess rainfall: Rajasthan, India",
-          "detail": "202607: 4565% above average (78.4 vs 1.7 mm/day). Flood/disease risk for Cumin/Guar."
+          "detail": "202607: 4839% above average (83.0 vs 1.7 mm/day). Flood/disease risk for Cumin/Guar."
         },
         {
           "type": "excess_rainfall",
@@ -1290,73 +1290,49 @@
       "months": {
         "202607": {
           "month": "202607",
-          "precip_current": 8.959999999999997,
+          "precip_current": 0.39529411764705874,
           "precip_avg": 1.91,
-          "precip_deviation": 369.1,
-          "temp_current": 31.61111111111111,
+          "precip_deviation": -79.3,
+          "temp_current": 31.545294117647057,
           "temp_avg": 29.1,
-          "humidity": 53.59833333333333
+          "humidity": 53.89117647058824
         },
         "202608": {
           "month": "202608",
-          "precip_current": 65.6283870967742,
+          "precip_current": 2.7345161290322575,
           "precip_avg": 2.7,
-          "precip_deviation": 2330.7,
+          "precip_deviation": 1.3,
           "temp_current": 30.09193548387097,
           "temp_avg": 28.68,
           "humidity": 61.906774193548394
         },
         "202609": {
           "month": "202609",
-          "precip_current": 67.06400000000001,
+          "precip_current": 2.7943333333333333,
           "precip_avg": 3.45,
-          "precip_deviation": 1843.9,
+          "precip_deviation": -19.0,
           "temp_current": 29.98266666666667,
           "temp_avg": 28.07,
           "humidity": 65.523
         },
         "202610": {
           "month": "202610",
-          "precip_current": 172.12800000000001,
+          "precip_current": 7.521250000000001,
           "precip_avg": 5.25,
-          "precip_deviation": 3178.6,
-          "temp_current": 28.516666666666662,
+          "precip_deviation": 43.3,
+          "temp_current": 28.415624999999995,
           "temp_avg": 26.83,
-          "humidity": 73.48066666666666
+          "humidity": 74.284375
         }
       },
       "alerts": [
         {
-          "type": "excess_rainfall",
+          "type": "severe_drought",
           "severity": "alert",
           "month": "202607",
-          "deviation_pct": 369.1,
-          "title": "Excess rainfall: Tamil Nadu, India",
-          "detail": "202607: 369% above average (9.0 vs 1.9 mm/day). Flood/disease risk for Turmeric."
-        },
-        {
-          "type": "excess_rainfall",
-          "severity": "alert",
-          "month": "202608",
-          "deviation_pct": 2330.7,
-          "title": "Excess rainfall: Tamil Nadu, India",
-          "detail": "202608: 2331% above average (65.6 vs 2.7 mm/day). Flood/disease risk for Turmeric."
-        },
-        {
-          "type": "excess_rainfall",
-          "severity": "alert",
-          "month": "202609",
-          "deviation_pct": 1843.9,
-          "title": "Excess rainfall: Tamil Nadu, India",
-          "detail": "202609: 1844% above average (67.1 vs 3.5 mm/day). Flood/disease risk for Turmeric."
-        },
-        {
-          "type": "excess_rainfall",
-          "severity": "alert",
-          "month": "202610",
-          "deviation_pct": 3178.6,
-          "title": "Excess rainfall: Tamil Nadu, India",
-          "detail": "202610: 3179% above average (172.1 vs 5.2 mm/day). Flood/disease risk for Turmeric."
+          "deviation_pct": -79.3,
+          "title": "Severe drought: Tamil Nadu, India",
+          "detail": "202607: -79% below average (0.4 vs 1.9 mm/day). Critical for Turmeric."
         }
       ],
       "status": "alert"
@@ -1370,12 +1346,12 @@
       "months": {
         "202607": {
           "month": "202607",
-          "precip_current": 187.92000000000002,
+          "precip_current": 193.94823529411767,
           "precip_avg": 4.38,
-          "precip_deviation": 4190.4,
-          "temp_current": 29.419444444444448,
+          "precip_deviation": 4328.0,
+          "temp_current": 29.408823529411762,
           "temp_avg": 28.67,
-          "humidity": 62.18722222222222
+          "humidity": 62.22
         },
         "202608": {
           "month": "202608",
@@ -1397,12 +1373,12 @@
         },
         "202610": {
           "month": "202610",
-          "precip_current": 18.192000000000004,
+          "precip_current": 17.055000000000003,
           "precip_avg": 0.69,
-          "precip_deviation": 2536.5,
-          "temp_current": 30.920666666666666,
+          "precip_deviation": 2371.7,
+          "temp_current": 30.915625,
           "temp_avg": 27.42,
-          "humidity": 42.343333333333334
+          "humidity": 41.246249999999996
         }
       },
       "alerts": [
@@ -1410,9 +1386,9 @@
           "type": "excess_rainfall",
           "severity": "alert",
           "month": "202607",
-          "deviation_pct": 4190.4,
+          "deviation_pct": 4328.0,
           "title": "Excess rainfall: Jigawa, Nigeria",
-          "detail": "202607: 4190% above average (187.9 vs 4.4 mm/day). Flood/disease risk for Sesame."
+          "detail": "202607: 4328% above average (193.9 vs 4.4 mm/day). Flood/disease risk for Sesame."
         },
         {
           "type": "excess_rainfall",
@@ -1434,9 +1410,9 @@
           "type": "excess_rainfall",
           "severity": "alert",
           "month": "202610",
-          "deviation_pct": 2536.5,
+          "deviation_pct": 2371.7,
           "title": "Excess rainfall: Jigawa, Nigeria",
-          "detail": "202610: 2537% above average (18.2 vs 0.7 mm/day). Flood/disease risk for Sesame."
+          "detail": "202610: 2372% above average (17.1 vs 0.7 mm/day). Flood/disease risk for Sesame."
         }
       ],
       "status": "alert"
@@ -1450,12 +1426,12 @@
       "months": {
         "202607": {
           "month": "202607",
-          "precip_current": 481.9066666666665,
+          "precip_current": 483.5858823529411,
           "precip_avg": 9.67,
-          "precip_deviation": 4883.5,
-          "temp_current": 24.592777777777776,
+          "precip_deviation": 4900.9,
+          "temp_current": 24.56588235294117,
           "temp_avg": 24.0,
-          "humidity": 85.88944444444445
+          "humidity": 85.98588235294116
         },
         "202608": {
           "month": "202608",
@@ -1477,12 +1453,12 @@
         },
         "202610": {
           "month": "202610",
-          "precip_current": 50.096,
+          "precip_current": 46.964999999999996,
           "precip_avg": 2.82,
-          "precip_deviation": 1676.5,
-          "temp_current": 26.754,
+          "precip_deviation": 1565.4,
+          "temp_current": 26.8075,
           "temp_avg": 24.26,
-          "humidity": 71.11733333333333
+          "humidity": 69.61125
         }
       },
       "alerts": [
@@ -1490,9 +1466,9 @@
           "type": "excess_rainfall",
           "severity": "alert",
           "month": "202607",
-          "deviation_pct": 4883.5,
+          "deviation_pct": 4900.9,
           "title": "Excess rainfall: Kaduna, Nigeria",
-          "detail": "202607: 4884% above average (481.9 vs 9.7 mm/day). Flood/disease risk for Ginger."
+          "detail": "202607: 4901% above average (483.6 vs 9.7 mm/day). Flood/disease risk for Ginger."
         },
         {
           "type": "excess_rainfall",
@@ -1514,9 +1490,9 @@
           "type": "excess_rainfall",
           "severity": "alert",
           "month": "202610",
-          "deviation_pct": 1676.5,
+          "deviation_pct": 1565.4,
           "title": "Excess rainfall: Kaduna, Nigeria",
-          "detail": "202610: 1676% above average (50.1 vs 2.8 mm/day). Flood/disease risk for Ginger."
+          "detail": "202610: 1565% above average (47.0 vs 2.8 mm/day). Flood/disease risk for Ginger."
         }
       ],
       "status": "alert"
