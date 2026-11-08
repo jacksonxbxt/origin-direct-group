@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-11-07T12:41:59.968174",
+  "generated_utc": "2026-11-08T12:59:04.066564",
   "enso": {
     "season": "DJF 2026",
     "oni_value": -0.39,
@@ -10,8 +10,8 @@
       "commodity": "Cashew",
       "risk_level": "high",
       "risk_label": "HIGH RISK",
-      "detail": "Monitoring: Brong-Ahafo, Ghana, Benue, Nigeria. Issues: excess rainfall, severe drought (3 alerts).",
-      "alert_count": 3,
+      "detail": "Monitoring: Brong-Ahafo, Ghana, Benue, Nigeria. Issues: excess rainfall, severe drought (5 alerts).",
+      "alert_count": 5,
       "price_impact": {
         "current_price": 1800,
         "unit": "MT (RCN)",
@@ -25,8 +25,8 @@
         "confidence": "High",
         "enso_note": "",
         "historical_precedent": "In 2023, erratic rainfall during Ghana's cashew flowering season led to 20% yield losses and 35% price spikes.",
-        "alert_count": 3,
-        "severe_count": 2,
+        "alert_count": 5,
+        "severe_count": 4,
         "points_with_alerts": 2,
         "total_points": 2
       },
@@ -61,7 +61,7 @@
       "commodity": "Castor/Guar",
       "risk_level": "high",
       "risk_label": "HIGH RISK",
-      "detail": "Monitoring: Gujarat, India. Issues: severe drought, excess rainfall (2 alerts).",
+      "detail": "Monitoring: Gujarat, India. Issues: excess rainfall, severe drought (2 alerts).",
       "alert_count": 2,
       "price_impact": {
         "current_price": 1400,
@@ -112,8 +112,8 @@
       "commodity": "Cocoa",
       "risk_level": "high",
       "risk_label": "HIGH RISK",
-      "detail": "Monitoring: Ashanti, Ghana, Western, Ghana, Cross River, Nigeria, Ondo, Nigeria. Issues: excess rainfall, severe drought (7 alerts).",
-      "alert_count": 7,
+      "detail": "Monitoring: Ashanti, Ghana, Western, Ghana, Cross River, Nigeria, Ondo, Nigeria. Issues: excess rainfall, severe drought (10 alerts).",
+      "alert_count": 10,
       "price_impact": {
         "current_price": 8500,
         "unit": "MT",
@@ -127,8 +127,8 @@
         "confidence": "High",
         "enso_note": "",
         "historical_precedent": "In 2023-24, West African drought drove cocoa from $2,500 to $10,000+/MT (300% increase). Similar patterns are a serious warning sign.",
-        "alert_count": 7,
-        "severe_count": 6,
+        "alert_count": 10,
+        "severe_count": 9,
         "points_with_alerts": 4,
         "total_points": 4
       },
@@ -163,7 +163,7 @@
       "commodity": "Cumin/Guar",
       "risk_level": "high",
       "risk_label": "HIGH RISK",
-      "detail": "Monitoring: Rajasthan, India. Issues: severe drought, excess rainfall (2 alerts).",
+      "detail": "Monitoring: Rajasthan, India. Issues: excess rainfall, severe drought (2 alerts).",
       "alert_count": 2,
       "price_impact": {
         "current_price": 3200,
@@ -214,8 +214,8 @@
       "commodity": "Ginger",
       "risk_level": "high",
       "risk_label": "HIGH RISK",
-      "detail": "Monitoring: Kaduna, Nigeria. Issues: severe drought, excess rainfall (3 alerts).",
-      "alert_count": 3,
+      "detail": "Monitoring: Kaduna, Nigeria. Issues: excess rainfall, severe drought (4 alerts).",
+      "alert_count": 4,
       "price_impact": {
         "current_price": 2800,
         "unit": "MT",
@@ -229,8 +229,8 @@
         "confidence": "High",
         "enso_note": "",
         "historical_precedent": "Nigerian ginger supply is tight. Any weather disruption in Kaduna typically results in 20-30% price response within 2-3 months.",
-        "alert_count": 3,
-        "severe_count": 2,
+        "alert_count": 4,
+        "severe_count": 3,
         "points_with_alerts": 1,
         "total_points": 1
       },
@@ -265,8 +265,8 @@
       "commodity": "Shea",
       "risk_level": "high",
       "risk_label": "HIGH RISK",
-      "detail": "Monitoring: Northern, Ghana, Upper West, Ghana, Niger State, Nigeria. Issues: severe drought, excess rainfall (3 alerts).",
-      "alert_count": 3,
+      "detail": "Monitoring: Northern, Ghana, Upper West, Ghana, Niger State, Nigeria. Issues: severe drought (4 alerts).",
+      "alert_count": 4,
       "price_impact": {
         "current_price": 1200,
         "unit": "MT",
@@ -277,12 +277,12 @@
         "price_increase_high_pct": 80,
         "timeline": "1-3 months",
         "risk_description": "Severe shortage risk",
-        "confidence": "Medium",
+        "confidence": "High",
         "enso_note": "",
         "historical_precedent": "In 2022, poor rains in northern Ghana reduced shea kernel output by ~25%, pushing prices up 30-40% within 4 months.",
-        "alert_count": 3,
-        "severe_count": 3,
-        "points_with_alerts": 2,
+        "alert_count": 4,
+        "severe_count": 4,
+        "points_with_alerts": 3,
         "total_points": 3
       },
       "recommendation": {
@@ -313,9 +313,60 @@
       }
     },
     {
+      "commodity": "Turmeric",
+      "risk_level": "high",
+      "risk_label": "HIGH RISK",
+      "detail": "Monitoring: Tamil Nadu, India. Issues: severe drought (2 alerts).",
+      "alert_count": 2,
+      "price_impact": {
+        "current_price": 4500,
+        "unit": "MT",
+        "price_source": "India FOB",
+        "est_price_low": 6300,
+        "est_price_high": 8100,
+        "price_increase_low_pct": 40,
+        "price_increase_high_pct": 80,
+        "timeline": "1-3 months",
+        "risk_description": "Severe shortage risk",
+        "confidence": "High",
+        "enso_note": "",
+        "historical_precedent": "In 2023-24, failed monsoon rains in Tamil Nadu and Andhra Pradesh drove turmeric from $3,500 to $6,000/MT.",
+        "alert_count": 2,
+        "severe_count": 2,
+        "points_with_alerts": 1,
+        "total_points": 1
+      },
+      "recommendation": {
+        "action": "Lock in supply NOW",
+        "detail": "Secure Turmeric at current prices immediately. Contact Origin Direct for forward contracts covering the next 3-6 months. Current market conditions suggest significant upward price pressure.",
+        "urgency": "IMMEDIATE ACTION",
+        "icon": "alert"
+      },
+      "seasonal": {
+        "key_dates": [
+          "Planting: Jun-Jul",
+          "Growing (monsoon): Jul-Nov",
+          "Harvest: Jan-Mar",
+          "Curing/drying: Feb-Apr"
+        ],
+        "current_stage": "Growing season (monsoon)"
+      },
+      "outlook": {
+        "period": "Dec-Feb",
+        "months": [
+          "Dec",
+          "Jan",
+          "Feb"
+        ],
+        "watch_items": [
+          "ENSO trend: currently Neutral (-0.4). Watch for strengthening/weakening."
+        ]
+      }
+    },
+    {
       "commodity": "Sesame",
-      "risk_level": "medium",
-      "risk_label": "MEDIUM RISK",
+      "risk_level": "low",
+      "risk_label": "LOW RISK",
       "detail": "Monitoring: Jigawa, Nigeria. Issues: excess rainfall (1 alerts).",
       "alert_count": 1,
       "price_impact": {
@@ -332,15 +383,15 @@
         "enso_note": "",
         "historical_precedent": "Nigerian sesame is resilient but 2021 flooding destroyed 15% of crop, causing 20% price increase.",
         "alert_count": 1,
-        "severe_count": 1,
+        "severe_count": 0,
         "points_with_alerts": 1,
         "total_points": 1
       },
       "recommendation": {
-        "action": "Monitor closely, consider securing inventory",
-        "detail": "Consider securing 1-2 months of additional Sesame inventory at current prices as a hedge. Review supply contracts and identify backup suppliers.",
-        "urgency": "ACTION RECOMMENDED",
-        "icon": "warning"
+        "action": "No immediate action needed",
+        "detail": "Sesame supply conditions are currently normal. Continue routine monitoring. Next assessment in 2 weeks.",
+        "urgency": "ROUTINE",
+        "icon": "ok"
       },
       "seasonal": {
         "key_dates": [
@@ -350,57 +401,6 @@
           "Off-season: Dec-May"
         ],
         "current_stage": "Harvest"
-      },
-      "outlook": {
-        "period": "Dec-Feb",
-        "months": [
-          "Dec",
-          "Jan",
-          "Feb"
-        ],
-        "watch_items": [
-          "ENSO trend: currently Neutral (-0.4). Watch for strengthening/weakening."
-        ]
-      }
-    },
-    {
-      "commodity": "Turmeric",
-      "risk_level": "medium",
-      "risk_label": "MEDIUM RISK",
-      "detail": "Monitoring: Tamil Nadu, India. Issues: severe drought (1 alerts).",
-      "alert_count": 1,
-      "price_impact": {
-        "current_price": 4500,
-        "unit": "MT",
-        "price_source": "India FOB",
-        "est_price_low": 6300,
-        "est_price_high": 8100,
-        "price_increase_low_pct": 40,
-        "price_increase_high_pct": 80,
-        "timeline": "1-3 months",
-        "risk_description": "Severe shortage risk",
-        "confidence": "Medium",
-        "enso_note": "",
-        "historical_precedent": "In 2023-24, failed monsoon rains in Tamil Nadu and Andhra Pradesh drove turmeric from $3,500 to $6,000/MT.",
-        "alert_count": 1,
-        "severe_count": 1,
-        "points_with_alerts": 1,
-        "total_points": 1
-      },
-      "recommendation": {
-        "action": "Monitor closely, consider securing inventory",
-        "detail": "Consider securing 1-2 months of additional Turmeric inventory at current prices as a hedge. Review supply contracts and identify backup suppliers.",
-        "urgency": "ACTION RECOMMENDED",
-        "icon": "warning"
-      },
-      "seasonal": {
-        "key_dates": [
-          "Planting: Jun-Jul",
-          "Growing (monsoon): Jul-Nov",
-          "Harvest: Jan-Mar",
-          "Curing/drying: Feb-Apr"
-        ],
-        "current_stage": "Growing season (monsoon)"
       },
       "outlook": {
         "period": "Dec-Feb",
@@ -425,12 +425,12 @@
       "months": {
         "202607": {
           "month": "202607",
-          "precip_current": 1.165,
+          "precip_current": 0.86,
           "precip_avg": 4.5,
-          "precip_deviation": -74.1,
-          "temp_current": 24.564999999999998,
+          "precip_deviation": -80.9,
+          "temp_current": 24.56,
           "temp_avg": 24.22,
-          "humidity": 89.105
+          "humidity": 89.18
         },
         "202608": {
           "month": "202608",
@@ -458,6 +458,15 @@
           "temp_current": 25.53741935483871,
           "temp_avg": 25.2,
           "humidity": 89.18709677419356
+        },
+        "202611": {
+          "month": "202611",
+          "precip_current": 1.29,
+          "precip_avg": 3.09,
+          "precip_deviation": -58.3,
+          "temp_current": 26.07,
+          "temp_avg": 25.55,
+          "humidity": 88.14
         }
       },
       "alerts": [
@@ -465,9 +474,9 @@
           "type": "severe_drought",
           "severity": "alert",
           "month": "202607",
-          "deviation_pct": -74.1,
+          "deviation_pct": -80.9,
           "title": "Severe drought: Ashanti, Ghana",
-          "detail": "202607: -74% below average (1.2 vs 4.5 mm/day). Critical for Cocoa."
+          "detail": "202607: -81% below average (0.9 vs 4.5 mm/day). Critical for Cocoa."
         },
         {
           "type": "excess_rainfall",
@@ -484,6 +493,14 @@
           "deviation_pct": -52.1,
           "title": "Severe drought: Ashanti, Ghana",
           "detail": "202610: -52% below average (3.6 vs 7.5 mm/day). Critical for Cocoa."
+        },
+        {
+          "type": "severe_drought",
+          "severity": "alert",
+          "month": "202611",
+          "deviation_pct": -58.3,
+          "title": "Severe drought: Ashanti, Ghana",
+          "detail": "202611: -58% below average (1.3 vs 3.1 mm/day). Critical for Cocoa."
         }
       ],
       "status": "alert"
@@ -497,12 +514,12 @@
       "months": {
         "202607": {
           "month": "202607",
-          "precip_current": 0.895,
+          "precip_current": 0.59,
           "precip_avg": 4.01,
-          "precip_deviation": -77.7,
+          "precip_deviation": -85.3,
           "temp_current": 24.22,
           "temp_avg": 24.07,
-          "humidity": 90.095
+          "humidity": 89.86
         },
         "202608": {
           "month": "202608",
@@ -530,6 +547,15 @@
           "temp_current": 25.66032258064516,
           "temp_avg": 25.44,
           "humidity": 89.07870967741935
+        },
+        "202611": {
+          "month": "202611",
+          "precip_current": 1.27,
+          "precip_avg": 3.8,
+          "precip_deviation": -66.6,
+          "temp_current": 26.64,
+          "temp_avg": 26.03,
+          "humidity": 87.13
         }
       },
       "alerts": [
@@ -537,9 +563,17 @@
           "type": "severe_drought",
           "severity": "alert",
           "month": "202607",
-          "deviation_pct": -77.7,
+          "deviation_pct": -85.3,
           "title": "Severe drought: Western, Ghana",
-          "detail": "202607: -78% below average (0.9 vs 4.0 mm/day). Critical for Cocoa."
+          "detail": "202607: -85% below average (0.6 vs 4.0 mm/day). Critical for Cocoa."
+        },
+        {
+          "type": "severe_drought",
+          "severity": "alert",
+          "month": "202611",
+          "deviation_pct": -66.6,
+          "title": "Severe drought: Western, Ghana",
+          "detail": "202611: -67% below average (1.3 vs 3.8 mm/day). Critical for Cocoa."
         }
       ],
       "status": "alert"
@@ -553,12 +587,12 @@
       "months": {
         "202607": {
           "month": "202607",
-          "precip_current": 1.99,
+          "precip_current": 2.35,
           "precip_avg": 7.75,
-          "precip_deviation": -74.3,
-          "temp_current": 25.18,
+          "precip_deviation": -69.7,
+          "temp_current": 25.62,
           "temp_avg": 24.76,
-          "humidity": 88.465
+          "humidity": 87.39
         },
         "202608": {
           "month": "202608",
@@ -586,6 +620,15 @@
           "temp_current": 25.72612903225807,
           "temp_avg": 25.21,
           "humidity": 91.04612903225807
+        },
+        "202611": {
+          "month": "202611",
+          "precip_current": 8.1,
+          "precip_avg": 3.24,
+          "precip_deviation": 150.0,
+          "temp_current": 26.06,
+          "temp_avg": 25.69,
+          "humidity": 88.86
         }
       },
       "alerts": [
@@ -593,9 +636,17 @@
           "type": "severe_drought",
           "severity": "alert",
           "month": "202607",
-          "deviation_pct": -74.3,
+          "deviation_pct": -69.7,
           "title": "Severe drought: Cross River, Nigeria",
-          "detail": "202607: -74% below average (2.0 vs 7.8 mm/day). Critical for Cocoa."
+          "detail": "202607: -70% below average (2.4 vs 7.8 mm/day). Critical for Cocoa."
+        },
+        {
+          "type": "excess_rainfall",
+          "severity": "alert",
+          "month": "202611",
+          "deviation_pct": 150.0,
+          "title": "Excess rainfall: Cross River, Nigeria",
+          "detail": "202611: 150% above average (8.1 vs 3.2 mm/day). Flood/disease risk for Cocoa."
         }
       ],
       "status": "alert"
@@ -609,12 +660,12 @@
       "months": {
         "202607": {
           "month": "202607",
-          "precip_current": 1.56,
+          "precip_current": 2.56,
           "precip_avg": 8.16,
-          "precip_deviation": -80.9,
-          "temp_current": 24.65,
+          "precip_deviation": -68.6,
+          "temp_current": 24.95,
           "temp_avg": 24.17,
-          "humidity": 90.78999999999999
+          "humidity": 89.96
         },
         "202608": {
           "month": "202608",
@@ -642,6 +693,15 @@
           "temp_current": 25.578709677419358,
           "temp_avg": 24.96,
           "humidity": 90.62967741935485
+        },
+        "202611": {
+          "month": "202611",
+          "precip_current": 2.15,
+          "precip_avg": 2.23,
+          "precip_deviation": -3.6,
+          "temp_current": 25.84,
+          "temp_avg": 25.33,
+          "humidity": 91.28
         }
       },
       "alerts": [
@@ -649,9 +709,9 @@
           "type": "severe_drought",
           "severity": "alert",
           "month": "202607",
-          "deviation_pct": -80.9,
+          "deviation_pct": -68.6,
           "title": "Severe drought: Ondo, Nigeria",
-          "detail": "202607: -81% below average (1.6 vs 8.2 mm/day). Critical for Cocoa."
+          "detail": "202607: -69% below average (2.6 vs 8.2 mm/day). Critical for Cocoa."
         },
         {
           "type": "severe_drought",
@@ -673,12 +733,12 @@
       "months": {
         "202607": {
           "month": "202607",
-          "precip_current": 3.075,
+          "precip_current": 0.17,
           "precip_avg": 5.17,
-          "precip_deviation": -40.5,
-          "temp_current": 26.96,
+          "precip_deviation": -96.7,
+          "temp_current": 27.9,
           "temp_avg": 26.52,
-          "humidity": 77.11
+          "humidity": 73.58
         },
         "202608": {
           "month": "202608",
@@ -706,10 +766,28 @@
           "temp_current": 28.796774193548384,
           "temp_avg": 27.01,
           "humidity": 72.02806451612905
+        },
+        "202611": {
+          "month": "202611",
+          "precip_current": 0.43,
+          "precip_avg": 0.62,
+          "precip_deviation": -30.6,
+          "temp_current": 30.07,
+          "temp_avg": 27.46,
+          "humidity": 63.15
         }
       },
-      "alerts": [],
-      "status": "ok"
+      "alerts": [
+        {
+          "type": "severe_drought",
+          "severity": "alert",
+          "month": "202607",
+          "deviation_pct": -96.7,
+          "title": "Severe drought: Northern, Ghana",
+          "detail": "202607: -97% below average (0.2 vs 5.2 mm/day). Critical for Shea."
+        }
+      ],
+      "status": "alert"
     },
     {
       "name": "Upper West, Ghana",
@@ -720,12 +798,12 @@
       "months": {
         "202607": {
           "month": "202607",
-          "precip_current": 14.24,
+          "precip_current": 0.41,
           "precip_avg": 6.98,
-          "precip_deviation": 104.0,
-          "temp_current": 25.615000000000002,
+          "precip_deviation": -94.1,
+          "temp_current": 26.55,
           "temp_avg": 26.16,
-          "humidity": 81.58
+          "humidity": 79.78
         },
         "202608": {
           "month": "202608",
@@ -753,16 +831,25 @@
           "temp_current": 28.723225806451623,
           "temp_avg": 26.44,
           "humidity": 68.49258064516128
+        },
+        "202611": {
+          "month": "202611",
+          "precip_current": 0.02,
+          "precip_avg": 0.19,
+          "precip_deviation": 0,
+          "temp_current": 29.86,
+          "temp_avg": 26.25,
+          "humidity": 57.97
         }
       },
       "alerts": [
         {
-          "type": "excess_rainfall",
+          "type": "severe_drought",
           "severity": "alert",
           "month": "202607",
-          "deviation_pct": 104.0,
-          "title": "Excess rainfall: Upper West, Ghana",
-          "detail": "202607: 104% above average (14.2 vs 7.0 mm/day). Flood/disease risk for Shea."
+          "deviation_pct": -94.1,
+          "title": "Severe drought: Upper West, Ghana",
+          "detail": "202607: -94% below average (0.4 vs 7.0 mm/day). Critical for Shea."
         }
       ],
       "status": "alert"
@@ -776,12 +863,12 @@
       "months": {
         "202607": {
           "month": "202607",
-          "precip_current": 1.47,
+          "precip_current": 1.64,
           "precip_avg": 6.19,
-          "precip_deviation": -76.3,
-          "temp_current": 26.259999999999998,
+          "precip_deviation": -73.5,
+          "temp_current": 26.62,
           "temp_avg": 25.87,
-          "humidity": 85.35499999999999
+          "humidity": 85.02
         },
         "202608": {
           "month": "202608",
@@ -809,6 +896,15 @@
           "temp_current": 28.80129032258065,
           "temp_avg": 26.41,
           "humidity": 70.49612903225805
+        },
+        "202611": {
+          "month": "202611",
+          "precip_current": 0.04,
+          "precip_avg": 0.23,
+          "precip_deviation": 0,
+          "temp_current": 29.71,
+          "temp_avg": 26.0,
+          "humidity": 62.74
         }
       },
       "alerts": [
@@ -816,9 +912,9 @@
           "type": "severe_drought",
           "severity": "alert",
           "month": "202607",
-          "deviation_pct": -76.3,
+          "deviation_pct": -73.5,
           "title": "Severe drought: Niger State, Nigeria",
-          "detail": "202607: -76% below average (1.5 vs 6.2 mm/day). Critical for Shea."
+          "detail": "202607: -74% below average (1.6 vs 6.2 mm/day). Critical for Shea."
         },
         {
           "type": "severe_drought",
@@ -840,12 +936,12 @@
       "months": {
         "202607": {
           "month": "202607",
-          "precip_current": 1.6,
+          "precip_current": 1.43,
           "precip_avg": 5.26,
-          "precip_deviation": -69.6,
-          "temp_current": 25.65,
+          "precip_deviation": -72.8,
+          "temp_current": 25.85,
           "temp_avg": 25.37,
-          "humidity": 85.63999999999999
+          "humidity": 85.46
         },
         "202608": {
           "month": "202608",
@@ -873,6 +969,15 @@
           "temp_current": 27.849354838709676,
           "temp_avg": 26.02,
           "humidity": 77.0841935483871
+        },
+        "202611": {
+          "month": "202611",
+          "precip_current": 2.42,
+          "precip_avg": 1.0,
+          "precip_deviation": 142.0,
+          "temp_current": 28.48,
+          "temp_avg": 26.78,
+          "humidity": 74.28
         }
       },
       "alerts": [
@@ -880,9 +985,9 @@
           "type": "severe_drought",
           "severity": "alert",
           "month": "202607",
-          "deviation_pct": -69.6,
+          "deviation_pct": -72.8,
           "title": "Severe drought: Brong-Ahafo, Ghana",
-          "detail": "202607: -70% below average (1.6 vs 5.3 mm/day). Critical for Cashew."
+          "detail": "202607: -73% below average (1.4 vs 5.3 mm/day). Critical for Cashew."
         },
         {
           "type": "excess_rainfall",
@@ -891,6 +996,14 @@
           "deviation_pct": 106.3,
           "title": "Excess rainfall: Brong-Ahafo, Ghana",
           "detail": "202608: 106% above average (9.2 vs 4.5 mm/day). Flood/disease risk for Cashew."
+        },
+        {
+          "type": "excess_rainfall",
+          "severity": "alert",
+          "month": "202611",
+          "deviation_pct": 142.0,
+          "title": "Excess rainfall: Brong-Ahafo, Ghana",
+          "detail": "202611: 142% above average (2.4 vs 1.0 mm/day). Flood/disease risk for Cashew."
         }
       ],
       "status": "alert"
@@ -904,12 +1017,12 @@
       "months": {
         "202607": {
           "month": "202607",
-          "precip_current": 2.835,
+          "precip_current": 4.8,
           "precip_avg": 5.47,
-          "precip_deviation": -48.2,
-          "temp_current": 25.78,
+          "precip_deviation": -12.2,
+          "temp_current": 26.15,
           "temp_avg": 25.32,
-          "humidity": 84.515
+          "humidity": 84.29
         },
         "202608": {
           "month": "202608",
@@ -937,6 +1050,15 @@
           "temp_current": 28.111290322580647,
           "temp_avg": 25.64,
           "humidity": 78.81419354838708
+        },
+        "202611": {
+          "month": "202611",
+          "precip_current": 2.33,
+          "precip_avg": 1.06,
+          "precip_deviation": 119.8,
+          "temp_current": 28.48,
+          "temp_avg": 25.73,
+          "humidity": 77.35
         }
       },
       "alerts": [
@@ -947,9 +1069,17 @@
           "deviation_pct": 98.5,
           "title": "Excess rainfall: Benue, Nigeria",
           "detail": "202609: 98% above average (14.4 vs 7.2 mm/day). Flood/disease risk for Cashew."
+        },
+        {
+          "type": "excess_rainfall",
+          "severity": "alert",
+          "month": "202611",
+          "deviation_pct": 119.8,
+          "title": "Excess rainfall: Benue, Nigeria",
+          "detail": "202611: 120% above average (2.3 vs 1.1 mm/day). Flood/disease risk for Cashew."
         }
       ],
-      "status": "warning"
+      "status": "alert"
     },
     {
       "name": "Gujarat, India",
@@ -960,12 +1090,12 @@
       "months": {
         "202607": {
           "month": "202607",
-          "precip_current": 18.805,
+          "precip_current": 36.48,
           "precip_avg": 7.8,
-          "precip_deviation": 141.1,
-          "temp_current": 28.835,
+          "precip_deviation": 367.7,
+          "temp_current": 28.66,
           "temp_avg": 28.92,
-          "humidity": 80.15
+          "humidity": 82.3
         },
         "202608": {
           "month": "202608",
@@ -993,6 +1123,15 @@
           "temp_current": 28.288709677419348,
           "temp_avg": 27.17,
           "humidity": 57.63774193548388
+        },
+        "202611": {
+          "month": "202611",
+          "precip_current": 0.0,
+          "precip_avg": 0.21,
+          "precip_deviation": 0,
+          "temp_current": 27.19,
+          "temp_avg": 24.2,
+          "humidity": 59.21
         }
       },
       "alerts": [
@@ -1000,9 +1139,9 @@
           "type": "excess_rainfall",
           "severity": "alert",
           "month": "202607",
-          "deviation_pct": 141.1,
+          "deviation_pct": 367.7,
           "title": "Excess rainfall: Gujarat, India",
-          "detail": "202607: 141% above average (18.8 vs 7.8 mm/day). Flood/disease risk for Castor/Guar."
+          "detail": "202607: 368% above average (36.5 vs 7.8 mm/day). Flood/disease risk for Castor/Guar."
         },
         {
           "type": "severe_drought",
@@ -1024,12 +1163,12 @@
       "months": {
         "202607": {
           "month": "202607",
-          "precip_current": 11.21,
+          "precip_current": 22.39,
           "precip_avg": 1.68,
-          "precip_deviation": 567.3,
-          "temp_current": 34.73,
+          "precip_deviation": 1232.7,
+          "temp_current": 34.41,
           "temp_avg": 34.66,
-          "humidity": 52.585
+          "humidity": 57.7
         },
         "202608": {
           "month": "202608",
@@ -1057,6 +1196,15 @@
           "temp_current": 30.724516129032253,
           "temp_avg": 28.79,
           "humidity": 29.447096774193543
+        },
+        "202611": {
+          "month": "202611",
+          "precip_current": 0.0,
+          "precip_avg": 0.15,
+          "precip_deviation": 0,
+          "temp_current": 28.21,
+          "temp_avg": 22.87,
+          "humidity": 27.69
         }
       },
       "alerts": [
@@ -1064,9 +1212,9 @@
           "type": "excess_rainfall",
           "severity": "alert",
           "month": "202607",
-          "deviation_pct": 567.3,
+          "deviation_pct": 1232.7,
           "title": "Excess rainfall: Rajasthan, India",
-          "detail": "202607: 567% above average (11.2 vs 1.7 mm/day). Flood/disease risk for Cumin/Guar."
+          "detail": "202607: 1233% above average (22.4 vs 1.7 mm/day). Flood/disease risk for Cumin/Guar."
         },
         {
           "type": "severe_drought",
@@ -1088,12 +1236,12 @@
       "months": {
         "202607": {
           "month": "202607",
-          "precip_current": 0.28500000000000003,
+          "precip_current": 0.55,
           "precip_avg": 1.91,
-          "precip_deviation": -85.1,
-          "temp_current": 31.465000000000003,
+          "precip_deviation": -71.2,
+          "temp_current": 31.42,
           "temp_avg": 29.1,
-          "humidity": 56.305
+          "humidity": 57.7
         },
         "202608": {
           "month": "202608",
@@ -1121,6 +1269,15 @@
           "temp_current": 27.68354838709677,
           "temp_avg": 26.83,
           "humidity": 78.67258064516129
+        },
+        "202611": {
+          "month": "202611",
+          "precip_current": 1.98,
+          "precip_avg": 5.67,
+          "precip_deviation": -65.1,
+          "temp_current": 26.71,
+          "temp_avg": 24.78,
+          "humidity": 80.15
         }
       },
       "alerts": [
@@ -1128,9 +1285,17 @@
           "type": "severe_drought",
           "severity": "alert",
           "month": "202607",
-          "deviation_pct": -85.1,
+          "deviation_pct": -71.2,
           "title": "Severe drought: Tamil Nadu, India",
-          "detail": "202607: -85% below average (0.3 vs 1.9 mm/day). Critical for Turmeric."
+          "detail": "202607: -71% below average (0.6 vs 1.9 mm/day). Critical for Turmeric."
+        },
+        {
+          "type": "severe_drought",
+          "severity": "alert",
+          "month": "202611",
+          "deviation_pct": -65.1,
+          "title": "Severe drought: Tamil Nadu, India",
+          "detail": "202611: -65% below average (2.0 vs 5.7 mm/day). Critical for Turmeric."
         }
       ],
       "status": "alert"
@@ -1144,12 +1309,12 @@
       "months": {
         "202607": {
           "month": "202607",
-          "precip_current": 12.0,
+          "precip_current": 7.21,
           "precip_avg": 4.38,
-          "precip_deviation": 174.0,
-          "temp_current": 27.314999999999998,
+          "precip_deviation": 64.6,
+          "temp_current": 27.82,
           "temp_avg": 28.67,
-          "humidity": 73.09
+          "humidity": 72.19
         },
         "202608": {
           "month": "202608",
@@ -1177,19 +1342,28 @@
           "temp_current": 30.575806451612905,
           "temp_avg": 27.42,
           "humidity": 31.848064516129032
+        },
+        "202611": {
+          "month": "202611",
+          "precip_current": 0.0,
+          "precip_avg": 0.29,
+          "precip_deviation": 0,
+          "temp_current": 31.0,
+          "temp_avg": 24.73,
+          "humidity": 24.05
         }
       },
       "alerts": [
         {
           "type": "excess_rainfall",
-          "severity": "alert",
+          "severity": "warning",
           "month": "202607",
-          "deviation_pct": 174.0,
+          "deviation_pct": 64.6,
           "title": "Excess rainfall: Jigawa, Nigeria",
-          "detail": "202607: 174% above average (12.0 vs 4.4 mm/day). Flood/disease risk for Sesame."
+          "detail": "202607: 65% above average (7.2 vs 4.4 mm/day). Flood/disease risk for Sesame."
         }
       ],
-      "status": "alert"
+      "status": "warning"
     },
     {
       "name": "Kaduna, Nigeria",
@@ -1200,12 +1374,12 @@
       "months": {
         "202607": {
           "month": "202607",
-          "precip_current": 5.61,
+          "precip_current": 3.44,
           "precip_avg": 9.67,
-          "precip_deviation": -42.0,
-          "temp_current": 23.799999999999997,
+          "precip_deviation": -64.4,
+          "temp_current": 24.63,
           "temp_avg": 24.0,
-          "humidity": 87.37
+          "humidity": 86.39
         },
         "202608": {
           "month": "202608",
@@ -1233,9 +1407,26 @@
           "temp_current": 27.182903225806452,
           "temp_avg": 24.26,
           "humidity": 56.03870967741934
+        },
+        "202611": {
+          "month": "202611",
+          "precip_current": 0.0,
+          "precip_avg": 0.37,
+          "precip_deviation": 0,
+          "temp_current": 28.32,
+          "temp_avg": 22.52,
+          "humidity": 42.79
         }
       },
       "alerts": [
+        {
+          "type": "severe_drought",
+          "severity": "alert",
+          "month": "202607",
+          "deviation_pct": -64.4,
+          "title": "Severe drought: Kaduna, Nigeria",
+          "detail": "202607: -64% below average (3.4 vs 9.7 mm/day). Critical for Ginger."
+        },
         {
           "type": "excess_rainfall",
           "severity": "warning",
