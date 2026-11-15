@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-11-14T13:13:07.932917",
+  "generated_utc": "2026-11-15T13:41:19.399278",
   "enso": {
     "season": "DJF 2026",
     "oni_value": -0.39,
@@ -10,7 +10,7 @@
       "commodity": "Cocoa",
       "risk_level": "high",
       "risk_label": "HIGH RISK",
-      "detail": "Monitoring: Ashanti, Ghana, Western, Ghana, Cross River, Nigeria, Ondo, Nigeria. Issues: severe drought, excess rainfall, consecutive drought (6 alerts).",
+      "detail": "Monitoring: Ashanti, Ghana, Western, Ghana, Cross River, Nigeria, Ondo, Nigeria. Issues: excess rainfall, consecutive drought, severe drought (6 alerts).",
       "alert_count": 6,
       "price_impact": {
         "current_price": 8500,
@@ -112,7 +112,7 @@
       "commodity": "Ginger",
       "risk_level": "high",
       "risk_label": "HIGH RISK",
-      "detail": "Monitoring: Kaduna, Nigeria. Issues: severe drought, excess rainfall (3 alerts).",
+      "detail": "Monitoring: Kaduna, Nigeria. Issues: excess rainfall, severe drought (3 alerts).",
       "alert_count": 3,
       "price_impact": {
         "current_price": 2800,
@@ -163,7 +163,7 @@
       "commodity": "Shea",
       "risk_level": "high",
       "risk_label": "HIGH RISK",
-      "detail": "Monitoring: Northern, Ghana, Upper West, Ghana, Niger State, Nigeria. Issues: severe drought, excess rainfall (3 alerts).",
+      "detail": "Monitoring: Northern, Ghana, Upper West, Ghana, Niger State, Nigeria. Issues: excess rainfall, severe drought (3 alerts).",
       "alert_count": 3,
       "price_impact": {
         "current_price": 1200,
@@ -425,12 +425,12 @@
       "months": {
         "202608": {
           "month": "202608",
-          "precip_current": 4.887307692307693,
+          "precip_current": 4.414800000000001,
           "precip_avg": 2.69,
-          "precip_deviation": 81.7,
-          "temp_current": 25.07692307692308,
+          "precip_deviation": 64.1,
+          "temp_current": 25.080000000000005,
           "temp_avg": 24.28,
-          "humidity": 89.3026923076923
+          "humidity": 89.3124
         },
         "202609": {
           "month": "202609",
@@ -452,12 +452,12 @@
         },
         "202611": {
           "month": "202611",
-          "precip_current": 1.3814285714285715,
+          "precip_current": 1.3625,
           "precip_avg": 3.09,
-          "precip_deviation": -55.3,
-          "temp_current": 26.24142857142857,
+          "precip_deviation": -55.9,
+          "temp_current": 26.2575,
           "temp_avg": 25.55,
-          "humidity": 88.15571428571431
+          "humidity": 87.92375000000001
         }
       },
       "alerts": [
@@ -465,9 +465,9 @@
           "type": "excess_rainfall",
           "severity": "warning",
           "month": "202608",
-          "deviation_pct": 81.7,
+          "deviation_pct": 64.1,
           "title": "Excess rainfall: Ashanti, Ghana",
-          "detail": "202608: 82% above average (4.9 vs 2.7 mm/day). Flood/disease risk for Cocoa."
+          "detail": "202608: 64% above average (4.4 vs 2.7 mm/day). Flood/disease risk for Cocoa."
         },
         {
           "type": "severe_drought",
@@ -481,9 +481,9 @@
           "type": "severe_drought",
           "severity": "alert",
           "month": "202611",
-          "deviation_pct": -55.3,
+          "deviation_pct": -55.9,
           "title": "Severe drought: Ashanti, Ghana",
-          "detail": "202611: -55% below average (1.4 vs 3.1 mm/day). Critical for Cocoa."
+          "detail": "202611: -56% below average (1.4 vs 3.1 mm/day). Critical for Cocoa."
         }
       ],
       "status": "alert"
@@ -497,12 +497,12 @@
       "months": {
         "202608": {
           "month": "202608",
-          "precip_current": 2.0865384615384617,
+          "precip_current": 1.982,
           "precip_avg": 2.05,
-          "precip_deviation": 1.8,
-          "temp_current": 24.906538461538453,
+          "precip_deviation": -3.3,
+          "temp_current": 24.918799999999997,
           "temp_avg": 24.09,
-          "humidity": 89.63807692307692
+          "humidity": 89.5808
         },
         "202609": {
           "month": "202609",
@@ -524,12 +524,12 @@
         },
         "202611": {
           "month": "202611",
-          "precip_current": 1.89,
+          "precip_current": 1.84625,
           "precip_avg": 3.8,
-          "precip_deviation": -50.3,
-          "temp_current": 26.854285714285712,
+          "precip_deviation": -51.4,
+          "temp_current": 26.877499999999998,
           "temp_avg": 26.03,
-          "humidity": 86.55857142857143
+          "humidity": 86.435
         }
       },
       "alerts": [
@@ -537,9 +537,9 @@
           "type": "severe_drought",
           "severity": "alert",
           "month": "202611",
-          "deviation_pct": -50.3,
+          "deviation_pct": -51.4,
           "title": "Severe drought: Western, Ghana",
-          "detail": "202611: -50% below average (1.9 vs 3.8 mm/day). Critical for Cocoa."
+          "detail": "202611: -51% below average (1.8 vs 3.8 mm/day). Critical for Cocoa."
         }
       ],
       "status": "alert"
@@ -553,12 +553,12 @@
       "months": {
         "202608": {
           "month": "202608",
-          "precip_current": 7.905000000000001,
+          "precip_current": 8.1296,
           "precip_avg": 8.54,
-          "precip_deviation": -7.4,
-          "temp_current": 25.89576923076923,
+          "precip_deviation": -4.8,
+          "temp_current": 25.895599999999998,
           "temp_avg": 24.65,
-          "humidity": 89.49307692307691
+          "humidity": 89.564
         },
         "202609": {
           "month": "202609",
@@ -580,12 +580,12 @@
         },
         "202611": {
           "month": "202611",
-          "precip_current": 4.238571428571428,
+          "precip_current": 3.9925,
           "precip_avg": 3.24,
-          "precip_deviation": 30.8,
-          "temp_current": 26.307142857142857,
+          "precip_deviation": 23.2,
+          "temp_current": 26.295,
           "temp_avg": 25.69,
-          "humidity": 89.54
+          "humidity": 89.31000000000002
         }
       },
       "alerts": [],
@@ -600,12 +600,12 @@
       "months": {
         "202608": {
           "month": "202608",
-          "precip_current": 5.137692307692307,
+          "precip_current": 5.2139999999999995,
           "precip_avg": 7.09,
-          "precip_deviation": -27.5,
-          "temp_current": 25.206923076923076,
+          "precip_deviation": -26.5,
+          "temp_current": 25.220399999999998,
           "temp_avg": 23.96,
-          "humidity": 90.67153846153845
+          "humidity": 90.66760000000001
         },
         "202609": {
           "month": "202609",
@@ -627,12 +627,12 @@
         },
         "202611": {
           "month": "202611",
-          "precip_current": 1.45,
+          "precip_current": 1.4737500000000001,
           "precip_avg": 2.23,
-          "precip_deviation": -35.0,
-          "temp_current": 25.988571428571426,
+          "precip_deviation": -33.9,
+          "temp_current": 26.005,
           "temp_avg": 25.33,
-          "humidity": 90.80571428571427
+          "humidity": 90.73749999999998
         }
       },
       "alerts": [
@@ -648,7 +648,7 @@
           "type": "consecutive_drought",
           "severity": "alert",
           "month": "202611",
-          "deviation_pct": -35.0,
+          "deviation_pct": -33.9,
           "title": "Persistent drought: Ondo, Nigeria",
           "detail": "2 consecutive months below average. Supply risk for Cocoa."
         }
@@ -664,12 +664,12 @@
       "months": {
         "202608": {
           "month": "202608",
-          "precip_current": 7.587692307692308,
+          "precip_current": 7.5116,
           "precip_avg": 5.34,
-          "precip_deviation": 42.1,
-          "temp_current": 27.146153846153844,
+          "precip_deviation": 40.7,
+          "temp_current": 27.138,
           "temp_avg": 26.22,
-          "humidity": 83.30653846153847
+          "humidity": 83.3416
         },
         "202609": {
           "month": "202609",
@@ -691,12 +691,12 @@
         },
         "202611": {
           "month": "202611",
-          "precip_current": 1.0014285714285716,
+          "precip_current": 0.9437500000000001,
           "precip_avg": 0.62,
-          "precip_deviation": 61.5,
-          "temp_current": 29.85857142857143,
+          "precip_deviation": 52.2,
+          "temp_current": 29.8775,
           "temp_avg": 27.46,
-          "humidity": 67.89714285714285
+          "humidity": 67.5775
         }
       },
       "alerts": [
@@ -704,9 +704,9 @@
           "type": "excess_rainfall",
           "severity": "warning",
           "month": "202611",
-          "deviation_pct": 61.5,
+          "deviation_pct": 52.2,
           "title": "Excess rainfall: Northern, Ghana",
-          "detail": "202611: 62% above average (1.0 vs 0.6 mm/day). Flood/disease risk for Shea."
+          "detail": "202611: 52% above average (0.9 vs 0.6 mm/day). Flood/disease risk for Shea."
         }
       ],
       "status": "warning"
@@ -720,12 +720,12 @@
       "months": {
         "202608": {
           "month": "202608",
-          "precip_current": 10.049615384615388,
+          "precip_current": 10.055200000000001,
           "precip_avg": 8.38,
-          "precip_deviation": 19.9,
-          "temp_current": 26.49115384615385,
+          "precip_deviation": 20.0,
+          "temp_current": 26.481600000000004,
           "temp_avg": 25.48,
-          "humidity": 83.75769230769232
+          "humidity": 83.772
         },
         "202609": {
           "month": "202609",
@@ -747,12 +747,12 @@
         },
         "202611": {
           "month": "202611",
-          "precip_current": 1.0485714285714285,
+          "precip_current": 1.07125,
           "precip_avg": 0.19,
           "precip_deviation": 100.0,
-          "temp_current": 29.91571428571429,
+          "temp_current": 29.937500000000004,
           "temp_avg": 26.25,
-          "humidity": 62.13571428571428
+          "humidity": 61.93874999999999
         }
       },
       "alerts": [
@@ -762,7 +762,7 @@
           "month": "202611",
           "deviation_pct": 100.0,
           "title": "Excess rainfall: Upper West, Ghana",
-          "detail": "202611: 100% above average (1.0 vs 0.2 mm/day). Flood/disease risk for Shea."
+          "detail": "202611: 100% above average (1.1 vs 0.2 mm/day). Flood/disease risk for Shea."
         }
       ],
       "status": "alert"
@@ -776,12 +776,12 @@
       "months": {
         "202608": {
           "month": "202608",
-          "precip_current": 7.609615384615386,
+          "precip_current": 7.802000000000001,
           "precip_avg": 7.78,
-          "precip_deviation": -2.2,
-          "temp_current": 27.04730769230769,
+          "precip_deviation": 0.3,
+          "temp_current": 27.044399999999996,
           "temp_avg": 25.45,
-          "humidity": 84.01115384615385
+          "humidity": 84.056
         },
         "202609": {
           "month": "202609",
@@ -803,12 +803,12 @@
         },
         "202611": {
           "month": "202611",
-          "precip_current": 0.07142857142857142,
+          "precip_current": 0.0625,
           "precip_avg": 0.23,
           "precip_deviation": 0,
-          "temp_current": 29.661428571428576,
+          "temp_current": 29.69375,
           "temp_avg": 26.0,
-          "humidity": 61.82571428571429
+          "humidity": 61.2075
         }
       },
       "alerts": [
@@ -832,12 +832,12 @@
       "months": {
         "202608": {
           "month": "202608",
-          "precip_current": 9.908461538461536,
+          "precip_current": 9.945199999999998,
           "precip_avg": 4.47,
-          "precip_deviation": 121.7,
-          "temp_current": 26.00384615384615,
+          "precip_deviation": 122.5,
+          "temp_current": 25.9904,
           "temp_avg": 25.3,
-          "humidity": 86.42884615384615
+          "humidity": 86.47200000000001
         },
         "202609": {
           "month": "202609",
@@ -859,12 +859,12 @@
         },
         "202611": {
           "month": "202611",
-          "precip_current": 1.9985714285714287,
+          "precip_current": 1.9,
           "precip_avg": 1.0,
-          "precip_deviation": 99.9,
-          "temp_current": 28.59857142857143,
+          "precip_deviation": 90.0,
+          "temp_current": 28.61375,
           "temp_avg": 26.78,
-          "humidity": 75.34285714285713
+          "humidity": 75.09749999999998
         }
       },
       "alerts": [
@@ -872,7 +872,7 @@
           "type": "excess_rainfall",
           "severity": "alert",
           "month": "202608",
-          "deviation_pct": 121.7,
+          "deviation_pct": 122.5,
           "title": "Excess rainfall: Brong-Ahafo, Ghana",
           "detail": "202608: 122% above average (9.9 vs 4.5 mm/day). Flood/disease risk for Cashew."
         },
@@ -880,9 +880,9 @@
           "type": "excess_rainfall",
           "severity": "warning",
           "month": "202611",
-          "deviation_pct": 99.9,
+          "deviation_pct": 90.0,
           "title": "Excess rainfall: Brong-Ahafo, Ghana",
-          "detail": "202611: 100% above average (2.0 vs 1.0 mm/day). Flood/disease risk for Cashew."
+          "detail": "202611: 90% above average (1.9 vs 1.0 mm/day). Flood/disease risk for Cashew."
         }
       ],
       "status": "alert"
@@ -896,12 +896,12 @@
       "months": {
         "202608": {
           "month": "202608",
-          "precip_current": 8.850384615384616,
+          "precip_current": 8.926000000000002,
           "precip_avg": 6.49,
-          "precip_deviation": 36.4,
-          "temp_current": 26.208846153846153,
+          "precip_deviation": 37.5,
+          "temp_current": 26.2168,
           "temp_avg": 25.12,
-          "humidity": 88.09384615384614
+          "humidity": 88.15440000000001
         },
         "202609": {
           "month": "202609",
@@ -923,12 +923,12 @@
         },
         "202611": {
           "month": "202611",
-          "precip_current": 1.02,
+          "precip_current": 0.9937500000000001,
           "precip_avg": 1.06,
-          "precip_deviation": -3.8,
-          "temp_current": 28.497142857142858,
+          "precip_deviation": -6.2,
+          "temp_current": 28.495,
           "temp_avg": 25.73,
-          "humidity": 77.96428571428571
+          "humidity": 77.7425
         }
       },
       "alerts": [
@@ -952,12 +952,12 @@
       "months": {
         "202608": {
           "month": "202608",
-          "precip_current": 0.3492307692307692,
+          "precip_current": 0.36119999999999997,
           "precip_avg": 7.24,
-          "precip_deviation": -95.2,
-          "temp_current": 28.601538461538464,
+          "precip_deviation": -95.0,
+          "temp_current": 28.608,
           "temp_avg": 27.59,
-          "humidity": 75.62461538461538
+          "humidity": 75.5024
         },
         "202609": {
           "month": "202609",
@@ -982,9 +982,9 @@
           "precip_current": 0.0,
           "precip_avg": 0.21,
           "precip_deviation": 0,
-          "temp_current": 27.23,
+          "temp_current": 27.3225,
           "temp_avg": 24.2,
-          "humidity": 45.945714285714295
+          "humidity": 44.70000000000001
         }
       },
       "alerts": [
@@ -992,9 +992,9 @@
           "type": "severe_drought",
           "severity": "alert",
           "month": "202608",
-          "deviation_pct": -95.2,
+          "deviation_pct": -95.0,
           "title": "Severe drought: Gujarat, India",
-          "detail": "202608: -95% below average (0.3 vs 7.2 mm/day). Critical for Castor/Guar."
+          "detail": "202608: -95% below average (0.4 vs 7.2 mm/day). Critical for Castor/Guar."
         }
       ],
       "status": "alert"
@@ -1008,12 +1008,12 @@
       "months": {
         "202608": {
           "month": "202608",
-          "precip_current": 1.113076923076923,
+          "precip_current": 1.1576,
           "precip_avg": 2.61,
-          "precip_deviation": -57.4,
-          "temp_current": 32.619615384615386,
+          "precip_deviation": -55.6,
+          "temp_current": 32.62200000000001,
           "temp_avg": 32.72,
-          "humidity": 54.26615384615384
+          "humidity": 54.23999999999999
         },
         "202609": {
           "month": "202609",
@@ -1038,9 +1038,9 @@
           "precip_current": 0.0,
           "precip_avg": 0.15,
           "precip_deviation": 0,
-          "temp_current": 29.26571428571429,
+          "temp_current": 29.2325,
           "temp_avg": 22.87,
-          "humidity": 23.294285714285714
+          "humidity": 23.13375
         }
       },
       "alerts": [
@@ -1048,9 +1048,9 @@
           "type": "severe_drought",
           "severity": "alert",
           "month": "202608",
-          "deviation_pct": -57.4,
+          "deviation_pct": -55.6,
           "title": "Severe drought: Rajasthan, India",
-          "detail": "202608: -57% below average (1.1 vs 2.6 mm/day). Critical for Cumin/Guar."
+          "detail": "202608: -56% below average (1.2 vs 2.6 mm/day). Critical for Cumin/Guar."
         },
         {
           "type": "severe_drought",
@@ -1072,12 +1072,12 @@
       "months": {
         "202608": {
           "month": "202608",
-          "precip_current": 2.9380769230769226,
+          "precip_current": 3.0063999999999993,
           "precip_avg": 2.7,
-          "precip_deviation": 8.8,
-          "temp_current": 30.112307692307695,
+          "precip_deviation": 11.3,
+          "temp_current": 30.128800000000002,
           "temp_avg": 28.68,
-          "humidity": 62.03769230769232
+          "humidity": 62.12640000000001
         },
         "202609": {
           "month": "202609",
@@ -1099,12 +1099,12 @@
         },
         "202611": {
           "month": "202611",
-          "precip_current": 6.027142857142857,
+          "precip_current": 6.7837499999999995,
           "precip_avg": 5.67,
-          "precip_deviation": 6.3,
-          "temp_current": 26.531428571428567,
+          "precip_deviation": 19.6,
+          "temp_current": 26.472499999999997,
           "temp_avg": 24.78,
-          "humidity": 84.01571428571428
+          "humidity": 84.37
         }
       },
       "alerts": [],
@@ -1119,12 +1119,12 @@
       "months": {
         "202608": {
           "month": "202608",
-          "precip_current": 5.30923076923077,
+          "precip_current": 5.4048,
           "precip_avg": 6.38,
-          "precip_deviation": -16.8,
-          "temp_current": 28.03846153846154,
+          "precip_deviation": -15.3,
+          "temp_current": 28.003600000000002,
           "temp_avg": 26.7,
-          "humidity": 72.33692307692307
+          "humidity": 72.61039999999998
         },
         "202609": {
           "month": "202609",
@@ -1149,9 +1149,9 @@
           "precip_current": 0.0,
           "precip_avg": 0.29,
           "precip_deviation": 0,
-          "temp_current": 30.865714285714283,
+          "temp_current": 30.769999999999996,
           "temp_avg": 24.73,
-          "humidity": 19.448571428571427
+          "humidity": 19.58625
         }
       },
       "alerts": [],
@@ -1166,12 +1166,12 @@
       "months": {
         "202608": {
           "month": "202608",
-          "precip_current": 21.76923076923077,
+          "precip_current": 21.9816,
           "precip_avg": 10.53,
-          "precip_deviation": 106.7,
-          "temp_current": 24.78576923076923,
+          "precip_deviation": 108.8,
+          "temp_current": 24.809599999999996,
           "temp_avg": 23.43,
-          "humidity": 86.54346153846154
+          "humidity": 86.4632
         },
         "202609": {
           "month": "202609",
@@ -1196,9 +1196,9 @@
           "precip_current": 0.0,
           "precip_avg": 0.37,
           "precip_deviation": 0,
-          "temp_current": 28.051428571428573,
+          "temp_current": 28.01125,
           "temp_avg": 22.52,
-          "humidity": 37.464285714285715
+          "humidity": 37.89625
         }
       },
       "alerts": [
@@ -1206,9 +1206,9 @@
           "type": "excess_rainfall",
           "severity": "alert",
           "month": "202608",
-          "deviation_pct": 106.7,
+          "deviation_pct": 108.8,
           "title": "Excess rainfall: Kaduna, Nigeria",
-          "detail": "202608: 107% above average (21.8 vs 10.5 mm/day). Flood/disease risk for Ginger."
+          "detail": "202608: 109% above average (22.0 vs 10.5 mm/day). Flood/disease risk for Ginger."
         },
         {
           "type": "excess_rainfall",
